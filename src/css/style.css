@@ -13,6 +13,27 @@ body {
   height: 100vh;
 }
 
+.dim {
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 0.95);
+  transition: 7s linear;
+}
+
+.dim.hide {
+  opacity: 0;
+  visibility: hidden;
+  z-index: -1;
+}
+
 img {
   position: absolute;
   top: 0;
@@ -24,13 +45,17 @@ img {
 }
 
 h1 {
-  font-size: 50px;
+  font-size: 70px;
   color: #fff;
   text-align: center;
 }
 
 h2 {
-  font-size: 120px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+  font-size: 50px;
   font-weight: bold;
   color: #fff;
 }
@@ -39,6 +64,93 @@ ul li {
   color: #fff;
 }
 
+input {
+  width: 500px;
+  height: 40px;
+  padding: 0;
+  padding-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+  font-family: "Cinzel", serif;
+  outline-offset: 0;
+  box-sizing: border-box;
+  text-shadow: 1px 1px 2px #000;
+}
+
+input::placeholder {
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+#login-form {
+  position: relative;
+  margin-top: 50px;
+}
+
+#login-form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#todo-form {
+  margin-top: 15px;
+}
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
 .todo-list button {
-  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 30px;
+  margin-left: 10px;
+  background: rgb(255 255 255 / 50%);
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+input,
+#login-form button,
+.quotes,
+.weather {
+  font-size: 20px;
+  color: #fff;
+}
+
+.quotes {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+  width: 500px;
+  text-align: center;
+}
+
+.quotes span:last-child {
+  display: block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.weather {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  z-index: 1;
 }

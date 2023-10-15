@@ -5,4 +5,9 @@ const randomBg = images[Math.floor(Math.random() * images.length)];
 const bgImage = document.createElement("img");
 bgImage.src = `./src/images/${randomBg}`;
 
+function dimControl() {
+  body.querySelector(".dim").classList.add("hide");
+}
+
 body.appendChild(bgImage);
+setTimeout(dimControl, 3000);
