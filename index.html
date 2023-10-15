@@ -6,6 +6,12 @@
     <title>Momentum</title>
     <link rel="stylesheet" href="./src/css/reset.css" />
     <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Clock -->
@@ -22,9 +28,26 @@
       />
       <button>Login</button>
     </form>
-
+    <!-- TodoList -->
+    <form id="todo-form">
+      <input type="text" required placeholder="Write a To Do and Press Enter" />
+    </form>
+    <ul class="todo-list"></ul>
+    <!-- quotes -->
+    <div class="quotes">
+      <span></span>
+      <span></span>
+    </div>
+    <!-- weather -->
+    <div class="weather">
+      <span></span>
+      <span></span>
+    </div>
     <script src="./src/clock.js"></script>
     <script src="./src/login.js"></script>
     <script src="./src/background.js"></script>
+    <script src="./src/quotes.js"></script>
+    <script src="./src/todoList.js"></script>
+    <script src="./src/weather.js"></script>
   </body>
 </html>
