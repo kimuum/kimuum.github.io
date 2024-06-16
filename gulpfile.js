@@ -32,7 +32,7 @@ function js() {
 
   return src(source, { since: gulp.lastRun(js) })
     .pipe(concat('bundle.js'))
-    
+
     .pipe(dest('./dist/assets/js/'))
     .pipe(browsersync.stream());
 }
@@ -86,7 +86,6 @@ function html() {
 }
 // Watch files
 function watchFiles() {
-  watch('./src/codingList.scss', codingListCss);
   watch('./src/scss/**', css);
   watch('./src/js/**', series(js, lib_js));
   watch('./src/images/**', images);
@@ -96,7 +95,7 @@ function watchFiles() {
 function browserSync() {
   browsersync.init({
     server: {
-      baseDir: './',
+      baseDir: './dist/html/',
     },
     port: 3000,
   });
