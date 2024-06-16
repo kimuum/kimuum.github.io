@@ -1,0 +1,29 @@
+/* layout */
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  min-width: 136rem;
+  // 스크롤 커스텀
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border: 4px solid $white;
+    border-radius: 20px;
+    background-clip: padding-box;
+    background-color: $color-gray-03;
+  }
+  ::-webkit-scrollbar-track {
+    background: $white;
+  }
+}
+.main {
+  min-height: calc(100vh - $header - $footer);
+  margin: 0 auto;
+  padding-top: $header;
+}
+.content-container {
+  padding-top: $header;
+  padding-bottom: 12rem;
+}

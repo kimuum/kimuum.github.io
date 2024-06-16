@@ -1,60 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Momentum</title>
-    <link rel="stylesheet" href="./src/css/reset.css" />
-    <link rel="stylesheet" href="./src/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>UNI</title>
+    <link rel="stylesheet" href="../../assets/css/lib/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
   </head>
+
   <body>
-    <audio autoplay>
-      <source
-        src="./src/Harry_Potter_Theme_Song_Hedwigs_Theme.ogg"
-        type="audio/ogg"
-      />
-    </audio>
-    <!-- Clock -->
-    <h2></h2>
-    <!-- Username -->
-    <h1 class="hidden"></h1>
-    <!-- Loginform -->
-    <form id="login-form" class="hidden">
-      <input
-        type="text"
-        required
-        maxlength="15"
-        placeholder="What is your name?"
-      />
-      <button>Login</button>
-    </form>
-    <!-- TodoList -->
-    <form id="todo-form">
-      <input type="text" required placeholder="Write a To Do and Press Enter" />
-    </form>
-    <ul class="todo-list"></ul>
-    <!-- quotes -->
-    <div class="quotes">
-      <span></span>
-      <span></span>
+    <div class="wrapper">
+      <header class="header-container">
+        <div class="header-area">
+          <h1 class="header-logo">
+            <a href="javascript:void(0)"> </a>
+          </h1>
+          <div class="header-gnb">
+            <nav class="gnb-container">
+              <div class="gnb-area">
+                <ul class="gnb-list-box">
+                  <li class="gnb-list">
+                    <a href="javascript:void(0)" class="depth01"><span></span></a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div class="bg"></div>
+      </header>
+
+      <!-- main -->
+      <main class="main">
+        <!-- content-container -->
+        <div class="content-container">
+          <div class="content-middle"></div>
+          <div class="content-bottom"></div>
+        </div>
+        <!-- //content-container -->
+      </main>
+      <!-- //main -->
+
+      <footer class="footer-container">
+        <div class="footer-area"></div>
+      </footer>
     </div>
-    <!-- weather -->
-    <div class="weather">
-      <span></span>
-      <span></span>
-    </div>
-    <div class="dim"></div>
-    <script src="./src/clock.js"></script>
-    <script src="./src/login.js"></script>
-    <script src="./src/background.js"></script>
-    <script src="./src/quotes.js"></script>
-    <script src="./src/todoList.js"></script>
-    <script src="./src/weather.js"></script>
+
+    <script type="text/javascript" src="../../assets/js/lib/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/bundle.js"></script>
   </body>
 </html>
