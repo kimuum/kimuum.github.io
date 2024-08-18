@@ -110,18 +110,68 @@ function html() {
       .pipe(dest('./dist/html'))
   );
 }
+function clearHtmlIndex() {
+  return src('./dist/index.html', {
+    read: false,
+  }).pipe(clean());
+}
+function htmlIndex() {
+  return (
+    src('./src/index.html')
+      .pipe(
+        fileinclude({
+          prefix: '@@',
+          basepath: './src/html/component',
+        }),
+      )
+      .pipe(replace('<!-- prettier-ignore -->', ''))
+      .pipe(
+        prettyHtml({
+          indent_size: 2,
+          indent_char: ' ',
+          unformatted: ['code', 'pre', 'em', 'strong', 'span', 'i', 'b', 'br'],
+        }),
+      )
+      // 2개이상의 개행을 하나의 개행으로 변경
+      .pipe(replace(/(\r\n|\r|\n){2,}/g, '\r\n', { skipBinary: true }))
+      .pipe(
+        // 클래스 빈 공간 제거
+        replace(/class="([^"]*)"/g, function (match, p1) {
+          const cleanedClasses = p1.replace(/\s+/g, ' ').trim();
+          return `class="${cleanedClasses}"`;
+        }),
+      )
+      .pipe(
+        // 주석 처리
+        replace(/<!--([\s\S]*?)-->/g, function (match, p1) {
+          // 주석 내부에 HTML 태그가 있는지 확인
+          const hasHtmlTag = /<[a-z][\s\S]*>/i.test(p1);
+
+          // 주석 내부에 HTML 태그가 있으면 주석 그대로 반환, 아니면 정리 진행
+          if (hasHtmlTag) {
+            return match;
+          } else {
+            const cleanedComment = p1.replace(/\s+/g, ' ').trim();
+            return `<!-- ${cleanedComment} -->`;
+          }
+        }),
+      )
+      .pipe(dest('./dist/'))
+  );
+}
 // Watch files
 function watchFiles() {
   watch('./src/scss/**', css);
   watch('./src/js/**', series(js, lib_js));
   watch('./src/images/**', images);
-  watch('./src/html/**/*.*', series(clearHtml, html));
+  watch('./src/html/**/*.*', series(clearHtml, html, htmlIndex));
+  watch('./src/index.html', series(htmlIndex));
 }
 // BrowserSync
 function browserSync() {
   browsersync.init({
     server: {
-      baseDir: './dist/html/',
+      baseDir: './dist',
     },
     port: 3000,
   });
@@ -132,4 +182,4 @@ function browserSync() {
 // Tasks to define the execution of the functions simultaneously or in series
 exports.image = series(images);
 exports.watch = parallel(watchFiles, browserSync);
-exports.build = series(clear, parallel(font, html, css, lib_js, lib_css, js, images));
+exports.build = series(clear, parallel(font, html, htmlIndex, css, lib_js, lib_css, js, images));
