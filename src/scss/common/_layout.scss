@@ -82,9 +82,9 @@ body {
   .hero-area {
     clip-path: polygon(0 3%, 0 99%, 100% 99%, 100% 3%);
     white-space: nowrap;
-  }
-  .hero-box {
-    @include font(clamp(10px, 8.33vw, 160px), 700, $secondary);
+    .hero-box {
+      @include font(clamp(10px, 8.33vw, 160px), 700, $secondary);
+    }
   }
   .hero-word {
     opacity: 0;
@@ -96,5 +96,31 @@ body {
       left: 0;
       transform: translateY(-100%);
     }
+  }
+}
+
+.work-container {
+  // position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  .work-box {
+    @include flex(row, flex-start, flex-start);
+    gap: 1.5rem;
+    svg {
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .swiper-slide {
+    font-size: 16rem;
+  }
+}
+
+.visual-container {
+  .visual-word {
+    opacity: 0.5;
+    @include font(clamp(10px, 8.33vw, 100px), 700, $secondary);
   }
 }
