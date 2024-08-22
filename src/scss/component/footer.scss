@@ -1,0 +1,16 @@
+.footer-container {
+  padding: 2.5rem 0 3rem;
+  border-top: 2px solid $secondary;
+  .footer-area {
+    @include flex(row, space-between, center);
+  }
+  .footer-left {
+    @include flex(row, flex-start, center);
+    gap: 0 3rem;
+  }
+  [class^='footer-'] {
+    > * {
+      @include font(2rem, 600, $secondary);
+    }
+  }
+}

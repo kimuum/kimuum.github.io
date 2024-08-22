@@ -1,10 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
+  window.addEventListener('scroll', function () {
+    scrollControl();
+  });
+
   gsap.registerPlugin(ScrollTrigger);
+  lenis();
   moveHero();
   moveVisual();
-  moveWork();
 
-  /* lenis 스크롤 효과 */
+  // topbutton
+  const topButton = document.querySelector('.btn-top');
+  if (topButton) {
+    topButton.addEventListener('click', function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    });
+  }
+});
+
+function lenis() {
   const lenis = new Lenis();
 
   lenis.on('scroll', (e) => {
@@ -18,11 +34,43 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   gsap.ticker.lagSmoothing(0);
-});
+}
+
+/* SCROLL */
+function scrollControl() {
+  const headerCont = document.querySelector('.header-container');
+  const worksCont = document.querySelector('.work-container');
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const worksTop = worksCont.getBoundingClientRect().top;
+  const offset = scrollTop - worksTop;
+
+  // header
+  if (headerCont) {
+    if (scrollTop > 0) {
+      headerCont.classList.add('active');
+    } else {
+      headerCont.classList.remove('active');
+    }
+  }
+
+  // work
+  if (worksCont) {
+    if (scrollTop > worksTop) {
+      this.document.querySelector('.work-list-area').style.left = -offset + 'px';
+    }
+  }
+}
 
 /* HERO */
 function moveHero() {
-  const heroBox = document.querySelectorAll('.hero-box');
+  gsap.to('.hero-word', {
+    opacity: 1,
+    delay: 1,
+    ease: 'power4.inOut',
+    stagger: 0.16,
+  });
+
+  const heroBox = document.querySelectorAll('.hero-inner');
   heroBox.forEach((item) => {
     gsap.to(item, {
       y: '100%',
@@ -36,45 +84,8 @@ function moveHero() {
       },
     });
   });
-
-  gsap.to('.hero-word', {
-    opacity: 1,
-    delay: 1,
-    ease: 'power4.inOut',
-    stagger: 0.16,
-  });
 }
-/* WORK */
-function moveWork() {
-  const worskBox = document.querySelectorAll('.work-box svg:not(:first-of-type)');
-  worskBox.forEach(function (item, i) {
-    var layer = item.getBoundingClientRect();
-    gsap.to(item, {
-      x: function x() {
-        return -(layer.width * i);
-      },
-      opacity: '0.5',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: item,
-        start: 'top center',
-        end: '+=300%',
-        scrub: true,
-        markers: true,
-      },
-    });
-  });
 
-  const swiperWork = new Swiper('.work-container', {
-    slidesPerView: 'auto',
-    spaceBetween: 0,
-    loop: false,
-    allowTouchMove: true,
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
-  });
-}
 /* VISUAL */
 function moveVisual() {
   const visualWord = document.querySelectorAll('.visual-word');

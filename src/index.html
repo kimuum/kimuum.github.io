@@ -14,36 +14,57 @@
         <div class="content-container">
           <div class="content-area">
             <!-- HERO -->
-            <section class="hero-container">
+            <section class="hero-container" id="hero">
               <div class="hero-area">
-                <div class="hero-box">
-                  <div class="hero-word">
-                    <span class="hero-front">UNI</span>
-                    <span class="hero-back">UNI</span>
+                <div class="hero-top">
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <span class="hero-front">UNI</span>
+                        <span class="hero-back">UNI</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <span class="hero-front">WEB PUBLISHER</span>
+                        <span class="hero-back">WEB PUBLISHER</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <div class="hero-front">
+                          <span>WEB</span>
+                          <span>PORTFOLIO</span>
+                        </div>
+                        <div class="hero-back">
+                          <span>WEB</span>
+                          <span>PORTFOLIO</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="hero-area">
-                <div class="hero-box">
-                  <div class="hero-word">
-                    <span class="hero-front">WEB PUBLISHER</span>
-                    <span class="hero-back">WEB PUBLISHER</span>
+                <div class="hero-bottom">
+                  <div class="hero-sub-word">
+                    <span>
+                      정교한 코드를 바탕으로 다양한 디바이스와 브라우저에 일관된<br />
+                      사용자 경험을 제공 할 수 있도록 웹페이지를 그려냅니다!
+                    </span>
+                    <span>
+                      다양한 직군과의 협업을 중요하게 생각해요.<br />
+                      원활한 소통을 통해 함께 멋지고 기억에 남는 결과물을 만들고 싶어요.
+                    </span>
                   </div>
-                </div>
-              </div>
-
-              <div class="hero-area">
-                <div class="hero-box">
-                  <div class="hero-word">
-                    <div class="hero-front">
-                      <span>WEB</span>
-                      <span>PORTFOLIO</span>
-                    </div>
-                    <div class="hero-back">
-                      <span>WEB</span>
-                      <span>PORTFOLIO</span>
-                    </div>
+                  <div class="button-box">
+                    <a href="https://unisite.notion.site/bfd398b358b34ba6ba335c67f0e3245d?pvs=73" target="_blank" title="새창열림" class="btn-line">
+                      <span>자기소개 더보기</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -51,32 +72,50 @@
             <!-- //HERO -->
 
             <!-- WORK -->
-            <section class="work-container swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">Slide 1</div>
-                <div class="swiper-slide">Slide 2</div>
-                <div class="swiper-slide">Slide 3</div>
-                <div class="swiper-scrollbar"></div>
-              </div>
-              <div class="work-box">
-                <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="200" cy="200" r="195" stroke="#171717" stroke-width="10" fill="none" />
-                </svg>
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 5H200C307.696 5 395 92.3045 395 200C395 307.696 307.696 395 200 395H5V5Z" stroke="#171717" stroke-width="10" />
-                </svg>
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="5" width="390" height="390" stroke="#171717" stroke-width="10" />
-                </svg>
-                <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="200" cy="200" r="195" stroke="#171717" stroke-width="10" fill="none" />
-                </svg>
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 5H200C307.696 5 395 92.3045 395 200C395 307.696 307.696 395 200 395H5V5Z" stroke="#171717" stroke-width="10" />
-                </svg>
-                <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="5" y="5" width="390" height="390" stroke="#171717" stroke-width="10" />
-                </svg>
+            <section class="work-container" id="work">
+              <div class="work-area">
+                <div class="work-top">
+                  <div class="label-box">
+                    <span class="label">02 / WORKS</span>
+                  </div>
+                </div>
+                <div class="work-bottom">
+                  <div class="work-list-area">
+                    <!-- prettier-ignore -->
+                    @@loop("workListBox.html",[
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "circle"
+                      },
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "path"
+                      },
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "rect"
+                      },
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "circle"
+                      },
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "path"
+                      },
+                      {
+                        "workTitle" : "sds",
+                        "link" : "ads",
+                        "type" : "rect"
+                      },
+                    ])
+                  </div>
+                </div>
               </div>
             </section>
             <!-- //WORK -->
@@ -92,6 +131,22 @@
             <!-- //VISUAL -->
 
             <!-- CONTACT -->
+            <section class="contact-container" id="contact">
+              <div class="contact-area">
+                <div class="contact-top">
+                  <div class="label-box">
+                    <span class="label">03 / CONTACT</span>
+                  </div>
+                </div>
+                <div class="contact-bottom">
+                  <div class="contact-title">함께 일할 사람을 찾고 계신가요?</div>
+                  <div class="button-box">
+                    <a href="mailto:dowonppp@naver.com" class="btn-line"><span>Email</span></a>
+                    <div class="btn-line"><span>+82 10 2324 1182</span></div>
+                  </div>
+                </div>
+              </div>
+            </section>
             <!-- //CONTACT -->
           </div>
         </div>
@@ -102,8 +157,5 @@
       <!-- prettier-ignore -->
       @@include('footer.html')
     </div>
-
-    <!-- prettier-ignore -->
-    @@include('commonJS.html')
   </body>
 </html>

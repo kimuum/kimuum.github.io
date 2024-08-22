@@ -15,6 +15,19 @@ body {
     pointer-events: none;
     z-index: 9999;
   }
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid $primary;
+    background: $secondary;
+    border-radius: 20px;
+    background-clip: padding-box;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
 }
 @keyframes bubble {
   0% {
@@ -54,42 +67,68 @@ body {
 .wrapper {
   overflow: hidden;
   width: 100%;
-  height: 200vh;
-  // 스크롤 커스텀
-  ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-  }
-  ::-webkit-scrollbar-thumb {
-    border: 4px solid $white;
-    border-radius: 20px;
-    background-clip: padding-box;
-  }
-  ::-webkit-scrollbar-track {
-    background: $white;
+  height: 100%;
+  padding: 0 5rem;
+  section[class$='-container'] {
+    height: 100vh;
+    padding: 0 15.2rem;
   }
 }
-.main {
-  // min-height: calc(100vh - $header);
-  margin: 0 auto;
-  // padding-top: $header;
-}
-.content-container {
-}
-
-.hero-container {
-  padding-top: 6vw;
-  .hero-area {
-    clip-path: polygon(0 3%, 0 99%, 100% 99%, 100% 3%);
-    white-space: nowrap;
-    .hero-box {
-      @include font(clamp(10px, 8.33vw, 160px), 700, $secondary);
+.button-box {
+  @include flex(row, flex-start, flex-start);
+  gap: 0 3rem;
+  .btn-line {
+    overflow: hidden;
+    @include flex(row, center, center);
+    position: relative;
+    width: 20rem;
+    height: 4.5rem;
+    padding: 0 2rem;
+    border: 2px solid $secondary;
+    @include font(1.8rem, 700, $secondary);
+    border-radius: 5rem;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 0;
+      height: 100%;
+      background-color: $secondary;
+      transition: 0.4s ease;
+    }
+    &:hover {
+      color: $primary;
+      &::before {
+        width: 100%;
+      }
     }
   }
-  .hero-word {
-    opacity: 0;
-    position: relative;
-    line-height: 0.8;
+}
+.label-box {
+  .label {
+    @include font(1.8rem, 600, $secondary);
+    letter-spacing: -0.05rem;
+  }
+}
+.hero-container {
+  .hero-area {
+    @include flex(column, center, flex-start);
+    height: 100%;
+  }
+  .hero-box {
+    @include flex(row, flex-start, center);
+    gap: 0 2.5rem;
+    clip-path: polygon(0 3%, 0 99%, 100% 99%, 100% 3%);
+    white-space: nowrap;
+    text-transform: uppercase;
+    .hero-word {
+      opacity: 0;
+      position: relative;
+      @include font(clamp(10px, 8.33vw, 160px), 700, $secondary, 0.8);
+    }
     .hero-back {
       position: absolute;
       top: 0;
@@ -97,30 +136,91 @@ body {
       transform: translateY(-100%);
     }
   }
+  .hero-bottom {
+    @include flex(row, space-between, flex-start);
+    width: 100%;
+    margin-top: 6rem;
+    .hero-sub-word {
+      @include font(1.8rem, 600, $secondary, 2.5rem);
+      span {
+        display: block;
+        & + span {
+          margin-top: 2.5rem;
+        }
+      }
+    }
+  }
+  .button-box {
+    align-self: flex-end;
+  }
 }
 
 .work-container {
+  // height: 320vh;
+}
+.work-list-area {
+  width: 1600%;
+  margin-left: 25%;
   // position: fixed;
-  left: 0;
   top: 0;
-  width: 100%;
-  .work-box {
-    @include flex(row, flex-start, flex-start);
-    gap: 1.5rem;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  @include flex(row, flex-start, flex-start);
+  gap: 1.5rem;
+}
+.work-list-box {
+  flex-shrink: 0;
+  position: relative;
+  width: 40rem;
+  height: 40rem;
+  .work-front {
+    @include flex(column, center, center);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .work-title {
+      @include font(clamp(10px, 8.33vw, 35px), 700, $secondary, normal);
+    }
+    .work-button {
+      opacity: 0;
+      height: 0;
+    }
+  }
+  .work-back {
     svg {
       overflow: hidden;
       width: 100%;
       height: auto;
     }
   }
-  .swiper-slide {
-    font-size: 16rem;
-  }
 }
 
 .visual-container {
+  .visual-area {
+    @include flex(column, center, center);
+    height: 100%;
+  }
   .visual-word {
     opacity: 0.5;
-    @include font(clamp(10px, 8.33vw, 100px), 700, $secondary);
+    @include font(clamp(10px, 5.83vw, 100px), 700, $secondary);
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+.contact-container {
+  .contact-area {
+    height: 100%;
+  }
+  .contact-bottom {
+    @include flex(column, center, center);
+    height: 90vh;
+    .contact-title {
+      margin-bottom: 5rem;
+      @include font(clamp(10px, 4vw, 80px), 500, $secondary);
+    }
   }
 }

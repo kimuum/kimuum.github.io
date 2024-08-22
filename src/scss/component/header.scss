@@ -1,0 +1,62 @@
+.header-container {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  transition: 0.4s ease;
+  &.active {
+    top: 1rem;
+    .header-left,
+    .header-right {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    .header-center {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+  .header-area {
+    @include flex(row, space-between, center);
+    padding: 0 6rem;
+    > [class^='header-'] {
+      transition: 0.4s ease;
+    }
+  }
+  .header-center {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    opacity: 0;
+    transform: translate(-50%, -50px);
+  }
+  .header-title {
+    @include font(2rem, 700, $secondary);
+    letter-spacing: -0.05rem;
+  }
+  .header-current-info {
+    @include font(2rem, 600, $secondary);
+    letter-spacing: -0.05rem;
+  }
+}
+.gnb-container {
+  .gnb-area {
+    @include flex(row, center, center);
+    height: 4.5rem;
+    padding: 0 5rem;
+    border: 2px solid $secondary;
+    background-color: $primary;
+    border-radius: 5rem;
+  }
+  .gnb-list-box {
+    @include flex(row, center, center);
+    gap: 0 0.25rem;
+    a {
+      @include font(1.8rem, 700, $secondary);
+      letter-spacing: -0.05rem;
+    }
+  }
+}
