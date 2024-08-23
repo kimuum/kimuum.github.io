@@ -17,6 +17,28 @@
   border: 10px solid $secondary;
   &.circle {
     border-radius: 50%;
+    &.spin {
+      position: relative;
+      &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 95%;
+        height: 95%;
+        border: 10px dashed $primary;
+        border-radius: 50%;
+        animation: spinAround 10s linear infinite;
+      }
+      &:hover {
+        border-color: transparent;
+        &::after {
+          display: block;
+        }
+      }
+    }
   }
   &.path {
     border-radius: 0 50% 50% 0;
@@ -52,7 +74,7 @@
       transition: 0.5s ease;
       .btn-work {
         overflow: hidden;
-        @include font(2rem, 600, $primary);
+        @include font(2.5rem, 600, $primary);
         & + .btn-work {
           margin-top: 0.5rem;
         }
@@ -63,5 +85,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes spinAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

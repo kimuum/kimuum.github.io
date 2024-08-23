@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
   moveVisual();
   moveWork();
   moveContact();
+  getClock();
+  setInterval(getClock, 1000);
+  navigator.geolocation.getCurrentPosition(onGeoOk);
 
   window.addEventListener('scroll', function () {
     scrollControl();
@@ -129,4 +132,30 @@ function moveContact() {
     })
     .from('.contact-bottom .contact-title', { yPercent: 100 })
     .from('.contact-bottom .button-box', { yPercent: 100 });
+}
+
+/* 현재시간 */
+function getClock() {
+  const currentInfo = document.querySelector('.header-current-info .time');
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  currentInfo.innerText = `${hours}:${minutes}`;
+}
+
+/* 위치 및 날씨 */
+function onGeoOk(position) {
+  const API_KEY = 'd040b02e0ede83a1a254be0ca469cdd2';
+  const lat = position.coords.latitude;
+  const lon = position.coords.longitude;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const city = document.querySelector('.header-current-info .location');
+      const weather = document.querySelector('.header-current-info .weather');
+
+      city.innerText = data.name;
+      weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+    });
 }

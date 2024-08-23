@@ -16,8 +16,6 @@
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="./assets/js/bundle.js"></script>
-  <script></script>
   <title>UNI | Portfolio</title>
 </head>
 <body>
@@ -35,13 +33,19 @@
             <div class="gnb-area hover-bg">
               <ul class="gnb-list-box">
                 <li class="gnb-list" data-id="#hero">
-                  <a href="javascript:void(0)"><span>HOME</span> /</a>
+                  <a href="javascript:void(0)">
+                    <span>HOME</span>
+                  </a>
                 </li>
                 <li class="gnb-list" data-id="#work">
-                  <a href="javascript:void(0)"><span>WORKS</span> /</a>
+                  <a href="javascript:void(0)">
+                    <span>WORKS</span>
+                  </a>
                 </li>
                 <li class="gnb-list" data-id="#contact">
-                  <a href="javascript:void(0)"><span>CONTACT</span></a>
+                  <a href="javascript:void(0)">
+                    <span>CONTACT</span>
+                  </a>
                 </li>
               </ul>
             </div>
@@ -49,8 +53,9 @@
         </div>
         <div class="header-right">
           <div class="header-current-info">
-            <span class="time">18:32</span>
-            <span class="location">GMT+1</span>
+            <span class="time"></span>
+            <span class="location"></span>
+            <span class="weather"></span>
           </div>
         </div>
       </div>
@@ -234,7 +239,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="work-list-box hover-bg circle">
+                  <div class="work-list-box hover-bg circle spin">
                     <div class="work-inner">
                       <div class="work-title">더 많은 프로젝트
                         보러가기</div>
@@ -322,5 +327,6 @@
     </footer>
     <!-- // footer -->
   </div>
+  <script src="./assets/js/bundle.js"></script>
 </body>
 </html>

@@ -38,8 +38,11 @@
     letter-spacing: -0.05rem;
   }
   .header-current-info {
+    @include flex(row, flex-start, center);
+    gap: 0 0.5rem;
     @include font(2rem, 600, $secondary);
     letter-spacing: -0.05rem;
+    text-transform: uppercase;
   }
 }
 .gnb-container {
@@ -58,10 +61,18 @@
     @include flex(row, center, center);
     gap: 0 0.25rem;
     height: 100%;
-    a {
+    .gnb-list {
       padding: 1rem 0;
       @include font(1.8rem, 700, $secondary);
       letter-spacing: -0.05rem;
+      & + .gnb-list {
+        &::before {
+          content: '/';
+          display: inline-block;
+        }
+      }
+    }
+    a {
       transition: 0.45s ease;
       &:hover {
         color: $primary;
