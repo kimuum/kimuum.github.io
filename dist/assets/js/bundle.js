@@ -1,42 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
-  window.addEventListener('scroll', function () {
-    scrollControl();
+  const lenis = new Lenis();
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
   });
+  gsap.ticker.lagSmoothing(0);
 
   gsap.registerPlugin(ScrollTrigger);
-  lenis();
   moveHero();
   moveVisual();
   moveWork();
   moveContact();
 
-  // topbutton
+  window.addEventListener('scroll', function () {
+    scrollControl();
+  });
+
+  // top 버튼 클릭시 상단 이동
   const topButton = document.querySelector('.btn-top');
   if (topButton) {
     topButton.addEventListener('click', function () {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
+      lenis.scrollTo(0);
     });
   }
+
+  // gnb 클릭시 영역이동
+  const gnbList = document.querySelectorAll('.gnb-list');
+  gnbList.forEach((item) => {
+    item.addEventListener('click', function () {
+      id = this.dataset.id;
+      lenis.scrollTo(id);
+    });
+  });
 });
-
-function lenis() {
-  const lenis = new Lenis();
-
-  lenis.on('scroll', (e) => {
-    // console.log(e);
-  });
-
-  lenis.on('scroll', ScrollTrigger.update);
-
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
-
-  gsap.ticker.lagSmoothing(0);
-}
 
 /* SCROLL */
 function scrollControl() {
@@ -46,9 +42,9 @@ function scrollControl() {
   // header
   if (headerCont) {
     if (scrollTop > 0) {
-      headerCont.classList.add('active');
+      headerCont.classList.add('scroll');
     } else {
-      headerCont.classList.remove('active');
+      headerCont.classList.remove('scroll');
     }
   }
 }
@@ -107,7 +103,7 @@ function moveWork() {
 /* VISUAL */
 function moveVisual() {
   const visualWord = document.querySelectorAll('.visual-word');
-  visualWord.forEach(function (item) {
+  visualWord.forEach((item) => {
     gsap.to(item, {
       opacity: '1',
       scrollTrigger: {
@@ -131,6 +127,6 @@ function moveContact() {
         // markers: true,
       },
     })
-    .from('.contact-title', { yPercent: 100 })
-    .from('.button-box', { yPercent: 100 });
+    .from('.contact-bottom .contact-title', { yPercent: 100 })
+    .from('.contact-bottom .button-box', { yPercent: 100 });
 }

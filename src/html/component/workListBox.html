@@ -2,18 +2,10 @@
   <div class="work-inner">
     <div class="work-title">@@title</div>
     <div class="work-button">
-      <button type="button" class="btn-work" aria-hidden="자세히 보기">
-        <div class="hover-trans">
-          <span aria-hidden="true">자세히 보기</span>
-          <span aria-hidden="true">자세히 보기</span>
-        </div>
-      </button>
-      <a href="@@link" target="_blank" class="btn-work" aria-hidden="사이트 이동">
-        <div class="hover-trans">
-          <span aria-hidden="true">사이트 이동</span>
-          <span aria-hidden="true">사이트 이동</span>
-        </div>
-      </a>
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < button.length; i++) {
+        @@include("workButton.html",  `+(JSON.stringify(button[i]))+`)
+      }
     </div>
   </div>
 </div>
