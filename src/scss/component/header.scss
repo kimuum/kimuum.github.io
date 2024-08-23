@@ -50,13 +50,22 @@
     border: 2px solid $secondary;
     background-color: $primary;
     border-radius: 5rem;
+    &:hover {
+      background-color: transparent;
+    }
   }
   .gnb-list-box {
     @include flex(row, center, center);
     gap: 0 0.25rem;
+    height: 100%;
     a {
+      padding: 1rem 0;
       @include font(1.8rem, 700, $secondary);
       letter-spacing: -0.05rem;
+      transition: 0.45s ease;
+      &:hover {
+        color: $primary;
+      }
     }
   }
 }

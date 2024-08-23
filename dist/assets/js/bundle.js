@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
   lenis();
   moveHero();
   moveVisual();
+  moveWork();
+  moveContact();
 
   // topbutton
   const topButton = document.querySelector('.btn-top');
@@ -39,10 +41,7 @@ function lenis() {
 /* SCROLL */
 function scrollControl() {
   const headerCont = document.querySelector('.header-container');
-  const worksCont = document.querySelector('.work-container');
   const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const worksTop = worksCont.getBoundingClientRect().top;
-  const offset = scrollTop - worksTop;
 
   // header
   if (headerCont) {
@@ -52,24 +51,10 @@ function scrollControl() {
       headerCont.classList.remove('active');
     }
   }
-
-  // work
-  if (worksCont) {
-    if (scrollTop > worksTop) {
-      this.document.querySelector('.work-list-area').style.left = -offset + 'px';
-    }
-  }
 }
 
 /* HERO */
 function moveHero() {
-  gsap.to('.hero-word', {
-    opacity: 1,
-    delay: 1,
-    ease: 'power4.inOut',
-    stagger: 0.16,
-  });
-
   const heroBox = document.querySelectorAll('.hero-inner');
   heroBox.forEach((item) => {
     gsap.to(item, {
@@ -84,6 +69,39 @@ function moveHero() {
       },
     });
   });
+
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.hero-container',
+        toggleActions: 'restart none restart none',
+      },
+    })
+    .to('.hero-word', { opacity: 1, delay: 1, ease: 'power4.inOut', stagger: 0.16 })
+    .to('.hero-bottom', { opacity: 1, y: -10, stagger: 0.16 });
+}
+
+/* WORK */
+function moveWork() {
+  let worksBox = gsap.utils.toArray('.work-list-box');
+
+  const tl = gsap
+    .timeline({
+      defaults: {
+        ease: 'none',
+      },
+      scrollTrigger: {
+        trigger: '.work-container',
+        pin: true,
+        scrub: 0.5,
+        start: 'top-=25% top',
+        end: '+=4000',
+        // markers: true,
+      },
+    })
+    .to(worksBox, {
+      xPercent: -(100 * (worksBox.length - 1)),
+    });
 }
 
 /* VISUAL */
@@ -94,11 +112,25 @@ function moveVisual() {
       opacity: '1',
       scrollTrigger: {
         trigger: item,
-        start: '-=400%',
-        end: 'bottom center',
+        start: '+=3500',
         scrub: true,
         // markers: true,
       },
     });
   });
+}
+
+/* CONTACT */
+function moveContact() {
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.contact-container',
+        start: 'top-=20% top+=30%',
+        toggleActions: 'play reverse play reverse',
+        // markers: true,
+      },
+    })
+    .from('.contact-title', { yPercent: 100 })
+    .from('.button-box', { yPercent: 100 });
 }

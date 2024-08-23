@@ -1,0 +1,136 @@
+body {
+  background-color: $primary;
+  &::before {
+    content: '';
+    opacity: 0.4;
+    display: inline-block;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: image('img_noise_bg.png');
+    animation: bubble 5s steps(4) infinite;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 4px solid $primary;
+    background: $secondary;
+    border-radius: 20px;
+    background-clip: padding-box;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+@keyframes bubble {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -5%);
+  }
+  20% {
+    transform: translate(-10%, 5%);
+  }
+  30% {
+    transform: translate(5%, -10%);
+  }
+  40% {
+    transform: translate(-5%, 15%);
+  }
+  50% {
+    transform: translate(-10%, 5%);
+  }
+  60% {
+    transform: translate(15%, 0);
+  }
+  70% {
+    transform: translate(0, 10%);
+  }
+  80% {
+    transform: translate(-15%, 0);
+  }
+  90% {
+    transform: translate(10%, 5%);
+  }
+  to {
+    transform: translate(5%, 0);
+  }
+}
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: 0 5rem;
+  section[class$='-container'] {
+    // padding: 0 15.2rem;
+  }
+}
+.button-box {
+  @include flex(row, flex-start, flex-start);
+  gap: 0 3rem;
+  .btn-line {
+    @include flex(row, center, center);
+    width: 20rem;
+    height: 4.5rem;
+    padding: 0 2rem;
+    border: 2px solid $secondary;
+    border-radius: 5rem;
+    @include font(1.8rem, 700, $secondary);
+  }
+}
+.label-box {
+  .label {
+    @include font(1.8rem, 600, $secondary);
+    letter-spacing: -0.05rem;
+  }
+}
+
+// 호버시 효과
+.hover-bg {
+  overflow: hidden;
+  position: relative;
+  &::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    background-color: $secondary;
+    transition: 0.4s ease;
+  }
+  &:hover {
+    color: $primary;
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+.hover-trans {
+  position: relative;
+  display: inline-block;
+  span:last-child {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+  }
+}
+
+@keyframes btnAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}

@@ -9,8 +9,14 @@
     gap: 0 3rem;
   }
   [class^='footer-'] {
-    > * {
+    .footer-item {
+      overflow: hidden;
       @include font(2rem, 600, $secondary);
+      &:hover {
+        .hover-trans {
+          animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+        }
+      }
     }
   }
 }

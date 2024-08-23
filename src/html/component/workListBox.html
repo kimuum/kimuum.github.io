@@ -1,20 +1,19 @@
-<div class="work-list-box">
-  <div class="work-front">
-    <div class="work-title">@@workTitle</div>
+<div class="work-list-box hover-bg @@typeClass">
+  <div class="work-inner">
+    <div class="work-title">@@title</div>
     <div class="work-button">
-      <button type="button" class="btn-work"><span>자세히 보기</span></button>
-      <a href="@@link" target="_blank" title="새창열림" class="btn-work"><span>사이트 이동</span></a>
+      <button type="button" class="btn-work" aria-hidden="자세히 보기">
+        <div class="hover-trans">
+          <span aria-hidden="true">자세히 보기</span>
+          <span aria-hidden="true">자세히 보기</span>
+        </div>
+      </button>
+      <a href="@@link" target="_blank" class="btn-work" aria-hidden="사이트 이동">
+        <div class="hover-trans">
+          <span aria-hidden="true">사이트 이동</span>
+          <span aria-hidden="true">사이트 이동</span>
+        </div>
+      </a>
     </div>
-  </div>
-  <div class="work-back">
-    <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-      @@if(type == "circle") {
-      <circle cx="200" cy="200" r="195" stroke="#171717" stroke-width="10" />
-      } @@if(type == "path") {
-      <path d="M5 5H200C307.696 5 395 92.3045 395 200C395 307.696 307.696 395 200 395H5V5Z" stroke="#171717" stroke-width="10" />
-      } @@if(type == "rect") {
-      <rect x="5" y="5" width="390" height="390" stroke="#171717" stroke-width="10" />
-      }
-    </svg>
   </div>
 </div>
