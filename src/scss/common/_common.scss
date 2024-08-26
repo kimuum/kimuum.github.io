@@ -2,7 +2,7 @@ body {
   background-color: $primary;
   &::before {
     content: '';
-    opacity: 0.2;
+    opacity: 0.4;
     display: inline-block;
     position: fixed;
     top: -50%;
@@ -65,8 +65,9 @@ body {
 }
 .wrapper {
   overflow: hidden;
-  width: 100%;
+  width: clamp(28rem, 100%, 200rem);
   height: 100%;
+  margin: 0 auto;
   padding: 0 5rem;
   section[class$='-container'] {
     // padding: 0 15.2rem;
@@ -75,14 +76,16 @@ body {
 .button-box {
   @include flex(row, flex-start, flex-start);
   gap: 0 3rem;
-  .btn-line {
+  .btn {
     @include flex(row, center, center);
     width: 20rem;
     height: 4.5rem;
-    padding: 0 2rem;
-    border: 2px solid $secondary;
     border-radius: 5rem;
+    padding: 0 2rem;
     @include font(1.8rem, 700, $secondary);
+    &.btn-line {
+      border: 2px solid $secondary;
+    }
   }
 }
 .label-box {
@@ -108,12 +111,6 @@ body {
     background-color: $secondary;
     transition: 0.4s ease;
   }
-  &:hover {
-    color: $primary;
-    &::before {
-      width: 100%;
-    }
-  }
 }
 
 .hover-trans {
@@ -132,5 +129,34 @@ body {
   }
   100% {
     transform: translateY(100%);
+  }
+}
+
+// Response
+@media #{$mobile_device} {
+  .hover-bg {
+    &:hover {
+      color: $primary;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media #{$mobile_720} {
+  br {
+    display: none;
+  }
+  .wrapper {
+    padding: 0 2rem;
+  }
+  .button-box {
+    gap: 0 2rem;
+    .btn {
+      width: auto;
+      height: 3.5rem;
+      font-size: 1.4rem;
+    }
   }
 }

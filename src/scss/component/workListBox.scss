@@ -17,39 +17,9 @@
   border: 10px solid $secondary;
   &.circle {
     border-radius: 50%;
-    &.spin {
-      position: relative;
-      &::after {
-        content: '';
-        display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
-        width: 95%;
-        height: 95%;
-        border: 10px dashed $primary;
-        border-radius: 50%;
-        animation: spinAround 10s linear infinite;
-      }
-      &:hover {
-        border-color: transparent;
-        &::after {
-          display: block;
-        }
-      }
-    }
   }
   &.path {
     border-radius: 0 50% 50% 0;
-  }
-  &.hover-bg {
-    &:hover {
-      .work-button {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
   }
   .work-inner {
     position: relative;
@@ -78,9 +48,53 @@
         & + .btn-work {
           margin-top: 0.5rem;
         }
+      }
+    }
+  }
+}
+
+@media #{$mobile_device} {
+  .work-list-box {
+    &.circle {
+      &.spin {
+        position: relative;
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: 95%;
+          height: 95%;
+          border: 10px dashed $primary;
+          border-radius: 50%;
+          animation: spinAround 10s linear infinite;
+        }
         &:hover {
-          .hover-trans {
-            animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+          border-color: transparent;
+          &::after {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &.hover-bg {
+      &:hover {
+        .work-button {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .work-inner {
+      .work-button {
+        .btn-work {
+          &:hover {
+            .hover-trans {
+              animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+            }
           }
         }
       }
@@ -94,5 +108,20 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media #{$tablet_1024} {
+  .work-container {
+    width: 100%;
+    padding: 0;
+  }
+  .work-list-area {
+    flex-direction: column;
+  }
+  .work-list-box {
+    width: 100%;
+    height: auto;
+    border: none;
   }
 }
