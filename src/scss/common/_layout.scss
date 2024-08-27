@@ -52,9 +52,10 @@
   }
   .visual-word {
     opacity: 0.2;
-    @include font(clamp(10px, 5.83vw, 100px), 700, $secondary);
-    text-transform: uppercase;
+    @include font(clamp(10px, 6vw, 100px), 700, $secondary);
+    letter-spacing: -0.05rem;
     white-space: nowrap;
+    text-transform: uppercase;
   }
 }
 
@@ -69,13 +70,14 @@
     margin-top: 15rem;
     .contact-title {
       margin-bottom: 6rem;
-      @include font(clamp(10px, 4vw, 80px), 500, $secondary);
+      @include font(clamp(10px, 6vw, 80px), 600, $secondary);
+      letter-spacing: -0.05rem;
     }
   }
 }
 
 // Response
-@media #{$tablet_1024} {
+@media #{$tablet_1000} {
   .hero-container {
     height: auto;
     .hero-area {
@@ -98,4 +100,17 @@
 }
 
 @media #{$mobile_720} {
+  .visual-container {
+    padding: 15vh 0 10vh;
+  }
+
+  .contact-container {
+    padding: 5vh 0;
+    .contact-bottom {
+      margin-top: 5rem;
+      .contact-title {
+        margin-bottom: 3rem;
+      }
+    }
+  }
 }

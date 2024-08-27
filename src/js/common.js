@@ -84,7 +84,7 @@ function moveWork(e) {
   const worksBox = document.querySelectorAll('.work-list-box');
 
   ScrollTrigger.matchMedia({
-    '(min-width: 1025px)': function () {
+    '(min-width: 1001px)': function () {
       const tl = gsap
         .timeline({
           defaults: {
@@ -103,7 +103,7 @@ function moveWork(e) {
           xPercent: -(100 * (worksBox.length - 1)),
         });
     },
-    '(max-width: 1024px)': function () {
+    '(max-width: 1000px)': function () {
       worksBox.forEach((item) => {
         gsap.fromTo(
           item,
@@ -131,32 +131,72 @@ function moveWork(e) {
 /* VISUAL */
 function moveVisual() {
   const visualWord = document.querySelectorAll('.visual-word');
-  visualWord.forEach((item) => {
-    gsap.to(item, {
-      opacity: '1',
-      scrollTrigger: {
-        trigger: item,
-        start: '+=3500',
-        scrub: true,
-        // markers: true,
-      },
-    });
+
+  ScrollTrigger.matchMedia({
+    '(min-width: 1001px)': function () {
+      visualWord.forEach((item) => {
+        gsap.to(item, {
+          opacity: '1',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top+=4000 center',
+            end: 'top+=3000 center',
+            scrub: true,
+            // markers: true,
+          },
+        });
+      });
+    },
+    '(max-width: 1000px)': function () {
+      visualWord.forEach((item) => {
+        gsap.to(item, {
+          opacity: '1',
+          scrollTrigger: {
+            trigger: item,
+            start: 'top center',
+            end: 'top center',
+            scrub: true,
+            // markers: true,
+          },
+        });
+      });
+    },
   });
+  window.addEventListener('resize', ScrollTrigger.update);
 }
 
 /* CONTACT */
 function moveContact() {
-  const tl = gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: '.contact-container',
-        start: 'top-=20% top+=30%',
-        toggleActions: 'play reverse play reverse',
-        // markers: true,
-      },
-    })
-    .from('.contact-bottom .contact-title', { yPercent: 100 })
-    .from('.contact-bottom .button-box', { yPercent: 100 });
+  ScrollTrigger.matchMedia({
+    '(min-width: 721px)': function () {
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.contact-container',
+            start: 'top-=10 center',
+            toggleActions: 'play reverse play reverse',
+            // markers: true,
+          },
+        })
+        .from('.contact-bottom .contact-title', { yPercent: 50 })
+        .from('.contact-bottom .button-box', { yPercent: 10 });
+    },
+    '(max-width: 720px)': function () {
+      const tl = gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: '.contact-container',
+            start: 'top-=100 center+=50',
+            bottom: 'top center',
+            toggleActions: 'play reverse play reverse',
+            // markers: true,
+          },
+        })
+        .from('.contact-bottom .contact-title', { yPercent: 50 })
+        .from('.contact-bottom .button-box', { yPercent: 10 });
+    },
+  });
+  window.addEventListener('resize', ScrollTrigger.update);
 }
 
 /* 현재시간 */

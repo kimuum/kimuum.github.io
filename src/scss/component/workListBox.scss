@@ -72,7 +72,7 @@
   }
 }
 
-@media #{$mobile_device} {
+@media #{$effective_device} {
   .work-list-box {
     &:last-child {
       position: relative;
@@ -119,7 +119,7 @@
   }
 }
 
-@media #{$tablet_1024} {
+@media #{$tablet_1000} {
   .work-container {
     width: 100%;
     padding: 0;
@@ -188,6 +188,11 @@
   }
   .work-list-box {
     height: 20rem;
+    .work-inner {
+      .work-title {
+        font-size: 2.2rem;
+      }
+    }
   }
 }
 

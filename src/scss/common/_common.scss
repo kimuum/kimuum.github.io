@@ -105,7 +105,7 @@ body {
 }
 
 // Response
-@media #{$mobile_device} {
+@media #{$effective_device} {
   // 호버시 효과
   .hover-bg {
     overflow: hidden;
@@ -141,7 +141,7 @@ body {
   }
 }
 
-@media #{$tablet_1024} {
+@media #{$tablet_1000} {
   .hover-trans {
     span:last-child {
       display: none;
@@ -157,10 +157,12 @@ body {
     padding: 0 2rem;
   }
   .button-box {
-    gap: 0 2rem;
+    gap: 0 1.5rem;
+    width: 100%;
     .btn {
-      width: auto;
+      width: calc(50% - 0.75rem);
       height: 3.5rem;
+      padding: 0 1rem;
       font-size: 1.4rem;
     }
   }

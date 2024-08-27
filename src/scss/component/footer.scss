@@ -6,7 +6,7 @@
   }
   .footer-left {
     @include flex(row, flex-start, center);
-    gap: 0 3rem;
+    gap: 3rem;
   }
   [class^='footer-'] {
     .footer-item {
@@ -16,7 +16,7 @@
   }
 }
 
-@media #{$mobile_device} {
+@media #{$effective_device} {
   .footer-container {
     [class^='footer-'] {
       .footer-item {
@@ -25,6 +25,24 @@
             animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
           }
         }
+      }
+    }
+  }
+}
+
+@media #{$mobile_720} {
+  .footer-container {
+    padding: 1rem 0 2rem;
+    .footer-area {
+      align-items: flex-start;
+    }
+    .footer-left {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    [class^='footer-'] {
+      .footer-item {
+        font-size: 1.6rem;
       }
     }
   }
