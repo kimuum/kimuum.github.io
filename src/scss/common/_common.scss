@@ -63,6 +63,7 @@ body {
     transform: translate(5%, 0);
   }
 }
+
 .wrapper {
   overflow: hidden;
   width: clamp(28rem, 100%, 200rem);
@@ -73,9 +74,16 @@ body {
     // padding: 0 15.2rem;
   }
 }
+
+button {
+  &:focus {
+    outline: 2px solid #000;
+  }
+}
+
 .button-box {
   @include flex(row, flex-start, flex-start);
-  gap: 0 3rem;
+  gap: 3rem;
   .btn {
     @include flex(row, center, center);
     width: 20rem;
@@ -122,6 +130,7 @@ body {
       background-color: $secondary;
       transition: 0.4s ease;
     }
+    &:focus-within,
     &:hover {
       color: $primary;
       &::before {
@@ -150,6 +159,11 @@ body {
 }
 
 @media #{$mobile_720} {
+  * {
+    &:focus {
+      outline: none !important;
+    }
+  }
   br {
     display: none;
   }
@@ -157,7 +171,7 @@ body {
     padding: 0 2rem;
   }
   .button-box {
-    gap: 0 1.5rem;
+    gap: 1.5rem;
     width: 100%;
     .btn {
       width: calc(50% - 0.75rem);
