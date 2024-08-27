@@ -95,34 +95,6 @@ body {
   }
 }
 
-// 호버시 효과
-.hover-bg {
-  overflow: hidden;
-  position: relative;
-  &::before {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 0;
-    height: 100%;
-    background-color: $secondary;
-    transition: 0.4s ease;
-  }
-}
-
-.hover-trans {
-  position: relative;
-  display: inline-block;
-  span:last-child {
-    position: absolute;
-    left: 0;
-    bottom: 100%;
-  }
-}
-
 @keyframes btnAnimation {
   0% {
     transform: translateY(0);
@@ -134,12 +106,45 @@ body {
 
 // Response
 @media #{$mobile_device} {
+  // 호버시 효과
   .hover-bg {
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 0;
+      height: 100%;
+      background-color: $secondary;
+      transition: 0.4s ease;
+    }
     &:hover {
       color: $primary;
       &::before {
         width: 100%;
       }
+    }
+  }
+
+  .hover-trans {
+    position: relative;
+    display: inline-block;
+    span:last-child {
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+    }
+  }
+}
+
+@media #{$tablet_1024} {
+  .hover-trans {
+    span:last-child {
+      display: none;
     }
   }
 }
@@ -157,6 +162,11 @@ body {
       width: auto;
       height: 3.5rem;
       font-size: 1.4rem;
+    }
+  }
+  .label-box {
+    .label {
+      font-size: 1.2rem;
     }
   }
 }

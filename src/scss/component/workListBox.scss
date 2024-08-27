@@ -8,6 +8,7 @@
 .work-list-area {
   @include flex(row, flex-start, flex-start);
   gap: 1.5rem;
+  counter-reset: workCount;
 }
 .work-list-box {
   flex-shrink: 0;
@@ -15,6 +16,13 @@
   height: 40rem;
   background-color: $primary;
   border: 10px solid $secondary;
+  &:last-child {
+    .work-inner {
+      &::after {
+        display: none;
+      }
+    }
+  }
   &.circle {
     border-radius: 50%;
   }
@@ -27,14 +35,27 @@
     width: 100%;
     height: 100%;
     text-align: center;
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+      counter-increment: workCount;
+      content: counter(workCount);
+      @include font(1.4rem, 700, $secondary);
+    }
     .work-title {
       @include font(clamp(10px, 8.33vw, 35px), 700, $secondary, normal);
       white-space: pre-line;
+      word-break: keep-all;
     }
     .work-button {
       visibility: hidden;
       opacity: 0;
       @include flex(column, center, center);
+      gap: 1rem;
       position: absolute;
       top: 0;
       left: 0;
@@ -42,12 +63,10 @@
       width: 100%;
       height: 100%;
       transition: 0.5s ease;
+
       .btn-work {
         overflow: hidden;
-        @include font(2.5rem, 600, $primary);
-        & + .btn-work {
-          margin-top: 0.5rem;
-        }
+        @include font(clamp(16px, 2.4vw, 25px), 600, $primary);
       }
     }
   }
@@ -55,27 +74,25 @@
 
 @media #{$mobile_device} {
   .work-list-box {
-    &.circle {
-      &.spin {
-        position: relative;
+    &:last-child {
+      position: relative;
+      &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 95%;
+        height: 95%;
+        border: 10px dashed $primary;
+        border-radius: 50%;
+        animation: spinAround 10s linear infinite;
+      }
+      &:hover {
+        border: none;
         &::after {
-          content: '';
-          display: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          z-index: 0;
-          width: 95%;
-          height: 95%;
-          border: 10px dashed $primary;
-          border-radius: 50%;
-          animation: spinAround 10s linear infinite;
-        }
-        &:hover {
-          border-color: transparent;
-          &::after {
-            display: block;
-          }
+          display: block;
         }
       }
     }
@@ -102,26 +119,83 @@
   }
 }
 
+@media #{$tablet_1024} {
+  .work-container {
+    width: 100%;
+    padding: 0;
+    .work-bottom {
+      margin-top: 2rem;
+    }
+  }
+  .work-list-area {
+    flex-direction: column;
+    gap: 5rem;
+  }
+  .work-list-box {
+    width: 100%;
+    height: 25rem;
+    padding: 3rem 2rem;
+    border-width: 5px;
+    border-radius: initial !important;
+    box-shadow: rgba($secondary, 0.4) 5px 5px, rgba($secondary, 0.3) 10px 10px, rgba($secondary, 0.2) 15px 15px, rgba($secondary, 0.1) 20px 20px, rgba($secondary, 0.05) 25px 25px;
+    &:last-child {
+      background-color: $secondary;
+      .work-inner {
+        &::after {
+          color: $primary;
+        }
+        .work-title {
+          color: $primary;
+        }
+        .work-button {
+          .btn-work {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .work-inner {
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: initial;
+      &::after {
+        display: block;
+      }
+      .work-title {
+        white-space: initial;
+        @include ellipsis(2);
+      }
+      .work-button {
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        align-self: flex-end;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        width: auto;
+        height: auto;
+        .btn-work {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_720} {
+  .work-list-area {
+    gap: 2rem;
+  }
+  .work-list-box {
+    height: 20rem;
+  }
+}
+
 @keyframes spinAround {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@media #{$tablet_1024} {
-  .work-container {
-    width: 100%;
-    padding: 0;
-  }
-  .work-list-area {
-    flex-direction: column;
-  }
-  .work-list-box {
-    width: 100%;
-    height: auto;
-    border: none;
   }
 }
