@@ -1,42 +1,42 @@
-<body class="light">
+<body>
   <div class="wrapper">
+    <!-- prettier-ignore -->
+    @@include('headerWork.html')
+
     <!-- main -->
     <main class="main">
-      <!-- content-container -->
+      <!-- work-content-container -->
       <section class="work-content-container">
         <div class="work-content-area">
           <div class="work-content-thumb-box">
-            <div class="work-thumb-top">
-              <div class="name">
-                <span>김윤희 웹포트폴리오</span>
-              </div>
-            </div>
-            <div class="work-thumb-middle">
-              <div class="work-thumb-area">
-                <!-- prettier-ignore -->
-                @@for(var i = 0; i < thumb.length; i++) {
-                  @@include("workThumb.html",  `+(JSON.stringify(thumb[i]))+`)
-                }
-              </div>
-            </div>
-          </div>
-          <div class="work-content-desc-box">
-            <div class="work-desc-top">
-              <h1 class="title">@@title</h1>
-              <a href="/" class="btn" aria-label="HOME">
-                <div class="hover-trans">
-                  <span aria-hidden="true">HOME</span>
-                  <span aria-hidden="true">HOME</span>
-                </div>
-              </a>
-            </div>
-            <div class="work-desc-middle">
+            <div class="work-thumb-area">
               <!-- prettier-ignore -->
-              @@for(var i = 0; i < desc.length; i++) {
-                @@include("workDesc.html",  `+(JSON.stringify(desc[i]))+`)
+              @@for(var i = 0; i < thumb.length; i++) {
+                @@include("workThumb.html",  `+(JSON.stringify(thumb[i]))+`)
               }
             </div>
-            <div class="work-desc-bottom">
+          </div>
+          <div class="work-content-info-box">
+            <div class="work-info-top">
+              <div class="info-title-box">
+                <h1 class="info-title">@@title</h1>
+              </div>
+              <div class="info-content-area">
+                <div class="info-desc-box">
+                  <!-- prettier-ignore -->
+                  @@for(var i = 0; i < infoDesc.length; i++) {
+                    @@include("workInfoDesc.html",  `+(JSON.stringify(infoDesc[i]))+`)
+                  }
+                </div>
+                <ul class="info-list-box">
+                  <!-- prettier-ignore -->
+                  @@for(var i = 0; i < infoList.length; i++) {
+                    @@include("workInfoList.html",  `+(JSON.stringify(infoList[i]))+`)
+                  }
+                </ul>
+              </div>
+            </div>
+            <div class="work-info-bottom">
               <div class="button-box">
                 <a href="@@visitLink" target="_blank" class="btn" aria-label="VISIT">
                   <div class="hover-trans">
@@ -44,7 +44,7 @@
                     <span aria-hidden="true">VISIT</span>
                   </div>
                 </a>
-                <a href="@@nextLink" class="btn" aria-label="NEXT">
+                <a href="./@@nextLink.html" class="btn" aria-label="NEXT">
                   <div class="hover-trans">
                     <span aria-hidden="true">NEXT</span>
                     <span aria-hidden="true">NEXT</span>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </section>
-      <!-- //content-container -->
+      <!-- //work-content-container -->
     </main>
     <!-- // main -->
   </div>

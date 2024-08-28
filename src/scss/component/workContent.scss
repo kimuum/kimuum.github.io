@@ -1,0 +1,141 @@
+.work-header-container {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+}
+.work-header-area {
+  @include flex(row, space-between, center);
+  padding: 0 5rem;
+  .header-left {
+    .header-title {
+      color: $third;
+    }
+  }
+  .header-right {
+    overflow: hidden;
+    .btn {
+      @include font(2rem, 600, $third);
+    }
+  }
+}
+
+.work-content-container {
+  .work-content-area {
+    @include flex(row, flex-start, flex-start);
+    gap: 8rem;
+    height: 100%;
+    > div {
+      flex: 1;
+    }
+  }
+}
+.work-content-thumb-box {
+  .work-thumb-area {
+    overflow-y: auto;
+    @include flex(column, flex-start, flex-start);
+    gap: 5rem;
+    height: 100%;
+  }
+  .work-thumb-box {
+    // aspect-ratio: 1280/892;
+    width: 100%;
+    height: 50rem;
+  }
+}
+
+.work-content-info-box {
+  position: sticky;
+  top: 0;
+  right: 0;
+  @include flex(column, space-between, flex-start);
+  height: 100vh;
+  padding: 3rem 0;
+}
+.work-info-top {
+  width: calc(100% - 8rem);
+  .info-title-box {
+    margin-bottom: 14rem;
+    .info-title {
+      @include font(clamp(30px, 2.8vw, 300px), 700, $third);
+      letter-spacing: -0.05rem;
+    }
+  }
+}
+.info-content-area {
+  @include flex(row, flex-start, flex-start);
+  gap: 3rem;
+  word-break: keep-all;
+  .info-desc-box {
+    .desc-text {
+      @include font(clamp(16px, 1.15vw, 300px), 600, $third, 1.65);
+      white-space: pre-line;
+      & + .desc-text {
+        margin-top: 3rem;
+      }
+    }
+  }
+  .info-list-box {
+    min-width: 12rem;
+    .list-text {
+      @include font(clamp(14px, 0.7vw, 300px), 800, $third, 1.65);
+      letter-spacing: 0.01rem;
+      list-style: disc;
+      & + .list-text {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.work-info-bottom {
+  width: 100%;
+  .button-box {
+    overflow: hidden;
+    justify-content: space-between;
+    .btn {
+      width: auto;
+      height: auto;
+      padding: 0;
+      @include font(2rem, 600, $third);
+    }
+  }
+}
+
+@media #{$effective_device} {
+  .work-header-area {
+    .header-right {
+      .btn {
+        &:hover {
+          .hover-trans {
+            animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+          }
+        }
+      }
+    }
+  }
+  .work-info-bottom {
+    .button-box {
+      .btn {
+        &:hover {
+          .hover-trans {
+            animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet_1000} {
+  .work-content-container {
+    .work-content-area {
+      flex-direction: column-reverse;
+    }
+  }
+}
+
+@media #{$mobile_720} {
+}

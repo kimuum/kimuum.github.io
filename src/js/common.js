@@ -7,34 +7,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   gsap.ticker.lagSmoothing(0);
 
-  window.addEventListener('scroll', function () {
-    scrollControl();
-  });
+  const body = document.body;
+  if (body.classList.contains('main-page')) {
+    window.addEventListener('scroll', function () {
+      scrollControl();
+    });
 
-  moveHero();
-  moveVisual();
-  moveWork();
-  moveContact();
-  getClock();
-  setInterval(getClock, 1000);
-  navigator.geolocation.getCurrentPosition(onGeoOk);
+    moveHero();
+    moveVisual();
+    moveWork();
+    moveContact();
+    getClock();
+    setInterval(getClock, 1000);
+    navigator.geolocation.getCurrentPosition(onGeoOk);
 
-  // top 버튼 클릭시 상단 이동
-  const topButton = document.querySelector('.btn-top');
-  if (topButton) {
-    topButton.addEventListener('click', function () {
-      lenis.scrollTo(0);
+    // top 버튼 클릭시 상단 이동
+    const topButton = document.querySelector('.btn-top');
+    if (topButton) {
+      topButton.addEventListener('click', function () {
+        lenis.scrollTo(0);
+      });
+    }
+
+    // gnb 클릭시 영역이동
+    const gnbList = document.querySelectorAll('.gnb-list');
+    gnbList.forEach((item) => {
+      item.addEventListener('click', function () {
+        id = this.dataset.id;
+        lenis.scrollTo(id);
+      });
     });
   }
-
-  // gnb 클릭시 영역이동
-  const gnbList = document.querySelectorAll('.gnb-list');
-  gnbList.forEach((item) => {
-    item.addEventListener('click', function () {
-      id = this.dataset.id;
-      lenis.scrollTo(id);
-    });
-  });
 });
 /* SCROLL */
 function scrollControl() {
