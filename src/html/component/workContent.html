@@ -1,0 +1,62 @@
+<body class="light">
+  <div class="wrapper">
+    <!-- main -->
+    <main class="main">
+      <!-- content-container -->
+      <section class="work-content-container">
+        <div class="work-content-area">
+          <div class="work-content-thumb-box">
+            <div class="work-thumb-top">
+              <div class="name">
+                <span>김윤희 웹포트폴리오</span>
+              </div>
+            </div>
+            <div class="work-thumb-middle">
+              <div class="work-thumb-area">
+                <!-- prettier-ignore -->
+                @@for(var i = 0; i < thumb.length; i++) {
+                  @@include("workThumb.html",  `+(JSON.stringify(thumb[i]))+`)
+                }
+              </div>
+            </div>
+          </div>
+          <div class="work-content-desc-box">
+            <div class="work-desc-top">
+              <h1 class="title">@@title</h1>
+              <a href="/" class="btn" aria-label="HOME">
+                <div class="hover-trans">
+                  <span aria-hidden="true">HOME</span>
+                  <span aria-hidden="true">HOME</span>
+                </div>
+              </a>
+            </div>
+            <div class="work-desc-middle">
+              <!-- prettier-ignore -->
+              @@for(var i = 0; i < desc.length; i++) {
+                @@include("workDesc.html",  `+(JSON.stringify(desc[i]))+`)
+              }
+            </div>
+            <div class="work-desc-bottom">
+              <div class="button-box">
+                <a href="@@visitLink" target="_blank" class="btn" aria-label="VISIT">
+                  <div class="hover-trans">
+                    <span aria-hidden="true">VISIT</span>
+                    <span aria-hidden="true">VISIT</span>
+                  </div>
+                </a>
+                <a href="@@nextLink" class="btn" aria-label="NEXT">
+                  <div class="hover-trans">
+                    <span aria-hidden="true">NEXT</span>
+                    <span aria-hidden="true">NEXT</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //content-container -->
+    </main>
+    <!-- // main -->
+  </div>
+</body>

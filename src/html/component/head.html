@@ -7,13 +7,19 @@
   <meta http-equiv="content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="format-detection" content="telephone=no" />
+  @@if(type == "index") {
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon_16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon/favicon_32.png" />
   <link rel="icon" type="image/png" sizes="48x48" href="./assets/images/favicon/favicon_48.png" />
   <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+  } @@if(type == 'sub') {
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" />
+  }
   <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="./assets/js/bundle.js"></script>
   <title>UNI | Portfolio</title>
 </head>

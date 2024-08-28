@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
   <!-- prettier-ignore -->
-  @@include('head.html')
+  @@include('head.html', {
+    "type" : "index",
+  })
 
   <body>
     <div class="wrapper">
@@ -88,7 +90,7 @@
                         "title" : "아메바 \n웹사이트 개편",
                         "button" : [
                           { 
-                            "link" : "",
+                            "link" : "./html/works/work_amoeba.html",
                             "buttonTitle" : "자세히 보기"
                           },
                           {
@@ -213,5 +215,6 @@
       <!-- prettier-ignore -->
       @@include('footer.html')
     </div>
+    <script src="./assets/js/bundle.js"></script>
   </body>
 </html>
