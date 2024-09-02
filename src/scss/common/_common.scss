@@ -20,9 +20,6 @@ body {
       border-color: $primary;
       background: $secondary;
     }
-    .wrapper {
-      overflow: hidden;
-    }
   }
   &::-webkit-scrollbar {
     width: 12px;
@@ -81,10 +78,9 @@ body {
   padding: 0 5rem;
 }
 
-button,
-a {
+button {
   &:focus {
-    outline: 3px solid #fff;
+    outline: 3px solid #000;
   }
 }
 
@@ -101,12 +97,6 @@ a {
     &.btn-line {
       border: 2px solid $secondary;
     }
-  }
-}
-.label-box {
-  .label {
-    @include font(1.8rem, 600, $secondary);
-    letter-spacing: -0.05rem;
   }
 }
 
@@ -185,11 +175,6 @@ a {
       height: 3.5rem;
       padding: 0 1rem;
       font-size: 1.4rem;
-    }
-  }
-  .label-box {
-    .label {
-      font-size: 1.2rem;
     }
   }
 }

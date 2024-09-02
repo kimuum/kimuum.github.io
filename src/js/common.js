@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     moveHero();
     moveVisual();
-    moveWork();
+    // moveWork();
     moveContact();
     getClock();
     setInterval(getClock, 1000);
@@ -135,71 +135,70 @@ function moveWork(e) {
 function moveVisual() {
   const visualWord = document.querySelectorAll('.visual-word');
 
-  ScrollTrigger.matchMedia({
-    '(min-width: 1001px)': function () {
-      visualWord.forEach((item) => {
-        gsap.to(item, {
-          opacity: '1',
-          scrollTrigger: {
-            trigger: item,
-            start: 'top+=4000 center',
-            end: 'top+=3000 center',
-            scrub: true,
-            // markers: true,
-          },
-        });
-      });
-    },
-    '(max-width: 1000px)': function () {
-      visualWord.forEach((item) => {
-        gsap.to(item, {
-          opacity: '1',
-          scrollTrigger: {
-            trigger: item,
-            start: 'top center',
-            end: 'top center',
-            scrub: true,
-            // markers: true,
-          },
-        });
-      });
-    },
+  visualWord.forEach((item) => {
+    gsap.to(item, {
+      opacity: '1',
+      scrollTrigger: {
+        trigger: item,
+        start: 'top center',
+        scrub: true,
+        // markers: true,
+      },
+    });
   });
-  window.addEventListener('resize', ScrollTrigger.update);
+
+  // ScrollTrigger.matchMedia({
+  //   '(min-width: 1001px)': function () {},
+  //   '(max-width: 1000px)': function () {
+  //     visualWord.forEach((item) => {
+  //       gsap.to(item, {
+  //         opacity: '1',
+  //         scrollTrigger: {
+  //           trigger: item,
+  //           start: 'top center',
+  //           end: 'top center',
+  //           scrub: true,
+  //           // markers: true,
+  //         },
+  //       });
+  //     });
+  //   },
+  // });
+  // window.addEventListener('resize', ScrollTrigger.update);
 }
 
 /* CONTACT */
 function moveContact() {
-  ScrollTrigger.matchMedia({
-    '(min-width: 721px)': function () {
-      const tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: '.contact-container',
-            start: 'top-=10 center',
-            toggleActions: 'play reverse play reverse',
-            // markers: true,
-          },
-        })
-        .from('.contact-bottom .contact-title', { yPercent: 50 })
-        .from('.contact-bottom .button-box', { yPercent: 10 });
-    },
-    '(max-width: 720px)': function () {
-      const tl = gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: '.contact-container',
-            start: 'top-=100 center+=50',
-            bottom: 'top center',
-            toggleActions: 'play reverse play reverse',
-            // markers: true,
-          },
-        })
-        .from('.contact-bottom .contact-title', { yPercent: 50 })
-        .from('.contact-bottom .button-box', { yPercent: 10 });
-    },
-  });
-  window.addEventListener('resize', ScrollTrigger.update);
+  const tl = gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: '.contact-container',
+        start: 'top-=100 center',
+        toggleActions: 'play reverse play reverse',
+        // markers: true,
+      },
+    })
+    .from('.contact-title', { yPercent: 100 })
+    .from('.button-box', { yPercent: 50 });
+
+  // ScrollTrigger.matchMedia({
+  //   '(min-width: 721px)': function () {},
+  //   '(max-width: 720px)': function () {
+  //     const tl = gsap
+  //       .timeline({
+  //         scrollTrigger: {
+  //           trigger: '.contact-container',
+  //           start: 'top-=100 center+=50',
+  //           bottom: 'top center',
+  //           toggleActions: 'play reverse play reverse',
+  //           // markers: true,
+  //         },
+  //       })
+  //       .from('.contact-title', { yPercent: 50 })
+  //       .from('.button-box', { yPercent: 10 });
+  //   },
+  // });
+  // window.addEventListener('resize', ScrollTrigger.update);
 }
 
 /* 현재시간 */

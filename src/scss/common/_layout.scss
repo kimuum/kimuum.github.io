@@ -45,7 +45,7 @@
 }
 
 .visual-container {
-  padding: 30rem 0 10rem;
+  padding: 30rem 0;
   .visual-area {
     @include flex(column, center, center);
     height: 100%;
@@ -62,17 +62,14 @@
 .contact-container {
   padding: 10rem 0 20rem;
   .contact-area {
-    height: 100%;
-  }
-  .contact-bottom {
     overflow: hidden;
     @include flex(column, center, center);
-    margin-top: 15rem;
-    .contact-title {
-      margin-bottom: 6rem;
-      @include font(clamp(10px, 6vw, 80px), 600, $secondary);
-      letter-spacing: -0.05rem;
-    }
+    height: 100%;
+  }
+  .contact-title {
+    margin-bottom: 6rem;
+    @include font(clamp(10px, 6vw, 80px), 600, $secondary);
+    letter-spacing: -0.05rem;
   }
 }
 

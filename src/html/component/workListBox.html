@@ -1,11 +1,18 @@
-<div class="work-list-box hover-bg @@typeClass" tabindex="0">
+<li class="work-list-box" tabindex="0">
   <div class="work-inner">
-    <div class="work-title">@@title</div>
-    <div class="work-button">
-      <!-- prettier-ignore -->
-      @@for(var i = 0; i < button.length; i++) {
+    <div class="work-left">
+      <div class="work-title">@@title</div>
+      <div class="work-button">
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < button.length; i++) {
         @@include("workButton.html",  `+(JSON.stringify(button[i]))+`)
       }
+      </div>
+    </div>
+    <div class="work-right">
+      <div class="thumb-box">
+        <img src="../../assets/images/works/dummy.png" alt="" />
+      </div>
     </div>
   </div>
-</div>
+</li>
