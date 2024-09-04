@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     moveHero();
     moveVisual();
-    // moveWork();
+    moveWork();
     moveContact();
     getClock();
     setInterval(getClock, 1000);
@@ -83,30 +83,31 @@ function moveHero() {
 }
 
 /* WORK */
-function moveWork(e) {
+function moveWork() {
   const worksBox = document.querySelectorAll('.work-list-box');
 
   ScrollTrigger.matchMedia({
-    '(min-width: 1001px)': function () {
-      const tl = gsap
-        .timeline({
-          defaults: {
-            ease: 'none',
+    '(min-width: 1025px)': function () {
+      worksBox.forEach((item) => {
+        gsap.fromTo(
+          item,
+          { opacity: 0, x: 50 },
+          {
+            opacity: 1,
+            x: 0,
+            scrollTrigger: {
+              trigger: item,
+              start: 'top center',
+              end: 'bottom center',
+              toggleActions: 'play none none reverse',
+              scrub: 1,
+              // markers: true,
+            },
           },
-          scrollTrigger: {
-            trigger: '.work-container',
-            pin: true,
-            scrub: 0.5,
-            start: 'top-=25% top',
-            end: '+=4000',
-            // markers: true,
-          },
-        })
-        .to('.work-list-box', {
-          xPercent: -(100 * (worksBox.length - 1)),
-        });
+        );
+      });
     },
-    '(max-width: 1000px)': function () {
+    '(max-width: 1024px)': function () {
       worksBox.forEach((item) => {
         gsap.fromTo(
           item,
@@ -146,25 +147,6 @@ function moveVisual() {
       },
     });
   });
-
-  // ScrollTrigger.matchMedia({
-  //   '(min-width: 1001px)': function () {},
-  //   '(max-width: 1000px)': function () {
-  //     visualWord.forEach((item) => {
-  //       gsap.to(item, {
-  //         opacity: '1',
-  //         scrollTrigger: {
-  //           trigger: item,
-  //           start: 'top center',
-  //           end: 'top center',
-  //           scrub: true,
-  //           // markers: true,
-  //         },
-  //       });
-  //     });
-  //   },
-  // });
-  // window.addEventListener('resize', ScrollTrigger.update);
 }
 
 /* CONTACT */
@@ -178,27 +160,8 @@ function moveContact() {
         // markers: true,
       },
     })
-    .from('.contact-title', { yPercent: 100 })
-    .from('.button-box', { yPercent: 50 });
-
-  // ScrollTrigger.matchMedia({
-  //   '(min-width: 721px)': function () {},
-  //   '(max-width: 720px)': function () {
-  //     const tl = gsap
-  //       .timeline({
-  //         scrollTrigger: {
-  //           trigger: '.contact-container',
-  //           start: 'top-=100 center+=50',
-  //           bottom: 'top center',
-  //           toggleActions: 'play reverse play reverse',
-  //           // markers: true,
-  //         },
-  //       })
-  //       .from('.contact-title', { yPercent: 50 })
-  //       .from('.button-box', { yPercent: 10 });
-  //   },
-  // });
-  // window.addEventListener('resize', ScrollTrigger.update);
+    .from('.contact-container .contact-title', { yPercent: 100 })
+    .from('.contact-container .button-box', { yPercent: 50 });
 }
 
 /* 현재시간 */

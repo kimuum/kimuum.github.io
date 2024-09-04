@@ -19,6 +19,7 @@
   }
 }
 .work-list-area {
+  overflow: hidden;
   @include flex(column, flex-start, flex-start);
   width: 60vw;
   margin-bottom: 5rem;
@@ -112,7 +113,6 @@
       transition: 0.3s ease;
     }
     img {
-      filter: grayscale(1);
       object-fit: contain;
       transition: 0.3s ease;
     }
@@ -137,9 +137,6 @@
         .thumb-box {
           &::before {
             opacity: 0;
-          }
-          img {
-            filter: initial;
           }
         }
       }
@@ -179,7 +176,7 @@
   }
   .work-list-area {
     width: 100%;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
   }
 
   .work-right {
@@ -188,9 +185,6 @@
     .thumb-box {
       &::before {
         display: none;
-      }
-      img {
-        filter: initial;
       }
     }
   }
