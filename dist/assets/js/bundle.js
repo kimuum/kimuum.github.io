@@ -141,8 +141,9 @@ function moveVisual() {
       opacity: '1',
       scrollTrigger: {
         trigger: item,
-        start: 'top center',
-        scrub: true,
+        start: 'top center+=100',
+        end: 'bottom center+=100',
+        scrub: 1,
         // markers: true,
       },
     });
@@ -155,9 +156,9 @@ function moveContact() {
     .timeline({
       scrollTrigger: {
         trigger: '.contact-container',
-        start: 'top-=100 center',
+        start: 'top-=100 bottom',
         toggleActions: 'play reverse play reverse',
-        // markers: true,
+        markers: true,
       },
     })
     .from('.contact-container .contact-title', { yPercent: 100 })
