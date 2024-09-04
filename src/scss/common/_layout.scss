@@ -74,7 +74,7 @@
 }
 
 // Response
-@media #{$tablet_1000} {
+@media #{$tablet_1024} {
   .hero-container {
     height: auto;
     .hero-area {
@@ -93,6 +93,9 @@
         }
       }
     }
+    .button-box {
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -107,6 +110,11 @@
       margin-top: 5rem;
       .contact-title {
         margin-bottom: 3rem;
+      }
+    }
+    .button-box {
+      .btn {
+        width: calc(50% - 0.75rem);
       }
     }
   }

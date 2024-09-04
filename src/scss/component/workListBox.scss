@@ -21,13 +21,13 @@
 .work-list-area {
   @include flex(column, flex-start, flex-start);
   width: 60vw;
+  margin-bottom: 5rem;
   counter-reset: workCount;
 }
 
 .work-list-box {
   width: 100%;
   height: 35rem;
-  background-color: $primary;
   & + .work-list-box {
     border-top: 1px solid $secondary;
   }
@@ -72,7 +72,6 @@
     white-space: pre-line;
     word-break: keep-all;
     transition: 0.4s ease;
-
     &::before {
       content: '';
       display: block;
@@ -81,13 +80,11 @@
       @include font(8rem, 300, $secondary);
     }
   }
-  .work-button {
+  .button-box {
     position: absolute;
     top: 100%;
     z-index: 2;
-    @include flex(column, center, center);
     height: 0;
-    gap: 1rem;
     transition: 0.4s ease;
     .btn-work {
       overflow: hidden;
@@ -131,7 +128,7 @@
           opacity: 0;
           visibility: hidden;
         }
-        .work-button {
+        .button-box {
           top: 0;
           height: 100%;
         }
@@ -148,7 +145,7 @@
       }
     }
     .work-inner {
-      .work-button {
+      .button-box {
         .btn-work {
           &:focus-within,
           &:hover {
@@ -162,79 +159,94 @@
   }
 }
 
-@media #{$tablet_1000} {
+@media #{$tablet_1024} {
   .work-container {
-    width: 100%;
-    padding: 0;
-    .work-bottom {
-      margin-top: 2rem;
+    padding-top: 0;
+    .work-area {
+      display: block;
+    }
+    .work-area-left {
+      position: static;
+      height: auto;
+      margin-bottom: 3rem;
+      padding-top: 0;
+      .work-label-box {
+        .work-label {
+          font-size: 5rem;
+        }
+      }
     }
   }
   .work-list-area {
-    flex-direction: column;
-    gap: 5rem;
-  }
-  .work-list-box {
     width: 100%;
-    height: 25rem;
-    padding: 3rem 2rem;
-    border-width: 5px;
-    border-radius: initial !important;
-    box-shadow: rgba($secondary, 0.4) 5px 5px, rgba($secondary, 0.3) 10px 10px, rgba($secondary, 0.2) 15px 15px, rgba($secondary, 0.1) 20px 20px, rgba($secondary, 0.05) 25px 25px;
-    &:last-child {
-      background-color: $secondary;
-      .work-inner {
-        &::after {
-          color: $primary;
-        }
-        .work-title {
-          color: $primary;
-        }
-        .work-button {
-          .btn-work {
-            color: $primary;
-          }
-        }
+    margin-bottom: 0;
+  }
+
+  .work-right {
+    position: relative;
+    margin-left: auto;
+    .thumb-box {
+      &::before {
+        display: none;
       }
-    }
-    .work-inner {
-      justify-content: space-between;
-      align-items: flex-start;
-      text-align: initial;
-      &::after {
-        display: block;
-      }
-      .work-title {
-        white-space: initial;
-        @include ellipsis(2);
-      }
-      .work-button {
-        opacity: 1;
-        visibility: visible;
-        position: static;
-        align-self: flex-end;
-        justify-content: flex-end;
-        gap: 0.5rem;
-        width: auto;
-        height: auto;
-        .btn-work {
-          color: $secondary;
-        }
+      img {
+        filter: initial;
       }
     }
   }
 }
 
 @media #{$mobile_720} {
-  .work-list-area {
-    gap: 2rem;
+  .work-container {
+    .work-area-left {
+      .work-label-box {
+        .work-label {
+          font-size: 2.8rem;
+        }
+      }
+    }
   }
   .work-list-box {
-    height: 20rem;
-    .work-inner {
-      .work-title {
-        font-size: 2.2rem;
+    height: auto;
+    &:nth-child(even) {
+      .work-inner {
+        flex-direction: row;
       }
+      .work-left {
+        &::before {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+    .work-inner {
+      display: block;
+      padding: 2rem 0;
+    }
+  }
+  .work-left {
+    @include flex(row, flex-start, flex-start);
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    .work-title {
+      position: static;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 3rem;
+      white-space: initial;
+      font-size: 2rem;
+      &::before {
+        font-size: 1.6rem;
+      }
+    }
+    .button-box {
+      position: static;
+      align-items: flex-end;
+      width: auto;
+      height: auto;
     }
   }
 }

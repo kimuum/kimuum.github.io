@@ -1,4 +1,5 @@
 .footer-container {
+  position: relative;
   padding: 2.5rem 0 3rem;
   border-top: 2px solid $secondary;
   .footer-area {
@@ -7,6 +8,12 @@
   .footer-left {
     @include flex(row, flex-start, center);
     gap: 3rem;
+  }
+  .footer-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   [class^='footer-'] {
     .footer-item {
@@ -39,6 +46,10 @@
     .footer-left {
       flex-direction: column;
       gap: 0.5rem;
+    }
+    .footer-center {
+      position: static;
+      transform: initial;
     }
     [class^='footer-'] {
       .footer-item {
