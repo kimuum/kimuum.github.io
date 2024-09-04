@@ -158,7 +158,7 @@ function moveContact() {
         trigger: '.contact-container',
         start: 'top-=100 bottom',
         toggleActions: 'play reverse play reverse',
-        markers: true,
+        // markers: true,
       },
     })
     .from('.contact-container .contact-title', { yPercent: 100 })
