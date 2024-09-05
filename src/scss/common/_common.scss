@@ -21,6 +21,8 @@ body {
       background: $secondary;
     }
   }
+  &.sub-page {
+  }
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -77,6 +79,9 @@ body {
   height: 100%;
   margin: 0 auto;
   padding: 0 5rem;
+  .main {
+    height: 100%;
+  }
 }
 
 button,
@@ -166,6 +171,15 @@ a {
   * {
     &:focus {
       outline: none !important;
+    }
+  }
+  body {
+    &.sub-page {
+      .wrapper {
+        overflow: hidden;
+        height: calc(100vh - 2rem);
+        padding: 5rem 2rem 2rem;
+      }
     }
   }
   br {

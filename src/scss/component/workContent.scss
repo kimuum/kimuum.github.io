@@ -23,6 +23,7 @@
 }
 
 .work-content-container {
+  height: 100%;
   .work-content-area {
     @include flex(row, flex-start, flex-start);
     gap: 10rem;
@@ -43,7 +44,7 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
-    aspect-ratio: 16/9;
+    aspect-ratio: 1280/892;
   }
 }
 
@@ -57,7 +58,6 @@
   padding: 3rem 0;
 }
 .work-info-top {
-  width: calc(100% - 8rem);
   .info-title-box {
     margin-bottom: 14rem;
     .info-title {
@@ -68,7 +68,7 @@
 }
 .info-content-area {
   @include flex(row, flex-start, flex-start);
-  gap: 3rem;
+  gap: 5rem;
   word-break: keep-all;
   .info-desc-box {
     .desc-text {
@@ -82,7 +82,7 @@
   .info-list-box {
     min-width: 12rem;
     .list-text {
-      @include font(clamp(12px, 0.7vw, 300px), 800, $primary, 1.65);
+      @include font(clamp(12px, 1vw, 300px), 800, $primary, 1.65);
       letter-spacing: 0.01rem;
       list-style: disc;
       & + .list-text {
@@ -141,7 +141,6 @@
   }
 
   .work-info-top {
-    width: 100%;
     .info-title-box {
       margin-bottom: 5rem;
     }
@@ -150,10 +149,8 @@
 
 @media #{$mobile_720} {
   .work-header-container {
+    position: absolute;
     top: 2rem;
-    & + .main {
-      padding-top: 3rem;
-    }
   }
   .work-header-area {
     padding: 0 2rem;
@@ -170,13 +167,14 @@
   }
   .work-content-container {
     .work-content-area {
-      flex-direction: column-reverse;
+      flex-direction: column;
       gap: initial;
-      height: 100vh;
     }
   }
   .work-content-thumb-box {
+    order: 2;
     overflow-x: auto;
+    flex: none !important;
     width: 100%;
 
     &::-webkit-scrollbar-track {
@@ -191,10 +189,10 @@
   }
   .work-content-info-box {
     position: static;
+    padding-top: 2rem;
   }
 
   .info-content-area {
-    gap: 1rem;
     .info-desc-box {
       .desc-text {
         white-space: initial;
@@ -219,5 +217,16 @@
         font-size: 1.6rem;
       }
     }
+  }
+}
+
+@media #{$mobile_320} {
+  .work-info-top {
+    .info-title-box {
+      margin-bottom: 2rem;
+    }
+  }
+  .info-content-area {
+    gap: 1rem;
   }
 }
