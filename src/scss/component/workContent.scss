@@ -11,13 +11,13 @@
   padding: 0 5rem;
   .header-left {
     .header-title {
-      color: $secondary;
+      color: $primary;
     }
   }
   .header-right {
     overflow: hidden;
     .btn {
-      @include font(2rem, 600, $secondary);
+      @include font(2rem, 600, $primary);
     }
   }
 }
@@ -25,7 +25,7 @@
 .work-content-container {
   .work-content-area {
     @include flex(row, flex-start, flex-start);
-    gap: 8rem;
+    gap: 10rem;
     height: 100%;
     > div {
       flex: 1;
@@ -36,21 +36,23 @@
   .work-thumb-area {
     overflow-y: auto;
     @include flex(column, flex-start, flex-start);
-    gap: 5rem;
+    gap: 3rem;
     height: 100%;
   }
   .work-thumb-box {
-    // aspect-ratio: 1280/892;
+    overflow: hidden;
     width: 100%;
-    height: 50rem;
+    height: 100%;
+    aspect-ratio: 16/9;
   }
 }
 
 .work-content-info-box {
+  @include flex(column, space-between, flex-start);
   position: sticky;
   top: 0;
   right: 0;
-  @include flex(column, space-between, flex-start);
+  z-index: 1;
   height: 100vh;
   padding: 3rem 0;
 }
@@ -59,7 +61,7 @@
   .info-title-box {
     margin-bottom: 14rem;
     .info-title {
-      @include font(clamp(30px, 2.8vw, 300px), 700, $secondary);
+      @include font(clamp(25px, 2.8vw, 300px), 700, $primary);
       letter-spacing: -0.05rem;
     }
   }
@@ -70,7 +72,7 @@
   word-break: keep-all;
   .info-desc-box {
     .desc-text {
-      @include font(clamp(16px, 1.15vw, 300px), 600, $secondary, 1.65);
+      @include font(clamp(14px, 1.15vw, 300px), 600, $primary, 1.65);
       white-space: pre-line;
       & + .desc-text {
         margin-top: 3rem;
@@ -80,7 +82,7 @@
   .info-list-box {
     min-width: 12rem;
     .list-text {
-      @include font(clamp(14px, 0.7vw, 300px), 800, $secondary, 1.65);
+      @include font(clamp(12px, 0.7vw, 300px), 800, $primary, 1.65);
       letter-spacing: 0.01rem;
       list-style: disc;
       & + .list-text {
@@ -96,10 +98,12 @@
     overflow: hidden;
     justify-content: space-between;
     .btn {
+      justify-content: flex-start;
+      min-width: auto;
       width: auto;
       height: auto;
       padding: 0;
-      @include font(2rem, 600, $secondary);
+      @include font(2rem, 600, $primary);
     }
   }
 }
@@ -132,10 +136,88 @@
 @media #{$tablet_1024} {
   .work-content-container {
     .work-content-area {
-      flex-direction: column-reverse;
+      gap: 5rem;
+    }
+  }
+
+  .work-info-top {
+    width: 100%;
+    .info-title-box {
+      margin-bottom: 5rem;
     }
   }
 }
 
 @media #{$mobile_720} {
+  .work-header-container {
+    top: 2rem;
+    & + .main {
+      padding-top: 3rem;
+    }
+  }
+  .work-header-area {
+    padding: 0 2rem;
+    .header-left {
+      .header-title {
+        font-size: 1.6rem;
+      }
+    }
+    .header-right {
+      .btn {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .work-content-container {
+    .work-content-area {
+      flex-direction: column-reverse;
+      gap: initial;
+      height: 100vh;
+    }
+  }
+  .work-content-thumb-box {
+    overflow-x: auto;
+    width: 100%;
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .work-thumb-area {
+      overflow: hidden;
+      flex-direction: row;
+      gap: 2rem;
+      width: 200vw;
+    }
+  }
+  .work-content-info-box {
+    position: static;
+  }
+
+  .info-content-area {
+    gap: 1rem;
+    .info-desc-box {
+      .desc-text {
+        white-space: initial;
+        line-height: 1.25;
+        & + .desc-text {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .info-list-box {
+      .list-text {
+        line-height: 1.25;
+        & + .list-text {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+  .work-info-bottom {
+    .button-box {
+      .btn {
+        font-size: 1.6rem;
+      }
+    }
+  }
 }
