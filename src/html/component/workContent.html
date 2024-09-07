@@ -8,11 +8,11 @@
       <!-- work-content-container -->
       <section class="work-content-container">
         <div class="work-content-area">
-          <div class="work-content-thumb-box">
-            <div class="work-thumb-area">
+          <div class="work-content-media-box">
+            <div class="work-media-area">
               <!-- prettier-ignore -->
-              @@for(var i = 0; i < thumb.length; i++) {
-                @@include("workThumb.html",  `+(JSON.stringify(thumb[i]))+`)
+              @@for(var i = 0; i < infoMedia.length; i++) {
+                @@include("workInfoMedia.html",  `+(JSON.stringify(infoMedia[i]))+`)
               }
             </div>
           </div>
@@ -36,22 +36,27 @@
                 </ul>
               </div>
             </div>
+            @@if(workBottom) {
             <div class="work-info-bottom">
               <div class="button-box">
-                <a href="@@visitLink" target="_blank" class="btn" aria-label="VISIT">
+                @@if(visitLink) {
+                <a href="@@visitLink" target="_blank" class="btn" aria-label="사이트 방문하기">
                   <div class="hover-trans">
                     <span aria-hidden="true">VISIT</span>
                     <span aria-hidden="true">VISIT</span>
                   </div>
                 </a>
-                <a href="./@@nextLink.html" class="btn" aria-label="NEXT">
+                } @@if(nextLink) {
+                <a href="./@@nextLink.html" class="btn" aria-label="다음 프로젝트">
                   <div class="hover-trans">
                     <span aria-hidden="true">NEXT</span>
                     <span aria-hidden="true">NEXT</span>
                   </div>
                 </a>
+                }
               </div>
             </div>
+            }
           </div>
         </div>
       </section>

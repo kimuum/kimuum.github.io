@@ -103,6 +103,9 @@
       background-color: rgba($primary, 0.7);
       transition: 0.3s ease;
     }
+    img {
+      filter: grayscale(1);
+    }
   }
 }
 
@@ -125,6 +128,9 @@
           .thumb-box {
             &::before {
               opacity: 0;
+            }
+            img {
+              filter: initial;
             }
           }
         }
@@ -221,6 +227,13 @@
       position: static;
       width: auto;
       height: auto;
+    }
+  }
+  .work-right {
+    .thumb-box {
+      img {
+        filter: initial;
+      }
     }
   }
 }

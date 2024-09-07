@@ -59,7 +59,7 @@ function css() {
     .pipe(browsersync.stream());
 }
 function images() {
-  return src(['./src/images/**']).pipe(imagemin()).pipe(dest('./dist/assets/images'));
+  return src(['./src/images/**']).pipe(dest('./dist/assets/images'));
 }
 function clearHtml() {
   return src('./dist/html/*', {
