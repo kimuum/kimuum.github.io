@@ -1,0 +1,55 @@
+/* STEP08 */ 
+$header: 80px;
+$lnb: 200px;
+
+.wrap_step_08 {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  .main {
+    padding: $header 0 0 $lnb;
+  }
+  .content_container {
+    overflow: auto;
+    height: 100%;
+  }
+  .header_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: $header;
+    padding: 0 20px;
+    background-color: rgb(170, 194, 206);
+    box-sizing: border-box;
+    .header_area {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(center);
+      @include align-items(center);
+      height: 100%;
+    }
+    .header_title {
+      @include font-style(80, 700);
+      color: #000;
+    }
+  }
+  .lnb_container {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1;
+    width: $lnb;
+    height: 100%;
+    background-color: rgb(202, 161, 197);
+    .lnb_area {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(center);
+    }
+    .lnb_title {
+      @include font-style(80, 700);
+    }
+  }
+}
