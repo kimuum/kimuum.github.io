@@ -1,28 +1,26 @@
-  <%- include('./include/head.ejs',{"title": "OJT 과제 : 레이아웃", "listTitle": "레이아웃 : 레이아웃"})%>
-  <body data-pagestatus="new : 24.12.16">
+ <%-include('./include/head.ejs',{"title": "OJT 과제 : 레이아웃", "listTitle": "09 : 레이아웃"})%>
+  <body data-pagestatus="new : 24.12.18">
     <div class="wrap wrap_step_09">
+      <!-- LOGO -->
+      <h1 class="logo_area">
+        <a href="javascript:void(0)" class="logo"><span>LOGO</span></a>
+      </h1>
+      <!-- // LOGO -->
+      <!-- GNB -->
+      <nav class="gnb_container">
+        <div class="gnb_area">
+          <ul class="gnb_list_box">
+            <li class="gnb_list">
+              <a href="javascript:void(0)">
+                <span>GNB</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!-- // GNB -->
       <!-- Contents -->
       <main class="main">
-        <!-- Header -->
-        <header class="header_container">
-          <div class="header_area">
-            <h1 class="header_title">
-              <a href="javascript:void(0)"><span>LOGO</span></a>
-            </h1>
-            <nav class="gnb_container">
-              <div class="gnb_area">
-                <ul class="gnb_list-box">
-                  <li class="gnb_list">
-                    <a href="javascript:void(0)">
-                      <span>GNB</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
-        </header>
-        <!-- // Header -->
         <section class="content_container">
           <div class="content_top">
             <h1 class="content_title">STEP09</h1>
@@ -39,7 +37,5 @@
       </main>
       <!-- // Contents -->
     </div>
-    
-    <%-include('./include/script.ejs')%>
   </body>
 </html>

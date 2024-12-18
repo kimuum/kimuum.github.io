@@ -11,48 +11,16 @@
   .content_right {
     width: calc(100% - 200px);
   }
-  // Inline-block
-  .content_01 {
-    font-size: 0;
-    .content_box {
-      display: inline-block;
-      vertical-align : top;
-    }
-    
-  }
-  // Table
-  .content_02 {
-    display: table;
-    .content_box {
-      display: table-cell;
-    }
-  }
-  // Float
-  .content_03 {
-    overflow: hidden;
-    .content_box {
-      float: left;
-    }
-  }
-  // Flex
-  .content_04 {
-    @include flexbox;
-    @include flex-direction(row);
-    @include justify-content(flex-start);
-  }
   // Grid
-  .content_05 {
-    display: grid;
-    grid-template-columns: 200px auto; 
-    .content_right {
+  .content_grid {
+    grid-template-columns: 200px auto;
+    .content_box {
       width: auto;
     }
   }
   // Position
-  .content_06 {
-    position: relative;
+  .content_position {
     .content_box {
-      position: absolute;
       top: 20px;
       height: calc(100% - 40px);
     }

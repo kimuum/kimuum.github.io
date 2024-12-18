@@ -1,29 +1,18 @@
 /* STEP06 */ 
 .wrap_step_06 {
-  .content_area {
-    min-height: 200px;
-  }
   &_01 {
     // Inline-block
-    .content_01 {
-      font-size: 0;
-      width: 100%;
+    .content_inline_block {
       .content_box {
-        display: inline-block;
         width: calc((100% - 20px) / 3);
-        vertical-align : top;
         & + .content_box {
           margin-left: 10px;
         }
       }
     }
     // Table
-    .content_02 {
-      display: table;
-      table-layout: fixed;
-      width: 100%;
+    .content_table {
       .content_box {
-        display: table-cell;
         position: relative;
         & + .content_box {
           &::before {
@@ -45,10 +34,8 @@
       
     }
     // Float
-    .content_03 {
-      overflow: hidden;
+    .content_float {
       .content_box {
-        float: left;
         width: calc((100% - 20px) / 3);
         & + .content_box {
           margin-left: 10px;
@@ -56,68 +43,44 @@
       }
     }
     // Flex
-    .content_04 {
-      @include flexbox;
-      @include flex-direction(row);
-      @include justify-content(flex-start);
+    .content_flex {
       column-gap: 10px;
       .content_box {
         flex: 1;
       }
     }
     // Grid
-    .content_05 {
-      display: grid;
+    .content_grid {
       grid-template-columns: repeat(3, 1fr); 
       column-gap: 10px;
-      .content_box {
-        width: auto;
-      }
     }
     // Position
-    .content_06 {
-      position: relative;
+    .content_position {
       .content_box {
-        position: absolute;
-        top: 0;
         width: calc((100% - 20px) / 3);
         & + .content_box {
           margin-left: 10px;
         }
       }
-      .content_left {
-        left: 0;
-      }
       .content_center {
         left: calc(50% - 10px);
         transform: translateX(-50%);
-      }
-      .content_right {
-        right: 0;
       }
     }
   }
   &_02 {
     // Inline-block
-    .content_01 {
-      font-size: 0;
-      width: 100%;
+    .content_inline_block {
       .content_box {
-        display: inline-block;
         width: calc((100% - 6%) / 3);
-        vertical-align : top;
         & + .content_box {
           margin-left: 3%;
         }
       }
     }
     // Table
-    .content_02 {
-      display: table;
-      table-layout: fixed;
-      width: 100%;
+    .content_table {
       .content_box {
-        display: table-cell;
         position: relative;
         & + .content_box {
           &::before {
@@ -138,10 +101,8 @@
       }
     }
     // Float
-    .content_03 {
-      overflow: hidden;
+    .content_float {
       .content_box {
-        float: left;
         width: calc((100% - 6%) / 3);
         & + .content_box {
           margin-left: 3%;
@@ -149,68 +110,45 @@
       }
     }
     // Flex
-    .content_04 {
-      @include flexbox;
-      @include flex-direction(row);
-      @include justify-content(flex-start);
+    .content_flex {
       column-gap: 3%;
       .content_box {
         flex: 1;
       }
     }
     // Grid
-    .content_05 {
-      display: grid;
+    .content_grid {
       grid-template-columns: repeat(3, 1fr); 
       column-gap: 3%;
-      .content_box {
-        width: auto;
-      }
     }
     // Position
-    .content_06 {
-      position: relative;
+    .content_position {
       .content_box {
-        position: absolute;
-        top: 0;
         width: calc((100% - 6%) / 3);
         & + .content_box {
           margin-left: 3%;
         }
       }
-      .content_left {
-        left: 0;
-      }
       .content_center {
         left: calc(50% - 3%);
         transform: translateX(-50%);
       }
-      .content_right {
-        right: 0;
-      }
     }
   } 
   &_03 {
+    min-width: 900px;
     // Inline-block
-    .content_01 {
-      font-size: 0;
-      width: 100%;
+    .content_inline_block {
       .content_box {
-        display: inline-block;
         width: 300px;
-        vertical-align : top;
         & + .content_box {
           margin-left: calc((100% - 900px) / 2)
         }
       }
     }
     // Table
-    .content_02 {
-      display: table;
-      table-layout: fixed;
-      width: 100%;
+    .content_table {
       .content_box {
-        display: table-cell;
         position: relative;
         width: 300px;
         & + .content_box {
@@ -232,10 +170,8 @@
       }
     }
     // Float
-    .content_03 {
-      overflow: hidden;
+    .content_float {
       .content_box {
-        float: left;
         width: 300px;
         & + .content_box {
           margin-left: calc((100% - 900px) / 2)
@@ -243,40 +179,28 @@
       }
     }
     // Flex
-    .content_04 {
-      @include flexbox;
-      @include flex-direction(row);
+    .content_flex {
       @include justify-content(space-between);
       .content_box {
         width: 300px;
       }
     }
     // Grid
-    .content_05 {
-      display: grid;
+    .content_grid {
       grid-template-columns: repeat(3, 300px); 
       @include justify-content(space-between);
     }
     // Position
-    .content_06 {
-      position: relative;
+    .content_position {
       .content_box {
-        position: absolute;
-        top: 0;
         width: 300px;
         & + .content_box {
           margin-left: 3%;
         }
       }
-      .content_left {
-        left: 0;
-      }
       .content_center {
         left: calc(50% - 3%);
         transform: translateX(-50%);
-      }
-      .content_right {
-        right: 0;
       }
     }
   } 

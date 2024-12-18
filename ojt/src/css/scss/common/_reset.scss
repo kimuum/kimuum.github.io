@@ -35,7 +35,10 @@ nav,
 figure,
 main {
     margin: 0;
-    padding: 0
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 * {
@@ -58,7 +61,8 @@ main {
 
 html,
 body {
-    height: 100%;
+    width: 100%;
+    margin: 0 auto;
     -webkit-text-size-adjust: none;
     -ms-text-size-adjust: none
 }
@@ -73,15 +77,19 @@ li {
 }
 
 ul,
-ol {
+ol,
+li {
     list-style: none
 }
 
 button {
-    overflow: visible;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
     border: 0;
-    background-color: transparent;
-    cursor: pointer
+    outline: 0;
+    border-radius: 0;
+    cursor: pointer;
 }
 
 button:disabled {
@@ -115,6 +123,7 @@ a:active,
 a:hover {
     text-decoration: none;
     color: inherit;
+    outline: 0;
 }
 
 table {

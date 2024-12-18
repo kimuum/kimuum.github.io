@@ -1,28 +1,28 @@
-  <%- include('./include/head.ejs',{"title": "OJT 과제 : 레이아웃", "listTitle": "레이아웃 : 레이아웃"})%>
-  <body data-pagestatus="new : 24.12.16">
+ <%-include('./include/head.ejs',{"title": "OJT 과제 : 레이아웃", "listTitle": "08 : 레이아웃"})%>
+  <body data-pagestatus="new : 24.12.18">
     <div class="wrap wrap_step_08">
+      <!-- Header -->
+      <header class="header_container">
+        <div class="header_area">
+          <h1 class="header_title">
+            <a href="#"><span>HEADER 고정</span></a>
+          </h1>
+        </div>
+      </header>
+      <!-- // Header -->
+      <!-- LNB -->
+      <div class="lnb_container">
+        <div class="lnb_area">
+          <div class="lnb_title">LNB 고정</div>
+        </div>
+      </div>
+      <!-- // LNB -->
       <!-- Contents -->
       <main class="main">
-        <!-- Header -->
-        <header class="header_container">
-          <div class="header_area">
-            <h1 class="header_title">
-              <a href="#"><span>HEADER 고정</span></a>
-            </h1>
-          </div>
-        </header>
-        <!-- // Header -->
-        <!-- LNB -->
-        <div class="lnb_container">
-          <div class="lnb_area">
-            <div class="lnb_title">LNB 고정</div>
-          </div>
-        </div>
-        <!-- // LNB -->
         <section class="content_container">
           <div class="content_top">
             <h1 class="content_title">STEP08</h1>
-            <p class="content_desc">화면 스크롤 시 HEADER&LNB 고정/CONTENT 스크롤</p>
+            <p class="content_desc">화면 스크롤 시 <br>HEADER&LNB 고정 <br>CONTENT 스크롤</p>
           </div>
           <div class="content_middle">
             <div class="content_area">
@@ -36,6 +36,6 @@
       <!-- // Contents -->
     </div>
     
-    <%-include('./include/script.ejs')%>
+     
   </body>
 </html>
