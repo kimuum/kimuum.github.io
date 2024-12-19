@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{ "title" : "Main" })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "gnbDepth01" : "",
+      })
+      <!-- main -->
+      <main class="main">
+        <div class="main-banner-container">
+          <div class="main-banner-area">
+            <div class="main-banner-top">
+              <div class="banner-title-box">
+                <div class="banner-title-sub">Perfect 고객 경험</div>
+                <div class="banner-title">Insight</div>
+              </div>
+              <div class="banner-info">
+                <!-- 20240122 수정 : 위첨자 태그 적용 -->
+                Insight<span class="sup">+</span>의 모든 자료는 LG유플러스의 소중한 자산입니다.<br />
+                보안에 유의해주시고, 외부로 유출되지 않도록 주의해주시기 부탁드립니다.
+              </div>
+            </div>
+            <div class="main-banner-middle">
+              <!-- prettier-ignore -->
+              @@include("totalSearchContainer.html", {
+                "detail" : true,
+                "normal" : "",
+                "tag" : true
+              })
+            </div>
+          </div>
+        </div>
+        <!-- main content container -->
+        <div class="main-content-container">
+          <div class="main-content-area">
+            <div class="main-content-top">
+              <!-- 20231023 디자인 개편 수정 -->
+              <div class="content-title">New Insight</div>
+              <a href="javascript:void(0)" class="btn-all-view"><span>전체보기</span></a>
+              <!-- // 20231023 디자인 개편 수정 -->
+            </div>
+            <div class="main-content-middle">
+              <!-- 20231023 디자인 개편 수정 -->
+              <ul class="insight-list-row-area">
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_csi.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트 Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트",
+                    },
+                  },
+                })
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_cxi.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 계정",
+                    },
+                  },
+                })
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_etc.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트 Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트",
+                    },
+                  },
+                })
+              </ul>
+              <!-- // 20231023 디자인 개편 수정 -->
+            </div>
+          </div>
+          <div class="main-content-area">
+            <div class="main-content-top">
+              <!-- 20231023 디자인 개편 수정 -->
+              <div class="content-title">Best Insight</div>
+              <a href="javascript:void(0)" class="btn-all-view"><span>전체보기</span></a>
+              <!-- // 20231023 디자인 개편 수정 -->
+            </div>
+            <div class="main-content-middle">
+              <!-- 20231023 디자인 개편 수정 -->
+              <ul class="insight-list-row-area">
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_out.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트 Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트",
+                    },
+                  },
+                })
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_speech.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 계정",
+                    },
+                  },
+                })
+                <!-- prettier-ignore -->
+                @@include("insightList.html", {
+                  "image" : "img_def_cov_study.jpg",
+                  "type" : {
+                    "row" : {
+                      "title" : "Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트 Z세대가 구독하고 있는 패션 브랜드 계정 12곳 분석 노트",
+                    },
+                  },
+                })
+              </ul>
+              <!-- // 20231023 디자인 개편 수정 -->
+            </div>
+          </div>
+          <div class="main-content-area bg-gray">
+            <div class="quick-menu-area">
+              <div class="quick-menu-top">
+                <div class="content-title">Quick Menu</div>
+              </div>
+              <div class="quick-menu-bottom">
+                <div class="quick-menu-link-box">
+                  <a href="javascript:void(0)" class="quick-link">
+                    <span class="quick-link-icon icon-01"></span>
+                    <!-- 20240123 수정 -->
+                    <div class="quick-link-title">LSR 소개</div>
+                  </a>
+                  <a href="javascript:void(0)" class="quick-link">
+                    <span class="quick-link-icon icon-02"></span>
+                    <!-- 20231215 수정 -->
+                    <div class="quick-link-title">보고서/자료</div>
+                  </a>
+                  <a href="javascript:void(0)" class="quick-link">
+                    <span class="quick-link-icon icon-03"></span>
+                    <!-- 20231215 수정 -->
+                    <div class="quick-link-title">고객조사 학습</div>
+                  </a>
+                  <a href="javascript:void(0)" class="quick-link">
+                    <span class="quick-link-icon icon-04"></span>
+                    <div class="quick-link-title">고객조사의뢰</div>
+                  </a>
+                  <a href="javascript:void(0)" class="quick-link">
+                    <span class="quick-link-icon icon-05"></span>
+                    <div class="quick-link-title">Q&A</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-content-area">
+            <div class="main-content-top">
+              <!-- 20231023 디자인 개편 수정 -->
+              <div class="content-title">공지사항</div>
+              <a href="javascript:void(0)" class="btn-all-view"><span>전체보기</span></a>
+              <!-- // 20231023 디자인 개편 수정 -->
+            </div>
+            <div class="main-content-middle">
+              <ul class="board-list-area">
+                <!-- prettier-ignore -->
+                @@include("boardList.html", {
+                  "boardTitle" : "Insight+ Newsletter 23년 10월호(Vol.24)",
+                  "boardDate" : "2023.05.01"
+                })
+                <!-- prettier-ignore -->
+                @@include("boardList.html", {
+                  "boardTitle" : "Insight+ Newsletter 23년 10월호(Vol.24)",
+                  "boardDate" : "2023.05.01"
+                })
+                <!-- prettier-ignore -->
+                @@include("boardList.html", {
+                    "boardTitle" : "Insight+ Newsletter 23년 10월호(Vol.24)",
+                    "boardDate" : "2023.05.01"
+                  })
+                <!-- prettier-ignore -->
+                @@include("boardList.html", {
+                  "boardTitle" : "Insight+ Newsletter 23년 10월호(Vol.24)",
+                  "boardDate" : "2023.05.01"
+                })
+                <!-- prettier-ignore -->
+                @@include("boardList.html", {
+                  "boardTitle" : "Insight+ Newsletter 23년 10월호(Vol.24)",
+                  "boardDate" : "2023.05.01"
+                })
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- //main content container -->
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("linkJs.html")
+    <script></script>
+  </body>
+</html>

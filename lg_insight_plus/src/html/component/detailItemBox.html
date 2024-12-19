@@ -1,0 +1,13 @@
+<div class="detail-item-box">
+  @@if(detailRow) { @@for(i = 0; i < detailRow.item.length; i++) {
+  <div class="detail-item">
+    <div class="item-title">`+detailRow.item[i].title+`</div>
+    <div class="item-info"><span>`+detailRow.item[i].info+`</span></div>
+  </div>
+  } } @@if(detailCol) { @@for(j = 0; j < detailCol.item.length; j++) {
+  <div class="detail-item none-flex">
+    <div class="item-title">`+detailCol.item[j].title+`</div>
+    <div class="item-info"><span>`+detailCol.item[j].info+`</span></div>
+  </div>
+  } }
+</div>

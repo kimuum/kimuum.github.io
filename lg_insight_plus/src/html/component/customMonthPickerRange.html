@@ -1,0 +1,209 @@
+<!-- 20231108 수정 : 달력 커스텀 -->
+<!-- 달력 커스텀 영역 .custom-datepicker-container -->
+<div class="custom-datepicker-container">
+  @@if(monthPicker) {
+  <div class="react-datepicker-wrapper">
+    <div class="react-datepicker__input-container">
+      <input type="text" class="datepicker-input" value="2023-08" />
+    </div>
+  </div>
+  <div class="seperate">-</div>
+  <div class="react-datepicker__tab-loop">
+    <div class="react-datepicker-popper" data-placement="top-start" style="position: absolute; display: none">
+      <div>
+        <!-- 20231221 수정 : 월달력 전용 클래스 .react-month-picker -->
+        <div class="react-datepicker react-month-picker">
+          <div class="react-datepicker__month-container">
+            <div class="react-datepicker__header">
+              <button class="react-datepicker__navigation react-datepicker__navigation--previous"></button>
+              <span class="custom-current-years">2023년</span>
+              <button class="react-datepicker__navigation react-datepicker__navigation--next"></button>
+            </div>
+            <div class="react-datepicker__month react-datepicker__monthPicker">
+              <div class="react-datepicker__month-wrapper">
+                <div class="react-datepicker__month-text">1월</div>
+                <div class="react-datepicker__month-text">2월</div>
+                <div class="react-datepicker__month-text">3월</div>
+                <div class="react-datepicker__month-text">4월</div>
+              </div>
+              <div class="react-datepicker__month-wrapper">
+                <div class="react-datepicker__month-text">5월</div>
+                <div class="react-datepicker__month-text">6월</div>
+                <div class="react-datepicker__month-text">7월</div>
+                <div class="react-datepicker__month-text">8월</div>
+              </div>
+              <div class="react-datepicker__month-wrapper">
+                <div class="react-datepicker__month-text">9월</div>
+                <div class="react-datepicker__month-text">10월</div>
+                <div class="react-datepicker__month-text">11월</div>
+                <div class="react-datepicker__month-text">12월</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="react-datepicker-wrapper">
+    <div class="react-datepicker__input-container">
+      <input type="text" class="datepicker-input" value="2023-09" />
+    </div>
+  </div>
+  } @@if(datePicker) {
+  <div class="react-datepicker-wrapper">
+    <div class="react-datepicker__input-container">
+      <input type="text" class="datepicker-input" value="2023-12-21" />
+    </div>
+  </div>
+  <div class="react-datepicker__tab-loop">
+    <div class="react-datepicker-popper" data-placement="top-start" style="position: absolute; left: 0; display: none">
+      <div>
+        <!-- 달력 전용 클래스 .react-date-picker -->
+        <div class="react-datepicker react-date-picker">
+          <div class="react-datepicker__month-container">
+            <div class="react-datepicker__header">
+              <div class="react-datepicker__header-inner">
+                <div class="react-datepicker__header-top">
+                  <button class="react-datepicker__navigation react-datepicker__navigation--previous"></button>
+                  <div class="react-datepicker__header__dropdown react-datepicker__header__dropdown--select">
+                    <div
+                      class="react-datepicker__month-dropdown-container react-datepicker__month-dropdown-container--select"
+                    >
+                      <!-- prettier-ignore -->
+                      @@include("dropdown.html", {
+                            "typeClass" : "",
+                            "status" : "",
+                            "value" : "2023년",
+                            "type" : "dropNormal",
+                            "option" : [
+                              {
+                                "text" : "2019년",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "2020년",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "2021년",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "2022년",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "2023년",
+                                "selected" : "selected"
+                              }
+                            ]
+                          })
+                    </div>
+                    <div
+                      class="react-datepicker__year-dropdown-container react-datepicker__year-dropdown-container--select"
+                    >
+                      <!-- prettier-ignore -->
+                      @@include("dropdown.html", {
+                            "typeClass" : "",
+                            "status" : "",
+                            "value" : "12월",
+                            "type" : "dropNormal",
+                            "option" : [
+                              {
+                                "text" : "8월",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "9월",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "10월",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "11월",
+                                "selected" : ""
+                              },
+                              {
+                                "text" : "12월",
+                                "selected" : "selected"
+                              }
+                            ]
+                          })
+                    </div>
+                  </div>
+                  <button class="react-datepicker__navigation react-datepicker__navigation--next"></button>
+                </div>
+                <div class="react-datepicker__header-middle">
+                  <div class="react-datepicker__day-names">
+                    <div class="react-datepicker__day-name">일</div>
+                    <div class="react-datepicker__day-name">월</div>
+                    <div class="react-datepicker__day-name">화</div>
+                    <div class="react-datepicker__day-name">수</div>
+                    <div class="react-datepicker__day-name">목</div>
+                    <div class="react-datepicker__day-name">금</div>
+                    <div class="react-datepicker__day-name">토</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="react-datepicker__month">
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day react-datepicker__day--outside-month">26</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">27</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">28</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">29</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">30</div>
+                <div class="react-datepicker__day">1</div>
+                <div class="react-datepicker__day">2</div>
+              </div>
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day">3</div>
+                <div class="react-datepicker__day">4</div>
+                <div class="react-datepicker__day">5</div>
+                <div class="react-datepicker__day">6</div>
+                <div class="react-datepicker__day">7</div>
+                <div class="react-datepicker__day">8</div>
+                <div class="react-datepicker__day">9</div>
+              </div>
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day">10</div>
+                <div class="react-datepicker__day">11</div>
+                <div class="react-datepicker__day">12</div>
+                <div class="react-datepicker__day">13</div>
+                <div class="react-datepicker__day">14</div>
+                <div class="react-datepicker__day">15</div>
+                <div class="react-datepicker__day">16</div>
+              </div>
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day">17</div>
+                <div class="react-datepicker__day">18</div>
+                <div class="react-datepicker__day">19</div>
+                <div class="react-datepicker__day">20</div>
+                <div class="react-datepicker__day react-datepicker__day--today react-datepicker__day--selected">21</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">22</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">23</div>
+              </div>
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day react-datepicker__day--outside-month">24</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">25</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">26</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">27</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">28</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">29</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">30</div>
+              </div>
+              <div class="react-datepicker__week">
+                <div class="react-datepicker__day react-datepicker__day--outside-month">31</div>
+                <div class="react-datepicker__day react-datepicker__day--outside-month">1</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+<!-- // 20231108 수정 : 달력 커스텀 -->

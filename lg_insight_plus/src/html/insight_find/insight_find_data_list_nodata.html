@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{ "title" : "보고서/자료 결과 없음" })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "gnbDepth01" : "archiveLSR"
+      })
+      <!-- main -->
+      <main class="main">
+        <!-- content-container -->
+        <div class="content-container">
+          <!-- prettier-ignore -->
+          @@include("contentTop.html", {
+            "contentTop" : "normal",
+            "title" : "보고서/자료",
+          })
+          <div class="content-middle">
+            <!-- search-result-container -->
+            <div class="search-result-container">
+              <div class="search-result-area">
+                <div class="search-result-top">
+                  <!-- prettier-ignore -->
+                  @@include("totalSearchContainer.html", {
+                    "detail" : true,
+                    "normal" : "",
+                    "tag" : false
+                  })
+                  <div class="result-nodata-area">
+                    <div class="result-nodata-box">
+                      <p>찾으시는 검색 결과가 없습니다.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="search-result-middle">
+                  <div class="result-alert-box">
+                    <p class="alert-text">
+                      Insight+에서 가장 <span class="color-primary">인기있는 검색어</span>는 어떠세요?
+                    </p>
+                  </div>
+                  <!-- prettier-ignore -->
+                  @@include("tagButtonBox.html", {
+                    "tag" : [
+                      {
+                        "title" : "CX",
+                        "selected" : "selected"
+                      },
+                      {
+                        "title" : "고객조사",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "인터뷰가이드",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "트렌드",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "통계",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "XY",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "의뢰",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "마케팅",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "ChatGPT",
+                        "selected" : ""
+                      },
+                      {
+                        "title" : "2023 트렌드",
+                        "selected" : ""
+                      }
+                    ]
+                  })
+                </div>
+              </div>
+            </div>
+            <!-- //search-result-container -->
+          </div>
+        </div>
+        <!-- //content-container -->
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("linkJs.html")
+    <script></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<div class="dropdown-container @@typeClass @@status">
+  <!-- 활성화 클래스 : .active -->
+  <div class="dropdown-area">
+    <button type="button" class="btn-dropdown"><span>@@value</span></button>
+    <ul class="dropdown-list">
+      @@if(type === 'dropNormal') { @@for(var i = 0; i < option.length; i++) {
+      <li class="list `+option[i].selected+`"><span>`+option[i].text+`</span></li>
+      }} @@if(type === 'dropMulti') { @@for(var j = 0; j < option.length; j++) {
+      <li class="list `+option[j].selected+`">
+        <div class="checkbox">
+          <input type="checkbox" name="`+option[j].name+`" id="`+option[j].name+`" `+option[j].property+` />
+          <label for="`+option[j].name+`" class="check-icon">`+option[j].label+`</label>
+        </div>
+      </li>
+      }}
+    </ul>
+  </div>
+</div>

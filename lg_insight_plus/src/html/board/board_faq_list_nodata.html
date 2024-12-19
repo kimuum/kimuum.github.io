@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{ "title" : "FAQ / Q&A 검색(게시글) 결과 없는 경우" })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "gnbDepth01" : "Board"
+      })
+      <!-- main -->
+      <main class="main">
+        <!-- content-container -->
+        <div class="content-container">
+          <!-- prettier-ignore -->
+          @@include("contentTop.html", {
+            "contentTop" : "normal",
+            "title" : "FAQ/Q&A",
+          })
+          <div class="content-middle">
+            <div class="normal-container">
+              <div class="normal-top">
+                <div class="sorting-area">
+                  <div class="left-box">
+                    <div class="total-count-box">
+                      <div class="total">전체 <span class="color-primary">0건</span></div>
+                    </div>
+                  </div>
+                  <div class="right-box">
+                    <!-- prettier-ignore -->
+                    @@include("dropdown.html", {
+                      "typeClass" : "",
+                      "status" : "",
+                      "value" : "전체",
+                      "type" : "dropNormal",
+                      "option" : [
+                        {
+                          "text" : "전체",
+                          "selected" : "selected"
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        }
+                      ]
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("dropdown.html", {
+                      "typeClass" : "",
+                      "status" : "",
+                      "value" : "제목",
+                      "type" : "dropNormal",
+                      "option" : [
+                        {
+                          "text" : "제목",
+                          "selected" : "selected"
+                        },
+                        {
+                          "text" : "제목+내용",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        }
+                      ]
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("searchInputBox.html", {
+                      "hasDetail": "",
+                      "hasButton": true,
+                      "normal" : ""
+                    })
+                  </div>
+                </div>
+              </div>
+              <div class="normal-middle">
+                <div class="result-nodata-area">
+                  <div class="result-nodata-box">
+                    <p>게시글이 없습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //content-container -->
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("linkJs.html")
+    <script></script>
+  </body>
+</html>

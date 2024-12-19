@@ -1,0 +1,16 @@
+<div class="file-box">
+  <div class="file">
+    <label for="file-select"><span>파일 찾기</span></label>
+    <input type="file" name="file-select" id="file-select" />
+  </div>
+  @@if(data) {
+  <div class="file-data">
+    <span>Thumbnail.png</span>
+    <button type="button" class="btn-delete"></button>
+  </div>
+  } @@if(noData) {
+  <div class="file-data file-nodata">
+    <span>No Files</span>
+  </div>
+  }
+</div>

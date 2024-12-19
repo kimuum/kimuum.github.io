@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{ "title" : "고객조사 학습" })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "gnbDepth01" : "insightDerive"
+      })
+      <!-- main -->
+      <main class="main">
+        <!-- content-container -->
+        <div class="content-container">
+          <!-- prettier-ignore -->
+          @@include("contentTop.html", {
+            "contentTop" : "normal",
+            "title" : "고객조사 학습",
+          })
+          <div class="content-middle">
+            <div class="normal-container">
+              <!-- 20231023 디자인 개편 수정 -->
+              <div class="normal-top">
+                <div class="sorting-area">
+                  <div class="left-box">
+                    <div class="total-count-box">
+                      <div class="total">전체 <span class="color-primary">20건</span></div>
+                    </div>
+                  </div>
+                  <div class="right-box">
+                    <!-- prettier-ignore -->
+                    @@include("dropdown.html", {
+                      "typeClass" : "",
+                      "status" : "",
+                      "value" : "전체",
+                      "type" : "dropNormal",
+                      "option" : [
+                        {
+                          "text" : "전체",
+                          "selected" : "selected"
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        }
+                      ]
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("dropdown.html", {
+                      "typeClass" : "",
+                      "status" : "",
+                      "value" : "제목",
+                      "type" : "dropNormal",
+                      "option" : [
+                        {
+                          "text" : "제목",
+                          "selected" : "selected"
+                        },
+                        {
+                          "text" : "제목+내용",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        },
+                        {
+                          "text" : "메뉴1",
+                          "selected" : ""
+                        }
+                      ]
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("searchInputBox.html", {
+                      "hasDetail": "",
+                      "hasButton": true,
+                      "normal" : ""
+                    })
+                  </div>
+                </div>
+              </div>
+              <!-- // 20231023 디자인 개편 수정 -->
+              <div class="normal-middle">
+                <div class="table-container">
+                  <!-- 20231023 디자인 개편 수정 -->
+                  <div class="table-area">
+                    <table>
+                      <caption></caption>
+                      <colgroup>
+                        <col style="width: 48px" />
+                        <col />
+                        <col style="width: 58px" />
+                        <col style="width: 140px" />
+                        <col style="width: 140px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No.</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">첨부</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">조회</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="type-notice">
+                          <td>
+                            <div class="icon-notice"></div>
+                          </td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "type-notice",
+                                      "text" : "공지"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                        <tr>
+                          <td>120</td>
+                          <td>
+                            <div class="board-link-area">
+                              <!-- 20231031 디자인 개편 수정 -->
+                              <a href="javascript:void(0)" class="board-link">
+                                <!-- prettier-ignore -->
+                                @@include("typeLabelBox.html", {
+                                  "type" : [
+                                    {
+                                      "typeClass" : "",
+                                      "text" : "교육/학습자료"
+                                    }
+                                  ]
+                                })
+                                <div class="board-title">CX Session 23년 1분기 NW 인지품질 결과</div>
+                              </a>
+                              <!-- // 20231031 디자인 개편 수정 -->
+                            </div>
+                          </td>
+                          <td><div class="has-attachment"></div></td>
+                          <td>2022.09.10</td>
+                          <td>1,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- // 20231023 디자인 개편 수정 -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-bottom">
+            <!-- 20231023 디자인 개편 수정 -->
+            <div class="bottom-box">
+              <!-- prettier-ignore -->
+              @@include("pagenation.html")
+              <!-- 20231110 주석 추가 : 검색 결과 페이지 등록버튼 삭제 button-box 영역에 display:none 처리 부탁드립니다. -->
+              <div class="button-box">
+                <!-- 20231031 디자인 개편 수정 : 버튼 공통 클래스 수정 -->
+                <button type="button" class="btn btn-primary"><span>등록</span></button>
+              </div>
+            </div>
+            <!-- // 20231023 디자인 개편 수정 -->
+          </div>
+        </div>
+        <!-- //content-container -->
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("linkJs.html")
+    <script></script>
+  </body>
+</html>

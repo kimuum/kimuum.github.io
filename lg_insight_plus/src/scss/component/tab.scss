@@ -1,0 +1,91 @@
+/* TAB */
+.tab-container {
+  .tab-content-area {
+    display: none;
+    &.show {
+      display: block;
+    }
+  }
+  .insight-list-column-area {
+    overflow: hidden;
+    max-height: 64.5rem;
+  }
+}
+.tab-content-top {
+  @include flex(row, flex-start, center);
+  padding: 2.4rem 0;
+  .sorting-area {
+    &:only-child {
+      padding: 1.2rem 0;
+    }
+  }
+}
+
+.tab-button-area {
+  &.align-center {
+    .tab-button-box {
+      justify-content: center;
+    }
+  }
+  .tab-button-box {
+    @include flex(row, flex-start, center);
+    margin: 0 -2rem;
+    border-bottom: 1px solid $color-DDDDDD;
+    &.tab-button-round-box {
+      margin: 0 -0.4rem;
+      padding: 4.7rem 0 3.2rem;
+      border-bottom: none;
+      .tab-button {
+        @include flex(row, center, center);
+        height: 3.2rem;
+        margin: 0 0.4rem;
+        padding: 0 1.2rem;
+        background-color: #f6f6f6;
+        @include font(1.4rem, 500, $color-gray-02, 1.25);
+        border-radius: 1.6rem;
+        &::after {
+          display: none;
+        }
+        &.active {
+          background-color: $color-secondary;
+          font-weight: 500;
+          color: $white;
+        }
+        &:not(.active, :disabled) {
+          &:hover,
+          &:active {
+            background-color: #e7e7e7;
+            color: $color-gray-02;
+          }
+          &:active {
+            background-color: #d8d8d8;
+          }
+        }
+      }
+    }
+    .tab-button {
+      position: relative;
+      height: 6rem;
+      margin: 0 2rem;
+      @include font(1.6rem, 400, $color-gray-02, 1.5);
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      &.selected,
+      &.active {
+        color: $color-secondary;
+        font-weight: 700;
+        &:after {
+          border-bottom: 3px solid $color-secondary;
+        }
+      }
+      &:hover {
+        color: $color-secondary;
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+/* Detail */
+.detail-container {
+  @extend .max-width-1040;
+  padding-top: 6rem;
+  > div {
+    margin-bottom: 8rem;
+  }
+}
+.detail-content-title {
+  @include font(1.6rem, 500, $color-gray-01, 1.3);
+}
+.detail-text {
+  @include font(1.6em, 400, $color-gray-01, 1.5);
+}
+
+// 첨부파일
+.attachment-area {
+  &.active {
+    .attachment-middle {
+      display: block;
+    }
+    .btn-arrow {
+      transform: rotate(-180deg);
+    }
+  }
+  .attachment-middle {
+    display: none;
+  }
+}
+.attachment-top {
+  @include flex(row, flex-start, center);
+  .btn-arrow {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.8rem;
+    background: image('icon/ic_expand_bk.png') no-repeat center/2rem;
+  }
+}
+.detail-bottom {
+  .tag-button-box {
+    margin-top: 1.6rem;
+  }
+}
+.detail-middle {
+  .detail-middle-inner {
+    @include flex(row, flex-end, flex-start);
+  }
+  .detail-middle-right {
+    flex-shrink: 0;
+    width: 33.1rem;
+    margin-left: 8.8rem;
+  }
+}
+.detail-item-area {
+  .detail-item-box:not(:last-child) {
+    margin-bottom: 2.4rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid rgba($black, 0.1);
+  }
+  .detail-item {
+    @include flex(row, flex-start, flex-start);
+    & + .detail-item {
+      margin-top: 2.4rem;
+    }
+    &.none-flex {
+      display: block;
+      .item-title {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.6rem;
+      }
+    }
+  }
+  .item-title {
+    flex-shrink: 0;
+    width: 13.5rem;
+    @include font(1.6rem, 700, $color-gray-01, 1.5);
+  }
+  .item-info {
+    > span {
+      @include font(1.6rem, 400, $color-gray-01, 1.5);
+      white-space: pre-line;
+    }
+  }
+}
