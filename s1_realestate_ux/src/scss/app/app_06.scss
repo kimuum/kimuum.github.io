@@ -1,0 +1,210 @@
+//공통 app5~8
+.commpany-address-box {
+  position: relative;
+  padding: 1.8rem 2rem;
+  border-radius: 8px;
+  background-color: #bbe0ff;
+  & + .commpany-address-box {
+    margin-top: 2.2rem;
+  }
+  & + .link-go-text {
+    margin-top: 1.6rem;
+  }
+  .link-go-text {
+    position: absolute;
+    top: 1.8rem;
+    right: 1rem;
+  }
+  .name {
+    @include font(1.6rem, 700, $color_353, 1.4);
+  }
+  .address {
+    margin-top: 1rem;
+    @include font(1.4rem, 400, $color_353, 1.4);
+  }
+  &.gray {
+    background-color: $color_f2f;
+  }
+}
+.link-go-text {
+  margin-left: auto;
+  @include flex(row, flex-end, center);
+  span {
+    @include font(1.4rem, 400, $color_7f7);
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: asset-image('/app/ic_more.svg') no-repeat center / 2.4rem;
+  }
+}
+.btn-text-underline {
+  span {
+    @include font(1.4rem, 400, $color_7f7);
+    text-decoration: underline;
+  }
+}
+
+.management-filter-box {
+  margin-top: 3.2rem;
+}
+.filter-sort-button {
+  margin-top: 2rem;
+  @include flex(row, flex-start, flex-start);
+  .btn-sort,
+  .btn-dropdown {
+    @include flex(row, flex-start, center);
+    width: auto;
+    height: 3.6rem;
+    padding: 0 0.8rem 0 1.6rem;
+    border: 0;
+    background-color: $color_f2f;
+    border-radius: 3.6rem;
+    & + .btn-sort {
+      margin-left: 0.8rem;
+    }
+    span {
+      @include font(1.4rem, 500, $color_7f7);
+    }
+    &:after {
+      content: '';
+      position: static;
+      transform: none;
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      background: asset-image('/app/menu_arrow_down.svg') no-repeat center / 2.4rem;
+    }
+  }
+
+  .dropdown-container {
+    &.show {
+      .btn-dropdown {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+.modal-total-list {
+  li {
+    padding: 1.6rem 0;
+    @include font(1.6rem, 400, $black);
+    .checkbox {
+      label {
+        @include font(1.6rem, 400, $black);
+        &::before {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+.full-confrim-content {
+  @include flex(column, center, center);
+  text-align: center;
+  height: calc(100vh - 20rem);
+  .icon {
+    display: block;
+    width: 6.4rem;
+    height: 6.4rem;
+    margin-bottom: 1.6rem;
+
+    &-smile {
+      background: asset-image('/app/ic_smile.svg') no-repeat center / 6.4rem;
+    }
+    &-smile-02 {
+      background: asset-image('/app/ic_smile_02.svg') no-repeat center / 6.4rem;
+    }
+    &-sad {
+      background: asset-image('/app/ic_sad.svg') no-repeat center / 6.4rem;
+    }
+  }
+  .title {
+    @include font(2.4rem, 700, $primary);
+  }
+  .text {
+    margin-top: 2.4rem;
+    @include font(1.4rem, 400, $color_7f7, 1.4);
+  }
+}
+
+//임직원 관리
+.management-container {
+  margin-top: 2rem;
+
+  .management-all-check {
+    label {
+      &::before {
+        margin-right: 0.8rem;
+      }
+      span {
+        color: $primary;
+        font-weight: 700;
+      }
+    }
+  }
+  .management-lists {
+    margin: 0 -2rem;
+    li {
+      @include flex(row, flex-start, center);
+      padding: 1.8rem 2rem;
+      border-bottom: 1px solid $color_ebe;
+    }
+    .checkbox {
+      .name-box {
+        margin-left: 1.2rem;
+        span {
+          display: block;
+        }
+        .name {
+          @include font(1.6rem, 500, black);
+        }
+        .text {
+          margin-top: 0.8rem;
+          @include font(1.6rem, 500, $color_7f7);
+        }
+      }
+    }
+    .state-box {
+      margin-left: auto;
+      span {
+        display: block;
+        text-align: right;
+      }
+      .state {
+        @include font(1.6rem, 400, $color_353);
+        &.error {
+          color: $red;
+        }
+      }
+      .text-link,
+      .date {
+        display: inline-block;
+        margin-top: 0.8rem;
+        @include font(1.4rem, 400, $color_7f7);
+      }
+      .text-link {
+        text-decoration: underline;
+      }
+    }
+  }
+  .no-content {
+    @include flex(column, center, center);
+    height: 30rem;
+    span {
+      @include font(1.6rem, 400, $color_c4c);
+    }
+    &::before {
+      content: '';
+      display: block;
+      margin-bottom: 1.2rem;
+      width: 6.4rem;
+      height: 6.4rem;
+      background: asset-image('/app/ic_worry.svg') no-repeat center / 6.4rem;
+    }
+  }
+}

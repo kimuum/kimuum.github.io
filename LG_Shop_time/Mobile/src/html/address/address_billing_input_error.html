@@ -1,0 +1,43 @@
+@@include("head.html",{
+"title" : "ADD A NEW BILLING ADDRESS"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "ADD A NEW BILLING ADDRESS",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <!-- v1.78 청구 필드 수정 -->
+        @@include('form_add_address_shipping.html',{
+          "error": true,
+          "valuePHONE": "821088848561",
+          "valueEMAIL": "honggildong00@gmail.com",
+          "valueFIRST": "Hong",
+          "valueLAST": "Gil dong",
+          "valueCODE": "123456",
+          "valueADDRESS": "No Address Found",
+          "valueSTREET": "The Bond LIC Apt 7C"
+        })
+        <!-- //v1.78 청구 필드 수정 -->
+      </div>
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>ADD AND CONTINUE</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

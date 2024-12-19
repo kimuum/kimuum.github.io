@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 회원가입"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        [240503] .join-complete : 회원가입 완료 페이지 class
+      -->
+      <main class="main-container join-complete">
+        <!-- [240503] 닫기 버튼 제거 -->
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : null,
+          "button" : null,
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="join-container">
+              <div class="join-area">
+                <!-- [240503] 마크업 순서 변경 -->
+                <div class="join-top">
+                  <div class="join-complete-box">
+                    <!-- [접근성] aria 속성 추가 -->
+                    <img src="../../assets/images/login/img_congratulation.svg" alt="회원가입 완료" aria-hidden="true" />
+                    <div class="join-heading-box">
+                      <p class="join-heading-text align-center">
+                        <strong class="strong">회원가입 완료</strong>
+                        <span class="desc">가입이 승인되면 등록한 계정으로 메일이 발송됩니다.</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "로그인"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

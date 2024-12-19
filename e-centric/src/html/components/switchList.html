@@ -1,0 +1,20 @@
+<li class="switch-list">
+  <div class="switch">
+    <input type="checkbox" id="@@listId" @@property>
+    <label for="@@listId" class="switch-content-box ir">@@listLabel @@if(desc) {@@desc}</label>
+    <div class="switch-content-box" aria-hidden="true">
+      <span class="switch-content-left">
+        <span class="text-box">
+          <span class="text">@@listLabel</span>
+          @@if(desc) {
+          <span class="description">@@desc</span>
+          }
+        </span>
+      </span>
+      <span class="switch-content-right">
+        <span class="slider" role="checkbox" @@if(property === 'checked') {aria-checked="true"} 
+        @@if(property !== 'checked') {aria-checked="false"} tabindex="0"></span>
+      </span>
+    </div>
+  </div>
+</li>

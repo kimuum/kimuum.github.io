@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- [접근성] 팝업 열기 버튼 예시 -->
+            <button id="openPopupButton" style="padding: 20px; background-color: black; color: #fff">Open Modal Popup</button>
+          </div>
+        </section>
+
+        <dialog class="popup popup-new-car" id="popup-alert">
+          <div class="popup-container" tabindex="0">
+            <div class="popup-area">
+              <div class="popup-top">
+                <div id="popup-title" class="popup-title">알림</div>
+              </div>
+              <div class="popup-middle">
+                <!-- [접근성] br태그 및 공백 제거 -->
+                <div class="popup-text">새로운 차량 정보가 확인되었습니다. 차량 정보를 입력해주세요.</div>
+
+                <div class="new-car-list-box">
+                  <div class="new-car-list">
+                    <div class="new-car-list-inner">
+                      <!-- [접근성] 속성 추가 -->
+                      <div class="new-car-list-left" aria-hidden="true">
+                        <div class="car-number-box">
+                          <span>12가 1234</span>
+                        </div>
+                        <div class="car-name-box">
+                          <span>기아 EV6</span>
+                        </div>
+                      </div>
+                      <div class="new-car-list-right">
+                        <!-- prettier-ignore -->
+                        @@include("radioButton.html", {
+                          "class" : "",
+                          "name" : "new-car",
+                          "id" : "new-car-01",
+                          "value" : "new-car-01",
+                          "property" : "checked",
+                          "labelHide" : true,
+                          "label": "",
+                        })
+                      </div>
+                    </div>
+                  </div>
+                  <div class="new-car-list">
+                    <div class="new-car-list-inner">
+                      <!-- [접근성] 속성 추가 -->
+                      <div class="new-car-list-left" aria-hidden="true">
+                        <div class="car-number-box">
+                          <span>12가 1234</span>
+                        </div>
+                        <div class="car-name-box">
+                          <span>기아 EV6</span>
+                        </div>
+                      </div>
+                      <div class="new-car-list-right">
+                        <!-- prettier-ignore -->
+                        @@include("radioButton.html", {
+                          "class" : "",
+                          "name" : "new-car",
+                          "id" : "new-car-02",
+                          "value" : "new-car-02",
+                          "property" : "",
+                          "labelHide" : true,
+                          "label": "",
+                        })
+                      </div>
+                    </div>
+                  </div>
+                  <div class="new-car-list">
+                    <div class="new-car-list-inner">
+                      <!-- [접근성] 속성 추가 -->
+                      <div class="new-car-list-left" aria-hidden="true">
+                        <div class="car-number-box">
+                          <span>12가 1234</span>
+                        </div>
+                        <div class="car-name-box">
+                          <span>기아 EV6</span>
+                        </div>
+                      </div>
+                      <div class="new-car-list-right">
+                        <!-- [접근성] input id값 수정 -->
+                        <!-- prettier-ignore -->
+                        @@include("radioButton.html", {
+                          "class" : "",
+                          "name" : "new-car",
+                          "id" : "new-car-03",
+                          "value" : "new-car-03",
+                          "property" : "",
+                          "labelHide" : true,
+                          "label": "",
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="popup-bottom">
+                <!-- prettier-ignore -->
+                @@loop("button.html",[
+                  {
+                    "property": "",
+                    "iconClass": false,
+                    "btnColor" : 'btn-secondary',
+                    "btnSize" : 'medium',
+                    "class" : '',
+                    "text": "취소"
+                  },
+                  {
+                    "property": "",
+                    "iconClass": false,
+                    "btnColor" : 'btn-primary',
+                    "btnSize" : 'medium',
+                    "class" : '',
+                    "text": "등록하기"
+                  },
+                ])
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <!-- [접근성] 팝업 스크립트 예시 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButton = popup.querySelector('.btn-secondary');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButton) {
+          closePopupButton.addEventListener('click', function () {
+            popup.close();
+            openPopupButton.focus();
+            openPopupButton.setAttribute('tabindex', '-1');
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

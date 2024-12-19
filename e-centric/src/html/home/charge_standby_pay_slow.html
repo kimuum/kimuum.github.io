@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-charge
+      -->
+      <main class="main-container page-charge">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : null,
+          "button" : [
+            {
+              "icon" : "ic-close",
+              "className" : "btn-close",
+              "title" : "닫기",
+            },
+          ]
+        })
+
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="charge-page-container">
+              <div class="charge-page-area">
+                <div class="charge-page-top">
+                  <div class="title-box">
+                    <h2 class="title">결제가 완료되었습니다.</h2>
+                  </div>
+                </div>
+
+                <div class="charge-page-middle">
+                  <!-- prettier-ignore -->
+                  @@include("chargeProgress.html",{
+                    "state" : "charge-slow charging",
+                    "value" : "0",
+                    "alt" : "0% 충전중이에요",
+                  })
+                  <!-- [240306] 문구 추가 -->
+                  <div class="charge-standby-text-box">
+                    <p class="charge-standby-text" aria-hidden="true">충전기를 연결하고<br />충전을 시작해주세요.</p>
+                    <!-- [접근성] 아래와 같이 텍스트 개행 부탁드립니다. -->
+                    <!-- prettier-ignore -->
+                    <span class="hidden-text">충전기를 연결하고
+                      충전을 시작해주세요.</span>
+                  </div>
+                </div>
+
+                <div class="charge-page-bottom">
+                  <div class="charge-info-box">
+                    <div class="charge-info-title-box">
+                      <h3 class="charge-info-title">충전 정보</h3>
+                    </div>
+
+                    <div class="charge-info-data-box">
+                      <div class="info-list">
+                        <div class="label-box">
+                          <span>충전기 정보</span>
+                        </div>
+                        <div class="data-box">
+                          <!-- [240206] default 데이터 제거 -->
+                          <span class="data">-</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "충전 중단하기"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

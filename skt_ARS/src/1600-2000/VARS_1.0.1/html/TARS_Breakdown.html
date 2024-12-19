@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper breadkwon">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '고장문의',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="breadkwon-content">
+                <img src="/{version}/images/sub/TroubleDiagnosis.jpg" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="service-button-box">
+          <div class="button-box none-flex">
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendCall('0', 'menu')">상담사 연결</button>
+            <button type="button" class="btn btn-primary" onclick="togglePopup('popShipInfo')">장애 해결방법 문자로 받기</button>
+          </div>
+        </div>
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+      </main>
+    </div>
+
+    <div class="popup" id="popShipInfo">
+      <div class="dim"></div>
+      <div class="popup-container">
+        <div class="popup-area">
+          <div class="popup-middle">
+            <div class="alert-icon-box">
+              <i class="ic-message"></i>
+              <p class="popup-text">
+                보이는 ARS 종료 후 문자가 발송됩니다.<br />
+                전화를 종료하시고,<br />
+                문자를 받으시겠습니까?
+              </p>
+              <div class="alert-text-box">
+                <p class="alert-text">상담사 연결 등 다른 업무는 재접속이 필요합니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="popup-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-secondary" onclick="togglePopup('popShipInfo')">아니오</button>
+              <button type="button" class="btn btn-primary" onclick="togglePopup('popShipInfo');sendRepPageData('장애 해결방법 문자로 받기', 'S', 'menu');">예</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('../', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 페이지 로딩 후 5초 timer
+        setTimer(
+          14,
+          function () {
+            // 상담원 호출.
+            sendCall('0', 'menu');
+          },
+          null,
+        );
+      });
+
+      // t 전화 기본화면 처리
+      function sendCall(type, txt) {
+        // 자동 상담사 연결 timer 중지 (wforcus.js)
+        clearInterval(errInterval);
+
+        // report page data 요청.
+        sendRepPageData('agent', type, txt);
+
+        setTimeout(function () {
+          changeoverPhone(false);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

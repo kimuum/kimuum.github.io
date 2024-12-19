@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("adminHead.html",{
+    "title" : "LGE 스마트코티지 | Admin"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("lnb.html", {
+        "title" : "Header",
+        "userinfo" : {
+          "username" : "김경진",
+          "userid"   : "SCZZang"
+        },
+        "list" : [
+          {
+            "text"     : "홈",
+            "className": "home",
+            "property" : "",
+          },
+          {
+            "text"     : "신청 내역 조회",
+            "className": "search",
+            "property" : "active",
+          },
+          {
+            "text"     : "고객 관리",
+            "className": "customer",
+            "property" : "",
+          },
+          {
+            "text"     : "홈페이지 관리",
+            "className": "homepage",
+            "property" : "",
+          },
+        ],
+      })
+      <main id="main" class="main-container">
+        <div class="main-area">
+          <section class="section-container">
+            <div class="section-area">
+              <div class="section-middle">
+                <div class="admin-tab-box">
+                  <ul class="admin-tabs">
+                    <!-- .active : 활성화 시 사용 -->
+                    <li class="admin-tab active">
+                      <button type="button" class="btn-tab">
+                        <span class="title">일정미확정</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">일정확정</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">설치가능</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">설치불가능</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">신청취소</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">전체</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="admin-field-container">
+                  <div class="admin-field-area">
+                    <div class="admin-field-left">
+                      <!-- prettier-ignore -->
+                      @@include("adminDropdown.html", {
+                        "className" : "",
+                        "property" : "",
+                        "text" : "전체기간",
+                        "list" : [ 
+                          {
+                            "className" : "active",
+                            "list" : "전체기간",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1주",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "2주",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "3달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "6달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1년",
+                          },
+                        ]
+                      })
+                      <div class="admin-sum-box">
+                        <span>총</span>
+                        <span>349건</span>
+                      </div>
+                    </div>
+                    <div class="admin-field-right">
+                      <div class="button-box">
+                        <button type="button" class="btn-refresh">
+                          <span>검색초기화</span>
+                        </button>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("adminSearchInput.html", {
+                        "className" : "",
+                        "id" : "search-01",
+                        "label" : "검색",
+                        "placeholder" : "대지주소, 신청자명 대상 검색",
+                        "value" : "",
+                        "property" : "",
+                      })
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "일정 확인 필요",
+                  "thead" : [
+                    {
+                      "text" : "주문번호", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "85",
+                    },
+                    {
+                      "text" : "상태",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "139",
+                    },
+                    {
+                      "text" : "신청일시",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "92",
+                    },
+                    {
+                      "text" : "대지주소",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "신청자명",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "78",
+                    },
+                    {
+                      "text" : "실사일자",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "155",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "empty",
+                        "text" : "000001",
+                        "align": "center",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

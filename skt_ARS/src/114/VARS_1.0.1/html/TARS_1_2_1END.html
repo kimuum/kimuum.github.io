@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <div class="wrapper charge-check">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '실시간 사용요금 조회',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <!-- 실시간 사용요금 상세 hidden값 -->
+            <input type="hidden" id="dt_period_start" iweb-data="out" />
+            <input type="hidden" id="dt_period_end" iweb-data="out" />
+            <input type="hidden" id="dt_amts_total" iweb-data="out" />
+            <input type="hidden" id="dt_items" iweb-data="out" />
+            <input type="hidden" id="dt_amts" iweb-data="out" />
+
+            <div class="content-title-box">
+              <h2 class="content-title"><span>상세요금</span></h2>
+            </div>
+            <div class="charge-detail-content bg-line">
+              <dl class="charge-info-box">
+                <dt>사용기간</dt>
+                <dd id="period">0000.00.00-0000.00.00</dd>
+              </dl>
+              <dl class="charge-info-box">
+                <dt>사용요금</dt>
+                <dd class="total-price"><em id="amts_total">0</em><span> 원</span></dd>
+              </dl>
+              <dl class="charge-info-box detail">
+                <dt>요금 상세정보</dt>
+                <dd>
+                  <ul id="items" class="charge-detail-box"></ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="alert-text-box color-primary">
+              <p class="alert-text">항목은 부가세 제외 항목입니다.</p>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var dt_period_start = getUrlParameter('dt_period_start'); // 사용 시작기간
+          var dt_period_end = getUrlParameter('dt_period_end'); // 사용 종료기간
+
+          /*@build-time*/ dt_period_start = '20231101';
+          /*@build-time*/ dt_period_end = '20231130';
+
+          dt_period_start = getDayFmt(dt_period_start == '' ? '00000000' : dt_period_start, '.');
+          dt_period_end = getDayFmt(dt_period_end == '' ? '00000000' : dt_period_end, '.');
+
+          document.getElementById('period').innerText = dt_period_start + ' ~ ' + dt_period_end;
+        } catch (e) {}
+
+        try {
+          var dt_amts_total = getUrlParameter('dt_amts_total'); // 총금액
+
+          /*@build-time*/ dt_amts_total = '50000';
+
+          document.getElementById('amts_total').innerText = formatCommas(parseInt(dt_amts_total));
+        } catch (e) {}
+
+        try {
+          // 항목분해
+          var dt_items = getUrlParameter('dt_items'); // 항목(배열)
+
+          /*@build-time*/ dt_items = '월정액|멜론콘텐츠*|음성통화료|월정액|멜론콘텐츠*|음성통화료|월정액|멜론콘텐츠*|음성통화료';
+
+          if (dt_items == null || dt_items == '') {
+            $('.charge-info-box.detail').hide();
+            $('.alert-text-box').hide();
+          } else {
+            var items_arr = dt_items.substr(0, dt_items.length - 1).split('|');
+            var items_arr_size = items_arr.length;
+
+            // 금액분해
+            var dt_amts = getUrlParameter('dt_amts'); // 금액(배열)
+
+            /*@build-time*/ dt_amts = '10000|200|300|400|500|100|200|300|400|500|123000|2333|222222|';
+
+            var amts_arr = dt_amts.substr(0, dt_amts.length - 1).split('|');
+
+            // innerHTML 만들기
+            var makeHTML = '';
+
+            for (var i = 0; i < items_arr_size; i++) {
+              makeHTML += '<li>';
+              makeHTML += '<div class="list">';
+
+              var subTitle = items_arr[i];
+              if (subTitle.lastIndexOf('*') == subTitle.length - 1) {
+                subTitle = subTitle.substr(0, subTitle.length - 1) + '<em class="vat">&nbsp;*</em>';
+              } else {
+                subTitle = subTitle.substr(0, subTitle.length);
+              }
+              makeHTML += subTitle;
+              makeHTML += '<span class="sum">' + (amts_arr[i] == null || amts_arr[i] == '' ? 0 : formatCommas(parseInt(amts_arr[i]))) + ' 원</span>';
+
+              makeHTML += '</div>';
+              makeHTML += '</li>';
+            }
+
+            document.getElementById('items').innerHTML = makeHTML;
+          }
+        } catch (e) {}
+
+        $('.charge-info-box.detail dt').on('click', function () {
+          var $this = $(this);
+          if ($this.parent().hasClass('active')) {
+            $this.parent().removeClass('active');
+          } else {
+            $this.parent().addClass('active');
+          }
+        });
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

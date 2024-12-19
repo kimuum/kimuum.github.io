@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "공지사항 등록 | 고객 공지사항 관리 | 서비스 관리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>공지사항 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>서비스 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>고객 공지사항 관리</span></a>
+                    <!-- [BO운영] DR-2023-45930 20230821 -->
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>공지사항 등록</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 등록 -->
+            <div class="detailContainer boderEditText">
+              <div class="detailTop">
+                <!-- 공지사항 등록 - 상단 버튼 -->
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>등록</span></button>
+                </div>
+
+                <!-- 공지사항 상세 - 상단 버튼 -->
+                <!-- <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>삭제</span></button>
+                  <button type="button" class="btn"><span>변경</span></button>
+                </div> -->
+
+                <!-- 공지사항 상세 변경 - 상단 버튼 -->
+                <!-- <div class="buttonArea">
+                  <button type="button" class="btn"><span>저장</span></button>
+                </div> -->
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">공지사항</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        공지사항 - 고정여부, 팝업제공여부, 팝업제공유형, 팝업노출기간, 연결 URL, 제목, 공지사항 상세
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            고정여부<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="fixedPopup01" name="fixedPopup" checked="" aria-required="true" required="" />
+                                <label for="fixedPopup01" class="radioLabel">
+                                  <span>고정안함</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="fixedPopup02" name="fixedPopup" aria-required="true" required="" />
+                                <label for="fixedPopup02" class="radioLabel">
+                                  <span>고정</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            팝업제공여부<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="usePopup01" name="usePopup" checked="" aria-required="true" required="" />
+                                <label for="usePopup01" class="radioLabel">
+                                  <span>사용안함</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="usePopup02" name="usePopup" aria-required="true" required="" />
+                                <label for="usePopup02" class="radioLabel">
+                                  <span>팝업제공</span>
+                                  <!-- [2차BO] 20221005 수정 -->
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            팝업제공유형<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="typePopup01" name="typePopup" checked="" aria-required="true" required="" />
+                                <label for="typePopup01" class="radioLabel">
+                                  <span>전체(WEB, APP)</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="typePopup02" name="typePopup" aria-required="true" required="" />
+                                <label for="typePopup02" class="radioLabel">
+                                  <span>WEB</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="typePopup03" name="typePopup" aria-required="true" required="" />
+                                <label for="typePopup03" class="radioLabel">
+                                  <span>APP</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            팝업노출기간<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-start-date">
+                                <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                              <div class="space"></div>
+                              <div class="field fieldDatepicker" id="datepicker-end-date">
+                                <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연결 URL</th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" title="연결 URL 입력" />
+                              </div>
+                            </div>
+                            <div class="addExplain">
+                              <strong class="required"><span>*</span></strong> URL 주소를 별도로입력하지 않으면 해당 공지사항 상세로 연결됩니다.
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            제목<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" title="제목 입력" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            공지사항 상세<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="highTextArea">에디터 영역입니다.</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Case13. 시작일자(+시간)+종료일자, 서브 회선 3개", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnExtraCase13Apply" onclick="togglePopup('btnExtraCase13Apply', 'popupExtraCase13Apply')"><span>부가서비스 가입 신청</span></button>
+    </div>
+    <div class="popup show" id="popupExtraCase13Apply" role="dialog" aria-labelledby="popupTitleExtraCase13Apply" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleExtraCase13Apply">부가서비스 가입 신청</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnExtraCase13Apply', 'popupExtraCase13Apply')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoContent">
+                <div class="tableContainer normalBgTable captionShow">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        다음과 같이 신청 완료하시겠습니까?
+                        <span class="ir">- 상품명, 이용기간, 예상요금</span>
+                      </caption>
+                      <colgroup>
+                        <col style="width: 30%; max-width: 85px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="alignCenter">상품명</th>
+                          <td>로밍 하루종일ON 투게더(대표)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="alignCenter">이용기간</th>
+                          <td>
+                            <strong class="bold">총 1일</strong>
+                            <p>(2023년 3월 20일 01시 ~ 2023년 3월 21일 01시)</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="alignCenter">예상요금</th>
+                          <td>
+                            <strong class="bold">총 11,000원(부가세 포함)</strong>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 부가서비스 -->
+
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary"><span>신청하기</span></button>
+            </div>
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">신청 전 확인해주세요.</div>
+              <div class="infoContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">서비스 신청이 완료되면 문자메세지가 발송되오니, 반드시 해당 문자 수신 후 이용해주세요.</li>
+                  <li class="beforeDot">이용 중인 부가서비스 내역은 ‘마이알뜰폰 홈 > 요금제/부가서비스 > 부가서비스 신청/해지'에서 확인하실 수 있습니다.</li>
+                  <li class="beforeDot">부가서비스 가입 관련하여 보다 자세한 문의사항은 사업자 고객센터로 연락 바랍니다.</li>
+                </ul>
+              </div>
+            </div>
+            <!-- //신청 전 확인해주세요. -->
+          </div>
+          <!-- //applyCaseContainer -->
+        </div>
+        <!-- //popupMiddle -->
+        <div class="popupBottom"></div>
+        <!-- //popupBottom -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      // $(document).ready(function(){});
+    </script>
+  </body>
+</html>

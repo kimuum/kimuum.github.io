@@ -1,0 +1,27 @@
+.search-recent-list {
+  padding: 1.9rem 0;
+  @include flex(row, space-between, center);
+  &:not(:last-child) {
+    border-bottom: 0.1rem solid rgba($primary_100, 0.1);
+  }
+  .search-recent-name {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    @include font(1.6rem, 500, $text_02, normal);
+    gap: 0.8rem;
+    margin-right: 2rem;
+    .ic {
+      width: 2rem;
+      min-width: 2rem;
+      height: 2rem;
+    }
+  }
+  .btn-remove {
+    height: 1.6rem;
+    .ic {
+      display: block;
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+  }
+}

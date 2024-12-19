@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '리필하기 불가 안내',
+          "isBtn" : false
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-refill-fail">
+                <p class="info-title">
+                  <span class="highlight">고객님은 리필하기 </span><br />
+                  서비스 이용이 불가합니다.
+                </p>
+                <p class="info-title-desc">리필하기는 대상 요금제에 가입하고 있는 경우에만 이용 가능합니다.</p>
+              </div>
+
+              <div class="caution-guide-container bg-line">
+                <div class="caution-guide-title">대상 요금제 안내</div>
+                <div class="caution-guide-box bg-none">
+                  <div class="caution-list">
+                    <div class="caution-title">음성/데이터 리필 가능요금제</div>
+                    <p class="caution-text dot">
+                      T끼리 요금제, 무료음성Ⅱ, 올인원 34/44(커플, 특수 포함), LTE 요금제(커플, 특수 포함), 실버스마트15, 올인원팅, LTE팅, 골든에이지15/ 34/42/52, 손사랑 34/42/52, 소리사랑 34/42/52,
+                      전국민무한, 3G/LTE 맞춤형 요금제, 온가족 행복플랜, band 데이터
+                    </p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">데이터 리필 가능요금제</div>
+                    <p class="caution-text dot">태블릿 요금제, LTE 데이터전용, LTE 모뎀, LTE 태블릿, LTE Data 함께쓰기 (Basic 제외), T login</p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">음성 리필 가능요금제</div>
+                    <p class="caution-text dot">
+                      복지150(+)요금, 복지210(+)요금, 무료문자, 무료 음성, 소리사랑 요금제, 손사랑요금제, 올인원 54/64 /79/94(커플/특수 포함), 특수통신요금제 (기본 음성 제공량이 있는 경우),
+                      넘버원요금제, 뉴실버요금제, 팅 스마트, 팅 프리존, 팅 주니어 표준+, 팅 PLUS, 온가족 행복플랜 팅, 소리사랑 온가족, 손사랑 온가족
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box" id="dv_timezone_1">
+            <button type="button" class="btn btn-primary" id="agent_menu" onclick="javascript: btn_back();">확인</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">상담사 연결</button>
+          </div>
+          <div class="button-box" id="dv_timezone_0">
+            <button type="button" class="btn btn-primary" id="agent_menu" onclick="javascript: btn_back();">확인</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 1: 주간, 0: 야간, 9:점심시간
+        var timezone_type = getUrlParameter('timezone_type');
+        /*@build-time*/ timezone_type = '1';
+        // 주간
+        if (timezone_type == '1') {
+          document.getElementById('dv_timezone_1').style.display = 'flex';
+          document.getElementById('dv_timezone_0').style.display = 'none';
+        } else {
+          //야간
+          document.getElementById('dv_timezone_1').style.display = 'none';
+          document.getElementById('dv_timezone_0').style.display = 'flex';
+        }
+        // 점심시간
+        if (timezone_type == '9') {
+          document.getElementById('dv_timezone_1').style.display = 'none';
+          document.getElementById('dv_timezone_0').style.display = 'flex';
+        }
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

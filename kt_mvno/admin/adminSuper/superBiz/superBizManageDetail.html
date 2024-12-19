@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사업자 정보 상세" , "headProjectName": "| 사업자 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superBizManageDetail">
+      <!-- 페이지 고유 클래스 : superBizManageDetail -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>사업자 정보 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 정보 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 정보 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor05" class="tabButton" aria-controls="tabCon05" role="tab" aria-selected="true"><span>기본 정보</span></button>
+                <button type="button" id="tabAnchor06" class="tabButton" aria-controls="tabCon06" role="tab" aria-selected="false"><span>약관 목록</span></button>
+              </div>
+
+              <div class="tabContainer">
+                <div id="tabCon05" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor05">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">사업자 정보</h2>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            사업자 정보 상세
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">브랜드 로고</th>
+                              <td>-</td>
+                              <th scope="row">브랜드명</th>
+                              <td>KT엠모바일</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">사업자 상호</th>
+                              <td>(주)케이티엠모바일</td>
+                              <th scope="row">사업</th>
+                              <td>선불</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">사업자 등록번호</th>
+                              <td>123-45-67890</td>
+                              <th scope="row">법인등록번호</th>
+                              <td>123456-123456</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">주소</th>
+                              <td colspan="3">서울시 강남구 도산대로 1-1, 4층</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">대표자</th>
+                              <td>홍길동</td>
+                              <th scope="row">대표번호</th>
+                              <td>070-123401234</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 사업자 정보 -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">사업자 소개</h2>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            사업자 소개
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">소개 이미지</th>
+                              <td>-</td>
+                              <th scope="row">홈페이지</th>
+                              <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">소개글</th>
+                              <td colspan="3">
+                                <div class="highTextArea noScroll" tabindex="0">
+                                  안녕하세요. KT엠모바일입니다! 안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 사업자 소개 -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">고객센터 정보</h2>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            고객센터 정보
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">고객센터 번호</th>
+                              <td>1899-5000</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">운영시간</th>
+                              <td>00:00 ~ 00:00</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">연중무휴 ARS</th>
+                              <td>070-1234-1234</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">고객센터 URL</th>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 고객센터 정보 -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">관리자 승인</h2>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            관리자 승인
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">승인/거절 일시</th>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // 관리자 승인 -->
+                </div>
+                <div id="tabCon06" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor06">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">총 5개의 약관</h2>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            약관 정보
+                          </caption>
+                          <colgroup>
+                            <col style="width: 184px" />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col style="width: 184px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">약관명</th>
+                              <th scope="col">필수여부</th>
+                              <th scope="col">등록일</th>
+                              <th scope="col">노출일</th>
+                              <th scope="col">사용여부</th>
+                              <th scope="col">약관 순서</th>
+                              <th scope="col">설정조건</th>
+                              <th scope="col">승인 상태</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>서비스 이용약관</span></button>
+                                </div>
+                              </td>
+                              <td>필수</td>
+                              <td>2022-01-01</td>
+                              <td>2022-02-01</td>
+                              <td>사용중</td>
+                              <td>1</td>
+                              <td>공통</td>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>개인정보 수집/이용 동의</span></button>
+                                </div>
+                              </td>
+                              <td>필수</td>
+                              <td>2022-01-01</td>
+                              <td>2022-02-01</td>
+                              <td>사용중</td>
+                              <td>2</td>
+                              <td>공통</td>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>개인정보 제공 동의</span></button>
+                                </div>
+                              </td>
+                              <td>필수</td>
+                              <td>2022-01-01</td>
+                              <td>2022-02-01</td>
+                              <td>사용중</td>
+                              <td>3</td>
+                              <td>공통</td>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>개인정보 위탁 처리 동의</span></button>
+                                </div>
+                              </td>
+                              <td>필수</td>
+                              <td>2022-01-01</td>
+                              <td>2022-02-01</td>
+                              <td>사용중</td>
+                              <td>4</td>
+                              <td>공통</td>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>정보 및 광고 수신 동의</span></button>
+                                </div>
+                              </td>
+                              <td>필수</td>
+                              <td>2022-01-01</td>
+                              <td>2022-02-01</td>
+                              <td>사용중</td>
+                              <td>5</td>
+                              <td>공통</td>
+                              <td>승인(2022-01-01 12:52)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+              </div>
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<div class="content-visual-container">
+  <div class="content-visual-area">
+    <div class="visual-front-box">
+      <div class="content-visual-image-box use-pc" data-parallax="scroll" data-image-src="../../assets/images/@@imageSubBgSrcPC.path" data-alt="@@imageSubBgSrcPC.alt"></div>
+      <div class="content-visual-image-box use-mo" data-parallax="scroll" data-image-src="../../assets/images/@@imageSubBgSrcMO.path" data-alt="@@imageSubBgSrcPC.alt"></div>
+    </div>
+
+    <div class="visual-back-box">
+      <img width="1920px" height="945px" src="../../assets/images/@@imageSubBgSrcPC.path" class="use-pc" data-alt="@@imageSubBgSrcPC.alt" />
+      <img width="375px" height="812px" src="../../assets/images/@@imageSubBgSrcMO.path" class="use-mo" data-alt="@@imageSubBgSrcPC.alt" />
+    </div>
+
+    <div class="content-visual-content-box">
+      <!-- prettier-ignore -->
+      @@if(title) {
+      <div class="content-visual-title-box">
+        <h1 class="title">@@title</h1>
+      </div>
+      }
+
+      <!-- prettier-ignore -->
+      @@if(desc) {
+      <div class="content-visual-desc-box">
+        <p class="desc">@@desc</p>
+      </div>
+      }
+
+      <div class="content-visual-button-box">
+        <a href="" class="visual-btn btn-download">Download Catalog</a>
+        <button type="button" class="visual-btn btn-send-email">Send Catalog via Email</button>
+      </div>
+
+      <div class="scroll-arrow"></div>
+    </div>
+  </div>
+
+  <!-- [수정20230823] Send Catalog via Email 구조 -->
+  <div class="send-email-box">
+    <div class="send-email-inner">
+      <button type="button" class="btn-close" title="Send Catalog via Email close"></button>
+      <!-- email 작성 form  -->
+      <div class="send-email-form">
+        <div class="send-email-form-left">
+          <h3 class="send-email-title">Send Catalog via Email</h3>
+        </div>
+
+        <div class="send-email-form-right">
+          <form class="form-box">
+            <fieldset class="form-group">
+              <legend>Send Catalog via Email</legend>
+              <div class="field field-input field-email-address field-required">
+                <div class="field-label">
+                  <label for="email-address" class="label">Your E-mail Address</label>
+                </div>
+
+                <div class="field-form">
+                  <div class="input-box">
+                    <input type="text" id="email-address" class="input" placeholder="Email" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="field field-checkbox require">
+                <div class="field-form">
+                  <div class="checkbox-box">
+                    <!-- prettier-ignore -->
+                    @@include("checkbox.html", {
+                      'type' : 'normal',
+                      'id': 'check-0201',
+                      'label': 'I confirm and agree to the collection and use of my personal information.',
+                      'checked': null,
+                      'disabled': "required",
+                    })
+                  </div>
+                </div>
+              </div>
+
+              <div class="field field-checkbox">
+                <div class="field-form">
+                  <div class="checkbox-box">
+                    <!-- prettier-ignore -->
+                    @@include("checkbox.html", {
+                      'type' : 'normal',
+                      'id': 'check-1212121',
+                      'label': 'I want to subscribe to Hyundai Electrified Commercial Vehicles Newsletter.',
+                      'checked': null,
+                      'disabled': null,
+                    })
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="buttons-box">
+              <a href="javascript:void(0);" class="btn-submit btn-line-wh"><span>Send</span></a>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- email 발송 완료  -->
+      <div class="send-email-complete-box" style="display: none">
+        <div class="complete-message-box">
+          <p class="text">Sent Catalog to Email</p>
+        </div>
+        <div class="complete-desc-box">
+          <p class="text">The Catalog you requested has been successfully sent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

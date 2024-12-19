@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 건물 기본 정보"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : "",
+        "currentPage" : "건물 기본 정보",
+      })
+
+      <!-- App Gnb -->
+      <div class="mobile-gnb-container use-mobile">
+        <div class="mobile-gnb-area">
+          <div class="mobile-gnb-lists">
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb home">
+                <i class="icon"></i>
+                <span>홈</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb inquiry">
+                <i class="icon"></i>
+                <span>문의하기</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb info active">
+                <i class="icon"></i>
+                <span>시설안내</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb all">
+                <i class="icon"></i>
+                <span>전체</span>
+              </button>
+            </div>
+          </div>
+          <!-- 
+          Comment : .active 클래스 추가 시 lnb 노출
+        -->
+          <div class="mobile-lnb-container">
+            <div class="mobile-lnb-area">
+              <div class="mobile-lnb-top">
+                <div class="my-profile-box">
+                  <a href="" class="my-profile">
+                    <span>김에스님</span>
+                  </a>
+                </div>
+                <div class="setting-button-box">
+                  <button type="button" class="btn-setting">
+                    <i class="ic ic-gnb-setting"></i>
+                  </button>
+                </div>
+                <div class="mobile-lnb-shortcut-lists">
+                  <div class="mobile-lnb-shortcut-list">
+                    <a href="" class="mobile-lnb-shortcut">
+                      <span>건물 인증</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-lnb-middle">
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category inquiry">
+                    <i class="icon"></i>
+                    <span class="category">문의하기</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>문의 등록</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>나의 문의 내역</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>오늘의 문의 내역</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category info">
+                    <i class="icon"></i>
+                    <span class="category">시설 안내</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>주요 시설 안내</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>대피 안내도</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category lost">
+                    <i class="icon"></i>
+                    <span class="category">분실물 관리</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>분실물 조회</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>습득물 등록</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category help">
+                    <i class="icon"></i>
+                    <span class="category">고객센터</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>공지사항</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>고객만족도 설문</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-lnb-bottom">
+                <div class="mobile-lnb-list">
+                  <a href="" class="mobile-lnb">
+                    <span>로그아웃</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container building-info">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">건물 기본 정보</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="filter-table-container">
+                  <div class="filter-table-area">
+                    <div class="filter-table-top">
+                      <div class="filter-box">
+                        <div class="title">
+                          <span class="text">건물 정보</span>
+                        </div>
+                        <div class="filter">
+                          <div class="filter-row half">
+                            <div class="filter-list filter-list-name">
+                              <div class="filter-label">
+                                <span>건물명</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">에스원 건물</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-list filter-list-number">
+                              <div class="filter-label">
+                                <span>대표 전화번호</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">02-1234-5678</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-row">
+                            <div class="filter-list filter-list-address">
+                              <div class="filter-label">
+                                <span>주소</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">서울시 강남구 테헤란로 111 에스원</span>
+                                </div>
+                                <div class="button-box">
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/button.html", {
+                                    "dataValue" : "",
+                                    "type" : "secondary",
+                                    "size" : "small",
+                                    "class" : "",
+                                    "disabled" : "",
+                                    "text" : "지도로 보기",
+                                  })
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-table-middle">
+                      <!-- isotope -->
+                      <div class="isotope-container">
+                        <div class="isotope-area">
+                          <div class="isotope-top">
+                            <div class="isotope-title-box">
+                              <span>시설 안내</span>
+                            </div>
+                            <div class="isotope-button-box button-group filters-button-group">
+                              <button class="isotope-button active" data-group="all">전체</button>
+                              <button class="isotope-button" data-group="facilities">편의시설</button>
+                              <button class="isotope-button" data-group="public">공용시설</button>
+                              <button class="isotope-button" data-group="restaurant">식당</button>
+                            </div>
+                          </div>
+
+                          <div class="isotope-middle">
+                            <div class="isotope-content-box">
+                              <div class="facility-block-swiper-button-prev swiper-button-prev"></div>
+                              <div class="facility-block-swiper-button-next swiper-button-next"></div>
+                              <div class="facility-block-container swiper">
+                                <div class="facility-block-area isotope-content-box grid swiper-wrapper">
+                                  <!-- prettier-ignore -->
+                                  @@loop("../../block/blockFacility.html", [
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 1",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 2",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 3",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 4",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 5",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 6",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "GS편의점 7",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "싸다 김밥 8",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "public",
+                                      "category" : "공용시설",
+                                      "title"    : "공용시설명 9",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 10",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 11",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "GS편의점 12",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "싸다 김밥 13",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 14",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 15",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "public",
+                                      "category" : "공용시설",
+                                      "title"    : "공용시설명 16",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 17",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "restaurant",
+                                      "category" : "식당",
+                                      "title"    : "새마을 식당 18",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "GS편의점 19",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                    {
+                                      "isotope"  : "facilities",
+                                      "category" : "편의시설",
+                                      "title"    : "국민은행 20",
+                                      "number"   : "02-1234-1234",
+                                      "floor"    : "1F"
+                                    },
+                                  ])
+                                </div>
+                              </div>
+                              <div class="facility-block-swiper-pagination"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filter-table-bottom">
+                      <div class="evacuation-container">
+                        <div class="evacuation-area">
+                          <div class="evacuation-area-top">
+                            <div class="evacuation-top-left">
+                              <div class="title-box">대피 안내도</div>
+                              <div class="desc-box">
+                                <p>대피 안내도는 위치별로 다를 수 있습니다.</p>
+                              </div>
+                            </div>
+                            <div class="evacuation-top-right">
+                              <div class="button-box">
+                                <a
+                                  href="../../assets/images/대피안내도.zip"
+                                  class="btn btn-primary btn-medium"
+                                  download
+                                  title="다운로드"
+                                >
+                                  <span>대피 안내도 다운로드</span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="evacuation-area-middle">
+                            <div class="evacuation-area-middle-right tab-container">
+                              <div class="floor-select-container">
+                                <div class="floor-select-area tab-area">
+                                  <div class="floor-lists tabs">
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab active">
+                                        <span>7F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>6F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>5F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>4F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>3F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>2F</span>
+                                      </button>
+                                    </div>
+                                    <div class="floor-list tab">
+                                      <button type="button" class="floor btn-tab">
+                                        <span>1F</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="evacuation-area-middle-left tab-content-box">
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>7F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>7F B구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>6F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>6F C구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>6F C구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>5F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>4F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>3F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>2F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                              <div class="accordion-container normal">
+                                <div class="accordion-area">
+                                  <ul class="accordion-list">
+                                    <li class="accordion-item">
+                                      <div class="accordion-content">
+                                        <div class="content-top">
+                                          <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                          <div class="content-top-left">
+                                            <div class="title-box">
+                                              <span>1F A구역</span>
+                                            </div>
+                                          </div>
+                                        </div>
+
+                                        <div class="content-bottom">
+                                          <!-- 대피 안내도 이미지 -->
+                                          <div class="content-image-box">
+                                            <img src="../../assets/images/dummy.jpg" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

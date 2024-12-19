@@ -1,0 +1,44 @@
+<div class="charging-detail-list-contents">
+  <div class="list-content-label">
+    <!-- [접근성] 구조 변경 -->
+    <div class="list-content-title-box">
+      <span class="unit"><i class="ic ic-charge-fill"></i>@@kwh kwh</span>
+      @@if(chargingInfo) {
+      <p class="info">
+        <!-- prettier-ignore -->
+        @@for (var i = 0; i < chargingInfo.length; i++){
+        <span>`+chargingInfo[i].info+`</span>
+        }
+      </p>
+      }
+    </div>
+    <span class="price">@@price원</span>
+  </div>
+  <!-- [접근성] role 속성 추가 -->
+  <div class="list-state-cards" role="list">
+    <!-- 상태 class 명 
+  .possible : 충전 가능 
+  .ing: 충전중 
+  .inspection : 점검중 
+-->
+    <div class="list-state-card possible" role="listitem">
+      <span class="state">충전 가능</span>
+      <span class="text">1시간전 사용</span>
+    </div>
+    <div class="list-state-card possible" role="listitem">
+      <span class="state">충전 가능</span>
+      <span class="text">1시간전 사용</span>
+    </div>
+    <div class="list-state-card possible" role="listitem">
+      <span class="state">충전 가능</span>
+      <span class="text">1시간전 사용</span>
+    </div>
+    <div class="list-state-card ing" role="listitem">
+      <span class="state">충전 중</span>
+      <span class="text">1시간전 사용 시작</span>
+    </div>
+    <div class="list-state-card inspection" role="listitem">
+      <span class="state">점검중</span>
+    </div>
+  </div>
+</div>

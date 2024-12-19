@@ -1,0 +1,39 @@
+.token-bar-box {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  gap: 0.8rem;
+
+  .token-bar {
+    @include flex(row, flex-start, center);
+    gap: 0.8rem;
+    white-space: nowrap;
+    text-align: center;
+    width: calc(100% - 3rem);
+    overflow: hidden;
+    &.show {
+      flex-wrap: wrap;
+    }
+  }
+
+  .btn-filter {
+    position: relative;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.4rem;
+    border: 1px solid $primary_20;
+    background: $neutral-10;
+    &:not(:disabled) {
+      &:active,
+      &:focus {
+        background-color: $neutral-15;
+      }
+    }
+
+    .ic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

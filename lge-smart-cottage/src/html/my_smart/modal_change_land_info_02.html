@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-change-land-info'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-change-land-info -->
+    <dialog id="modal-change-land-info" class="modal modal-large change-land-info-modal">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">대지정보 변경</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <!-- prettier-ignore -->
+              @@include("input.html", {
+                "className" : "",
+                "id" : "",
+                "label" : "주소",
+                "icon" : "",
+                "placeholder" : "주소를 입력해주세요.",
+                "value" : "충북 진천군 이월면 진광로 928-27",
+                "property" : "",
+                "button" : [
+                  {
+                    "className" : "btn-search",
+                    "btnColor" : "btn-gray",
+                    "btnSize" : "medium",
+                    "property" : "",
+                    "btnText" : "버튼",
+                    "iconClass" : "",
+                    "iconLeft" : "",
+                  }
+                ],
+                "desc" : "",
+              })
+              <!-- prettier-ignore -->
+              @@include("input.html", {
+                "className" : "type-error",
+                "id" : "",
+                "label" : "상세 주소",
+                "icon" : "",
+                "placeholder" : "상세 주소를 입력해주세요.",
+                "value" : "123-1",
+                "property" : "",
+                "button" : "",
+                "desc" : "입력하신 주소는 유효한 주소가 아니에요.\n확인 후 다시 시도해주세요.",
+              })
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "btn-confirm",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "확인",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

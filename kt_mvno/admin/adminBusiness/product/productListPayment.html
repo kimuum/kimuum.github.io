@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "후불 요금제 관리" , "headProjectName": "| 상품 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap productListPayment">
+      <!-- 페이지 고유 클래스 : productListPayment -->
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>후불 요금제 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>상품 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>후불 요금제 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      요금제 관리 검색 구분 표
+                    </caption>
+                    <!-- [2차BO] 수정 -->
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><label for="inpuId">구분</label></th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select id="inpuId">
+                                <option value="">요금제명</option>
+                                <option value="">요금제명</option>
+                                <option value="">요금제명</option>
+                                <option value="">요금제명</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor05" class="tabButton" aria-controls="tabCon05" role="tab" aria-selected="true"><span>판매 요금제 5</span></button>
+                <button type="button" id="tabAnchor06" class="tabButton" aria-controls="tabCon06" role="tab" aria-selected="false"><span>판매 중지 요금제 1</span></button>
+                <button type="button" id="tabAnchor07" class="tabButton" aria-controls="tabCon07" role="tab" aria-selected="false"><span>승인 대기 1</span></button>
+                <button type="button" id="tabAnchor08" class="tabButton" aria-controls="tabCon08" role="tab" aria-selected="false"><span>등록 전 요금제 10</span></button>
+              </div>
+
+              <div class="tabContainer">
+                <div id="tabCon05" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor05">
+                  <div class="contents">
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            판매 요금제 - 요금제명, 데이터, 음성(분), 문자(건), 기본요금(VAT 포함), 프로모션요금(VAT 포함), 승인 상태, 승인 일시, 승인 처리자, 추천상품여부
+                          </caption>
+                          <colgroup>
+                            <col style="width: 200px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 110px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 110px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">요금제명</th>
+                              <th scope="col">데이터</th>
+                              <th scope="col">음성(분)</th>
+                              <th scope="col">문자(건)</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                              <th scope="col">프로모션 요금(VAT 포함)</th>
+                              <th scope="col">승인 상태</th>
+                              <th scope="col">승인 일시</th>
+                              <th scope="col">승인 처리자</th>
+                              <th scope="col">추천상품여부</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2차 승인</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>Y</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2차 승인</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>Y</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2차 승인</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>Y</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2차 승인</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>Y</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2차 승인</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>Y</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon06" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor06">
+                  <div class="contents">
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            판매 중지 요금제 - 요금제명, 데이터, 음성(분), 문자(건), 기본요금(VAT 포함), 프로모션요금(VAT 포함), 판매중지 시작일, 추천상품여부
+                          </caption>
+                          <colgroup>
+                            <col style="width: 200px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 130px" />
+                            <col style="width: 110px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">요금제명</th>
+                              <th scope="col">데이터</th>
+                              <th scope="col">음성(분)</th>
+                              <th scope="col">문자(건)</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                              <th scope="col">프로모션 요금(VAT 포함)</th>
+                              <th scope="col">판매중지 시작일</th>
+                              <th scope="col">추천상품여부</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2022-01-02</td>
+                              <td>Y</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon07" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor07">
+                  <div class="contents">
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            승인 대기 - 요금제명, 데이터, 음성(분), 문자(건), 기본요금(VAT 포함), 프로모션요금(VAT 포함), 승인 요청일시, 승인 일시, 승인 처리자, 승인 상태
+                          </caption>
+                          <colgroup>
+                            <col style="width: 200px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 110px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">요금제명</th>
+                              <th scope="col">데이터</th>
+                              <th scope="col">음성(분)</th>
+                              <th scope="col">문자(건)</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                              <th scope="col">프로모션 요금(VAT 포함)</th>
+                              <th scope="col">승인 요청일시</th>
+                              <th scope="col">승인 일시</th>
+                              <th scope="col">승인 처리자</th>
+                              <th scope="col">승인 상태</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2022-02-22 10:00</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td>승인 대기</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">데이터 맘껏 2.2GB+/100분</a>
+                              </td>
+                              <td>1.5GB</td>
+                              <td>무제한</td>
+                              <td>무제한</td>
+                              <td>35,400원</td>
+                              <td>7,900원</td>
+                              <td>2022-02-22 10:00</td>
+                              <td>2022-02-22 14:00</td>
+                              <td>임*일(12345678)</td>
+                              <td><a href="#" class="colorRed">1차 반려</a></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon08" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor08">
+                  <!-- // Contents -->
+                  <div class="contents">
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            등록 전 요금제 목록 - 요금제명, 데이터, 음성(분), 문자(건), 기본요금(VAT 포함), 프로모션요금(VAT 포함), 승인 요청일시, 승인 일시, 승인 처리자, 승인 상태
+                          </caption>
+                          <colgroup>
+                            <col style="width: 200px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 110px" />
+                            <col style="width: 168px" />
+                            <col style="width: 168px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 170px" />
+                            <col style="width: 110px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">요금제명</th>
+                              <th scope="col">데이터</th>
+                              <th scope="col">음성(분)</th>
+                              <th scope="col">문자(건)</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                              <th scope="col">프로모션 요금(VAT 포함)</th>
+                              <th scope="col">승인 요청일시</th>
+                              <th scope="col">승인 일시</th>
+                              <th scope="col">승인 처리자</th>
+                              <th scope="col">승인 상태</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">통화 맘껏 1.5GB</a>
+                              </td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>승인 요청전</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

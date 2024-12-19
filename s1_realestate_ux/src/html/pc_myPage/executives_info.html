@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | 임직원 관리</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" :'',
+        "currentPage" : "임직원 관리",
+      })
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container building-add">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">건물의 임직원 초대와 관리가 가능합니다.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="building-info-table-container">
+                  <div class="building-info-table-area">
+                    <div class="filter-box">
+                      <div class="filter">
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>건물 정보</span>
+                            </div>
+                            <div class="filter-info type-large">
+                              <div class="info-box">
+                                <span class="text"
+                                  >서울특별시 서초구 서초대로74길 11 삼성전자 서초사옥<br />8F,9F,10F, 11F
+                                  디자인그룹실</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-row half">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>유효기간</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">2023.06.30</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>인증일</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">2022.06.30</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="invite-notice-box">
+                  <div class="img img-person-no"></div>
+                  <div class="text-box">
+                    <div class="title">가입한 임직원이 없습니다.</div>
+                    <div class="text">임직원을 초대해 주세요.</div>
+                  </div>
+                  <div class="button-box">
+                    <!-- prettier-ignore -->
+                    @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "임직원 초대",
+                  })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

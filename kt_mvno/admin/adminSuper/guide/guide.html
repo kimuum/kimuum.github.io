@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Guide" , "headProjectName": "| 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>선택된 상세 페이지명</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>선택된 대메뉴 1</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>선택된 상세 페이지명</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      구분, 계정 유형 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="periodWrap">
+                            <div class="field fieldDatepicker" id="datepicker-start-date">
+                              <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                              </div>
+                            </div>
+                            <div class="space"></div>
+                            <div class="field fieldDatepicker" id="datepicker-end-date">
+                              <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">사업자명</option>
+                                <option value="">사업자명</option>
+                                <option value="">사업자명</option>
+                                <option value="">사업자명</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">계정 유형</th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="계정 유형">
+                                <option value="">전체</option>
+                                <option value="">전체</option>
+                                <option value="">전체</option>
+                                <option value="">전체</option>
+                              </select>
+                            </div>
+                          </div>
+                        </td>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldCheckbox">
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-20" checked="" />
+                              <label for="input-id-20" class="checkboxLabel">
+                                <span class="checkIcon"></span>
+                                <span>링크 복사</span>
+                              </label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">기간</th>
+                        <td>
+                          <div class="periodWrap">
+                            <div class="field fieldDatepicker" id="datepicker-select-date">
+                              <label class="ir" for="input-select-date">날짜 선택 : 2022년 03월 09일</label>
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <th scope="row">
+                          사용여부<strong class="required"><span>필수 입력</span></strong>
+                        </th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="radio">
+                              <input type="radio" id="input-id-01" name="radio" checked="" aria-required="true" required="" disabled />
+                              <label for="input-id-01" class="radioLabel">
+                                <span>사용</span>
+                              </label>
+                            </div>
+                            <div class="radio">
+                              <input type="radio" id="input-id-02" name="radio" aria-required="true" required="" disabled />
+                              <label for="input-id-02" class="radioLabel">
+                                <span>사용 안함</span>
+                              </label>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>신청 10</span></button>
+                <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>처리 완료 9</span></button>
+              </div>
+              <div class="tabContainer">
+                <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <div class="select">
+                          <select>
+                            <option value="">전체</option>
+                            <option value="">전체</option>
+                            <option value="">전체</option>
+                            <option value="">전체</option>
+                          </select>
+                        </div>
+                        <div class="select">
+                          <select>
+                            <option value="">요금제명</option>
+                            <option value="">요금제명</option>
+                            <option value="">요금제명</option>
+                            <option value="">요금제명</option>
+                          </select>
+                        </div>
+                        <div class="searchInput">
+                          <label for="searchInputID" class="ir">검색어 입력</label>
+                          <div class="input">
+                            <input type="text" id="searchInputID" value="" placeholder="검색어를 입력해주세요" />
+                          </div>
+                          <button type="button" class="btnSearch show"><span>검색하기</span></button>
+                          <button type="button" class="btnRemove"><span>검색어 지우기</span></button>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox" id="input-id-07" checked />
+                          <label for="input-id-07" class="checkboxLabel">
+                            <span class="checkIcon"></span>
+                            <span>사업자 추천 상품</span>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>삭제</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">내용</div>
+                    <!-- <div class="contentBottom"></div> -->
+                  </div>
+                  <!-- // Contents -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">
+                          제목
+                          <span class="bar">총 10개</span>
+                        </h2>
+                      </div>
+                      <div class="topRight">
+                        <div class="select typeRow">
+                          <select title="정렬 수">
+                            <option value="">10개</option>
+                            <option value="">10개</option>
+                            <option value="">10개</option>
+                            <option value="">10개</option>
+                          </select>
+                        </div>
+                        <div class="buttonArea">
+                          <button type="button" class="btn btnLineGray"><span>반려</span></button>
+                          <button type="button" class="btn"><span>승인</span></button>
+                          <button type="button" class="btn"><span>인기 요금제 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            표 요약 정보가 들어갑니다.
+                          </caption>
+                          <colgroup>
+                            <col style="width: 62px" />
+                            <col style="width: 56px" />
+                            <col style="width: 135px" />
+                            <col style="width: 115px" />
+                            <col style="width: 115px" />
+
+                            <col style="width: 202px" />
+                            <col style="width: 202px" />
+                            <col style="width: 202px" />
+                            <col style="width: 202px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">
+                                <div class="checkbox">
+                                  <input type="checkbox" id="input-id-all" />
+                                  <label for="input-id-all" class="checkboxLabel">
+                                    <span class="ir">전체 선택</span>
+                                    <span class="checkIcon"></span>
+                                  </label>
+                                </div>
+                              </th>
+                              <th scope="col">사번</th>
+                              <th scope="col">소속 부서</th>
+                              <th scope="col">아이디</th>
+                              <th scope="col">이름</th>
+
+                              <th scope="col">이메일</th>
+                              <th scope="col">휴대폰 번호</th>
+                              <th scope="col">신청날짜</th>
+                              <th scope="col">신청날짜</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="input-id-chk" checked />
+                                  <label for="input-id-chk" class="checkboxLabel">
+                                    <span class="ir">선택</span>
+                                    <span class="checkIcon"></span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>
+                                <!-- 변경 인풋 -->
+                                <div class="input">
+                                  <input type="text" value="100" title="사번 변경" />
+                                  <!-- title속성은 label 태그 대체입니다. -->
+                                </div>
+                              </td>
+                              <td>MVNO 사업개발팀</td>
+                              <td>lim1234</td>
+                              <td>임*일</td>
+
+                              <td>lim1234@kt***********</td>
+                              <td>010-12**-*234</td>
+                              <td>2022-01-09</td>
+                              <td>2022-01-09</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="input-id-chk2" />
+                                  <label for="input-id-chk2" class="checkboxLabel">
+                                    <span class="ir">선택</span>
+                                    <span class="checkIcon"></span>
+                                  </label>
+                                </div>
+                              </td>
+                              <td>12345</td>
+                              <td>MVNO 사업개발팀</td>
+                              <td>lim1234</td>
+                              <td>임*일</td>
+                              <td>
+                                <button type="button" class="btn"><span>수정</span></button>
+                              </td>
+                              <td>010-12**-*234</td>
+                              <td>2022-01-09</td>
+                              <td>2022-01-09</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">테이블이 내용이 가운데 정렬인 경우</h2>
+                      </div>
+                      <div class="topRight"></div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            표 요약 정보가 들어갑니다.
+                          </caption>
+                          <colgroup>
+                            <col style="width: 110px" />
+                            <col style="width: 200px" />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">수신 여부</th>
+                              <th scope="col">수신/거부 날짜</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>앱푸시</td>
+                              <td>수신 동의</td>
+                              <td>2022-01-17</td>
+                            </tr>
+                            <tr>
+                              <td>앱푸시</td>
+                              <td>수신 동의</td>
+                              <td>
+                                <div class="select">
+                                  <select>
+                                    <option value="">사용안함</option>
+                                    <option value="">사용함</option>
+                                  </select>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">처리 완료</div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor05" class="tabButton" aria-controls="tabCon05" role="tab" aria-selected="true"><span>기본 정보</span></button>
+                <button type="button" id="tabAnchor06" class="tabButton" aria-controls="tabCon06" role="tab" aria-selected="false"><span>약관 목록</span></button>
+              </div>
+
+              <div class="tabContainer">
+                <div id="tabCon05" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor05">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">상세 제목(thead가 없는 경우)</h2>
+                      </div>
+                      <!-- <div class="topRight"></div> -->
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            표 요약 정보가 들어갑니다.
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                <label for="input-id-20">공유하기 설정</label> <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldCheckbox">
+                                  <div class="checkbox">
+                                    <input type="checkbox" id="input-id-20" checked aria-required="true" />
+                                    <label for="input-id-20" class="checkboxLabel">
+                                      <span class="checkIcon"></span>
+                                      <span>링크 복사</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </td>
+                              <th scope="row">브랜드명</th>
+                              <td>KT엠모바일</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">사업자 상호</th>
+                              <td>(주)케이티엠모바일</td>
+                              <th scope="row">사업</th>
+                              <td>선불</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">주소</th>
+                              <td colspan="3">서울시 강남구 도산대로 1-1, 4층</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">소개글</th>
+                              <td colspan="3">
+                                <!-- detailContainer.boderEditText 클래스 추가 시 보더생성 -->
+                                <div class="highTextArea noScroll" tabindex="0">
+                                  안녕하세요. KT엠모바일입니다! 안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                  안녕하세요. KT엠모바일입니다!<br />
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <th scope="row">아이디</th>
+                              <td>
+                                <div class="confirmWrap">
+                                  <span>kohyun4</span>
+                                  <div class="confirmColorLabel">
+                                    <span class="date">2022-01-27</span>
+                                    <span class="colorLabel">계정승인</span>
+                                  </div>
+                                </div>
+                              </td>
+                              <th scope="row">비밀번호</th>
+                              <td>
+                                <div class="buttonArea btnLeft">
+                                  <span>*********</span>
+                                  <button type="button" class="btnUnderLine"><span>변경</span></button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">휴대폰 번호</th>
+                              <td colspan="3">
+                                <div class="buttonArea btnLeft">
+                                  <span>010-6319-8159</span>
+                                  <button type="button" class="btnUnderLine"><span>변경</span></button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">신규 휴대폰 번호</th>
+                              <td colspan="3">
+                                <div class="fieldInput">
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="010-6319-8159" title="휴대폰 번호 입력" />
+                                    </div>
+                                    <div class="buttonArea">
+                                      <button type="button" class="btn"><span>재발송</span></button>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="fieldInput">
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="213345" title="인증번호 입력" />
+                                    </div>
+                                  </div>
+                                  <div class="addExplain"><span>인증이 완료되었습니다.</span></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">요금제 세부항목</th>
+                              <!-- temp -->
+                              <td colspan="3">
+                                <div class="detailOptionArea">
+                                  <div class="detailItem">
+                                    <div class="mainBox">
+                                      <div class="title">음성 통화</div>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="99999" title="음성 통화" />
+                                        </div>
+                                        <span>분</span>
+                                      </div>
+                                      <div class="addExplain">
+                                        <strong class="required"><span>*</span></strong
+                                        ><span>무제한 : 99999</span>
+                                      </div>
+                                    </div>
+                                    <div class="subBox">
+                                      <span class="title">영상/부가통화</span>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="60" title="영상/부가통화" aria-required="true" />
+                                        </div>
+                                        <span>분</span>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="detailItem">
+                                    <div class="mainBox">
+                                      <div class="title">데이터</div>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="" title="데이터" />
+                                        </div>
+                                        <div class="select">
+                                          <select title="단위">
+                                            <option value="">GB</option>
+                                            <option value="">GB</option>
+                                            <option value="">GB</option>
+                                            <option value="">GB</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="addExplain">
+                                        <strong class="required"><span>*</span></strong
+                                        ><span>무제한 : 99999</span>
+                                      </div>
+                                    </div>
+                                    <div class="subBox">
+                                      <div class="title">속도제한 데이터</div>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="1" title="속도제한 데이터" aria-required="true" />
+                                        </div>
+                                        <span>Mbps</span>
+                                      </div>
+                                    </div>
+                                    <div class="subBox">
+                                      <div class="title">추가 데이터</div>
+                                      <div class="fieldForm">
+                                        <div class="select">
+                                          <select title="단위">
+                                            <option value="">일</option>
+                                            <option value="">일</option>
+                                            <option value="">일</option>
+                                            <option value="">일</option>
+                                          </select>
+                                        </div>
+                                        <div class="input">
+                                          <input type="text" value="1,000" title="추가 데이터" />
+                                        </div>
+                                        <div class="select">
+                                          <select title="단위">
+                                            <option value="">MB</option>
+                                            <option value="">MB</option>
+                                            <option value="">MB</option>
+                                            <option value="">MB</option>
+                                          </select>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="detailItem">
+                                    <div class="mainBox">
+                                      <div class="title">SMS</div>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="99999" title="SMS" />
+                                        </div>
+                                        <span>건</span>
+                                      </div>
+                                      <div class="addExplain">
+                                        <strong class="required"><span>*</span></strong
+                                        ><span>무제한 : 99999</span>
+                                      </div>
+                                    </div>
+                                    <div class="subBox">
+                                      <div class="title">MMS</div>
+                                      <div class="fieldForm">
+                                        <div class="input">
+                                          <input type="text" value="60" title="MMS" aria-required="true" />
+                                        </div>
+                                        <span>건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                검색 키워드<strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td colspan="3">
+                                <div class="fieldForm">
+                                  <div class="fieldInput">
+                                    <div class="input">
+                                      <input type="text" value="자동" title="검색 키워드" aria-required="true" />
+                                    </div>
+                                  </div>
+                                  <div class="buttonArea">
+                                    <button type="button" class="btn">등록</button>
+                                  </div>
+                                </div>
+                                <div class="buttonArea keywordArea">
+                                  <button type="button" class="btn btnKeyword">차단</button>
+                                  <button type="button" class="btn btnKeyword">수신</button>
+                                  <button type="button" class="btn btnKeyword">번호 번호</button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                이벤트 썸네일<strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td colspan="3">
+                                <div class="fieldForm">
+                                  <div class="file">
+                                    <input type="file" id="fileUpload" title="썸네일 이미지 업로드" aria-required="true" />
+                                  </div>
+                                  <div class="buttonArea">
+                                    <button type="button" class="btn"><span>업로드</span></button>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">화면 등록</th>
+                              <td colspan="3">
+                                <div class="fieldForm">
+                                  <div class="input">
+                                    <input type="text" value="요금제" title="등록 화면명" />
+                                  </div>
+                                  <div class="buttonArea">
+                                    <button type="button" class="btn"><span>조회</span></button>
+                                  </div>
+                                </div>
+                                <div class="buttonArea btnLeft">
+                                  <button type="button" class="btnRefresh"><span>초기화</span></button>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">답변 내용</th>
+                              <td colspan="3">
+                                <div class="fieldTextarea">
+                                  <div class="textarea disabled">
+                                    <textarea name="" id="" cols="30" rows="10" title="답변 내용" disabled>disabled 상태 입니다.</textarea>
+                                    <p class="textCounter"><strong>0</strong> / 4000자</p>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                  <div class="detailTop">
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnLineGray"><span>취소</span></button>
+                      <button type="button" class="btn"><span>삭제</span></button>
+                      <button type="button" class="btn"><span>저장</span></button>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">상세 제목(thead가 있는 경우)</h2>
+                      </div>
+                      <!-- <div class="topRight"></div> -->
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            표 요약 정보가 들어갑니다.
+                          </caption>
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">구분</th>
+                              <th scope="col">수신 여부</th>
+                              <th scope="col">수신/거부 날짜</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>앱푸시</td>
+                              <td>수신 동의</td>
+                              <td>2022-01-17</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon06" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor06">약관 목록</div>
+              </div>
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+.subscription-product {
+  .caution-guide-container {
+    margin-top: 2rem;
+  }
+}
+.form-privacy-agree {
+  margin: 1.4rem 0 -2.2rem;
+  padding: 1.5rem 1.3rem;
+  border: 1px solid rgba($primary, 0.5);
+  border-radius: 1rem;
+  .field-label {
+    margin-bottom: 0.9rem;
+    font-weight: 500;
+    letter-spacing: -0.07rem;
+  }
+  .field-area {
+    @include flex(row, flex-start, center);
+    & + .field-area {
+      margin-top: 0.7rem;
+    }
+    input[type='checkbox'] {
+      + .checkbox-label {
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: -0.07rem;
+        &::before {
+          width: 1.8rem;
+          height: 1.8rem;
+          margin-right: 0.8rem;
+        }
+      }
+    }
+    .btn-border-gray {
+      flex-shrink: 0;
+      width: 8.5rem;
+      height: 2.9rem;
+      margin-left: auto;
+      padding: 0.5rem 0.9rem;
+      font-size: 1.3rem;
+      letter-spacing: -0.07rem;
+    }
+  }
+}

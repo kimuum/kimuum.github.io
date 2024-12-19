@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "인기 부가서비스 등록" , "headProjectName": "| 상품 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>인기 부가서비스 등록</span></button>
+    </div>
+    <!-- 팝업 고유 클래스 : popupSuperProductExtraAdd -->
+    <div class="popup popupSizeMax popupSuperProductExtraAdd hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">인기 부가서비스 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="resultContainer">
+            <div class="contents">
+              <div class="contentTop">
+                <div class="topLeft">
+                  <div class="select">
+                    <select>
+                      <option value="">전체</option>
+                      <option value="">사업자명</option>
+                      <option value="">브랜드명</option>
+                      <option value="">부가서비스명</option>
+                      <option value="">부가서비스 설명</option>
+                    </select>
+                  </div>
+                  <div class="searchInput">
+                    <label for="searchInputID" class="ir">검색어 입력</label>
+                    <div class="input">
+                      <input type="text" id="searchInputID" value="" placeholder="검색어를 입력해주세요" />
+                    </div>
+                    <button type="button" class="btnSearch show"><span>검색하기</span></button>
+                    <button type="button" class="btnRemove"><span>검색어 지우기</span></button>
+                  </div>
+                </div>
+                <div class="topRight">
+                  <div class="buttonArea">
+                    <button type="button" class="btn"><span>조회</span></button>
+                  </div>
+                </div>
+              </div>
+              <div class="contentMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      인기 부가서비스 등록 - 선택, 사업자명, 브랜드명, 부가서비스명, 부가서비스 설명, 기본요금(VAT 포함), 상품추천여부
+                    </caption>
+                    <colgroup>
+                      <col style="width: 70px" />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                      <col />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">선택</th>
+                        <th scope="col">사업자명</th>
+                        <th scope="col">브랜드명</th>
+                        <th scope="col">부가서비스명</th>
+                        <th scope="col">부가서비스 설명</th>
+                        <th scope="col">기본요금(VAT 포함)</th>
+                        <th scope="col">상품추천여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" id="input-id-chk" checked />
+                            <label for="input-id-chk" class="checkboxLabel">
+                              <span class="ir">선택</span>
+                              <span class="checkIcon"></span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>(주)케이티엠모바일</td>
+                        <td>KT M 모바일</td>
+                        <td>부가서비스 타이틀</td>
+                        <td>부가서비스 설명 텍스트</td>
+                        <td>1,900원</td>
+                        <td>Y</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="checkbox">
+                            <input type="checkbox" id="input-id-chk02" checked />
+                            <label for="input-id-chk02" class="checkboxLabel">
+                              <span class="ir">선택</span>
+                              <span class="checkIcon"></span>
+                            </label>
+                          </div>
+                        </td>
+                        <td>(주)케이티엠모바일</td>
+                        <td>KT M 모바일</td>
+                        <td>부가서비스 타이틀</td>
+                        <td>부가서비스 설명 텍스트</td>
+                        <td>3,900원</td>
+                        <td>N</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>등록</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

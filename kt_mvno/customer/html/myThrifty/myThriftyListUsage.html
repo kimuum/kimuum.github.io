@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사용량 조회 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyListUsage -->
+    <div class="wrap myThriftyListUsage">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-3', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>사용량 조회</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>사용량 조회</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea summary01">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">사용량</h3>
+                  </div>
+                  <div class="fieldMiddle bgColorGray">
+                    <!-- 달력 -->
+                    <div class="field fieldDatepicker hideInput large" id="datepicker-select-period-large">
+                      <div class="fieldLabel">사용량 조회 월 선택</div>
+                      <div class="fieldForm datePickerArea">
+                        <input type="text" id="input-select-date-large" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" aria-hidden="true" />
+                        <button type="button" id="btn-open-period" class="btn btnOpen btnOpenPeriod btnOpenPeriodUsed" onclick="togglePopup('btn-open-period', 'period-container')" aria-expanded="false" title="사용량 조회 월 선택">4월 (2022.04.01 ~ 2022.04.18)</button>
+
+                        <div id="period-container" class="periodContainer">
+                          <div class="periodArea">
+                            <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1월</button>
+                            <button type="button" class="btn btnPeriod btnMonth3" month="2">2월</button>
+                            <button type="button" class="btn btnPeriod btnMonth6" month="3">3월</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="dataTabContainer">
+                      <div class="tabList" role="tablist">
+                        <button type="button" id="tabAnchor11" class="tabButton" aria-controls="tabCon11" role="tab" aria-selected="true"><span>그래프 보기</span></button>
+                        <button type="button" id="tabAnchor12" class="tabButton" aria-controls="tabCon12" role="tab" aria-selected="false"><span>상세 보기</span></button>
+                      </div>
+
+                      <div class="tabContainer">
+                        <div id="tabCon11" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor11">
+                          <div class="summaryDataWrap">
+                            <div class="summaryTitleArea">
+                              <div class="imgWrap">
+                                <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                              </div>
+                              <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                            </div>
+                            <div class="dlColorBoxArea">
+                              <div class="dlGrayBox dataGraphBar">
+                                <div class="graphArea">
+                                  <dl class="dlItemFlex">
+                                    <dt>데이터</dt>
+                                    <dd class="barContent">
+                                      <p class="colorRed">총 <span>3.2GB</span></p>
+                                    </dd>
+                                  </dl>
+                                  <div class="bar bgRed">
+                                    <div class="barGage" style="width: 90%"></div>
+                                  </div>
+                                  <div class="infoDetail">
+                                    <p>잔여 3.21 GB</p>
+                                    <p>사용 11.84 GB</p>
+                                  </div>
+                                </div>
+                                <!-- //데이터 -->
+                                <div class="graphArea">
+                                  <dl class="dlItemFlex">
+                                    <dt>음성</dt>
+                                    <dd class="barContent">
+                                      <p class="colorYellow">총 <span>300분</span></p>
+                                    </dd>
+                                  </dl>
+                                  <div class="bar bgYellow">
+                                    <div class="barGage" style="width: 50%"></div>
+                                  </div>
+                                  <div class="infoDetail">
+                                    <p>잔여 161분</p>
+                                    <p>사용 139분</p>
+                                  </div>
+                                </div>
+                                <!-- //음성 -->
+                                <div class="graphArea">
+                                  <dl class="dlItemFlex">
+                                    <dt>영상</dt>
+                                    <dd class="barContent">
+                                      <p class="colorPurple02">총 <span>50분</span></p>
+                                    </dd>
+                                  </dl>
+                                  <div class="bar bgPurple02">
+                                    <div class="barGage" style="width: 100%"></div>
+                                  </div>
+                                  <div class="infoDetail">
+                                    <p>잔여 50분</p>
+                                    <p>사용 0분</p>
+                                  </div>
+                                </div>
+                                <!-- //영상 -->
+                                <div class="graphArea">
+                                  <dl class="dlItemFlex">
+                                    <dt>문자</dt>
+                                    <dd class="barContent">
+                                      <p>기본제공</p>
+                                    </dd>
+                                  </dl>
+                                  <div class="bar">
+                                    <div class="barGage" style="width: 100%"></div>
+                                  </div>
+                                  <div class="infoDetail">
+                                    <p>기본제공</p>
+                                    <p>사용 1건</p>
+                                  </div>
+                                </div>
+                                <!-- //문자 -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- // 그래프 보기 -->
+                        <div id="tabCon12" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor12">
+                          <div class="tableContainer captionShow">
+                            <div class="tableArea">
+                              <table>
+                                <caption>
+                                  총 사용량
+                                  <span class="ir">구분, 전체 사용량</span>
+                                </caption>
+                                <colgroup>
+                                  <col />
+                                  <col />
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <th scope="col">구분(최근 이용 시점)</th>
+                                    <th scope="col" class="alignRight">전체 사용량</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <span class="block">음성</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignRight">100분 50초</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">HD보이스</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignRight">38분 10초</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">SMS</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignRight">1건</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">데이터-LTE</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignRight">11.84GB</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                            <div class="tableArea">
+                              <table>
+                                <caption>
+                                  기본제공 사용량
+                                  <span class="ir">- 구분, 총 제공(당월/이월), 사용량</span>
+                                </caption>
+                                <colgroup>
+                                  <col />
+                                  <col />
+                                  <col style="width: 27%" />
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <th scope="col">
+                                      <span class="block">구분</span>
+                                      (최근 이용 시점))
+                                    </th>
+                                    <th scope="col" class="alignCenter">
+                                      <span class="block">총 제공</span>
+                                      (당월/이월)
+                                    </th>
+                                    <th scope="col" class="alignCenter">사용량</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <span class="block">음성</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignCenter">
+                                      <span class="block">300분</span>
+                                      (300분/0분)
+                                    </td>
+                                    <td class="alignCenter">139분</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">영상/부가</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignCenter">
+                                      <span class="block">50분</span>
+                                      (50분/0분)
+                                    </td>
+                                    <td class="alignCenter">0분</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">SMS/MMS</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignCenter">
+                                      <span class="block">기본제공</span>
+                                      (기본제공/0건)
+                                    </td>
+                                    <td class="alignCenter">1건</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">데이터</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignCenter">
+                                      <span class="block">17.84GB</span>
+                                      (15.00GB/2.84GB)
+                                    </td>
+                                    <td class="alignCenter">11.84GB</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <span class="block">속도제한 데이터</span>
+                                      (05-09 14:18)
+                                    </td>
+                                    <td class="alignCenter">
+                                      <span class="block">기본제공</span>
+                                      (기본제공/0GB)
+                                    </td>
+                                    <td class="alignCenter">0GB</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- // 상세 보기 -->
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //사용량 -->
+              <div class="summaryArea summary02">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">최근 3개월 사용량 평균</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="usageTabContainer">
+                      <div class="tabList" role="tablist">
+                        <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>음성</span></button>
+                        <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>데이터</span></button>
+                        <button type="button" id="tabAnchor03" class="tabButton" aria-controls="tabCon03" role="tab" aria-selected="false"><span>문자</span></button>
+                      </div>
+
+                      <div class="tabContainer">
+                        <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                          <div class="stickChartArea">
+                            <div class="chartInner">
+                              <div class="itemAverage">
+                                <div class="item">
+                                  <span class="label">3개월 평균</span>
+                                  <span class="labelData">12GB</span>
+                                  <!-- [2차] 20221026 추가 -->
+                                  <div class="itemStick">
+                                    <!-- 3개월 평균 사용한 데이터 % -->
+                                    <div class="colorStick" style="height: 65%"></div>
+                                    <!-- [2차] 20221026 수정 -->
+                                  </div>
+                                </div>
+                                <div class="line" style="bottom: 65%"></div>
+                              </div>
+                              <ul class="chartArea">
+                                <li class="item">
+                                  <span class="label">10월</span>
+                                  <span class="labelData">13.6GB</span>
+                                  <!-- [2차] 20221026 추가 -->
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 80%"></div>
+                                    <!-- [2차] 20221026 수정 -->
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">11월</span>
+                                  <span class="labelData">12GB</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 70%"></div>
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">12월</span>
+                                  <span class="labelData">7.5GB</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 50%"></div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlWhiteBox">
+                              <dl class="dlItemFlex">
+                                <dt>3개월 사용량 평균</dt>
+                                <dd class="colorPrimary">12GB</dd>
+                              </dl>
+                              <dl class="dlItemFlex">
+                                <dt>현재 요금제 제공량</dt>
+                                <dd>15GB</dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                          <div class="stickChartArea">
+                            <div class="chartInner">
+                              <div class="itemAverage">
+                                <div class="item">
+                                  <span class="label">3개월 평균</span>
+                                  <span class="labelData">60분</span>
+                                  <!-- [2차] 20221026 추가 -->
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 70%"></div>
+                                    <!-- [2차] 20221026 수정 -->
+                                  </div>
+                                </div>
+                                <div class="line" style="bottom: 70%"></div>
+                              </div>
+                              <ul class="chartArea">
+                                <li class="item">
+                                  <span class="label">10월</span>
+                                  <span class="labelData">30분</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 80%"></div>
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">11월</span>
+                                  <span class="labelData">30분</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 70%"></div>
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">12월</span>
+                                  <span class="labelData">30분</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 50%"></div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlWhiteBox">
+                              <dl class="dlItemFlex">
+                                <dt>3개월 사용량 평균</dt>
+                                <dd class="colorPrimary">80분</dd>
+                              </dl>
+                              <dl class="dlItemFlex">
+                                <dt>현재 요금제 제공량</dt>
+                                <dd>100분</dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="tabCon03" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor03">
+                          <div class="stickChartArea">
+                            <div class="chartInner">
+                              <div class="itemAverage">
+                                <div class="item">
+                                  <span class="label">3개월 평균</span>
+                                  <span class="labelData">130건</span>
+                                  <!-- [2차] 20221026 추가 -->
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 55%"></div>
+                                    <!-- [2차] 20221026 수정 -->
+                                  </div>
+                                </div>
+                                <div class="line" style="bottom: 55%"></div>
+                              </div>
+                              <ul class="chartArea">
+                                <li class="item">
+                                  <span class="label">10월</span>
+                                  <span class="labelData">200건</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 80%"></div>
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">11월</span>
+                                  <span class="labelData">120건</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 70%"></div>
+                                  </div>
+                                </li>
+                                <li class="item">
+                                  <span class="label">12월</span>
+                                  <span class="labelData">80건</span>
+                                  <div class="itemStick">
+                                    <div class="colorStick" style="height: 50%"></div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlWhiteBox">
+                              <dl class="dlItemFlex">
+                                <dt>3개월 사용량 평균</dt>
+                                <dd class="colorPrimary">340건</dd>
+                              </dl>
+                              <dl class="dlItemFlex">
+                                <dt>현재 요금제 제공량</dt>
+                                <dd>무제한</dd>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //최근 3개월 사용량 평균 -->
+              <div class="summaryArea summary03">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">추천 요금제</h3>
+                  </div>
+                  <div class="fieldMiddle bgColorGreen">
+                    <p>
+                      이전 데이터 사용량 평균이 <strong class="bold">8.33GB</strong>네요. <br />
+                      이 요금제는 어떠세요?
+                    </p>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="swiper summaryDataWrap suggestionSwiper">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="summaryTitleArea">
+                            <div class="imgWrap">
+                              <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                            </div>
+                            <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                            <!-- <p>데이터 무제한에 네이버페이 5000P 제공!</p> -->
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlGrayBox">
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgData">데이터</dt>
+                                <dd class="colorPrimary">15GB + 3Mbps</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgCall">음성통화</dt>
+                                <dd class="colorPrimary">300분</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgSMS">메세지</dt>
+                                <dd class="colorPrimary">300건</dd>
+                              </dl>
+                            </div>
+                          </div>
+                          <dl class="usageItem smaller">
+                            <dt>월 기본요금</dt>
+                            <dd>
+                              <span class="del"></span><span><em class="ir">정상가</em>29,700</span>원
+                            </dd>
+                          </dl>
+                          <dl class="usageItem">
+                            <dt>프로모션 요금</dt>
+                            <dd><span>29,700</span>원</dd>
+                          </dl>
+                          <!-- [2차] 20221129 버튼 추가 -->
+                          <div class="buttonArea">
+                            <button type="button" class="btn btnPrimary"><span>추천 요금제로 변경하기</span></button>
+                          </div>
+                          <!-- //[2차] 20221129 버튼 추가 -->
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="summaryTitleArea">
+                            <div class="imgWrap">
+                              <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                            </div>
+                            <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                            <p>데이터 무제한에 네이버페이 5000P 제공!<br />데이터 무제한에 네이버페이 5000P 제공!</p>
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlGrayBox">
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgData">데이터</dt>
+                                <dd class="colorPrimary">15GB + 3Mbps</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgCall">음성통화</dt>
+                                <dd class="colorPrimary">300분</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgSMS">메세지</dt>
+                                <dd class="colorPrimary">300건</dd>
+                              </dl>
+                            </div>
+                          </div>
+                          <dl class="usageItem">
+                            <dt>월 기본요금</dt>
+                            <dd><span>29,700</span>원</dd>
+                          </dl>
+                          <!-- [2차] 20221129 버튼 추가 -->
+                          <div class="buttonArea">
+                            <button type="button" class="btn btnPrimary"><span>추천 요금제로 변경하기</span></button>
+                          </div>
+                          <!-- //[2차] 20221129 버튼 추가 -->
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="summaryTitleArea">
+                            <div class="imgWrap">
+                              <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                            </div>
+                            <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                            <p>데이터 무제한에 네이버페이 5000P 제공!</p>
+                          </div>
+                          <div class="dlColorBoxArea">
+                            <div class="dlGrayBox">
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgData">데이터</dt>
+                                <dd class="colorPrimary">15GB + 3Mbps</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgCall">음성통화</dt>
+                                <dd class="colorPrimary">300분</dd>
+                              </dl>
+                              <dl class="dlItemFlex borderType">
+                                <dt class="iconBgSMS">메세지</dt>
+                                <dd class="colorPrimary">300건</dd>
+                              </dl>
+                            </div>
+                          </div>
+                          <dl class="usageItem">
+                            <dt>월 기본요금</dt>
+                            <dd><span>29,700</span>원</dd>
+                          </dl>
+                          <!-- [2차] 20221129 버튼 추가 -->
+                          <div class="buttonArea">
+                            <button type="button" class="btn btnPrimary"><span>추천 요금제로 변경하기</span></button>
+                          </div>
+                          <!-- //[2차] 20221129 버튼 추가 -->
+                        </div>
+                      </div>
+                      <div class="swiperControler">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                      </div>
+                    </div>
+                    <!-- [2차] 20221129 버튼 삭제 -->
+                  </div>
+                </section>
+              </div>
+              <!-- //추천 요금제 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+        setSlideHeight();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+
+        // [VOS2차] Swiper 소스 업데이트 - 시작 //
+        var swiper = new Swiper('.suggestionSwiper', {
+          spaceBetween: 30,
+          slidesPerView: 1,
+          pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '.swiper-button-prev',
+            prevEl: '.swiper-button-next',
+          },
+          on: {
+            slideChange: function () {
+              enabledShowingFocus(swiper);
+            },
+            resize: function () {
+              enabledShowingFocus(swiper);
+            },
+          },
+        });
+        enabledShowingFocus(swiper);
+        // [VOS2차] Swiper 소스 업데이트 - 끝 //
+      });
+
+      /**
+       * comment  : swiper 슬라이드 높이값이 큰 slide의 높이로 공통 높이 지정
+       * param    :
+       * @author  : amoeba
+       * @date    : 2022-06-24
+       */
+
+      $(window).resize(function () {
+        setSlideHeight();
+      });
+
+      function setSlideHeight() {
+        var slideHeight = 0;
+        $('.suggestionSwiper').find('.swiper-slide').css('height', 'auto'); // 높이 값 초기화
+        $('.suggestionSwiper')
+          .find('.swiper-slide')
+          .each(function () {
+            if ($(this).height() > slideHeight) {
+              slideHeight = $(this).height(); // slideHeight 변수에 저장 된 높이보다 클 경우 높이 값 교체
+            }
+          });
+        $('.suggestionSwiper').find('.swiper-slide').height(slideHeight); // 최종 높이 값 적용
+      }
+    </script>
+  </body>
+</html>

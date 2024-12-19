@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "법정대리인 인증", "titleHidden": "" })<!-- [2차] 20221129 기획 화면 삭제 -->
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>법정대리인 인증</span></button>
+    </div>
+    <div class="popup popupBottomFixed show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">법정대리인 인증</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoTitle">법정대리인 정보 입력</div>
+              <div class="infoContent">
+                <div class="roundRadio">
+                  <div class="radio">
+                    <input type="radio" name="protector" id="protector01" checked />
+                    <label for="protector01">부</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="protector" id="protector02" />
+                    <label for="protector02">모</label>
+                  </div>
+                  <div class="radio">
+                    <input type="radio" name="protector" id="protector03" />
+                    <label for="protector03">후견인</label>
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="nameId01" class="fieldLabel">법정 대리인 이름</label>
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="nameId01" value="" placeholder="입력값을 검색해주세요." />
+                    </div>
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="numberId01" class="fieldLabel">법정 대리인 주민등록번호</label>
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="numberId01" value="" placeholder="주민등록번호를 입력해주세요." />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //법정대리인 정보 입력 -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">보호자(법정대리인) 본인인증 방법 선택</div>
+              <div class="infoContent">
+                <div class="typeCertification">
+                  <!-- 본인 인증 : 기본값 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnCertifyPass",
+                        "buttonBlank": true,
+                        "buttonContent": "PASS 인증",
+                      },
+                      {
+                        "buttonClass": "btnCertifyCard",
+                        "buttonBlank": true,
+                        "buttonContent": "신용카드 인증",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 기본값 -->
+                  <!-- 본인 인증 : 인증 완료 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnCertifyPass active",
+                        "buttonBlank": false,
+                        "buttonContent": "PASS 인증 완료",
+                      },
+                      {
+                        "buttonClass": "btnCertifyCard",
+                        "buttonBlank": false,
+                        "buttonContent": "신용카드 인증",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 인증 완료 -->
+                  <!-- 본인 인증 : 서비스 점검 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnNotService",
+                        "buttonBlank": false,
+                        "buttonContent": "PASS 인증",
+                      },
+                      {
+                        "buttonClass": "btnNotService",
+                        "buttonBlank": false,
+                        "buttonContent": "신용카드 인증",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 서비스 점검 -->
+                </div>
+                <div class="cautionArea">
+                  <ul class="cautionWrap marginBtmReset">
+                    <li>만 19세 미만 회원는 법정대리인(부모님)의 동의 절차를 거쳐 가입 신청이 진행됩니다.</li>
+                    <li>본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                  </ul>
+                </div>
+                <div class="typeAgreementCheck agreementAccordion04">
+                  <div class="fieldCheckbox">
+                    <div class="fieldForm">
+                      <div class="checkbox">
+                        <input type="checkbox" id="agreeCheck04" />
+                        <span class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </span>
+                      </div>
+                    </div>
+                    <label for="agreeCheck04" class="fieldLabel">보호자(법정대리인) 개인정보처리방침 동의 (필수)</label>
+                    <button type="button" class="btnOpenAgree" aria-expanded="false"><span>보호자(법정대리인) 개인정보처리방침 동의 열기</span></button>
+                  </div>
+                  <div class="field fieldData">
+                    <div class="fieldArea" tabindex="0">
+                      <!-- 기획 확인중 -->
+                      <section class="termsContainer">KT 마이알뜰폰은 서비스 제공을 위하여 필요한 최소한의 개인정보만을 수집합니다. 고객님은 개인정보 수집/이용에 대한 동의를 거부할 권리가 있습니다. 단, 필수 동의사항에 거부할 경우 서비스 이용이 불가하거나 제한이 있을 수 있습니다.</section>
+                    </div>
+                  </div>
+                </div>
+                <!-- //보호자(법정대리인) 개인정보처리방침 동의 (필수) -->
+              </div>
+            </div>
+            <!-- //보호자(법정대리인) 본인인증 방법 선택 -->
+          </div>
+        </div>
+        <!-- //popupMiddle -->
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>인증 완료</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        // 보호자(법정대리인) 개인정보처리방침 동의
+        accordionControl('.agreementAccordion04 .btnOpenAgree', '.agreementAccordion04 .fieldData', '.agreementAccordion04', '보호자(법정대리인) 개인정보처리방침 동의 열기', '보호자(법정대리인) 개인정보처리방침 동의 닫기');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<div class="desc-box">
+  <div class="desc-con">
+    <div class="con-line">
+      <span class="con-name">총 가격</span>
+      <!-- <span>₩250,000,000 (2억 5천만원)</span> -->
+      <span>@@price</span>
+    </div>
+    <div class="con-list">
+      <span>부가세 포함</span>
+      <span>일부 가전 포함 (아래 참조)</span>
+      <span>내부 가구 미포함</span>
+    </div>
+  </div>
+  <div class="desc-con">
+    <div class="con-line">
+      <span class="con-name">층 수</span>
+      <!-- <span>단층 (1층)</span> -->
+      <span>@@floor</span>
+    </div>
+    <div class="con-line">
+      <span class="con-name">면적</span>
+      <!-- <span>33㎡ (9.98평)</span> -->
+      <span>@@area</span>
+    </div>
+    <div class="con-line">
+      <span class="con-name">크기</span>
+      <!-- <span>10.0(W) x 3.3(D) x 3.9(H)m</span> -->
+      <span>@@size</span>
+    </div>
+  </div>
+  <div class="desc-con">
+    <div class="con-line">
+      <span class="con-name">필요 항목</span>
+      @@if(require){
+      <span>@@require</span>
+      } @@if(!require){
+      <span>14(W) x 6(D)m / 콘크리트 기초 필요</span>
+      }
+    </div>
+    <div class="con-line">
+      <span class="con-name">지원 항목</span>
+      @@if(support){
+      <span>@@support</span>
+      } @@if(!support){
+      <span>3상 전기 / 상하수관 / 인터넷 연결 지원</span>
+      }
+    </div>
+  </div>
+</div>

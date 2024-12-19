@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "선불 요금제 등록 " , "headProjectName": "| 상품 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>선불 요금제 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>상품 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>선불 요금제 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>선불 요금제 등록</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>승인 요청</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">요금제 기본</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <!-- [2차BO] 수정 -->
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        요금제 기본 입력
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">상품 아이디</th>
+                          <td colspan="3">A1234ABC</td>
+                          <!-- 
+                          [2차BO] 20220908 상품 유형코드 삭제
+                        --></tr>
+                        <tr>
+                          <th scope="row">요금제명</th>
+                          <td colspan="3">데이터 맘껏 12GB+/100분</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상품유효 시작일시</th>
+                          <td>2022-01-01 13:00</td>
+                          <th scope="row">상품유효 종료일시</th>
+                          <td>2022-01-01 13:00</td>
+                        </tr>
+                        <!-- [2차BO] 20221011 상품판매 위치 이동 -->
+                        <tr>
+                          <th scope="row">
+                            요금제 간략 설명<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="음성 문자는 필요한 만큼 딱! 데이터 마음껏, 부담없게" title="요금제 간략 설명" required aria-required="true" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <!-- [2차BO] 20221102 수정 -->
+                        <tr>
+                          <th scope="row">상품 구분</th>
+                          <td>
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="productradio01" name="productradio" checked required aria-required="true" />
+                                  <label for="productradio01" class="radioLabel"><span>LTE</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="productradio02" name="productradio" required aria-required="true" />
+                                  <label for="productradio02" class="radioLabel"><span>5G</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">연령 전용 요금제여부</th>
+                          <td>
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="oldRadio01" name="oldRadio" checked required aria-required="true" />
+                                  <label for="oldRadio01" class="radioLabel"><span>일반</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="oldRadio02" name="oldRadio" required aria-required="true" />
+                                  <label for="oldRadio02" class="radioLabel"><span>청소년</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="oldRadio03" name="oldRadio" required aria-required="true" />
+                                  <label for="oldRadio03" class="radioLabel"><span>시니어</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- //[2차BO] 20221102 수정 -->
+
+                        <tr>
+                          <th scope="row">
+                            판매상태<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="radio0401" name="radio04" checked required aria-required="true" />
+                                  <label for="radio0401" class="radioLabel"><span>판매</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="radio0402" name="radio04" required aria-required="true" />
+                                  <label for="radio0402" class="radioLabel"><span>판매중지</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">
+                            노출 여부<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="radio0501" name="radio05" checked required aria-required="true" />
+                                  <label for="radio0501" class="radioLabel"><span>노출</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="radio0502" name="radio05" required aria-required="true" />
+                                  <label for="radio0502" class="radioLabel"><span>미노출</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <!-- [2차BO] 20221011 수정 -->
+                        <tr>
+                          <th scope="row">
+                            상품판매 시작일시<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm dateAndTimeWrap">
+                              <div class="field fieldDatepicker" id="datepicker-sale-date-01">
+                                <label class="ir" for="input-sale-date-01">상품판매 시작 날짜 선택</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-sale-date-01" class="singleDatePicker" autocomplete="off" required aria-required="true" />
+                                </div>
+                              </div>
+                              <div class="select">
+                                <select title="시작 시간" required aria-required="true">
+                                  <option value="">12:00</option>
+                                </select>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">
+                            상품판매 종료일시<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm dateAndTimeWrap">
+                              <div class="field fieldDatepicker" id="datepicker-sale-date-02">
+                                <label class="ir" for="input-sale-date-02">상품판매 시작 날짜 선택</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-sale-date-02" class="singleDatePicker" autocomplete="off" required aria-required="true" />
+                                </div>
+                              </div>
+                              <div class="select">
+                                <select title="시작 시간" required aria-required="true">
+                                  <option value="">12:00</option>
+                                </select>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- //[2차BO] 20221011 수정 -->
+
+                        <tr>
+                          <th scope="row">
+                            추천 상품 여부<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="radio0901" name="radio09" checked required aria-required="true" />
+                                  <label for="radio0901" class="radioLabel"><span>Y</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="radio0902" name="radio09" required aria-required="true" />
+                                  <label for="radio0902" class="radioLabel"><span>N</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">
+                            요금제 세부항목<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <!-- temp -->
+                          <td colspan="3">
+                            <div class="detailOptionArea">
+                              <div class="detailItem">
+                                <div class="mainBox">
+                                  <div class="title">음성 통화</div>
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="99999" title="음성 통화" required aria-required="true" />
+                                    </div>
+                                    <span>분</span>
+                                  </div>
+                                  <div class="addExplain">
+                                    <strong class="required"><span>*</span></strong
+                                    ><span>무제한 : 99999</span>
+                                  </div>
+                                </div>
+                                <div class="subBox">
+                                  <span class="title">초과 요율</span>
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="60" title="초과 요율" aria-required="true" required />
+                                    </div>
+                                    <span>분</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="detailItem">
+                                <div class="mainBox">
+                                  <div class="title">데이터</div>
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="99999" title="데이터" required aria-required="true" />
+                                    </div>
+                                    <div class="select">
+                                      <select title="단위" required aria-required="true">
+                                        <option value="">GB</option>
+                                        <option value="">GB</option>
+                                        <option value="">GB</option>
+                                        <option value="">GB</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div class="addExplain">
+                                    <strong class="required"><span>*</span></strong
+                                    ><span>무제한 : 99999</span>
+                                    <br />
+                                    <strong class="required"><span>*</span></strong
+                                    ><span>1GB = 1024 MB</span>
+                                    <!-- [2차BO] 수정 -->
+                                  </div>
+                                </div>
+                                <div class="subBox">
+                                  <div class="title">초과 요율</div>
+                                  <div class="fieldForm">
+                                    <div class="select">
+                                      <select title="단위" required aria-required="true">
+                                        <option value="">일</option>
+                                        <option value="">일</option>
+                                        <option value="">일</option>
+                                        <option value="">일</option>
+                                      </select>
+                                    </div>
+                                    <div class="input">
+                                      <input type="text" value="1,000" title="초과 요율" required aria-required="true" />
+                                    </div>
+                                    <div class="select">
+                                      <select title="단위" required aria-required="true">
+                                        <option value="">MB</option>
+                                        <option value="">MB</option>
+                                        <option value="">MB</option>
+                                        <option value="">MB</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="detailItem">
+                                <div class="mainBox">
+                                  <div class="title">SMS</div>
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="99999" title="SMS" required aria-required="true" />
+                                    </div>
+                                    <span>건</span>
+                                  </div>
+                                  <div class="addExplain">
+                                    <strong class="required"><span>*</span></strong
+                                    ><span>무제한 : 99999</span>
+                                  </div>
+                                </div>
+                                <div class="subBox">
+                                  <div class="title">초과 요율</div>
+                                  <div class="fieldForm">
+                                    <div class="input">
+                                      <input type="text" value="60" title="초과 요율" required aria-required="true" />
+                                    </div>
+                                    <span>건</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            기본요금<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="35,300" title="기본요금" required aria-required="true" />
+                              </div>
+                              <div class="addExplain">
+                                <strong class="required"><span></span></strong>
+                                VAT 포함 금액
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            PC 링크 URL<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="https://www.ktmmobile.com/usim/usimDetail.do?prdtSctnCd=LTE&prdtId=K7006048&indcOdrg=1&rateCd=PL206T673" title="PC 링크 URL" aria-required="true" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Mobile 링크 URL</th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="https://www.ktmmobile.com/usim/usimDetail.do?prdtSctnCd=LTE&prdtId=K7006048&indcOdrg=1&rateCd=PL206T673" title="Mobile 링크 URL" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            검색 키워드<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldForm">
+                              <div class="fieldInput">
+                                <div class="input">
+                                  <input type="text" value="자동" title="검색 키워드" aria-required="true" />
+                                </div>
+                              </div>
+                              <div class="buttonArea">
+                                <button type="button" class="btn">등록</button>
+                              </div>
+                            </div>
+                            <div class="buttonArea keywordArea">
+                              <button type="button" class="btn btnKeyword">저렴</button>
+                              <button type="button" class="btn btnKeyword">데이터</button>
+                              <button type="button" class="btn btnKeyword">많은</button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //[2차BO] 수정 -->
+                </div>
+              </div>
+              <!-- // 요금제 기본 -->
+
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">요금제 설명</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        요금제 설명
+                      </caption>
+                      <colgroup>
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="highTextArea">에디터 영역입니다.</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 요금제 설명 -->
+
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">변경 전/후 코멘트</h2>
+                    <p class="addExplain">
+                      <strong class="required"><span>필수입력</span></strong
+                      >변경 전/후 내용은 간략하게 입력해주세요.
+                    </p>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        변경 전/변경 후 코멘트
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">변경 전</th>
+                          <td>
+                            <div class="fieldTextarea">
+                              <div class="textarea">
+                                <textarea name="" id="" cols="30" rows="10" title="변경 전 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                <!-- [2차BO] 수정 -->
+                                <p class="textCounter"><strong>0</strong> / 4000자</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">변경 후</th>
+                          <td>
+                            <div class="fieldTextarea">
+                              <div class="textarea">
+                                <textarea name="" id="" cols="30" rows="10" title="변경 후 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                <!-- [2차BO] 수정 -->
+                                <p class="textCounter"><strong>0</strong> / 4000자</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        // 상품 판매 시작일시
+        if ($(document).find('#datepicker-sale-date-01').length > 0) {
+          getDatepicker('#datepicker-sale-date-01', 'calendar');
+        }
+
+        // 상품 판매 종료일시
+        if ($(document).find('#datepicker-sale-date-02').length > 0) {
+          getDatepicker('#datepicker-sale-date-02', 'calendar');
+        }
+      });
+    </script>
+  </body>
+</html>

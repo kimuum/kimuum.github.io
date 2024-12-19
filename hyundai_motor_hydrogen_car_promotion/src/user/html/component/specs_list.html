@@ -1,0 +1,28 @@
+<li class="@@if(rightType === 'column'){column-type}">
+  <div class="specs-left">
+    @@if(leftValue) {
+    <div class="value"><span>@@leftValue</span></div>
+    }
+  </div>
+  <!-- prettier-ignore -->
+  @@if(rightType === 'default' || rightType === 'column'){
+  <div class="specs-right">
+    @@for(var j = 0; j < rightValue.length; j++) {
+    <div class="value">
+      <span>`+rightValue[j].value+`</span>
+    </div>
+    }
+  </div>
+  }
+  <!-- prettier-ignore -->
+  @@if(rightType === 'two') {
+  <div class="specs-right">
+    @@for(var j = 0; j < two.length; j++) {
+    <div class="value">
+      <span>`+two[j].value+`</span>
+      <span>`+two[j].value2+`</span>
+    </div>
+    }
+  </div>
+  }
+</li>

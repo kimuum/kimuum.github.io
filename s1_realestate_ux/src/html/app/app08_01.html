@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 입주사 초대"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/appHeader.html", {
+        "back" : true,
+        "title" : "입주사 관리",
+        "close" : false,
+      })
+
+      <!-- Content -->
+      <main class="app-content-container tenant-invite-container">
+        <div class="app-content-area">
+          <div class="content-container">
+            <div class="content-area">
+              <div class="content-middle">
+                <div class="commpany-address-box">
+                  <!-- <a href="#" class="link-go-text"><span>재인증</span></a> -->
+                  <p class="name">삼성전자</p>
+                  <p class="address">서울특별시 서초구 서초대로74길 11 삼성전자빌딩 6F~20F</p>
+                </div>
+                <div class="management-filter-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/field_search.html", {
+                    "size" : "medium",
+                    "class" : "management-search",
+                    "id" : "search-01",
+                    "placeholder" : "입주사명을 검색해 주세요.",
+                    "disabled" : "",
+                  })
+                  <div class="filter-sort-button">
+                    <div class="field field-dropdown">
+                      <div class="field-form">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/dropdown.html",{
+                          "title" : "층별 선택",
+                          "size" : "",
+                          "value" : "전체",
+                          "placeholder" : "",
+                          "option" : [ 
+                            {
+                              "text" : "전체",
+                              "property" : "active",
+                            },
+                            {
+                              "text" : "1F",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "2F",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "3F",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "4F",
+                              "property" : "",
+                            },
+                          ],
+                          "disabled" : false,
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 입주사 관리 목록 -->
+                <div class="tenant-management-container">
+                  <ul class="tenant-lists">
+                    <li>
+                      <div class="title-box">
+                        <div class="title">[사무동, 1F]<br />골프존 카운티 매니지먼트</div>
+                        <a href="#" class="link-go-text"><span>담당자 초대</span></a>
+                      </div>
+                      <div class="info-box">
+                        <p class="label">담당자1</p>
+                        <div class="info">
+                          <p><span>이름</span><span>김*훈</span></p>
+                          <p><span>휴대전화번호</span><span>010-0000-1***</span></p>
+                        </div>
+                      </div>
+                      <div class="info-box">
+                        <p class="label">담당자1</p>
+                        <div class="info">
+                          <p><span>이름</span><span>김*훈</span></p>
+                          <p><span>휴대전화번호</span><span>010-0000-1***</span></p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="title-box">
+                        <div class="title">[사무동, 2F]<br />제주스 조이마루점</div>
+                        <a href="#" class="link-go-text"><span>담당자 초대</span></a>
+                      </div>
+                      <div class="no-box">계약된 입주사가 없습니다.</div>
+                    </li>
+                    <li>
+                      <div class="title-box">
+                        <div class="title">[사무동, 2F]</div>
+                      </div>
+                      <div class="no-box">계약된 입주사가 없습니다.</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

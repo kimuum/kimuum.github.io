@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | 에너지 사용량</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "건물 현황",
+          },
+        ],
+        "currentPage" : "에너지 사용량",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container energy-usage">
+            <!-- prettier-ignore -->
+            @@include("../../components/tab.html",{
+              "tab" : [
+                {
+                  "text" : "실적 조회",
+                  "property" : "active"
+                },
+                {
+                  "text" : "증감 분석",
+                  "property" : ""
+                },
+              ]
+            })
+            <div class="tab-content-box">
+              <div class="sub-page-area">
+                <div class="sub-page-top">
+                  <div class="sub-page-title-box">
+                    <div class="sub-page-title">
+                      <span class="title">[건물명] 에너지 실적입니다.</span>
+                    </div>
+                    <div class="sub-page-page-desc-box">
+                      <p>2023년 01월 01일 기준</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="sub-page-middle">
+                  <div class="title-date-box">
+                    <div class="swiper-button-prev swiper-button-prev-1"></div>
+                    <div class="date-swiper-box date-swiper-box-1 swiper">
+                      <ul class="date-swiper-list swiper-wrapper">
+                        <li class="date swiper-slide">
+                          <span>2022년 12월</span>
+                        </li>
+                        <li class="date swiper-slide">
+                          <span>2023년 12월</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="swiper-button-next swiper-button-next-1"></div>
+                  </div>
+
+                  <div class="building-report-container situation-detail-container situation-detail-container-1 swiper">
+                    <div class="building-report-area swiper-wrapper">
+                      <div class="building-report-box swiper-slide">
+                        <div class="building-report-top">
+                          <div class="building-report-top-left">
+                            <div class="build-report-state-box">
+                              <ul class="state-lists">
+                                <li class="state-list">
+                                  <div class="badge-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/badge.html", {
+                                        "badge" : [
+                                          {
+                                            "text" : "연간 경영 계획 비용",
+                                            "property" : "border"
+                                          }
+                                        ]
+                                      })
+                                  </div>
+                                  <div class="count-box">
+                                    <p class="value">506,483,000<span class="unit">원</span></p>
+                                  </div>
+                                </li>
+                                <li class="state-list">
+                                  <div class="badge-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/badge.html", {
+                                        "badge" : [
+                                          {
+                                            "text" : "누적 비용",
+                                            "property" : "primary"
+                                          }
+                                        ]
+                                      })
+                                  </div>
+                                  <div class="count-box">
+                                    <p class="value">483,000<span class="unit">원</span></p>
+                                    <p class="percent">10<span class="unit">%</span></p>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="building-report-top-right">
+                            <div class="build-report-graph-box">
+                              <div class="build-report-graph">
+                                <div class="graph-box">
+                                  <canvas
+                                    id="line-graph"
+                                    class="line-chart-container"
+                                    width="809"
+                                    height="256"
+                                  ></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="building-report-middle">
+                          <div class="category-filter-container">
+                            <div class="category-filter-area">
+                              <div class="category-filter-top">
+                                <div class="title-box">
+                                  <span>에너지 실적 상세 조회</span>
+                                </div>
+                              </div>
+
+                              <div class="category-filter-middle">
+                                <div class="filter-box type2">
+                                  <div class="filter">
+                                    <div class="filter-row">
+                                      <div class="filter-list">
+                                        <div class="filter-label">
+                                          <span>조회 기간</span>
+                                        </div>
+                                        <div class="filter-field">
+                                          <div class="radio-tab-box">
+                                            <!-- prettier-ignore -->
+                                            @@include("../../components/field_radio.html", {
+                                              "required" : "",
+                                              "label" : "",
+                                              "tooltip" : "",
+                                              "radio" : [
+                                                {
+                                                  "name" : "period-month-01",
+                                                  "label" : "3개월",
+                                                  "disabled" : "checked",
+                                                },
+                                                {
+                                                  "name" : "period-month-01",
+                                                  "label" : "6개월",
+                                                  "disabled" : "",
+                                                },
+                                                {
+                                                  "name" : "period-month-01",
+                                                  "label" : "12개월",
+                                                  "disabled" : "",
+                                                },
+                                              ],
+                                            })
+                                          </div>
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/datepickerRange.html",{
+                                            "pickerId" : "inquiry-period-01",
+                                            "size" : "small",
+                                            "start" : "id-range-start-01",
+                                            "end" : "id-range-end-01",
+                                            "placeholder" : "0000.00.00",
+                                            "property" : "",
+                                          })
+                                        </div>
+                                      </div>
+                                      <div class="filter-list">
+                                        <div class="filter-label">
+                                          <span>검색어</span>
+                                        </div>
+                                        <div class="filter-field">
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/field_search.html", {
+                                            "size" : "small",
+                                            "class" : "",
+                                            "id" : "search-01",
+                                            "placeholder" : "검색어를 입력해 주세요.",
+                                            "disabled" : "",
+                                          })
+                                        </div>
+                                      </div>
+                                      <div class="button-box">
+                                        <!-- prettier-ignore -->
+                                        @@include("../../components/button.html", {
+                                          "dataValue" : "",
+                                          "type" : "secondary",
+                                          "size" : "small",
+                                          "class" : "",
+                                          "disabled" : "",
+                                          "text" : "초기화",
+                                        })
+                                        <!-- prettier-ignore -->
+                                        @@include("../../components/button.html", {
+                                          "dataValue" : "",
+                                          "type" : "primary",
+                                          "size" : "small",
+                                          "class" : "",
+                                          "disabled" : "",
+                                          "text" : "검색",
+                                        })
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-view-container">
+                            <div class="filter-view-area">
+                              <div class="filter-view-top">
+                                <div class="filter-view-top-left">
+                                  <div class="total-count-box">
+                                    <span>
+                                      총
+                                      <em class="count">5</em>
+                                      건
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="filter-view-top-right">
+                                  <div class="button-box">
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary btn-medium download-link"
+                                      data-popup="popup-download"
+                                    >
+                                      <span>리스트 다운로드</span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-view-middle">
+                                <div class="table-box">
+                                  <table class="table">
+                                    <caption class="hidden">
+                                      점검 리포트 상세 조회
+                                    </caption>
+                                    <colgroup>
+                                      <col width="102px" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                    </colgroup>
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div class="checkbox">
+                                            <input
+                                              type="checkbox"
+                                              name="report-checkbox-01"
+                                              id="report-checkbox-01"
+                                              class="table-checkbox-all"
+                                            />
+                                            <label for="report-checkbox-01"></label>
+                                          </div>
+                                        </th>
+                                        <th>번호</th>
+                                        <th colspan="3">에너지원</th>
+                                        <th colspan="2">에너지사용량</th>
+                                        <th>에너지 비용(원)</th>
+                                      </tr>
+                                      <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>에너지원1</th>
+                                        <th>에너지원2</th>
+                                        <th>단위</th>
+                                        <th>사용량</th>
+                                        <th>tCo2</th>
+                                        <th></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="fix-data">
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-total" id="table-check-total" />
+                                            <label for="table-check-total"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>합계</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>127,432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>1,127,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-1-5" id="table-check-1-5" />
+                                            <label for="table-check-1-5"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>5</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-1-4" id="table-check-1-4" />
+                                            <label for="table-check-1-4"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>4</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-1-3" id="table-check-1-3" />
+                                            <label for="table-check-1-3"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>3</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-1-2" id="table-check-1-2" />
+                                            <label for="table-check-1-2"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>2</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-1-1" id="table-check-1-1" />
+                                            <label for="table-check-1-1"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>1</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="filter-view-bottom">
+                                <div class="field field-dropdown">
+                                  <div class="field-form">
+                                    <div class="dropdown-container dropdown-small">
+                                      <div class="dropdown-area">
+                                        <div class="dropdown-top">
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">5개씩 보기</span>
+                                            <span class="placeholder hidden"></span>
+                                          </button>
+                                          <div class="dropdown-list-container">
+                                            <div class="dropdown-list-area">
+                                              <div class="dropdown-list-box">
+                                                <div class="dropdown-list active">5개씩 보기</div>
+                                                <div class="dropdown-list">10개씩 보기</div>
+                                                <div class="dropdown-list">15개씩 보기</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="pagination-box">
+                                  <div class="pagination">
+                                    <button type="button" class="page page-first" disabled=""></button>
+                                    <button type="button" class="page page-prev" disabled=""></button>
+                                    <div class="pager">
+                                      <button type="button" class="page page-1 current"><span>1</span></button>
+                                      <button type="button" class="page page-2"><span>2</span></button>
+                                      <button type="button" class="page page-3"><span>3</span></button>
+                                      <button type="button" class="page page-4"><span>4</span></button>
+                                      <button type="button" class="page page-5"><span>5</span></button>
+                                      <button type="button" class="page page-6"><span>6</span></button>
+                                    </div>
+                                    <button type="button" class="page page-next"></button>
+                                    <button type="button" class="page page-last"></button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="building-report-box swiper-slide">
+                        <div class="building-report-top">
+                          <div class="building-report-top-left">
+                            <div class="build-report-state-box">
+                              <ul class="state-lists">
+                                <li class="state-list">
+                                  <div class="badge-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/badge.html", {
+                                        "badge" : [
+                                          {
+                                            "text" : "연간 경영 계획 비용",
+                                            "property" : "border"
+                                          }
+                                        ]
+                                      })
+                                  </div>
+                                  <div class="count-box">
+                                    <p class="value">506,483,000<span class="unit">원</span></p>
+                                  </div>
+                                </li>
+                                <li class="state-list">
+                                  <div class="badge-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/badge.html", {
+                                        "badge" : [
+                                          {
+                                            "text" : "누적 비용",
+                                            "property" : "primary"
+                                          }
+                                        ]
+                                      })
+                                  </div>
+                                  <div class="count-box">
+                                    <p class="value">483,000<span class="unit">원</span></p>
+                                    <p class="percent">10<span class="unit">%</span></p>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                          <div class="building-report-top-right">
+                            <div class="build-report-graph-box">
+                              <div class="build-report-graph">
+                                <div class="graph-box">
+                                  <canvas
+                                    id="line-graph"
+                                    class="line-chart-container"
+                                    width="809"
+                                    height="256"
+                                  ></canvas>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="building-report-middle">
+                          <div class="category-filter-container">
+                            <div class="category-filter-area">
+                              <div class="category-filter-top">
+                                <div class="title-box">
+                                  <span>에너지 실적 상세 조회</span>
+                                </div>
+                              </div>
+
+                              <div class="category-filter-middle">
+                                <div class="filter-box type2">
+                                  <div class="filter">
+                                    <div class="filter-row">
+                                      <div class="filter-list">
+                                        <div class="filter-label">
+                                          <span>조회 기간</span>
+                                        </div>
+                                        <div class="filter-field">
+                                          <div class="radio-tab-box">
+                                            <!-- prettier-ignore -->
+                                            @@include("../../components/field_radio.html", {
+                                              "required" : "",
+                                              "label" : "",
+                                              "tooltip" : "",
+                                              "radio" : [
+                                                {
+                                                  "name" : "period-month-02",
+                                                  "label" : "3개월",
+                                                  "disabled" : "checked",
+                                                },
+                                                {
+                                                  "name" : "period-month-02",
+                                                  "label" : "6개월",
+                                                  "disabled" : "",
+                                                },
+                                                {
+                                                  "name" : "period-month-02",
+                                                  "label" : "12개월",
+                                                  "disabled" : "",
+                                                },
+                                              ],
+                                            })
+                                          </div>
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/datepickerRange.html",{
+                                            "pickerId" : "inquiry-period-02",
+                                            "size" : "small",
+                                            "start" : "id-range-start-02",
+                                            "end" : "id-range-end-02",
+                                            "placeholder" : "0000.00.00",
+                                            "property" : "",
+                                          })
+                                        </div>
+                                      </div>
+                                      <div class="filter-list">
+                                        <div class="filter-label">
+                                          <span>검색어</span>
+                                        </div>
+                                        <div class="filter-field">
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/field_search.html", {
+                                            "size" : "small",
+                                            "class" : "",
+                                            "id" : "search-02",
+                                            "placeholder" : "검색어를 입력해 주세요.",
+                                            "disabled" : "",
+                                          })
+                                        </div>
+                                      </div>
+                                      <div class="button-box">
+                                        <!-- prettier-ignore -->
+                                        @@include("../../components/button.html", {
+                                          "dataValue" : "",
+                                          "type" : "secondary",
+                                          "size" : "small",
+                                          "class" : "",
+                                          "disabled" : "",
+                                          "text" : "초기화",
+                                        })
+                                        <!-- prettier-ignore -->
+                                        @@include("../../components/button.html", {
+                                          "dataValue" : "",
+                                          "type" : "primary",
+                                          "size" : "small",
+                                          "class" : "",
+                                          "disabled" : "",
+                                          "text" : "검색",
+                                        })
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-view-container">
+                            <div class="filter-view-area">
+                              <div class="filter-view-top">
+                                <div class="filter-view-top-left">
+                                  <div class="total-count-box">
+                                    <span>
+                                      총
+                                      <em class="count">5</em>
+                                      건
+                                    </span>
+                                  </div>
+                                </div>
+                                <div class="filter-view-top-right">
+                                  <div class="button-box">
+                                    <button
+                                      type="button"
+                                      class="btn btn-primary btn-medium download-link"
+                                      data-popup="popup-download"
+                                    >
+                                      <span>리스트 다운로드</span>
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-view-middle">
+                                <div class="table-box">
+                                  <table class="table">
+                                    <caption class="hidden">
+                                      점검 리포트 상세 조회
+                                    </caption>
+                                    <colgroup>
+                                      <col width="102px" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                      <col width="auto" />
+                                    </colgroup>
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div class="checkbox">
+                                            <input
+                                              type="checkbox"
+                                              name="report-checkbox-02"
+                                              id="report-checkbox-02"
+                                              class="table-checkbox-all"
+                                            />
+                                            <label for="report-checkbox-02"></label>
+                                          </div>
+                                        </th>
+                                        <th>번호</th>
+                                        <th colspan="3">에너지원</th>
+                                        <th colspan="2">에너지사용량</th>
+                                        <th>에너지 비용(완)</th>
+                                      </tr>
+                                      <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>에너지원1</th>
+                                        <th>에너지원2</th>
+                                        <th>단위</th>
+                                        <th>사용량</th>
+                                        <th>tCo2</th>
+                                        <th></th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr class="fix-data">
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-5" id="table-check-2-5" />
+                                            <label for="table-check-2-5"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>합계</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>-</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>127,432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>1,127,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-6" id="table-check-2-6" />
+                                            <label for="table-check-2-6"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>5</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-4" id="table-check-2-4" />
+                                            <label for="table-check-2-4"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>4</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-3" id="table-check-2-3" />
+                                            <label for="table-check-2-3"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>3</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-2" id="table-check-2-2" />
+                                            <label for="table-check-2-2"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>2</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td class="td">
+                                          <div class="checkbox">
+                                            <input type="checkbox" name="table-check-2-1" id="table-check-2-1" />
+                                            <label for="table-check-2-1"></label>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>1</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>연료</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>LNG(nm)</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>Nm</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>432,123</span>
+                                          </div>
+                                        </td>
+                                        <td class="td">
+                                          <div class="text-box">
+                                            <span>7,432,123</span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                              <div class="filter-view-bottom">
+                                <div class="field field-dropdown">
+                                  <div class="field-form">
+                                    <div class="dropdown-container dropdown-small">
+                                      <div class="dropdown-area">
+                                        <div class="dropdown-top">
+                                          <button type="button" class="btn-dropdown">
+                                            <span class="text">5개씩 보기</span>
+                                            <span class="placeholder hidden"></span>
+                                          </button>
+                                          <div class="dropdown-list-container">
+                                            <div class="dropdown-list-area">
+                                              <div class="dropdown-list-box">
+                                                <div class="dropdown-list active">5개씩 보기</div>
+                                                <div class="dropdown-list">10개씩 보기</div>
+                                                <div class="dropdown-list">15개씩 보기</div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="pagination-box">
+                                  <div class="pagination">
+                                    <button type="button" class="page page-first" disabled=""></button>
+                                    <button type="button" class="page page-prev" disabled=""></button>
+                                    <div class="pager">
+                                      <button type="button" class="page page-1 current"><span>1</span></button>
+                                      <button type="button" class="page page-2"><span>2</span></button>
+                                      <button type="button" class="page page-3"><span>3</span></button>
+                                      <button type="button" class="page page-4"><span>4</span></button>
+                                      <button type="button" class="page page-5"><span>5</span></button>
+                                      <button type="button" class="page page-6"><span>6</span></button>
+                                    </div>
+                                    <button type="button" class="page page-next"></button>
+                                    <button type="button" class="page page-last"></button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sub-page-area"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <div id="popup-facility-patrol-details" class="popup-container popup-max">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">설비 점검 상세 정보</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="popup-form-container">
+                <div class="popup-form-area">
+                  <div class="popup-form-top">
+                    <div class="filter-box">
+                      <div class="filter">
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>건물명</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">섬유센터</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>설비 분류</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">설비</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>점검 유형</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">정기 점검</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>점검명</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">수변전 설비 일일점검</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>기한일</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">2023.07.31</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="popup-form-middle">
+                    <!-- prettier-ignore -->
+                    @@include("../../components/tab.html",{
+                      "tab" : [
+                        {
+                          "text" : "기본 정보",
+                          "property" : "active"
+                        },
+                        {
+                          "text" : "점검 항목",
+                          "property" : ""
+                        },
+                      ]
+                    })
+
+                    <div class="tab-content-box">
+                      <div class="filter-box">
+                        <div class="filter">
+                          <div class="filter-row half">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>법정 항목</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">점검 대상</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>발행일</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">2023.07.31</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>점검 항목</span>
+                              </div>
+                              <div class="filter-info wide">
+                                <div class="inner-table-box">
+                                  @@include("../../components/table.html", { "title" : "점검 항목", "checkbox" : false,
+                                  "thead" : [ "번호", "구분", "항목명", ], "tbody" : [ [ { "type" : "text", "text" :
+                                  "1234", "property": null, }, { "type" : "text", "text" : "위치", "property": null, },
+                                  { "type" : "text", "text" : "섬유센터 지하실", "property": null, }, ], ], })
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>점검 항목</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">주의사항 내용이 표기 됩니다.</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>사진</span>
+                              </div>
+                              <div class="filter-info wide">
+                                <div class="info-box">
+                                  <div class="download">
+                                    <div class="download-box">
+                                      <span class="file-name">에스원 전기 시설물 교체건</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-row half">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>진행 상태</span>
+                              </div>
+                              <div class="filter-info">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/badge.html", {
+                                  "badge" : [
+                                    {
+                                      "text" : "조치완료",
+                                      "property" : "badge"
+                                    },
+                                  ]
+                                })
+                              </div>
+                            </div>
+
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>작업 결과</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">작업결과 내용이 표기됩니다.</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-row half">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>시작일시</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">2021.03.03 12:30</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>종료일시</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">2021.03.03 12:30</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="filter">
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>사용자재</span>
+                              </div>
+                              <div class="filter-info wide">
+                                <div class="info-box">
+                                  <div class="filter-view-container">
+                                    <div class="filter-view-area">
+                                      <div class="filter-view-top">
+                                        <div class="filter-view-top-left"></div>
+                                        <div class="filter-view-top-right">
+                                          <div class="button-box">
+                                            <button
+                                              type="button"
+                                              class="btn btn-primary btn-medium download-link"
+                                              data-popup="popup-excel-download"
+                                            >
+                                              <span>엑셀 다운로드</span>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="filter-view-middle">
+                                        <div class="table-box">
+                                          <table class="table">
+                                            <caption class="hidden">
+                                              사용자재
+                                            </caption>
+                                            <colgroup>
+                                              <col width="auto" />
+                                              <col width="auto" />
+                                              <col width="auto" />
+                                              <col width="auto" />
+                                              <col width="auto" />
+                                              <col width="auto" />
+                                            </colgroup>
+                                            <thead>
+                                              <tr>
+                                                <th>품목코드</th>
+                                                <th>품목명</th>
+                                                <th>창고번호</th>
+                                                <th>재고수량</th>
+                                                <th>단위</th>
+                                                <th>출고수량</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>1234</span>
+                                                  </div>
+                                                </td>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>목재</span>
+                                                  </div>
+                                                </td>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>001</span>
+                                                  </div>
+                                                </td>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>100</span>
+                                                  </div>
+                                                </td>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>사이</span>
+                                                  </div>
+                                                </td>
+                                                <td class="td">
+                                                  <div class="text-box">
+                                                    <span>100</span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="desc-box">
+                                    <p>재고수량은 출고 처리하는 시점의 조회된 값입니다.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="filter-view-container">
+                        <div class="filter-view-area">
+                          <div class="filter-view-middle">
+                            @@include("../../components/table.html", { "title" : "점검 항목", "checkbox" : false,
+                            "thead" : [ "번호", "항목명", "점검 결과", "결과값", "입력 유형", "단위", "상한값",
+                            "하한값", "비고" ], "tbody" : [ [ { "type" : "text", "text" : "5", "property": null, }, {
+                            "type" : "text", "text" : "전기실 잠금상태가 적정한가", "property": null, }, { "type" :
+                            "text", "text" : "양호", "property": null, }, { "type" : "text", "text" : "-", "property":
+                            null, }, { "type" : "text", "text" : "문자형", "property": null, }, { "type" : "text",
+                            "text" : "-", "property": null, }, { "type" : "text", "text" : "-", "property": null, }, {
+                            "type" : "text", "text" : "-", "property": null, }, { "type" : "text", "text" : "-",
+                            "property": null, }, ], [ { "type" : "text", "text" : "4", "property": null, }, { "type" :
+                            "text", "text" : "전기실 잠금상태가 적정한가", "property": null, }, { "type" : "text",
+                            "text" : "양호", "property": null, }, { "type" : "text", "text" : "-", "property": null, },
+                            { "type" : "text", "text" : "문자형", "property": null, }, { "type" : "text", "text" : "-",
+                            "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type" :
+                            "text", "text" : "-", "property": null, }, { "type" : "text", "text" : "-", "property":
+                            null, }, ], [ { "type" : "text", "text" : "3", "property": null, }, { "type" : "text",
+                            "text" : "전기실 잠금상태가 적정한가", "property": null, }, { "type" : "text", "text" :
+                            "양호", "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type"
+                            : "text", "text" : "문자형", "property": null, }, { "type" : "text", "text" : "-",
+                            "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type" :
+                            "text", "text" : "-", "property": null, }, { "type" : "text", "text" : "-", "property":
+                            null, }, ], [ { "type" : "text", "text" : "2", "property": null, }, { "type" : "text",
+                            "text" : "전기실 잠금상태가 적정한가", "property": null, }, { "type" : "text", "text" :
+                            "양호", "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type"
+                            : "text", "text" : "문자형", "property": null, }, { "type" : "text", "text" : "-",
+                            "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type" :
+                            "text", "text" : "-", "property": null, }, { "type" : "text", "text" : "-", "property":
+                            null, }, ], [ { "type" : "text", "text" : "1", "property": null, }, { "type" : "text",
+                            "text" : "전기실 잠금상태가 적정한가", "property": null, }, { "type" : "text", "text" :
+                            "양호", "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type"
+                            : "text", "text" : "문자형", "property": null, }, { "type" : "text", "text" : "-",
+                            "property": null, }, { "type" : "text", "text" : "-", "property": null, }, { "type" :
+                            "text", "text" : "-", "property": null, }, { "type" : "text", "text" : "-", "property":
+                            null, }, ], ], })
+                          </div>
+                          <div class="filter-view-bottom">
+                            <div class="button-box">
+                              <button
+                                type="button"
+                                class="btn btn-primary btn-medium btn-popup"
+                                data-popup="popup-excel-download-2"
+                              >
+                                <span>리스트 다운로드</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>확인</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="popup-tooltip" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">다운로드 Tip</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="list-text-box">
+                <ul class="list-text">
+                  <li class="list">
+                    리스트를 선택하지 않은 경우 선택하신 기간의 모든 리스트 및 리포트를 다운받을 수 있어요.
+                  </li>
+                  <li class="list">
+                    리포트 다운로드는 선택한 리스트의 상세 정보 내용까지 PDF 다운로드 및 출력 할 수 있어요.
+                  </li>
+                  <li class="list">리스트 다운로드는 선택한 리스트를 엑셀파일로 다운로드 및 출력 할 수 있어요.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-download",
+        "title" : "",
+        "text" : "선택된 목록을 엑셀 파일로 다운로드할까요?",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          }
+        ],
+      })
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Large datePicker Range
+        const elem_01 = document.getElementById('inquiry-period-01');
+        const datepicker_01 = new DateRangePicker(elem_01, {
+          language: 'ko',
+          todayHighlight: false,
+        });
+        const elem_02 = document.getElementById('inquiry-period-02');
+        const datepicker_02 = new DateRangePicker(elem_02, {
+          language: 'ko',
+          todayHighlight: false,
+        });
+      });
+    </script>
+  </body>
+</html>

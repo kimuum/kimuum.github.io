@@ -1,0 +1,154 @@
+.menu-payment {
+  .header-container {
+    background-color: $neutral_10;
+  }
+  .content-container {
+    padding: 0;
+    .content-area {
+      height: 100%;
+    }
+  }
+  .bottom-button-box {
+    background-color: $neutral_10;
+  }
+}
+
+.payment-method-container {
+  height: 100%;
+  .payment-method-area {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+  }
+  .payment-method-top {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1.8rem 2rem 1.2rem;
+    background-color: $neutral_10;
+  }
+  .payment-list-top {
+    @include flex(row, space-between, center);
+    margin-bottom: 1.2rem;
+    padding: 0 0.8rem;
+  }
+  .payment-list-title-box {
+    @include font(1.4rem, 700, $text_01, 2rem);
+  }
+  .payment-method-bottom {
+    flex: 1;
+    width: 100%;
+    padding: 1.8rem 2rem 1.2rem;
+    background-color: $neutral_10;
+  }
+  .add-payment-desc-box {
+    padding: 1.4rem 0 2rem;
+    @include font(1.2rem, 500, $text_04, 1.6rem);
+  }
+}
+
+.card-edit-container {
+  padding: 0 2.4rem;
+  .card-edit-top {
+    .field {
+      padding: 1.6rem 0;
+    }
+  }
+  .card-edit-bottom {
+    position: relative;
+    margin-top: 0.8rem;
+    padding-top: 2rem;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2.4rem;
+      width: calc(100% + 4.8rem);
+      height: 0.1rem;
+      background-color: rgba($primary_100, 0.1);
+    }
+    .title-box {
+      @include font(1.4rem, 700, $text_02, 2rem);
+      margin-bottom: 0.8rem;
+    }
+  }
+  .card-info-list-box {
+    @include flex(column, flex-start, flex-start);
+    gap: 0.4rem;
+    .card-info-list {
+      @include flex(row, space-between, center);
+      width: 100%;
+      @include font(1.4rem, 500, $text_03, 2rem);
+      .data-box {
+        color: $text_02;
+      }
+    }
+  }
+}
+
+.add-card-container {
+  height: 100%;
+  padding: 0 2rem;
+  background-color: $neutral_10;
+  .add-card-area {
+    height: 100%;
+  }
+  .add-card-top {
+    padding: 3.2rem 0;
+  }
+  .add-card-desc-box {
+    min-height: 10rem;
+    margin-top: 2rem;
+    @include font(1.6rem, 500, $text_03, 2.2rem);
+    text-align: center;
+    strong {
+      display: block;
+      margin-bottom: 2rem;
+      @include font(1.8rem, 700, $text_02, 2.6rem);
+    }
+  }
+  .add-card-bottom {
+    @include flex(column, center, center);
+    height: 100%;
+    .button-box {
+      margin-top: 5.6rem;
+    }
+  }
+  .add-card-image-box {
+    max-width: 21rem;
+    img {
+      width: 100%;
+    }
+  }
+  .add-card-button-box {
+    .btn {
+      font-size: 1.4rem;
+      padding: 0.8rem 1.6rem;
+    }
+  }
+}
+
+.edit-method-list-box {
+  padding: 0 2rem 2rem;
+  .edit-method-list {
+    border-top: 1px solid rgba($primary_100, 0.1);
+    &:first-of-type {
+      border: none;
+    }
+  }
+  .btn-edit-method {
+    width: 100%;
+    padding: 1.6rem 0;
+    @include font(1.6rem, 500, $text_02, 2.2rem);
+    text-align: left;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .add-card-container {
+    .add-card-bottom {
+      margin-top: 0;
+    }
+    .add-card-button-box {
+      margin-top: 3.2rem;
+    }
+  }
+}

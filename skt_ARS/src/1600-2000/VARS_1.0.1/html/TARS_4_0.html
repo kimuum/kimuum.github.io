@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 작업완료 예정시간 hidden값 -->
+    <input type="hidden" id="complete_time" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '작업 완료 예정시간 안내',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-obstacle">
+                <p class="info-title"><span class="highlight">서비스 이용에 불편</span>을 드려<br />죄송합니다.</p>
+                <p class="info-title-desc">
+                  현재 고객님 거주 지역은 서비스 개선을 위해 업그레이드 작업 진행중입니다.<br />
+                  빠른 시간 내에 정상화 할 수 있도록 최선을 다하겠습니다.
+                </p>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <div class="caution-title">작업 완료 예정시간</div>
+                    <p class="caution-text dot" id="completeTime"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="sendCall('상담사 연결', '0', 'menu')">상담사 연결</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var complete_time = getUrlParameter('complete_time'); // 예정시간
+
+          //complete_time = "201801151520";
+
+          //alert(complete_time.substr(0, 4) + "년" + complete_time.substr(4, 2) + "월" +  complete_time.substr(6, 2) + "일" + complete_time.substr(8, 2) + "시" + complete_time.substr(10, 2) + "분");
+          document.getElementById('completeTime').innerHTML =
+            complete_time.substr(0, 4) + '년 ' + complete_time.substr(4, 2) + '월' + complete_time.substr(6, 2) + '일 ' + complete_time.substr(8, 2) + '시' + complete_time.substr(10, 2) + '분';
+        } catch (e) {}
+      });
+
+      // t 전화 기본화면 처리
+      function sendCall(btnText, type, txt) {
+        // report page data 요청.
+        sendRepPageData(btnText, type, txt);
+      }
+    </script>
+  </body>
+</html>

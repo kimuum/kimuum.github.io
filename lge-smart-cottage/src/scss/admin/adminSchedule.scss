@@ -1,0 +1,259 @@
+.schedule-container {
+  padding: 2.4rem;
+  border-radius: 2rem;
+  background-color: $white;
+  .schedule-area {
+    display: flex;
+    width: 100%;
+    gap: 2.4rem;
+  }
+
+  .schedule-left {
+    flex: 0 0 29.2rem;
+  }
+  .schedule-right {
+    flex: 1;
+    width: 1px;
+  }
+}
+
+.calendar-box {
+  position: relative;
+  .btn-setting,
+  .react-datepicker__today-button {
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 0.1rem 0.8rem;
+    border-radius: 0.8rem;
+    @include font(1.4rem, 500, $gray-500, 2rem);
+  }
+  .btn-setting {
+    right: 0;
+  }
+  .react-datepicker__today-button {
+    @include flex(row, center, center);
+    left: 0;
+    background-color: transparent;
+    transition: background 0.15s;
+    &:hover:not(:disabled) {
+      background-color: rgba($gray-900, 0.1);
+    }
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+.react-datepicker {
+  .react-datepicker__aria-live {
+    display: block;
+    overflow: hidden;
+    height: 0;
+    font-size: 0;
+  }
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    display: block;
+    position: absolute;
+    top: 0.1rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0;
+  }
+  .react-datepicker__navigation--previous {
+    left: calc(50% - 6rem);
+    transform: translateX(-100%);
+    background: asset-image('icon/ic_pc_co_before.svg') no-repeat center / contain;
+  }
+  .react-datepicker__navigation--next {
+    right: calc(50% - 6rem);
+    transform: translateX(100%);
+    background: asset-image('icon/ic_pc_co_next.svg') no-repeat center / contain;
+  }
+  .react-datepicker__current-month {
+    width: 12rem;
+    margin: auto;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $black;
+    line-height: 2.2rem;
+    text-align: center;
+  }
+  .react-datepicker__day-names {
+    @include flex(row, center, flex-start);
+    gap: 0.2rem;
+    margin-top: 1.6rem;
+    .react-datepicker__day-name {
+      flex: 1;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $gray-400;
+      line-height: 2rem;
+      text-align: center;
+    }
+  }
+  .react-datepicker__month {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 0.8rem;
+  }
+  .react-datepicker__week {
+    display: flex;
+    gap: 0.2rem;
+  }
+  .react-datepicker__day {
+    cursor: pointer;
+    @include flex(row, center, center);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1.2rem;
+    border: 1px solid transparent;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $gray-500;
+    line-height: 2rem;
+    text-align: center;
+    &.react-datepicker__day--disabled {
+      color: $gray-100;
+    }
+
+    &.react-datepicker__day--highlighted {
+      background-color: $white;
+      border-color: $accent;
+      color: $accent;
+    }
+
+    &.react-datepicker__day--selected {
+      background-color: $accent;
+      color: $white;
+    }
+  }
+}
+
+.schedule-list-box {
+  width: 100%;
+  height: 100%;
+  .schedule-list-top {
+    @include flex(row, flex-start, center);
+    .date-box {
+      @include flex(row, flex-start, center);
+      @include font(1.6rem, 700, $black, 2.2rem);
+      &::before {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.4rem;
+        background: admin-image('ic_admin_co_calendar.svg') no-repeat center / contain;
+      }
+    }
+
+    .count-box {
+      @include flex(row, flex-start, center);
+      @include font(1.6rem, 500, $gray-500, 2.2rem);
+      &::before {
+        content: '';
+        display: block;
+        width: 1px;
+        height: 1.4rem;
+        background-color: $gray-100;
+        margin: 0 0.8rem;
+      }
+      .count {
+        font-weight: 700;
+        color: $accent;
+      }
+    }
+  }
+
+  .schedule-lists {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 1.3rem;
+    .schedule-list {
+      width: 100%;
+      height: 100%;
+      + .schedule-list {
+        margin-top: 1rem;
+      }
+      .schedule-list-null {
+        @include flex(row, center, center);
+        width: 100%;
+        height: 100%;
+        padding: 1.6rem;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: center;
+        @include font(1.6rem, 500, $black, 2.4rem);
+      }
+      .schedule-list-button {
+        display: block;
+        width: 100%;
+        padding: 1.6rem;
+        border-radius: 1.2rem;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        text-align: left;
+        .top-box,
+        .bottom-box {
+          @include flex(row, space-between, center);
+        }
+        .top-box {
+          .left-side,
+          .right-side {
+            @include font(1.4rem, 500, $gray-400, 1.8rem);
+          }
+          .data {
+            margin-left: 0.4rem;
+          }
+        }
+
+        .bottom-box {
+          align-items: flex-start;
+          gap: 1.6rem;
+          margin-top: 1rem;
+          .left-side {
+            max-width: calc(100% - 2rem - 1.6rem);
+            .address {
+              display: block;
+              max-width: 100%;
+              margin-bottom: 0.4rem;
+              @include font(1.6rem, 700, $black, 2.2rem);
+              @include ellipsis;
+            }
+
+            .customer {
+              @include font(1.6rem, 500, $black, 2.4rem);
+              .phone {
+                margin-left: 0.6rem;
+              }
+            }
+
+            .request {
+              display: block;
+              margin-top: 0.3rem;
+              @include font(1.6rem, 400, $gray-600, 2.4rem);
+              @include ellipsis;
+            }
+          }
+          .right-side {
+            margin-top: 1.5rem;
+            .view-icon {
+              display: block;
+              width: 2rem;
+              height: 2rem;
+              background: admin-image('ic_admin_arrow_right_20.svg') no-repeat center / contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .schedule-list-bottom {
+    height: calc(100% - 2.2rem);
+  }
+}

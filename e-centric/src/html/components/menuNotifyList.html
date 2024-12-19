@@ -1,0 +1,17 @@
+<li class="notify-list">
+  <!-- [240430] role="button" 속성 추가 -->
+  <div class="notify-list-box" role="button">
+    <div class="notify-content-box">
+      <div class="notify-content-top">
+        <!-- .alert : 화재 경보 카테고리 style 클래스 부여 -->
+        <span class="category @@if(category == '화재 경보'){alert}">[@@category]&nbsp;</span>
+        <span class="title">@@title</span>
+      </div>
+      <div class="notify-content-bottom">
+        <!-- [240429] 시간 aria 속성 추가, .ir 엘리먼트 추가 -->
+        <span class="time" aria-hidden="true">2024.01.01</span>
+        <span class="time-ir">2024년 1월 1일</span>
+      </div>
+    </div>
+  </div>
+</li>

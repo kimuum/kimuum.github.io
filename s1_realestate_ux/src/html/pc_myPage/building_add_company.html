@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | 건물 정보 등록 - 회사 선택</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant2",
+        "property" : "disabled",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" :'',
+        "currentPage" : "건물 등록",
+      })
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <!-- .building-add-company : 건물 등록 > 회사 선택 style -->
+          <div class="sub-page-container building-add-company">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">회사를 선택해 주세요.</span>
+                  </div>
+                  <div class="sub-page-page-desc-box">
+                    <p>잘못된 정보를 등록할 경우, 서비스 이용이 제한될 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="building-info-table-container">
+                  <div class="building-info-table-area">
+                    <div class="filter-box">
+                      <div class="filter">
+                        <div class="filter-row">
+                          <div class="filter-list filter-list-company">
+                            <div class="filter-label">
+                              <span>건물 정보</span>
+                            </div>
+                            <div class="filter-info wide">
+                              <div class="info-box">
+                                <div class="company-name-box">
+                                  <div class="company-name">
+                                    <i class="ic ic-company"></i>
+                                    <span class="name">삼성전자빌딩</span>
+                                  </div>
+                                </div>
+                                <span class="text"
+                                  >서울특별시 서초구 서초대로74길 11 삼성전자<br />서초사옥 8F,9F,10F, 11F
+                                  디자인그룹실</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <form class="form-container">
+                      <fieldset class="fieldset-container">
+                        <legend class="hidden">회사 검색</legend>
+                        <!-- prettier-ignore -->
+                        @@include("../../components/field_radio.html", {
+                          "required" : "",
+                          "label" : "회사",
+                          "tooltip" :"",
+                          "radio" : [
+                            {
+                              "name" : "radio-01",
+                              "label" : "삼성전자",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "스타벅스 서초사옥점",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "삼성전자",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "스타벅스 서초사옥점",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "삼성전자",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "스타벅스 서초사옥점",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "삼성전자",
+                              "disabled" : "",
+                            },
+                            {
+                              "name" : "radio-01",
+                              "label" : "스타벅스 서초사옥점",
+                              "disabled" : "",
+                            },
+                          ],
+                        })
+                      </fieldset>
+                    </form>
+                    <div class="desc-box">
+                      <p>회사 검색이 되지 않을 경우 0000-0000로 문의해 주세요.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "secondary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "이전",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "등록",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+.specs-row {
+  &:last-child {
+    border-bottom: 1px solid $color-888888;
+  }
+}
+.specs-lists {
+  .specs-label {
+    margin-bottom: 2rem;
+    @include font(2.4rem, 500, $black, normal);
+    @include fontfamhead;
+  }
+  .specs-header {
+    padding: 2rem 5rem 1.9rem;
+    @include font(2rem, 400, $black, normal);
+    background-color: #E8EAED;
+  }
+  .specs-list {
+    li {
+      @include flex(row, space-between, flex-start);
+      &:first-child {
+        .specs-left {
+          .value {
+            border-top: 0;
+          }
+        }
+        .specs-right {
+          border-top: 0;
+        }
+      }
+    }
+    .column-type {
+      padding: 0;
+      .value {
+        padding: 1.6rem 5rem;
+      }
+      .specs-right {
+        flex-direction: column;
+        width: 68%;
+        .value {
+          width: 100%;
+          margin-right: 0;
+          text-align: right;
+          border-top: 1px solid $color-888888;
+        }
+      }
+    }
+  }
+
+  .specs-left {
+    min-width: 28.4rem;
+    &.empty {
+      +  .specs-right {
+        max-width: 95rem;
+      }
+    }
+    .value {
+      padding: 1.6rem 5rem 1.6rem;
+      border-top: 1px solid $color-888888;
+      color: #000;
+    }
+  }
+  .specs-right {
+    flex: 1;
+    @include flex(row, flex-end, flex-start);
+    flex-wrap: wrap;
+    padding: 1.6rem 5rem 1.6rem 0;
+    border-top: 1px solid $color-888888;
+  }
+  .value {
+    @include flex(row, flex-start, center);
+    @include font(2rem, 400, #888, normal);
+    margin-left: 4rem;
+    &:first-child {
+      margin-left: 0;
+    }
+    span {
+      white-space: nowrap;
+      & + span {
+        margin-left: 1rem;
+      }
+    }
+
+    .ic-info {
+      display: inline-block;
+      position: relative;
+      top: -0.5rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      background: image('common/icon_info.svg') no-repeat center / 1.1rem;
+    }
+  }
+}
+.specs-guide-text {
+  margin-top: 2rem;
+  .desc-box {
+    @include flex(row, flex-start, center);
+    .desc {
+      @include flex(row, flex-start, flex-start);
+      @include font(1.6rem, 400, #a4a4a4, 2rem);
+      &::before {
+        content: '';
+        display: block;
+        width: 1.8rem;
+        min-width: 1.8rem;
+        height: 1.8rem;
+        margin-right: 1rem;
+        background: image('common/icon_info.svg') no-repeat center / 1.8rem;
+      }
+      + .desc {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .specs-lists {
+    .specs-left {
+      min-width: 50%;
+      width: 50%;
+    }
+    .specs-right {
+      width: 50%;
+    }
+
+    .value {
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .specs-row {
+    border-top: 1px solid $color-888888;
+    &:first-child {
+      border-top: 0;
+    }
+    &:last-child {
+      border-bottom: 1px solid $color-888888;
+    }
+  }
+
+  .specs-lists {
+    margin: 5rem -2rem 2rem;
+    .specs-label {
+      padding: 0 2rem;
+      font-size: 2rem;
+    }
+    .specs-header {
+      padding: 1.8rem 2rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: normal;
+    }
+    .specs-list {
+
+      li {
+        display: block;
+        padding: 2rem 2rem;
+        border-bottom: 1px solid #888;
+        &.separation {
+          padding-bottom: 0;
+          border-bottom: 0;
+          + li {
+            padding-top: 1rem;
+          }
+        }
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+      .column-type {
+        padding: 1.2rem 2rem;
+        .specs-right {
+          width: 100%;
+          .value {
+            padding: 0;
+            text-align: left;
+            border: 0;
+          }
+        }
+        .value {
+          padding: 0;
+        }
+      }
+      .value {
+        margin: 1rem 0 0 0;
+        padding: 0;
+        border: 0;
+        font-size: 1.4rem;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      .specs-left {
+        &:not(.empty) {
+          margin-bottom: 1rem;
+        }
+      }
+      .specs-right {
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        border-top: 0;
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .value {
+          width: 100%;
+          span {
+            flex: 1;
+            white-space: normal;
+            + span {
+              flex: none;
+              width: calc(100% - 9rem);
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .specs-guide-text {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+
+    .desc-box {
+      .desc {
+        padding: 0 2rem;
+        font-size: 1.4rem;
+        line-height: normal;
+        &::before {
+          width: 1.4rem;
+          min-width: 1.4rem;
+          height: 1.4rem;
+          background-size: 1.4rem;
+        }
+      }
+    }
+  }
+}

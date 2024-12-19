@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '청구요금 팩스 수신',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="column-title-icon-box ic-fax"></div>
+            <div class="form-fax">
+              <div class="field field-input">
+                <div class="field-label">팩스번호</div>
+                <div class="field-area">
+                  <input type="tel" id="FAX_num" placeholder="팩스번호 입력" iweb-data="in" />
+                </div>
+              </div>
+            </div>
+            <div class="alert-text-box">
+              <p class="alert-text">매월 1일 ~ 6일은 전월 청구요금이 발송됩니다.</p>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="sendData($(this), 'RT')">완료</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        initUIComponents(true); // 초기화 function
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // $('input[type=tel]').bind('keydown', function (e) {
+        //   if (e.keyCode === 13) {
+        //     // 처리할 내용
+        //     var focusEle = document.activeElement;
+
+        //     var FAX_num1 = document.getElementById('FAX_num1');
+        //     var FAX_num2 = document.getElementById('FAX_num2');
+        //     var FAX_num3 = document.getElementById('FAX_num3');
+
+        //     if (focusEle == FAX_num1) {
+        //       FAX_num2.focus();
+        //     } else if (focusEle == FAX_num2) {
+        //       FAX_num3.focus();
+        //     } else {
+        //     }
+        //   }
+        // });
+      });
+
+      function sendData(obj, dtmf) {
+        // 유효성 체크
+        var FAX_num = document.getElementById('FAX_num').value;
+        if (FAX_num == null || FAX_num == '') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">Fax 번호를 입력하세요.</p>', '');
+          return;
+        }
+        // var FAX_num1 = document.getElementById('FAX_num1').value;
+        // var FAX_num2 = document.getElementById('FAX_num2').value;
+        // var FAX_num3 = document.getElementById('FAX_num3').value;
+        // if (FAX_num1 == null || FAX_num2 == null || FAX_num3 == null || FAX_num1 == '' || FAX_num2 == '' || FAX_num3 == '') {
+        //   $.alerts.okButton = '확인';
+        //   jAlert('<p class="popup-alert-text">Fax 번호를 입력하세요.</p>', '');
+
+        //   return;
+        // }
+
+        // report page data 호출
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

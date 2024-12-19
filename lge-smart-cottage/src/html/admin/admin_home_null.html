@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("adminHead.html",{
+    "title" : "LGE 스마트코티지 | Admin"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("lnb.html", {
+        "title" : "Header",
+        "userinfo" : {
+          "username" : "김경진",
+          "userid"   : "SCZZang"
+        },
+        "list" : [
+          {
+            "text"     : "홈",
+            "className": "home",
+            "property" : "active",
+          },
+          {
+            "text"     : "신청 내역 조회",
+            "className": "search",
+            "property" : "",
+          },
+          {
+            "text"     : "고객 관리",
+            "className": "customer",
+            "property" : "",
+          },
+          {
+            "text"     : "홈페이지 관리",
+            "className": "homepage",
+            "property" : "",
+          },
+        ],
+      })
+      <main id="main" class="main-container">
+        <div class="main-area">
+          <section id="section-1" class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">현장실사 일정</h2>
+                </div>
+              </div>
+
+              <div class="section-bottom">
+                <div class="schedule-container">
+                  <div class="schedule-area">
+                    <div class="schedule-left">
+                      <!-- prettier-ignore -->
+                      @@include("datepicker.html", {
+                        "topBtn" : true
+                      })
+                    </div>
+                    <div class="schedule-right">
+                      <div class="schedule-list-box">
+                        <div class="schedule-list-top">
+                          <div class="date-box">6월 12일 수요일</div>
+                          <div class="count-box">
+                            <span>총&nbsp;</span>
+                            <span class="count">0건</span>
+                          </div>
+                        </div>
+                        <div class="schedule-list-bottom">
+                          <ul class="schedule-lists">
+                            <li class="schedule-list">
+                              <!-- 현장실사 일정 없는 경우 -->
+                              <div class="schedule-list-null">
+                                <span class="text">해당일은 현장실사 일정이 없습니다.</span>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="section-2" class="section-container">
+            <div class="section-area">
+              <div class="section-middle">
+                <div class="anchor-box">
+                  <ul class="anchor-lists">
+                    <li class="anchor-list">
+                      <a href="#section-3" class="anchor">
+                        <span class="label">일정<br />확인 필요</span>
+                        <span class="data">2<span class="unit">건</span></span>
+                      </a>
+                    </li>
+                    <li class="anchor-list">
+                      <a href="#section-4" class="anchor">
+                        <span class="label">실사 완료<br />처리 필요</span>
+                        <span class="data">+999<span class="unit">건</span></span>
+                      </a>
+                    </li>
+                    <li class="anchor-list">
+                      <!-- 비활성화 시 href 속성 제거 후 disabled 클래스 추가 -->
+                      <a class="anchor disabled">
+                        <span class="label">신청 취소<br />확인 필요</span>
+                        <span class="data">0<span class="unit">건</span></span>
+                      </a>
+                    </li>
+                    <li class="anchor-list">
+                      <a href="#section-5" class="anchor">
+                        <span class="label">변경 사항<br />확인 필요</span>
+                        <span class="data">1<span class="unit">건</span></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="section-3" class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">일정 확인 필요</h2>
+                  <div class="total-count-box">총 2건</div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "일정 확인 필요",
+                  "thead" : [
+                    {
+                      "text" : "주문번호", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "85",
+                    },
+                    {
+                      "text" : "상태",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "139",
+                    },
+                    {
+                      "text" : "신청일시",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "92",
+                    },
+                    {
+                      "text" : "대지주소",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "신청자명",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "78",
+                    },
+                    {
+                      "text" : "실사일자",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "155",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000001",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text error",
+                        "text" : "완료 처리 필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.25",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000002",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text error",
+                        "text" : "완료 처리 필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.25",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+              </div>
+            </div>
+          </section>
+
+          <section id="section-4" class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">실사 완료 처리 필요</h2>
+                  <div class="total-count-box">총 2건</div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "일정 확인 필요",
+                  "thead" : [
+                    {
+                      "text" : "주문번호", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "85",
+                    },
+                    {
+                      "text" : "상태",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "139",
+                    },
+                    {
+                      "text" : "신청일시",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "92",
+                    },
+                    {
+                      "text" : "대지주소",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "신청자명",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "78",
+                    },
+                    {
+                      "text" : "실사일자",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "155",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000001",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text error",
+                        "text" : "완료 처리 필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.25",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000002",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text error",
+                        "text" : "완료 처리 필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.25",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+              </div>
+            </div>
+          </section>
+
+          <section id="section-5" class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">신청 취소 확인 필요</h2>
+                  <div class="total-count-box">총 2건</div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "일정 확인 필요",
+                  "thead" : [
+                    {
+                      "text" : "주문번호", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "85",
+                    },
+                    {
+                      "text" : "상태",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "139",
+                    },
+                    {
+                      "text" : "신청일시",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "92",
+                    },
+                    {
+                      "text" : "대지주소",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "신청자명",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "78",
+                    },
+                    {
+                      "text" : "실사일자",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "155",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000001",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "취소 - 환불 불필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.25",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "000002",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text error",
+                        "text" : "취소 - 환불 필요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.30",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "충북 진천군 이월면 진광로 928-27",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "배수지",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+              </div>
+            </div>
+          </section>
+
+          <section id="section-6" class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">변경 사항 확인 필요</h2>
+                  <div class="total-count-box">총 2건</div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "일정 확인 필요",
+                  "thead" : [
+                    {
+                      "text" : "No.", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "85",
+                    },
+                    {
+                      "text" : "변경일자",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "139",
+                    },
+                    {
+                      "text" : "유형",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "92",
+                    },
+                    {
+                      "text" : "변경 전",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "변경 후",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "확인",
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "49",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "3",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.12 13:00",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일정",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text light",
+                        "text" : "2024.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2025.12.31 오전 10시",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "button",
+                        "text" : "확인",
+                        "align": "center",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "2",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.12 13:00",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "대지",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text light",
+                        "text" : "충북 진천군 이월면 진광로 928-27",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "제주 제주시 1100로 2894-72",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "button",
+                        "text" : "확인",
+                        "align": "center",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "1",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.12 13:00",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "요청사항",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text light",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "button",
+                        "text" : "확인",
+                        "align": "center",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

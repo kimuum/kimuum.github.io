@@ -1,0 +1,10 @@
+<div class="accordion-container">
+  <div class="accordion-area">
+    <ul class="accordion-list">
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < data.length; i++) {
+        @@include("../../components/accordionItem.html", `+(JSON.stringify(data[i]))+`)
+      }
+    </ul>
+  </div>
+</div>

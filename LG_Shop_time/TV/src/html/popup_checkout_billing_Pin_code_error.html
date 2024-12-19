@@ -1,0 +1,33 @@
+@@include('head.html', {
+  'title': 'Enter PIN CODE'
+})
+  <body>
+    <div class="wrapper">
+      <!-- TV 빌링 Pin code -->
+      <div class="popup-container show">
+
+        <div class="pin-code-container pin-code-toast">
+          <div class="pin-toast-box">
+            <div class="pin-toast-area">
+              <p>The number of PIN CODE errors has been <br>exceeded and the PIN CODE cannot be used. <br>Would you like to set a new PIN CODE?</p>
+            </div>
+            <div class="pin-button-area">
+              <button type="button" class="btn-pin-cancel focused"><span>Cancel</span></button>
+              <button type="button" class="btn-pin-ok"><span>OK</span></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- //TV 빌링 Pin code -->
+
+      <!-- Main -->
+      <main class="main">
+        @@include('lnbDefault.html')
+      </main>
+      <!-- // Main -->
+    </div>
+    @@include('scale_js.html')
+  </body>
+  
+  </html>

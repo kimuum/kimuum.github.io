@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 공지사항 상세 정보"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "고객센터",
+          }
+        ],
+        "currentPage" : "공지사항",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container cs">
+            <div class="sub-page-area">
+              <div class="sub-page-middle">
+                <div class="notice-detail-container">
+                  <div class="notice-detail-area">
+                    <div class="notice-detail-top">
+                      <div class="title-box">
+                        <i class="ic ic-notice"></i>
+                        <span>[시스템 공지사항] 23년 11월 30일 시스템 업데이트 안내 (V1.01)</span>
+                      </div>
+                      <div class="date-box">
+                        <span>2023.11.21</span>
+                      </div>
+                    </div>
+                    <div class="notice-detail-middle">
+                      <div class="download-box">
+                        <span class="file-name">첨부파일.txt</span>
+                      </div>
+
+                      <div class="notice-detail-content-box">
+                        <p class="text">
+                          2023년 11월 30일에 시스템 V1.0.1 업데이트를 위해 일정 시간 에스원 시스템 사용이 불가능합니다.
+                          상세 정보 업데이트 및 일정 내용은 아래를 참조하시기 바랍니다.
+                          <br />
+                          <br />
+                          -아 래-
+                          <br />
+                          <br />
+                          1. 시스템 사용 불가 일시 : 23년 11월 30일 목요일 PM 10:00 ~ PM 11:30
+                          <br />
+                          <br />
+                          2. 업데이트 내용
+                          <br />
+                          <br />
+                          2-1. 버그 및 문제 해결 1) 시스템 진입 시 중복 로그인으로 인한 충돌 버그 현상 해결 2) 신규
+                          건물명 미노출 현상 해결 3) APP 강제 종료 시 비정상 접근으로 인한 문제 해결
+                          <br />
+                          <br />
+                          2-2. 신규 컨텐츠 업데이트 1) 출근 기록 컨텐츠 추가 (Home) 2) 내 건물명 관리 기능 추가
+                          (마이페이지) 기간 참고하여 일정에 차질 없도록 확인 부탁 드리겠습니다. ※ 업데이트 관련 상세
+                          정보 문의는 02-111-2345 로 문의 바랍니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "목록",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "공통 부가서비스 상세" , "headProjectName": "| 상품 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superProductComExtraDetail">
+      <!-- 페이지 고유 클래스 : superProductComExtraDetail -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>공통 부가서비스 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>상품 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>공통 부가서비스 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>공통 부가서비스 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>정보 변경</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">부가서비스 기본</h2>
+                    <!-- [2차BO] 20221011 수정 -->
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        부가서비스 기본 목록 - 부가서비스 아이디, 부가서비스 카테고리, 노출여부, 부가서비스명, 부가서비스 간략 설명, 상품유효시작일시, 상품유효종료일시, 상품판매시작일시, 상품판매종료일시, 판매상태, 기본요금, 검색 키워드
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <!-- [2차BO] 20221005 수정 -->
+                        <col />
+                        <col style="width: 148px" />
+                        <!-- [2차BO] 20221005 수정 -->
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">부가서비스 아이디</th>
+                          <td colspan="3">A123456</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            부가서비스<br />
+                            카테고리
+                          </th>
+                          <td>통화 편의</td>
+                          <th scope="row">노출 여부</th>
+                          <td>노출</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">부가서비스명</th>
+                          <td colspan="3">특정번호수신차단서비스</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            부가서비스<br />
+                            간략 설명
+                          </th>
+                          <td colspan="3">음성 및 SMS 수신을 원하지 않는 특정번호를 최대 100개까지 설정하여 자동으로 수신을 차단해주는 서비스</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상품유효 시작일시</th>
+                          <td>2022-01-01 13:00</td>
+                          <th scope="row">상품유효 종료일시</th>
+                          <td>2022-01-01 13:00</td>
+                        </tr>
+                        <!-- [2차BO] 20221011 상품판매 위치 이동 -->
+                        <tr>
+                          <th scope="row">판매상태</th>
+                          <td>판매</td>
+                          <th scope="row">상품추천 여부</th>
+                          <td>Y</td>
+                        </tr>
+
+                        <!-- [2차BO] 20221011 수정 -->
+                        <tr>
+                          <th scope="row">상품판매 시작일시</th>
+                          <td>2022-01-01 13:00</td>
+                          <th scope="row">상품판매 종료일시</th>
+                          <td>2022-01-01 13:00</td>
+                        </tr>
+                        <!-- //[2차BO] 20221011 수정 -->
+
+                        <!-- [2차BO] 20220930 수정 -->
+                        <tr>
+                          <!-- [2차BO] 20221018 삭제
+                        <th scope="row">할인 부가서비스 <br>여부</th>
+                        <td>일반</td>
+                        -->
+                          <th scope="row">기본요금</th>
+                          <td colspan="3">
+                            <!-- [2차BO] 20221018 수정 -->
+                            <span>2,200</span>
+                            <div class="addExplain smaller">
+                              <strong class="required"><span></span></strong>
+                              VAT 포함 금액, 0인 경우 해당 부가서비스는 '무료'로 표시됨
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- //[2차BO] 20220930 수정 -->
+
+                        <!-- [2차BO] 20221005 수정 -->
+                        <tr>
+                          <th scope="row">본인인증 대상여부</th>
+                          <td colspan="3">신청, 변경, 해지</td>
+
+                          <!-- [2차BO] 20221201 법정대리인 인증여부 삭제
+                        <th scope="row">법정대리인 <br>인증 대상여부</th>
+                        <td>신청, 해지</td>
+                        --></tr>
+                        <!-- //[2차BO] 20221005 수정 -->
+
+                        <tr>
+                          <th scope="row">검색 키워드</th>
+                          <td colspan="3">차단, 수신, 번호, 자동</td>
+                        </tr>
+
+                        <!-- [2차BO] 20220916 수정 -->
+                        <tr>
+                          <th scope="row">부가파람 케이스</th>
+                          <td colspan="3">CASE_4</td>
+                        </tr>
+
+                        <!-- [2차BO] 20221005 수정 -->
+                        <tr>
+                          <th scope="row">부가파람 세팅 대상</th>
+                          <td colspan="3">신청, 변경</td>
+                        </tr>
+                        <!-- //[2차BO] 20221005 수정 -->
+
+                        <!-- [2차BO] 20220930 수정 -->
+                        <tr>
+                          <th scope="row">가입/해지 <br />필요 부가서비스</th>
+                          <td colspan="3">
+                            <div class="tableContainer alignCenter">
+                              <table>
+                                <caption>
+                                  가입/해지 필요 부가서비스명
+                                </caption>
+                                <colgroup>
+                                  <col />
+                                </colgroup>
+                                <thead>
+                                  <tr>
+                                    <th scope="row">가입/해지 필요 부가서비스명</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>LTE_인증상품</td>
+                                  </tr>
+                                  <tr>
+                                    <td>발신번호표시무료</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- //[2차BO] 20220930 수정 -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 부가서비스 기본 -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">부가서비스 상세 설명</h2>
+                    <!-- [2차BO] 20221011 수정 -->
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        부가서비스 상세 설명
+                      </caption>
+                      <!-- [2차BO] 20221011 수정 -->
+                      <colgroup>
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="highTextArea">에디터 출력 영역입니다.</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 부가서비스 설명 -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

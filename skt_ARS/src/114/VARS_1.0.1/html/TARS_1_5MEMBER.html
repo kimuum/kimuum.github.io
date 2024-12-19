@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="item_code" iweb-data="out" />
+    <input type="hidden" id="start_date" iweb-data="out" />
+    <input type="hidden" id="end_date" iweb-data="out" />
+
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+
+    <div class="wrapper member-contract">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '선택약정할인',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="member-contract-container">
+              <div class="content-title-box">
+                <h2 class="content-title"><span>현재 가입중인 상품입니다.</span></h2>
+              </div>
+              <ul class="member-contract-lists">
+                <li>
+                  <p id="useName" class="list-label"></p>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'I', 'menu');" class="btn-badge">상품 정보보기</a>
+                </li>
+                <li>
+                  <p class="list-label">약정 시작/종료일</p>
+                  <span id="useDate"></span>
+                </li>
+              </ul>
+
+              <!-- common range start -->
+              <div class="range-container">
+                <div class="range-box">
+                  <div class="range-bar" id="range_member_bar"></div>
+                  <div class="range-bubble" id="range_member_bubble">
+                    <div class="range-bubble-in">
+                      <span class="bubble-text">잔여&nbsp;<span id="remain_day"></span></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="range-bottom">
+                  <span class="range-label">전체</span>
+                  <span id="full_day" class="range-value"></span>
+                </div>
+              </div>
+              <!-- common range end -->
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box" id="btn_wrap">
+            <button type="button" class="btn btn-primary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');">확인</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var item_code = getUrlParameter('item_code');
+          var itemName = '';
+          var full_day = '';
+
+          var format = ['.'];
+          var start_date = getUrlParameter('start_date');
+          var end_date = getUrlParameter('end_date');
+          /*@build-time*/ start_date = '20220315';
+          /*@build-time*/ end_date = '20240830';
+          var dateCnt = getDiffDay(start_date, end_date);
+
+          /*@build-time*/ item_code = 'M0024';
+
+          if (item_code == 'M0012') {
+            itemName = '12개월';
+            full_day = dateCnt;
+          } else if (item_code == 'M0024') {
+            itemName = '24개월';
+            full_day = dateCnt;
+          } else if (item_code == 'D365') {
+            itemName = '365일';
+            full_day = dateCnt;
+          } else if (item_code == 'D730') {
+            itemName = '730일';
+            full_day = dateCnt;
+          }
+
+          $('#useName').text('선택약정할인제도 (' + itemName + ')');
+
+          $('#useDate').text(getDayFmt(start_date, format) + ' ~ ' + getDayFmt(end_date, format));
+
+          //remain_day
+          $('#full_day').text(full_day + ' 일');
+
+          var Dday = new Date(end_date.substring(0, 4), end_date.substring(4, 6) - 1, end_date.substring(6, 8));
+          var now = new Date();
+
+          var gap = now.getTime() - Dday.getTime();
+          var result = Math.floor(gap / (1000 * 60 * 60 * 24)) * -1;
+
+          if (dateCnt % 5 == 1) {
+            result += 1;
+          }
+
+          if (now > Dday) {
+            result = 0;
+          } else {
+            result = result;
+          }
+
+          $('#remain_day').text(result + ' 일 남음');
+          // 잔여일 계산
+          var rate = Math.round((result / full_day) * 100); //+ '%';
+
+          //남은일 계산
+          var remaining = 100 - rate;
+          remaining = 95;
+          $('#range_member_bar').css('width', remaining + '%');
+          // 새로운 툴팁 위치값 설정
+          // 20% 이하 left, 20% 이후 center, 100% 끝은 right
+          if (remaining >= 0 && remaining <= 20) {
+            console.log(remaining + ' left');
+            $('#range_member_bubble').removeClass('center right').addClass('left');
+            $('#range_member_bubble').css('left', 'calc(' + remaining + '%' + ' - 14px)');
+          } else if (remaining >= 21 && remaining <= 90) {
+            $('#range_member_bubble').removeClass('left right').addClass('center');
+            $('#range_member_bubble').css('left', 'calc(' + remaining + '%' + ' - 62px)');
+            console.log(remaining + ' center');
+          } else if (remaining >= 91 && remaining < 100) {
+            console.log(remaining + ' right');
+            $('#range_member_bubble').removeClass('left center').addClass('right');
+            $('#range_member_bubble').css('left', '55%');
+          } else if (remaining === 100) {
+            $('#range_member_bubble').removeClass('left center').addClass('right');
+            $('#range_member_bubble').css('left', '64%');
+          }
+        } catch (e) {}
+      });
+
+      //윤달 계산
+      function f_leapyear(yy) {
+        if ((yy % 4 == 0 && yy % 100 != 0) || yy % 400 == 0) return 1;
+        else return 0;
+      }
+
+      // 년과 달을 입력하면, 한달에 몇일이 있는지 확인하는 함수입니다.
+      function f_dayofmonth(yy, mm) {
+        switch (mm) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            return 31;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            return 30;
+          case 2:
+            return 28 + f_leapyear(yy);
+        }
+      }
+
+      //해당년도만의 일수 계산
+      function day_cal(yy, mm, dd) {
+        var tot = 0;
+        for (var i = 1; i < mm; i++) {
+          tot += f_dayofmonth(yy, i);
+        }
+        return tot + dd;
+      }
+
+      //날짜 일수 계산
+      function getDiffDay(val1, val2) {
+        var sdate_year = Number(val1.substr(0, 4));
+        var sdate_month = Number(val1.substr(4, 2));
+        var sdate_day = Number(val1.substr(6, 2));
+        var edate_year = Number(val2.substr(0, 4));
+        var edate_month = Number(val2.substr(4, 2));
+        var edate_day = Number(val2.substr(6, 2));
+        var year_result = edate_year - sdate_year;
+
+        var tot = 0;
+        /*          	for(i=sdate_year;i<edate_year+1;i++){
+
+         		var returnValue = f_leapyear(i);
+         		if(returnValue == 1){
+         			if(val1 <= "" + i + "0229" && "" + i + "0229" <= val2){
+         				tot += f_leapyear(i);
+         			}
+         		}
+         	} */
+        tot += year_result * 365; //년도 차이 일수 계산
+        tot += -day_cal(sdate_year, sdate_month, sdate_day) + 1; //시작 날짜 일수 계산
+        tot += day_cal(edate_year, edate_month, edate_day); //종료 날짜 일수 계산
+
+        return tot;
+      }
+    </script>
+  </body>
+</html>

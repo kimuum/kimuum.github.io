@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "마스킹 해제" , "headProjectName": "| 쿠폰 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnMaskingClear" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>마스킹 해제</span></button>
+    </div>
+
+    <!-- 마스킹 해제 -->
+    <div class="popup hide" id="popupMaskingClear" role="dialog" aria-labelledby="popupTitle-maskingClear" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-maskingClear">마스킹 해제</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="input">
+              <input type="text" id="" placeholder="사유를 입력해주세요.*" />
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>취소</span></button>
+              <!-- <button type="button" class="btn btnPrimary" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>신청</span></button> 입력 후 활설화 신청 버튼 -->
+              <button type="button" class="btn btnDim" onclick="togglePopup('btnMaskingClear', 'popupMaskingClear')"><span>신청</span></button>
+              <!-- 입력 전 비활성화 신청 버튼 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- Start Script -->
+  </body>
+</html>

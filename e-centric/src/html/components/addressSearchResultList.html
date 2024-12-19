@@ -1,0 +1,40 @@
+<li class="search-result-list">
+  <!-- [접근성] button 태그에서 div 태그로 변경, role 속성 추가 -->
+  <div role="button" class="btn-search-result">
+    <div class="search-result-box">
+      <div class="search-result-left">
+        <div class="address-box">
+          <div class="address">
+            <!-- prettier-ignore -->
+            @@include("badgeText.html", {
+              "iconClass" : "",
+              "badgeColor": "primary",
+              "badgeText" : "도로명",
+              "badgeLabel": "도로명",
+              "property"  : "small",
+            })
+            <span class="address-text">서울특별시 @@구 @@동 NN-NN</span>
+          </div>
+          <div class="address">
+            <!-- prettier-ignore -->
+            @@include("badgeText.html", {
+              "iconClass" : "",
+              "badgeColor": "secondary",
+              "badgeText" : "구주소",
+              "badgeLabel": "구주소",
+              "property"  : "small"
+            })
+            <span class="address-text">서울특별시 @@구 @@동 NN-NN</span>
+          </div>
+        </div>
+        <div class="zip-code-box">
+          <span class="label">우편번호</span>
+          <span class="zip-code">123456</span>
+        </div>
+      </div>
+      <div class="search-result-right">
+        <i class="ic ic-arrow-right"></i>
+      </div>
+    </div>
+  </div>
+</li>

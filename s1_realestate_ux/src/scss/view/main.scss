@@ -1,0 +1,461 @@
+.main-alert-container {
+  position: relative;
+  width: $contentSize;
+  margin: 0 auto;
+
+  .main-alert-box {
+    position: absolute;
+    top: 2.4rem;
+    right: 0;
+    padding: 1.6rem;
+    border: 1px solid $color_dcd;
+    border-radius: 0.4rem;
+    background-color: $white;
+
+    .title-box {
+      @include flex(row, space-between, center);
+      .link {
+        @include font(1.4rem, 500, $color_353, normal);
+      }
+      .btn-close {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: 4rem;
+        background: asset-image('ic_alert_close.svg') no-repeat center / 1.6rem;
+      }
+    }
+    .date-box {
+      margin-top: 1.2rem;
+      @include font(1.4rem, 400, $color_7f7, 1.6rem);
+    }
+  }
+}
+
+.usage-graph-box {
+  @include flex(row, space-between, flex-start);
+  padding: 3.2rem 0;
+  border-top: 1px solid $color_e4e;
+  background-color: $white;
+  .usage-graph {
+    flex: 1;
+    @include flex(column, center, center);
+    padding: 0 3.6rem 0 3.2rem;
+    &.green {
+      .compare-box {
+        .data {
+          color: #5abf83;
+        }
+        .arrow {
+          border-bottom-color: #5abf83;
+        }
+      }
+    }
+    &.blue {
+      .compare-box {
+        .data {
+          color: $primary;
+        }
+        .arrow {
+          border-bottom-color: $primary;
+        }
+      }
+    }
+    &.orange {
+      .compare-box {
+        .data {
+          color: #ffab49;
+        }
+        .arrow {
+          border-bottom-color: #ffab49;
+        }
+      }
+    }
+
+    + .usage-graph {
+      border-left: 1px solid rgba($color_7f7, 0.1);
+    }
+
+    .title-box {
+      @include font(1.8rem, 700, $color_353, normal);
+    }
+
+    .date-box {
+      width: 100%;
+      margin-bottom: 0.4rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid $color_ebe;
+      text-align: center;
+      @include font(1.4rem, 400, $color_7f7, normal);
+    }
+
+    .graph-info-box {
+      margin-top: -2.4rem;
+      text-align: center;
+    }
+
+    .usage-box {
+      .label {
+        @include font(1.8rem, 700, $color_353, normal);
+      }
+      .data {
+        margin-left: 0.4rem;
+        @include font(1.8rem, 500, $color_353, normal);
+      }
+    }
+
+    .price-box {
+      margin-top: 1.2rem;
+      @include flex(row, center, center);
+      @include font(2.4rem, 700, $color_353, normal);
+      .unit {
+        position: relative;
+        top: -0.25rem;
+        margin-left: 0.4rem;
+        font-size: 1.6rem;
+      }
+
+      + .compare-box {
+        margin-top: 0;
+      }
+    }
+
+    .compare-box {
+      margin-top: 1.6rem;
+      .label {
+        @include font(1.4rem, 500, $color_7f7, normal);
+      }
+      .data {
+        margin-left: 0.4rem;
+        @include font(1.4rem, 700, $color_7f7, normal);
+      }
+      .arrow {
+        display: inline-block;
+        border: 0.4rem solid transparent;
+        border-top: 0;
+        border-bottom: 0.7rem solid #7f7f7f;
+        &.down {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.main-block-container {
+  padding: 13.2rem 0;
+  &:first-child {
+    padding-bottom: 8rem;
+  }
+  &.alert {
+    padding: 0;
+  }
+  &.banner {
+    height: 26.9rem;
+    padding: 0;
+    background-color: $primary;
+    .main-block-area {
+      @include flex(flex-start, center, center);
+      height: 100%;
+      background: asset-image('bg_requrest_work.png') no-repeat center / cover;
+    }
+    .main-block-middle {
+      @include flex(column, center, center);
+      .main-block-title {
+        @include font(3.2rem, 700, $white, normal, 0);
+      }
+      .link-box {
+        margin-top: 2.8rem;
+        .link {
+          border-color: $white;
+          background-color: transparent;
+          color: $white;
+          &::after {
+            background: asset-image('ic_more_w_2.svg') no-repeat center / 2rem;
+          }
+        }
+      }
+    }
+  }
+  + .main-block-container {
+    border-top: 1px solid $color_ebe;
+  }
+
+  .main-block-area {
+    position: relative;
+    width: $contentSize;
+    margin: 0 auto;
+  }
+
+  .main-block-top {
+    @include flex(row, space-between, center);
+    margin-bottom: 5.6rem;
+  }
+
+  .link-box {
+    .link {
+      @include flex(row, flex-start, center);
+      border: 1px solid $color_dcd;
+      border-radius: 0.8rem;
+      background-color: $white;
+      padding: 0.8rem 1.6rem 0.8rem 2rem;
+      @include font(1.4rem, 500, $color_7f7, normal, 0);
+      &::after {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background: asset-image('ic_more_w.svg') no-repeat center / 2rem;
+      }
+    }
+  }
+  .main-block-title {
+    @include font(4rem, 700, $black, normal, 0);
+  }
+
+  .refresh-button-box {
+    .btn-refresh {
+      @include flex(row, flex-start, center);
+      @include font(1.6rem, 500, $color_353, normal, 0);
+      &:after {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 0.4rem;
+        background: asset-image('ic_refresh.svg') no-repeat center / 2rem;
+      }
+    }
+  }
+
+  .building-state-container {
+    .building-state-middle {
+      @include flex(row, space-between, flex-start);
+      > * {
+        flex: 1;
+      }
+
+      .building-state-middle-right {
+        margin-left: 6rem;
+      }
+    }
+
+    .building-state-box {
+      + .building-state-box {
+        margin-top: 4.5rem;
+      }
+      .building-state-box-top {
+        @include flex(row, space-between, flex-start);
+        margin-bottom: 2rem;
+        .title-box {
+          @include flex(row, flex-start, center);
+          @include font(2.4rem, 700, $black, normal);
+          .date-box {
+            margin-left: 1.6rem;
+            @include font(1.6rem, 500, $color_bfb, normal);
+          }
+          .tooltip-container {
+            .btn-tooltip {
+              position: relative;
+              top: -0.2rem;
+              display: block;
+            }
+            .ic-tooltip {
+              width: 2.8rem;
+              height: 2.8rem;
+              margin-left: 0.8rem;
+              background: asset-image('ic_main_state_tooltip.svg') no-repeat center / 2.8rem;
+            }
+            .tooltip-box {
+              top: 100%;
+              left: 50%;
+              transform: translateX(-50%);
+            }
+          }
+        }
+      }
+    }
+
+    .state-list-box {
+      overflow: hidden;
+      border: 1px solid $color_e4e;
+      border-radius: 1.2rem;
+      background-color: $color_f6f;
+      .state-lists {
+        padding: 3.1rem 0;
+        border: 0;
+        border-radius: 0;
+      }
+      .state-list {
+        flex: 1;
+        display: block;
+        width: auto;
+        padding: 0;
+        text-align: center;
+        &::after {
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .label-box {
+          margin-bottom: 1rem;
+          @include font(1.6rem, 500, $color_353, normal);
+        }
+
+        .data-box {
+          @include flex(row, center, center);
+          &.primary {
+            .data,
+            .unit {
+              color: $primary;
+            }
+          }
+          .data {
+            @include font(2.4rem, 700, $color_353, normal);
+          }
+          .unit {
+            @include font(1.8rem, 700, $color_353, normal);
+          }
+        }
+      }
+    }
+
+    .building-progress-box {
+      padding: 2.7rem 3.2rem;
+      border: 1px solid $color_e4e;
+      border-radius: 1.2rem;
+      background-color: $white;
+      .building-progress {
+        border: 0;
+        padding: 0;
+        + .building-progress {
+          margin-top: 1.8rem;
+          padding-top: 1.8rem;
+          border-top: 1px solid $color_ebe;
+        }
+
+        .progress-box {
+          .info-text {
+            margin-top: 0.6rem;
+          }
+        }
+      }
+    }
+  }
+
+  .inquiry-block-container {
+    .inquiry-block-middle {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      padding: 5.2rem 18rem 5.6rem;
+      border-radius: 1.2rem;
+      background-color: $color_f2f;
+    }
+
+    .inquiry-block-bottom {
+      @include clearfix;
+      .text-button-box {
+        float: right;
+        @include flex(row, flex-start, center);
+        margin-top: 1.6rem;
+        .btn-text {
+          @include font(1.4rem, 500, $color_7f7, normal);
+          text-decoration: underline;
+          text-underline-position: under;
+          + .btn-text {
+            @include flex(row, flex-start, center);
+            &::before {
+              content: '';
+              display: block;
+              width: 1px;
+              height: 1.2rem;
+              margin: 0 1.2rem;
+              background-color: $color_dcd;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .building-information-container {
+    margin-top: 9.8rem;
+    padding: 2.8rem 0;
+    border: 1px solid $color_e4e;
+    border-radius: 1.2rem;
+    .building-information-middle {
+      @include flex(row, space-between, flex-start);
+    }
+
+    .building-information-box {
+      flex: 1;
+      padding: 0 3.2rem;
+      + .building-information-box {
+        border-left: 1px solid rgba($color_7f7, 0.1);
+      }
+      .title-box {
+        @include clearfix;
+        @include font(1.6rem, 500, $black, 2.4rem);
+        margin-bottom: 1.7rem;
+        .ic {
+          float: left;
+          position: relative;
+          margin-right: 0.4rem;
+          &::before {
+            content: '';
+            display: block;
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+          &.ic-building {
+            top: -0.2rem;
+            background: asset-image('ic_building.svg') no-repeat center / 2.4rem;
+          }
+          &.ic-contact {
+            background: asset-image('ic_phone_call.svg') no-repeat center / 2.4rem;
+          }
+        }
+      }
+
+      .data-box {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        margin: -0.4rem 0;
+        .data-box-row {
+          @include flex(row, flex-start, center);
+          flex-basis: 50%;
+          margin: 0.4rem 0;
+          .label {
+            min-width: 7.2rem;
+            @include font(1.6rem, 400, $color_bfb, normal);
+          }
+          .data {
+            @include flex(row, flex-start, center);
+            @include font(1.6rem, 400, $color_7f7, normal);
+            white-space: nowrap;
+            .btn-view-map {
+              @include flex(row, flex-start, center);
+              margin-left: 1.2rem;
+              @include font(1.2rem, 700, $primary, normal, -0.0462rem);
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .find-owner-box {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin: -0.8rem;
+  }
+}
+
+@media #{$tablet} {
+  .main-block-container {
+    .main-block-area {
+      width: 100%;
+      padding: 0 2rem;
+    }
+  }
+}

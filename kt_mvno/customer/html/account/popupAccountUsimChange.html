@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "유심번호 유효성 체크, 유심 변경 완료", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>유심번호 유효성 체크</span></button>
+      <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>유심 변경 완료</span></button>
+    </div>
+    <!-- 유심번호 유효성 체크 -->
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">유심번호 유효성 체크</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">사용가능한 유심번호입니다.</p>
+            <!-- <p class="smallText">
+            USIM 번호를 다시 확인해주세요.
+          </p> -->
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- 유심 변경 완료 -->
+    <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">유심 변경 완료</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">
+              유심 변경이 완료 되었습니다. <br />
+              신속히 새로운 유심을 단말기에 장착하여 1~3회 전원을 껐다 켜주세요.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02', 'popupDefault02')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

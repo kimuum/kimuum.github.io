@@ -1,0 +1,157 @@
+@import './variables';
+@import './functions';
+
+//한줄 말줄임
+
+@mixin ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 여러 줄(멀티 라인) 말줄임
+// @param $toggle-bool - 텍스트 생략 여부
+// @param $line-number - 노출할 텍스트의 줄 수
+
+@mixin multi-ellipsis($toggle-bool, $line-number) {
+  @if ($toggle-bool) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: $line-number;
+    -webkit-box-orient: vertical;
+  } @else {
+    display: inherit;
+    overflow: visible;
+    -webkit-line-clamp: none;
+    -webkit-box-orient: unset;
+  }
+}
+
+@mixin font($size, $weight, $color, $height: 1, $letterSpacing: 0) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $height;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  // Set flex //
+  @if $direction==row {
+    -webkit-box-orient: horizontal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  } @else if $direction==row-reverse {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  } @else if $direction==column {
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  } @else if $direction==column-reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  // set justify-content //
+  @if $justify==flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  } @else if $justify==flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+  } @else if $justify==center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  } @else if $justify==space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  // set align-items //
+  @if $align==flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  } @else if $align==flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+  } @else if $align==center {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  } @else if $align==stretch {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+  } @else if $align==baseline {
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+}
+
+@mixin flex-grow($grow) {
+  -webkit-box-flex: $grow;
+  -ms-flex: $grow;
+  flex-grow: $grow;
+}
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin scale() {
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.4s cubic-bezier(0.555, 0.205, 0.295, 0.975);
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@mixin ir($name: ir) {
+  //사용된 이미지내 의미있는 텍스트의 대체 텍스트를 제공할때
+  @if ($name == ir) {
+    display: block;
+    overflow: hidden;
+    width: 0;
+    font-size: 1px !important;
+    line-height: 0 !important;
+    color: transparent !important;
+  }
+  // 스크린리더가 읽을 필요는 없지만 마크업 구조상 필요한 경우
+  @else if($name == screenOut) {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+  }
+  // 중요한 이미지 대체텍스트로 이미지 off 시 에도 대체 텍스트를 보여주고자 할때
+  @else if($name == irWa) {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+}

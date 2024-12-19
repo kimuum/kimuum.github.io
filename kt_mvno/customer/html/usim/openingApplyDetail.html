@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "개통신청상세 | 개통신청조회 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : openingApplyMain -->
+    <div class="wrap openingApplyMain detail">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-3' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>개통신청상세</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>개통신청조회</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="dataInner">
+                <div class="deliveryTitle">
+                  <strong class="number">신청번호 123456</strong>
+                  <span class="date">신청일자 : 2022.06.21</span>
+                </div>
+
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">신청 상품정보</strong>
+                </div>
+
+                <!-- 개통대기 -->
+                <div class="orderItem" style="display: none">
+                  <div class="itemMiddle">
+                    <div class="orderInfoWrap">
+                      <div class="orderContent">
+                        <strong class="stateTitleNormal samller">신규가입(eSIM)</strong>
+                        <div class="orderText">
+                          <p class="title">데이터 맘껏 12GB+/100분</p>
+                          <p><span class="number">19,800</span><span class="won">원</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderSideWrap alignTop">
+                      <p class="stateLabel">개통대기</p>
+                    </div>
+                  </div>
+                  <div class="itemBottom" style="display: none"></div>
+                </div>
+                <!-- //개통대기 -->
+
+                <!-- [2차] 20221110 개통완료 -->
+                <div class="orderItem">
+                  <div class="itemMiddle">
+                    <div class="orderInfoWrap">
+                      <div class="orderContent">
+                        <strong class="stateTitleNormal samller">신규가입(eSIM)</strong>
+                        <div class="orderText">
+                          <p class="title">데이터 맘껏 12GB+/100분</p>
+                          <p><span class="number">19,800</span><span class="won">원</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderSideWrap alignTop">
+                      <p class="stateLabelPrimary">개통완료</p>
+                    </div>
+                  </div>
+                  <div class="itemBottom">
+                    <div class="otherInfo right">
+                      <a href="javascript:void(0);" class="linkUnderline colorPrimary">eSIM 발급</a>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                      <a href="javascript:void(0);" class="linkUnderline colorPrimary">회선 추가</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- [2차] 20221110 개통완료 -->
+
+                <!-- [2차] 20221110 개통실패 -->
+                <div class="orderItem" style="display: none">
+                  <div class="itemMiddle">
+                    <div class="orderInfoWrap">
+                      <div class="orderContent">
+                        <strong class="stateTitleNormal samller">신규가입(eSIM)</strong>
+                        <div class="orderText">
+                          <p class="title">데이터 맘껏 12GB+/100분</p>
+                          <p><span class="number">19,800</span><span class="won">원</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="orderSideWrap alignTop">
+                      <p class="stateLabelRed">개통실패</p>
+                    </div>
+                  </div>
+                  <div class="itemBottom">
+                    <div class="otherInfo right">
+                      <div class="text">셀프개통 신청 사업자 <a href="javascript:void(0);" class="linkUnderline colorPrimary">고객센터</a>로 문의해주세요.</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //[2차] 20221110 개통실패 -->
+              </div>
+              <!-- //신청 상품정보 -->
+
+              <!-- 셀프개통 > 신청 상세내역  -->
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">신청 상세내역</strong>
+                </div>
+
+                <div class="tableContainer normalBgTable">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        신청 상세내역 - 신청요금제, 요금납부방법, 주소 정보, 주문자명, 연락처, 이메일 주소
+                      </caption>
+                      <colgroup>
+                        <col style="width: 25%; min-width: 106px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">신청요금제</th>
+                          <td>데이터 맘껏 12GB+/100분</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금납부방법</th>
+                          <td>신용카드(현대카드 123456789******)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">주소 정보</th>
+                          <td>
+                            <p>05551</p>
+                            <p>서울특별시 송파구 올림픽로 300 *****</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">주문자명</th>
+                          <td>임태*</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연락처</th>
+                          <td>010-12**-*000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이메일 주소</th>
+                          <td>im3***@naver.com</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- //셀프개통 > 신청 상세내역 -->
+
+              <!-- [2차] 20221213 유형추가 -->
+              <!-- 워치개통 > 신청 상세내역 -->
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">신청 상세내역</strong>
+                </div>
+
+                <div class="tableContainer captionShow">
+                  <div class="tableArea marginBtm50">
+                    <table>
+                      <caption class="font16">
+                        휴대폰(모회선)<span class="ir">휴대폰 번호, 요금제</span>
+                      </caption>
+                      <colgroup>
+                        <col style="width: 25%; min-width: 106px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">휴대폰 번호</th>
+                          <td>010-34**-*807</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금제</th>
+                          <td>모두다 맘껏 7.0GB+</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="tableArea marginBtm50">
+                    <table>
+                      <caption class="font16">
+                        워치(자회선)<span class="ir">워치 번호, 요금제</span>
+                      </caption>
+                      <colgroup>
+                        <col style="width: 25%; min-width: 106px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">워치 번호</th>
+                          <td>010-34**-*807</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금제</th>
+                          <td>LTE 스마트워치</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="typeCaution">
+                  <!-- [운영] 20230116 수정 -->
+                  <ul class="fieldArea marginBtmReset">
+                    <li class="fieldValue">개통 완료 이후 요금제(셀룰러) 설정을 진행해주세요.</li>
+                    <li class="fieldValue"><a href="#" class="linkUnderline colorPrimary">요금제(셀룰러) 설정 방법</a>을 확인해주세요.</li>
+                    <li class="fieldValue">애플워치의 경우 원넘버 <a href="#" class="linkUnderline colorPrimary">부가서비스 신청</a>을 해주세요.</li>
+                    <li class="fieldValue">
+                      갤럭시 워치의 경우 착신전환 부가서비스 및 원넘버 서비스를 회선 <a href="#" class="linkUnderline colorPrimary">사업자 고객센터</a>를 통해 가입 하실 수 있습니다.
+                      <div class="desc">
+                        *원넘버 부가서비스란? <br />
+                        - 워치에서 통화나 문자를 발신 시 휴대폰 번호를 상대방에게 표시하고 휴대폰 번호로 오는 전화를 워치에서도 동시에 수신하는 서비스입니다.
+                      </div>
+                    </li>
+                  </ul>
+                  <!-- //[운영] 20230116 수정 -->
+                </div>
+              </div>
+              <!-- //워치개통 > 신청 상세내역 -->
+              <!-- [2차] 20221213 유형추가 -->
+
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">월 요금 상세</strong>
+                </div>
+                <div class="orderChargeDetail">
+                  <div class="chargeAreaTop">
+                    <p class="title">데이터 맘껏 12GB +/100분</p>
+                  </div>
+                  <div class="chargeAreaMiddle beColorGray">
+                    <dl class="chargeRow">
+                      <dt class="rowTitleBold">월 통신 요금</dt>
+                      <dd class="bold">27,000원</dd>
+                    </dl>
+                    <dl class="chargeRow">
+                      <dt class="rowTitle">기본요금</dt>
+                      <dd>28,600원</dd>
+                    </dl>
+                    <dl class="chargeRow">
+                      <dt class="rowTitle">기본할인</dt>
+                      <dd>0원</dd>
+                    </dl>
+                    <dl class="chargeRow">
+                      <dt class="rowTitle">프로모션 할인</dt>
+                      <dd>-8,800원</dd>
+                    </dl>
+                  </div>
+                  <div class="chargeAreaBottom">
+                    <dl class="chargeRow">
+                      <dt class="rowTitleBold">
+                        <strong class="bigTitle">월 납부금액</strong>
+                        <span class="block">(부가세 포함)</span>
+                      </dt>
+                      <dd class="bold"><strong class="number">19,800</strong>원</dd>
+                    </dl>
+                  </div>
+                </div>
+
+                <div class="typeCaution">
+                  <ul class="fieldArea marginBtmReset">
+                    <li class="fieldValue">프로모션 대상 요금제의 경우 익월 명세서를 통해 할인내역을 확인하실 수 있습니다.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

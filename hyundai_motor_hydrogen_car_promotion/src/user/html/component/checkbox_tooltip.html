@@ -1,0 +1,17 @@
+<div class="checkbox-btn has-tooltip @@if(position){@@position}">
+  <input type="checkbox" name="@@id" id="@@id" @@if(checked) {@@checked} @@if(disabled){@@disabled} />
+  <label for="@@id" class="label">
+    <span class="check-icon"></span>
+    @@if(label) {
+    <span>@@label</span>
+    }
+  </label>
+  <!-- ToolTip -->
+  <div class="tooltip-container">
+    <button type="button" class="tooltip-open" title="open tooltip"></button>
+    <div class="tooltip-area">
+      <div class="tooltip-content">@@tooltiptext</div>
+      <button type="button" class="tooltip-close" title="close tooltip"></button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "셀프개통 불/가능 시간 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>셀프개통 가능 시간 안내</span></button>
+      <button type="button" class="btn" id="btnID02-01" onclick="togglePopup('btnID02-01', 'popupDefault02-01')"><span>셀프개통 불가 안내</span></button>
+      <button type="button" class="btn" id="btnID02-02" onclick="togglePopup('btnID02-02', 'popupDefault02-02')"><span>셀프개통 불가 안내 - 회선 제한</span></button>
+      <button type="button" class="btn" id="btnID02-03" onclick="togglePopup('btnID02-03', 'popupDefault02-03')"><span>셀프개통 가능시간 지남 안내</span></button>
+    </div>
+
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">셀프개통 가능 시간 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div>
+              셀프 개통 가능한 시간은 신규(08시~22시), <br />
+              번호이동은(10시~20시)입니다.
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02-01" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">셀프개통 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02-01', 'popupDefault02-01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div>
+              셀프개통이 불가능한 시간입니다. <br /><br />
+
+              셀프 개통 가능한 시간은 신규(08시~22시), <br />
+              번호이동은(10시~20시)입니다.
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02-01', 'popupDefault02-01')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02-02" role="dialog" aria-labelledby="popupTitle-04" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-04">셀프개통 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02-02', 'popupDefault02-02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div>
+              회선 개통 제한으로 셀프 개통이 불가능합니다. <br />
+              30일 이내 셀프개통 신규가입은 2회선(사업자 합산)으로 제한되어 있습니다.<!-- [2차] 20221109 수정 -->
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02-02', 'popupDefault02-02')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02-03" role="dialog" aria-labelledby="popupTitle-03" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-03">셀프개통 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02-03', 'popupDefault02-03')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div>
+              셀프개통이 가능 시간이 지났습니다. <br /><br />
+
+              셀프 개통 가능한 시간은 신규(08시~22시), <br />
+              번호이동은(10시~20시)입니다.
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02-03', 'popupDefault02-03')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+  </body>
+</html>

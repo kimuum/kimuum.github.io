@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전소 검색 검색 최근 검색어"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-search-result
+      -->
+      <main class="main-container page-search-result">
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="search-container">
+              <div class="search-area">
+                <div class="search-top">
+                  <!-- prettier-ignore -->
+                  @@include("text_field.html", {
+                    "className" : "",
+                    "size" : "",
+                    "label" : "검색찾기",
+                    "labelHide" : "ir",
+                    "type" : "search",
+                    "id" : "rgfzsde",
+                    "placeholder" : "Search",
+                    "value" : "",
+                    "icon" : "",
+                    "button" : "",
+                    "property" : "",
+                    "desc" : "",
+                    "loading" : false,
+                  })
+                </div>
+                <div class="search-bottom">
+                  <div class="tabs-container">
+                    <div class="tabs-area">
+                      <div role="tablist" class="tab-list-box">
+                        <!-- .active : 텝버튼 선택시 제어클래스 -->
+                        <!-- [접근성] aria 속성 추가 -->
+                        <button type="button" role="tab" aria-controls="tabPanel01" aria-selected="true" id="tabList01" class="btn-tab active"><span>충전소</span></button>
+                        <button type="button" role="tab" aria-controls="tabPanel02" aria-selected="false" id="tabList02" class="btn-tab"><span>목적지</span></button>
+                      </div>
+                      <div class="tab-content-box">
+                        <!-- 충전소 탭 내용 -->
+                        <!-- .show : 탭 내용 보여주는 제어클래스 -->
+                        <div role="tabpanel" aria-labelledby="tabList01" id="tabPanel01" class="tab-panel show">
+                          <div class="result-count-box"><span class="label">검색 결과</span><span class="count">총 10건</span></div>
+                          <div class="search-result-container">
+                            <div class="search-result-area">
+                              <!-- [접근성] ul/li role 속성 추가 -->
+                              <ul class="search-result-lists-box" role="list">
+                                <!-- prettier-ignore -->
+                                @@loop("searchResultList.html", [
+                                  {
+                                    "resultName" : "서울역서울역서울역서울역서울역서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN 길어질경우우우우우우",
+                                    "distance" : "100",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                      {"info": "text"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "100",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역서울역서울역서울역서울역서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN 길어질경우우우우우우",
+                                    "distance" : "100",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                      {"info": "text"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "100",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": [
+                                      {"info": "급속 1"},
+                                      {"info": "완속 1"},
+                                    ]
+                                  },
+                                  ])
+                              </ul>
+                              <!-- 데이터 없을 경우 -->
+                              <div class="search-no-data" style="display: none">
+                                <!-- prettier-ignore -->
+                                @@include("noDataImage.html", {
+                                  "src": "img_search_null",
+                                  "alt": "검색 결과 없음",
+                                  "text": "검색 결과가 없습니다.<br />검색어를 확인해주세요." })
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 목적지 탭 내용 -->
+                        <div role="tabpanel" aria-labelledby="tabList02" id="tabPanel02" class="tab-panel">
+                          <div class="result-count-box"><span class="label">검색 결과</span><span class="count">총 5건</span></div>
+                          <div class="search-result-container">
+                            <div class="search-result-area">
+                              <!-- [접근성] ul/li role 속성 추가 -->
+                              <ul class="search-result-lists-box" role="list">
+                                <!-- prettier-ignore -->
+                                @@loop("searchResultList.html", [
+                                  {
+                                    "resultName" : "탭 2",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN 길어질경우우우우우우",
+                                    "distance" : "100",
+                                    "deviceInfo": false
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "100",
+                                    "deviceInfo": false
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": false
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": false
+                                  },
+                                  {
+                                    "resultName" : "서울역",
+                                    "address" : "서울특별시 @@구 @@동 NN-NN",
+                                    "distance" : "10",
+                                    "deviceInfo": false
+                                  },
+                                  ])
+                              </ul>
+                              <!-- 데이터 없을 경우 사용해주세요 -->
+                              <div class="search-no-data" style="display: none">
+                                <!-- prettier-ignore -->
+                                @@include("noDataImage.html", {
+                                  "src": "img_search_null",
+                                  "alt": "검색 결과 없음",
+                                  "text": "검색 결과가 없습니다.<br />검색어를 확인해주세요." })
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- [240425] gnb 마크업 위치 수정 -->
+        <!-- prettier-ignore -->
+        @@include("gnb.html", {
+          "list" : [
+            {
+              "type"     : "home",
+              "text"     : "홈",
+              "property" : "",
+              "alarm"      : false
+            },
+            {
+              "type"     : "search",
+              "text"     : "충전소 찾기",
+              "property" : "active",
+              "alarm"      : false
+            },
+            {
+              "type"     : "menu",
+              "text"     : "메뉴",
+              "property" : "",
+              "alarm"      : true
+            },
+          ]
+        })
+      </main>
+    </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabBtns = document.querySelectorAll('.btn-tab');
+        const tabConts = document.querySelectorAll('.tab-panel');
+        tabBtns.forEach((tabBtn, idx) => {
+          tabBtn.addEventListener('click', function () {
+            tabBtns.forEach((generalTabBtn) => {
+              if (tabBtn !== generalTabBtn) {
+                generalTabBtn.classList.remove('active');
+              }
+            });
+            tabBtn.classList.add('active');
+
+            tabConts.forEach((tabCont) => {
+              tabCont.classList.remove('show');
+            });
+            let idxConts = tabConts[idx];
+            idxConts.classList.add('show');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

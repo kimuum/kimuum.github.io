@@ -1,0 +1,18 @@
+<div class="highlights-block @@if(isSwiper){swiper-slide}">
+  <div class="highlights-block-image-box">
+    <img width="@@image.width" height="@@image.height" class="lazy" data-src="../../assets/images/products/@@image.path" alt="@@image.title" />
+    <div class="image-title-box">
+      <span>@@image.title</span>
+    </div>
+  </div>
+  <!-- prettier-ignore -->
+  @@if(title) {
+  <div class="highlights-block-title-box">
+    <h3>@@title</h3>
+  </div>
+  }
+  <!-- prettier-ignore -->
+  <div class="highlights-block-desc-box">
+    <p>@@desc</p>
+  </div>
+</div>

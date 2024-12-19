@@ -1,0 +1,127 @@
+.caution-guide-inner {
+  @include flex(row, flex-start, center);
+  .caution-left-box {
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    margin-right: 1rem;
+    .icon {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 3.6rem;
+      &.icon-user {
+        background-image: image('icon/ic_user.png');
+      }
+      &.icon-application {
+        background-image: image('icon/ic_application.png');
+      }
+      &.icon-pay-plan {
+        background-image: image('icon/ic_pay_plan.png');
+      }
+      &.icon-voice-microphone {
+        background-image: image('icon/ic_voice_microphone.png');
+      }
+      &.icon-voice-accuracy {
+        background-image: image('icon/ic_voice_accuracy.png');
+      }
+      &.icon-voice-lock {
+        background-image: image('icon/ic_voice_lock.png');
+      }
+      &.icon-voice-safe {
+        background-image: image('icon/ic_voice_safe.png');
+      }
+    }
+  }
+}
+.member-contract {
+  .member-contract-container {
+    margin-bottom: 2.4rem;
+    .member-contract-lists {
+      margin: 2rem 0 2.4rem;
+      li {
+        @include flex(row, space-between, center);
+        margin-bottom: 2rem;
+        @include font(1.6rem, 400, $black, normal);
+        letter-spacing: -0.032rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .list-label {
+          &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 0.2rem;
+            height: 0.2rem;
+            border-radius: 50%;
+            background-color: $black;
+            margin-right: 0.7rem;
+          }
+        }
+      }
+      .list-label {
+        font-weight: 500;
+      }
+    }
+    .range-container {
+      padding: 6.4rem 2rem 2rem;
+      @include bgBoxGray;
+    }
+
+    // TARS_1_5END
+    .caution-guide-box {
+      .caution-right-box {
+        .caution-text {
+          &.dot:not(:last-child) {
+            margin-bottom: 0.4rem;
+          }
+        }
+      }
+    }
+    .caution-fee {
+      margin: 2rem 0 2.4rem;
+    }
+    .member-contract-image-area {
+      .caution-guide-box {
+        padding: 2rem 2rem 1.4rem;
+      }
+      .member-contract-image-box {
+        margin: 2rem 1rem 0;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .caution-guide-container {
+    & + .caution-guide-container {
+      margin-top: 1.4rem;
+    }
+  }
+  .caution-guide-box.bg-none {
+    margin-top: 2rem;
+  }
+}
+@media #{$mobile_320} {
+  .member-contract {
+    .btn-badge {
+      margin-top: 0.5rem;
+    }
+    .member-contract-container {
+      .member-contract-image-area {
+        .caution-guide-box {
+          padding: 1.5rem 1rem;
+        }
+        .member-contract-image-box {
+          margin: 2rem auto 0;
+        }
+      }
+    }
+  }
+}

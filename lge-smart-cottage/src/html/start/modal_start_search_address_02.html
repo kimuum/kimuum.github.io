@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 땅 주소 입력 팝업"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-01'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- .modal-search-address-result : 땅 주소 입력 팝업 -->
+    <dialog id="modal-01" class="modal modal-medium modal-search-address-result">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">주소 검색</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="address-container">
+              <div class="address-area">
+                <div class="address-top">
+                  <!-- prettier-ignore -->
+                  @@include("input.html", {
+                    "className" : "",
+                    "id" : "",
+                    "label" : "주소 검색",
+                    "icon" : "",
+                    "placeholder" : "주소를 입력해주세요.",
+                    "value" : "충북 진천군 이월면 진광로 928-27",
+                    "property" : "",
+                    "button" : [
+                      {
+                        "className" : "",
+                        "btnColor" : "btn-gray",
+                        "btnSize" : "medium",
+                        "property" : "",
+                        "btnText" : "검색",
+                        "iconClass" : "",
+                        "iconLeft" : "",
+                      }
+                    ],
+                    "desc" : "",
+                  })
+                </div>
+                <div class="address-bottom">
+                  <div class="address-result-box">
+                    <div class="total-box">
+                      <span class="text">검색 결과</span>
+                      <span class="num">153건</span>
+                    </div>
+                    <div class="address-result-list-box">
+                      <ul class="address-result-lists">
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다. 도로명 주소 텍스트가 들어갑니다. 도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다. 지번 주소 텍스트가 들어갑니다. 지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                        <li class="address-result-list">
+                          <div class="address-result-list-left">
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">도로명</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">도로명 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                            <div class="address-result-unit">
+                              <div class="badge-box">
+                                <span class="badge">지번</span>
+                              </div>
+                              <div class="text-box">
+                                <span class="text">지번 주소 텍스트가 들어갑니다.</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="address-result-list-right">
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "btn-round",
+                                "btnColor" : "btn-tan",
+                                "btnSize" : "small",
+                                "property" : "",
+                                "btnText" : "선택",
+                                "iconClass" : "",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

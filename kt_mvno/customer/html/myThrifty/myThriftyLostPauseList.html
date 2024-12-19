@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "일시정지 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyLostPauseList -->
+    <div class="wrap detail myThriftyLostPauseList">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-7', 'thirdMenu': 'active-3' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>일시정지</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>분실/일시정지</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>일시정지</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="dataInner">
+                <div class="field fieldData typePhoneLine">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">분실신고할 회선번호를 확인해주세요.</strong>
+                  </div>
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_info_area.html', {
+                    "image": false,
+                    "infoBox" : [
+                      {
+                        "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                        "price": "32,980원",
+                        "phoneNumber": "010-81**-*319",
+                        "label": true
+                      },
+                    ],
+                  })
+                </div>
+              </div>
+              <div class="dataInner typeCertification">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">본인인증 방법 선택</strong>
+                </div>
+                <!-- 본인 인증 : 기본값 -->
+                <div class="certificationWrap">
+                  <!-- prettier-ignore -->
+                  @@loop('../component/certification_button.html',[
+                  {
+                    "buttonClass": "btnCertifyPass",
+                    "buttonBlank": true,
+                    "buttonContent": "PASS 인증",
+                  },
+                  {
+                    "buttonClass": "btnCertifyCard",
+                    "buttonBlank": true,
+                    "buttonContent": "신용카드 인증",
+                  },
+                ])
+                </div>
+                <!-- //본인 인증 : 기본값 -->
+                <!-- 본인 인증 : 인증 완료 -->
+                <div class="certificationWrap" style="display: none">
+                  <!-- prettier-ignore -->
+                  @@loop('../component/certification_button.html',[
+                  {
+                    "buttonClass": "btnCertifyPass active",
+                    "buttonBlank": false,
+                    "buttonContent": "PASS 인증 완료",
+                  },
+                  {
+                    "buttonClass": "btnCertifyCard",
+                    "buttonBlank": false,
+                    "buttonContent": "신용카드 인증",
+                  },
+                ])
+                </div>
+                <!-- //본인 인증 : 인증 완료 -->
+                <!-- 본인 인증 : 서비스 점검 -->
+                <div class="certificationWrap" style="display: none">
+                  <!-- prettier-ignore -->
+                  @@loop('../component/certification_button.html',[
+                  {
+                    "buttonClass": "btnNotService",
+                    "buttonBlank": false,
+                    "buttonContent": "PASS 인증",
+                  },
+                  {
+                    "buttonClass": "btnNotService",
+                    "buttonBlank": false,
+                    "buttonContent": "신용카드 인증",
+                  },
+                ])
+                </div>
+                <!-- //본인 인증 : 서비스 점검 -->
+
+                <div class="field fieldData typeCaution">
+                  <div class="fieldLabel ir">본인인증 안내</div>
+                  <ul class="fieldArea">
+                    <li class="fieldValue">본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

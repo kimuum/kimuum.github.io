@@ -1,0 +1,2187 @@
+/* 로밍 이용안내 슬라이드 */
+.loamingSummaryContainer {
+  margin-top: -7rem;
+  background-color: $white;
+  padding: 7rem 2rem 7.3rem;
+  margin-bottom: 7rem;
+  .loamingSummaryInner {
+    position: relative;
+    max-width: 143.6rem;
+    margin: 0 auto;
+  }
+  .loamingSummaryHead {
+    margin-bottom: 5rem;
+    @include font(2.4rem, bold, $black, 1.4);
+  }
+}
+.extraSwiper {
+  position: relative;
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide {
+    height: auto;
+    .extraProductContainer {
+      height: 100%;
+    }
+  }
+  .extraBtnWrap {
+    @include flex(row, space-between, center);
+    position: static;
+    width: 12.6rem;
+    height: 100%;
+    margin: 7rem auto 0;
+    [class*=extraBtn] {
+      overflow: hidden;
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      background: image('common/arrow_pagenation.svg') no-repeat center $white;
+      background-size: cover;
+      border-radius: 50%;
+      & > span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+      }
+      &:hover, &:focus-visible {
+        background-image: image('common/arrow_pagenation_hover.svg');
+      }
+      &:active {
+        background-image: image('common/arrow_pagenation_press.svg');
+      }
+      &.swiper-button-disabled {
+        opacity: 0.5;
+        &:hover, &:active {
+          background-image: image('common/arrow_pagenation.svg');
+        }
+      }
+    }
+    .extraBtnNext {
+      transform: translateY(0) rotate(180deg);
+    }
+    .swiper-pagination {
+      position: static;
+      width: auto;
+      @include font(1.3rem, bold, $color-gray-04);
+      .swiper-pagination-current {
+        color: $primary;
+      }
+    }
+  }
+}
+.extraProductContainer {
+  position: relative;
+  @include flex(column, space-between, flex-start);
+  overflow: hidden;
+  height: 100%;
+  background-color: $bgcolor-gray-03;
+  border: 1px solid $border-color-02;
+  border-radius: 8px;
+  .extraProductHead {
+    position: relative;
+    width: 100%;
+    padding: 2.4rem;
+    @include font(1.3rem, normal, $color-gray-06, 1.4);
+  }
+  .extraProductBody {
+    @include flex(column, center, center);
+    flex: 1;
+    width: 100%;
+    min-height: 15.2rem;
+    padding: 3rem 2.4rem 2.4rem;
+    background-color: $white;
+    .row {
+      width: 100%;
+      margin-bottom: 0.8rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .extraProductBottom {
+    @include flex(row, flex-end, center);
+    width: 100%;
+    padding: 0 2.4rem 3rem;
+    background-color: $white;
+  }
+  .extraProductLink {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 4px;
+    &:focus-visible {
+      outline: 2px solid $black;
+    }
+  }
+  .topLabel {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    z-index: 1;
+    padding: 1rem 2rem;
+    background-color: $primary;
+    @include font(1.6rem, bold, $white, 1.4);
+  }
+  .titleLabel {
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+    color: $black;
+  }
+  .titleMain {
+    margin-bottom: 0.6rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $black;
+  }
+  .productRounder {
+    overflow: hidden;
+    @include flex(row, center, center);
+    height: 5rem;
+    border: 1px solid $black;
+    border-radius: 5rem;
+    @include font(1.4rem, normal, $black, 1.4);
+    .productLabel {
+      @include flex(row, center, center);
+      height: 100%;
+      padding: 0 2.5rem;
+      background-color: $black;
+      border-radius: 5rem;
+      color: $white;
+      font-size: 2.2rem;
+    }
+    .productPrice {
+      margin: 0 auto;
+    }
+    strong {
+      padding-right: 0.3rem;
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+  }
+  .linkUnderline {
+    font-size: 1.8rem;
+  }
+}
+
+/* 로밍 부가서비스 상세 */
+.loamingDetailContainer {
+  strong {
+    font-weight: bold;
+  }
+  .loamingDetailHead {
+    margin-bottom: 3.6rem;
+    @include font(1.6rem, normal, $black, 1.4);
+  }
+  .topTitle {
+    margin-bottom: 2rem;
+    > * {
+      display: block;
+    }
+  }
+  .loamingDetailTabContainer01 {
+    & > .tabList {
+      height: 2.6rem;
+      margin-bottom: 2.1rem;
+    }
+  }
+  .roundTab {
+    &.tabList {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      height: auto;
+      margin: 0 1.9rem 2.4rem;
+      border-bottom: none;
+      .tabButton {
+        width: auto;
+        height: auto;
+        padding: 0.6rem 1rem;
+        @include font(1.3rem, normal, $secondary, 1.4);
+        border: 1px solid rgba(255,255,255,0);
+        &[aria-selected="true"] {
+          border: 1px solid $primary;
+          border-radius: 40px;
+          font-weight: bold;
+          color: $primary;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.typeAllDay {
+  .loamingProductInfo {
+    .productInfoMiddle {
+      text-align: center;
+    }
+    .imgWrap {
+      margin: 0 auto;
+    }
+  }
+  .loamingDetailHead {
+    text-align: center;
+    strong {
+      & + strong {
+        margin-top: 1.8rem;
+        margin-bottom: 0.4rem;
+        font-size: 1.4rem;
+      }
+    }
+    .tax,
+    .desc {
+      font-size: 1rem;
+      font-weight: 400;
+      color: $color-gray-04;
+    }
+  }
+  .loamingRecomand {
+    justify-content: center;
+    font-weight: 500;
+    text-align: center;
+  }
+  .recomandCircleData {
+    margin: 0 1.2rem;
+    &::before {
+      content: '';
+      display: block;
+      width: 6.8rem;
+      height: 6.8rem;
+      margin: 0 auto 0.8rem;
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.loamingRecomand {
+  @include flex(row, space-between, flex-start);
+  @include font(1rem, normal, $black, 1.4);
+  .floatingComment {
+    position: absolute;
+    bottom: 2px;
+    right: -8px;
+    transform: translateX(50%);
+    min-width: 6rem;
+    @include font(1rem, normal, $secondary, 1.4);
+    text-align: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      border: 8px solid #FF5758;
+      border-top-color: rgba(255,255,255,0);
+      border-right-color: rgba(255,255,255,0);
+      border-bottom-color: rgba(255,255,255,0);
+      transform: scaleY(0.6);
+    }
+  }
+  .blackCircleLabel {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    @include font(1rem, normal, $primary, 1.4);
+    text-align: center;
+  }
+}
+.recomandBlackData {
+  position: relative;
+  width: 9rem;
+  padding-top: 2rem;
+  padding-bottom: 3.3rem;
+  .blackCircleTitle {
+    @include flex(row, center, center);
+    margin-bottom: 0.8rem;
+    padding: 1.2rem;
+    background-color: $black;
+    border-radius: 10rem;
+    @include font(1.4rem, bold, $white, 1.4);
+  }
+  .blackCircleDesc {
+    text-align: center;
+    .price {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+}
+.loamingProductInfo {
+  .productInfoTop {
+    margin-bottom: 2.4rem;
+    @include font(1.4rem, normal, $black, 1.4);
+    text-align: center;
+    .titleWrap {
+      margin-bottom: 1.6rem;
+      p {
+        font-size: 1.2rem;
+        color: $color-gray-04;
+      }
+    }
+    &.flex {
+      @include flex(row, flex-start, flex-start);
+      text-align: left;
+      .imgWrap {
+        flex-shrink: 0;
+      }
+      .descWrap {
+        margin-top: 1.7rem;
+        margin-left: -1.5rem;
+        
+      }
+    }
+  }
+  .productInfoBottom {
+    margin-top: 1.6rem;
+  }
+  .descWrap {
+    font-size: 1.2rem;
+    > * {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .imgWrap {
+    margin: 0 2rem;
+    & > * {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .productInfoArea {
+    margin-bottom: 2.4rem;
+    & + .productTable {
+      margin-top: 0;
+    }
+  }
+  .loamingInfoOption {
+    &.borderType {
+      .optionFlex {
+        margin: -0.2rem;
+      }
+      .row {
+        width: calc(50% - 0.4rem);
+        margin: 0.2rem;
+        padding: 2.7rem 0;
+        border: 1px solid $border-color-02;
+        border-radius: 2px;
+      }
+    }
+    &.bgGrayType {
+      margin-bottom: 1.6rem;
+      .optionFlex {
+        margin: -0.4rem;
+        padding: 1.2rem;
+        background-color: $bgcolor-gray-07;
+        border-radius: 4px;
+      }
+      .row {
+        width: calc(50% - 0.8rem);
+        margin: 0.4rem;
+      }
+      .optionTitle {
+        @include flex(row, center, center);
+        margin-bottom: 0.8rem;
+        padding: 1.2rem;
+        background-color: $secondary;
+        border-radius: 10rem;
+        @include font(1.2rem, bold, $white, 1.4);
+        &.bgPrimary {
+          background-color: $primary;
+        }
+      }
+      .beforeDot {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .optionFlex {
+      @include flex(row, flex-start, stretch);
+      flex-wrap: wrap;
+      .row {
+        position: relative;
+        &[class*=icon] {
+          padding-left: 6rem;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 1.5rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            margin-top: -1.7rem;
+            background-size: 100%;
+          }
+        }
+      }
+    }
+    .optionTitle {
+      @include font(1.2rem, bold, $color-gray-06, 1.4);
+    }
+    .optionContent {
+      @include font(1rem, normal, $color-gray-06, 1.4);
+      .colorRed {
+        display: block;
+      }
+    }
+    .iconCheck {
+      overflow: hidden;
+      position: absolute;
+      top: -1.7rem;
+      right: -0.5rem;
+      width: 3rem;
+      height: 3rem;
+      color: rgba(255,255,255,0);
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+  .alignCenter {
+    text-align: center;
+  }
+}
+.productInfoAccodianGroup {
+  margin-bottom: 3.6rem;
+  [class*=productInfoAccodian] {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.active {
+      .btnOpenBtn {
+        background-image: image('common/arrow_line_up.svg');
+      }
+      .accordionInformation {
+        display: block;
+      }
+    }
+  }
+  .btnOpenBtn {
+    display: block;
+    position: relative;
+    right: -0.4rem;
+    width: 4rem;
+    height: 3rem;
+    margin-left: auto;
+    background: image('common/arrow_line_down.svg') no-repeat center / 1.2rem auto;
+    & > span {
+      @include ir;
+    }
+  }
+  .accordionInformation {
+    display: none;
+    @include font(1.2rem, normal, $color-gray-04, 1.4);
+    .optionDesc {
+      margin-top: 0.8rem;
+    }
+    .beforeDot {
+      font-size: 1.2rem;
+    }
+  }
+  .accordionLabel {
+    @include flex(row, flex-start, center);
+    position: relative;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $black;
+    @include font(1.4rem, bold, $black, 1.4);
+  }
+}
+.tableContainer {
+  &.productTable {
+    margin-top: 3.6rem;
+    & + .productInfoArea {
+      margin-top: 3.6rem;
+    }
+    & + .productTable {
+      margin-top: 3.6rem;
+    }
+    caption {
+      @include no-ir;
+      overflow: hidden;
+      position: relative;
+      display: table-caption;
+      margin-bottom: 2rem;
+      @include font(1.4rem, bold, $black, 1.4);
+      text-align: center;
+      .colorPrimary {
+        display: block;
+        margin-top: 0.8rem;
+        font-size: 1.2rem;
+        font-weight: normal;
+      }
+    }
+    &.hideCaption {
+      caption {
+        margin-bottom: 0;
+      }
+    }
+    thead {
+      border-top: 1px solid $border-color-06;
+      & + tbody {
+        border-top: none;
+      }
+      th {
+        border-left: 1px solid $border-color-06;
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+    tbody {
+      border-top: 1px solid $border-color-06;
+    }
+    th, td {
+      font-size: 1.1rem;
+      vertical-align: middle;
+    }
+    th {
+      padding: 9px 0;
+      background-color: $border-color-05;
+      color: $black;
+      text-align: center;
+      &.bgLightGray {
+        background-color: $bgcolor-gray-07;
+      }
+    }
+    tr {
+      border-bottom: 1px solid $border-color-06;
+    }
+    td {
+      color: $color-gray-06;
+      &[rowspan], &[colspan] {
+        border-left: 1px solid $border-color-06;
+      }
+    }
+    .infoTop {
+      margin-bottom: 0.4rem;
+    }
+    .beforeDot {
+      font-size: 1.1rem;
+      color: $color-gray-04;
+    }
+  }
+  &.servingData {
+    td {
+      padding: 0;
+      border-left: 1px solid $border-color-06;
+      text-align: center;
+      font-size: 8px;
+      word-break: keep-all;
+      .small {
+        font-size: 0.6rem;
+      }
+      &:first-of-type {
+        padding: 1.2rem 0.4rem;
+      } 
+    }
+    strong {
+      font-size: 1.1rem;
+    }
+  }
+  .tableTop {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  .tableBottom {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    p {
+      margin-top: 1rem;
+    }
+  }
+}
+.customerContainer {
+  .customerType {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .typeHead {
+    margin-bottom: 1.6rem;
+    @include font(1.4rem, normal, $black, 1.4);
+  }
+  .typeBody {
+    @include font(1.3rem, normal, $color-gray-04, 1.4);
+  }
+}
+.tdInfoConatiner {
+  margin-top: 2rem;
+  .dotList {
+    margin-top: 0;
+  }
+}
+
+/* 부가서비스 팝업 하단 고정 */
+.popupProductExtraPopular,
+.popupExtraLoamingDetail {
+  .popupMiddle {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    padding: 0;
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+  .popupContent {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+    & > * {
+      width: 100%;
+    }
+  }
+  .popularExtraDetail, 
+  .extraLoamingDetail,
+  .loamingDetailContainer {
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 2rem 1.6rem;
+  }
+}
+// 하단 영역
+.productfixedArea {
+  padding: 2.6rem 1.6rem;
+  background-color: $white;
+  box-shadow: 0px -1px 6px rgba($black, 0.25);
+  border-radius: 12px 12px 0px 0px;
+  .productfixedTop {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    @include font(1.6rem, 700, $black, 1.4);
+    .topRight {
+      margin-left: auto;
+    }
+  }
+  .productfixedBottom {
+    margin-top: 2rem;
+    .buttonArea {
+      margin-top: 0;
+    }
+  }
+  .price {
+    font-size: 1.4rem;
+  }
+}
+
+/* 마이알뜰폰 카드 서비스 점검 */
+.errorCardWrap {
+  @include flex(column, center, center);
+  width: 100%;
+  .errorMiddle,
+  .errorBottom {
+    width: 100%;
+  }
+  .errorMiddle {
+    margin-bottom: 3.6rem;
+    @include font(1.8rem, normal, $color-gray-05, 1.4);
+    text-align: center;
+    .title {
+      display: block;
+      margin-bottom: 1.2rem;
+      @include font(2.4rem, bold, $color-gray-06, 1.4);
+    }
+  }
+  .imgWrap {
+    margin-bottom: 3.6rem;
+  }
+  .errorBgBox {
+    padding: 2rem;
+    &.gray {
+      border-radius: 8px;
+      background-color: $bgcolor-gray-03;
+    }
+  }
+  .noticeDl {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+    @include font(1.6rem, normal, $color-gray-05, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    dt {
+      flex-basis: 6.3rem;
+      margin-right: 1.2rem;
+      @include font(1.3rem, bold, $color-gray-05, 1.4);
+      white-space: nowrap;
+    }
+  }
+}
+
+/* 회선 - 회선 추가 */
+.dataTabArea {
+  @include font(1.6rem, normal, $color-gray-06, 1.4);
+  .tabList {
+    margin-bottom: 5rem;
+    &.maxWidth488 {
+      max-width: 48.8rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .buttonArea {
+    margin-top: 7rem;
+  }
+  .nodataContainer {
+    @include flex(column, center, center);
+    min-height: 14.4rem;
+    text-align: center;
+  }
+}
+.moreContainer { 
+  @include flex(row, center, center);
+  margin-top: 3rem;
+  .btnMore {
+    @include flex(column, center, center);
+    padding: 0 2rem;
+    @include font(1.4rem, normal, $color-gray-06, 1.4);
+    &:hover {
+      font-weight: bold;
+    }
+    &:after {
+      content: '';
+      display: block;
+      width: 1.1rem;
+      height: 0.7rem;
+      margin-top: 0.8rem;
+      background: image('common/arrow_toggle_down.svg') no-repeat center / 100% auto;
+    }
+  }
+}
+
+/* 부가파람 */
+.flexDateArea {
+  @include flex(row, flex-start, center);
+  & > * {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  .fieldArea {
+    max-width: 7.5rem;
+    &:last-child {
+      margin-left: 0.8rem;
+    }
+  }
+}
+.blockBgGray {
+  padding: 1.4rem 1.6rem;
+  @include font(1.2rem, normal, $color-gray-06, 1.4);
+  background-color: $bgcolor-gray-07;
+  border-radius: 1rem;
+}
+
+/* home > 회원가입 비밀번호 보기 버튼 추가 */
+.inputPw {
+  position: relative;
+  input {
+    padding-right: 5rem;
+  }
+  .btnPwOff,
+  .btnPwOn {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    margin-top: -2rem;
+  }
+}
+.fieldReadOnly {
+  .btnPwOff,
+  .btnPwOn {
+    opacity: 0.5;
+    background-color: #f9f9f9;
+  }
+}
+.btnPwOff,
+.btnPwOn {
+  width: 4rem;
+  height: 4rem;
+}
+.btnPwOff {
+  background: image('common/icon_pw_eye_off.png') no-repeat center / 3rem $white;
+}
+.btnPwOn {
+  background: image('common/icon_pw_eye_on.png') no-repeat center / 3rem $white;
+}
+
+/* hmoe > 회원가입 step01 */
+.fieldRefer {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+  @include font(1.4rem, normal, $color-gray-04, 1.5);
+  &:first-child {
+    margin-top: 0;
+  }
+  &::before {
+    content: '※';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* 회원가입 방법 선택 DR-2023-42864 */
+.loginWayContainer {
+  padding-top: 1rem;
+  .loginWayMiddle {
+    @include flex(column, flex-start, flex-start);
+    & > * {
+      width: 100%;
+      margin-bottom: 0.8rem;
+    }
+  }
+  .loginWayBottom {
+    @include flex(row, flex-end, flex-start);
+    margin-top: 0.6rem;
+  }
+  .btn {
+    height: 4.8rem;
+    font-size: 1.4rem;
+  }
+  .linkUnderline {
+    color: $secondary;
+    border-bottom-color: $secondary;
+  }
+}
+.btnLoginNaver {
+  @include flex (row, flex-start, center);
+  position: relative;
+  overflow: hidden;
+  height: 4.8rem;
+  border-radius: 0.4rem;
+  background-color: #45B649;
+  @include font (1.4rem, 400, $white, 1);
+  &:before {
+    content: '';
+    width: 5.5rem;
+    height: 100%;
+    margin-right: 5.7rem;
+    border-right: 1px solid rgba($white, 0.3);
+    background: image('home/naver.svg') no-repeat center/4.8rem auto;
+  }
+  &:hover {
+    font-weight: bold;
+  }
+  span {
+    display: block;
+  }
+}
+
+/* popup */
+.popupArea {
+  color: $color-gray-04;
+  p {
+    margin-top: 1rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .bold {
+    color: $black;
+  }
+}
+
+/* 로그인 5회 실패 */
+.homeLoginFail {
+  .mobileNav {
+    display: none;
+  }
+}
+.loginFailArea {
+  max-width: 70rem;
+  margin: 0 auto;
+  .textWrap {
+    margin-top: 4rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .buttonArea {
+    width: 100%;
+    margin-top: 7rem;
+  }
+}
+
+/* 마케팅 수신 동의 안내 , 마케팅 수신 동의 처리 안내 */
+.popupAgreementContainer {
+  .agreementContents {
+    margin-top: 2rem;
+    padding: 2rem;
+    border-radius: 4px;
+    background-color: $bgcolor-gray-07;
+    &:first-child {
+      margin-top: 0;
+      margin-bottom: 2rem;
+    }
+  }
+  .agreementNoticeText {
+    @include font(1.3rem, normal, $color-gray-04, 1.5);
+    p {
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .dataFolderWrap {
+    .folderTitle {
+      align-items: flex-start;
+      margin-right: -0.8rem;
+    }
+    .folderContent {
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 2rem;
+      max-height: 16.8rem;
+      border: 1px solid $black;
+      background-color: $white;
+      border-radius: 4px;
+      font-size: 1.1rem;
+    }
+  }
+  .buttonArea {
+    margin-bottom: -0.8rem;
+    // .linkUnderline {
+    //   display: block;
+    //   margin: 1.4rem auto 0;
+    //   color: $secondary;
+    //   border-color: $secondary;
+    // }
+  }
+  // 수신 동의 처리 안내
+  .agreeInfoContainer {
+    > li {
+      @include flex(row, flex-start, flex-start);
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .agreeInfotitle {
+      flex-shrink: 0;
+      display: block;
+      min-width: 3rem;
+      @include font (1.2rem, 700, $black, 1.4);
+    }
+    .agreeInfoText {
+      @include font (1.2rem, 400, $black, 1.4);
+    }
+  }
+}
+
+/* 결합서비스 > 알뜰폰 + 알뜰폰 */
+.combinedContainer {
+  .combinedArea {
+    max-width: 69.8rem;
+    margin: 0 auto 7rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .aboutTitleArea {
+    max-width: 69.8rem;
+    margin: 9rem auto 7rem;
+    padding: 0 2rem;
+    br {
+      display: none;
+    }
+  }
+}
+.combinedArticle {
+  @include whiteBorderBox(7rem 2rem 7rem);
+  .combinedInner {
+    margin-top: 7rem;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .areaTop {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .combinedContent {
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+  }
+  // text
+  .combinedTitle {
+    width: 100%;
+    margin-bottom: 3rem;
+    @include font (1.8rem, 700, $black, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .combinedSubTitle {
+    margin-bottom: 0.8rem;
+    @include font (1.6rem, 700, $color-gray-06, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .combinedText {
+    @include font (1.6rem, 400, $color-gray-06, 1.4);
+  }
+  // list
+  .typeCaution {
+    margin-top: 4rem;
+    .fieldArea {
+      padding: 2.4rem 3rem;
+    }
+    .fieldValue {
+      font-size: 1.3rem;
+      &:before {
+        top: 9px;
+      }
+    }
+  }
+  .dotList {
+    margin-bottom: 0;
+    > li {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .beforeDot {
+    @include font (1.6rem, 400, $color-gray-06, 1.5);
+    .dashList {
+      line-height: 1.4;
+    }
+  }
+  .numberList {
+    > li {
+      padding-left: 1.5rem;
+      text-indent: -1.3rem;
+      margin-bottom: 0.5rem;
+      @include font (1.6rem, 400, $color-gray-06, 1.5);
+    }
+  }
+  // tab
+  .tabList {
+    max-width: 69.8rem;
+    margin: 0 auto 7rem;
+  }
+  .tabContainer {
+    .combinedTitle {
+      font-size: 1.6rem;
+    }
+  }
+  .tabContent {
+    max-width: 69.8rem;
+    margin: 0 auto;
+  }
+  // nodata
+  .nodataContainer {
+    @include flex(column, center, center);
+    min-height: 45.6rem;//656
+    // font-size: 1.3rem;
+  }
+  // button
+  .buttonArea {
+    margin: 0;
+    margin-top: 5rem;
+  }
+  .moType {
+    display: none;
+  }
+  // link box
+  .linkBox {
+    @include flex(row, flex-end, center);
+    margin-top: 2.4rem;
+    .linkUnderline {
+      font-size: 1.4rem;
+    }
+  }
+}
+.lineBottom {
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid $black;
+}
+/* 결합서비스 > 알뜰폰 + 알뜰폰 > 신청 */
+.wirelessApplyArea, .wiredApplyArea {
+  padding-top: 11.7rem;
+  .typeCertification {
+    .typeCaution {
+      margin-top: 3rem;
+    }
+  }
+}
+.lineCheckResultArea {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  .checkResultTop {
+    @include flex(column, center, center);
+    padding: 2.4rem 2rem;
+    background-color: $bgcolor-gray-07;
+    border-radius: 4px;
+  }
+  .resultLabel {
+    display: block;
+    margin-bottom: 0.5rem;
+    @include font (1.3rem, 400, $color-gray-04, 1.4);
+    &:only-child {
+      margin-bottom: 0;
+    }
+  }
+  .resultTitle {
+    @include font (1.8rem, 700, $color-gray-06, 1.4);
+  }
+  .resultText {
+    margin-top: 0.5rem;
+    @include font (1.6rem, 400, $color-gray-06, 1.4);
+  }
+  strong {
+    font-weight: bold;
+  }
+}
+/* 결합서비스 > 알뜰폰 + 유선 */
+.dashList {
+  & > li {
+    padding-left: 1.3rem;
+    text-indent: -0.6rem;
+    &:before {
+      content: '-';
+      display: inline-block;
+      margin-right: 0.4rem;
+    }
+    & > p {
+      margin-left: 0.6rem;
+    }
+  }
+}
+/* 결합서비스 > KT 인터넷 선택 팝업 */
+.myAgencyContainer {
+  .agencyNameBox {
+    display: block;
+    margin-bottom: 0.6rem;
+    @include font(1.1rem, normal, $secondary, 1.4);
+  }
+  .agencyNumberBox {
+    margin-bottom: 0.6rem;
+    @include font(1.4rem, bold, $color-gray-04, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .agencyAddressBox {
+    @include font(1.1rem, normal, $secondary, 1.4);
+  }
+}
+
+/* tab layout - common */
+.contentTabContainer {
+  .tabList {// 가로 폭이 좁은 탭 형태
+    height: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: none;
+    .tabButton {
+      width: auto;
+      margin-right: 1.2rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+/* 마이알뜰폰 홈 - 쿠폰함 */
+.couponStateContainer {
+  .couponStateSummaryArea {
+    margin-top: 3rem;
+  }
+  .couponMassageBox {
+    @include font(1.8rem, 400, $color-gray-06, 1.4);
+    text-align: center;
+    strong {
+      font-weight: 700;
+    }
+  }
+}
+.couponTicketArea {
+  @include flex(row, flex-start, stretch);
+  flex-wrap: wrap;
+  margin: -0.35rem;
+  .couponTicketBox {
+    width: calc(33.333% - 0.7rem);
+    margin: 0.35rem;
+    &:only-child {
+      width: calc(100% - 0.7rem);
+      .ticketMiddleArea {
+        @include flex(row, center, center);
+        &:before {
+          margin-bottom: 0;
+          margin-right: 0.8rem;
+        }
+        .title {
+          padding-top: 0.3rem;
+        }
+      }
+    }
+  }
+}
+.couponTicketBox {
+  @include flex(column, flex-start, flex-start);
+  border: 1px solid $border-color-02;
+  border-radius: 2px;
+  &[class*=iconCoupon] {
+    .ticketMiddleArea {
+      &:before {
+        content: '';
+        display: block;
+        flex-shrink: 0;
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+  &.iconCouponData {
+    .ticketMiddleArea {
+      &:before {
+        background: image('myThrifty/icon_coupon_data.svg') no-repeat center;
+      }
+    }
+  }
+  &.iconCouponCall {
+    .ticketMiddleArea {
+      &:before {
+        background: image('myThrifty/icon_coupon_call.svg') no-repeat center;
+      }
+    }
+  }
+  &.iconCouponTicket {
+    .ticketMiddleArea {
+      &:before {
+        background: image('myThrifty/icon_coupon_ticket.svg') no-repeat center;
+      }
+    }
+  }
+  .ticketMiddleArea {
+    @include flex(column, center, center);
+    width: 100%;
+    flex: 1;
+    padding: 1.2rem 2.2rem;
+    .title {
+      display: block;
+      text-align: center;
+      @include font(1.2rem, bold, $black, 1.3);
+      @include multi-text-hidden('true',2)
+    }
+  }
+  .ticketBottomArea {
+    width: 100%;
+    height: 4rem;
+    padding: 0.8rem;
+    text-align: center;
+    border-top: 1px dashed $border-color-02;
+    .text {
+      @include font(1.6rem, bold, $primary, 1.3);
+    }
+  }
+}
+
+/* 마이알뜰폰 > 쿠폰함 - 보유 쿠폰 */
+.cardAccordionBox {
+  overflow: hidden;
+  margin-bottom: 2rem;
+  background-color: $white;
+  border: 1px solid $border-color-02;
+  border-radius: 1.2rem;
+  box-shadow: 0px 2px 6px rgba($black, 0.04), 0px 0px 1px rgba($black, 0.04);
+  box-sizing: border-box;
+  &.active {//활성화
+    .cardTitleArea {
+      background: image("common/arrow_line_up.svg") no-repeat right 2rem center;
+    }
+    .cardContentArea {
+      display: block;
+    }
+  }
+  &.disabled {
+    .cardTitleArea {
+      .titleBox {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    .openArrow {
+      cursor: default;
+      background-color: rgba($white, 0.8);
+    }
+  }
+  .cardTitleArea {
+    @include flex(row, flex-start, center);
+    position: relative;
+    height: 5.5rem;
+    padding: 0 2rem;
+    background: image("common/arrow_line_down.svg") no-repeat right 2rem center;
+    .titleBox {
+      @include flex(row, flex-start, center);
+      @include font(1.6rem, bold, $black, 1.4);
+    }
+  }
+  .cardContentArea {
+    display: none;
+    padding: 2.4rem 3rem;
+    border-top: 1px solid $border-color-02;
+  }
+  .cardOpenBtn, .openArrow {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 1;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 10px;
+    span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      color: transparent;
+    }
+  }
+  .cardTitle {
+    display: block;
+    @include font(1.6rem, 700, $black, 1.4);
+  }
+}
+/* 쿠폰 layout */
+.couponContainer {
+  margin-top: 2.4rem;
+  &:first-child {
+    margin-top: 0;
+  }
+  .couponTopArea {
+    margin-bottom: 1.8rem;
+    @include font(1.6rem, normal, $black, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+/* 쿠폰 flex */
+.couponRowContainer {
+  @include flex(row, flex-start, stretch);
+  flex-wrap: wrap;
+  margin: -1rem;
+  .couponInfoContainer {
+    width: calc(50% - 2rem);
+    margin: 1rem;
+  }
+}
+/* 쿠폰 카드 */
+.couponInfoContainer {
+  @include flex(column, flex-start, flex-start);
+  &.disabled {
+    .couponNameBox,
+    .couponDateBox {
+      color: $secondary;
+    }
+  }
+  &.cardLine {
+    .couponInfoInner {
+      padding: 3rem;
+      border: 1px solid $border-color-02;
+      border-radius: 12px;
+      box-shadow: 0px 0px 10px 3px rgba($black, 0.04);
+    }
+  }
+  .couponInfoInner {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem 3rem;
+    border-radius: 8px;
+    background-color: $bgcolor-gray-07;
+  }
+  .couponTypeBox {
+    width: 100%;
+    margin-bottom: 0.8rem;
+    @include font(1.3rem, bold, $black, 1.4);
+  }
+  .couponNameBox {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    @include font(2.1rem, bold, $black, 1.4);
+  }
+  .couponDateBox {
+    width: 100%;
+    margin-bottom: 1.6rem;
+    @include font(1.6rem, normal, $black, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .couponFootBox {
+    @include flex(row, flex-end, center);
+    width: 100%;
+    margin-top: auto;
+  }
+  .couponNoticeBox {
+    width: 100%;
+    margin-top: 1.2rem;
+    @include font(1.6rem, normal, $secondary, 1.4);
+    .beforeDot {
+      font-size: 1.4rem;
+    }
+  }
+  .availableText {
+    @include font(1.3rem, normal, $color-gray-04, 1.4);
+  }
+  .linkUnderline {
+    font-size: 1.6rem;
+  }
+}
+/* 쿠폰 직접 등록 */
+.couponSelfBox {
+  margin: 4.6rem 0;
+  .field {
+    max-width: 69.8rem;
+    margin: 0 auto;
+    .fieldForm {
+      width: 100%;
+    }
+  }
+  .input {
+    flex: 1;
+  }
+  .buttonArea {
+    margin: 0;
+    margin-left: 0.5rem;
+    .btn {
+      height: 5.5rem;
+      margin: 0;
+    }
+  }
+}
+/* 보유 쿠폰 아이콘 */
+.myCouponBox {
+  @include flex(row, flex-start, center);
+  margin-right: auto;
+  @include font(1.3rem, 400, $black, 1);
+  &:before {
+    content: '';
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.6rem;
+    background: image('common/coupon_icon.svg') no-repeat center / 1.6rem;
+  }
+  .myCouponCount {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-weight: 700;
+    color: $primary;
+    text-decoration: underline;
+  }
+}
+/* 마이알뜰폰 > 쿠폰함 - 사용 내역 */
+.cardIslandContainer {
+  .cardBottomArea {
+    margin-top: 2.4rem;
+  }
+  .couponRowContainer {
+    .couponInfoContainer {
+      width: calc(25% - 2rem);
+    }
+  }
+  .beforeDot {
+    margin-left: 0.3rem;
+    @include font(1.4rem, normal, $color-gray-04, 1.4);
+  }
+}
+/* 보통 타이틀 있는 li */
+.unitListContainer {
+  margin-top: 1.6rem;
+  .normalTitle {
+    display: block;
+    @include font(1.3rem, normal, $color-gray-04, 1.4);
+  }
+  .dotList {
+    margin-top: 0;
+  }
+}
+
+/* 마이알뜰폰 앱 다운로드 팝업 */
+.popupAppDownloadMo {
+  justify-content: flex-end;
+  .dim {
+    display: none;
+  }
+  .popupContainer {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 1.2rem 1.2rem 0 0;
+  }
+}
+.appDownloadContainer {
+  padding: 3rem;
+  .appDownloadBody {
+    @include flex(row, flex-start, center);
+  }
+  .appDownloadFoot {
+    .linkUnderline {
+      margin-top: 1.6rem;
+      font-size: 1.2rem;
+      color: $color-gray-04;
+      border-color: $color-gray-04;
+    }
+    .buttonArea {
+      margin-top: 2rem;
+      .btn {
+        height: 5rem;
+      }
+    }
+  }
+  .imageWrap {
+    flex-shrink: 0;
+    width: 7.2rem;
+    height: 7.2rem;
+    margin-right: 2.6rem;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .downloadTextBox {
+    @include font(1.8rem, normal, $black, 1.4);
+  }
+}
+
+/* 셀프개통 신청 - PASS 인증서 팝업 */
+.passGuideContainer {
+  .aboutWrap {
+    margin-bottom: 1rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.stepTop {
+      margin-bottom: 2rem;
+    }
+  }
+  .aboutContent {
+    margin-bottom: 0;
+  }
+  .aboutGrayBox {
+    margin-top: 2.4rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    .beforeDot {
+      margin-bottom: 0.5rem;
+      &:before {
+        top: 0.6rem;
+      }
+    }
+  }
+}
+
+//pc end
+@media (#{$pc-middle}) {
+  /* 로밍 이용안내 슬라이드 */
+  .loamingSummaryContainer {
+    margin-top: -8.5rem;
+  }
+}
+
+@media (#{$pc-small}) {
+  /* 마이알뜰폰 > 쿠폰함 - 사용 내역 */
+  .cardIslandContainer {
+    .couponRowContainer {
+      .couponInfoContainer {
+        width: calc(33.333% - 2rem);
+      }
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  /* 결합서비스 > 알뜰폰 + 알뜰폰 */
+  .combinedArticle {
+    @include whiteBorderBox(3rem 2rem 3rem);
+    // nodata
+    .nodataContainer {
+      min-height: 21.9rem;//339
+      font-size: 1.3rem;
+    }
+  }
+  /* 마이알뜰폰 > 쿠폰함 - 보유 쿠폰 */
+  .cardAccordionBox {
+    &.active {
+      .cardBtn {
+        background-size: 1.1rem auto;
+      }
+    }
+    .cardTitleArea {
+      height: 5.2rem;
+      .titleBox {
+        font-size: 1.4rem;
+      }
+    }
+    .cardContentArea {
+      padding: 2rem;
+    }
+    .cardBtn {
+      background-size: 1.1rem auto;
+    }
+  }
+  /* 쿠폰 layout */
+  .couponContainer {
+    .couponTopArea {
+      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+    }
+  }
+  /* 쿠폰 flex */
+  .couponRowContainer {
+    margin: -0.5rem 0;
+    .couponInfoContainer {
+      width: 100%;
+      margin: 0.5rem 0;
+    }
+  }
+  /* 쿠폰 카드 */
+  .couponInfoContainer {
+    .couponInfoInner {
+      padding: 1.6rem 2rem;
+    }
+    .couponNameBox {
+      margin-bottom: 0.6rem;
+      font-size: 1.8rem;
+    }
+    .couponDateBox {
+      font-size: 1.3rem;
+    }
+    .couponFootBox {
+      justify-content: flex-start;
+    }
+    .couponNoticeBox {
+      font-size: 1.2rem;
+    }
+    .linkUnderline {
+      font-size: 1.3rem;
+    }
+  }
+  /* 쿠폰 직접 등록 */
+  .couponSelfBox {
+    margin: 0;
+    input[type=text], input[type=number], input[type=tel], input[type=email], input[type=password] {
+      height: 4.4rem;
+    }
+    .buttonArea {
+      .btn {
+        min-width: 8.3rem;
+        height: 4.4rem;
+      }
+    }
+  }
+  /* 보유 쿠폰 아이콘 */
+  .myCouponBox {
+    font-size: 1.1rem;
+    &:before {
+      margin-right: 0.4rem;
+    }
+  }
+  /* 마이알뜰폰 > 쿠폰함 - 사용 내역 */
+  .cardIslandContainer {
+    .couponRowContainer {
+      margin: -1rem;
+      .couponInfoContainer {
+        width: calc(50% - 2rem);
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+@media (#{$foldMax}) {
+  /* 로밍 이용안내 슬라이드 */
+  .loamingSummaryContainer {
+    margin-top: 0;
+    padding: 4rem 2rem 4.3rem;
+    margin-bottom: 2rem;
+
+    .loamingSummaryHead {
+      margin-bottom: 2.6rem;
+      font-size: 2rem;
+    }
+    .extraProductContainer {
+      .extraProductHead {
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
+      .extraProductBody {
+        padding-bottom: 2rem;
+      }
+      .extraProductBottom {
+        padding-bottom: 2.2rem;
+      }
+      .topLabel {
+        right: 1.6rem;
+        padding: 0.8rem 1.5rem;
+        font-size: 1.4rem;
+      }
+      .titleLabel {
+        font-size: 1.4rem;
+      }
+      .titleMain {
+        font-size: 1.8rem;
+      }
+      .productRounder {
+        font-size: 1.2rem;
+        .productLabel {
+          font-size: 2rem;
+        }
+        strong {
+          font-size: 2.2rem;
+        }
+      }
+      .linkUnderline {
+        font-size: 1.4rem;
+      }
+    }
+    .extraSwiper {
+      .extraBtnWrap {
+        margin-top: 3.3rem;
+      }
+    }
+  }
+  .loamingDetailContainer {
+    .roundTab {
+      &.tabList {
+        margin: 0 1.2rem 2rem;
+      }
+    }
+  }
+  
+  /* 마이알뜰폰 카드 서비스 점검 */
+  .errorCardWrap {
+    .errorMiddle {
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      .title {
+        font-size: 2.2rem;
+      }
+    }
+    .errorBgBox {
+      padding: 1.6rem 2rem;
+    }
+    .noticeDl {
+      font-size: 1.2rem;
+      dt {
+        flex-basis: 4.7rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  /* 회선 - 회선 추가 */
+  .dataTabArea {
+    font-size: 1.4rem;
+    .tabList {
+      margin-bottom: 3rem;
+    }
+    .buttonArea {
+      margin-top: 5rem;
+    }
+    .nodataContainer {
+      min-height: 14.3rem;
+    }
+  }
+
+  /* 로그인 5회 실패 */
+  .loginFailArea {
+    .textWrap {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      &:first-child {
+        margin-top: 0;
+      }
+      &.smallText {
+        font-size: 1.2rem;
+      }
+    }
+    .buttonArea {
+      margin-top: 5rem;
+    }
+  }
+
+  /* 결합서비스 > 알뜰폰 + 알뜰폰 */
+  .combinedContainer, .combinedDetail {
+    .combinedArea {
+      max-width: calc(100% + 4rem);
+      margin-bottom: 0;
+      border-bottom: 2rem solid $bgcolor-gray-05;
+    }
+    .aboutTitleArea {
+      margin: 0 2rem;
+      padding: 3rem 0 5rem;
+      br {
+        display: block;
+      }
+      .title {
+        margin-bottom: 2rem;
+      }
+      .buttonArea {
+        margin: 0;
+      }
+    }
+  }
+  .combinedArticle {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    .combinedInner {
+      margin-top: 5rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    .combinedContent {
+      &:not(:first-child) {
+        margin-top: 3rem;
+      }
+    }
+    .areaTop {
+      min-height: 4.8rem;
+      margin: 0;
+      padding: 0 2rem;
+      border-bottom: 1px solid $border-color-02;
+      .lineBottom {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+    .areaMiddle {
+      padding: 2rem 2rem 3rem;
+    }
+    .combinedTitle {
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+    }
+    .combinedSubTitle {
+      font-size: 1.4rem;
+    }
+    .combinedText {
+      font-size: 1.4rem;
+    }
+    .typeCaution {
+      margin-top: 3rem;
+    }
+    .beforeDot {
+      font-size: 1.4rem;
+    }
+    .numberList {
+      > li {
+        font-size: 1.4rem;
+        line-height: 1.2;
+      }
+    }
+    .tabList {
+      overflow: hidden;
+      overflow-x: auto;
+      width: calc(100% - 4rem);
+      height: 4.8rem;
+      margin: 0 2rem 5rem;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+          display: none; /* Chrome, Safari, Opera*/
+      }
+      
+      .tabButton {
+        align-items: flex-end;
+        padding: 0 1rem 0.8rem;
+        white-space: nowrap;
+        &:after {
+          bottom: 0;
+        }
+      }
+    }
+    .tabContainer {
+      padding: 0 2rem 7rem;
+      .combinedTitle {
+        font-size: 1.4rem;
+      }
+    }
+    .buttonArea {
+      margin-top: 3rem;
+    }
+    .linkBox {
+      margin-top: 2rem;
+    }
+    .imgWrap {
+      margin: -0.5rem -2rem 0;
+    }
+    .pcType {
+      display: none;
+    }
+    .moType {
+      display: block;
+    }
+    .typeCaution {
+      margin-top: 1.5rem;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  /* 결합서비스 > 알뜰폰 + 알뜰폰 > 신청 */
+  .wirelessApplyArea, .wiredApplyArea {
+    padding-top: 3rem;
+    .formContainer {
+      .phoneLineSummaryDrop {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+  .lineCheckResultArea {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .resultLabel {
+      font-size: 1.2rem;
+    }
+    .resultTitle {
+      font-size: 1.6rem;
+    }
+    .resultText {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* tab layout - common */
+  .contentTabContainer {
+    margin: -3rem -2rem -7rem;
+    padding: 3rem 2rem 7rem;
+    background-color: #ffffff;
+    .tabList {
+      height: 3rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid $color-gray-02;
+      .tabButton {
+        width: 100%;
+        margin-right: 0;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  /* 마이알뜰폰 홈 - 쿠폰함 */
+  .couponStateContainer {
+    margin-top: 1.6rem;
+    .couponStateMessageArea {
+      &:only-child {
+        margin-bottom: 3.4rem;
+      }
+    }
+    .couponStateSummaryArea {
+      margin-top: 2rem;
+    }
+  }
+  .couponTicketArea {
+    margin: -0.35rem 0;
+    .couponTicketBox {
+      width: 100%;
+      margin: 0.35rem 0;
+      &:only-child {
+        width: 100%;
+        .ticketMiddleArea {
+          @include flex(row, flex-start, center);
+          &:before {
+            margin-bottom: 0;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .couponTicketBox {
+    @include flex(row, flex-start, center);
+    &[class*=iconCoupon] {
+      .ticketMiddleArea {
+        &:before {
+          order: 1;
+          width: 2rem;
+          height: 2rem;
+          margin-left: auto;
+          margin-bottom: 0;
+          background-size: 2rem auto;
+        }
+      }
+    }
+    .ticketMiddleArea {
+      @include flex(row, flex-start, center);
+      .title {
+        max-width: initial;
+        margin-right: 1.2rem;
+        padding-top: 0.3rem;
+        text-align: left;
+      }
+    }
+    .ticketBottomArea {
+      @include flex(row, center, center);
+      flex-shrink: 0;
+      width: 34%;
+      height: auto;
+      min-width: 1.8rem;
+      padding: 1.2rem;
+      border-top: none;
+      border-left: 1px dashed $border-color-02;
+      .text {
+        font-size: 1.6rem;
+        word-break: break-all;
+      }
+    }
+  }
+
+  /* 마이알뜰폰 > 쿠폰함 - 사용 내역 */
+  .cardIslandContainer {
+    .cardBottomArea {
+      margin-top: 1rem;
+    }
+    .couponRowContainer {
+      margin: -0.5rem 0;
+      .couponInfoContainer {
+        width: 100%;
+        margin: 0.5rem 0;
+      }
+    }
+    .beforeDot {
+      font-size: 1.2rem;
+    }
+  }
+  .couponInfoContainer {
+    &.cardLine {
+      .couponInfoInner {
+        padding: 1.6rem 2rem;
+        border: none;
+        background-color: $bgcolor-gray-07;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+// @media (#{$mobile}) {}
+
+@media (#{$mobile-small}) {
+  /* 로밍 부가서비스 상세 */
+  .loamingDetailContainer {
+    .roundTab {
+      &.tabList {
+        .tabButton {
+          padding: 0.6rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .typeAllDay {
+    .loamingRecomand {
+      margin: 0 auto;
+    }
+    .recomandCircleData {
+      &::before {
+        width: 6rem;
+        height: 6rem;
+        background-size: 100%;
+      }
+    }
+  }
+  .recomandBlackData {
+    width: 6.5rem;
+    .blackCircleTitle {
+      padding: 0.6rem;
+      text-align: center;
+      word-break: keep-all;
+    }
+  }
+  .loamingProductInfo {
+    .loamingInfoOption {
+      &.borderType {
+        .row {
+          padding: 1.5rem 0;
+        }
+      }
+      &.bgGrayType {
+        .optionTitle {
+          min-height: 4.4rem;
+          padding: 0.6rem;
+          font-size: 1rem;
+          text-align: center;
+          word-break: keep-all
+        }
+        .beforeDot {
+          br {
+            display: none;
+          }
+        }
+      }
+      .optionFlex {
+        .row {
+          &[class*=icon] {
+            padding-left: 4rem;
+            &::before {
+              left: 0.8rem;
+              width: 2.5rem;
+              height: 2.5rem;
+            }
+          }
+        }
+      }
+      .iconCheck {
+        width: 2.5rem;
+        height: 2.5rem;
+        &:before {
+          width: 2.5rem;
+          height: 2.5rem;
+        }
+      }
+    }
+  }
+  .customerContainer {
+    .customerType {
+      margin-bottom: 1.5rem;
+    }
+    .typeHead {
+      margin-bottom: 1rem;
+    }
+    .beforeDot {
+      font-size: 1.2rem;
+    }
+  }
+}

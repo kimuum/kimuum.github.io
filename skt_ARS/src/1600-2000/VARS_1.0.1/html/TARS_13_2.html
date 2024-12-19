@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- navigation 제어여부 -->
+    <input type="hidden" id="navi_yn" value="" iweb-data="out" />
+
+    <div class="wrapper certification">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "error",
+          "title": '고객 인증',
+          "isBtn" : false
+        })
+        <div class="content-container">
+          <section id="content" class="content-area">
+            <div class="sub-content-container">
+              <div class="content-title-box">
+                <h2 class="content-title"><span>고객 인증</span></h2>
+              </div>
+
+              <div class="certification-tab">
+                <input type="hidden" id="auth_type" iweb-data="in" />
+                <input type="hidden" id="auth_number" iweb-data="in" />
+                <!-- 경고창 문구처리 -->
+                <input type="hidden" id="alert_text" value="" iweb-data="out" />
+                <input type="hidden" id="alert_text_s" value="" iweb-data="out" />
+
+                <div class="certification-radio-box">
+                  <li class="certi-individual">
+                    <input type="radio" id="certi01" name="certif" value="" onchange="chgEvent(this);" />
+                    <label for="certi01">개인고객</label>
+                  </li>
+                  <li class="certi-corporation">
+                    <input type="radio" id="certi02" name="certif" value="" onchange="chgEvent(this);" />
+                    <label for="certi02">법인고객</label>
+                  </li>
+                </div>
+                <div class="form-certification-box">
+                  <!-- 개인고객 -->
+                  <div id="display_area1" class="field field-input">
+                    <label for="certi01" class="field-label">이동전화번호</label>
+                    <div class="field-area">
+                      <input id="hp1" name="hp1" type="tel" maxlength="11" placeholder="‘-’제외하고 숫자만 입력" />
+                    </div>
+                  </div>
+                  <!-- 법인고객 -->
+                  <div id="display_area2" class="field field-input">
+                    <label for="certi01" class="field-label">사업자 번호</label>
+                    <div class="field-area">
+                      <input id="jumin1" name="jumin1" type="tel" maxlength="13" placeholder="10자리" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="buttonArrea" class="service-button-box">
+                <div class="button-box">
+                  <!-- <button id="btnCheck" type="button" class="btn_base" onclick="javascript:checkData();">확인</button> -->
+                  <button id="btnCheck" type="button" class="btn btn-primary">확인</button>
+                </div>
+              </div>
+              <div class="offer-info-box">
+                <div class="offer-area">
+                  <div class="offer-title-box">
+                    <p class="offer-title-desc">미가입 고객님은 아래 버튼을 클릭하세요.</p>
+                  </div>
+                  <div class="offer-button-box">
+                    <button type="button" class="btn-offer" onclick="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                      <span class="btn-desc">미가입 고객 접속</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- <div id="btnConfirm" class="button-box">
+                <p class="certinInfo">미가입 고객님은 아래 버튼을 클릭하세요.</p>
+                <button class="linkBtn" onclick="sendRepPageData('미가입 고객 접속', 'RT1', 'menu')">미가입 고객 접속</button>
+              </div> -->
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      var checkKeypad = '0';
+
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          /* 알림 메세지 처리 */
+          var alert_text = getUrlParameter('alert_text'); /* 알림 1*/
+          var alert_text_s = getUrlParameter('alert_text_s'); /* 알림 2 */
+
+          // /*@build-time*/ alert_text = '<h3>고객인증 <span>1회</span> 입력 오류</h3><p>정보 확인 후 다시 입력해 주세요.</p>';
+          // /*@build-time*/ alert_text_s = '고객인증 3회 연속 입력 오류 시 ARS 및 상담서비스에<br />제한이 있을 수 있습니다.';
+
+          if (alert_text != '') {
+            //document.getElementById("alert_text1").innerHTML = alert_text;
+            $('.popup-top').css('display', 'none');
+            jAlert(
+              '<div id="alert_tex" class="alert-icon-box">' +
+                '<i class="ic-error"></i>' +
+                '<div class="popup-text-large">' +
+                alert_text +
+                '</div>' +
+                '<div class="alert-text-box">' +
+                '<p class="alert-text">' +
+                alert_text_s +
+                '</p>' +
+                '</div>',
+              '',
+            );
+          }
+          document.getElementById('display_area1').setAttribute('class', 'field field-input show');
+          document.getElementById('display_area2').setAttribute('class', 'field field-input hide');
+          document.getElementById('certi01').checked = 'checked';
+        } catch (e) {}
+
+        var btnCheck = document.getElementById('btnCheck');
+        btnCheck.addEventListener('click', checkData);
+
+        // if (vars_type == 'C') {
+        //   displayButtonByInput(document.getElementById('hp1'), document.getElementById('footer'), document.getElementById('content'));
+        //   displayButtonByInput(document.getElementById('jumin1'), document.getElementById('footer'), document.getElementById('content'));
+        // }
+      });
+
+      function checkData() {
+        if (document.getElementById('certi01').checked) {
+          sendData($('#hp1'), 'RT');
+        } else {
+          sendData($('#jumin1'), 'RT');
+        }
+      }
+
+      // 체크박스 onchange 이벤트
+      function chgEvent(obj) {
+        if (obj.id == 'certi01') {
+          document.getElementById('hp1').value = '';
+          document.getElementById('display_area1').setAttribute('class', 'field field-input show');
+          document.getElementById('display_area2').setAttribute('class', 'field field-input hide');
+        } else if (obj.id == 'certi02') {
+          document.getElementById('jumin1').value = '';
+          document.getElementById('display_area1').setAttribute('class', 'field field-input hide');
+          document.getElementById('display_area2').setAttribute('class', 'field field-input show');
+        }
+      }
+
+      // 보안키패드 호출
+      function showKeypad(mode, obj, len, title) {
+        if (checkKeypad == '1') {
+          return;
+        }
+
+        var fieldname = obj.id;
+
+        if (fieldname == 'hp1') {
+          document.getElementById('hp1').value = '';
+          //document.getElementById('alert_text1').innerText = "";
+        } else if (fieldname == 'jumin1') {
+          document.getElementById('jumin1').value = '';
+          //document.getElementById('alert_text2').innerText = "";
+        }
+
+        // 키패드 호출
+        showkeypadPhone(mode, fieldname, len, title, getUrlParameter('publickey'));
+      }
+
+      // 전송처리
+      function sendData(obj, menu) {
+        checkKeypad = '1';
+
+        var fieldname = obj.id;
+        if (document.getElementById('certi01').checked) fieldname = 'hp1';
+        else if (document.getElementById('certi02').checked) fieldname = 'jumin1';
+
+        if (fieldname == 'hp1') {
+          document.getElementById('auth_type').value = 'P';
+
+          if (document.getElementById(fieldname).value == null || document.getElementById(fieldname).value == '') {
+            jAlert('<p class="popup-alert-text">이동전화번호를 입력하세요.</p>', '');
+            $('#hp1').val('');
+            $('#hp1').focus();
+            checkKeypad = '0';
+            return;
+          }
+          if (document.getElementById(fieldname).value.length < 10) {
+            jAlert('<p class="popup-alert-text">이동전화번호 10~11자리 입력하세요.</p>', '');
+            $('#hp1').val('');
+            $('#hp1').focus();
+            checkKeypad = '0';
+            return;
+          }
+        } else if (fieldname == 'jumin1') {
+          document.getElementById('auth_type').value = 'C';
+          if (document.getElementById(fieldname).value == null || document.getElementById(fieldname).value == '') {
+            jAlert('<p class="popup-alert-text">사업자 번호를 입력하세요.</p>', '');
+            $('#jumin1').val('');
+            $('#jumin1').focus();
+            checkKeypad = '0';
+            return;
+          }
+          if (document.getElementById(fieldname).value.length < 10) {
+            jAlert('<p class="popup-alert-text">사업자번호 10자리를 입력하세요.</p>', '');
+            $('#jumin1').val('');
+            $('#jumin1').focus();
+            checkKeypad = '0';
+            return;
+          }
+        }
+
+        document.getElementById('auth_number').value = obj.val();
+
+        // report page data 호출
+        sendRepPageData(obj.text().trim(), menu, 'menu');
+      }
+
+      // 이전메뉴 처리 시 체크
+      function beforeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        btn_back();
+      }
+
+      // 홈메뉴 처리 시 체크
+      function homeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        sendGotoHome();
+      }
+    </script>
+  </body>
+</html>

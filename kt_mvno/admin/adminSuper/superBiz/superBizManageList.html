@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사업자 정보 관리" , "headProjectName": "| 사업자 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superBizManageList">
+      <!-- 페이지 고유 클래스 : superBizManageList -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>사업자 정보 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 정보 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      구분 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">사업자명</option>
+                                <option value="">사업자 코드</option>
+                                <option value="">브랜드명</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">총 32개 사업자 회원</h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>순서 변경</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer alignCenter">
+                    <table>
+                      <caption>
+                        사업자 회원 내역
+                      </caption>
+                      <colgroup>
+                        <col style="width: 50px" />
+                        <col style="width: 96px" />
+                        <col style="width: 150px" />
+                        <col style="width: 140px" />
+                        <col style="width: 90px" />
+                        <col style="width: 92px" />
+                        <col style="width: 187px" />
+                        <col style="width: 220px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">사업자 코드</th>
+                          <th scope="col">사업자명</th>
+                          <th scope="col">브랜드명</th>
+                          <th scope="col">사업</th>
+                          <th scope="col">고객센터</th>
+                          <th scope="col">고객센터 운영시간</th>
+                          <th scope="col">홈페이지</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>
+                            [평일] 09:00~18:00<br />
+                            [야간분실접수] 18:00~09:00
+                          </td>
+                          <td><a href="https://direct.lghellovision.net/main.do">https://direct.lghellovision.net/main.do</a></td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일/주말주간] 09:00~18:00 [야간] 18:00~09:00</td>
+                          <td><a href="https://direct.lghellovision.net/main.do">https://direct.lghellovision.net/main.do</a></td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>스카이라이프모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)한국케이블텔레콤</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)한국케이블텔레콤</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>KT엠모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>1001</td>
+                          <td><a href="javascript:;" class="linkUnderline">(주)케이티엠모바일</a></td>
+                          <td>스카이라이프모바일</td>
+                          <td>선불, 후불</td>
+                          <td>1899-5000</td>
+                          <td>[평일]09:00~18:00</td>
+                          <td><a href="http://ktmmobile.com">http://ktmmobile.com</a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

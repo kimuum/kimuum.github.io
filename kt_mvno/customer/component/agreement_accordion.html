@@ -1,0 +1,27 @@
+<div class="field typeAgreementCheck @@typeClass">
+  <div class="field fieldCheckbox">
+    <div class="fieldForm">
+      <div class="checkbox">
+        <input type="checkbox" id="@@checkId" />
+        <span class="checkboxLabel">
+          <span class="checkIcon"></span>
+        </span>
+      </div>
+    </div>
+    <label for="@@checkId" class="fieldLabel">@@fieldLabel</label>
+    <button type="button" class="btnOpenAgree" aria-expanded="false"><span>@@hiddenText</span></button>
+  </div>
+  <div class="field fieldData">
+    <div class="fieldArea" tabindex="0">
+      @@if(type === "empty") {
+      <!-- 약관 내용 -->
+      }
+      <!-- prettier-ignore -->
+      @@if(type === "guide") {
+      <section class="termsContainer">@@termsGuideText</section>
+      }
+      <!-- prettier-ignore -->
+      @@if(type === "terms") { @@include('../component/@@termsSrc.html') }
+    </div>
+  </div>
+</div>

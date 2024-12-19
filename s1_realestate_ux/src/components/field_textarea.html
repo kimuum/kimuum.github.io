@@ -1,0 +1,36 @@
+<div class="field field-textarea @@required @@class">
+  <!-- prettier-ignore -->
+  @@if(label) {
+  <div class="field-label">
+    <span class="text">@@label</span>
+    <!-- prettier-ignore -->
+    @@if(tooltip) {
+      @@for(var i = 0; i < tooltip.length; i++) {
+        @@include("../../components/tooltip.html", `+(JSON.stringify(tooltip[i]))+`)
+      }
+    }
+  </div>
+  }
+  <div class="field-form">
+    <div class="textarea">
+      <textarea
+        name="@@id"
+        id="@@id"
+        cols="30"
+        rows="10"
+        maxlength="@@maxlength"
+        placeholder="@@placeholder"
+        @@disabled
+      ></textarea>
+      <div class="textarea-count-box">(<span class="num">0</span>/<span class="total">500</span>)</div>
+    </div>
+    <!-- prettier-ignore -->
+    @@if(fieldDesc) {
+    <div class="field-desc">
+      @@for(var i = 0; i < fieldDesc.length; i++) {
+      <p class="`+fieldDesc[i].class+`">`+fieldDesc[i].text+`</p>
+      }
+    </div>
+    }
+  </div>
+</div>

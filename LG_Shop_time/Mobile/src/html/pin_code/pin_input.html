@@ -1,0 +1,57 @@
+@@include("head.html",{
+	"title" : "PIN CODE" 
+})
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+      "btnPrev": true,
+      "menuBox" : false,
+      "title" : "PIN CODE",
+      "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="pin-code-container">
+          <div class="pin-area">
+            <div class="pin-header">
+              <p>Enter PIN CODE to complete your order.</p>
+            </div>
+            <div class="pin-body bg-lock">
+              <div class="field">
+                <label for="pin-code" class="field-label">Enter a PIN CODE</label><!-- v1.81 기획/디자인 동기화 : 수정 -->
+                <div class="field-form">
+                  <div class="input">
+                    <input type="text" name="pin-code" id="pin-code" value="1" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code02" id="pin-code02" value="" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code03" id="pin-code03" value="" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code04" id="pin-code04" value="" maxlength="1" minlength="1"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+    
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>OK</span></button><!-- v1.80 디자인 동기화 -->
+        <button type="button" class="btn"><span>CANCEL</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

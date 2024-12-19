@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터 주고받기 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : sharingMain -->
+    <div class="wrap sharingMain">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-8', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>데이터 주고받기</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 주고받기</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <section class="contentInner">
+            <div class="sharingArticle">
+              <div class="combinationArea">
+                <div class="myLineWrap">
+                  <div class="myLineTitle moBorder">
+                    <strong>데이터 쉐어링이란?</strong>
+                  </div>
+                  <div class="sharingProgress">
+                    <div class="progressAreaLeft iconPhone">
+                      <span>모회선</span>
+                    </div>
+                    <div class="middle">
+                      <span>공유데이터</span>
+                      <div class="arrow"></div>
+                    </div>
+                    <div class="progressAreaRight iconSmartDevice">
+                      <span>스마트기기</span>
+                    </div>
+                  </div>
+                  <p class="normalText">데이터 쉐어링은 대표회선의 데이터를 여러 기기에서 함께 사용할 수 있는 서비스로 대표 회선당 1개의 회선만 가입/결합하여 사용 가능합니다.</p>
+                  <a href="javascript:void(0);" class="linkUnderline colorGray">자세히 보기</a>
+                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                </div>
+              </div>
+              <div class="combinationArea">
+                <div class="myLineWrap">
+                  <div class="myLineTitle">
+                    <strong>내 정보</strong>
+                  </div>
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnSizeMiddle"><span>조회</span></button>
+                  </div>
+                </div>
+                <div class="nodataContainer bgInfoGray">
+                  <p>데이터 쉐어링</p>
+                  <p class="noticeText">
+                    결합이 가능한 회선입니다.
+                    <!-- 결합이 <strong class="colorRed">불가능</strong>한 회선입니다. -->
+                  </p>
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary btnSizeMiddle"><span>데이터 쉐어링 결합하기</span></button>
+                  <!-- 불가능한 회선 일 경우 버튼 -->
+                  <!-- <button type="button" class="btn btnDim" disabled><span>데이터 쉐어링 결합하기</span></button> -->
+                </div>
+              </div>
+
+              <div class="combinationArea">
+                <div class="myLineWrap">
+                  <div class="myLineTitle">
+                    <strong>결합 회선</strong>
+                  </div>
+                  <div class="infoBoxArea">
+                    <div class="infoAreaTop">결합 회선 010-43**-*526</div>
+                    <div class="infoAreaMiddle">
+                      <p class="colorGray">결합일 2022.05.30</p>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnSecondary btnSizeMiddle"><span>해지</span></button>
+                    </div>
+                    <div class="nodataContainer bgInfoGray">
+                      <p>이미 결합되어 있는</p>
+                      <p class="noticeText">회선이 있습니다.</p>
+                    </div>
+                    <p class="beforeDot">데이터 쉐어링은 대표 회선 당 1개의 회선만 연결하여 사용 가능합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/chart.js-2.9.4.min.js"></script>
+    <!-- chart JS -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

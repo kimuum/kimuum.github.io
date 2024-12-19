@@ -1,0 +1,88 @@
+.general-container {
+  margin: 8.4rem 0;
+  padding: 5rem;
+  border-radius: 1rem;
+  background-color: #eee;
+
+  .general-top {
+    .title {
+      margin-bottom: 4.8rem;
+      @include font(3.2rem, 700, $black, normal, 0);
+    }
+  }
+
+  .general-middle {
+    @include flex(row, space-between, flex-start);
+    flex-wrap: wrap;
+    margin: -5rem 0;
+  }
+
+  .general-box {
+    width: 50%;
+    margin: 5rem 0;
+    &.full {
+      width: 100%;
+    }
+  }
+
+  .general-sub-title {
+    margin-bottom: 2.6rem;
+    @include font(2rem, 700, $black, normal, 0);
+  }
+
+  .general-list {
+    flex: 1;
+    @include flex(row, flex-start, center);
+    margin-top: 4rem;
+    &:first-child {
+      margin-top: 0;
+    }
+    .general-list-title {
+      width: 10.8rem;
+      @include font(1.2rem, 500, $black, normal, 0);
+    }
+    .general-list-comp {
+      flex: 1;
+      max-width: 100%;
+    }
+  }
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .general-container {
+        margin: 0;
+        padding: 5rem 2rem;
+        border-radius: 0;
+        + .general-container {
+          margin-top: 5rem;
+        }
+
+        &:last-child {
+          margin-bottom: 5.2rem;
+        }
+
+        .general-box {
+          width: 100%;
+        }
+        .general-list {
+          display: block;
+          .general-list-title {
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+        }
+
+        .mobile-gnb-container {
+          position: relative;
+          z-index: 9999;
+        }
+      }
+
+      .general-list-comp {
+        position: relative;
+      }
+    }
+  }
+}

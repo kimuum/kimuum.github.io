@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "앱 업데이트 관리" , "headProjectName": " | 앱 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>앱 업데이트 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 업데이트 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      앱 업데이트 조회 - 마켓 유형, 업데이트 여부, 상태, 제목
+                    </caption>
+                    <colgroup>
+                      <col style="width: 148px" />
+                      <col />
+                      <col style="width: 148px" />
+                      <col />
+                      <col style="width: 148px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">마켓 유형</th>
+                        <td>
+                          <div class="select">
+                            <select title="마켓 유형">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th scope="row">업데이트 여부</th>
+                        <td>
+                          <div class="select">
+                            <select title="업데이트 여부">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th scope="row">상태</th>
+                        <td>
+                          <div class="select">
+                            <select title="상태">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">제목</th>
+                        <td colspan="5">
+                          <div class="input">
+                            <input type="text" id="" placeholder="입력값을 입력해주세요." title="제목" />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">총 3개</h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>앱 업데이트 등록</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        앱 업데이트 목록 - 번호, 마켓 유형, 업데이트 버전, 제목, 업데이트, 상태, 등록자, 등록 일자
+                      </caption>
+                      <colgroup>
+                        <col style="width: 62px" />
+                        <col style="width: 190px" />
+                        <col style="width: 110px" />
+                        <col style="width: 190px" />
+                        <col style="width: 100px" />
+                        <col />
+                        <col style="width: 130px" />
+                        <col style="width: 110px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">마켓 유형</th>
+                          <th scope="col">업데이트 버전</th>
+                          <th scope="col">제목</th>
+                          <th scope="col">업데이트</th>
+                          <th scope="col">상태</th>
+                          <th scope="col">등록자</th>
+                          <th scope="col">등록 일자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>ANDROID(Play Store)</td>
+                          <td>0.0.1</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">안드로이드-구글스토어</a></td>
+                          <td>선택</td>
+                          <td>사용</td>
+                          <td>임태*(1234***)</td>
+                          <td>2022-06-14</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>IOS(App Store)</td>
+                          <td>0.0.1</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">애플-앱스토어</a></td>
+                          <td>강제</td>
+                          <td>사용 안함</td>
+                          <td>임태*(1234***)</td>
+                          <td>2022-06-14</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <!-- <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button> -->
+                    <button type="button" class="nextPageBtn" title="다음" disabled></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+.table-box {
+  .table {
+    table-layout: fixed;
+    width: 100%;
+    border-radius: 2rem;
+    background-color: $white;
+    .align-left {
+      text-align: left;
+    }
+    .align-center {
+      text-align: center;
+    }
+    thead {
+      border-bottom: 1px solid $gray-50;
+
+      th {
+        padding: 1.6rem 0.9rem 1rem;
+        &.align-left {
+          text-align: left;
+        }
+        &.align-center {
+          text-align: center;
+        }
+      }
+
+      .th-label {
+        @include font(1.4rem, 500, $gray-400, 1.8rem);
+        letter-spacing: -0.028rem;
+        &.btn-sort {
+          @include flex(row, flex-start, center);
+          &::after {
+            content: '';
+            display: block;
+            width: 1.4rem;
+            height: 1.4rem;
+            background: admin-image('ic_admin_co_line.svg') no-repeat center / contain;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:first-child {
+          td {
+            padding-top: 1.6rem;
+          }
+        }
+        &:last-child {
+          td {
+            padding-bottom: 2.4rem;
+          }
+        }
+      }
+      td {
+        padding: 1rem 0.9rem;
+        &.text {
+          @include font(1.4rem, 500, $black, 1.8rem);
+          letter-spacing: -0.028rem;
+          @include ellipsis;
+          &.error {
+            color: $adminAlert;
+          }
+          &.light {
+            color: $gray-300;
+          }
+        }
+
+        &.button {
+          .btn-text {
+            width: fit-content;
+            max-width: 100%;
+            @include font(1.4rem, 500, $black, 1.8rem);
+            letter-spacing: -0.028rem;
+            text-decoration: underline;
+            text-underline-position: under;
+            @include ellipsis;
+
+            &.light {
+              color: $gray-500;
+            }
+          }
+        }
+
+        &.empty {
+          @include font(1.6rem, 500, $black, 2.4rem);
+        }
+      }
+    }
+  }
+}

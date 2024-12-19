@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "제휴카드 상세" , "headProjectName": "| 제휴카드 관리 | 이벤트 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>제휴카드 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>제휴카드 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>제휴카드 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <!-- 세부 동작 영역 : 초기 화면 -->
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>삭제</span></button>
+                  <button type="button" class="btn"><span>변경</span></button>
+                </div>
+              </div>
+              <!-- 세부 동작 영역 : 수정 모드 화면 전환 후  -->
+              <div class="detailTop" style="display: none">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>취소</span></button>
+                  <button type="button" class="btn"><span>저장</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">제휴카드 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <!-- [BO운영] KMVNO-4123 20231031 수정 -->
+                    <table>
+                      <caption>
+                        제휴카드 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">제휴카드사</th>
+                          <td>우리카드</td>
+                          <th scope="row">제휴 혜택</th>
+                          <td>청구 할인</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">제휴카드명</th>
+                          <td colspan="3">KT 마이알뜰폰 우리카드</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">간략설명</th>
+                          <td colspan="3">통신비 최대 2.3만원 청구 할인</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">통신비 할인</th>
+                          <td colspan="3">30만원 이상 최대 1.8만원<br />70만원 이상 최대 2.3만원 청구 할인</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연회비</th>
+                          <td colspan="3">국내전용/해외겸용(VISA) 20,000원</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">프로모션 기간</th>
+                          <td colspan="3">2022-02-01 ~ 2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">노출일</th>
+                          <td colspan="3">2022-02-01</td>
+                        </tr>
+                        <!-- [운영] KMVNO-4123 20231114 타입 추가 -->
+                        <tr>
+                          <th scope="row">썸네일 타입</th>
+                          <td colspan="3">세로</td>
+                        </tr>
+                        <!-- //[운영] KMVNO-4123 20231114 타입 추가 -->
+                        <tr>
+                          <th scope="row">제휴카드 썸네일</th>
+                          <td colspan="3"><a href="" class="linkPrimary">event-img.jpg</a></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">공유하기 설정</th>
+                          <td colspan="3">링크 복사, 카카오, 페이스북, 문자</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">제휴카드 <br />프로모션 상세</th>
+                          <td colspan="3">에디터 출력 영역입니다.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- //[BO운영] KMVNO-4123 20231031 수정 -->
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

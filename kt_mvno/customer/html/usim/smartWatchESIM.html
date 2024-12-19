@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "워치개통(eSIM) | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : smartWatchESIM -->
+    <div class="wrap smartWatchESIM">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-2' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>워치개통(eSIM)</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>워치개통(eSIM)</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <!-- [운영] 20221229 수정 -->
+                <div class="dataInner smartWatchAbout active">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">워치 개통(eSIM) 안내</strong>
+                    <button type="button" class="btnOpenInfo"><span>워치 개통(eSIM) 안내 닫기</span></button>
+                  </div>
+                  <div class="smartWatchContent">
+                    <div class="normalText">워치 개통을 통해 스마트폰과 상관없이 전화를 걸고, 받고, 메세지를 확인할 수 있습니다.</div>
+                    <!-- [운영] 20230113 수정 -->
+                    <div class="speechStepArea">
+                      <div class="stepBox">
+                        <strong class="title">Step 1. 워치 페어링 후 EID, IMEI 정보 확인</strong>
+                        <div class="stepInner">
+                          <ul class="dotList marginBtmReset">
+                            <li class="beforeDot">워치와 휴대폰(모회선) 페어링을 해주세요.</li>
+                            <li class="beforeDot">워치 정보(EID, IMEI)를 입력 후 개통가능여부를 조회해주세요.</li>
+                          </ul>
+                          <div class="desc"><button type="button" class="linkUnderline colorPrimary">워치 페어링 및 EID, IMEI 확인방법</button>을 참고해주세요.<!-- [운영] 20230116 수정 --></div>
+                        </div>
+                      </div>
+                      <div class="stepBox">
+                        <strong class="title">Step 2. 요금제 선택, 본인 인증, 번호 선택 후 개통 신청</strong>
+                        <div class="stepInner">
+                          <ul class="dotList marginBtmReset">
+                            <li class="beforeDot">워치 요금제를 선택해주세요.</li>
+                            <li class="beforeDot">본인인증, 약관 동의, 신분증 확인을 진행해주세요.</li>
+                            <li class="beforeDot">희망 번호를 입력 및 선택해주세요.</li>
+                          </ul>
+                          <div class="desc">
+                            <p class="colorRed">*가입할 번호는 워치 개통 서비스를 이용할 실제회선 번호이며, <br />모회선 번호가 변경되는 것은 아닙니다.<!-- [운영] 20230116 수정 --></p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="stepBox">
+                        <strong class="title">Step 3. 요금제 설정 및 재실행</strong>
+                        <div class="stepInner">
+                          <ul class="dotList marginBtmReset">
+                            <li class="beforeDot">개통신청조회에서 개통상태를 확인해주세요.</li>
+                            <li class="beforeDot">개통 완료 후 요금제 설정 및 워치 재실행을 해주세요.</li>
+                          </ul>
+                          <div class="desc"><button type="button" class="linkUnderline colorPrimary">요금제(셀룰러) 설정 방법</button>을 참고해주세요.</div>
+                        </div>
+                      </div>
+                      <div class="stepBox">
+                        <strong class="title">Step 4. 워치 관련 부가서비스 가입</strong>
+                        <!-- [운영] 20230116 수정 -->
+                        <div class="stepInner">
+                          <ul class="dotList marginBtmReset">
+                            <li class="beforeDot">애플워치의 경우 원넘버 <a href="#" class="linkUnderline colorPrimary">부가서비스 신청</a>을 해주세요.</li>
+                            <li class="beforeDot">
+                              갤럭시 워치의 경우 착신전환 부가서비스 및 원넘버 서비스를 <br />
+                              회선 <a href="#" class="linkUnderline colorPrimary">사업자 고객센터</a>를 통해 가입 하실 수 있습니다.
+                            </li>
+                          </ul>
+                          <div class="desc">
+                            *원넘버 부가서비스란? <br />
+                            - 워치에서 통화나 문자를 발신 시 휴대폰 번호를 상대방에게 표시하고 휴대폰 번호로 오는 전화를 워치에서도 동시에 수신하는 서비스입니다.
+                          </div>
+                        </div>
+                        <!-- //[운영] 20230116 수정 -->
+                      </div>
+                    </div>
+                    <!-- //[운영] 20230113 수정 -->
+                  </div>
+                </div>
+                <!-- //워치 개통(eSIM) 안내 -->
+                <!-- //[운영] 20221229 수정 -->
+
+                <!-- [2차] 20221109 수정 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">휴대폰(모회선) 정보</strong>
+                  </div>
+
+                  <!-- 아이폰 -->
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+
+                  <!-- 갤럭시 -->
+                  <div class="typePhoneLine" style="display: none">
+                    <div class="fieldArea">
+                      <div class="fieldBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                          "price": "32,980원",
+                          "phoneNumber": "010-81**-*319",
+                          "label": true
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //휴대폰(모회선) 정보 -->
+                <!-- //[2차] 20221109 수정 -->
+
+                <!-- [2차] 20221109 수정 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">워치(자회선) 정보 등록</strong>
+                  </div>
+
+                  <div class="fieldSelfSufficiency">
+                    <div class="field fieldInput">
+                      <div class="fieldLabel">EID 번호</div>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" title="EID 번호" placeholder="EID 번호를 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field fieldInput">
+                      <div class="fieldLabel">IMEI 번호</div>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" title="IMEI 번호" placeholder="IMEI 번호를 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>워치(eSIM) 개통 가능여부 조회</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">eSIM 워치 개통을 위해 EID, IMEI 입력이 필요합니다.</li>
+                        <li class="fieldValue"><a href="#" class="linkUnderline colorPrimary">워치 페어링 및 EID, IMEI 확인 방법</a>을 확인해주세요.</li>
+                        <!-- [운영] 20230116 수정 -->
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- //워치(자회선) 정보 등록 -->
+                <!-- //[2차] 20221109 수정 -->
+
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary" disabled><span>워치 개통하기</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        // <!-- [운영] 20221229 수정 -->
+        accordionControl('.smartWatchAbout .btnOpenInfo', '.smartWatchAbout .smartWatchContent', '.smartWatchAbout', '워치 개통(eSIM) 안내 열기', '워치 개통(eSIM) 안내 닫기');
+      });
+    </script>
+  </body>
+</html>

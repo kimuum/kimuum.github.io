@@ -1,0 +1,1706 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "XCIENT Fuel Cell Truck | Products",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "type" : "depth02",
+        "pageTitle" : "XCIENT Fuel Cell Truck",
+        "depth2" : [
+          {
+            "text" : "Highlights",
+            "property" : "active"
+          },
+          {
+            "text" : "Technology",
+            "property" : ""
+          },
+          {
+            "text" : "Safety",
+            "property" : ""
+          },
+          {
+            "text" : "Gallery",
+            "property" : ""
+          },
+          {
+            "text" : "Spec",
+            "property" : ""
+          },
+        ]
+      })
+      <!-- main -->
+      <main class="main">
+        <div class="content-container">
+          <div class="product-content-container truck">
+            <!-- content top -->
+            <section class="content-top">
+              <!-- prettier-ignore -->
+              @@include("sub_visual_type_B.html", {
+                "imageSubBgSrcPC" : {
+                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-hero-pc.webp",
+                  "alt"  : "Hyundai XCIENT Fuel Cell Truck on the road"
+                },
+                "imageSubBgSrcMO" : {
+                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-hero-mo.webp",
+                  "alt"  : "Hyundai XCIENT Fuel Cell Truck on the road"
+                },
+                "title" : "XCIENT Fuel Cell\nTruck",
+                "desc"  : "World’s first commercialized fuel cell heavy duty truck"
+              })
+            </section>
+            <!-- //content top -->
+
+            <!-- content middle -->
+            <section class="content-middle">
+              <div class="product-container">
+                <!-- prettier-ignore -->
+                @@include("../block/productInfoBlock.html", {
+                  "data": [
+                    {
+                      "className" : "electric", 
+                      "label" : "All Electric Range", 
+                      "value" : "400", 
+                      "unit" : "km", 
+                    },
+                    {
+                      "className" : "power", 
+                      "label" : "Max Stack Power", 
+                      "value" : "180", 
+                      "unit" : "kW", 
+                    },
+                    {
+                      "className" : "hydrogen", 
+                      "label" : "Hydrogen Tank", 
+                      "value" : "31", 
+                      "unit" : "kg H₂", 
+                    }
+                  ],
+                  "desc" : [
+                    "All Electric Range based on internal testing with full load. Range can vary depending on external conditions.",
+                    "These specifications are based on European models.",
+                  ]
+                })
+                <!-- Highlights -->
+                <section class="section-container section-highlights">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Highlights</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Uncompromising Performance with Zero CO2</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="video-box">
+                        <div class="video">
+                          <iframe width="1170px" height="659px" src="https://www.youtube.com/embed/CN5YToIQQD4" title="XCIENT Fuel Cell | &quot;Birdsville&quot;" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                                          
+                      <div class="hydrogen-box">
+                        <!-- prettier-ignore -->
+                        @@include("../block/partImgDescBlock.html",{
+                          "align" : "normal",
+                          "path" : "hyundai-ecv-products-xcient-fuel-cell-truck-highlights-pc.webp",
+                          "TopTitle" : "Hydrogen: Proven Superior",
+                          "title" : "Field-Proven Outstanding Performance",
+                          "desc" : "In 2020, HMC exported its first consignment (47 units) of hydrogen-powered, zero-emission electrified commercial vehicles, XCIENT Fuel Cell to Switzerland. They are currently in use by logistics, distribution, and retail fleet operators.",
+                        })
+                      </div>
+                    </div>
+
+                    <!-- Hydrogen Energey -->
+                    <div class="section-bottom">
+                      <div class="highlights-block-container">
+                        <div class="highlights-block-wrapper">
+                          @@loop("../block/highlightsBlock.html", [
+                          {
+                            "isSwiper": false,
+                            "title" : "Zero Pollutants: Only H₂O",
+                            "desc"  : "Pressured hydrogen reacts with oxygen to produce electricity and pure H2O without zero pollutants.",
+                            "image" : {
+                              "path" : "hyundai-ecv-products-xcient-fuel-cell-truck-ultimate-eco-friendliness-pc.webp",
+                              "width": "330px",
+                              "height": "300px",
+                              "title": "Ultimate\nEco-Friendy"
+                            },
+                          },
+                          {
+                            "isSwiper": false,
+                            "title" : "Over 400KM in Real-World Driving",
+                            "desc"  : "XCIENT Fuel Cell is field-proven to deliver over 400 km on a single charge.",
+                            "image" : {
+                              "path" : "hyundai-ecv-products-xcient-fuel-cell-truck-extra-green-miles-pc.webp",
+                              "width": "330px",
+                              "height": "300px",
+                              "title": "Extra Green Miles"
+                            },
+                          },
+                          {
+                            "isSwiper": false,
+                            "title" : "Perfect for All Types of Daily Operation",
+                            "desc"  : "XCIENT Fuel Cell makes daily operations easier with its high charging efficiency. Refueling is fast and convenient.",
+                            "image" : {
+                              "path" : "hyundai-ecv-products-xcient-fuel-cell-truck-higher-efficiency-pc.webp",
+                              "width": "330px",
+                              "height": "300px",
+                              "title": "Higher Efficiency"
+                            },
+                          },
+                          {
+                            "isSwiper": false,
+                            "title" : "Safety Proven on Swiss Roads",
+                            "desc"  : "As of September 2023, XCIENT Fuel Cell trucks in Switzerland have logged over 7 million km, without any major safety failure.",
+                            "image" : {
+                              "path" : "hyundai-ecv-products-xcient-fuel-cell-truck-field-proven-reliability-pc.webp",
+                              "width": "330px",
+                              "height": "300px",
+                              "title": "Field Proven\nReliability"
+                            },
+                          },
+                          ])
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Technology -->
+                <section class="section-container section-technology">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Technology</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Deliver Solutions, with Your Evolution</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="section-visual-box">
+                        <div class="section-visual">
+                          <div class="section-visual-front">
+                            <div class="background use-pc" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-technology-pc.webp" data-alt="Hyundai XCIENT Fuel Cell Truck running on a mountain road"></div>
+                            <div class="background use-mo" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-technology-mo.webp" data-alt="Hyundai XCIENT Fuel Cell Truck running on a mountain road"></div>
+                          </div>
+                          <div class="section-visual-back">
+                            <img width="1920px" height="968px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-technology-pc.webp" class="use-pc" alt="Hyundai XCIENT Fuel Cell Truck running on a mountain road" />
+                            <img width="375px" height="562px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-technology-mo.webp" class="use-mo" alt="Hyundai XCIENT Fuel Cell Truck running on a mountain road" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="parts-desc-container-box">
+                        <!-- prettier-ignore -->
+                        <div class="parts-desc-container align-normal">
+                          <div class="parts-desc-area">
+                            <div class="parts-desc-middle">
+                              <div class="parts-desc-box-left">
+                                <div class="parts-desc-image-default-box">
+                                  <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" >
+                                </div>
+
+                                <div class="parts-desc-image-box swiper">
+                                  <div class="parts-desc-image swiper-wrapper">
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-1.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-2.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-1.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-2.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-3.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-4.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-3.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-4.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-5.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-6.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-5.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-0 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-6.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 fade-in-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-8.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-7.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-how-to-work-pc-9.webp" alt="Internal System of Hyundai XCIENT Fuel Cell Truck" />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="parts-desc-box-right">
+                                <div class="parts-desc-select-box">
+                                  <div class="parts-desc-select-title">
+                                    <div class="title-box">
+                                      <h3>How XCIENT Hydrogen System Works</h3>
+                                    </div>
+
+                                    <div class="controller-button-box">
+                                      <button type="button" class="btn-controll btn-pause" title="pause"></button>
+                                      <button type="button" class="btn-controll btn-play active" title="play"></button>
+                                    </div>
+                                  </div>
+
+                                  <div class="parts-desc-select-list-progress-box">
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-image-box">
+                                    <div class="parts-desc-select-image">
+                                      <div class="image-list active">
+                                        <span>
+                                          <em class="text">Hydrogen Tank</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">FC System</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Battery</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Motor</em>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-list-box swiper">
+                                    <div class="parts-desc-select-lists swiper-wrapper">
+                                      <div class="parts-desc-select-list active swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Hydrogen tank</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Hydrogen tank is the first place where hydrogen reaches when charged. Hydrogen, which starts from here, is converted into electricity through a fuel cell system.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Fuel Cell System</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Fuel Cell System that generates the electricity to drive, is also called a 'tertiary battery'. This runs with hydrogen tank, to convert thermal energy into electrical energy.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Battery</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Hyundai's lithium-ion polymer batteries have a lower memory sensitivity and excellent charge efficiency compared to conventional batteries.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Motor</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>A motor then converts the electricity produced in the fuel cell stacks and stored in the high-voltage battery to kinetic energy. Just like in hybrid and battery electric cars, a regenerative braking system moves electricity back to the battery when the driver uses the brakes, improving fuel economy.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="product-card-container">
+                            <!-- prettier-ignore -->
+                            @@loop("../block/productIconCardBlock.html",[
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-greater-mileage-pc.webp',
+                                "cardTitle" :'Greater mileage',
+                                "cardSubText" :'Over 400km in real-world conditions',
+                                "cardDesc" :'You can drive XCIENT Fuel Cell confidently knowing it averages over 400 km on a single charge.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-higher-efficiency-fast-simple-charging-pc.webp',
+                                "cardTitle" :'Higher efficiency',
+                                "cardSubText" :'Fast and simple charging',
+                                "cardDesc" :'With a short refueling time, XCIENT Fuel Cell can travel a long distance, providing the efficiency and flexibility that drivers demand.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-big-savings-pc.webp',
+                                "cardTitle" :'Big savings',
+                                "cardSubText" :'Eco- and cost-friendly',
+                                "cardDesc" :'XCIENT Fuel Cell does not require urea and engine oil, which means lower operating costs.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-stress-free-driving-pc.webp',
+                                "cardTitle" :'Stress-free driving',
+                                "cardSubText" :'Quieter daily driving',
+                                "cardDesc" :'XCIENT Fuel Cell generates minimal levels of noise and vibration for smoother operation and reduced stress and fatigue.',
+                                "info" : ""
+                              }
+                            ])
+                          </div>
+                          <div class="info-box">
+                            <p>Rigid Trucks only</p>
+                          </div>
+                        </div>
+
+                        <!-- prettier-ignore -->
+                        <div class="parts-desc-container align-reverse">
+                          <div class="parts-desc-area">
+                            <div class="parts-desc-middle">
+                              <div class="parts-desc-box-left">
+                                <div class="parts-desc-image-default-box">
+                                  <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-workability-pc.webp" alt="Front View of XCIENT Fuel Cell Truck" >
+                                </div>
+                                
+                                <div class="parts-desc-image-box swiper">
+                                  <div class="parts-desc-image swiper-wrapper">
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-workability-pc.webp" alt="Front View of XCIENT Fuel Cell Truck" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-workability-pc.webp" alt="Front View of XCIENT Fuel Cell Truck" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-workability-pc.webp" alt="Front View of XCIENT Fuel Cell Truck" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-workability-pc.webp" alt="Front View of XCIENT Fuel Cell Truck" >
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="parts-desc-box-right">
+                                <div class="parts-desc-select-box">
+                                  <div class="parts-desc-select-title">
+                                    <div class="title-box">
+                                      <h3>What’s Engineered in XCIENT</h3>
+                                    </div>
+                                    <div class="controller-button-box">
+                                      <button type="button" class="btn-controll btn-pause" title="pause"></button>
+                                      <button type="button" class="btn-controll btn-play active" title="play"></button>
+                                    </div>
+                                  </div>
+                                  <div class="parts-desc-select-list-progress-box">
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                  </div>
+                                  <div class="parts-desc-select-image-box">
+                                    <div class="parts-desc-select-image">
+                                      <div class="image-list active">
+                                        <span>
+                                          <em class="text">Front & Rear<br/> Air Suspension</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Rear Axle<br/>Steering</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Weight Distribution<br/>Graphic Display</em>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-list-box swiper">
+                                    <div class="parts-desc-select-lists swiper-wrapper">
+                                      <div class="parts-desc-select-list active swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Front & Rear Air Suspension</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-image">
+                                            <img width="450px" height="269px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-front-and-rear-air-suspension-pc.webp"/>
+                                          </div>
+                                          <div class="parts-desc-select-desc">
+                                            <p>The air-cushioned suspension maintains vehicle stability for improved ride comfort and allows the cargo bed height to be adjusted for easier loading and unloading.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Rear Axle Steering</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-image">
+                                            <img width="450px" height="269px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-rear-axle-steering-pc.webp"/>
+                                          </div>
+                                          <div class="parts-desc-select-desc">
+                                            <p>Drop the tag axle to maximize your load carrying capacity or raise it for greater efficiency when transporting smaller loads. It also offers a short turning radius. (6x2)</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Weight Distribution Graphic Display</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-image">
+                                            <img width="450px" height="269px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-weight-distribution-graphic-display-pc.webp"/>
+                                          </div>
+                                          <div class="parts-desc-select-desc">
+                                            <p>This handy feature lets you keep an eye on the cargo weight distribution over your front and rear axles for safer transport.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="product-card-container">
+                            <!-- prettier-ignore -->
+                            @@loop("../block/productIconCardBlock.html",[
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-selectable-line-up-pc.webp',
+                                "cardTitle" :'Selectable Line-up',
+                                "cardSubText" :'Flexbility added',
+                                "cardDesc" :'With a choice of the 4x2 or 6x2, you can choose the model that best fits your business.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-lighter-weight-pc.webp',
+                                "cardTitle" :'Lighter Weight',
+                                "cardSubText" :'Extra operating capacity',
+                                "cardDesc" :'The lighter cabin weight realizes increased cargo capacity and better driving efficiency.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-load-more-pc.webp',
+                                "cardTitle" :'Load More',
+                                "cardSubText" :'For driver’s needs',
+                                "cardDesc" :'Reductions in the cabin weight and new features that protect against overloading help facilitate maximum carrying capacity.',
+                                "info" : ""
+                              },
+                              {
+                                "image" :'hyundai-ecv-products-xcient-fuel-cell-truck-hydrogen-safety-pc.webp',
+                                "cardTitle" :'Hydrogen safety',
+                                "cardSubText" :'Assured through testing',
+                                "cardDesc" :'The hydrogen storage and delivery system is safe thanks to rigorous testing for open flame, ballistic penetration, and exposure to temperature extremes.',
+                                "info" : ""
+                              }
+                            ])
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Safety -->
+                <section class="section-container section-safety">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Safety</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Tested and Proven</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="section-visual-box">
+                        <div class="section-visual">
+                          <div class="section-visual-front">
+                            <div class="background use-pc" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-safety-scc-pc.webp"></div>
+                            <div class="background use-mo" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-safety-scc-mo.webp"></div>
+                          </div>
+                          <div class="section-visual-back">
+                            <img width="1920px" height="695px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-safety-scc-pc.webp" class="use-pc" alt="Hyundai XCIENT Fuel Cell Truck keeps a distance from the vehicle in front with SCC" />
+                            <img width="375px" height="568px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-safety-scc-mo.webp" class="use-mo" alt="Hyundai XCIENT Fuel Cell Truck keeps a distance from the vehicle in front with SCC" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="safety-Block">
+
+                        <!-- prettier-ignore -->
+                        @@loop("../block/safetyBlock.html", [
+                          {
+                            "align" : "normal",
+                            "imageDeco" : false,
+                            "title" : "Satety Assistance on XCIENT",
+                            "accordian" : [
+                              {
+                                "property" : "active",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-vehicle-dynamic-control-pc.webp",
+                                "alt" : "Vehicle Dynamic Control (VDC)",
+                                "title" : "Vehicle Dynamic Control (VDC)",
+                                "desc" : "In slippery conditions, VDC provides optimal vehicle stability by detecting traction issues and managing torque at each wheel to help maintain directional control.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-forward-collision-avoidance-assist-pc.webp",
+                                "alt" : "Forward Collision-Avoidance Assist (FCA)",
+                                "title" : "Forward Collision-Avoidance Assist (FCA)",
+                                "desc" : "FCA automatically applies the brakes whenever it detects the risk of a collision with a pedestrian, vehicle, or cyclist",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-lane-departure-warning-pc.webp",
+                                "alt" : "Lane Departure Warning (LDW)",
+                                "title" : "Lane Departure Warning (LDW)",
+                                "desc" : "On detecting an unintentional lane departure, the system warns the driver by sending vibrations through the steering wheel.",
+                              },
+                            ]
+                          },
+                          {
+                            "align" : "reverse",
+                            "imageDeco" : true,
+                            "title" : "For Driver’s Safety",
+                            "accordian" : [
+                              {
+                                "property" : "active",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-smart-cruise-control-pc.webp",
+                                "alt" : "Smart Cruise Control (SCC)",
+                                "title" : "Smart Cruise Control (SCC)",
+                                "desc" : "SCC maintains the speed preset by the driver and ensures that you are always a safe distance away from the vehicle ahead.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-easy-hill-start-system-pc.webp",
+                                "alt" : "Easy Hill Start System (EHS)",
+                                "title" : "Easy Hill Start System (EHS)",
+                                "desc" : "EHS prevents the vehicle from rolling back when starting on steep slopes, providing safe and easy driving.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-improved-crash-safety-pc.webp",
+                                "alt" : "Improved Crash Safety",
+                                "title" : "Improved crash safety",
+                                "desc" : "When the unavoidable does happen, power is automatically cut off to the high voltage cables, and the hydrogen tank is shut off to minimize the risk of electric shock and secondary events.",
+                              },
+                            ]
+                          },
+                        ])
+                      </div>
+                    </div>
+
+                    <div class="section-bottom">
+                      <div class="deco-visual-box">
+                        <div class="deco-visual-box-left">
+                          <div class="deco-visual-image">
+                            <img width="450px" height="450px" class="lazy" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-checking-safety-safety-pc.webp" alt="Truck Driver Checking Safety" />
+                          </div>
+                          <div class="deco-visual-image">
+                            <img width="450px" height="450px" class="lazy" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-climbing-step-bumper-safety-pc.webp" alt="Truck driver climbing a step bumper" />
+                          </div>
+                        </div>
+
+                        <div class="deco-visual-box-right">
+                          <div class="deco-visual-desc-box">
+                            <div class="title-box">
+                              <h3>Safety Comes First</h3>
+                            </div>
+                            <div class="deco-visual-desc">
+                              <p>XCIENT Fuel Cell makes no compromises in safety matters. Active and passive safety systems provide comprehensive, all-around protection.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Gallery -->
+                <section class="section-container section-gallery">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Gallery</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Good for the Planet, Even Better for You</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="gallery-block-container tab-container">
+                        <div class="gallery-block-area">
+                          <div class="gallery-block-top">
+                            <div class="gallery-block-tab-box tab-button-box">
+                              <button type="button" class="tab active">
+                                <span>Interior</span>
+                              </button>
+                              <button type="button" class="tab">
+                                <span>Exterior</span>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="gallery-block-middle">
+                            <div class="gallery-block-content-box tab-content">
+                              @@include("../block/galleryBlock.html",  {
+                                "type"  : "interior",
+                                "fullImage" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-interior-pc.webp",
+                                "fullImageAlt" : "Interior of Hyundai XCIENT Fuel Cell truck",
+                                "dot" : 6,
+                                "detailImage" : [
+                                  {
+                                    "property" : "group0",
+                                    "text" : "Motor-Assisted Steering & Haptic Warning",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-motor-assisted-steering-and-haptic-warning-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "text" : "Newly Designed Cluster",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-newly-designed-cluster-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "8-Inch LCD Infotainment System",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-8-inch-lcd-infotainment-system-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "Rear-View Monitor",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-rear-view-monitor-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "text" : "Push Start Button",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-push-start-button-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "text" : "Wireless Charging",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-wireless-charging-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "text" : "Auxiliary Break & Manual Shift",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-auxiliary-break-and-manual-shift-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "text" : "Trailer Lamp Switch",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-trailer-lamp-switch-pc.webp"
+                                  },
+                                ],
+                                "overlay" : [
+                                  {
+                                    "property" : "group0",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-motor-assisted-steering-and-haptic-warning-popup-pc.webp",
+                                        "alt" : "Motor-Assisted Steering & Haptic Warning Popup",
+                                        "label" : "Motor-assisted steering + Haptic warning",
+                                        "desc"  : "It feels heavier at high speed, lighter at low speed, and vibrates to alert the driver of potential trouble (included with Lane Departure Warning, Forward Collision-Avoidance Assist, Smart Cruise Control)."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-newly-designed-cluster-popup-pc.webp",
+                                        "alt" : "Newly Designed Cluster Popup",
+                                        "label" : "Newly designed cluster",
+                                        "desc"  : "Newly designed cluster displays a wide range of information in a colorful graphic format with razor-sharp clarity that's easy on the eyes."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-8-inch-lcd-infotainment-system-popup-pc.webp",
+                                        "alt" : "8-Inch LCD Infotainment System Popup",
+                                        "label" : "8-inch LCD infotainment system",
+                                        "desc"  : "The easy-to-use touchscreen enables intuitive menu scrolling and feature selection including mirroring your smartphone apps."
+                                      },
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-rear-view-monitor-popup-pc.webp",
+                                        "alt" : "Rear-View Monitor Popup",
+                                        "label" : "Rear-view monitor",
+                                        "desc"  : "The extra-wide angle lens lets you see everything behind you when backing up, thus reducing the risk of damage."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-push-start-button-popup-pc.webp",
+                                        "alt" : "Push Start Button Popup",
+                                        "label" : "PUSH START BUTTON",
+                                        "desc"  : "If you have the key somewhere in your pocket, no need to look for it. XCIENT Fuel Cell starts at a push of a button."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-wireless-charging-popup-pc.webp",
+                                        "alt" : "Wireless Charging Popup",
+                                        "label" : "WIRELESS CHARGING",
+                                        "desc"  : "Integrated wireless mobile phone charging eliminates your repeating chores of finding, pulling and plugging the cables into your smartphone. Just place it in the storage, where it will charge while you play your favorite tunes."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-auxiliary-break-and-manual-shift-popup-pc.webp",
+                                        "alt" : "Auxiliary Break & Manual Shift Popup",  
+                                        "label" : "AUXILIARY BRAKE & MANUAL SHIFT",
+                                        "desc"  : "Control the braking with your fingertips by counter rotating the transmission fluid. Prevent wears to the footbrake and driver fatigue operating the pedals."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-trailer-lamp-switch-popup-pc.webp",
+                                        "alt" : "Trailer Lamp Switch Popup",  
+                                        "label" : "Trailer lamp switch",
+                                        "desc"  : "Trailer lamp hook-up is fast and straightforward. The switch turns on the trailer lamps and confirms functionality."
+                                      },
+                                    ]
+                                  },
+                                ]
+                              })
+
+                              @@include("../block/galleryBlock.html",  {
+                                "type"  : "exterior",
+                                "fullImage" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-exterior-pc.webp",
+                                "fullImageAlt" : "Exterior of Hyundai XCIENT Fuel Cell Truck",
+                                "dot" : 7,
+                                "detailImage" : [
+                                  {
+                                    "property" : "group0",
+                                    "text" : "LED Headlamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-led-headlamps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group0",
+                                    "text" : "Fog Lamps and Daytime Running Lamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-fog-lamps-and-daytime-running-lamps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "text" : "Fixed Step Bumper",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-fixed-step-bumper-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "Roof Fairing Spoiler",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-roof-fairing-spoiler-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "text" : "V-shaped Matte Chrome Garnish",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-v-shaped-matte-chrome-garnish-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "text" : "Body Colored Outside Mirrors",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-body-colored-outside-mirrors-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "text" : "Easy Access Door Steps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-easy-access-door-steps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "text" : "LED Rear Combination Tail Lamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-led-rear-combination-tail-lamps-pc.webp"
+                                  },
+                                ],
+                                "overlay" : [
+                                  {
+                                    "property" : "group0",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-led-headlamps-popup-pc.webp",
+                                        "alt" : "LED Headlamps Popup",
+                                        "label" : "LED HEADLAMPS",
+                                        "desc"  : "Durable LED headlamps offer the best possible illumination with less electricity consumption."
+                                      },
+                                      { 
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-fog-lamps-and-daytime-running-lamps-popup-pc.webp",
+                                        "alt": "Fog Lamps and Daytime Running Lamps Popup",
+                                        "label" : "Fog Lamps and Daytime Running Lamps",
+                                        "desc"  : "Lights up ahead to help drivers have visibility."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-fixed-step-bumper-popup-pc.webp",
+                                        "alt" : "Fixed Step Bumper Popup",
+                                        "label" : "FIXED STEP BUMPER",
+                                        "desc"  : "Steps provide secure footholds for easy windshield access."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-roof-fairing-spoiler-popup-pc.webp",
+                                        "alt" : "Roof Fairing Spoiler Popup",
+                                        "label" : "ROOF FAIRING / SPOILER",
+                                        "desc"  : "Curvy roof fairing reduces drag and improves mileage."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-v-shaped-matte-chrome-garnish-popup-pc.webp",
+                                        "alt" : "V-shaped Matte Chrome Garnish Popup",
+                                        "label" : "V-shaped Matte Chrome Garnish",
+                                        "desc"  : "Matte grey paint adds to the premium look and feel of the front face."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-body-colored-outside-mirrors-popup-pc.webp",
+                                        "alt" : "Body Colored Outside Mirrors Popup",
+                                        "label" : "Body Colored Outside Mirrors",
+                                        "desc"  : "Extra details with body color matching side mirrors."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-easy-access-door-steps-popup-pc.webp",
+                                        "alt" : "Easy Access Door Steps Popup",
+                                        "label" : "Easy Access Door Steps",
+                                        "desc"  : "Door steps help the drivers and passengers enter the cabin."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-led-rear-combination-tail-lamps-popup-pc.webp",
+                                        "alt" : "LED Rear Combination Tail Lamps Popup",
+                                        "label" : "LED REAR COMBINATION TAIL LAMPS",
+                                        "desc"  : "The rear tail lamps also use LED lamps to improve both visibility and lifespan."
+                                      },
+                                    ] 
+                                  },
+                                ]
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section-bottom">
+                      <div class="gallery-collect-container">
+                        <div class="gallery-collect-area">
+                          <div class="gallery-collect-top">
+                            <div class="gallery-collect-top-left">
+                              <div class="title-box">
+                                <h3>
+                                  Stylish and Versatile, the<br/>
+                                  Elongated XCIENT Fuel Cell
+                                </h3>
+                              </div>
+                            </div>
+                            <div class="gallery-collect-top-right">
+                              <div class="desc-box">
+                                <div class="desc-title-box">
+                                  <span>XCIENT Design Gallery</span>
+                                </div>
+                                <div class="desc-text-box">
+                                  <p>
+                                    The new flush-type front panel and aerodynamic bumper design give the vehicle a 
+                                    sleek, contemporary look. These modern and eco-friendly adjustments have increased 
+                                    fuel efficiency by enhancing aerodynamic properties and improved maneuverability by 
+                                    decreasing the turning radius.                                   
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="gallery-collect-middle">
+                            <!-- prettier-ignore -->
+                            @@include("../block/galleryCollectBlock.html", {
+                              "data" : [
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-haptic-truck-driver-pc.webp",
+                                  "width": "450px",
+                                  "height": "445px",
+                                  "text" : "A truck driver sitting comfortably in the Hyundai XCIENT Fuel Cell Truck",
+                                  "property": "left1",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-haptic-warning-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "203px",
+                                  "text" : "Motor-Assisted Steering & Haptic Warning",
+                                  "property": "top",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-storage-unit-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "324px",
+                                  "text" : "Hydrogen Storage Unit of XCIENT Fuel Cell Truck",
+                                  "property": "right1",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-on-the-road-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "203px",
+                                  "text" : "Hyundai XCIENT Fuel Cell Truck running on the road",
+                                  "property": "left2",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-two-truck-drivers-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "445px",
+                                  "text" : "Two truck drivers standing in front of Hyundai XCIENT Fuel Cell Truck",
+                                  "property": "bottom",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-truck-cockpit-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "324px",
+                                  "text" : "Cockpit of Hyundai XCIENT Fuel Cell Truck",
+                                  "property": "right2",
+                                },
+                              ]
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Specifications -->
+                <section class="section-container section-specification">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Specifications</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">View the High-Tech Spec</p>
+                      </div>
+                    </div>
+                    <div class="section-middle">
+                      <div class="spec-tab-container">
+                        <div class="spec-tab-content">
+                          <div class="spec-container">
+                            <div class="anchor-menu">
+                              <ul>
+                                <li class="selected"><a href="#keyspecs">Key Specs</a></li>
+                                <li><a href="#fuelcellspecs">Fuel Cell Specs</a></li>
+                                <li><a href="#resources">Resources</a></li>
+                              </ul>
+                            </div>
+
+                            <div id="keyspecs" class="anchor-content key-specs-box tab-container">
+                              <div class="tab-button-box">
+                                <button type="button" class="tab tab-box active">
+                                  <span>4X2</span>
+                                </button>
+                                <button type="button" class="tab tab-box">
+                                  <span>6X2</span>
+                                </button>
+                              </div>
+
+                              <div class="tab-content">
+                                <div class="key-specs-box-area active">
+                                  <div class="specification-image-box">
+                                    <div class="specification-image">
+                                      <img width="1367px" height="377px" class="lazy use-pc" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-spec-4x2-pc.webp" alt="Specs of Hyundai XCIENT Fuel Cell Truck(4X2)" />
+                                      <img width="335px" height="407px" class="lazy use-mo" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-spec-4x2-mo.webp" alt="Specs of Hyundai XCIENT Fuel Cell Truck(4X2)" />
+                                    </div>
+                                  </div>
+    
+                                  <div class="specs-lists">
+                                    <h3 class="specs-label">Key Specs</h3>
+                                    <div class="specs-row-box">
+                                      <!-- prettier-ignore -->
+                                      @@include("../component/specs_row.html", {
+                                        "specsHeader" : "XCIENT Fuel Cell Truck",
+                                        "list" : [
+                                          {
+                                            "leftValue" : "Cab type",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": 'Electric driven hydraulic tilting',
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Configuration",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '4X2',
+                                              }
+                                            ]
+                                          },
+                                        ]
+                                      })
+                                      <!-- prettier-ignore -->
+                                      @@include("../component/specs_row.html", {
+                                        "specsHeader" : "Dimension",
+                                        "list" : [
+                                          {
+                                            "leftValue" : "Wheelbase",
+                                            "rightType" : "two",
+                                            "two" : [
+                                              {
+                                                "value": 'Short',
+                                                "value2": '5,130 mm',
+                                              },
+                                              {
+                                                "value": 'Medium',
+                                                "value2": '5,330 mm',
+                                              },
+                                              {
+                                                "value": 'Long',
+                                                "value2": '5,530 mm',
+                                              },
+                                              {
+                                                "value": 'Long Plus',
+                                                "value2": '5,730 mm',
+                                              },
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall length",
+                                            "rightType" : "two",
+                                            "two" : [
+                                              {
+                                                "value": 'Short',
+                                                "value2": '9,780 mm',
+                                              },
+                                              {
+                                                "value": 'Medium',
+                                                "value2": '9,780 mm',
+                                              },
+                                              {
+                                                "value": 'Long',
+                                                "value2": '9,780 mm',
+                                              },
+                                              {
+                                                "value": 'Long Plus',
+                                                "value2": '9,780 mm',
+                                              },
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall width",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '2,540 mm',
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall height",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '3,730mm (With Standard Spoiler) / 3,900mm (With Add-On Spoiler)',
+                                              }
+                                            ]
+                                          },
+                                        ]
+                                      })
+                                      <div class="specs-row">
+                                        <div class="specs-header">Weight</div>
+                                        <ul class="specs-list">
+                                          <li class="separation">
+                                            <div class="specs-left">
+                                              <div class="value">
+                                                <!-- [수정20231027] .footnote 클래스 추가 -->
+                                                <span class="footnote">Max gross vehicle weight (Kg)</span>
+                                              </div>
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>19,500 Kg</span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="">
+                                            <div class="specs-left empty">
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>Front 8,000 Kg /  Rear 11,500 Kg</span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="">
+                                            <div class="specs-left">
+                                              <div class="value"><span>Max gross combination weight (Kg)</span></div>
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>38,000 Kg</span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+    
+                                    <div class="specs-guide-text">
+                                      <div class="desc-box">
+                                        <!-- [수정20231027] 문구 변경 -->
+                                        <p class="desc">Max. GVW includes the front and rear axle loads based on the permissible tire load. </p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="key-specs-box-area">
+                                  <div class="specification-image-box">
+                                    <div class="specification-image">
+                                      <img width="1405px" height="376px" class="lazy use-pc" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-spec-6x2-pc.webp" alt="Specs of Hyundai XCIENT Fuel Cell Truck(6X2)" />
+                                      <img width="356px" height="405px" class="lazy use-mo" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-spec-6x2-mo.webp" alt="Specs of Hyundai XCIENT Fuel Cell Truck(6X2)" />
+                                    </div>
+                                  </div>
+                                  <div class="specs-lists">
+                                    <p class="specs-label">Key Specs</p>
+                                    <div class="specs-row-box">
+                                      <!-- prettier-ignore -->
+                                      @@include("../component/specs_row.html", {
+                                        "specsHeader" : "XCIENT Fuel Cell Truck",
+                                        "list" : [
+                                          {
+                                            "leftValue" : "Cab type",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": 'Electric driven hydraulic tilting',
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Configuration",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '6X2',
+                                              }
+                                            ]
+                                          },
+                                        ]
+                                      })
+                                      <!-- prettier-ignore -->
+                                      @@include("../component/specs_row.html", {
+                                        "specsHeader" : "Dimension",
+                                        "list" : [
+                                          {
+                                            "leftValue" : "Wheelbase",
+                                            "rightType" : "two",
+                                            "two" : [
+                                              {
+                                                "value": 'Short',
+                                                "value2": '5,000+1,350 mm',
+                                              },
+                                              {
+                                                "value": 'Medium',
+                                                "value2": '5,330+1,350 mm',
+                                              },
+                                              {
+                                                "value": 'Long',
+                                                "value2": '5,530+1,350 mm',
+                                              },
+                                              {
+                                                "value": 'Extra long',
+                                                "value2": '5,970+1,350 mm',
+                                              },
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall length",
+                                            "rightType" : "two",
+                                            "two" : [
+                                              {
+                                                "value": 'Short',
+                                                "value2": '9,780 mm',
+                                              },
+                                              {
+                                                "value": 'Medium',
+                                                "value2": '11,550 mm',
+                                              },
+                                              {
+                                                "value": 'Long',
+                                                "value2": '11,725 mm',
+                                              },
+                                              {
+                                                "value": 'Extra long',
+                                                "value2": '12,035 mm',
+                                              },
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall width",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '2,540 mm',
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Overall height",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '3,730mm (With Standard Spoiler) / 3,900mm (With Add-On Spoiler)',
+                                              }
+                                            ]
+                                          },
+                                        ]
+                                      })
+                                      <div class="specs-row">
+                                        <div class="specs-header">Weight</div>
+                                        <ul class="specs-list">
+                                          <li class="separation">
+                                            <div class="specs-left">
+                                              <div class="value">
+                                                <!-- [수정20231027] .footnote 클래스 추가 -->
+                                                <span class="footnote">Max gross vehicle weight (Kg)</span>
+                                              </div>
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>27,000 Kg</span>
+                                              </div> 
+                                            </div>
+                                          </li>
+                                          <li class="">
+                                            <div class="specs-left empty">
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>Front 8,000 kg / Rear 19,000 kg</span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                          <li class="">
+                                            <div class="specs-left">
+                                              <div class="value"><span>Max gross combination weight (Kg)</span></div>
+                                            </div>
+                                            <div class="specs-right">
+                                              <div class="value">
+                                                <span>42,000 Kg</span>
+                                              </div>
+                                            </div>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+    
+                                    <div class="specs-guide-text">
+                                      <div class="desc-box">
+                                        <!-- [수정20231027] 문구 변경 -->
+                                        <p class="desc">Max. GVW includes the front and rear axle loads based on the permissible tire load.</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <div id="fuelcellspecs" class="anchor-content fuel-cell-specs-box">
+                              <div class="fuel-cell-image-box">
+                                <img width="1218px" height="605px" class="lazy use-pc-img" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-fuel-cell-specs-pc.webp" alt="Fuel cell specs of Hyundai XCIENT Fuel Cell Truck" />
+                                <img width="335px" height="332px" class="lazy use-tablet-img" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-truck-fuel-cell-specs-mo.webp" alt="Fuel cell specs of Hyundai XCIENT Fuel Cell Truck" />
+                                <div class="counter-box">
+                                  <div class="counter-01">
+                                    <span class="counter-label">Motor</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">350</span>kW</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-02">
+                                    <span class="counter-label">Hydrogen Tank</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">31</span>kg H₂</div>
+                                      <div class="small-text">(350 bar)</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-03">
+                                    <span class="counter-label">Battery</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">72</span>kWh</div>
+                                      <div class="small-text">(24 kWh x 3ea)</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-04">
+                                    <span class="counter-label">Fuel Cell System</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">180</span>kW</div>
+                                      <div class="small-text">(90 kW x 2ea)</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="specs-lists">
+                                <h3 class="specs-label">Fuel Cell Specs</h3>
+                                <div class="specs-row-box">
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                      "specsHeader" : "Powertrain",
+                                      "list" : [
+                                        {
+                                          "leftValue" : "Fuel cell system",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '180 kW (2 x 90 kW each)',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Battery",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '72 kWh (3 x 24 kWh each)',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Motor",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '350 kW (476 ps)',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Transmission",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": 'Automatic transmission',
+                                            }
+                                          ]
+                                        },
+                                      ]
+                                  })
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                    "specsHeader" : "Hydrogen tanks",
+                                    "list" : [
+                                      {
+                                        "leftValue" : "Filling pressure",
+                                        "rightType" : "default",
+                                        "rightValue" : [
+                                          {
+                                            "value": '350 Bar',
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "leftValue" : "Capacity",
+                                        "rightType" : "default",
+                                        "rightValue" : [
+                                          {
+                                            "value": '31 kg',
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                })
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                  "specsHeader" : "Performance",
+                                  "list" : [
+                                    {
+                                      "leftValue" : "All-electric range (AER)",
+                                      "rightType" : "default",
+                                      "rightValue" : [
+                                        {
+                                          "value": '400 miles with full load',
+                                        }
+                                      ]
+                                    },
+                                  ]
+                              })
+                                </div>
+                              </div>
+                            </div>
+
+                            <div id="resources" class="anchor-content resources-box">
+                              <div class="resources-content-title">
+                                <h3 class="content-title">Resources</h3>
+                                <p class="desc">Download</p>
+                              </div>
+
+                              <div class="resources-lists">
+                                <!-- prettier-ignore -->
+                                @@loop("../block/resourcesBlock.html", [
+                                  {
+                                    "type" : "type1",
+                                    "resourceTitle" : "Catalog (Single)",
+                                    "image" : "hyundai-ecv-products-ecv-single-brochure-pc.webp",
+                                    "property" : {
+                                      "attr" : "download",
+                                      "type" : "download",
+                                      "text" : "Download",
+                                      "path" : "../../assets/file/XCIENT-Fuel-Cell-Truck-Catalog-Single-EN.pdf",
+                                    }
+                                  },
+                                  {
+                                    "type" : "type2",
+                                    "resourceTitle" : "Catalog (Spread)",
+                                    "image" : "hyundai-ecv-products-ecv-spread-brochure-pc.webp",
+                                    "property" : {
+                                      "attr" : "download",
+                                      "type" : "download",
+                                      "text" : "Download",
+                                      "path" : "../../assets/file/XCIENT-Fuel-Cell-Truck-Catalog-Spread-EN.pdf",
+                                    }
+                                  },
+                                  {
+                                    "type" : "type3",
+                                    "resourceTitle" : "Digital Catalog",
+                                    "image" : "hyundai-ecv-products-ecv-digital-brochure-pc.webp",
+                                    "property" : {
+                                      "attr" : 'target="_blank"',
+                                      "type" : "view",
+                                      "text" : "View online",
+                                      "path" : "https://indd.adobe.com/view/79f83a30-0be1-475f-a755-99272f63cb75",
+                                    }
+                                  },
+                                ])
+                              </div>
+                              <div class="resources-desc-box">
+                                <div class="desc-label">
+                                  <span>Disclaimers</span>
+                                </div>
+                                <div class="desc-box">
+                                  <p class="desc">All designs, colors, features, and specifications shown and described in the contents of this website are provided for a general customer understanding and may differ from the actual product.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </section>
+            <!-- //content middle -->
+
+            <!-- content bottom -->
+            <section class="product-content-bottom">
+              <!-- Contact Us -->
+              <!-- prettier-ignore -->
+              @@include("../component/prodcut_contact_us.html", {
+                "ClassName" : "product-truck"
+              })
+              <!-- [수정230906] 구조변경 링크연결 -->
+              <!-- prettier-ignore -->
+              @@include("../component/product_bottom_thumb_box.html",{
+                "thumb": [
+                    {
+                      "property" : null,
+                      "url": "products_fuel_cell_tractor.html",
+                      "src": "hyundai-ecv-products-xcient-fuel-cell-tractor-explore-more-pc.webp",
+                      "alt" : "Explore more about Hyundai XCIENT Fuel Cell Tractor",
+                      "title": "XCIENT Fuel Cell Tractor",
+                    },
+                    {
+                      "property" : null,
+                      "url": "products_elec_city_fuel_cell.html",
+                      "src": "hyundai-ecv-products-elec-city-fuel-cell-explore-more-pc.webp",
+                      "alt" : "Explore more about Hyundai ELEC CITY Fuel Cell",
+                      "title": "ELEC CITY Fuel Cell",
+                    }
+                  ]
+                }
+              )
+            </section>
+            <!-- //content bottom -->
+          </div>
+          <!-- [수정220831] 추가 -->
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : false,
+      "masonry" : true,
+      "parallax" : true
+    })
+  </body>
+</html>

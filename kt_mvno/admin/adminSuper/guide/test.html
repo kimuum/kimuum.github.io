@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "당첨자 발표 등록" , "headProjectName": "| 이벤트 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superEventAddWinner">
+      <!-- 페이지 고유 클래스 : superEventAddWinner -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>당첨자 발표 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>당첨자 발표</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>당첨자 발표 등록</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>취소</span></button>
+                  <button type="button" class="btn"><span>등록</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">당첨자 발표</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        당첨자 발표 등록 - 이벤트명, 이벤트 기간, 당첨자 발표일, 당첨자 발표 상세
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">시작일</th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date01">
+                                <label class="ir" for="input-select-date01">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date01" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">종료일</th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date02">
+                                <label class="ir" for="input-select-date02">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date02" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">시작일</th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date03">
+                                <label class="ir" for="input-select-date03">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date03" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">종료일</th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date04">
+                                <label class="ir" for="input-select-date04">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date04" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-select-date01').length > 0) {
+          getDatepicker('#datepicker-select-date01', 'calendar');
+        }
+        if ($('#datepicker-select-date02').length > 0) {
+          getDatepicker('#datepicker-select-date02', 'calendar');
+        }
+        if ($('#datepicker-select-date03').length > 0) {
+          getDatepicker('#datepicker-select-date03', 'calendar');
+        }
+        if ($('#datepicker-select-date04').length > 0) {
+          getDatepicker('#datepicker-select-date04', 'calendar');
+        }
+      });
+    </script>
+  </body>
+</html>

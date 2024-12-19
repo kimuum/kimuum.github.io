@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "Home",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <!-- [수정20230823] .home : home 페이지 추가클래스  -->
+    <div class="wrapper home">
+      <!-- prettier-ignore -->
+      @@include("header.html", { "type" : "depth01", "pageTitle" : "" } )
+
+      <!-- [수정20230825] home-area-hero -->
+      <section  class="home-area-hero">
+        <div class="home-content-visual-container">
+          <div class="home-content-visual-area">
+            <div class="home-hero-bg">
+              <video autoplay="" loop="" muted="" playsinline="" poster="../../assets/images/main/hyundai-ecv-home-header-pc.webp" class="use-pc">
+                <source type="video/mp4" src="../../assets/images/main/hyundai-ecv-home-header-pc.mp4">
+              </video>
+              <video autoplay="" loop="" muted="" playsinline="" poster="../../assets/images/main/hyundai-ecv-home-header-mo.webp" class="use-mo">
+                <source type="video/mp4" src="../../assets/images/main/hyundai-ecv-home-header-mo.mp4">
+              </video>
+            </div>
+            <div class="home-visual-content-box">
+              <div class="home-visual-title-box">
+                <h1 class="title">Electrified Commercial Vehicles</h1>
+              </div>
+              <div class="home-visual-desc-box">
+                <p class="desc">Hyundai is committed to a cleaner future.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- main -->
+      <main class="main">
+        <div class="home-area-container">
+          <!-- main banner visual -->
+          <section class="home-area-banner">
+            <div class="home-banner-left">
+              <div class="banner-flex-box banner-flex01 scroll-ani ani-top">
+                <!-- [수정230831] who we are 내부 링크 이동 -->
+                <a href="../aboutus/aboutus_who.html" class="home-banner-box">
+                  <div class="banner-front">
+                    <strong class="front-title">Who We Are</strong>
+                  </div>
+                  <div class="banner-back">
+                    <img width="690px" height="400px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-who-we-are-bannner-pc.webp" alt="Hyundai Electrified Commercial - Who We Are" />
+                  </div>
+                </a>
+              </div>
+              <div class="banner-flex-box banner-flex02 scroll-ani ani-right">
+                <div class="banner-row-box">
+                  <div class="home-banner-box">
+                    <div class="banner-front">
+                      <!-- <strong class="front-title">New XCIENT Fuel Cell Truck</strong> -->
+                    </div>
+                    <div class="banner-back">
+                      <img class="lazy" width="330px" height="230px" data-src="../../assets/images/main/hyundai-ecv-home-hyundai-logo-pc.webp" alt="Hyundai Electrified Commercial -Powering a Net-Zero Future Today" />
+                    </div>
+                  </div>
+                </div>
+                <div class="banner-row-box scroll-ani ani-bottom">
+                  <!-- [수정230831] 아웃링크 이동 -->
+                  <a href="https://www.htwo.hyundai.com/" class="home-banner-box">
+                    <div class="banner-front">
+                      <!-- <strong class="front-title">ELEC CITY Fuel Cell Bus ...</strong> -->
+                    </div>
+                    <div class="banner-back">
+                      <img class="lazy" width="330px" height="230px" data-src="../../assets/images/main/hyundai-ecv-home-HTWO-link-pc.webp" alt="Hyundai Electrified Commercial -HTWO" />
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="home-banner-right">
+              <div class="banner-flex-box banner-flex03 scroll-ani ani-top">
+                <div class="home-banner-box">
+                  <div class="banner-front">
+                    <!-- <strong class="front-title">Road to Sustainability</strong> -->
+                  </div>
+                  <div class="banner-back">
+                    <img class="lazy" width="690px" height="230px" data-src="../../assets/images/main/hyundai-ecv-home-powering-a-net-zero-future-today-pc.webp" alt="Hyundai Electrified Commercial -Powering a Net-Zero Future Today" />
+                  </div>
+                </div>
+              </div>
+              <div class="banner-flex-box banner-flex04 scroll-ani ani-left">
+                <div class="home-banner-box">
+                  <div class="banner-front">
+                    <strong class="front-title">Road to Sustainability</strong>
+                    <div class="data-items-area" style="display: none">
+                      <div class="data-item-box">
+                        <div class="icon-spec-01"><span>Hyundai Clean Truck &amp; Bus</span></div>
+                        <div class="spec-data-box">
+                          <strong class="spec-number">247</strong>
+                        </div>
+                      </div>
+                      <div class="data-item-box">
+                        <div class="icon-spec-02"><span>Cumulative Mileage</span></div>
+                        <div class="spec-data-box">
+                          <strong class="spec-number">724</strong>
+                          <span class="spec-unit">km</span>
+                        </div>
+                      </div>
+                      <div class="data-item-box">
+                        <div class="icon-spec-03"><span>CO2 Reduction</span></div>
+                        <div class="spec-data-box">
+                          <strong class="spec-number">29714</strong>
+                          <span class="spec-unit">t</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-back">
+                    <img class="lazy" width="690px" height="400px" data-src="../../assets/images/main/hyundai-ecv-home-road-to-sustainability-pc.webp" alt="Hyundai Electrified Commercial -Road to Sustainability" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //main banner visual -->
+
+          <!-- main Our Models -->
+          <section class="home-area-models">
+            <div class="home-area-inner">
+              <div class="home-section-head">
+                <h2 class="section-title-label scroll-ani ani-bottom">Our Models</h2>
+                <span class="section-title-large scroll-ani ani-bottom">Electrified Commercial Vehicles</span>
+              </div>
+              <div class="home-section-body">
+                <div class="swiper-controller">
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+                <div class="swiper home-models-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">Hydrogen Powered Tractor Model for US Market</strong>
+                            <strong class="model-title">XCIENT Fuel Cell Tractor</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-xcient-fuel-cell-tractor-our-models-pc.webp" alt="Hyundai XCIENT Fuel Cell Tractor - Hydrogen Fuel Cell Tractor" />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">World's 1st Mass Produced Fuel Cell Heavy Duty Truck</strong>
+                            <strong class="model-title">XCIENT Fuel Cell Truck</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-xcient-fuel-cell-truck-our-models-pc.webp" alt="Hyundai XCIENT Fuel Cell Truck - Hydrogen Fuel Cell Truck" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">City Bus Running on Hydrogen Fuel</strong>
+                            <strong class="model-title">ELEC CITY Fuel Cell</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-elec-city-fuel-cell-our-models-pc.webp" alt="Hyundai ELEC CITY Fuel Cell Bus - Hydrogen Fuel Cell Electric Bus" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">100% Battery Electric City Bus</strong>
+                            <strong class="model-title">ELEC CITY</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-elec-city-our-models-pc.webp" alt="Hyundai ELEC CITY EV Bus - Electric Bus" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">Hydrogen Fueled Universe</strong>
+                            <strong class="model-title">UNIVERSE Fuel Cell</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-universe-fuel-cell-our-models-pc.webp" alt="Hyundai UNIVERSE Fuel Cell Bus - Hydrogen Fuel Cell Electric Bus" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="our-models-box">
+                        <div class="our-model-front">
+                          <div class="front-head">
+                            <strong class="model-label">The Cleanest Engine with Zero Emissions</strong>
+                            <strong class="model-title">Fuel Cell System</strong>
+                          </div>
+                          <div class="front-foot">
+                            <div class="buttons-box">
+                              <a href="javascript:void(0);" class="btn-line-wh"><span>Explore more</span></a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="our-model-back">
+                          <img width="450px" height="445px" class="lazy" data-src="../../assets/images/main/hyundai-ecv-home-fuel-cell-system-our-models-pc.webp" alt="Hyundai Fuel Cell System - Hydrogen Fuel Cell System" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //main Our Models -->
+
+          <!-- main Our Latest Updates -->
+          <section class="home-area-news">
+            <div class="home-area-inner">
+              <div class="home-section-head">
+                <h2 class="section-title-label scroll-ani ani-bottom">Latest Updates</h2>
+                <span class="section-title-large scroll-ani ani-bottom">Insights & Press Releases</span>
+              </div>
+
+              <div class="home-section-body">
+                <div class="news-tab-container">
+                  <div class="news-tab-buttons">
+                    <!-- 탭 활성화 클래스 : active -->
+                    <button type="button" class="tab-btn active"><h3>All</h3></button>
+                    <button type="button" class="tab-btn"><h3>Insights</h3></button>
+                    <button type="button" class="tab-btn"><h3>Press Releases</h3></button>
+                  </div>
+                  <div class="news-tab-content-wrap">
+                    <!-- 탭 활성화 클래스 : show -->
+                    <div class="news-tab-content show">
+                      <div class="lastest-news-container">
+                        <div class="lastest-news-middle">
+                          <div class="lastest-news-box">
+                            <div class="thumb-box">
+                              <img class="lazy" data-src="../../assets/images/main/img_home_lastestnews_thumb_01.jpg" />
+                            </div>
+                            <div class="summary-box">
+                              <a href="javascript:void(0);" class="summary-title">Hyundai Motor Premieres XCIENT Tractor in US</a>
+                              <div class="summary-text">
+                                Hyundai Motor premiered its new 6X4 XCIENT Fuel Cell tractor for the North American commercial vehicle market at the ACT  (Advanced Clean Transportation) Expo.
+                              </div>
+                              <div class="summary-date">May 8, 2023</div>
+                            </div>
+                          </div>
+                          <div class="lastest-news-box">
+                            <div class="thumb-box">
+                              <img class="lazy" data-src="../../assets/images/main/img_home_lastestnews_thumb_02.jpg" />
+                            </div>
+                            <div class="summary-box">
+                              <a href="javascript:void(0);" class="summary-title">2023 Hydrogen &amp; Fuel Cell Seminar</a>
+                              <div class="summary-text">Hyundai Motor Participates in 2023 Hydrogen & Fuel Cell Seminar in US to Expand Cooperation in Hydrogen Energy and Mobility.</div>
+                              <div class="summary-date">April 10, 2023</div>
+                            </div>
+                          </div>
+                          <div class="lastest-news-box">
+                            <div class="thumb-box">
+                              <img class="lazy" data-src="../../assets/images/main/img_home_lastestnews_thumb_03.jpg" />
+                            </div>
+                            <div class="summary-box">
+                              <a href="javascript:void(0);" class="summary-title">First Element Fuel Partners with Hyundai Motor</a>
+                              <div class="summary-text">
+                                FirstElement Fuel, the world’s leading hydrogen fueling solutions, and Hyundai Motor Company have partnered to fuel and test XCIENT Fuel Cell trucks in California.
+                              </div>
+                              <div class="summary-date">March 14, 2023</div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="lastest-news-bottom">
+                          <div class="buttons-box">
+                            <div class="btn-more">
+                              <a href="javascript:void(0);">View more</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //All -->
+                    <div class="news-tab-content"></div>
+                    <!-- //Insights -->
+                    <div class="news-tab-content"></div>
+                    <!-- //Press Release -->
+                    <div class="news-tab-content"></div>
+                    <!-- //Report -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //main Our Latest Updates -->
+
+          <!-- main Our Latest Social Feed -->
+          <section class="home-area-social">
+            <div class="home-area-inner">
+              <div class="home-section-head">
+                <h2 class="section-title-label">Latest Social Feed</h2>
+                <span class="section-title-large">Hyundai Commercial Vehicle &amp; Hydrogen Business</span>
+              </div>
+              <div class="home-section-body">
+                <div class="social-tab-container">
+                  <div class="social-tab-content-wrap">
+                    <div class="social-tab-content show">
+                      <div class="social-thumbs-container">
+                        <div class="social-thumbs-content">
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7100036738454097921" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Austria's largest regional transport operator, Wiener Linien, has been operating a Hyundai ELEC CITY Fuel Cell bus since last year. With just 10 to 15 minutes of refueling time, this hydrogen-powered bus easily travels the mountainous roads of Vienna for up to 550 kilometers on a single charge. As part of the Austrian government's HyBus Project, another ELEC CITY Fuel Cell is currently operating in the Graz region. <br>
+                                      <br> Our customers believe hydrogen will be a real game-changer in our daily lives. Check out how Hyundai’s hydrogen-powered vehicles are contributing to decarbonization!
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_01.jpg" alt="Austria Wiener Linie - Hyundai ELEC CITY Fuel Cell bus - Hydrogen Fuel Cell Electric Bus" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">Austria Wiener Linie - <br>Hyundai ELEC CITY Fuel Cell bus </strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7079443458972639232" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> A big thank you to all the drivers who took part in the #RideAndDriveEvent and to&nbsp;California Air Resources Board&nbsp;and&nbsp;CALSTART for organizing such&nbsp;a&nbsp;remarkable event!&nbsp;&nbsp; <br>
+                                      <br> Should you have had the opportunity to experience Hyundai's XCIENT Fuel Cell tractor at the event, we'd like to hear from you. Your thoughts on the driving experience of the XCIENT Fuel Cell tractor and the role of hydrogen vehicles in promoting zero emissions are immensely valuable to us. <br>
+                                      <br> We're excited to connect with you again at our upcoming events.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_02.jpg" alt="CARB and CALSTART Post Content - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">CARB and CALSTART - <br>Post Content </strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7074391142036865024" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box">Attendees who had the opportunity to test drive Hyundai’s XCIENT Fuel Cell tractor&nbsp;at #HTADrayTECH23&nbsp;last&nbsp;month&nbsp;in San Pedro, California shared&nbsp;their remarkable experiences about its silent operation and exceptional&nbsp;comfort.&nbsp; <br>
+                                      <br> Stay tuned for another test drive event coming up soon!
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_03.jpg" alt="HTA Test Drive Recap - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">HTA Test Drive Recap</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7071500930403221505" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Imagine a truck without noise, odor, or emission.&nbsp;Our hydrogen-powered Class 8 XCIENT Fuel Cell makes every day #WorldEnvironmentDay.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                                      <br> Hyundai Motor Company has been operating the world’s first hydrogen-powered garbage truck since 2021. With reduced noise, zero gas emissions, and the ability to purify surrounding air, the hydrogen-powered garbage truck provides a better working environment for sanitation workers who stand up to the challenge of protecting our everyday lives.&nbsp;&nbsp; <br>
+                                      <br> The only byproduct of this truck is pure water. By connecting the water flow to a portable sink attached to the vehicle, it serves clean water for hand washing while contributing to a cleaner future as well.&nbsp; <br>
+                                      <br> Our zero-emission garbage truck’s hydrogen-to-water mechanism works in four steps.&nbsp; <br> Step 1. Acquire oxygen by purifying the air&nbsp; <br> Step 2. Generate electricity by converting hydrogen and oxygen&nbsp; <br> Step 3. Emit purified air and pure H2O only &nbsp; <br> Step 4. Connect the water flow to the portable sink for hand washing&nbsp; <br>
+                                      <br> With an accumulated mileage of more than 6.8 million kilometers, the XCIENT Fuel Cell trucks are now running in six countries and will expand to more.&nbsp;
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_04.jpg" alt="World Environment Day - Hydrogen Fuel Cell Truck" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">World Environment Day</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7094693742661505025" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> XCIENT Fuel Cell 6x4 tractor has been in the spotlight since its commercial debut at this year’s ACT Expo. Hyundai is one of the few OEMs that owns its independently developed hydrogen fuel cell system and this makes XCIENT Fuel Cell unique. With more than 20 years of tests and studies, we have been building strong credibility with our customers and the field-proven hydrogen-powered truck is expanding its presence globally.&nbsp; &nbsp; <br>
+                                      <br> For more insight, check out&nbsp;CCJ —&nbsp;Commercial Carrier Journal&nbsp;interview featuring&nbsp;Martin Zeilinger, the Executive Vice President, Head of Commercial Vehicle Development Tech. Unit at Hyundai as well as&nbsp;Pratt Industries’ experience behind the wheel.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_05.jpg" alt="CCJ - Commercial Carrier Journal ACT Expo 2023 Article - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title"> CCJ — Commercial Carrier Journal ACT Expo 2023 Article</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7077938546715627520" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Hyundai’s XCIENT Fuel Cell fleet in Switzerland has racked up 7 million km! &nbsp; <br>
+                                      <br> Since 2020, 47 units of our hydrogen-powered trucks have been providing eco-friendly, yet still energy-efficient transportation solutions to Swiss customers. In operation, the vehicle generates power by combining H2 and O2 and emits only water, contributing to a greener Switzerland. <br>
+                                      <br> Hyundai’s trucks are the world’s first heavy-duty fuel cell trucks to achieve 7 million km of driving in real-life customer operations. Our endeavor to make Earth a greener place for all continues.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_06.jpg" alt="XCIENT Fuel Cell Racks Up 7 Million Kilometer - Hydrogen Fuel Cell System" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">XCIENT Fuel Cell Racks Up 7 Million Kilometer</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7072225690711994368" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Considering switching to a hydrogen commercial vehicle? &nbsp; <br>
+                                      <br> Having received outstanding customer feedback and proven high reliability and performance in Europe, Asia Pacific, and the Middle East, we are now running on the U.S. roads. <br>
+                                      <br> Explore the new XCIENT Fuel Cell 6x4 tractor on our website. We always welcome new partnership opportunities and any business inquiries. https://lnkd.in/enhMFmF7
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_07.jpg" alt="XCIENT Fuel Cell Tractor Catalogue - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">XCIENT Fuel Cell Tractor Catalogue</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7066789911256858624" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> 👩 “Sounds like a spaceship. It’s fascinating to see how this big truck can be so quiet.”&nbsp;&nbsp; 👷♂️“Hydrogen offers the most promise for heavy-duty long-haul, quick charge times and high payload capacities for heavy trucks.”&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+                                      <br> Truckers are one of the most important professions in the United States and the lifeblood of the country’s economy. XCIENT Fuel Cell, already running in the busiest container port in North America, offers solutions to reduce the emissions without slowing the work, while enhancing the quality of life for truckers.&nbsp; &nbsp;&nbsp; <br>
+                                      <br> Watch the video to discover the full story.&nbsp; &nbsp;&nbsp; <br>
+                                      <br> Special thanks to Becca, Tom Mourmouras at Shell and Christopher Cannon at Port of Los Angeles.&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_08.jpg" alt="Becca's Test-Drive - Full - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">Becca's Test-Drive - Full</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7082372554568450049" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Quiet, powerful, smooth, and efficient. <br>
+                                      <br> US drivers experienced XCIENT Fuel Cell for themselves, and tell how hydrogen could potentially impact the future of mobility. &nbsp; <br>
+                                      <br> Hyundai is making hydrogen mobility a viable solution for our customers.
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_09.jpg" alt="Voice of Drivers - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">Voice of Drivers</strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7075124806215499777" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> 📅 Mark your calendars for June 21! <br>
+                                      <br> California Air Resources Board and CALSTART are gearing up to host the 2nd annual Zero-Emission Trucks at the CaliforniaHVIP Showcase and Ride &amp; Drive Event at the Save Mart Center in Fresno, California. &nbsp; <br>
+                                      <br> Register now and get behind the wheel of the XCIENT Fuel Cell 6x4 tractor, our eco-friendly and still energy-efficient hydrogen powered truck. Join us and learn more about how hydrogen vehicles can contribute to a more sustainable planet as a greener solution for transportation. We look forward to seeing you at the event! https://lnkd.in/gnQs4tgD
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_10.jpg" alt="CARB and CALSTART Test Drive Teaser - Hydrogen Fuel Cell Truck" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">CARB and CALSTART - <br> Test Drive Teaser </strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7071863310547111936" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> Hyundai debuted the XCIENT Fuel Cell 6x4 tractor in the US&nbsp;market at the ACT Expo / ACT News, leaving us with&nbsp;a sense of pride, inspiration, and unity.&nbsp; <br>
+                                      <br> Attendees were able to experience our advanced hydrogen-powered tractor and fuel cell technology firsthand through exhibitions, panel discussions, and press conferences and also find out more about our commitment to sustainable transportation. This event was a great success to us and we would like to express our profound gratitude to those who joined us! <br>
+                                      <br> 👉 Check out some of the highlights from the video and see what happens when people passionate about zero-emission vehicles gather in one place!&nbsp;Stay tuned for more exciting news!
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_11.jpg" alt="ACT Expo 2023 Highlights - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">ACT Expo 2023 Highlights </strong>
+                            </div>
+                          </a>
+                          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7059594967278653440" target="_blank" class="social-thumb-box type-content">
+                            <div class="thumb-area-middle">
+                              <div class="thumb-front">
+                                <div class="thumb-content-container">
+                                  <div class="thumb-content-area">
+                                    <span class="icon-linkedin"></span>
+                                    <div class="content-box"> We are introducing you the new XCIENT Fuel Cell tractor, the commercialized class 8 6x4 fuel cell electric model! &nbsp; <br>
+                                      <br> Having received outstanding customer feedback and proven high reliability and performance in Europe, Asia Pacific, and the Middle East,&nbsp;we are now ready to hit the U.S. roads. &nbsp; <br>
+                                      <br> Discover more about the innovative XCIENT Fuel Cell 6x4 tractor by browsing through our catalog. <br>
+                                      <br> Business meetings and inquiries are all welcomed. <br> Meet us at #5888 booth today!
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="thumb-back">
+                                <img src="../../assets/images/main/img_home_social_thumb_12.jpg" alt="XCIENT Fuel Cell Tractor Catalogue - Hydrogen Fuel Cell Tractor" />
+                              </div>
+                            </div>
+                            <div class="thumb-area-bottom">
+                              <strong class="thumb-title">XCIENT Fuel Cell tractor Catalogue</strong>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //main Our Latest Social Feed -->
+
+          <!-- main Subscribe -->
+          <section class="home-area-subscribe">
+            <div class="home-area-inner">
+              <div class="home-section-head">
+                <h2 class="section-title-label">Newsletter</h2>
+                <span class="section-title-large">Subscribe and Stay Connected</span>
+              </div>
+              <div class="home-section-body">
+                <!-- submit 구조 -->
+                <!-- <div class="home-subscribe-container">
+                  <div class="field">
+                    <label class="field-label" for="subscribe-input">Your E-mail Address<span class="mark-required"></span></label>
+                    <div class="field-form">
+                      <div class="input">
+                        <input type="text" id="subscribe-input" placeholder="Email" required />
+                      </div>
+                      <button type="button" class="btn-line-wh"><span>Submit</span></button>
+                    </div>
+                    <div class="field-desc error-box">
+                      <div class="checkbox">
+                        <input type="checkbox" id="subscribe-chk" />
+                        <label for="subscribe-chk" class="label">
+                          <span class="check-icon"></span>
+                          I confirm and agree to the collection and use of my personal information.
+                        </label>
+                      </div>
+                      <div class="field-error">Please enter your email address.</div>
+                      <div class="field-error">Please enter your email address in a valid format.</div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- submit 완료 구조 -->
+                <div class="subscribe-complete-container">
+                  <div class="subscribe-complete-area">
+                    <div class="subscribe-complete-middle">
+                      <div class="icon-box"></div>
+                      <div class="title-box">
+                        <span>Thank you!</span>
+                      </div>
+                      <div class="desc-box">
+                        <p>You are now registered for new updates.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //main Subscribe -->
+
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : false,
+      "masonry" : true,
+      "parallax" : false
+    })
+    <script>
+      // swiper - mian Our Models swiper
+      var modleSwiper = new Swiper('.home-models-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+        navigation: {
+          prevEl: '.home-area-models .swiper-button-prev',
+          nextEl: '.home-area-models .swiper-button-next',
+        },
+        pagination: {
+          el: '.home-models-swiper .swiper-pagination',
+        },
+        breakpoints: {
+          769: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+            slidesPerGroup: 2,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+          },
+        },
+      });
+
+      let option = {
+        horizontalOrder: true,
+        gutter: 20,
+      };
+
+      // [수정20230824]  
+      let optionMobile = {
+        horizontalOrder: true,
+        gutter: 20,
+      };
+
+
+      // masonry - main social
+      $(document).ready(function () {
+        setTimeout(function () {
+          masonryCtrl('.social-thumbs-content', '.social-thumb-box', option);
+          $(window)
+            .on('resize', function () {
+              // [수정20230824]  
+              if(window.innerWidth <= 768 ) {
+                masonryCtrl('.social-thumbs-content', '.social-thumb-box', optionMobile);
+              }else {
+                masonryCtrl('.social-thumbs-content', '.social-thumb-box', option);
+              }
+            })
+            .resize();
+        }, 0);
+      });
+
+
+      document.addEventListener('DOMContentLoaded', () => {
+      
+      });
+      // 메인 - 인터랙션
+    </script>
+  </body>
+</html>

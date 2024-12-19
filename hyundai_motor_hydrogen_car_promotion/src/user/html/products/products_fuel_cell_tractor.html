@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "XCIENT Fuel Cell Tractor | Products",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "type" : "depth02",
+        "pageTitle" : "XCIENT Fuel Cell Tractor",
+        "depth2" : [
+          {
+            "text" : "Highlights",
+            "property" : "active"
+          },
+          {
+            "text" : "Technology",
+            "property" : ""
+          },
+          {
+            "text" : "Safety",
+            "property" : ""
+          },
+          {
+            "text" : "Gallery",
+            "property" : ""
+          },
+          {
+            "text" : "Spec",
+            "property" : ""
+          },
+        ]
+      })
+      <!-- main -->
+      <main class="main">
+        <div class="content-container">
+          <div class="product-content-container tractor">
+            <!-- content top -->
+            <section class="content-top">
+              <!-- prettier-ignore -->
+              @@include("sub_visual_type_B.html", {
+                "imageSubBgSrcPC" : {
+                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-hero-pc.webp",
+                  "alt"  : "Hyundai XCIENT Fuel Cell Tractor on a coastal road"
+                },
+                "imageSubBgSrcMO" : {
+                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-hero-mo.webp",
+                  "alt"  : "Hyundai XCIENT Fuel Cell Tractor on a coastal road"
+                },
+                "title" : "XCIENT Fuel Cell\nTractor",
+                "desc"  : "Introducing the Hydrogen Electric 6x4 Tractor"
+              })
+            </section>
+            <!-- //content top -->
+
+            <!-- content middle -->
+            <section class="content-middle">
+              <div class="product-container">
+                <!-- prettier-ignore -->
+                @@include("../block/productInfoBlock.html", {
+                  "data": [
+                    {
+                      "className" : "electric", 
+                      "label" : "All Electric Range", 
+                      "value" : "450", 
+                      "unit" : "miles", 
+                    },
+                    {
+                      "className" : "power", 
+                      "label" : "Max Stack Power", 
+                      "value" : "180", 
+                      "unit" : "kW", 
+                    },
+                    {
+                      "className" : "hydrogen", 
+                      "label" : "Hydrogen Tank", 
+                      "value" : "68.6", 
+                      "unit" : "kg H₂", 
+                    }
+                  ],
+                  "desc" : [
+                    "All Electric Range based on internal testing with full load. Range can vary depending on external conditions.",
+                    "Tractor model is only available for North America at this moment."
+                  ]
+                })
+                <!-- Highlights -->
+                <section id="highlights" class="section-container section-highlights">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Highlights</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Zero Emissions, Zero Compromises</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="video-box">
+                        <div class="video">
+                          <iframe width="1170px" height="659px" src="https://www.youtube.com/embed/DmRzrRVwEJA?si=rnEoG0LZPCzkmb-T?autoplay-1&mute=1" title="Powerful, Quiet & Efficient | Voice of the Drivers | Hyundai XCIENT Fuel Cell" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section-bottom">
+                      <div class="section-bottom-left">
+                        <div class="highlights-text-block-box">
+                          <div class="highlights-text-block-title">
+                            <h3>Change Your Fuel Change the Future</h3>
+                          </div>
+
+                          <div class="highlights-text-block-sub-title">
+                            <span>Accelerate Into a New Era</span>
+                          </div>
+
+                          <div class="highlights-text-block-desc">
+                            <p>
+                              The heart of the XCIENT Fuel Cell is its powerful fuel cell — a twin array of 90 kW stacks - that delivers 180 kW of pure, perfectly clean power, a driving range of more than 450 miles on full load, and improved durability. XCIENT Fuel Cell Tractor requires less time to recharge, so come refueling time, you’ll quickly be back up and running.                              
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="section-bottom-right">
+                        <div class="highlights-block-container swiper">
+                          <div class="highlights-block-wrapper swiper-wrapper">
+                            <!-- prettier-ignore -->
+                            @@loop("../block/highlightsBlock.html", [
+                              {
+                                "isSwiper" : true,
+                                "title" : "",
+                                "desc"  : "Pressurized hydrogen gas passes through the fuel cell membrane, where it reacts with oxygen.",
+                                "image" : {
+                                  "path" : "hyundai-ecv-products-xcient-fuel-cell-tractor-zero-emissions-pc.webp",
+                                  "width": "202px",
+                                  "height": "284px",
+                                  "title": "Zero Emissions"
+                                },
+                              },
+                              {
+                                "isSwiper" : true,
+                                "title" : "",
+                                "desc"  : "Among eco-friendly trucks, XCIENT Fuel Cell Tractor’s range is unrivaled, giving you added confidence.",
+                                "image" : {
+                                  "path" : "hyundai-ecv-products-xcient-fuel-cell-tractor-confident-range-pc.webp",
+                                  "width": "202px",
+                                  "height": "284px",
+                                  "title": "Range Confidence"
+                                },
+                              },
+                              {
+                                "isSwiper" : true,
+                                "title" : "",
+                                "desc"  : "With its high charging efficiency, the XCIENT Fuel Cell Tractor makes daily operations easier.",
+                                "image" : {
+                                  "path" : "hyundai-ecv-products-xcient-fuel-cell-tractor-higher-efficiency-pc.webp",
+                                  "width": "202px",
+                                  "height": "284px",
+                                  "title": "Higher Efficiency"
+                                },
+                              },
+                              {
+                                "isSwiper" : true,
+                                "title" : "",
+                                "desc"  : "XCIENT Fuel Cell Tractor is protected by multiple safety measures to keep the operators safe.",
+                                "image" : {
+                                  "path" : "hyundai-ecv-products-xcient-fuel-cell-tractor-comprehensive-safety-pc.webp",
+                                  "width": "202px",
+                                  "height": "284px",
+                                  "title": "Comprehensive Safety"
+                                },
+                              },
+                            ])
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Technology -->
+                <section id="technology" class="section-container section-technology">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Technology</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Deliver Solutions, with Your Evolution</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="section-visual-box">
+                        <div class="section-visual">
+                          <div class="section-visual-front">
+                            <div class="background use-pc" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-technolog-pc.webp" data-alt="Hyundai XCIENT Fuel Cell Tractor on the road"></div>
+                            <div class="background use-mo" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-technology-mo.webp" data-alt="Hyundai XCIENT Fuel Cell Tractor on the road"></div>
+                          </div>
+                          <div class="section-visual-back">
+                            <img width="1920px" height="968px" class="use-pc" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-technolog-pc.webp" alt="Hyundai XCIENT Fuel Cell Tractor on the road" />
+                            <img width="375px" height="562px" class="use-mo" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-technology-mo.webp" alt="Hyundai XCIENT Fuel Cell Tractor on the road" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="parts-desc-container-box">
+                        <!-- prettier-ignore -->
+                        <div class="parts-desc-container align-normal">
+                          <div class="parts-desc-area">
+                            <div class="parts-desc-middle">
+                              <div class="parts-desc-box-left">
+                                <div class="parts-desc-image-default-box">
+                                  <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" >
+                                </div>
+
+                                <div class="parts-desc-image-box swiper">
+                                  <div class="parts-desc-image swiper-wrapper">
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-1.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-2.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-1.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" /> 
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-2.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" /> 
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-3.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-6.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-4.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-3.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" /> 
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-4.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" /> 
+                                        </div>
+                                      </div>
+
+                                      <div class="overlay-image-box overlay-image-box-2 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-6.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-5.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-7.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box overlay-image-box-1 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-5.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-0 in-n-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-7.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-2 fade-in-out">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-9.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-3 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-8.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                      <div class="overlay-image-box overlay-image-box-4 fade-in">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-how-to-work-pc-10.webp" alt="In of Hyundai XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="parts-desc-box-right">
+                                <div class="parts-desc-select-box">
+                                  <div class="parts-desc-select-title">
+                                    <div class="title-box">
+                                      <h3>How XCIENT Hydrogen System Works</h3>
+                                    </div>
+
+                                    <div class="controller-button-box">
+                                      <button type="button" class="btn-controll btn-pause" title="pause"></button>
+                                      <button type="button" class="btn-controll btn-play active" title="play"></button>
+                                    </div>
+                                  </div>
+
+                                  <div class="parts-desc-select-list-progress-box">
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-image-box">
+                                    <div class="parts-desc-select-image">
+                                      <div class="image-list active">
+                                        <span>
+                                          <em class="text">Hydrogen Tank</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">FC System</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Battery</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Motor</em>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-list-box swiper">
+                                    <div class="parts-desc-select-lists swiper-wrapper">
+                                      <div class="parts-desc-select-list active swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Hydrogen tank</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Hydrogen tank is the first place where hydrogen reaches when charged. Hydrogen, which starts from here, is converted into electricity through a fuel cell system.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Fuel Cell System</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Fuel Cell System that generates the electricity to drive, is also called a 'tertiary battery'. This runs with hydrogen tank, to convert thermal energy into electrical energy.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Battery</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Lithium-ion polymer batteries store electricity, generated by fuel cell system. The batteries have a lower memory sensitivity and excellent charge efficiency compared to converntional ones.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Motor</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>A motor then converts the electricity produced in the fuel cell systems and stored in the high-volatage battery to kinetic energy. This energy sets driving axle in motion. Just like in hybrid and battery electric cars, a regenerative braking system moves electricity back to the battery when the driver uses the brake, improving fuel economy.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- prettier-ignore -->
+                        <div class="parts-desc-container align-reverse">
+                          <div class="parts-desc-area">
+                            <div class="parts-desc-middle">
+                              <div class="parts-desc-box-left">
+                                <div class="parts-desc-image-default-box">
+                                  <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-what-engineered-pc.webp" alt="Rear View of XCIENT Fuel Cell Tractor" >
+                                </div>
+
+                                <div class="parts-desc-image-box swiper">
+                                  <div class="parts-desc-image swiper-wrapper">
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box flicker">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-what-engineered-pc-1.webp" alt="Rear View of XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box flicker">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-what-engineered-pc-2.webp" alt="Rear View of XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="image-box swiper-slide">
+                                      <div class="overlay-image-box flicker">
+                                        <div class="overlay-image">
+                                          <img width="878px" height="730px" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-what-engineered-pc-3.webp" alt="Rear View of XCIENT Fuel Cell Tractor" />
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="parts-desc-box-right">
+                                <div class="parts-desc-select-box">
+                                  <div class="parts-desc-select-title">
+                                    <div class="title-box">
+                                      <h3>What’s Engineered in XCIENT</h3>
+                                    </div>
+                                    <div class="controller-button-box">
+                                      <button type="button" class="btn-controll btn-pause" title="pause"></button>
+                                      <button type="button" class="btn-controll btn-play active" title="play"></button>
+                                    </div>
+                                  </div>
+                                  <div class="parts-desc-select-list-progress-box">
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                    <div class="parts-desc-select-list-progress-line">
+                                      <div class="parts-desc-select-list-progress-inner-line"></div>
+                                    </div>
+                                  </div>
+                                  <div class="parts-desc-select-image-box">
+                                    <div class="parts-desc-select-image">
+                                      <div class="image-list active">
+                                        <span>
+                                          <em class="text">Tralier<br/>Connector</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Tractor<br/>Coupler</em>
+                                        </span>
+                                      </div>
+                                      <div class="image-list">
+                                        <span>
+                                          <em class="text">Aerokit</em>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                        
+                                  <div class="parts-desc-select-list-box swiper">
+                                    <div class="parts-desc-select-lists swiper-wrapper">
+                                      <div class="parts-desc-select-list active swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Tralier Connector</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Trailer connector is placed at the rear for easy connection, engineered to offer a better trucking experience.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Tractor Coupler</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Applied North American HOLLAND Company Fifth Wheel. Easy sliding structure with air cylinder.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="parts-desc-select-list swiper-slide">
+                                        <div class="parts-desc-select-button">
+                                          <div class="select-button">
+                                            <span class="text">Aerokit</span>
+                                          </div>
+                                        </div>
+                                        <div class="parts-desc-select-content-box">
+                                          <div class="parts-desc-select-desc">
+                                            <p>Provides a small boost to fuel efficiency by reducing air resistance.</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Safety -->
+                <section id="safety" class="section-container section-safety">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Safety</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Tested and Proven</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="section-visual-box">
+                        <div class="section-visual">
+                          <div class="section-visual-front">
+                            <div class="background use-pc" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-safety-pc.webp" data-alt="Hyundai XCIENT Fuel Cell Tractor on a sharp curve"></div>
+                            <div class="background use-mo" data-image-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-safety-mo.webp" data-alt="Hyundai XCIENT Fuel Cell Tractor on a sharp curve"></div>
+                          </div>
+                          <div class="section-visual-back">
+                            <img width="1920px" height="757px" class="use-pc" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-safety-pc.webp"  alt="Hyundai XCIENT Fuel Cell Tractor on a sharp curve" />
+                            <img width="375px" height="568px" class="use-mo" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-safety-mo.webp" alt="Hyundai XCIENT Fuel Cell Tractor on a sharp curve" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="safety-Block">
+
+                        <!-- prettier-ignore -->
+                        @@loop("../block/safetyBlock.html", [
+                          {
+                            "align" : "normal",
+                            "imageDeco" : false,
+                            "title" : "Satety Assistance on XCIENT",
+                            "accordian" : [
+                              {
+                                "property" : "active",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-vehicle-dynamic-control-pc.webp",
+                                "alt": "Vehicle Dynamic Control (VDC)",
+                                "title" : "Vehicle Dynamic Control (VDC)",
+                                "desc" : "In slippery conditions, VDC supports optimum vehicle stability by detecting traction issues and managing torque at each wheel to help maintain control.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-easy-hill-start-system-pc.webp",
+                                "alt": "Easy Hill Start System (EHS)",
+                                "title" : "Easy Hill Start System (EHS)",
+                                "desc" : "EHS prevents the vehicle from rolling back when starting again on steep slopes.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-improved-crash-safet-pc.webp",
+                                "alt": "Improved Crash Safety",
+                                "title" : "Improved Crash Safety",
+                                "desc" : "When the unavoidable does happen, power to the high voltage cables is automatically cut off, and the hydrogen tank is shut off to minimize the risk of electric shock and secondary events.",
+                              },
+                            ]
+                          },
+                          {
+                            "align" : "reverse",
+                            "imageDeco" : true,
+                            "title" : "For Driver’s Safety",
+                            "accordian" : [
+                              {
+                                "property" : "active",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-improved-visibility-pc.webp",
+                                "alt": "Improved Visibility",
+                                "title" : "Improved Visibility",
+                                "desc" : "The cab-over design delivers significant advantages for the driver, including superior visibility, minimized blind spots, and easier maneuvering in challenging environments.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-weight-distribution-display-pc.webp",
+                                "alt": "Weight-Distribution Display",
+                                "title" : "Weight-Distribution Display",
+                                "desc" : "Front and rear air-cushioned suspension maintains vehicle stability for improved ride comfort and allows the cargo bed height to be adjusted for easier loading and unloading.",
+                              },
+                              {
+                                "property" : "",
+                                "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-air-suspension-pc.webp",
+                                "alt": "Air Suspension",
+                                "title" : "Air Suspension",
+                                "desc" : "This feature helps you keep an eye on the cargo weight distribution over your front and rear axles for safer and more stable hauling.",
+                              },
+                            ]
+                          },
+                        ])
+                      </div>
+
+                    </div>
+
+                    <div class="section-bottom">
+                      <div class="deco-visual-box">
+                        <div class="deco-visual-box-left">
+                          <div class="deco-visual-image">
+                            <img width="450px" height="450px" class="lazy" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-crossing-a-bridge-safety-pc.webp" alt="Hyundai XCIENT Fuel Cell Tractor crossing a bridge in the city" />
+                          </div>
+                          <div class="deco-visual-image">
+                            <img width="450px" height="450px" class="lazy" data-src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-truck-driver-safety-pc.webp" alt="Truck driver looking out the window" />
+                          </div>
+                        </div>
+
+                        <div class="deco-visual-box-right">
+                          <div class="deco-visual-desc-box">
+                            <div class="title-box">
+                              <h3>Safety Comes First</h3>
+                            </div>
+                            <div class="deco-visual-desc">
+                              <p>The safest tractor is the one most capable of avoiding accidents. XCIENT Fuel Cell proves its reliability with millions of colocked miles, supported by advanced technology.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Gallery -->
+                <section id="gallery" class="section-container section-gallery">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Gallery</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Good for the Planet, Even Better for You</p>
+                      </div>
+                    </div>
+
+                    <div class="section-middle">
+                      <div class="gallery-block-container tab-container">
+                        <div class="gallery-block-area">
+                          <div class="gallery-block-top">
+                            <div class="gallery-block-tab-box tab-button-box">
+                              <button type="button" class="tab active">
+                                <span>Interior</span>
+                              </button>
+                              <button type="button" class="tab">
+                                <span>Exterior</span>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div class="gallery-block-middle">
+                            <div class="gallery-block-content-box tab-content">
+                              @@include("../block/galleryBlock.html",  {
+                                "type"  : "interior",
+                                "fullImage" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-interior-pc.webp",
+                                "fullImageAlt" : "Interior of Hyundai XCIENT Fuel Cell Tractor",
+                                "dot" : 5,
+                                "detailImage" : [
+                                  {
+                                    "property" : "group0",
+                                    "text" : "Command Center",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-command-center-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "text" : "Intuitive Touchscreen",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-intuitive-touchscreen-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "Truck “On” Alert",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-truck-on-alert-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "Reverse with Confidence",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-reverse-with-confidence-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "text" : "Push Start Button",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-push-start-button-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "text" : "Wireless Charging",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-wireless-charging-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "text" : "Auxiliary Break & Manual Shift",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-auxiliary-break-and-manual-shift-pc.webp"
+                                  },
+                                ],
+                                "overlay" : [
+                                  {
+                                    "property" : "group0",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-command-center-popup-pc.webp",
+                                        "alt" : "Command Center Popup",
+                                        "label" : "Command Center",
+                                        "desc"  : "Everything you need to know without interrupting everything you need to see – the cluster delivers all the important information through sharp easy- to-read graphics."
+                                      }
+                                    ]
+                                  },
+                                  { 
+                                    "property" : "group1",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-intuitive-touchscreen-popup-pc.webp",
+                                        "alt" : "Intuitive Touchscreen Popup",
+                                        "label" : "Intuitive Touchscreen",
+                                        "desc"  : "8-inch touchscreen is perfectly positioned at an angle for ease of use, provides infotainment and seamlessly connects your mobile device."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-truck-on-alert-popup-pc.webp",
+                                        "alt" : "Truck “On” Alert Popup",
+                                        "label" : "Truck “On” Alert",
+                                        "desc"  : "The XCIENT Fuel Cell is so silent and vibration free, you could exit the cab leaving it running. That’s why the drivers are alerted should they begin to exit the quietly running cab."
+                                      },
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-reverse-with-confidence-popup-pc.webp",
+                                        "alt" : "Reverse with Confidence Popup",
+                                        "label" : "Reverse with Confidence",
+                                        "desc"  : "An extra-wide-angle lens paired with the 8-inch screen assures that drivers will be able to see and manage almost any obstacle behind the XCIENT Fuel Cell."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-push-start-button-popup-pc.webp",
+                                        "alt" : "Push Start Button Popup",
+                                        "label" : "PUSH START BUTTON",
+                                        "desc"  : "If you have the key somewhere in your pocket, no need to look for it. XCIENT Fuel Cell starts at a push of a button."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-wireless-charging-popup-pc.webp",
+                                        "alt" : "Wireless Charging Popup",
+                                        "label" : "WIRELESS CHARGING",
+                                        "desc"  : "Integrated wireless mobile phone charging eliminates your repeating chores of finding, pulling and plugging the cables into your smartphone. Just place it in the storage, where it will charge while you play your favorite tunes."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-auxiliary-break-and-manual-shift-popup-pc.webp",
+                                        "alt" : "Auxiliary Break & Manual Shift Popup",
+                                        "label" : "AUXILIARY BRAKE & MANUAL SHIFT",
+                                        "desc"  : "Control the braking with your fingertips by counter rotating the transmission fluid. Prevents wear to the footbrake and driver fatigue caused by excessive pedal operation."
+                                      },
+                                    ]
+                                  },
+                                ]
+                              })
+
+                              <!-- prettier-ignore -->
+                              @@include("../block/galleryBlock.html",  {
+                                "type"  : "exterior",
+                                "fullImage" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-exterior-pc.webp",
+                                "fullImageAlt" : "Exterior of Hyundai XCIENT Fuel Cell Tractor",
+                                "dot" : 8,
+                                "detailImage" : [
+                                  {
+                                    "property" : "group0",
+                                    "text" : "LED Headlamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-led-headlamps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group0",
+                                    "text" : "Fog Lamps and Daytime Running Lamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-fog-lamps-and-daytime-running-lamps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "text" : "Fixed Step Bumper",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-fixed-step-bumper-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "text" : "Roof Fairing Spoiler",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-roof-fairing-spoiler-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "text" : "V-shaped Matte Chrome Garnish",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-v-shaped-matte-chrome-garnish-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "text" : "Body Colored Outside Mirrors",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-body-colored-outside-mirrors-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "text" : "Easy Access Door Steps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-easy-access-door-steps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "text" : "LED Rear Combination Tail Lamps",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-led-rear-combination-tail-lamps-pc.webp"
+                                  },
+                                  {
+                                    "property" : "group7",
+                                    "text" : "Side Step",
+                                    "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-side-step-up-pc.webp"
+                                  },
+                                ],
+                                "overlay" : [
+                                  {
+                                    "property" : "group0",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-led-headlamps-popup-pc.webp",
+                                        "alt" : "LED Headlamps Popup",
+                                        "label" : "LED HEADLAMPS",
+                                        "desc"  : "Durable LED headlamps offer the best possible illumination with less electricity consumption."
+                                      },
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-fog-lamps-and-daytime-running-lamps-popup-pc.webp",
+                                        "alt" : "Fog Lamps and Daytime Running Lamps Popup",
+                                        "label" : "Fog Lamps and Daytime Running Lamps",
+                                        "desc"  : "Lights up the road ahead for improved visibility."
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group1",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-fixed-step-bumper-popup-pc.webp",
+                                        "alt" : "Fixed Step Bumper Popup",
+                                        "label" : "FIXED STEP BUMPER",
+                                        "desc"  : "Steps provide secure footholds for easy windshield access."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group2",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-roof-fairing-spoiler-popup-pc.webp",
+                                        "alt" : "Roof Fairing Spoiler Popup",
+                                        "label" : "ROOF FAIRING / SPOILER",
+                                        "desc"  : "Curvy roof fairing reduces drag and improves mileage."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group3",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-v-shaped-matte-chrome-garnish-popup-pc.webp",
+                                        "alt" : "V-shaped Matte Chrome Garnish Popup",
+                                        "label" : "V-shaped Matte Chrome Garnish",
+                                        "desc"  : "Matte grey paint adds to the premium look and feel of the front face."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group4",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-body-colored-outside-mirrors-popup-pc.webp",
+                                        "alt" : "Body Colored Outside Mirrors Popup",
+                                        "label" : "Body Colored Outside Mirrors",
+                                        "desc"  : "Extra details with body color matching side mirrors."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group5",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-easy-access-door-steps-popup-pc.webp",
+                                        "alt" : "Easy Access Door Steps Popup",
+                                        "label" : "Easy Access Door Steps",
+                                        "desc"  : "Door steps help the drivers and passengers enter the cabin."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group6",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-led-rear-combination-tail-lamps-popup-pc.webp",
+                                        "alt" : "LED Rear Combination Tail Lamps Popup",
+                                        "label" : "LED REAR COMBINATION TAIL LAMPS",
+                                        "desc"  : "The rear tail lamps also use LED lamps to improve both visibility and lifespan."
+                                      },
+                                    ]
+                                  },
+                                  {
+                                    "property" : "group7",
+                                    "data" : [
+                                      {
+                                        "image" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-side-step-pop-up-pc.webp",
+                                        "alt" : "Side Step Popup",
+                                        "label" : "LED REAR COMBINATION TAIL LAMPS",
+                                        "desc"  : "The rear tail lamps also use LED lamps to improve both visibility and lifespan."
+                                      },
+                                    ]
+                                  },
+                                ]
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="section-bottom">
+                      <div class="gallery-collect-container">
+                        <div class="gallery-collect-area">
+                          <div class="gallery-collect-top">
+                            <div class="gallery-collect-top-left">
+                              <div class="title-box">
+                                <h3>
+                                  Contemporary Design for<br/>
+                                  Total Driver Comfort
+                                </h3>
+                              </div>
+                            </div>
+                            <div class="gallery-collect-top-right">
+                              <div class="desc-box">
+                                <div class="desc-title-box">
+                                  <span>XCIENT Design Gallery</span>
+                                </div>
+                                <div class="desc-text-box">
+                                  <p>
+                                    Silent. Comfortable. As revolutionary as fuel cells are, the cabin of the XCIENT Fuel Cell Tractor is equally revolutionary for drivers. Every detail is engineered around the driver to promote attentiveness, and minimize effort.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="gallery-collect-middle">
+                            <!-- prettier-ignore -->
+                            @@include("../block/galleryCollectBlock.html", {
+                              "data" : [
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-truckdriver-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "445px",
+                                  "text" : "A truck driver sitting comfortably in the Hyundai XCIENT Fuel Cell Tractor",
+                                  "property": "left1",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-refueling-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "203px",
+                                  "text" : "Driver refueling Hyundai XCIENT Fuel Cell Tractor",
+                                  "property": "top",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-industrial-complex-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "324px",
+                                  "text" : "Hyundai XCIENT Fuel Cell Tractor running next to an industrial complex",
+                                  "property": "right1",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-with-wind-turbin-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "203px",
+                                  "text" : "Hyundai XCIENT Fuel Cell Tractor passing by wind turbine",
+                                  "property": "left2",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-sunset-design-pc.webp",       
+                                  "width": "450px",
+                                  "height": "445px",
+                                  "text" : "Hyundai XCIENT Fuel Cell Tractor at sunset",
+                                  "property": "bottom",
+                                },
+                                {
+                                  "path" : "products/hyundai-ecv-products-xcient-fuel-cell-tractor-aerokit-design-pc.webp",
+                                  "width": "450px",
+                                  "height": "324px",
+                                  "text" : "Hyundai XCIENT Fuel Cell Tractor’s Aerokit",
+                                  "property": "right2",
+                                },
+                              ]
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Specifications -->
+                <section id="specification" class="section-container section-specification">
+                  <div class="section-area">
+                    <div class="section-top">
+                      <div class="title-box scroll-ani ani-bottom">
+                        <h2 class="title">Specifications</h2>
+                      </div>
+                      <div class="sub-text-box scroll-ani ani-bottom">
+                        <p class="text">Safer Driving with Advanced Technology</p>
+                      </div>
+                    </div>
+                    <div class="section-middle">
+                      <div class="spec-tab-container">
+                        <div class="spec-tab-content">
+                          <div class="spec-container">
+                            <div class="anchor-menu">
+                              <ul>
+                                <li class="selected"><a href="#keyspecs">Key Specs</a></li>
+                                <li><a href="#fuelcellspecs">Fuel Cell Specs</a></li>
+                                <li><a href="#resources">Resources</a></li>
+                              </ul>
+                            </div>
+                            <div id="keyspecs" class="anchor-content key-specs-box">
+                              <div class="tab-content">
+                                <div class="specification-image-box">
+                                  <div class="specification-image"> 
+                                    <img width="1315px" height="403px" class="use-pc" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-spec-pc.webp" alt="Specs of Hyundai XCIENT Fuel Cell Tractor" />
+                                    <img width="300px" height="369px"class="use-mo" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-spec-mo.webp" alt="Specs of Hyundai XCIENT Fuel Cell Tractor" />
+                                  </div>
+                                </div>
+                                <div class="specs-lists">
+                                  <h3 class="specs-label">Key Specs</h3>
+                                  <div class="specs-row-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../component/specs_row.html", {
+                                        "specsHeader" : "XCIENT Fuel Cell Tractor",
+                                        "list" : [
+                                          {
+                                            "leftValue" : "Cab type",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": 'Day Cab',
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "leftValue" : "Configuration",
+                                            "rightType" : "default",
+                                            "rightValue" : [
+                                              {
+                                                "value": '6X4',
+                                              }
+                                            ]
+                                          },
+                                        ]
+                                    })
+                                    <!-- prettier-ignore -->
+                                    @@include("../component/specs_row.html", {
+                                      "specsHeader" : "Dimension",
+                                      "list" : [
+                                        {
+                                          "leftValue" : "Wheelbase",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '223 inch',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Overall length",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '346 inch',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Overall width",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '102 inch',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Overall height",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '161 inch',
+                                            }
+                                          ]
+                                        },
+                                      ]
+                                  })
+                                    <!-- prettier-ignore -->
+                                    @@include("../component/specs_row.html", {
+                                    "specsHeader" : "Weight",
+                                    "list" : [
+                                      {
+                                        "leftValue" : "Gross combination weight",
+                                        "rightType" : "default",
+                                        "rightValue" : [
+                                          {
+                                            "value": '82,000 lbs',
+                                          }
+                                        ]
+                                      },
+                                    ]
+                                })
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+      
+                            <div id="fuelcellspecs" class="anchor-content fuel-cell-specs-box">
+                              <div class="fuel-cell-image-box">
+                                <img width="895px" height="653px" class="use-pc-img" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-fuel-cell-specs-pc.webp" alt="Fuel Cell Specs of Hyundai XCIENT Fuel Cell Tractor" />
+                                <img width="335px" height="332px" class="use-tablet-img" src="../../assets/images/products/hyundai-ecv-products-xcient-fuel-cell-tractor-fuel-cell-specs-mo.webp" alt="Fuel Cell Specs of Hyundai XCIENT Fuel Cell Tractor" />
+                                <div class="counter-box">
+                                  <div class="counter-01">
+                                    <span class="counter-label">Motor</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">350</span> kW</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-02">
+                                    <span class="counter-label">Hydrogen Tank</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">68.6</span> kg H₂</div>
+                                      <div class="small-text">(700 bar)</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-03">
+                                    <span class="counter-label">Battery</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">72</span> kWh</div>
+                                      <div class="small-text">(24 kWh x 3ea)</div>
+                                    </div>
+                                  </div>
+                                  <div class="counter-04">
+                                    <span class="counter-label">Fuel Cell System</span>
+                                    <div class="counter-value">
+                                      <div><span class="counter">180</span> kW</div>
+                                      <div class="small-text">(90 kW x 2ea)</div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="specs-lists">
+                                <h3 class="specs-label">Fuel Cell Specs</h3>
+                                <div class="specs-row-box">
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                      "specsHeader" : "Powertrain",
+                                      "list" : [
+                                        {
+                                          "leftValue" : "Fuel cell system",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '180 kW (2 x 90 kW each)',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Battery",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '72 kWh (3 x 24 kWh each)',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Motor",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '350 kW',
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "leftValue" : "Transmission",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '5-Speed Automatic Transmission',
+                                            }
+                                          ]
+                                        },
+                                      ]
+                                  })
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                    "specsHeader" : "Hydrogen tanks",
+                                    "list" : [
+                                      {
+                                        "leftValue" : "Filling pressure",
+                                        "rightType" : "default",
+                                        "rightValue" : [
+                                          {
+                                            "value": '700 Bar',
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "leftValue" : "Capacity",
+                                        "rightType" : "default",
+                                        "rightValue" : [
+                                          {
+                                            "value": '68.6 kg',
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  })
+                                  <!-- prettier-ignore -->
+                                  @@include("../component/specs_row.html", {
+                                      "specsHeader" : "Performance",
+                                      "list" : [
+                                        {
+                                          "leftValue" : "All-electric range (AER)",
+                                          "rightType" : "default",
+                                          "rightValue" : [
+                                            {
+                                              "value": '450 miles with full load',
+                                            }
+                                          ]
+                                        },
+                                      ]
+                                  })
+                                </div>
+                              </div>
+                            </div>
+      
+                            <div id="resources" class="anchor-content resources-box">
+                              <div class="resources-content-title">
+                                <h4 class="content-title">Resources</h4>
+                                <p class="desc">Download</p>
+                              </div>
+
+                              <div class="resources-lists">
+                                <!-- prettier-ignore -->
+                                @@loop("../block/resourcesBlock.html", [
+                                  {
+                                    "type" : "type2",
+                                    "resourceTitle" : "Catalog (Spread)",
+                                    "image" : "hyundai-ecv-products-ecv-spread-brochure-pc.webp",
+                                    "property" : {
+                                      "attr" : "download",
+                                      "type" : "download",
+                                      "text" : "Download",
+                                      "path" : "../../assets/file/XCIENT-Fuel-Cell-Tractor-Catalog-Spread-EN.pdf",
+                                    }
+                                  },
+                                  {
+                                    "type" : "type3",
+                                    "resourceTitle" : "Digital Catalog",
+                                    "image" : "hyundai-ecv-products-ecv-digital-brochure-pc.webp",
+                                    "property" : {
+                                      "attr" : 'target="_blank"',
+                                      "type" : "view",
+                                      "text" : "View online",
+                                      "path" : "https://indd.adobe.com/view/71fb7280-3a2d-44c8-ac56-7de751dd91d3",
+                                    }
+                                  },
+                                  {
+                                    "type" : "type4",
+                                    "resourceTitle" : "Emergency Respond Guide",
+                                    "image" : "hyundai-ecv-products-ecv-erg-pc.webp",
+                                    "property" : {
+                                      "attr" : "download",
+                                      "type" : "download",
+                                      "text" : "Download",
+                                      "path" : "../../assets/file/XCIENT-Fuel-Cell-Tractor-Catalog-ERG-EN.pdf",
+                                    }
+                                  },
+                                ])
+                              </div>
+      
+                              <div class="resources-desc-box">
+                                <div class="desc-label">
+                                  <span>Disclaimers</span>
+                                </div>
+                                <div class="desc-box">
+                                  <p class="desc">All designs, colors, features, and specifications shown and described in the contents of this website are provided for a general customer understanding and may differ from the actual product.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+              </div>
+            </section>
+            <!-- //content middle -->
+
+            <!-- content bottom -->
+            <section class="product-content-bottom">
+              <!-- Contact Us -->
+              <!-- prettier-ignore -->
+            @@include("../component/prodcut_contact_us.html", {
+                "ClassName" : "product-tractor"
+              })
+              <!-- [수정230906] 구조변경 링크연결 -->
+              <!-- prettier-ignore -->
+              @@include("../component/product_bottom_thumb_box.html",{
+                "thumb": [
+                    {
+                      "property" : "black",
+                      "url": "products_fuel_cell_system.html",
+                      "src": "hyundai-ecv-products-fuel-cell-system-explore-more-pc.webp",
+                      "alt" : "Explore more about Hyundai Fuel Cell System",
+                      "title": "HTWO Fuel Cell System",
+                    },
+                    {
+                      "property" : null,
+                      "url": "products_fuel_cell_truck.html",
+                      "src": "hyundai-ecv-products-xcient-fuel-cell-truck-explore-more-pc.webp",
+                      "alt" : "Explore more about Hyundai XCIENT Fuel Cell Truck",
+                      "title": "XCIENT Fuel Cell Truck",
+                    }
+                  ]
+                }
+              )
+            </section>
+            <!-- //content bottom -->
+          </div>
+          <!-- [수정220831] 추가 -->
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : false,
+      "masonry" : true,
+      "parallax" : true
+    })
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D7HQSR4TN5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-D7HQSR4TN5');
+    </script>
+    
+  </body>
+</html>

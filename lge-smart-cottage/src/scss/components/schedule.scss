@@ -1,0 +1,187 @@
+.calendar-box {
+  position: relative;
+  width: 53rem;
+  margin: auto;
+  .btn-setting,
+  .react-datepicker__today-button {
+    cursor: pointer;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    padding: 0.1rem 0.8rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $gray-500;
+    line-height: 2rem;
+  }
+  .btn-setting {
+    right: 0;
+  }
+  .react-datepicker__today-button {
+    @include flex(row, center, center);
+    left: 0;
+    background-color: transparent;
+    transition: background 0.15s;
+    &:hover:not(:disabled) {
+      background-color: rgba($gray-900, 0.1);
+    }
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+.react-datepicker {
+  .react-datepicker__aria-live {
+    display: block;
+    overflow: hidden;
+    height: 0;
+    font-size: 0;
+  }
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    display: block;
+    position: absolute;
+    top: -0.1rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 0;
+  }
+  .react-datepicker__navigation--previous {
+    left: calc(50% - 7.5rem);
+    transform: translateX(-100%);
+    background: asset-image('icon/ic_pc_co_before.svg') no-repeat center / contain;
+  }
+  .react-datepicker__navigation--next {
+    right: calc(50% - 7.5rem);
+    transform: translateX(100%);
+    background: asset-image('icon/ic_pc_co_next.svg') no-repeat center / contain;
+  }
+  .react-datepicker__current-month {
+    width: 15rem;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: 700;
+    color: $black;
+    line-height: 3rem;
+    text-align: center;
+  }
+  .react-datepicker__day-names {
+    @include flex(row, center, flex-start);
+    gap: 3rem;
+    margin-top: 4rem;
+    .react-datepicker__day-name {
+      width: 5rem;
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: $gray-400;
+      line-height: 2.8rem;
+      text-align: center;
+    }
+  }
+  .react-datepicker__month {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 2rem;
+  }
+  .react-datepicker__week {
+    display: flex;
+    gap: 3rem;
+  }
+  .react-datepicker__day {
+    cursor: pointer;
+    @include flex(row, center, center);
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1.6rem;
+    border: 1px solid transparent;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $gray-500;
+    line-height: 2.8rem;
+    text-align: center;
+    &.react-datepicker__day--disabled {
+      color: $gray-100;
+    }
+
+    &.react-datepicker__day--highlighted {
+      background-color: $white;
+      border-color: $accent;
+      color: $accent;
+    }
+
+    &.react-datepicker__day--selected {
+      background-color: $accent;
+      color: $white;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .calendar-box {
+    max-width: 28.8rem;
+    width: 100%;
+  }
+  .react-datepicker {
+    .react-datepicker__navigation--previous,
+    .react-datepicker__navigation--next {
+      display: block;
+      position: absolute;
+      top: 0.1rem;
+      width: 2rem;
+      height: 2rem;
+      font-size: 0;
+    }
+    .react-datepicker__navigation--previous {
+      left: calc(50% - 6rem);
+      background: asset-image('icon/ic_mo_co_before.svg') no-repeat center / contain;
+    }
+    .react-datepicker__navigation--next {
+      right: calc(50% - 6rem);
+      background: asset-image('icon/ic_mo_co_next.svg') no-repeat center / contain;
+    }
+    .react-datepicker__current-month {
+      width: 12rem;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+    .react-datepicker__day-names {
+      gap: 0.6rem;
+      margin-top: 1.6rem;
+      .react-datepicker__day-name {
+        flex: 1;
+        width: auto;
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+    }
+    .react-datepicker__month {
+      gap: 0;
+      margin-top: 0.8rem;
+    }
+    .react-datepicker__week {
+      gap: 0.6rem;
+    }
+    .react-datepicker__day {
+      aspect-ratio: 1;
+      flex: 1;
+      width: auto;
+      height: auto;
+      border-radius: 1.2rem;
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+@media #{$mobile_device} {
+  .calendar-box {
+    .react-datepicker__today-button {
+      &:hover:not(:disabled) {
+        background-color: transparent;
+      }
+    }
+  }
+}

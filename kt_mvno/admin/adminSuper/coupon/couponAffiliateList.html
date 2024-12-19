@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "제휴 쿠폰 관리" , "headProjectName": "| 쿠폰 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>제휴 쿠폰 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>쿠폰 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>제휴 쿠폰 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      쿠폰명 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">쿠폰명</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>유효 쿠폰 1</span></button>
+                <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>종료 쿠폰 3</span></button>
+              </div>
+              <div class="tabContainer">
+                <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>제휴 쿠폰 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            유효 쿠폰 목록
+                          </caption>
+                          <colgroup>
+                            <col style="width: 70px" />
+                            <col style="width: 120px" />
+                            <col />
+                            <col />
+                            <col style="width: 120px" />
+                            <col style="width: 160px" />
+                            <col style="width: 88px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">No</th>
+                              <th scope="col">쿠폰코드</th>
+                              <th scope="col">쿠폰명</th>
+                              <th scope="col">쿠폰 등록 가능기간</th>
+                              <th scope="col">쿠폰 발송 대상</th>
+                              <th scope="col">쿠폰 발급일</th>
+                              <th scope="col">상세보기</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Z001</td>
+                              <td>밀리의서재 1개월 이용권</td>
+                              <td>2023-08-01~2023-12-31</td>
+                              <td>1232</td>
+                              <td>2023-08-11</td>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>상세보기</span></button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>제휴 쿠폰 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            종료 쿠폰 목록
+                          </caption>
+                          <colgroup>
+                            <col style="width: 70px" />
+                            <col style="width: 120px" />
+                            <col />
+                            <col />
+                            <col style="width: 120px" />
+                            <col style="width: 160px" />
+                            <col style="width: 88px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">No</th>
+                              <th scope="col">쿠폰코드</th>
+                              <th scope="col">쿠폰명</th>
+                              <th scope="col">쿠폰 등록 가능기간</th>
+                              <th scope="col">쿠폰 발송 대상</th>
+                              <th scope="col">쿠폰 발급일</th>
+                              <th scope="col">상세보기</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td>Z001</td>
+                              <td>밀리의서재 1개월 이용권</td>
+                              <td>2023-08-01~2023-12-31</td>
+                              <td>1232</td>
+                              <td>2023-08-11</td>
+                              <td>
+                                <div class="buttonArea">
+                                  <button type="button" class="btnUnderLine"><span>상세보기</span></button>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="contentBottom">
+                      <div class="pagenation">
+                        <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

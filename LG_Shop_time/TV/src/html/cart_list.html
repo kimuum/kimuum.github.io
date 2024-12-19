@@ -1,0 +1,268 @@
+@@include('head.html', {
+'title': 'CART'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      <div class="content-container cart">
+        <div class="sub-title-container">
+          <button type="button" class="btn-detail-back"></button>
+          <div class="sub-main-title">CART</div>
+        </div>
+        <div class="sub-content-container">
+          <!-- cart contents -->
+          <div class="sub-summary-area">
+            <div class="summary-list-middle">
+              <div class="list-title-box">
+                <span class="title">SUBTOTAL</span>
+                <span class="counter">3 ITMES</span>
+              </div>
+              <div class="list-items-box">
+                <div class="list-items-inner" style="transform: translateY(0px);"><!-- 내용 스크롤 이동 시 translateY값으로 조절 -->
+                  <div class="row-item">
+                    <span class="title">SUBTOTAL</span>
+                    <span>$84.82</span>
+                  </div>
+                  <!-- 1.07v 동기화 20230921 옵션 추가 -->
+                  <div class="row-item">
+                    <span class="title">OPTIONS TOTAL</span>
+                    <span>$11.00</span>
+                  </div>
+                  <!-- //1.07v 동기화 20230921 옵션 추가 -->
+                  <div class="row-item">
+                    <span class="title">S&H</span>
+                    <span>$24.97</span>
+                  </div>
+                </div>
+              </div>
+              <div class="list-total-box">
+                <div class="row-total">
+                  <!-- 1.07v 동기화 20230921 문구 추가 -->
+                  <div class="total-title-box">
+                    <span class="total-title">TOTAL</span>
+                    <span class="total-label">(Before Tax)</span>
+                  </div>
+                  <!-- //1.07v 동기화 20230921 문구 추가 -->
+                  <span class="total-price">$109.79</span>
+                </div>
+              </div>
+            </div>
+            <div class="summary-list-bottom">
+              <div class="list-info-box">
+                <ul class="bullet-list">
+                  <li>Final price will be available on your Order Review before you place order.</li>
+                  <li>By proceeding, you agree to <br>ShopTime’s <a href="javascript:void(0)" class="underline-blue">General Terms of Use</a> and <br>acknowledge the <a href="javascript:void(0)" class="underline-blue">Privacy Statement</a></li>
+                </ul>
+                <!-- v1.10 동기화 QR코드 삭제 -->
+              </div>
+              <div class="button-box flex-column">
+                <!-- 
+                      기본값 클래스(normal) : btn-solid-gray
+                      활성화 클래스 : focused
+                      비활성화 클래스 : disabled
+                    -->
+                <button type="button" class="btn-solid-gray"><span>CHECKOUT</span></button>
+                <!-- v1.10 동기화 버튼 삭제 -->
+              </div>
+            </div>
+          </div>
+          <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+          <!-- 디자인 스크롤바 컨테이너 : scroll-ui-container -->
+          <div class="sub-content-area scroll-ui-container">
+            <!-- 디자인 스크롤바 -->
+            <div class="scroll-ui-area">
+              <div class="scroll-bar" style="top: 0; height: 70%;"></div>
+            </div>
+            <!-- //디자인 스크롤바 -->
+            <div class="scroll-box-area" style="transform: translateY(0px);"><!-- 스크롤 동작 : translateY -->
+              <div class="order-list-container">
+                <!-- item -->
+                <div class="product-item-area">
+                  <div class="product-item-top">
+                    <div class="item-brand-box">
+                      <span class="icon-partners"><img src="./images/ic_partners_qvc.png" alt="qvc"></span>
+                      <span class="item-name">QVC</span>
+                      <span class="item-counter">(1 items)</span>
+                    </div>
+                    <div class="item-total-box">
+                      <span class="price-item">Product Total $ 99,999.99 + Option $ 99,999.99 + S&H $ 99,999.99 </span>
+                      <div class="price-wrap">
+                        <span class="total-title">Total</span>
+                        <span class="total-price">($41.59)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-middle">
+                    <div class="item-preview-box">
+                      <div class="preview-item-header">
+                        <div class="checkbox focused">
+                          <input type="checkbox" name="chk-01" id="chk-01" checked>
+                          <label for="chk-01" class="check-icon">ID : A565145</label>
+                        </div>
+                      </div>
+                      <div class="preview-item-body">
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          <!-- v1.10 동기화 재고 표시 삭제 -->
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">
+                            Farmer Jon`s 25-ct Mini Bags Of Microwave Popcorn in Flavor Choice Area
+                          </div>
+                          <div class="product-text">
+                            Sliver Metallic / XL
+                          </div>
+                          <div class="product-desc">
+                            <span class="product-price">$38.09</span>
+                            <span class="product-discount">$41.99</span>
+                            <span class="product-bar">OPTION: $5.50</span>
+                            <span class="product-bar">S&H: $3.50</span>
+                          </div>
+                          <div class="row-input-box">
+                            <!-- 1.07v 동기화 20230919 -->
+                            <div class="counter-btn-box">
+                              <!-- 
+                                    사용불가 클래스 : disabled
+                                    초점 클래스 : focused
+                                  -->
+                              <button type="button" class="btn-minus disabled"><span>-</span></button>
+                              <span class="count-text">1</span>
+                              <button type="button" class="btn-plus focused"><span>+</span></button>
+                            </div>
+                            <!-- //1.07v 동기화 20230919 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-control-box">
+                      <button type="button" class="btn-delete"><span class="icon-trash"></span></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //item -->
+                <!-- item -->
+                <div class="product-item-area">
+                  <div class="product-item-top">
+                    <div class="item-brand-box">
+                      <span class="icon-partners"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></span>
+                      <span class="item-name">Amazon</span>
+                      <span class="item-counter">(2 items)</span>
+                    </div>
+                    <div class="item-total-box">
+                      <span class="price-item">Product Total $ 99,999.99 + Option $ 99,999.99 + S&H $ 99,999.99 </span>
+                      <div class="price-wrap">
+                        <span class="total-title">Total</span>
+                        <span class="total-price">($41.59)</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-item-middle">
+                    <div class="item-preview-box">
+                      <div class="preview-item-header">
+                        <div class="checkbox">
+                          <input type="checkbox" name="chk-02" id="chk-02">
+                          <label for="chk-02" class="check-icon">ID : A565145</label>
+                        </div>
+                      </div>
+                      <div class="preview-item-body">
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          <!-- v1.10 동기화 재고 표시 삭제 -->
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">
+                            Farmer Jon`s 25-ct Mini Bags Of Microwave Popcorn in Flavor Choice Area
+                          </div>
+                          <div class="product-text">
+                            Sliver Metallic / XL
+                          </div>
+                          <div class="product-desc">
+                            <span class="product-price">$38.09</span>
+                            <span class="product-discount">$41.99</span>
+                            <span class="product-bar">OPTION: $5.50</span>
+                            <span class="product-bar">S&H: $3.50</span>
+                          </div>
+                          <div class="row-input-box">
+                            <!-- 1.07v 동기화 20230919 -->
+                            <div class="counter-btn-box">
+                              <!-- 
+                                  사용불가 클래스 : disabled
+                                  초점 클래스 : focused
+                                -->
+                              <button type="button" class="btn-minus disabled"><span>-</span></button>
+                              <span class="count-text">1</span>
+                              <button type="button" class="btn-plus disabled"><span>+</span></button>
+                            </div>
+                            <!-- //1.07v 동기화 20230919 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-control-box">
+                      <button type="button" class="btn-delete"><span class="icon-trash"></span></button>
+                    </div>
+                  </div>
+                  <div class="product-item-middle">
+                    <div class="item-preview-box">
+                      <div class="preview-item-header">
+                        <div class="checkbox">
+                          <input type="checkbox" name="chk-03" id="chk-03">
+                          <label for="chk-03" class="check-icon">ID : A565145</label>
+                        </div>
+                      </div>
+                      <div class="preview-item-body">
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          <!-- v1.10 동기화 재고 표시 삭제 -->
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">
+                            Farmer Jon`s 25-ct Mini Bags Of Microwave Popcorn in Flavor Choice Area
+                          </div>
+                          <div class="product-text">
+                            Sliver Metallic / XL
+                          </div>
+                          <div class="product-desc">
+                            <span class="product-price">$38.09</span>
+                            <span class="product-discount">$41.99</span>
+                            <span class="product-bar">OPTION: $5.50</span>
+                            <span class="product-bar">S&H: $3.50</span>
+                          </div>
+                          <div class="row-input-box">
+                            <!-- 1.07v 동기화 20230919 -->
+                            <div class="counter-btn-box">
+                              <!-- 
+                                  사용불가 클래스 : disabled
+                                  초점 클래스 : focused
+                                -->
+                              <button type="button" class="btn-minus disabled"><span>-</span></button>
+                              <span class="count-text">1</span>
+                              <button type="button" class="btn-plus focused"><span>+</span></button>
+                            </div>
+                            <!-- //1.07v 동기화 20230919 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item-control-box">
+                      <button type="button" class="btn-delete"><span class="icon-trash"></span></button>
+                    </div>
+                  </div>
+                </div>
+                <!-- //item -->
+              </div>
+            </div>
+          </div>
+          <!-- //cart contents -->
+          <!-- //[SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

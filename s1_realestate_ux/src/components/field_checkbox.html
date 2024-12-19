@@ -1,0 +1,26 @@
+<div class="field field-checkbox @@required">
+  <!-- prettier-ignore -->
+  @@if(label) {
+  <div class="field-label">
+    <span class="text">@@label</span>
+    @@if(tooltip) { @@for(var i = 0; i < tooltip.length; i++) { @@include("../../components/tooltip.html",
+    `+(JSON.stringify(tooltip[i]))+`) } }
+  </div>
+  }
+  <div class="field-form">
+    <div class="checkbox-box">
+      <!-- prettier-ignore -->
+      @@for (var i = 0; i < checkbox.length; i++) {
+      <div class="checkbox">
+        <input
+          type="checkbox"
+          name="`+checkbox[i].name+`"
+          id="`+checkbox[i].name+`-`+ [i+1]  +`"
+          `+checkbox[i].disabled+`
+        />
+        <label for="`+checkbox[i].name+`-`+ [i+1] +`"><span class="checkbox-label">`+checkbox[i].label+`</span></label>
+      </div>
+      }
+    </div>
+  </div>
+</div>

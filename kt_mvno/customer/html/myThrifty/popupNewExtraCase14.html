@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Case14. 대표번호 조회, 시작일자+종료일자", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnExtraCase14" onclick="togglePopup('btnExtraCase14', 'popupExtraCase14')"><span>부가서비스 가입 신청</span></button>
+    </div>
+    <div class="popup popupBottomFixed show" id="popupExtraCase14" role="dialog" aria-labelledby="popupTitleExtraCase14" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleExtraCase14">부가서비스 가입 신청</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnExtraCase14', 'popupExtraCase14')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoTitle">신청 회선</div>
+              <div class="infoContent">
+                <div class="typePhoneLine">
+                  <div class="innerLogo">
+                    <div class="fieldBox">
+                      <div class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></div>
+                      <div class="lineBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "모두다 맘껏 11GB+",
+                          "price": null,
+                          "phoneNumber": "010-81**-*319",
+                          "label": true
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 회선 -->
+
+            <div class="applyInfoArea">
+              <div class="infoContent">
+                <div class="tableContainer normalBgTable captionShow">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        신청 부가서비스
+                        <span class="ir">- 부가서비스 명, 이용요금(VAT)포함</span>
+                      </caption>
+                      <colgroup>
+                        <col />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="alignCenter">부가서비스 명</th>
+                          <th scope="col" class="alignCenter">이용요금(VAT)포함</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="alignCenter">로밍 하루종일ON <br />투게더(서브)</td>
+                          <td class="alignCenter">일 5,500원</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 부가서비스 -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">신청 전 확인해주세요.</div>
+              <div class="infoContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">이용 기간을 선택 후 다음 화면에서 예상요금을 확인해주세요.</li>
+                  <li class="beforeDot">신청 후 데이터 미사용 시, 요금은 청구되지 않습니다.</li>
+                  <li class="beforeDot">고객님을 지정하신 해당 서비스의 대표회선 고객님의 휴대폰 번호 조회 후 신청 가능합니다.</li>
+                  <li class="beforeDot">투게더 고객번호로 지정 되었어도 해당 부가서비스의 (서브) 요금제에 별도로 가입해야 요금 적용이 가능합니다.</li>
+                </ul>
+              </div>
+            </div>
+            <!-- //신청 전 확인해주세요. -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">대표회선 번호 조회</div>
+              <div class="infoContent">
+                <div class="field fieldInput">
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" title="대표회선 번호 입력" placeholder="휴대폰 번호 입력(- 없이 입력)" />
+                    </div>
+                    <button type="button" class="btn"><span>조회</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //대표회선 번호 조회 -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">서비스 이용 날짜(한국시간 기준)</div>
+              <div class="infoContent">
+                <div class="blockBgGray">
+                  대표 회선 고객님이 설정한 이용 시간 :
+                  <!-- <p>2023.03.30 13:00 ~ 2023.03.31 13:00</p> -->
+                </div>
+              </div>
+            </div>
+            <!-- //서비스 이용 날짜(한국시간 기준) -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">시작일자</div>
+              <div class="flexDateArea">
+                <div class="fieldDatepicker hideInput" id="apply-datepicker-start-14">
+                  <div class="datePickerArea">
+                    <input type="text" class="singleDatePicker" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="시작일자">YYYY.MM.DD</button>
+                  </div>
+                </div>
+                <div class="fieldArea alignCenter">00시</div>
+              </div>
+            </div>
+            <!-- //시작일자 -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">종료일자</div>
+              <div class="flexDateArea">
+                <div class="fieldDatepicker hideInput" id="apply-datepicker-end-14">
+                  <div class="datePickerArea">
+                    <input type="text" class="singleDatePicker" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="종료일자">YYYY.MM.DD</button>
+                  </div>
+                </div>
+                <div class="fieldArea alignCenter">00시</div>
+              </div>
+            </div>
+            <!-- //종료일자 -->
+
+            <div class="applyInfoArea">
+              <div class="infoContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">대표회선 고객님께서 설정한 기간 내에서 이용 가능합니다.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- //applyCaseContainer -->
+        </div>
+        <!-- //popupMiddle -->
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>다음</span></button>
+          </div>
+        </div>
+        <!-- //popupBottom -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($(document).find('#apply-datepicker-start-14').length > 0 && $('#apply-datepicker-end-14').length > 0) {
+          getMultiDatePicker('start', '#apply-datepicker-start-14', '#apply-datepicker-end-14', 'yyyy.mm.dd');
+          getMultiDatePicker('end', '#apply-datepicker-start-14', '#apply-datepicker-end-14', 'yyyy.mm.dd');
+        }
+      });
+    </script>
+  </body>
+</html>

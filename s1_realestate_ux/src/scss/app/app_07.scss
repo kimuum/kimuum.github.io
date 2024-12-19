@@ -1,0 +1,68 @@
+//임직원 초대
+.invite-container {
+  .invite-top-box {
+    padding-top: 2rem;
+    button {
+      font-size: 1.6rem;
+    }
+  }
+  .invite-list-box {
+    margin-top: 4.8rem;
+    &:first-child {
+      margin-top: 4.2rem;
+    }
+    .title-box {
+      @include flex(row, space-between, center);
+      .title {
+        @include font(1.6rem, 700, $black);
+      }
+    }
+  }
+  .invite-list {
+    .field {
+      margin-top: 3.2rem;
+      .field-label {
+        margin-bottom: 0.8rem;
+      }
+    }
+    .field-desc {
+      @include font(1.2rem, 400, $color_7f7);
+      p::before {
+        display: none;
+      }
+    }
+  }
+  .invite-add-box {
+    @include flex(row, center, center);
+    margin-top: 3.2rem;
+    padding: 3.2rem 0;
+    border-top: 1px solid $color_ebe;
+    .btn-list-add {
+      @include flex(row, flex-start, center);
+      &::before {
+        content: '';
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+        background: asset-image('/app/ic_plus_18.svg') no-repeat center / 1.8rem;
+      }
+      span {
+        @include font(1.6rem, 400, $color_353);
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .invite-container {
+        .invite-list {
+          .field {
+            margin-top: 3.2rem;
+          }
+        }
+      }
+    }
+  }
+}

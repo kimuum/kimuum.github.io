@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "선불 잔액 조회 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 2차 페이지 고유클래스 : myThriftyPrepaidPlanDetail -->
+    <div class="wrap myThriftyPrepaidPlanDetail">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-10', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>선불 잔액 조회</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>선불 잔액 조회</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="하위 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea full">
+                <div class="summaryInner">
+                  <div class="detailTypeArea">
+                    <div class="fieldTop">
+                      <h3 class="fieldTitle01">선불 잔액 조회</h3>
+                    </div>
+                    <div class="fieldBottom" style="display: none">
+                      <div class="summaryDataWrap">
+                        <div class="summaryTitleArea">
+                          <div class="imgWrap">
+                            <img src="../../assets/images/bizlogo/thumbnail_mobing.png" alt="이용 통신사 kt M mobile" />
+                          </div>
+                          <strong class="summaryBigTitle">LTE SIMPLE</strong>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>현재 잔액</dt>
+                          <dd><span>2,890</span>원</dd>
+                        </dl>
+                        <p class="subSmallText">(유효기간 : 2022-07-04)</p>
+                      </div>
+                      <div class="tableContainer captionShow">
+                        <div class="tableArea">
+                          <table>
+                            <caption>
+                              기본제공량(차감 기준)
+                              <span class="ir">데이터(초과요율), 음성(초과요율), 문자(초과요율)</span>
+                            </caption>
+                            <!-- [VOS2차] 결함ID 1122777 수정 -->
+                            <colgroup>
+                              <col style="width: 24%; min-width: 11rem" />
+                              <col style="min-width: 13rem" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">데이터(초과요율)</th>
+                                <td class="alignRight">150GB(22.53원/MB)</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">음성(초과요율)</th>
+                                <td class="alignRight">0분(1.87원/초)</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">문자(초과요율)</th>
+                                <td class="alignRight">0건(22원/건)</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- [운영] 20230220 마이알뜰폰에 등록되어 있지 않은 선불요금제인 경우 -->
+                    <div class="fieldBottom">
+                      <div class="summaryDataWrap">
+                        <div class="infoBoxArea grayBox">
+                          <div class="infoAreaMiddle">
+                            <p>사용중이신 요금제는 마이알뜰폰에서 상세 정보를 제공할 수 없습니다.</p>
+                            <p>자세한 내용은 해당 요금제의 <a href="javascript:void(0);" class="linkUnderline colorPrimary">사업자 고객센터</a>로 문의하시기 바랍니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[운영] 20230220 마이알뜰폰에 등록되어 있지 않은 선불요금제인 경우 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+      });
+    </script>
+  </body>
+</html>

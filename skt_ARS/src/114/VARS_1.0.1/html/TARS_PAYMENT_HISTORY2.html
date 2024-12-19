@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="thisyear" iweb-data="in" />
+    <input type="hidden" id="thismonth" />
+    <input type="hidden" id="issuance" iweb-data="in" />
+    <input type="hidden" id="inpPhone" iweb-data="in" />
+    <input type="hidden" id="inpFax" iweb-data="in" />
+    <input type="hidden" id="phone_number" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2022.10.31) start -->
+    <input type="hidden" id="join_month" iweb-data="out" />
+    <input type="hidden" id="bill_month" iweb-data="out" />
+    <input type="hidden" id="sendMonth" iweb-data="in" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2022.10.31) end -->
+
+    <div class="wrapper payment-history">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '청구요금 발송',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="tab-container">
+              <a id="tab_sms" class="on">문자요금안내서</a>
+              <a id="tab_fax" class="">팩스발송</a>
+            </div>
+            <div class="tab-content payment-history-content">
+              <div class="field field-select">
+                <div class="field-label">청구년월</div>
+                <div class="field-form">
+                  <div class="field-area">
+                    <div class="dropdown-area custom-sel-day">
+                      <a href="#" class="btn-open custom-sel-day-open"> <strong class="year"></strong>년 <strong class="month"></strong>월 </a>
+                      <ul class="dropdown-list custom-sel-day-list"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="sms_content" class="field field-input sms">
+                <div class="field-label">문자 발송번호</div>
+                <div class="field-area">
+                  <label for="inpPhone"></label>
+                  <input type="tel" id="inpPhone_A" placeholder="발송 번호입력" disabled="disabled" />
+                </div>
+              </div>
+              <div id="fax_content" class="field field-input fax hide">
+                <div class="field-label">팩스번호 입력하기</div>
+                <div class="field-area">
+                  <label for="inpFax"></label>
+                  <input type="tel" id="inpFax_A" placeholder="팩스번호 입력" />
+                </div>
+              </div>
+            </div>
+            <div class="alert-text-box">
+              <p class="alert-text">매월 1일~6일은 전월 청구내역이 발송됩니다.</p>
+              <p class="alert-text">청구년월을 선택하여 이전 청구서 발송 가능합니다.</p>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="sendData($(this), 'RT')">발송 신청</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <!--추가 2022/10/31  -->
+    <script type="text/javascript" src="/{version}/js/index_jquery/script.js"></script>
+    <script type="text/javascript">
+      var today = new Date();
+      var vars_type = getUrlParameter('cur_vars_type');
+      var g_check;
+      var g_value;
+      var checkKeypad = '0';
+      var own = null; //open web nfilter keypad 객체 (2019.07.29)
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            btn_back();
+          },
+        });
+
+        var phone_number = getUrlParameter('phone_number');
+
+        /*@build-time*/ phone_number = '01012344567';
+
+        $('#inpPhone_A').val(phone_number);
+      });
+
+      // 이메일 팩스 선택
+      $('.tab-container a').on('click', function () {
+        var current = $(this).attr('id');
+        $(this).addClass('on').siblings().removeClass('on');
+
+        if (current == 'tab_sms') {
+          g_value = 'phone';
+          $('#sms_content').show();
+          $('#fax_content').hide();
+        } else if (current == 'tab_fax') {
+          g_value = 'fax';
+          $('#sms_content').hide();
+          $('#fax_content').show();
+        }
+      });
+
+      if (vars_type == 'C') {
+        var fax_footer = document.querySelector('#inpFax_A');
+        var email_footer = document.querySelector('#inpPhone_A');
+        fax_footer.onfocus = function (e) {
+          $('#footer').hide();
+        };
+
+        fax_footer.onblur = function (e) {
+          $('#footer').show();
+        };
+
+        email_footer.onfocus = function (e) {
+          $('#footer').hide();
+        };
+
+        email_footer.onblur = function (e) {
+          $('#footer').show();
+        };
+      }
+
+      var today = new Date();
+
+      var join_month = getUrlParameter('join_month');
+      var bill_month = getUrlParameter('bill_month');
+
+      /*@build-time*/ var join_month = '2012-9-3';
+      /*@build-time*/ var bill_month = '2022-12-31';
+
+      /*@build-time*/ var test_month = getUrlParameter('test_month');
+      /*@build-time*/ var test_month = '2023-1-13';
+
+      join_month = join_month.replace(/-/g, '/');
+      bill_month = bill_month.replace(/-/g, '/');
+      //test_month = test_month.replace(/-/g, "/");
+      //var chang_date = common.date.parseDate(bill_month);
+      var chang_date = new Date(bill_month);
+
+      //가입일과 날짜비교
+      var ssend_month = new Date(join_month);
+      var Syear = ssend_month.getFullYear();
+      var Smonth = ('0' + (ssend_month.getMonth() + 1)).slice(-2);
+      //var Sday = ('0' + ssend_month.getDate()).slice(-2);
+      var Sday = '27';
+
+      var SdateString = Syear + '-' + Smonth + '-' + Sday;
+
+      var bbend_month = new Date(bill_month);
+      var bbyear = bbend_month.getFullYear();
+      var bbmonth = ('0' + (bbend_month.getMonth() + 1)).slice(-2);
+      var bbday = ('0' + bbend_month.getDate()).slice(-2);
+
+      var BdateString = bbyear + '-' + bbmonth + '-' + bbday;
+
+      var compare_year = today.getFullYear();
+      var compare_month = ('0' + (today.getMonth() + 1)).slice(-2);
+      //var compare_day = ('0' + today.getDate()).slice(-2);
+      var compare_day = '27';
+
+      var dateString = compare_year + '-' + compare_month + '-' + compare_day;
+
+      var diffDate = new Date(dateString).getTime() - new Date(SdateString).getTime();
+
+      var result = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));
+
+      var billDiffDate = new Date(BdateString).getTime() - new Date(SdateString).getTime();
+
+      var sixMonthLessResult = Math.floor(Math.abs(billDiffDate / (1000 * 60 * 60 * 24 * 30)));
+
+      //  테스트 코드
+      /* var Tsend_month = new Date(test_month);
+      var compare_year = Tsend_month.getFullYear();
+      var compare_month = ('0' + (Tsend_month.getMonth() + 1)).slice(-2);
+      var compare_day = '27';
+
+      var dateString = compare_year + '-' + compare_month  + '-' + compare_day;
+
+      var diffDate = new Date(dateString).getTime() - new Date(SdateString).getTime();
+
+      var result = Math.floor(Math.abs(diffDate / (1000 * 60 * 60 * 24 * 30)));  */
+
+      //20230111 수정부분 12월일경우 다음년도1월 나오게 수정
+      if (chang_date.getMonth() + 2 == 13) {
+        $('.year').text(chang_date.getFullYear() + 1);
+        $('.month').text('1');
+      } else {
+        $('.year').text(chang_date.getFullYear());
+        $('.month').text(chang_date.getMonth() + 2);
+      }
+
+      //청구일 날짜
+
+      var Bsend_month = new Date(bill_month);
+      var Byear = Bsend_month.getFullYear();
+      var Bmonth = ('0' + (Bsend_month.getMonth() + 2)).slice(-2);
+      var Bday = ('0' + Bsend_month.getDate()).slice(-2);
+      var forYear = Byear;
+      var BdateString = Byear + '-' + Bmonth + '-' + Bday;
+
+      var date_html = '';
+
+      //가입일이 6개월 이상이고, 최종청구월이 12월이아닐때
+      if (result > 6 && Bmonth != 13) {
+        for (var i = 0; i < 6; i++) {
+          var forMonth = Bmonth - i;
+          var ad = common.date.add(today, 'M', -i);
+          var month = ad.getMonth() + 1;
+          var year = ad.getFullYear();
+
+          if (parseInt(month) == 0) {
+            year = ad.getFullYear() - 1;
+            month = '12';
+          }
+
+          if (forMonth > 0) {
+            date_html += '<li class="custom-sel-day-item list" >';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + forYear + '</strong>년';
+            date_html += '<strong class="month">' + forMonth + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          }
+          if ((forMonth = 0)) {
+            break;
+          }
+        }
+        //청구요금이 6월 이하라 년도가 뒤로넘어갈때
+        if (7 - Bmonth > 0) {
+          for (var i = 0; i < 7 - Bmonth - 1; i++) {
+            var forYear = Byear - 1;
+            var forMonth = 12 - i;
+            var ad = common.date.add(today, 'M', -i);
+            var month = ad.getMonth() + 1;
+            var year = ad.getFullYear();
+
+            if (forMonth > 0) {
+              date_html += '<li class="custom-sel-day-item list">';
+              date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+              date_html += '<span class="txt">';
+              date_html += '<strong class="year">' + forYear + '</strong>년';
+              date_html += '<strong class="month">' + forMonth + '</strong>월';
+              date_html += '</span>';
+              date_html += '</a>';
+              date_html += '</li>';
+            }
+          }
+        }
+
+        $('.custom-sel-day-list').html(date_html);
+      } else if (result > 6 && Bmonth == 13) {
+        //20230111 수정부분 12월일경우 다음년도1월 나오게 수정
+        //청구요금이 12월 이라 년도가 앞으로넘어갈때
+        for (var i = 0; i < 6; i++) {
+          var forMonth = Bmonth - i;
+          var ad = common.date.add(today, 'M', -i);
+          var month = ad.getMonth() + 1;
+          var year = ad.getFullYear();
+          var new_year = forYear + 1;
+
+          if (parseInt(month) == 0) {
+            year = ad.getFullYear() - 1;
+            month = '12';
+          }
+
+          if (forMonth == 13) {
+            date_html += '<li class="custom-sel-day-item list" >';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + new_year + '</strong>년';
+            date_html += '<strong class="month">' + 1 + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          } else if (forMonth > 0) {
+            date_html += '<li class="custom-sel-day-item list" >';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + forYear + '</strong>년';
+            date_html += '<strong class="month">' + forMonth + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          }
+          if ((forMonth = 0)) {
+            break;
+          }
+        }
+
+        $('.custom-sel-day-list').html(date_html);
+      } else if (result <= 6 && Bmonth == 13) {
+        //20230111 수정부분 12월일경우 다음년도1월 나오게 수정
+        //청구요금이 12월 이라 년도가 앞으로넘어갈때
+        for (var i = 0; i < sixMonthLessResult + 1; i++) {
+          var forMonth = Bmonth - i;
+          var ad = common.date.add(today, 'M', -i);
+          var month = ad.getMonth() + 1;
+          var year = ad.getFullYear();
+          var new_year = forYear + 1;
+
+          if (parseInt(month) == 0) {
+            year = ad.getFullYear() - 1;
+            month = '12';
+          }
+
+          if (forMonth == 13) {
+            date_html += '<li class="custom-sel-day-item list" >';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + new_year + '</strong>년';
+            date_html += '<strong class="month">' + 1 + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          } else if (forMonth > 0) {
+            date_html += '<li class="custom-sel-day-item list" >';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + forYear + '</strong>년';
+            date_html += '<strong class="month">' + forMonth + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          }
+          if ((forMonth = 0)) {
+            break;
+          }
+        }
+
+        $('.custom-sel-day-list').html(date_html);
+      } else {
+        //가입일이 6개월 미만일때
+        for (var i = 0; i < sixMonthLessResult + 1; i++) {
+          var forMonth = Bmonth - i;
+          var ad = common.date.add(today, 'M', -i);
+          var month = ad.getMonth() + 1;
+          var year = ad.getFullYear();
+          var forYear = Byear;
+
+          if (parseInt(month) == 0) {
+            year = ad.getFullYear() - 1;
+            month = '12';
+          }
+          if (Smonth == forMonth) {
+            break;
+          }
+          if (forMonth > 0) {
+            date_html += '<li class="custom-sel-day-item list">';
+            date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+            date_html += '<span class="txt">';
+            date_html += '<strong class="year">' + forYear + '</strong>년';
+            date_html += '<strong class="month">' + forMonth + '</strong>월';
+            date_html += '</span>';
+            date_html += '</a>';
+            date_html += '</li>';
+          }
+          if ((forMonth = 0)) {
+            break;
+          }
+        }
+        //청구요금이 6월 이하라 년도가 뒤로넘어갈때
+        if (Syear != bbyear) {
+          if (7 - Bmonth > 0) {
+            for (var i = 0; i < 7 - Bmonth; i++) {
+              var forYear = Byear - 1;
+              var forMonth = 12 - i;
+              var ad = common.date.add(today, 'M', -i);
+              var month = ad.getMonth() + 1;
+              var year = ad.getFullYear();
+
+              if (Smonth == forMonth) {
+                break;
+              }
+
+              if (forMonth > 0) {
+                date_html += '<li class="custom-sel-day-item list">';
+                date_html += '<a href="javascript:selectMonth(' + forYear + ',' + forMonth + ');" class="custom-sel-day-btn">';
+                date_html += '<span class="txt">';
+                date_html += '<strong class="year">' + forYear + '</strong>년';
+                date_html += '<strong class="month">' + forMonth + '</strong>월';
+                date_html += '</span>';
+                date_html += '</a>';
+                date_html += '</li>';
+              }
+            }
+          }
+        }
+        $('.custom-sel-day-list').html(date_html);
+      }
+
+      //청구년월 디폴드값 및 선택값
+      var sendMonthInput;
+      var sendMonth;
+      function lastYearMonth() {
+        var Bmonth = ('0' + (Bsend_month.getMonth() + 1)).slice(-2);
+        var finalBYearBMonth = new Date(Byear, Bmonth, 0);
+        var finalBDay = finalBYearBMonth.getDate();
+
+        var BdateString = Byear + Bmonth + finalBDay;
+
+        sendMonth = BdateString;
+        console.log(sendMonth);
+        //$(".custom-sel-day-list li span").click(function(){
+        //문제가 되는 function
+      }
+      lastYearMonth();
+      /* 	var finalYear=$(".custom-sel-day-list li span").text();
+       */
+
+      /* 				$(".custom-sel-day-list li span").on('click',function(e){
+      			e.preventDefault();
+      			console.log($(this).eq(0).text());
+      			var lastYear = $(this).eq(0).text();
+      			var lastYearReplace = lastYear.replace('월','');
+      			var lastYearSplit = lastYearReplace.split('년');
+
+
+      			var finalYear = lastYearSplit[0];
+      			var finalMonth = lastYearSplit[1]
+      			var finalMonthOne = finalMonth - 1;
+      			//1월이 아닐경우
+      			 if (finalMonthOne != 0){
+
+      				var finalMonthOnePad = finalMonthOne.toString().padStart(2,'0');
+       				var finalYearMonth = new Date(finalYear,finalMonthOnePad,0);
+       				var finalDay = finalYearMonth.getDate();
+       				 sendMonth = finalYear.concat(finalMonthOnePad).concat(finalDay);
+       				console.log(sendMonth);
+       			//1월일 경우 작년연도, 월은 12월 고정 로직
+      			}else{
+      				var finalMonthOne = 12;
+      				var finalYearOne = (finalYear -1).toString();
+       				var finalYearMonth = new Date(finalYearOne,finalMonthOne,0);
+       				var finalDay = finalYearMonth.getDate();
+       				 sendMonth = finalYearOne.concat(finalMonthOne).concat(finalDay);
+       				console.log(sendMonth);
+      			}
+
+      		}); */
+
+      function sendData(obj, dtmf) {
+        var vars_type = getUrlParameter('cur_vars_type');
+
+        //var this_year = sendMonthInput;
+        //var this_month = parseInt($("#this_month").text());
+
+        var finalYear = $('.custom-sel-day-open').children('strong:eq(0)').text();
+        var finalMonth = $('.custom-sel-day-open').children('strong:eq(1)').text();
+        var finalMonthOne = finalMonth - 1;
+        //1월이 아닐경우
+        if (finalMonthOne != 0) {
+          var finalMonthOnePad = finalMonthOne.toString().padStart(2, '0');
+          var finalYearMonth = new Date(finalYear, finalMonthOnePad, 0);
+          var finalDay = finalYearMonth.getDate();
+          sendMonth = finalYear.concat(finalMonthOnePad).concat(finalDay);
+          console.log(sendMonth);
+          //1월일 경우 작년연도, 월은 12월 고정 로직
+        } else {
+          var finalMonthOne = 12;
+          var finalYearOne = (finalYear - 1).toString();
+          var finalYearMonth = new Date(finalYearOne, finalMonthOne, 0);
+          var finalDay = finalYearMonth.getDate();
+          sendMonth = finalYearOne.concat(finalMonthOne).concat(finalDay);
+          console.log(sendMonth);
+        }
+        var this_year = sendMonth;
+        var this_month = parseInt($('#this_month').text());
+
+        //청구년월값전달
+        //lastYearMonth();
+        // sendMonth = sendMonthInput;
+
+        document.getElementById('thismonth').value = this_month;
+
+        var month_len = document.getElementById('thismonth').value.length;
+        var month_add_zero = '';
+
+        for (var j = month_len; j < 2; j++) {
+          month_add_zero += '0';
+        }
+        document.getElementById('sendMonth').value = this_year;
+
+        var month_add_zero = '';
+
+        for (var j = month_len; j < 2; j++) {
+          month_add_zero += '0';
+        }
+
+        if (g_value == '' || g_value == null || g_value == 'phone') {
+          var emailVal = $('#inpPhone_A').val();
+          var patternPhone = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+          if (!patternPhone.test(emailVal)) {
+            jAlert('<p class="popup-alert-text">발송 번호를 다시 확인해 주세요.</p>', '');
+            return;
+          }
+
+          //var regExp = "01[016789]-[^0][0-9]{2,3}-[0-9]{3,4}";
+          // 검증에 사용할 정규식 변수 regExp에 저장
+          //			if (emailVal.trim().match(regExp) != null) {} else { jAlert('<p>발송 번호를 다시 확인해 주세요.</p>', '');  return;}
+        } else if (document.getElementById('inpFax_A').value == null || document.getElementById('inpFax_A').value == '') {
+          jAlert('<p class="popup-alert-text">팩스번호를 입력해 주세요.</p>', '');
+          return;
+        }
+
+        if (g_value == '' || g_value == null || g_value == 'phone') {
+          document.getElementById('issuance').value = 'phone';
+        } else {
+          document.getElementById('issuance').value = 'fax';
+        }
+
+        document.getElementById('inpPhone').value = document.getElementById('inpPhone_A').value;
+        document.getElementById('inpFax').value = document.getElementById('inpFax_A').value;
+
+        //보안키패드 충돌 방지
+        if ($ == null) $ = own.noConflict();
+
+        checkKeypad = '1';
+
+        // report page data 호출
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+
+      // 월선택 기능
+      $('.custom-sel-day').customSelectDay();
+    </script>
+  </body>
+  <!-- open web nfilter js 추가 (2019.07.29) -->
+  <!-- jquery 충돌을 방지하기 위해 제일 하단에 놔야 한다. -->
+  <!-- <script type="text/javascript" src="/{version}/nfilter/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/{version}/nfilter/js/open_nFilter.js"></script>
+<script type="text/javascript" src="/{version}/nfilter/js/secretUtil.js"></script> -->
+</html>

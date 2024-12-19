@@ -1,0 +1,77 @@
+<li class="accordion-item">
+  <div class="accordion-content">
+    <div class="content-top">
+      @@if(a) {
+      <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+      }
+      <div class="content-top-left">
+        <div class="question-box">
+          <span>@@type</span>
+        </div>
+      </div>
+
+      <div class="content-top-right">
+        <div class="title-box">
+          <!-- prettier-ignore -->
+          @@include("../../components/badge.html", {
+              "badge" : [
+                {
+                  "text" : "@@state",
+                  "property" : "@@stateProperty"
+                },
+              ]
+            })
+
+          <div class="title">
+            <p>@@q</p>
+          </div>
+        </div>
+
+        <div class="date-box">
+          <div class="date receipt">
+            <div class="label">
+              <span>접수시간</span>
+            </div>
+            <div class="data">
+              <span>@@startDate</span>
+            </div>
+          </div>
+          <div class="date complete">
+            <div class="label">
+              <span>완료시간</span>
+            </div>
+            <div class="data">
+              <span>@@endDate</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-bottom">
+      <div class="answer-box">
+        <p class="answer">@@a</p>
+        @@if(stateProperty === 'grey') { @@if(rate) {
+        <div class="evaluation-box">
+          <span class="label">만족도</span>
+          <div class="rate-box">
+            <span>5.0</span>
+          </div>
+        </div>
+        } @@if(!rate) {
+        <div class="evaluation-box">
+          <!-- prettier-ignore -->
+          @@include("../../components/button.html", {
+            "dataValue" : "popup-rate-satisfaction",
+            "type" : "tertiary",
+            "size" : "small",
+            "class" : "btn-evaluation btn-popup",
+            "disabled" : "",
+            "text" : "만족도 평가하기",
+          })
+        </div>
+        } }
+      </div>
+    </div>
+  </div>
+</li>

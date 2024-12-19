@@ -1,0 +1,432 @@
+/* Sub page (03) - 요금 및 할인 */
+.menu-03 {
+  .banner-container {
+    .banner-title-box {
+      .voltup-logo {
+        display: block;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        margin-left: 0;
+      }
+    }
+  }
+  .section-bottom {
+    margin-top: 10rem;
+  }
+  .plan-recommend-table {
+    colgroup {
+      &.usePc {
+        display: table-column-group !important;
+      }
+    }
+    tr {
+      .usePc {
+        display: table-cell !important;
+      }
+      .useMobile {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.plan-custom-container {
+  .plan-custom-area {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin: -2rem;
+  }
+}
+.plan-custom-box {
+  overflow: hidden;
+  flex: 1 1 40%;
+  margin: 2rem;
+  border: 1px solid $color-gray-01;
+  border-radius: 2rem;
+  &.plan-limit {
+    .plan-custom-top {
+      &::before {
+        background-image: image('sub_03/ic_plan_limit.svg');
+      }
+    }
+  }
+  &.plan-subscribe {
+    .plan-custom-top {
+      &::before {
+        background-image: image('sub_03/ic_plan_subscribe.svg');
+      }
+    }
+  }
+  &.plan-recommend {
+    .plan-custom-top {
+      &::before {
+        background-image: image('sub_03/ic_plan_recommend.svg');
+        background-size: 3.6rem;
+      }
+    }
+    .content-title {
+      @include flex(row, flex-start, flex-start);
+      color: $point-pink;
+      &::before {
+        content: '';
+        flex-shrink: 0;
+        display: inline-block;
+        width: 3rem;
+        height: 3rem;
+        margin-top: 0.5rem;
+        margin-right: 1rem;
+        background: image('sub_03/ic_alert.svg') no-repeat center/cover;
+      }
+    }
+    .content-title-desc {
+      margin-left: 4rem;
+      font-weight: 700;
+      color: $black;
+    }
+  }
+  .plan-custom-top {
+    @include flex(row, center, center);
+    height: 11.6rem;
+    background-color: $black;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 4.4rem;
+      height: 4.4rem;
+      margin-right: 2rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 4.4rem;
+    }
+    .plan-custom-title {
+      @include font(3.6rem, 700, $white, 1.2);
+    }
+  }
+  .plan-custom-middle {
+    padding: 6rem;
+  }
+  .plan-custom-item:not(:first-child) {
+    margin-top: 4rem;
+    padding-top: 4rem;
+    border-top: 1px solid #bfbfbf;
+  }
+  .content-title {
+    @include font(2.8rem, 700, $black, normal);
+  }
+  .content-title-desc {
+    margin-top: 1rem;
+    @include font(2rem, 400, $color-gray-01, normal);
+    letter-spacing: -0.05rem;
+  }
+  dl {
+    > div {
+      @include flex(row, space-between, center);
+      @include font(2.8rem, 500, $black, normal);
+      & + div {
+        margin-top: 2rem;
+      }
+    }
+    dd {
+      font-weight: 700;
+      color: $point-pink;
+    }
+  }
+  .content-example-box {
+    margin-top: 4rem;
+    .example-title {
+      @include flex(row, flex-start, center);
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #bfbfbf;
+      @include font(2.8rem, 500, $black, normal);
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1.6rem;
+        height: 1.2rem;
+        margin-right: 2rem;
+        background: image('sub_03/ic_arrow_r_small.svg') no-repeat center/contain;
+      }
+    }
+    .desc-text {
+      text-align: left;
+    }
+  }
+  .plan-recommend-table {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 4rem;
+    border: 1px solid #e3e3e3;
+    border-radius: 2rem;
+    table {
+      width: 100%;
+    }
+    tbody {
+      tr {
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    tr {
+      border-bottom: 1px solid #e3e3e3;
+    }
+    th,
+    td {
+      height: 12rem;
+      padding: 1.5rem;
+      border-right: 1px solid #e3e3e3;
+      @include font(2.8rem, 700, $black, normal);
+      text-align: center;
+      vertical-align: middle;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    th {
+      &.subscribe {
+        background-color: $point-pink;
+        color: $white;
+      }
+    }
+    td {
+      font-weight: 500;
+      &.subscribe {
+        background-color: #fff3fa;
+      }
+    }
+    .recommend-box {
+      @include flex(row, center, center);
+      position: relative;
+      font-weight: 700;
+      color: $point-pink;
+      .badge {
+        position: absolute;
+        right: 13%;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        margin-left: 1rem;
+        padding: 0.4rem 1.6rem;
+        font-size: 2.6rem;
+      }
+    }
+  }
+}
+
+.member-discount-area {
+  @include flex(row, space-between, center);
+  margin: 0 14.8rem 0 12.2rem;
+  .member-discount-thumb-box {
+    overflow: hidden;
+    width: 42.5rem;
+    margin: 0 auto;
+    img {
+      @include imgbox;
+    }
+  }
+  .discount-title-box {
+    margin-bottom: 4rem;
+    @include font(2.8rem, 400, $black, normal);
+    .color-primary {
+      margin-bottom: 1rem;
+      font-size: 4rem;
+    }
+  }
+  .discount-desc-box {
+    .desc-text {
+      text-align: left;
+    }
+  }
+}
+
+/* response */
+@media #{$pc_1440} {
+  .plan-custom-box {
+    .plan-recommend-table {
+      .recommend-box {
+        flex-direction: column-reverse;
+        .badge {
+          position: static;
+          transform: initial;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media #{$pc_1280} {
+  .menu-03 {
+    .plan-recommend-table {
+      colgroup {
+        &.usePc {
+          display: none !important;
+        }
+      }
+      tr {
+        .usePc {
+          display: none !important;
+        }
+        .useMobile {
+          display: table-cell !important;
+        }
+      }
+    }
+  }
+  .plan-custom-container {
+    .plan-custom-area {
+      display: block;
+      margin: 0;
+    }
+  }
+  .plan-custom-box {
+    margin: 0 0 2rem;
+  }
+  .member-discount-area {
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
+
+@media #{$tablet_1024} {
+  .menu-03 {
+    .banner-container {
+      .banner-title-box {
+        .voltup-logo {
+          margin: 0 0 0.8rem 0;
+        }
+      }
+    }
+    .section-bottom {
+      margin-top: 2rem;
+    }
+  }
+  .plan-custom-box {
+    &.plan-recommend {
+      .plan-custom-top {
+        &::before {
+          background-size: 2.2rem;
+        }
+      }
+      .content-title {
+        &::before {
+          width: 2.4rem;
+          height: 2.4rem;
+          margin-top: 0;
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+      .content-title-desc {
+        margin-left: 0;
+        margin-bottom: 2rem;
+      }
+    }
+    .plan-custom-top {
+      height: 5.2rem;
+      &::before {
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-right: 0.8rem;
+        background-size: 2.8rem;
+      }
+      .plan-custom-title {
+        font-size: 1.6rem;
+      }
+    }
+    .plan-custom-middle {
+      padding: 4rem 2rem 2rem;
+    }
+    .plan-custom-item:not(:first-child) {
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+    .plan-custom-item {
+      &:first-child {
+        .content-title,
+        .content-title-desc {
+          text-align: center;
+          word-break: keep-all;
+        }
+        .content-title {
+          flex-direction: column;
+          align-items: center;
+          font-size: 2rem;
+        }
+      }
+    }
+    .content-title {
+      font-size: 1.6rem;
+    }
+    .content-title-desc {
+      margin-bottom: 4rem;
+      font-size: 1.4rem;
+    }
+    dl {
+      > div {
+        font-size: 1.6rem;
+        & + div {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .content-example-box {
+      margin-top: 2rem;
+      .example-title {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.6rem;
+        &::before {
+          width: 0.8rem;
+          height: 0.6rem;
+          margin-right: 0.4rem;
+          background: image('sub_03/ic_arrow_r_small.svg') no-repeat center/0.8rem 0.6rem;
+        }
+      }
+      .desc-text {
+        font-size: 1.6rem;
+      }
+    }
+    .plan-recommend-table {
+      margin-top: 2rem;
+      th {
+        height: 5.5rem;
+        font-size: 1.2rem;
+      }
+      td {
+        height: 7rem;
+        font-size: 1.4rem;
+      }
+      .recommend-box {
+        .badge {
+          min-height: 2.1rem;
+          margin-bottom: 0;
+          padding: 0.2rem 0.8rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+  .member-discount-area {
+    flex-direction: column-reverse;
+    .member-discount-thumb-box {
+      width: 21.8rem;
+      margin: 1.4rem 0 1.6rem;
+    }
+    .discount-title-box {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      font-size: 1.6rem;
+      text-align: center;
+      .color-primary {
+        font-size: 2.2rem;
+      }
+    }
+    .discount-desc-box {
+      .desc-text {
+        text-align: center;
+      }
+    }
+  }
+}

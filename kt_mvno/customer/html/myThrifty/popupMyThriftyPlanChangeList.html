@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "변경 이력 조회", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>변경 이력 조회</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">변경 이력 조회</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="planChangeList">
+              <div class="tableContainer normalBgTable">
+                <div class="tableArea">
+                  <table>
+                    <caption>
+                      변경 이력
+                    </caption>
+                    <colgroup>
+                      <col style="width: 25%" />
+                      <col />
+                      <col style="width: 26%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">변경일자</th>
+                        <th scope="col">요금제명</th>
+                        <th scope="col">
+                          <span class="block">월정액</span>
+                          (부가세 포함)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2019-11-11</td>
+                        <td>LTE 모두다 맘껏 10G</td>
+                        <td>39,700원</td>
+                      </tr>
+                      <tr>
+                        <td>2019-11-11</td>
+                        <td>LTE 모두다 맘껏 10G</td>
+                        <td>39,700원</td>
+                      </tr>
+                      <tr>
+                        <td>2019-11-11</td>
+                        <td>LTE 모두다 맘껏 10G</td>
+                        <td>39,700원</td>
+                      </tr>
+                      <tr>
+                        <td>2019-11-11</td>
+                        <td>LTE 모두다 맘껏 10G</td>
+                        <td>39,700원</td>
+                      </tr>
+                      <tr>
+                        <td>2019-11-11</td>
+                        <td>LTE 모두다 맘껏 10G</td>
+                        <td>39,700원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

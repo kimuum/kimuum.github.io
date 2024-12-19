@@ -1,0 +1,291 @@
+@@include("head.html",{
+"title" : "MY ORDER Cancelled"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "My order Cancel",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="myorder-container">
+        <div class="myorder-wrap">
+          <div class="tab-container">
+            <div class="tab-item-wrap">
+
+              <div class="tab-item">
+                <span class="text">ORDER</span>
+              </div>
+              <!-- tab 선택시 클래스 적용: active -->
+              <div class="tab-item active">
+                <span class="text">CANCELLED ORDERS</span>
+              </div>
+            </div>
+            <div class="tab-panel-wrap">
+              <!-- panel 1 -->
+              <div class="tab-panel tab-panel-1">
+                <div class="panel-wrap"></div>
+              </div>
+              <!-- //panel 1 -->
+
+              <!-- panel 2 -->
+              <div class="tab-panel tab-panel-2">
+                <div class="panel-wrap">
+                  <div class="field-container">
+                    <div class="field">
+                      <div class="field-label"></div>
+                      <div class="field-form">
+                        @@include('optionDropdown.html', {
+                          'disabled': false,
+                          'optionTitle': 'Past 3 months',
+                          'option': [
+                            {'title': 'title="selected"', 'value': 'Past 3 months'},
+                            {'title': '', 'value': 'Past 2 months'},
+                            {'title': '', 'value': 'Past 1 months'},
+                          ]
+                        })
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-number-container">
+                    <div class="order-number-wrap">
+                      <div class="left-area">
+                        <span class="text title">ORDER NUMBER</span>
+                        <span class="text number">AA1234957h61234BBCC</span>
+                      </div>
+                    </div>0
+                  </div>
+                  <div class="payment-info-container">
+                    <div class="payment-wrap">
+                      <div class="item-area">
+                        <span class="label">payment method</span>
+                        <span class="value">Mastercard / ****-1199</span>
+                      </div>
+                      <div class="item-area">
+                        <span class="label">CANCELLED date</span>
+                        <span class="value">January 5, 2023</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="order-item-container">
+                    <!-- Cancel ORDER-->
+                    <div class="order-item-wrap">
+                      <div class="item-box-area">
+                        <div class="box-header">
+                          <div class="product-status status-cancelled">
+                            <span class="status-label">cancel ORDER</span>
+                          </div>
+                        </div>
+                        <div class="box-content">
+                          <div class="product-item-box">
+                            <div class="product-middle">
+                              <div class="thumbnail-area">
+                                <div class="img-area">
+                                  <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                                </div>
+                              </div>
+                              <div class="info-area">
+                                <div class="brand-area">
+                                  <span class="brand-image">
+                                    <img src="../../assets/images/icon_brand_hsn.jpg" alt="">
+                                  </span>
+                                  <span class="brand-id">HSN</span>
+                                </div>
+                                <div class="product-title">Caracilia Women's Long Sl-eeve 1/4 Zipper Collar Ove-
+                                  rsized Sweater Knit</div>
+                                <div class="product-info">
+                                  <div class="spec">ID: DOC-V354</div>
+                                  <div class="spec">Light Coffee / L(Large) / Qty : 1</div>
+                                </div>
+                                <div class="product-price">
+                                  <span class="price">$41.99</span>
+                                  <span class="small-price">Option : $5.50</span>
+                                  <span class="small-price">S&amp;H : $3.50</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-box">
+                              <button type="button" class="btn">
+                                <span>view cancellation details</span>
+                              </button>
+                            </div>
+                            <div class="button-box between">
+                              <button type="button" class="btn btn-border">
+                                <span>buy it again</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Processing Cancellation-->
+                    <div class="order-item-wrap">
+                      <div class="item-box-area">
+                        <div class="box-header">
+                          <div class="product-status status-cancelled">
+                            <span class="status-label">Processing Cancellation</span>
+                          </div>
+                        </div>
+                        <div class="box-content">
+                          <div class="product-item-box">
+                            <div class="product-middle">
+                              <div class="thumbnail-area">
+                                <div class="img-area">
+                                  <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                                </div>
+                              </div>
+                              <div class="info-area">
+                                <div class="brand-area">
+                                  <span class="brand-image">
+                                    <img src="../../assets/images/icon_brand_hsn.jpg" alt="">
+                                  </span>
+                                  <span class="brand-id">HSN</span>
+                                </div>
+                                <div class="product-title">Caracilia Women's Long Sl-eeve 1/4 Zipper Collar Ove-
+                                  rsized Sweater Knit</div>
+                                <div class="product-info">
+                                  <div class="spec">ID: DOC-V354</div>
+                                  <div class="spec">Light Coffee / L(Large) / Qty : 1</div>
+                                </div>
+                                <div class="product-price">
+                                  <span class="price">$41.99</span>
+                                  <span class="small-price">Option : $5.50</span>
+                                  <span class="small-price">S&amp;H : $3.50</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-box">
+                              <button type="button" class="btn">
+                                <span>view cancellation details</span>
+                              </button>
+                            </div>
+                            <div class="button-box between">
+                              <button type="button" class="btn btn-border">
+                                <span>buy it again</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Cancellation completed-->
+                    <div class="order-item-wrap">
+                      <div class="item-box-area">
+                        <div class="box-header">
+                          <div class="product-status status-cancelled">
+                            <span class="status-label">Cancellation Completed</span>
+                          </div>
+                        </div>
+                        <div class="box-content">
+                          <div class="product-item-box">
+                            <div class="product-middle">
+                              <div class="thumbnail-area">
+                                <div class="img-area">
+                                  <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                                </div>
+                              </div>
+                              <div class="info-area">
+                                <div class="brand-area">
+                                  <span class="brand-image">
+                                    <img src="../../assets/images/icon_brand_hsn.jpg" alt="">
+                                  </span>
+                                  <span class="brand-id">HSN</span>
+                                </div>
+                                <div class="product-title">Caracilia Women's Long Sl-eeve 1/4 Zipper Collar Ove-
+                                  rsized Sweater Knit</div>
+                                <div class="product-info">
+                                  <div class="spec">ID: DOC-V354</div>
+                                  <div class="spec">Light Coffee / L(Large) / Qty : 1</div>
+                                </div>
+                                <div class="product-price">
+                                  <span class="price">$41.99</span>
+                                  <span class="small-price">Option : $5.50</span>
+                                  <span class="small-price">S&amp;H : $3.50</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-box">
+                              <button type="button" class="btn">
+                                <span>view cancellation details</span>
+                              </button>
+                            </div>
+                            <div class="button-box between">
+                              <button type="button" class="btn btn-border">
+                                <span>buy it again</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Cancelled -->
+                    <div class="order-item-wrap">
+                      <div class="item-box-area">
+                        <div class="box-header">
+                          <div class="product-status status-cancelled">
+                            <span class="status-label">Cancelled</span>
+                          </div>
+                        </div>
+                        <div class="box-content">
+                          <div class="product-item-box">
+                            <div class="product-middle">
+                              <div class="thumbnail-area">
+                                <div class="img-area">
+                                  <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                                </div>
+                              </div>
+                              <div class="info-area">
+                                <div class="brand-area">
+                                  <span class="brand-image">
+                                    <img src="../../assets/images/icon_brand_hsn.jpg" alt="">
+                                  </span>
+                                  <span class="brand-id">HSN</span>
+                                </div>
+                                <div class="product-title">Caracilia Women's Long Sl-eeve 1/4 Zipper Collar Ove-
+                                  rsized Sweater Knit</div>
+                                <div class="product-info">
+                                  <div class="spec">ID: DOC-V354</div>
+                                  <div class="spec">Light Coffee / L(Large) / Qty : 1</div>
+                                </div>
+                                <div class="product-price">
+                                  <span class="price">$0</span>
+                                  <span class="small-price">Option : $0</span>
+                                  <span class="small-price">S&amp;H : $0</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-box">
+                              <button type="button" class="btn">
+                                <span>view cancellation details</span>
+                              </button>
+                            </div>
+                            <div class="button-box between">
+                              <button type="button" class="btn btn-border">
+                                <span>buy it again</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+    </main>
+    <!-- // Main -->
+
+   
+  </div>
+</body>

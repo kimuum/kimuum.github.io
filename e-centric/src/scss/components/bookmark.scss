@@ -1,0 +1,18 @@
+.bookmark-box {
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+
+  .bookmark-checkbox {
+    appearance: none;
+    overflow: hidden;
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    background: asset-image('icon/ic_favorite_fill_nor.svg') no-repeat center / contain;
+    &:checked {
+      background: asset-image('icon/ic_favorite_fill.svg') no-repeat center / contain;
+    }
+  }
+}

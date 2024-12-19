@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터 주고받기 가입 신청 | 데이터 주고받기 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : exchangeJoinApply -->
+    <div class="wrap detail exchangeJoinApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-9', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>데이터 주고받기 가입 신청</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 주고받기</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 주고받기 가입 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="dataInner">
+                <div class="fieldInformation bgGray">
+                  <p class="infoText">
+                    고객님의 요금제는 <strong class="bold">데이터 주기 결합이 가능한 요금제</strong>로 <br />
+                    결합 한도는 5회선, 잔여 한도는 <strong class="bold">3회선</strong>이에요.
+                  </p>
+                  <p class="infoText">데이터주고받기 결합 시 매월 1일 고객님 요금제의 데이터 기본제공량에서 2GB이 차감되고, 결합 대상 요금제로 2GB가 충전됩니다.</p>
+                </div>
+              </div>
+
+              <form>
+                <fieldset class="formInner">
+                  <legend class="formTitleArea">
+                    <strong class="formTitle">대상 회선 번호를 입력해주세요.</strong>
+                  </legend>
+                  <div class="formItemArea">
+                    <div class="field fieldInput">
+                      <label for="input-id-03" class="fieldLabel">대상 휴대폰 번호</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="tel" id="input-id-03" placeholder="결합 대상의 휴대폰 번호를 입력해주세요." />
+                        </div>
+                        <div class="buttonArea">
+                          <button type="button" class="btn btnSizeMiddle"><span>확인</span></button>
+                        </div>
+                      </div>
+                      <div class="addExplain">
+                        <p><strong class="bold">데이터 주기 결합이 불가능한 회선</strong>입니다.</p>
+                        <p>계속해서 상대방이 데이터주고받기 결합이 가능한 요금제인지 확인해 주세요.</p>
+                      </div>
+                      <!-- <div class="addExplain">
+                        <p><strong class="bold">데이터 받기 결합이 불가능한 회선</strong>입니다.</p>
+                        <p>계속해서 상대방이 데이터주고받기 결합이 가능한 요금제인지 확인해 주세요.</p>
+                      </div> -->
+                    </div>
+                    <div class="sendSMSWrap">
+                      <p>인증번호 전송 시 <strong class="bold">데이터 주기 결합 대상의 휴대폰 번호</strong>로 인증번호가 전송됩니다.</p>
+                      <!-- <p>인증번호 전송 시 <strong class="bold">데이터 받기 결합 대상의 휴대폰 번호</strong>로 인증번호가 전송됩니다.</p> -->
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnSizeSmall"><span>인증번호 전송</span></button>
+                      </div>
+                      <div class="input">
+                        <input type="text" id="input-id-03" placeholder="인증번호를 입력해주세요." title="인증번호 입력" />
+                        <p class="time">
+                          <span class="ir">유효시간</span>
+                          <span>9:59</span>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>데이터 주기 결합 서비스 신청</span></button>
+                      <!-- <button type="button" class="btn btnPrimary"><span>데이터 받기 결합 서비스 신청</span></button> -->
+                    </div>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/chart.js-2.9.4.min.js"></script>
+    <!-- chart JS -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

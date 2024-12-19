@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "반려 처리" , "headProjectName": "| 승인 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>반려 처리</span></button>
+    </div>
+    <!-- 팝업 고유 클래스 : popupAdmissionRefuseBiz -->
+    <div class="popup popupAdmissionRefuseBiz hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">반려 처리</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="field fieldTextarea">
+              <div class="fieldForm">
+                <div class="textarea">
+                  <textarea name="" id="input-id-01" cols="30" rows="10" placeholder="반려사유를 입력해주세요."></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="field fieldTextarea" style="display: none">
+              <div class="fieldForm">
+                <div class="textarea">
+                  <textarea name="" id="input-id-01" cols="30" rows="10">주소에 오타가 있습니다.</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnDim" disabled onclick="togglePopup('btnID', 'popupDefault')"><span>등록</span></button>
+              <button type="button" class="btn btnPrimary" style="display: none" onclick="togglePopup('btnID', 'popupDefault')"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

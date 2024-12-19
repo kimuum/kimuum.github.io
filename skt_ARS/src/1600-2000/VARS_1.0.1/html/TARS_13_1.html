@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- navigation 제어여부 -->
+    <input type="hidden" id="navi_yn" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- navigation 제어여부 -->
+
+    <div class="wrapper certification">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "error",
+          "title": '사업자 고객 인증',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <!-- 경고창 문구처리 -->
+            <input type="hidden" id="alert_text" value="" iweb-data="out" />
+            <input type="hidden" id="alert_text_s" value="" iweb-data="out" />
+
+            <div class="sub-content-container">
+              <div class="column-title-icon-box">
+                <div class="circle-icon-box">
+                  <span class="ic-certification"></span>
+                </div>
+                <p class="info-title">사업자 고객 인증</p>
+                <p class="info-sub-title">고객 확인을 위해 가입 시 등록하신 <br /><span class="highlight">사업자번호 뒤 5자리</span>를 입력해 주세요.</p>
+              </div>
+              <div class="form-certification-box">
+                <div id="" class="field field-input">
+                  <label for="certi01" class="field-label">사업자 번호</label>
+                  <div class="field-area">
+                    <input id="jumin1" name="jumin1" type="number" placeholder="5자리" iweb-data="in" onkeypress="return isNumberKey(event);" onkeyup="javascritp:checkSend();" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      var checkKeypad = '0';
+
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          /* 알림 메세지 처리 */
+          var alert_text = getUrlParameter('alert_text'); /* 알림 1*/
+          var alert_text_s = getUrlParameter('alert_text_s'); /* 알림 2 */
+
+          if (alert_text != '') {
+            $('.popup-top').css('display', 'none');
+            jAlert(
+              '<div id="alert_tex" class="alert-icon-box">' +
+                '<i class="ic-error"></i>' +
+                '<div class="popup-text-large">' +
+                alert_text +
+                '</div>' +
+                '<div class="alert-text-box">' +
+                '<p class="alert-text">' +
+                alert_text_s +
+                '</p>' +
+                '</div>',
+              '',
+            );
+          }
+        } catch (e) {}
+
+        //setInterval(checkData(),10);
+      });
+
+      function checkData() {
+        if ($('#jumin1').val() == '') {
+          setTimeout('checkData()', 10);
+        } else {
+          sendData();
+        }
+      }
+
+      // 보안키패드 호출
+      function showKeypad(mode, obj, len, title) {
+        if (checkKeypad == '1') {
+          return;
+        }
+
+        var fieldname = obj.id;
+
+        if (fieldname == 'jumin1') {
+          document.getElementById('jumin1').value = '';
+        }
+
+        // 키패드 호출
+        showkeypadPhone(mode, fieldname, len, title, getUrlParameter('publickey'));
+      }
+
+      // 전송처리
+      function sendData() {
+        checkKeypad = '1';
+
+        /* if($("#jumin1").val() == null || $("#jumin1").val() == ""){
+			jAlert("<p>사업자 번호를 입력하세요.</p>","");
+			$("#jumin1").val('');
+			$("#jumin1").focus();
+			setTimeout("checkData()",10);
+			checkKeypad = "0";
+			return;
+		}
+		
+		if($("#jumin1").val().length < 11){
+			jAlert("<p>사업자번호 10자리를 입력하세요.</p>","");
+			$("#jumin1").val('');
+			$("#jumin1").focus();
+			setTimeout("checkData()",10);
+			checkKeypad = "0";
+			return;
+		} */
+
+        // report page data 호출
+        sendRepPageData($('#jumin1').text().trim(), 'RT', 'menu');
+      }
+
+      // 이전메뉴 처리 시 체크
+      function beforeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        btn_back();
+      }
+
+      // 홈메뉴 처리 시 체크
+      function homeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        sendGotoHome();
+      }
+
+      function isNumberKey(evt) {
+        var charCode = evt.which ? evt.which : evt.keyCode;
+
+        return !(charCode > 31 && (charCode < 48 || charCode > 57));
+      }
+
+      function checkSend() {
+        var num = $('#jumin1').val();
+
+        if (num.length > 9) {
+          $('#jumin1').prop('readonly', true);
+          sendData($('#jumin1'), 'RT');
+        }
+      }
+    </script>
+  </body>
+</html>

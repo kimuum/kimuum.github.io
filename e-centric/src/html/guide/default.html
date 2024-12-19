@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | Page Name"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-unique-class
+      -->
+      <main class="main-container page-unique-class">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : true,
+          "title" : null,
+          "button" : null
+        })
+
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- dom 시작 -->
+          </div>
+        </section>
+
+        <!-- prettier-ignore -->
+        @@include("gnb.html", {
+          "list" : [
+            {
+              "type"     : "home",
+              "text"     : "홈",
+              "property" : "active",
+              "alarm"      : false
+            },
+            {
+              "type"     : "search",
+              "text"     : "충전소 찾기",
+              "property" : "",
+              "alarm"      : false
+            },
+            {
+              "type"     : "menu",
+              "text"     : "메뉴",
+              "property" : "",
+              "alarm"      : true
+            },
+          ]
+        })
+      </main>
+    </div>
+  </body>
+</html>

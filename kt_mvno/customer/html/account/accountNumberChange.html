@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "번호 변경 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 클래스 : accountNumberChange -->
+    <div class="wrap accountNumberChange">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-4' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>번호 변경</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>번호 변경</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner phoneNoLine">
+                  <div class="dataTitleArea noneLine">
+                    <div class="dataText">번호 변경할 회선을 선택해주세요.</div>
+                  </div>
+
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">핸드폰 변경으로 유심 크기가 달라지거나 단말 분실로 유심 변경이 필요한 경우 다른 유심으로 변경할 수 있는 서비스입니다.</li>
+                      <li class="fieldValue">유심 셀프변경 시 음성, 문자 등 휴대폰 사용이 중단됩니다. 신속히 새로운 유심을 단말기에 장착하여 1~3회 전원을 껐다 켜면 사용 가능합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <div>
+                      <p class="dataText">사용중인 번호를 간편하고 빠르게 다른 번호로 변경할 수 있는 서비스입니다.</p>
+                      <strong class="dataTitle">휴대폰 번호 변경 본인인증 동의</strong>
+                    </div>
+                  </div>
+
+                  <div class="field typeAgreementCheck">
+                    <div class="field fieldCheckbox">
+                      <div class="fieldForm">
+                        <div class="checkbox">
+                          <input type="checkbox" id="agreeCheck0" />
+                          <span class="checkboxLabel">
+                            <span class="checkIcon"></span>
+                          </span>
+                        </div>
+                      </div>
+                      <label for="agreeCheck0" class="fieldLabel">본인인증 절차 동의</label>
+                    </div>
+                  </div>
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea">
+                      <li class="fieldValue">안전한 서비스 이용 및 고객님의 개인정보 보호를 위해 본인 인증을 받으신 고객분만 이용이 가능합니다. 서비스 이용을 위해 본인확인 절차를 진행해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner typeCertification">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">본인인증</strong>
+                  </div>
+                  <!-- 본인 인증 : 기본값 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass",
+                      "buttonBlank": true,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": true,
+                      "buttonContent": "신용카드 인증",
+                    }
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 기본값 -->
+                  <!-- 본인 인증 : 인증 완료 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass active",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증 완료",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 인증 완료 -->
+                  <!-- 본인 인증 : 서비스 점검 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 서비스 점검 -->
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea">
+                      <li class="fieldValue">본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                    </ul>
+                  </div>
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary" disabled><span>변호 변경</span></button>
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <div class="dataTitle">번호변경이 불가능한 고객</div>
+                  </div>
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">3개월 내 휴대폰 번호를 2회이상 변경한 경우</li>
+                      <li class="fieldValue">미납 정지 고객, 일시 정지 고객</li>
+                      <li class="fieldValue">선불 요금제 가입자</li>
+                      <li class="fieldValue">미납 요금이 있는 경우</li>
+                      <li class="fieldValue">특정 부가서비스 사용 고객(010번호 연결 서비스, 스팸차단서비스 등)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <div class="dataTitle">유의사항</div>
+                  </div>
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">발신정지는 30일만 가능하며, 30일 이후에는 착/발신 정지로 자동 전환됩니다.</li>
+                      <li class="fieldValue">일시정지 기간 종료 시 휴대폰 이용 중 상태로 자동 복구되며(문자 안내), 일시정지 이전 사용 요금제 기준으로 이용요금이 부과됩니다.</li>
+                      <li class="fieldValue">분실정지 일수는 일시정지 신청가능일수(90일)에 포함되지 않습니다.</li>
+                      <li class="fieldValue">단말기 분할상환 금액이 남은 경우 일시정지 기간에도 청구됩니다.</li>
+                      <li class="fieldValue">군입대, 장기해외체류 등 특별한 경우에 해당할 경우 최대 3년까지 일시정지가 가능합니다. 장기 일시정지의 경우 사업자 고객센터를 통해 신청을 부탁드립니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

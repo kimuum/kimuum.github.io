@@ -1,0 +1,113 @@
+.btn {
+  @include flex(row, center, center);
+  padding: 1.8rem 2.4rem;
+  border-radius: 1.6rem;
+  transition: background 0.15s;
+  // color
+  &.btn-primary {
+    background-color: $green-500;
+    color: $white;
+    &:hover:not(:disabled) {
+      background-color: $green-700;
+    }
+  }
+  &.btn-secondary {
+    background-color: $gray-50;
+    &:hover:not(:disabled) {
+      background-color: $gray-100;
+    }
+  }
+  &.btn-tan {
+    background-color: $tan-400;
+    &:hover:not(:disabled) {
+      background-color: #cfc9bf;
+    }
+  }
+  &.btn-gray {
+    background-color: $gray-900;
+    color: $white;
+    &:hover:not(:disabled) {
+      background-color: $gray-800;
+    }
+  }
+  // property
+  &:disabled {
+    background-color: $gray-100;
+    color: $white;
+  }
+  // size
+  &.btn-small {
+    padding: 1.2rem 1.4rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 0.02rem;
+  }
+  &.btn-medium {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.2rem;
+  }
+  &.btn-large {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 3rem;
+  }
+  // type
+  &.btn-round {
+    &.btn-small {
+      gap: 0.4rem;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+    }
+    &.btn-large {
+      gap: 1.6rem;
+      padding: 1.4rem 2.4rem;
+      border-radius: 3.3rem;
+    }
+  }
+  &.btn-text {
+    gap: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    background-color: transparent;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: $gray-700;
+    line-height: 2.4rem;
+    &:hover:not(:disabled) {
+      background-color: rgba($gray-900, 0.1);
+    }
+    &:disabled {
+      opacity: 0.3;
+    }
+  }
+}
+
+@media #{$mobile_device} {
+  .btn {
+    // color
+    &.btn-primary {
+      background-color: $green-500;
+      &:hover:not(:disabled) {
+        background-color: $green-500;
+      }
+    }
+    &.btn-secondary {
+      &:hover:not(:disabled) {
+        background-color: $gray-50;
+      }
+    }
+    &.btn-tan {
+      &:hover:not(:disabled) {
+        background-color: $tan-400;
+      }
+    }
+    &.btn-gray {
+      &:hover:not(:disabled) {
+        background-color: $gray-900;
+      }
+    }
+  }
+}

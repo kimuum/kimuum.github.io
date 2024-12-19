@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- 은행명 -->
+    <input type="hidden" id="dt_bankNm" iweb-data="out" />
+    <!-- 계좌번호 -->
+    <input type="hidden" id="dt_accntNo" iweb-data="out" />
+    <!-- 이번달요금 -->
+    <input type="hidden" id="dt_amt" iweb-data="out" />
+    <!-- 미납금액 -->
+    <input type="hidden" id="dt_mi_amt" iweb-data="out" />
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '고객님의 납부계좌',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-account"></div>
+              <div class="user-info-list-area">
+                <div class="user-info-list-box">
+                  <dl class="user-info-list">
+                    <dt>은행명</dt>
+                    <dd><span id="bankNm"></span></dd>
+                  </dl>
+                  <dl class="user-info-list">
+                    <dt>계좌번호</dt>
+                    <dd>
+                      <a href="javascript:copy()" id="accntNo" class="copy-box">
+                        <span lass="btn-copy"></span>
+                      </a>
+                    </dd>
+                  </dl>
+                </div>
+                <div class="user-info-list-box bg-line">
+                  <dl class="user-info-list">
+                    <dt>미납금액</dt>
+                    <dd>
+                      <span id="mi_amt">0</span>
+                      <span class="unit">원</span>
+                    </dd>
+                  </dl>
+                  <dl class="user-info-list">
+                    <dt>이번달요금</dt>
+                    <dd>
+                      <span id="m_amt">0</span>
+                      <span class="unit">원</span>
+                    </dd>
+                  </dl>
+                  <dl class="user-info-list user-info-total">
+                    <dt>납부하실 총 금액</dt>
+                    <dd>
+                      <span id="amt">0</span>
+                      <span class="unit">원</span>
+                    </dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" id="dt_btnTitle1" onclick="sendRepPageData($(this).text().trim(), 'RT', 'menu');">문자로 받기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'T';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 은행명
+        try {
+          var dt_bankNm = getUrlParameter('dt_bankNm');
+
+          /*@build-time*/ dt_bankNm = '국민';
+
+          document.getElementById('bankNm').innerText = dt_bankNm;
+        } catch (e) {}
+
+        // 계좌번호
+        try {
+          var dt_accntNo = getUrlParameter('dt_accntNo');
+          //document.getElementById('accntNo').innerHTML = dt_accntNo + "<span class="btn-copy"></span>";
+
+          /*@build-time*/ dt_accntNo = '12324423423';
+
+          if (vars_type == 'T') document.getElementById('accntNo').innerHTML = dt_accntNo + '<span class="btn-copy"></span>';
+          else document.getElementById('accntNo').innerHTML = dt_accntNo;
+        } catch (e) {}
+
+        // dt_amt가 납부금액 -> 이번달요금으로 변경
+        // 이번달요금 + 미납금액 = 납부금액으로 계산
+        try {
+          var dt_amt = getUrlParameter('dt_amt');
+          var dt_mi_amt = getUrlParameter('dt_mi_amt');
+
+          if (dt_amt != '') {
+          } else {
+            dt_amt = 0;
+          }
+          if (dt_mi_amt != '') {
+          } else {
+            dt_mi_amt = 0;
+          }
+
+          /*@build-time*/ dt_amt = '1000';
+          /*@build-time*/ dt_mi_amt = '10000';
+
+          var resultAmt = parseInt(dt_mi_amt) + parseInt(dt_amt) == '' ? '0' : parseInt(dt_mi_amt) + parseInt(dt_amt);
+
+          document.getElementById('m_amt').innerText = formatCommas(dt_amt);
+          document.getElementById('mi_amt').innerText = formatCommas(dt_mi_amt);
+
+          document.getElementById('amt').innerText = formatCommas(resultAmt);
+        } catch (e) {}
+      });
+
+      // 화면 텍스트복사
+      function copy() {
+        // 화면copy버튼 비활성화
+        $('#accntNo').prop('disabled', true);
+
+        if (vars_type == 'T') copyPhone(getUrlParameter('dt_accntNo'), 'callbackCopy');
+        else {
+          var temp = document.getElementById('clipboard');
+          if (temp == null) {
+            temp = document.createElement('input');
+            document.getElementsByTagName('body').item(0).appendChild(temp);
+          }
+
+          temp.value = getUrlParameter('dt_accntNo');
+          temp.select();
+
+          document.execCommand('copy');
+          document.getElementsByTagName('body').item(0).removeChild(temp);
+          jAlert('<p class="popup-alert-text">복사되었습니다.</p>');
+        }
+      }
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면 텍스트복사 CALLBACK 함수 - callbackCopy
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackCopy(ret) {
+        if (!ret) {
+          jAlert('<p class="popup-alert-text">error!!</p>', '');
+        }
+
+        // 화면copy버튼 활성화
+        $('#accntNo').prop('disabled', false);
+      }
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

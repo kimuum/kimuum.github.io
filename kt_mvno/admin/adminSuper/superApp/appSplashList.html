@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "앱 스플래시 화면 관리" , "headProjectName": " | 앱 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>앱 스플래시 화면 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 스플래시 화면 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>고정 화면</span></button>
+                <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>기간제 화면</span></button>
+              </div>
+              <div class="tabContainer">
+                <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                  <!-- 고정 화면 - 이미지 미첨부 상태 -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">고정 스플래시 화면</h2>
+                      </div>
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>저장</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            고정 스플래시 화면 목록 - 대표 이미지, 스플래시 유지시간
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                대표 이미지 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldUpload splashType">
+                                  <div class="imageWrap">
+                                    <div class="image"></div>
+                                  </div>
+                                  <div class="fieldForm">
+                                    <div class="file">
+                                      <input type="file" id="fileUpload" title="대표 이미지 업로드" />
+                                    </div>
+                                    <div class="buttonArea">
+                                      <button type="button" class="btn"><span>업로드</span></button>
+                                    </div>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >1140 px X 3120 px, 3MB 이하, png 파일 등록
+                                  </p>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >이미지 첨부 시 사이즈별 자동 리사이징
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                스플래시 유지시간 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldForm">
+                                  <div class="maxWidthType01">
+                                    <select title="스플래시 유지시간">
+                                      <option value="">+1초</option>
+                                    </select>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >기본 앱 로딩 이후 스플래시 이미지를 표시할 시간을 설정하는 기능입니다.
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 고정 화면 - 이미지 첨부 상태 -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">고정 스플래시 화면</h2>
+                      </div>
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>저장</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            고정 스플래시 화면 목록 - 대표 이미지, 스플래시 유지시간
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                대표 이미지 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldUpload splashType">
+                                  <div class="imageWrap">
+                                    <div class="image">
+                                      <img src="../../assets/images/sample/sample_splash.jpg" alt="대표" />
+                                    </div>
+                                    <button type="button" class="imageDelete"><span>이미지 삭제</span></button>
+                                  </div>
+                                  <div class="fieldForm">
+                                    <div class="file">
+                                      <input type="file" id="fileUpload" title="대표 이미지 업로드" />
+                                    </div>
+                                    <div class="buttonArea">
+                                      <button type="button" class="btn"><span>업로드</span></button>
+                                    </div>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >1140 px X 3120 px, 3MB 이하, png 파일 등록
+                                  </p>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >이미지 첨부 시 사이즈별 자동 리사이징
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                스플래시 유지시간 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldForm">
+                                  <div class="maxWidthType01">
+                                    <select title="스플래시 유지시간">
+                                      <option value="">+1초</option>
+                                    </select>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >기본 앱 로딩 이후 스플래시 이미지를 표시할 시간을 설정하는 기능입니다.
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //고정 화면 - 이미지 첨부 상태 -->
+                </div>
+                <!-- //고정 화면 -->
+                <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topLeft">
+                        <h2 class="topTitle">기간제 스플래시 화면</h2>
+                      </div>
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>저장</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <!-- visible 클래스 : 달력 펼쳐질 때 테이블에 스크롤 생김 대응 -->
+                      <div class="tableContainer visible">
+                        <table>
+                          <caption>
+                            기간제 스플래시 화면 관련 목록 - 대표이미지, 스플래시 유지시간, 적용 기간
+                          </caption>
+                          <colgroup>
+                            <col style="width: 148px" />
+                            <col />
+                          </colgroup>
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                대표 이미지 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldUpload splashType">
+                                  <div class="imageWrap">
+                                    <div class="image">
+                                      <img src="../../assets/images/sample/sample_splash.jpg" alt="대표" />
+                                    </div>
+                                    <button type="button" class="imageDelete"><span>이미지 삭제</span></button>
+                                  </div>
+                                  <div class="fieldForm">
+                                    <div class="file">
+                                      <input type="file" id="fileUpload" title="대표 이미지 업로드" />
+                                    </div>
+                                    <div class="buttonArea">
+                                      <button type="button" class="btn"><span>업로드</span></button>
+                                    </div>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >1140 px X 3120 px, 3MB 이하, png 파일 등록
+                                  </p>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >이미지 첨부 시 사이즈별 자동 리사이징
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                스플래시 유지시간 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldForm">
+                                  <div class="maxWidthType01">
+                                    <select title="스플래시 유지시간">
+                                      <option value="">+1초</option>
+                                    </select>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >기본 앱 로딩 이후 스플래시 이미지를 표시할 시간을 설정하는 기능입니다.
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                적용 기간 <strong class="required"><span>필수입력</span></strong>
+                              </th>
+                              <td>
+                                <div class="fieldForm">
+                                  <div class="periodWrap">
+                                    <div class="field fieldDatepicker" id="datepicker-start-date">
+                                      <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                                      <div class="fieldForm datePickerArea">
+                                        <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                      </div>
+                                    </div>
+                                    <div class="space"></div>
+                                    <div class="field fieldDatepicker" id="datepicker-end-date">
+                                      <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                                      <div class="fieldForm datePickerArea">
+                                        <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <p class="addExplain">
+                                    <strong class="required"><span>중요</span></strong
+                                    >적용 기간이 종료 되면 고정화면이 노출됩니다.
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //기간제 화면 -->
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

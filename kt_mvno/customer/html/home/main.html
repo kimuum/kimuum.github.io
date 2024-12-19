@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "홈", "titleHidden": "" })
+  <!-- <div class="eventPrinter"></div> -->
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#myInfoSummary">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 메인 고유클래스 : main, 검색바 활성화 클래스 : openedSearch -->
+    <div class="wrap main openedTopBanner">
+      @@include('headerMain.html')
+      <!-- //END headerContainer -->
+
+      @@include('main.html')
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        var $wrap = $document.find('.wrap');
+        var $header = $wrap.find('.headerContainer');
+
+        mainEvent(); //메인 관련 js
+        commonEvent();
+        btnSingleActive('.chargeCostWrap .btn', 'active'); //비교 버튼 활성화 js
+        btnSingleActive('.recommendTabs .tabBtn', 'active'); // 2차 : 후불/선불요금제 탭 버튼 활성화 js
+
+        // [VOS2차] 슬라이드 공통 수정 사항 - 시작 //
+        var summarySwiper = new Swiper('.summarySwiper', {
+          spaceBetween: 10,
+          slidesPerView: 3,
+          pagination: {
+            el: '.summaryPagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<button class="' + className + '">' + '<span>' + 0 + (index + 1) + '</span>' + '</button>';
+            },
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 1,
+            },
+          },
+          a11y: {
+            paginationBulletMessage: '{{index}} 번째 슬라이드로 이동합니다.',
+          },
+          observer: true, // 추가
+          observeParents: true, // 추가
+          on: {
+            slideChange: function (e) {
+              $('.summarySwiper').find('.swiper-pagination-bullet').removeAttr('title');
+              $('.summarySwiper').find('.swiper-pagination-bullet').eq(this.activeIndex).attr('title', '선택됨');
+              enabledShowingFocus(summarySwiper);
+              // $('.summarySwiper').find('.swiper-slide').eq(this.activeIndex).hide();
+            },
+            resize: function (e) {
+              enabledShowingFocus(summarySwiper);
+            },
+          },
+        });
+
+        var $summaryBtn = $document.find('.summaryBtn');
+
+        $(document).off('click', '.summaryBtn');
+        $(document).on('click', '.summaryBtn', function () {
+          var $container = $(this).closest('.infoSummaryBottom');
+          var $content = $container.find('.summaryBottom');
+
+          if ($container.hasClass('active')) {
+            $container.removeClass('active');
+            $(this).attr('aria-expanded', 'false');
+            $(this).find('span').text('상세 요금 정보 보기');
+          } else {
+            $container.addClass('active');
+            $(this).attr('aria-expanded', 'true');
+            $(this).find('span').text('상세 요금 정보 닫기');
+
+            setTimeout(function () {
+              if ($('.summarySwiper').find('.swiper-pagination-bullets')) {
+                $('.summarySwiper').find('.swiper-pagination-bullets').find('.swiper-pagination-bullet-active').attr('title', '선택됨');
+              }
+              if ($('.summarySwiper2').find('.swiper-pagination-bullets')) {
+                $('.summarySwiper2').find('.swiper-pagination-bullets').find('.swiper-pagination-bullet-active').attr('title', '선택됨');
+              }
+              enabledShowingFocus(summarySwiper);
+            }, 0);
+          }
+        });
+
+        // [VOS2차] 결함 ID 1122078 1122169 1122400 수정 - 시작 //
+        var summarySwiper2 = new Swiper('.summarySwiper2', {
+          spaceBetween: 10,
+          slidesPerView: 3,
+          pagination: {
+            el: '.summaryPagination2',
+            clickable: true,
+            renderBullet: function (index, className) {
+              // return '<span class="' + className + '">' + '<span>'+ 0 + (index + 1) + '</span>' + '</span>';
+              return '<span class="' + className + '">' + '</span>';
+            },
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 1,
+            },
+          },
+          observer: true, // 추가
+          observeParents: true, // 추가
+          a11y: {
+            paginationBulletMessage: '{{index}} 번째 슬라이드로 이동합니다.',
+          },
+          on: {
+            slideChange: function (e) {
+              $('.summarySwiper2').find('.swiper-pagination-bullet').removeAttr('title');
+              $('.summarySwiper2').find('.swiper-pagination-bullet').eq(this.activeIndex).attr('title', '선택됨');
+              $('.summarySwiper2').find('.swiper-slide').eq(this.activeIndex).find(tabbable).first().focus();
+              enabledShowingFocus(summarySwiper2);
+            },
+            resize: function (e) {
+              enabledShowingFocus(summarySwiper2);
+            },
+          },
+        });
+        enabledShowingFocus(summarySwiper2);
+
+        if ($('.visualSwiper .swiper-slide').length === 1) {
+          $('.visualSwiper .pagination-area').hide();
+          options = {
+            on: {
+              slideChange: function () {
+                enabledShowingFocus(swiper_visual);
+              },
+            },
+          };
+        } else {
+          options = {
+            // autoplay:{
+            // delay: 3000,
+            // disableOnInteraction: false
+            // },
+            speed: 1000,
+            observer: true,
+            observeParents: true,
+            loop: true,
+            navigation: {
+              nextEl: '.visualMainBtnNext',
+              prevEl: '.visualMainBtnPrev',
+            },
+            pagination: {
+              el: '.visualMainPagination',
+              type: 'fraction',
+              formatFractionCurrent: function (number) {
+                return ('0' + number).slice(-2);
+              },
+              formatFractionTotal: function (number) {
+                return ('0' + number).slice(-2);
+              },
+              renderFraction: function (currentClass, totalClass) {
+                // [VOS2차] 결함 ID 1122083 수정 : 불필요 title 속성 삭제 //
+                return '<span class="' + currentClass + '"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
+              },
+            },
+            on: {
+              slideChange: function () {
+                enabledShowingFocus(swiper_visual);
+              },
+              resize: function () {
+                enabledShowingFocus(swiper_visual);
+              },
+            },
+          };
+        }
+        var swiper_visual = new Swiper('.visualSwiper', options);
+        enabledShowingFocus(swiper_visual);
+        // [VOS2차] 결함 ID 1122078 1122169 1122400 수정 - 끝 //
+
+        $('.visualMainArea > .stop').click(function () {
+          swiper_visual.autoplay.stop();
+          $('.visualMainArea > .stop').removeClass('show');
+          $('.visualMainArea > .play').addClass('show').focus();
+        });
+        $('.visualMainArea > .play').click(function () {
+          swiper_visual.autoplay.start();
+          $('.visualMainArea > .play').removeClass('show');
+          $('.visualMainArea > .stop').addClass('show').focus();
+        });
+
+        var swiper_popular = new Swiper('.mainPopularSwiper', {
+          slidesPerView: 3,
+          spaceBetween: 22,
+          pagination: {
+            el: '.popularPagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '.popularBtnNext',
+            prevEl: '.popularBtnPrev',
+          },
+          breakpoints: {
+            512: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            1600: {
+              slidesPerView: 2,
+              spaceBetween: 22,
+            },
+          },
+          on: {
+            slideChange: function (e) {
+              enabledShowingFocus(swiper_popular);
+            },
+            resize: function (e) {
+              enabledShowingFocus(swiper_popular);
+            },
+          },
+        });
+        enabledShowingFocus(swiper_popular);
+
+        // [VOS2차] Swiper 소스 업데이트 - 시작 //
+        var swiper_biz = new Swiper('.mainBizSwiper', {
+          slidesPerView: '5',
+          spaceBetween: 30,
+          pagination: {
+            el: '.bizPagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '.bizBtnNext',
+            prevEl: '.bizBtnPrev',
+          },
+          breakpoints: {
+            512: {
+              slidesPerView: 1.3,
+              spaceBetween: 8,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1600: {
+              slidesPerView: 4,
+              spaceBetween: 30,
+            },
+          },
+          keyboard: {
+            enabled: true,
+            onlyInViewport: false,
+          },
+          on: {
+            slideChange: function (e) {
+              enabledShowingFocus(swiper_biz);
+            },
+            resize: function (e) {
+              enabledShowingFocus(swiper_biz);
+            },
+          },
+        });
+        enabledShowingFocus(swiper_biz);
+        // [VOS2차] Swiper 소스 업데이트 - 끝 //
+
+        // [VOS2차] Swiper 소스 업데이트 - 시작 //
+        var swiper_notice = new Swiper('.noticeSwiper', {
+          slidesPerView: '3', //초기값 모바일 먼저
+          spaceBetween: 44,
+          pagination: {
+            el: '.noticePagination',
+            type: 'fraction',
+          },
+          navigation: {
+            nextEl: '.noticeBtnNext',
+            prevEl: '.noticeBtnPrev',
+          },
+          loop: false,
+          breakpoints: {
+            512: {
+              slidesPerView: 1.5,
+              spaceBetween: 8,
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            1600: {
+              slidesPerView: 3,
+              spaceBetween: 44,
+            },
+          },
+          observer: true,
+          observeParents: true,
+          on: {
+            slideChange: function (e) {
+              enabledShowingFocus(swiper_notice);
+            },
+            resize: function (e) {
+              enabledShowingFocus(swiper_notice);
+            },
+          },
+        });
+        enabledShowingFocus(swiper_notice);
+        // [VOS2차] Swiper 소스 업데이트 - 끝 //
+      });
+      // [VOS2차] 슬라이드 공통 수정 사항 - 끝 //
+
+      // 검색바 js
+      $(document).ready(function () {
+        // ------------ 통합검색 js : 퍼블 예시 js임으로 개발파트 필요에 따라 사용하셔도 됩니다. ---------//
+        $('.headerSearchBar .btnSearchOpen').on('click', function () {
+          var $wrap = $(this).parents('.wrap');
+          $wrap.addClass('openedSearch');
+
+          // 검색어 입력창으로 초점 이동 //
+          $('.headerSearchBar').find('.searchBarArea').find('input').focus();
+
+          // 모바일에서 통합검색 창 열림 상태시 body 스크롤 없애기
+          if ($(window).width() <= 1024) {
+            if ($('.wrap').hasClass('openedSearch')) {
+              $('body').css({
+                overflow: 'hidden',
+              });
+            }
+          }
+          setFocusclose();
+        });
+
+        // 인풋 동작 예시
+        $('.searchBarArea input').on('focus', function () {
+          $(this).siblings('.btnRemove').removeClass('hide');
+          $(this).siblings('.btnRemove').addClass('show');
+          // $(this).siblings('.btnSearch').addClass('hide');
+        });
+        $('.searchBarArea .btnRemove').on('click', function () {
+          $(this).removeClass('show');
+          $(this).addClass('hide');
+          // $(this).siblings('.btnSearch').removeClass('hide');
+        });
+
+        // 통합검색 닫기 동작 예시
+        $('.headerSearchBar .btnSearchClose').on('click', function () {
+          var $wrap = $(this).parents('.wrap');
+          $('body').removeAttr('style');
+          $('.headerSearchBar .btnRemove').removeClass('show');
+          $('.headerSearchBar .btnRemove').addClass('hide');
+          // $('.headerSearchBar .btnSearch').removeClass('hide');
+
+          if ($wrap.hasClass('openedSearch')) {
+            $wrap.removeClass('openedSearch');
+          }
+          $('.btnSearchOpen').focus();
+        });
+
+        // 통합 검색창 탭 초점 가두기 //
+        function setFocusclose() {
+          var $headerSearchBar = $('.headerSearchBar');
+          var $tabbable = $headerSearchBar.find(tabbable);
+
+          $tabbable.on('focus', function (e) {
+            var $this = $(this);
+            $this.css({
+              border: '2px sold #f00',
+            });
+          });
+
+          var $firstTab = $tabbable.first();
+          var $lastTab = $tabbable.last();
+
+          $firstTab.on('keydown', function (e) {
+            // Shift + Tab을 입력하여 탭을 반대로 이동할 경우 //
+            if ($(this).is(':focus') && e.shiftKey && (e.keyCode || e.which) === 9) {
+              // 이벤트 전파를 막고 마지막 요소로 포커스를 이동합니다. //
+              e.preventDefault();
+              lastTab.focus();
+            }
+          });
+
+          $lastTab.on('keydown', function (e) {
+            var $this = $(this);
+            // Tab을 입력하여 탭을 이동할 경우 //
+            if (!e.shiftKey && (e.keyCode || e.which) === 9) {
+              // 이벤트 전파를 막고 첫 번째 요소로 포커스를 이동합니다. //
+              e.preventDefault();
+              firstTab.focus();
+            }
+          });
+        }
+      });
+
+      // 탑배너 퍼블 예시를 보기 위한 스크립트로 개발소스 적용 하지 말아주세요
+      window.addEventListener('load', loadCheckTopBanner);
+      // 탑배너 퍼블 예시를 보기 위한 스크립트로 개발소스 적용 하지 말아주세요
+    </script>
+  </body>
+</html>

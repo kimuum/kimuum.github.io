@@ -1,0 +1,32 @@
+<div class="offer-area">
+  <div class="offer-title-box">
+    @@if(title) {
+    <p class="offer-title">@@title</p>
+    } @@if(titleDesc) {
+    <p class="offer-title-desc">@@titleDesc</p>
+    }
+  </div>
+  <!-- prettier-ignore -->
+  @@if(buttonType && buttonType === 'default') {
+  <!-- prettier-ignore -->
+  @@for(var j = 0; j < offterBtn.length; j++) {
+  <div class="offer-button-box">
+    <!-- prettier-ignore -->
+    <button type="button" class="btn-offer" onclick="javascript:sendRepPageData($(this).text().trim(), '`+[j+1]+`', 'menu');">
+      <span class="btn-title">`+offterBtn[j].buttonTitle+`</span>
+      <span class="btn-desc">`+offterBtn[j].buttonDesc+`</span>
+    </button>
+  </div>
+  } }
+  <!-- prettier-ignore -->
+  @@if(buttonType && buttonType === 'd-loading') {
+  <!-- prettier-ignore -->
+  @@for(var i = 0; i < button.length; i++) {
+  <div class="offer-button-box">
+    <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), '`+[i+1]+`', 'menu');">
+      <span>`+button[i].buttonTitle+`</span>
+    </button>
+    <p class="btn-desc">`+button[i].buttonDesc+`</p>
+  </div>
+  } }
+</div>

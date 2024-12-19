@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Case6. 휴대폰번호 입력(1개)", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>부가서비스 가입 신청</span></button>
+    </div>
+    <div class="popup popupBottomFixed show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">부가서비스 가입 신청</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoTitle">신청 회선</div>
+              <div class="infoContent">
+                <div class="typePhoneLine">
+                  <div class="innerLogo">
+                    <div class="fieldBox">
+                      <div class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></div>
+                      <div class="lineBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "모두다 맘껏 11GB+",
+                          "price": null,
+                          "phoneNumber": "010-81**-*319",
+                          "label": true
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 회선 -->
+
+            <div class="applyInfoArea">
+              <!-- [VOS2차] 결함ID 1122978 클래스 infoTitle 클래스/태그 한줄 삭제 -->
+              <div class="infoContent">
+                <div class="tableContainer normalBgTable captionShow">
+                  <!-- [VOS2차] 결함ID 1122978 클래스 추가 captionShow -->
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        신청 부가서비스
+                        <span class="ir">- 부가서비스 명, 이용요금(VAT)포함</span>
+                        <!-- [VOS2차] 결함ID 1122978 ir로 수정 -->
+                      </caption>
+                      <!-- [VOS2차] 결함ID 1123039 일괄 수정 -->
+                      <colgroup>
+                        <col />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="alignCenter">부가서비스 명</th>
+                          <th scope="col" class="alignCenter">이용요금(VAT)포함</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="alignCenter">데이터 전용 <br />단말 통보 서비스</td>
+                          <td class="alignCenter">무료</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <ul class="dotList marginBtmReset">
+                    <li class="beforeDot">iPad, 갤럭시탭 등 태블릿PC의 데이터 소진율을 지정하신 핸드폰으로 문자메시지 알림</li>
+                    <li class="beforeDot">제공 데이터의 60%, 80%, 100% 소진 시 문자메시지로 전달</li>
+                    <li class="beforeDot">기본료에서 2/4/6/8/10/15만원 초과 시 문자메시지로 전달</li>
+                  </ul>
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        수신 번호
+                      </caption>
+                      <colgroup>
+                        <col style="width: 30%; max-width: 85px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="alignCenter">수신 번호</th>
+                          <td>
+                            <div class="groupContainer">
+                              <div class="input">
+                                <input type="text" title="휴대폰 번호 입력" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //부가서비스 -->
+          </div>
+          <!-- //applyCaseContainer -->
+        </div>
+        <!-- //popupMiddle -->
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>가입 신청하기</span></button>
+          </div>
+        </div>
+        <!-- //popupBottom -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

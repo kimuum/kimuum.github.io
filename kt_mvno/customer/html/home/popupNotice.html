@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "서비스 최초 접근 시 팝업_앱실행, 사이트 접근", "titleHidden": "" })
+  <body>
+    <div class="popup popupFirstNoticeWrap show" id="popupFirstNotice" role="dialog" aria-labelledby="popupTitle-FirstNotice" aria-modal="true">
+      <!-- [운영] KMVNO-4247 20231221 수정 -->
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <!-- [운영] KMVNO-4247 20231221 추가 -->
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-FirstNotice">공지사항</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnFirstNotice', 'popupFirstNotice')">
+            <span>Close</span>
+          </button>
+        </div>
+        <!-- //[운영] KMVNO-4247 20231221 추가 -->
+        <div class="popupMiddle">
+          <div class="popupNoticeWrap">
+            <div class="swiper popupNoticeSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- [운영] KMVNO-4247 20231221 변경 -->
+                  <div class="noticePieceContainer">
+                    <div class="noticeHead">
+                      <strong class="noticeTitle">추석연휴 셀프개통 불가일정 안내</strong>
+                    </div>
+                    <div class="noticeBody">
+                      <p class="textBox">
+                        안녕하세요. KT 마이알뜰폰 입니다. <br />
+                        추석연휴 셀프개통(신규/번호이동) 불가 일정을 아래와 같이 안내드리니 서비스 이용에 불편 없으시길 바랍니다.
+                      </p>
+                      <div class="importBgBox flex">
+                        <span class="title">셀프개통 불가일정</span>
+                        <strong class="colorRed">9월 29일(금)~10월 01일(일)</strong>
+                      </div>
+                      <ul class="dotList">
+                        <li class="beforeDot">10월 02일(월)부터 가능</li>
+                        <li class="beforeDot">고객님에게 한걸음 다가설 수 있는 KT마이알뜰폰이 되도록 노력하겠습니다. 감사합니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- //[운영] KMVNO-4247 20231221 변경 -->
+                </div>
+                <div class="swiper-slide">
+                  <!-- [운영] KMVNO-4247 20231221 변경 -->
+                  <div class="noticePieceContainer">
+                    <div class="noticeHead">
+                      <strong class="noticeTitle">추석연휴 셀프개통 불가일정 안내</strong>
+                    </div>
+                    <div class="noticeBody">
+                      <div class="highTextArea">
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                        에디터 출력 영역입니다.<br />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //[운영] KMVNO-4247 20231221 변경 -->
+                </div>
+              </div>
+
+              <div class="pagination-area">
+                <button type="button" class="pageBtnPrev" title="이전"></button>
+                <div class="popupNoticePagination"></div>
+                <button type="button" class="pageBtnNext" title="다음"></button>
+              </div>
+            </div>
+            <!-- //swiper -->
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn" onclick="togglePopup('btnFirstNotice', 'popupFirstNotice')"><span>오늘 하루 그만보기</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnFirstNotice', 'popupFirstNotice')"><span>닫기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        // [VOS2차] 슬라이드 공통 수정 사항 - 시작 //
+        if ($('.popupNoticeSwiper').length === 1 && $('.popupNoticeSwiper .swiper-slide').length === 1) {
+          $('.popupNoticeSwiper .pagination-area').hide();
+          options = {
+            on: {
+              slideChange: function () {
+                enabledShowingFocus(swiper_popupnotic);
+              },
+            },
+          };
+        } else {
+          options = {
+            //[운영] KMVNO-4247 20231221 변경 시작
+            autoHeight: true,
+            //[운영] KMVNO-4247 20231221 변경 끝
+            observer: true,
+            observeParents: true,
+            loop: true,
+            spaceBetween: 30,
+            navigation: {
+              nextEl: '.pageBtnNext',
+              prevEl: '.pageBtnPrev',
+            },
+            pagination: {
+              el: '.popupNoticePagination',
+              type: 'fraction',
+              formatFractionCurrent: function (number) {
+                return ('0' + number).slice(-2);
+              },
+              formatFractionTotal: function (number) {
+                return ('0' + number).slice(-2);
+              },
+              renderFraction: function (currentClass, totalClass) {
+                return '<span class="' + currentClass + '" title="선택 됨"></span>' + ' / ' + '<span class="' + totalClass + '"></span>';
+              },
+            },
+            on: {
+              slideChange: function () {
+                enabledShowingFocus(swiper_popupnotic);
+              },
+              resize: function () {
+                enabledShowingFocus(swiper_popupnotic);
+              },
+            },
+          };
+        }
+        var swiper_popupnotic = new Swiper('.popupNoticeSwiper', options);
+        enabledShowingFocus(swiper_popupnotic);
+        // [VOS2차] 슬라이드 공통 수정 사항 - 끝 //
+
+        //[운영] KMVNO-4247 20231221 stop/play 관련 삭제
+      });
+    </script>
+  </body>
+</html>

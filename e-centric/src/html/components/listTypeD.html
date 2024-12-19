@@ -1,0 +1,154 @@
+@@if(type !== 'radio' && className !== 'no-border') {
+  <!-- [접근성] role 속성 추가 -->
+}
+@@if(type === 'more' && className !== 'disabled') {
+  <!-- [접근성] aria 속성 추가 -->
+}
+@@if(type === 'menu') {
+  <!-- [접근성] draggable 속성 추가 -->
+}
+<div class="list-d-list @@className" @@if(className === 'disabled') {aria-hidden="true"}  @@if(modalId) {aria-controls='@@modalId'} @@if(type === 'more' && className !== 'disabled') {aria-haspopup="dialog"} @@if(type === 'updown' || type === 'up' || type === 'down') {draggable = "true"}>
+  <!-- [240325] 속성 수정 -->
+  <div class="list-d-content">
+    <div class="list-d-left">
+      @@if(image) {
+      <!-- [240206] 자사/타사 카드 스타일 구분으로 인한 수정 (.img-box -> .card-image-box) -->
+      <!-- [접근성] img 태그에 aria-hidden 속성 추가 -->
+      <div class="card-image-box">
+        @@if(image !== 'others') {
+        <img src="../../assets/images/icon/img_card.svg" alt="자사 카드" aria-hidden="true" />
+        } @@if(image === 'others') {
+        <img src="../../assets/images/icon/img_card_others.svg" alt="타사 카드" aria-hidden="true" />
+        <!-- 타사 카드일 시 로고 영역 (40*40) -->
+        <div class="logo-box">
+          <img src="../../assets/images/dummy/img_logo_dummy.png" alt="타사 로고" aria-hidden="true"/>
+        </div>
+        }
+
+        @@if(className === 'warning') {
+          <!-- [접근성] li에 .warning 클래스 있을 경우 스크린 리더용 요소 추가 -->
+          <span class="ir-text">분실 도난 카드입니다.</span>
+        }
+        @@if(className === 'disabled') {
+          <!-- [접근성] li에 .disabled 클래스 있을 경우 스크린 리더용 요소 추가 -->
+          <span class="ir-text">선택 불가한 카드입니다.</span>
+        }
+        @@if(type === 'updown') {
+          <!-- [접근성] -->
+          <!-- [240325] 추가 -->
+          <span class="ir-text" role="alert">n번째 카드입니다.</span>
+        }
+        @@if(type === 'down') {
+          <!-- [접근성] -->
+          <!-- [240325] 추가 -->
+          <span class="ir-text" role="alert">첫번째 카드입니다.</span>
+        }
+        @@if(type === 'up') {
+          <!-- [접근성] -->
+          <!-- [240325] 추가 -->
+          <span class="ir-text" role="alert">마지막 카드입니다.</span>
+        }
+      </div>
+      }
+      <div class="title-container">
+        <div class="title-area">
+          @@if(category) {
+          <div class="title-top">
+            <div class="category-box">
+              <span class="category">@@category</span>
+            </div>
+          </div>
+          }
+          <div class="title-middle">
+            <div class="title-box">
+              <span class="title">@@title</span>
+              @@if(badgeText) {
+              <!-- prettier-ignore -->
+              @@for (var i = 0; i < badgeText.length; i++){
+                  @@include("badgeText.html",  `+(JSON.stringify(badgeText[i]))+`)
+                }
+              }
+            </div>
+          </div>
+          <div class="title-bottom">
+            <div class="desc-box">
+              <span class="desc">@@desc</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-d-right">
+      <!-- prettier-ignore -->
+      @@if(type === 'more') {
+      <!-- [접근성] button 태그를 div 태그로 수정 -->
+      <!-- [240425] aria-label 텍스트 수정 -->
+      <button type="button" class="btn-more" aria-label="더 보기" aria-haspopup="true">
+        <i class="ic ic-more"></i>
+      </button>
+      }
+      <!-- prettier-ignore -->
+      @@if(type === 'arrow') {
+      <!-- [접근성] button 태그를 div 태그로 수정 -->
+      <button class="btn-arrow" aria-label="상세보기">
+        <i class="ic ic-arrow-right"></i>
+      </button>
+      }
+      <!-- prettier-ignore -->
+      @@if(type === 'edit') {
+      <!-- [접근성] button 태그에 속성 추가 -->
+      <button type="button" class="btn-edit" aria-controls="set-card-name" aria-label="카드명 수정" aria-haspopup="dialog">
+        <i class="ic ic-edit"></i>
+      </button>
+      }
+      <!-- prettier-ignore -->
+      @@if(type === 'radio') {
+      <!-- prettier-ignore -->
+      @@for (var j = 0; j < radio.length; j++){
+          @@include("radioButton.html",  `+(JSON.stringify(radio[j]))+`)
+        }
+      }
+    </div>
+    <!-- prettier-ignore -->
+    @@if(type === 'menu') {
+      <!-- [접근성] drag/drop 기능 있을 경우 스크린 리더용 요소 추가 -->
+      <span class="ir">목록 항목을 드래그하여 원하는 위치로 이동하세요.</span>
+    }
+  </div>
+
+  <!-- prettier-ignore -->  
+  @@if(type === 'up') {
+  <!-- [240325] 추가 -->
+  <div class="drag-drop-box">
+    <!-- [접근성] button 태그를 div 태그로 수정 -->
+    <button type="button" class="btn-drag-drop" aria-label="위로 순서 변경">
+      <i class="ic ic-arrow-up-fill"></i>
+    </button>
+  </div>
+  }
+
+  <!-- prettier-ignore -->  
+  @@if(type === 'down') {
+  <!-- [240325] 추가 -->
+  <div class="drag-drop-box">
+    <!-- [접근성] button 태그를 div 태그로 수정 -->
+    <button type="button" class="btn-drag-drop" aria-label="아래로 순서 변경">
+      <i class="ic ic-arrow-down-fill"></i>
+    </button>
+  </div>
+  }
+
+  <!-- prettier-ignore -->  
+  @@if(type === 'updown') {
+  <!-- [240325] 추가 -->
+  <div class="drag-drop-box">
+    <!-- [접근성] button 태그를 div 태그로 수정 -->
+    <button type="button" class="btn-drag-drop" aria-label="위로 순서 변경">
+      <i class="ic ic-arrow-up-fill"></i>
+    </button>
+    <button type="button" class="btn-drag-drop" aria-label="아래로 순서 변경">
+      <i class="ic ic-arrow-down-fill"></i>
+    </button>
+  </div>
+  }
+</div>

@@ -1,0 +1,28 @@
+@@include('head.html', {
+'title': 'full_player'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- 영상 : chatting -->
+    @@include('common_player.html', {
+      'hide': null,
+      'type': null,
+      'rate': 'rate-portrait',
+      'src': './images/thumbnail/test_img_ver_01.jpg',
+      'indicator': true,
+      'rightPopup': true,
+      'rightPopupClass': 'player-portrait show',
+      'rightPopupData': true,
+      'rightPopupSecondTab': 'FEATURED SHOWS',
+      'rightPopupSecondTabSelect': false,
+      'chat': 'player-portrait',
+      'chatNodata': false,
+      'chatMessage': true,
+      'disclamer' : false
+    })
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

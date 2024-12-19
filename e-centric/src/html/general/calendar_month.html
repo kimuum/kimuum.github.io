@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Calendar</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-wrapper">
+        <div class="general-container">
+          <div class="general-area">
+            <div class="general-top">
+              <div class="general-label">Component</div>
+              <div class="general-title">Calendar</div>
+            </div>
+            <div class="general-middle">
+              <div class="general-content">
+                <div class="content-label">
+                  <span class="label">Format - 월 선택</span>
+                </div>
+                <div class="content-box">
+                  <!-- [240401] 날짜 선택기 추가 -->
+                  <div class="datapicker-box calendar-box">
+                    <button type="button" class="btn-arrow prev" title="이전 월 보기">
+                      <i class="ic ic-arrow-left-fill"></i>
+                    </button>
+                    <div class="datapicker-button-box">
+                      <div class="input-box">
+                        <button type="button" class="calendar-open-button calendar-open-button-start btn-datepicker">
+                          <span class="date">23년 8월</span>
+                        </button>
+                        <input
+                          type="text"
+                          class="calendar-input"
+                          id="set-month"
+                          name="set-month"
+                          value="2023.08"
+                          aria-controls="datepicker-month"
+                          aria-haspopup="dialog"
+                          aria-expanded="false"
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                    <button type="button" class="btn-arrow next" title="다음 월 보기">
+                      <i class="ic ic-arrow-right-fill"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- [240401] datepicker 관련 스크립트 추가 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // [240426] 월 선택 script 추가
+        // 월 선택
+        const calendarBox = document.getElementById('set-month');
+        const calendarOpenBtn = calendarBox.closest('.input-box').querySelector('.calendar-open-button');
+        calendarOpenBtn.addEventListener('click', (e) => {
+          const target = e.target;
+          const parent = target.closest('.input-box');
+          const calendarInput = parent.querySelector('.calendar-input').getAttribute('id');
+
+          parent.querySelector('dialog').showModal();
+          datepicker_01.show();
+        });
+
+        let initialStartMonth = document.getElementById('set-month').value;
+        const elem_01 = document.getElementById('set-month');
+        const datepicker_01 = new Datepicker(elem_01, {
+          title: '월선택',
+          language: 'ko',
+          todayHighlight: true,
+          clearButton: false,
+          canclButton: true,
+          confirmButton: true,
+          maxView: 1,
+          pickLevel: 1,
+          defaultStart: new Date(initialStartMonth).getTime(),
+          format: 'yyyy.mm',
+        });
+
+        const calendarRange = document.getElementById('set-month');
+        const calendarInputs = calendarRange.querySelectorAll('.calendar-input');
+
+        calendarInputs.forEach(function (calendarInput) {
+          const calendarOpenButton = calendarInput.closest('.input-box').querySelector('.calendar-open-button');
+
+          elem_01.addEventListener('changeDate', function (e) {
+            const inputValue = calendarInput.value;
+            const formattedDate = formatDate(inputValue);
+            calendarOpenButton.textContent = formattedDate;
+          });
+        });
+
+        // ele
+        function formatDate(dateString) {
+          const [year, month, day] = dateString.split('.');
+          const formattedMonth = month.padStart(2, '0');
+          const formattedDay = day.padStart(2, '0');
+
+          return `${year}년 ${formattedMonth}월`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | 인증된 건물 정보</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" :'',
+        "currentPage" : "건물 인증",
+      })
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container building-certification">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">현재 회원님께 인증된 건물 정보입니다.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="building-certification-info-container">
+                  <div class="building-certification-info-area">
+                    <div class="building-certification-box">
+                      <!-- .selected : 현재 선택된 style 제어 클래스 -->
+                      <div class="building-certification-list selected">
+                        <div class="current-tag">현재 선택된 건물</div>
+                        <div class="building-desc-box">
+                          <div class="building-name">
+                            삼성전자 빌딩
+                            <span class="building-address"> 서울특별시 서초구 서초대로74길 11 </span>
+                          </div>
+                          <div class="detail-address">8F 디자인그룹실</div>
+                        </div>
+
+                        <div class="period-info-box">
+                          <!-- .end-period : 유효기간 얼마 남지않았을 경우 style 제어 클래스 -->
+                          <div class="period end-period">
+                            <span class="label">유효기간</span
+                            ><span class="date"
+                              >2023.07.30
+                              <div class="tooltip-period-box">건물 유효기간이 얼마 남지 않았어요!</div></span
+                            >
+                          </div>
+                          <div class="period">
+                            <span class="label">인증일</span><span class="date">2022.05.24 </span>
+                          </div>
+                        </div>
+                        <div class="button-box">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/button.html", {
+                            "dataValue" : "popup-add",
+                            "type" : "primary",
+                            "size" : "large",
+                            "class" : "btn-certification",
+                            "disabled" : "",
+                            "text" : "재인증",
+                          })
+                        </div>
+                      </div>
+                      <div class="building-certification-list">
+                        <div class="current-tag">현재 선택된 건물</div>
+                        <div class="building-desc-box">
+                          <div class="building-name">
+                            삼성전자 빌딩
+                            <span class="building-address"> 서울특별시 서초구 서초대로74길 11 </span>
+                          </div>
+                          <div class="detail-address">8F 디자인그룹실</div>
+                        </div>
+
+                        <div class="period-info-box">
+                          <!-- .end-period : 유효기간 얼마 남지않았을 경우 style 제어 클래스 -->
+                          <div class="period">
+                            <span class="label">유효기간</span
+                            ><span class="date"
+                              >2023.07.30
+                              <div class="tooltip-period-box">건물 유효기간이 얼마 남지 않았어요!</div></span
+                            >
+                          </div>
+                          <div class="period">
+                            <span class="label">인증일</span><span class="date">2022.05.24 </span>
+                          </div>
+                        </div>
+                        <div class="button-box">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/button.html", {
+                            "dataValue" : "popup-add",
+                            "type" : "primary",
+                            "size" : "large",
+                            "class" : "btn-certification",
+                            "disabled" : "",
+                            "text" : "재인증",
+                          })
+                        </div>
+                      </div>
+                      <div class="building-certification-list">
+                        <div class="current-tag">현재 선택된 건물</div>
+                        <div class="building-desc-box">
+                          <div class="building-name">
+                            삼성전자 빌딩
+                            <span class="building-address"> 서울특별시 서초구 서초대로74길 11 </span>
+                          </div>
+                          <div class="detail-address">8F 디자인그룹실</div>
+                        </div>
+
+                        <div class="period-info-box">
+                          <!-- .end-period : 유효기간 얼마 남지않았을 경우 style 제어 클래스 -->
+                          <div class="period">
+                            <span class="label">유효기간</span
+                            ><span class="date"
+                              >2023.07.30
+                              <div class="tooltip-period-box">건물 유효기간이 얼마 남지 않았어요!</div></span
+                            >
+                          </div>
+                          <div class="period">
+                            <span class="label">인증일</span><span class="date">2022.05.24 </span>
+                          </div>
+                        </div>
+                        <div class="button-box">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/button.html", {
+                            "dataValue" : "popup-add",
+                            "type" : "primary",
+                            "size" : "large",
+                            "class" : "btn-certification",
+                            "disabled" : "",
+                            "text" : "재인증",
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-cancel",
+                    "type" : "secondary",
+                    "size" : "large",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "취소",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-other-add",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "다른 건물 등록",
+                  })
+                </div>
+              </div>
+              <div class="notice-container notice-certification">
+                <div class="notice-area">
+                  <div class="notice-top">
+                    <div class="notice-title-box">
+                      <i class="ic ic-caution-red"></i>
+                      <span class="notice-title">꼭! 알아두세요.</span>
+                    </div>
+                  </div>
+                  <div class="notice-bottom">
+                    <ul class="notice-list-box">
+                      <li class="notice-list">
+                        <span class="text"
+                          >건물 인증은 인증일로부터 1년간 유효하며, 1년 뒤 재 인증을 하셔야 원활한 서비스 이용이
+                          가능합니다.</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-cancel",
+        "title" : "",
+        "text" : "건물 인증이 해제 되었습니다\n서비스 제공을 위해 건물 인증을 다시 진행해 주세요.",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          },
+        ],
+      })
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

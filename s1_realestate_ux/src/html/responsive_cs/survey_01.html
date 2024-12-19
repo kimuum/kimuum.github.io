@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 고객만족도 설문 참여"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "고객센터",
+          },
+        ],
+        "currentPage" : "고객만족도 설문 참여",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container cs-survey">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">에스원 부동산 솔루션 고객 만족도 설문입니다.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="filter-table-container">
+                  <div class="filter-table-area">
+                    <div class="filter-table-top">
+                      <div class="filter-box">
+                        <div class="filter">
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>설문 기간</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <span class="text">2023.03.16 ~ 2023.05.16</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-row">
+                            <div class="filter-list">
+                              <div class="filter-label">
+                                <span>진행 상태</span>
+                              </div>
+                              <div class="filter-info">
+                                <div class="info-box">
+                                  <div class="badge-box">
+                                    <span class="badge primary">진행중</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-table-middle">
+                      <div class="survey-container">
+                        <div class="survey-area">
+                          <div class="survey-box">
+                            <div class="survey-text-box">
+                              <p class="survey-text">
+                                아래 시작 버튼을 누르시면 설문을 시작합니다.<br />고객님의 소중한 의견을 기다립니다.
+                              </p>
+                            </div>
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("../../components/button.html", {
+                                "dataValue" : "",
+                                "type" : "primary",
+                                "size" : "large",
+                                "class" : "",
+                                "disabled" : "",
+                                "text" : "설문 시작",
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

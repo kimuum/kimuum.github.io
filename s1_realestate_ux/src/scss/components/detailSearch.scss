@@ -1,0 +1,153 @@
+.detail-search-container {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &.active {
+    display: block;
+  }
+  .detail-search-area {
+    @include flex(column, flex-end, flex-start);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .detail-search-dim {
+      z-index: 11;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .detail-search-box {
+      z-index: 12;
+      position: relative;
+      width: 100%;
+      border-radius: 0.8rem 0.8rem 0 0;
+      background-color: $white;
+      animation: bottomShow 0.3s;
+    }
+
+    .detail-search-top {
+      @include flex(row, space-between, center);
+      padding: 2.4rem 2rem;
+    }
+
+    .detail-search-title-box {
+      @include font(2rem, 700, $black, normal);
+    }
+
+    .close-button-box {
+      .btn-detail-search-close {
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: asset-image('ic_popup_close.svg') no-repeat center / 2.4rem;
+      }
+    }
+
+    .detail-filter-box {
+      .detail-filter {
+        padding: 0 2rem;
+        + .detail-filter {
+          padding-top: 2rem;
+          border-top: 1px solid $color_ebe;
+        }
+
+        .detail-filter-title {
+          margin-bottom: 2.4rem;
+          @include font(1.6rem, 500, $black, normal);
+        }
+
+        .detail-filter-field {
+          padding: 0 0 1.6rem;
+        }
+
+        .field-radio {
+          .radio-box {
+            margin: -0.8rem -0.2rem;
+          }
+          .radio {
+            margin: 0.8rem 0.2rem;
+            input[type='radio'] {
+              &:checked {
+                + label {
+                  border-color: $primary;
+                  background-color: $primary;
+                  color: $white;
+                }
+              }
+            }
+            label {
+              padding: 0.8rem 1.6rem;
+              @include font(1.4rem, 500, $color_7f7, normal);
+              border-radius: 10rem;
+              background-color: $color_f2f;
+              white-space: nowrap;
+              &::before {
+                display: none;
+              }
+              .radio-label {
+                margin: 0;
+              }
+            }
+          }
+        }
+
+        .datepicker-container {
+          .datpicker-area {
+            flex: 1;
+            .input-box {
+              width: 100%;
+            }
+          }
+        }
+
+        .radio-tab-box {
+          + .datepicker-container {
+            margin-top: 1.6rem;
+          }
+          .field-radio {
+            .radio-box {
+              margin: 0;
+              .radio {
+                flex: 1;
+                margin: 0;
+                + .radio {
+                  margin-left: 0.8rem;
+                }
+                input[type='radio'] {
+                  &:checked {
+                    + label {
+                      border-color: $primary;
+                      background-color: $white;
+                      color: $primary;
+                    }
+                  }
+                }
+
+                label {
+                  justify-content: center;
+                  height: 5rem;
+                  padding: 0 1.6rem;
+                  border: 1px solid $color_dcd;
+                  border-radius: 0.4rem;
+                  background-color: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .detail-search-bottom {
+      padding: 2rem;
+    }
+  }
+}

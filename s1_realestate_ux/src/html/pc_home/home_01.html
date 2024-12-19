@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/lib/sortable.min.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | Home</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../block/banner.html")
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="main-container">
+            <div class="main-area">
+              <!-- Block : 고장/수리 블록 -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-middle">
+                    <div class="inquiry-block-container">
+                      <div class="inquiry-block-area">
+                        <div class="inquiry-block-middle">
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-1111",
+                            "imgName" : "ic_fixing",
+                            "title" : "고장/수리/불편신고",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-1112",
+                            "imgName" : "ic_cleaning",
+                            "title" : "청소/소모품 교체",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-1113",
+                            "imgName" : "ic_temperature",
+                            "title" : "온도 조절",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-1114",
+                            "imgName" : "ic_cool_n_light",
+                            "title" : "냉난방/조명 연장 신청",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-1115",
+                            "imgName" : "ic_product_q",
+                            "title" : "상품문의",
+                          })
+                        </div>
+                        <div class="inquiry-block-bottom">
+                          <div class="text-button-box">
+                            <button type="button" class="btn-text btn-history">
+                              <span>나의 문의 내역</span>
+                            </button>
+                            <button type="button" class="btn-text btn-popup btn-edit" data-popup="popup-edit">
+                              <span>내 서비스 편집</span>
+                              <i class="ic ic-setting"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block - 주인을 찾아요! -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-top">
+                    <div class="main-block-top-left">
+                      <h2 class="main-block-title">주인을 찾아요!</h2>
+                    </div>
+                    <div class="main-block-top-right">
+                      <div class="link-box">
+                        <a href="javascript:void(0);" class="link">전체보기</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-block-middle">
+                    <div class="find-owner-box">
+                      <!-- prettier-ignore -->
+                      @@loop("../../block/findOwner.html", [
+                        {
+                          "property" : "new",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                      ])
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block - 주요시설을 알려드려요! -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-top">
+                    <div class="main-block-top-left">
+                      <h2 class="main-block-title">주요시설을 알려드려요!</h2>
+                    </div>
+                  </div>
+                  <div class="main-block-middle">
+                    <!-- isotope -->
+                    <div class="isotope-container">
+                      <div class="isotope-area">
+                        <div class="isotope-top">
+                          <div class="isotope-button-box button-group filters-button-group">
+                            <button class="isotope-button active" data-group="all">전체</button>
+                            <button class="isotope-button" data-group="data1">편의시설</button>
+                            <button class="isotope-button" data-group="data2">공용시설</button>
+                            <button class="isotope-button" data-group="data3">식당</button>
+                          </div>
+                        </div>
+
+                        <div class="isotope-middle">
+                          <div class="isotope-content-box">
+                            <div class="facility-block-swiper-button-prev swiper-button-prev"></div>
+                            <div class="facility-block-swiper-button-next swiper-button-next"></div>
+                            <div class="facility-block-container swiper">
+                              <div class="facility-block-area isotope-content-box grid swiper-wrapper">
+                                <!-- prettier-ignore -->
+                                @@loop("../../block/blockFacility.html", [
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                ])
+                              </div>
+                            </div>
+                            <div class="facility-block-swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="building-information-container">
+                      <div class="building-information-area">
+                        <div class="building-information-middle">
+                          <div class="building-information-box">
+                            <div class="title-box">
+                              <i class="ic ic-building"></i>
+                              <span>삼성전자 빌딩</span>
+                            </div>
+                            <div class="data-box">
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>도로명</span>
+                                </div>
+                                <div class="data">
+                                  <span>서울시 서초구 서초대로 74길 11 삼성전자 빌딩</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>지번</span>
+                                </div>
+                                <div class="data">
+                                  <span>서초동 1320-10</span>
+                                  <button type="button" class="btn-view-map">
+                                    <span>건물 지도 보기</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="building-information-box">
+                            <div class="title-box">
+                              <i class="ic ic-contact"></i>
+                              <span>주요 연락처</span>
+                            </div>
+                            <div class="data-box">
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>안내센터</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>안내센터</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>주차문의</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>주차문의</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Quick Menu -->
+      <!-- prettier-ignore -->
+      @@include("../../components/quickMenu.html")
+
+      <!-- Popup -->
+      <div id="popup-survey" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">고객 만족도 설문 안내</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="text-box">
+                <!-- prettier-ignore -->
+                <p>OOO고객님!
+                  고객님은 ‘에스원 부동산 솔루션’의 만족도 설문 대상자로 선정되신 귀중한 고객님이십니다.
+                  바쁘시겠지만, 잠시 시간을 내어 설문에 참여 부탁 드립니다. 
+                  고객님의 의견을 소중하게 생각하고 서비스 제공에 
+                  소홀함이 없도록 더욱 노력하는 에스원이 되겠습니다.
+                </p>
+              </div>
+
+              <div class="alert-box">
+                <p>고객님의 소중한 의견을 기다립니다</p>
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>만족도 설문 참여하기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup -->
+      <div id="popup-edit" class="popup-container popup-large">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">서비스 즐겨찾기 편집</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="text-box">
+                <p>홈 화면에 노출할 서비스를 관리해 보세요.</p>
+              </div>
+              <div class="popup-edit-container">
+                <div class="popup-edit-area">
+                  <div class="edit-fav-container">
+                    <div class="edit-fav-area">
+                      <div class="edit-fav-top">
+                        <div class="edit-fav-title-box">
+                          <span class="title">즐겨찾기 보기</span>
+                        </div>
+                      </div>
+                      <div class="edit-fav-middle">
+                        <div class="edit-fav-block-container">
+                          <div id="fav" class="edit-fav-block-area">
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-1",
+                              "imgName" : "ic_fixing",
+                              "title" : "고장/수리/불편신고",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-2",
+                              "imgName" : "ic_cleaning",
+                              "title" : "청소/소모품 교체",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-3",
+                              "imgName" : "ic_temperature",
+                              "title" : "온도 조절",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-4",
+                              "imgName" : "ic_cool_n_light",
+                              "title" : "냉난방/조명 연장 신청",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-5",
+                              "imgName" : "ic_product_q",
+                              "title" : "상품문의",
+                            })
+                          </div>
+                          <div class="empty-box">
+                            <p class="desc-box">홈 화면에 노출할 서비스를 관리해 보세요.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edit-fav-container">
+                    <div class="edit-fav-area">
+                      <div class="edit-fav-top">
+                        <div class="edit-fav-title-box">
+                          <span class="title">즐겨찾기 숨김</span>
+                        </div>
+                      </div>
+                      <div class="edit-fav-middle">
+                        <div class="edit-fav-block-container empty">
+                          <div id="favHide" class="edit-fav-block-area"></div>
+                          <div class="empty-box">
+                            <p class="desc-box">여기에 끌어 놓으면 홈에서 안보여요.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-secondary btn-medium">
+                  <span>취소</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>저장</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "toast",
+        "title" : "",
+        "text" : "1개 이상의 서비스를 설정해 주세요.",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "primary",
+            "text" : "확인",
+          },
+        ],
+      })
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

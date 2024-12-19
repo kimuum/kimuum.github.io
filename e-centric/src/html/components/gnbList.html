@@ -1,0 +1,18 @@
+<li class="gnb-list @@property">
+  <!-- [접근성] 접근성으로 인한 구조 변경 -->
+  <a href="javascript:void(0)" class="gnb-link" role="button" @@if(property) {aria-current="page" }>
+    <span class="text">@@text</span>
+    <span class="icon-box">
+      <i class="ic ic-@@type"></i>
+      <!-- prettier-ignore -->
+      @@if(alarm) {
+        @@include("badgeCircle.html", {
+          "badgeColor": "primary",
+          "badgeText" : "",
+          "badgeLabel": "",
+          "badgeLabel": "새로운 알림이 있습니다.",
+        })
+      }
+    </span>
+  </a>
+</li>

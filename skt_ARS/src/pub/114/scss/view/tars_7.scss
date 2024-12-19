@@ -1,0 +1,40 @@
+.form-recom-box {
+  margin-top: 3.6rem;
+  .field-form {
+    justify-content: center;
+    .field-area {
+      width: auto;
+    }
+    input[type='checkbox'] {
+      + .checkbox-label {
+        font-weight: 400;
+        &::before {
+          margin-right: 0.8rem;
+        }
+      }
+    }
+  }
+}
+.consultation-reservation {
+  .field-label {
+    @include flex(row, space-between, center);
+    @include font(1.6rem, 700, $primary, normal);
+    letter-spacing: -0.032rem;
+  }
+  .field {
+    & + .field {
+      margin-top: 2.4rem;
+    }
+  }
+  #todayDate,
+  .field-text {
+    @include font(1.6rem, 500, $black, normal);
+    letter-spacing: -0.032rem;
+  }
+  .field-text {
+    margin-left: 0.4rem;
+  }
+  .caution-guide-container {
+    margin-top: 2.4rem;
+  }
+}

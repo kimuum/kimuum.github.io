@@ -1,0 +1,26 @@
+<div class="product-info-block-container">
+  <div class="product-info-block-area">
+    <div class="product-info-block-middle">
+      @@for(var i = 0 ; i < data.length ; i++) {
+      <div class="product-info-block">
+        <div class="block-label-box">
+          <!-- electric, power, hydrogen-->
+          <div class="block-label `+data[i].className+`">`+data[i].label+`</div>
+        </div>
+
+        <div class="block-data-box">
+          <div class="block-data">`+data[i].value+`</div>
+          <div class="block-data-unit">`+data[i].unit+`</div>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="product-info-block-bottom">
+      <div class="product-info-block-desc">
+        @@for(var j = 0 ; j < desc.length ; j++) {
+        <p>`+desc[j]+`</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

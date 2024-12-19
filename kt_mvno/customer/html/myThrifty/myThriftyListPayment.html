@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금조회 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyListPayment -->
+    <div class="wrap myThriftyListPayment">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>요금조회</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>요금조회</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea summary01">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">요금 조회</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="chartContainer">
+                      <div class="chartArea chartRealtimeRate">
+                        <!-- Print Chart Area -->
+                        <canvas id="realtimeRate" width="280" height="280"></canvas>
+
+                        <!-- Chart Information -->
+                        <div class="chartInfoContainer">
+                          <div class="chartInfoArea">
+                            <div class="label">실시간 요금</div>
+                            <div class="rateBox">
+                              <span class="rate">1,122,990원</span>
+                            </div>
+                            <div class="period">
+                              <span class="startDate">10월 1일</span>
+                              <span class="separator">~</span>
+                              <span class="endDate">31일</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox">
+                        <dl class="dlItemFlex">
+                          <dt>데이터</dt>
+                          <dd class="colorPrimary">22,990원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>월정액</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>부가서비스</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>단말기 할부금</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>소액결제</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>할인금액</dt>
+                          <dd>0원</dd>
+                        </dl>
+                      </div>
+                    </div>
+
+                    <div class="payTableContainer">
+                      <!-- 달력 -->
+                      <div class="field fieldDatepicker hideInput large" id="datepicker-select-period-large">
+                        <div class="fieldLabel">납부 조회 기간 선택</div>
+                        <div class="fieldForm datePickerArea">
+                          <input type="text" id="input-select-date-large" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                          <button type="button" id="btn-open-period" class="btn btnOpen btnOpenPeriod" onclick="togglePopup('btn-open-period', 'period-container')" aria-expanded="false" title="납부 조회 기간 선택">2021.11 ~ 2022.01</button>
+
+                          <div id="period-container" class="periodContainer">
+                            <div class="periodArea">
+                              <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1개월</button>
+                              <button type="button" class="btn btnPeriod btnMonth3" month="3">3개월</button>
+                              <button type="button" class="btn btnPeriod btnMonth6" month="6">6개월</button>
+                              <button type="button" class="btn btnPeriod btnMonth12" month="12">12개월</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tableContainer bgColorTable">
+                        <div class="tableArea">
+                          <table>
+                            <caption>
+                              요금 조회 - 납부일, 납부금액
+                            </caption>
+                            <colgroup>
+                              <col style="width: 35%" />
+                              <col />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col">납부일</th>
+                                <th scope="col">납부금액</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>2022.01.12</td>
+                                <td>(납부 완료) 29,700원</td>
+                              </tr>
+                              <tr>
+                                <td>2022.01.12</td>
+                                <td>(납부 완료) 29,700원</td>
+                              </tr>
+                              <tr>
+                                <td>2022.01.12</td>
+                                <td>(납부 완료) 29,700원</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <dl class="usageItem borderBox">
+                        <dt>미납요금이 없습니다.</dt>
+                        <dd>-</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //요금 조회 -->
+              <div class="summaryArea summary02">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">명세서 조회</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <!-- 달력 -->
+                    <!-- [운영] 달력 아이디 변경 -->
+                    <!-- [운영] colorLabel 위치 변경 -->
+                    <!-- 조회 가능 시 달력에 '납부 예정 / 미납부'라벨 추가 -->
+                    <!-- <div class="field fieldDatepicker hideInput" id="datepicker-usage-data-customize">
+                      <div class="fieldLabel">명세서 조회 월 선택 <span class="colorLabel">납부 예정</span></div>
+                      <div class="fieldForm datePickerArea">
+                        <input type="text" id="input-usage-data" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1">
+                        <button type="button" class="btn btnOpen" aria-expanded="false" title="명세서 조회 월 선택">2022.05.24</button>
+                      </div>
+                    </div> -->
+                    <!-- [운영] 조회 결과 없음 추가 -->
+                    <div class="field fieldDatepicker hideInput" id="datepicker-usage-data-customize">
+                      <div class="fieldLabel">명세서 조회 월 선택</div>
+                      <div class="fieldForm datePickerArea">
+                        <input type="text" id="input-usage-data" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                        <button type="button" class="btn btnOpen" aria-expanded="false" title="명세서 조회 월 선택">2022.05.24</button>
+                      </div>
+                    </div>
+                    <div class="nodataContainer">조회 된 납부명세서가 없습니다.</div>
+                    <!-- //[운영] 조회 결과 없음 추가 -->
+
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox noneBorder">
+                        <dl class="dlItemFlex">
+                          <dt>사업자</dt>
+                          <dd>케이티엠모바일</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>고객명</dt>
+                          <dd>고현</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>서비스번호</dt>
+                          <dd>010-8***-6319</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>이용기간</dt>
+                          <dd>2022.01.01~2022.01.31</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>작성일자</dt>
+                          <dd>2022.01.05</dd>
+                        </dl>
+                      </div>
+                      <div class="dlGrayBox noneBorder">
+                        <dl class="dlItemFlex">
+                          <dt class="colorPrimary">납부하실 금액</dt>
+                          <dd class="colorPrimary">29,700원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>이용금액</dt>
+                          <dd>29,700원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>할인금액</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>미납요금</dt>
+                          <dd>0원</dd>
+                        </dl>
+                      </div>
+                      <div class="dlGrayBox noneBorder">
+                        <p class="title colorPrimary">이용 내역</p>
+                        <dl class="dlItemFlex">
+                          <dt>월정액</dt>
+                          <dd>27,000원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>부가서비스</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>단말기할부금</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>소액결제</dt>
+                          <dd>0원</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>부가세</dt>
+                          <dd>2,700원</dd>
+                        </dl>
+                      </div>
+                      <div class="dlGrayBox noneBorder">
+                        <p class="title colorPrimary">납부 정보</p>
+                        <dl class="dlItemFlex">
+                          <dt>예금주</dt>
+                          <dd>고현</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>은행명</dt>
+                          <dd>신한은행</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>계좌번호</dt>
+                          <dd>110-327-***037</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>납기일</dt>
+                          <dd>2022.02.03</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //명세서 조회 -->
+              <div class="summaryArea summary03">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">미납요금</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox noneBorder">
+                        <dl class="dlItemFlex">
+                          <dd>미납요금이 없습니다.</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //미납요금 -->
+              <div class="summaryArea summary04">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">명세서 유형</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox noneBorder">
+                        <dl class="dlItemFlex">
+                          <dt class="bold">이메일 고지</dt>
+                          <dd>kohyun4@gmail.com</dd>
+                        </dl>
+                      </div>
+                      <div class="colorBoxBottom">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">명세서 유형 변경하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //명세서 유형 -->
+              <div class="summaryArea summary05">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">납부 방식</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox noneBorder">
+                        <dl class="dlItemFlex">
+                          <dt class="bold">자동이체</dt>
+                          <dd>(신한)110-472-***037</dd>
+                        </dl>
+                      </div>
+                      <div class="colorBoxBottom">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">납부 방법 변경하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //납부 방식 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/chart.js-2.9.4.min.js"></script>
+    <!-- chart JS -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+      });
+    </script>
+    <script>
+      //---------- 실시간 요금 차트 ----------//
+
+      var ctx = document.getElementById('realtimeRate').getContext('2d');
+      var gradient = ctx.createLinearGradient(90, 90, 220, 220);
+      gradient.addColorStop(0.0, '#33D3C2');
+      gradient.addColorStop(1.0, '#1DAC9D');
+
+      const data = {
+        datasets: [
+          {
+            label: '실시간 요금',
+            data: [70, 30], // 비율 : [컬러,회색]
+            backgroundColor: [gradient, '#D0D5DF'],
+            hoverOffset: 0,
+          },
+        ],
+      };
+
+      const config = {
+        type: 'doughnut',
+        data: data, // 상단에 있는 데이터
+        options: {
+          responsive: true, // 반응형 웹 대응
+          borderWidth: 0, // 도넛을 구성하는 값과 값 사이의 외곽선 (현재는 외곽선을 뺌)
+          cutoutPercentage: 75, // 도넛의 중심을 기준으로 하얀색 원을 몇 % 만큼 채울 것인지 입력 (0% 면 Pie 차트가 되고, 100% 면 차트가 안 보임)
+        },
+      };
+
+      const myChart = new Chart(document.getElementById('realtimeRate'), config);
+    </script>
+  </body>
+</html>

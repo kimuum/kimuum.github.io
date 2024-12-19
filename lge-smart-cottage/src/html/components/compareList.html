@@ -1,0 +1,95 @@
+<li class="compare-list swiper-slide @@className">
+  <div class="compare-top">
+    <div class="img-box">
+      <img src="../../assets/images/@@imgSrc" alt />
+    </div>
+    <div class="desc-box">
+      <span class="floor">@@floor</span>
+      <strong class="title">@@model</strong>
+      <span class="desc">₩@@price 부터</span>
+    </div>
+  </div>
+  <div class="compare-middle">
+    <ul class="con-list-box">
+      <li class="con-list">
+        <em class="sub-title">외장재 종류</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@outSideType</span>
+        </div>
+      </li>
+      <li class="con-list colors">
+        <em class="sub-title">외장재 색상</em>
+        <div class="sub-desc-box">
+          @@for (var i=0; i < outSideColor.length; i++){
+          <span class="sub-desc `+outSideColor[i].colorClass+`">`+outSideColor[i].color+`</span>
+          }
+        </div>
+      </li>
+    </ul>
+  </div>
+  @@if(inBottom){
+  <div class="compare-bottom">
+    <div class="img-box">
+      <img src="../../assets/images/icon/@@floorImgSrc" alt />
+    </div>
+    <ul class="con-list-box">
+      <li class="con-list">
+        <em class="sub-title">크기 / 층수</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc bold">@@subDesc1</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">내부 색상</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc2</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">태양광 발전</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc3</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">냉난방시스템</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc4</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">냉방 / 난방</em>
+        <div class="sub-desc-box">
+          @@for (var i=0; i < subDesc5.length; i++){
+          <span class="sub-desc">`+subDesc5[i]+`</span>
+          }
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">급탕</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc6</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">환기 시스템</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc7</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">전기 공급 방식</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc8</span>
+        </div>
+      </li>
+      <li class="con-list">
+        <em class="sub-title">권장 전기 용량 (최대 용량)</em>
+        <div class="sub-desc-box">
+          <span class="sub-desc">@@subDesc9</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  }
+</li>

@@ -1,0 +1,167 @@
+// 고객을 생각하는 볼트업
+.customer-support-area {
+  @include flex(row, space-between, center);
+  width: 100%;
+  & + .customer-support-area {
+    margin-top: 2rem;
+  }
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+    .support-info-box {
+      padding-right: 8rem;
+      padding-left: 0;
+      text-align: right;
+    }
+  }
+  > div {
+    width: calc(50% - 2rem);
+  }
+  .support-thumb-box {
+    overflow: hidden;
+    border-radius: 2rem;
+    img {
+      @include imgbox;
+    }
+  }
+  .support-info-box {
+    padding-right: 0;
+    padding-left: 8rem;
+    .support-info-top {
+      @include font(4rem, 700, $black, 1.45);
+    }
+    .support-sub-title {
+      margin-top: 1rem;
+      font-size: 3.2rem;
+    }
+    .support-sub-title,
+    .support-desc {
+      white-space: pre-line;
+    }
+    .support-middle {
+      margin-top: 1rem;
+      @include font(2.8rem, 400, $color-gray-01, 1.45);
+    }
+    .support-bottom {
+      @include flex(row, flex-end, flex-start);
+      margin-top: 2rem;
+    }
+    .develop-item-box {
+      width: 38rem;
+      @include flex(row, flex-end, flex-start);
+      flex-wrap: wrap;
+      margin: -0.5rem;
+    }
+    .develop-item {
+      @include flex(column, center, center);
+      width: 11.6rem;
+      height: 11.6rem;
+      margin: 0.5rem;
+      padding: 1.55rem;
+      background-color: #f8f8f8;
+      border-radius: 2rem;
+      text-align: center;
+      @include font(1.4rem, 400, $black, 1.45);
+      .label {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/* response */
+@media #{$pc_1280} {
+  .customer-support-area {
+    & + .customer-support-area {
+      margin-top: 4rem;
+    }
+    &:nth-child(even) {
+      .support-info-box {
+        padding-right: 0;
+      }
+    }
+    .support-info-box {
+      padding-left: 0;
+    }
+  }
+}
+@media #{$tablet_1024} {
+  .customer-support-area {
+    .support-info-box {
+      .support-info-top {
+        font-size: 3rem;
+      }
+      .support-sub-title {
+        font-size: 2.8rem;
+      }
+      .support-middle {
+        font-size: 2rem;
+      }
+      .develop-item-box {
+        width: 100%;
+        padding: 0 1rem;
+      }
+      .develop-item {
+        width: 11rem;
+        height: 11rem;
+        padding: 1rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}
+@media #{$tablet_768} {
+  .customer-support-area {
+    flex-direction: column;
+    justify-content: center;
+    &:nth-child(even) {
+      flex-direction: column;
+      .support-info-box {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .support-thumb-box {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 2rem;
+      border-radius: 0.8rem;
+    }
+    .support-info-box {
+      width: 100%;
+      text-align: center;
+      .support-info-top {
+        font-size: 2rem;
+      }
+      .support-sub-title {
+        margin-top: 0;
+        font-size: 1.8rem;
+      }
+      .support-middle {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+      .develop-item-box {
+        justify-content: center;
+      }
+      .develop-item {
+        width: 8.7rem;
+        height: 8.7rem;
+        padding: 1.25rem;
+        font-size: 1rem;
+        .label {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+@media #{$mobile_440} {
+  .customer-support-area {
+    .support-info-box {
+      .develop-item-box {
+        justify-content: flex-start;
+      }
+    }
+  }
+}

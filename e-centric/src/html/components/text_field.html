@@ -1,0 +1,60 @@
+@@if(className === 'required') {
+  <!-- [접근성] required 클래스 추가 -->
+}
+<div class="field field-input @@className @@size @@if(icon) {field-icon} @@if(button) {field-button} @@if(type === 'search') {field-search}">
+  <div class="field-form">
+    <div class="field-label-box">
+      @@if(className === 'required') {
+        <!-- [접근성] 기존 .asterisk 엘리먼트 제거 -->
+      }
+      @@if(labelHide) {
+        <!-- [접근성] 속성 추가 -->
+      }
+      <label for="@@id" class="field-label @@if(labelHide) {ir}" @@if(labelHide){aria-hidden="true"}>@@label</label>
+    </div>
+    <div class="field-input-box">
+      <div class="input-box">
+        @@if(className === 'required') {
+          <!-- [접근성] required 속성 추가 -->
+        }
+        @@if(className === 'error') {
+          <!-- [240430] aria-invalid="true" 속성 추가 -->
+        }
+        <input type="@@type" name="@@id" id="@@id" placeholder="@@placeholder" value="@@value" autocomplete="off" class="input-text" @@property @@if(className === 'error') {aria-invalid="true"} />
+        @@if(icon) {
+        <!-- [접근성] 속성 추가 -->
+        <i class="ic ic-@@icon" aria-hidden="true"></i>
+        }
+        <!-- prettier-ignore -->
+        @@if(type === 'search') {
+          <!-- [240425] 엘리먼트 순서 변경 -->
+          @@if(!loading) {
+            <!-- [240427] aria 속성 텍스트 변경, i 클래스명 변경 -->
+            <button type="button" class="btn-remove" aria-label="검색어 지우기"><i class="ic ic-close-white" aria-hidden="true">삭제하기</i></button>
+          }
+          @@if(loading) {
+            <!-- prettier-ignore -->
+            @@include("loading.html", {
+              "size" : "small",
+              "message" : {
+                "show" : false,
+                "text" : "검색중"
+              }
+            })
+          }
+          <button type="button" class="btn-search" aria-label="검색"><i class="ic ic-search" aria-hidden="true">검색하기</i></button>
+        }
+        <!-- prettier-ignore -->
+        @@if(button) {
+          @@for(var i = 0; i < button.length; i++) {
+            @@include("button.html", `+(JSON.stringify(button[i]))+`)
+          }
+        }
+      </div>
+      @@if(desc) {
+      <!-- [접근성] 속성 추가 -->
+      <div class="desc-box" @@if(className === 'error') {role="alert"}><span class="desc">@@desc</span></div>
+      }
+    </div>
+  </div>
+</div>

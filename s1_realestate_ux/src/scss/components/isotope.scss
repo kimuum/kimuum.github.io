@@ -1,0 +1,75 @@
+.isotope-button-box {
+  .isotope-button {
+    position: relative;
+    width: 20rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $color_ebe;
+    @include font(1.6rem, 500, $color_7f7, 2.4rem, 0);
+    &.active {
+      font-weight: 700;
+      color: $primary;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.2rem;
+        background-color: $primary;
+      }
+    }
+  }
+}
+
+.isotope-title-box {
+  margin-bottom: 3.6rem;
+  @include font(2.4rem, 700, $black, normal, 0);
+}
+
+.isotope-middle {
+  margin-top: 5.2rem;
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .isotope-button-box {
+        @include flex(row, flex-start, center);
+        overflow: auto;
+        margin: 0 -2rem;
+        padding: 0 2rem;
+        .isotope-button {
+          width: auto;
+          margin-right: 0.8rem;
+          padding: 0.8rem 1.6rem;
+          border-radius: 10rem;
+          border: 0;
+          background-color: $color_f2f;
+          @include font(1.4rem, 500, $color_7f7, normal);
+          white-space: nowrap;
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &.active {
+            background-color: $primary;
+            color: $white;
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .isotope-title-box {
+        font-size: 2rem;
+        margin-bottom: 2.4rem;
+      }
+
+      .isotope-middle {
+        margin-top: 2.4rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.banner-container {
+  background-color: $primary;
+  .banner-area {
+    @include flex(row, space-between, center);
+    width: 67.3rem;
+    min-height: 5.2rem;
+    padding: 1.2rem 0;
+    margin: 0 auto;
+  }
+
+  .banner-left {
+    flex: 1;
+    @include flex(row, flex-start, center);
+  }
+
+  .category-box {
+    height: 2.8rem;
+    margin-right: 1.6rem;
+    padding: 0 0.8rem;
+    @include font(1.2rem, 400, $white, 2.8rem, 0);
+    border: 1px solid $white;
+    border-radius: 0.4rem;
+    white-space: nowrap;
+  }
+
+  .banner-content-box {
+    height: 2.8rem;
+    margin: 0;
+    .banner-content-slide {
+      p {
+        display: inline-block;
+        max-width: 50rem;
+        @include font(1.4rem, 400, $white, 2.8rem, 0);
+        @include ellipsis;
+      }
+    }
+  }
+
+  .view-all-box {
+    .link {
+      @include flex(row, flex-start, center);
+      @include font(1.2rem, 500, $white, normal, 0);
+      &:after {
+        content: '';
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: asset-image('ic_more_w_2.svg') no-repeat center / 2.4rem;
+      }
+    }
+  }
+}

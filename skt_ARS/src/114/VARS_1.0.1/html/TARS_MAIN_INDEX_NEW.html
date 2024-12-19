@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>SKT보이는 ARS</title>
+    <link rel="stylesheet" type="text/css" href="/{version}/css{vars_type}/new_style.css" />
+    <link rel="stylesheet" type="text/css" href="/{version}/css{vars_type}/lib/swiper.min.css" />
+
+    <script type="text/javascript" src="/{version}/js/jquery/jquery.1.11.1.min.js"></script>
+    <script type="text/javascript" src="/{version}/js/jquery/jquery-migrate-1.2.1.js"></script>
+    <script type="text/javascript" src="/{version}/js/index_jquery/swiper.min.js"></script>
+    <script type="text/javascript" src="/{version}/js/jquery.alerts-1.1/main.jquery.alerts.js"></script>
+  </head>
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="top_area_type" iweb-data="out" />
+    <input type="hidden" id="quick_menu" iweb-data="out" />
+    <input type="hidden" id="message" value="" iweb-data="out" />
+    <input type="hidden" id="mute" iweb-data="out" value="" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="event_yn" value="" iweb-data="out" />
+    <input type="hidden" id="support_yn" value="" iweb-data="out" />
+    <input type="hidden" id="another_user_yn" iweb-data="out" />
+    <input type="hidden" id="osType_check" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2022.10.26) start -->
+    <input type="hidden" id="popup_name" iweb-data="out" />
+    <input type="hidden" id="popup_content" iweb-data="out" />
+    <input type="hidden" id="flag" iweb-data="out" />
+    <input type="hidden" id="tax_popup_yn" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2022.10.26) end -->
+
+    <!-- [개편].big-font : 큰 글자 case 제어클래스 -->
+    <div class="wrapper main-index">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <header class="header-box">
+          <h1 class="logo">
+            <img src="/{version}/images/icon/logo_w.png" alt="sk telecom sk텔레콤 고객센터에 오신 것을 환영합니다." />
+          </h1>
+        </header>
+        <div class="content-container">
+          <div class="main-index-container">
+            <div class="main-index-notice-box">
+              <p>환영합니다.</p>
+            </div>
+            <div class="main-index-ad">
+              <div class="ad-box">
+                <span class="ad-text">궁금한 사항이 있으신가요?</span>
+              </div>
+              <button type="button" class="bot-btn btn-ars" onclick="sendData($(this), '0');">
+                <span class="text">상담사 연결</span>
+              </button>
+            </div>
+
+            <p id="main-notice"></p>
+          </div>
+          <div class="main-menu-container">
+            <ul class="main-menu">
+              <!-- // 배포시 주석처리 start -->
+              <li>
+                <a href="javascript:sendData($(this), '');">
+                  <span class="text">청구요금 확인</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:sendData($(this), '');">
+                  <span class="text">청구요금 확인</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:sendData($(this), '');">
+                  <span class="text">청구요금 확인</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:sendData($(this), '');">
+                  <span class="text">청구요금 확인</span>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:sendData($(this), '');">
+                  <span class="text">청구요금 확인</span>
+                </a>
+              </li>
+              <!-- // 배포시 주석처리 end -->
+            </ul>
+          </div>
+
+          <div class="main-banner">
+            <div class="swiper-container mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a href="javascript:urlCall();"><img src="/{version}/images/main/banner_sample01.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'H27', 'menu');"><img src="/{version}/images/main/banner_sample02.jpg" /></a>
+                </div>
+                <div class="swiper-slide">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'H25', 'menu');"><img src="/{version}/images/main/banner_sample03.jpg" /></a>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div id="tButton" class="footer">
+          <button type="button" class="bot-btn btn-big-font"><span class="text">큰 글씨</span></button>
+          <button type="button" class="bot-btn btn-mute" onclick="sendData($(this), 'M');"><span class="text">음소거</span></button>
+        </div>
+
+        <!-- 하단 버튼 -->
+        <div id="cButton" class="footer">
+          <button type="button" class="bot-btn btn-big-font"><span class="text">큰 글씨</span></button>
+          <button type="button" class="bot-btn btn-mute" onclick="sendData($(this), 'M');"><span class="text">음소거</span></button>
+          <button id="btnCloseCallgate" class="bot-btn btn-end"><span class="text">종료</span></button>
+        </div>
+        <!-- //하단 버튼 -->
+      </main>
+
+      <!-- 사용안할 경우 삭제 -->
+      <div class="popup" id="popFlag">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title" id="popupTitle"></div>
+              <button type="button" class="btn-close" onclick="togglePopup('popFlag')"></button>
+            </div>
+            <div class="popup-middle">
+              <p class="popup-text align-left" id="popupText"></p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popFlag')"><span>확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 통신요금 소득공제 신청 안내 팝업 -->
+      <div class="popup" id="popTax">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">통신요금 소득공제 신청 안내</div>
+              <button type="button" class="btn-close" onclick="togglePopup('popTax')"></button>
+            </div>
+            <div class="popup-middle">
+              <p class="popup-text align-left">
+                이동전화 이용요금은 조세특례제한법 시행령에 따라 소득공제 대상에서 제외되며 단말할부금, 휴대폰 결제금액 등은 국세청에 통보되어 별도의 소득공제 신청은 필요하지 않습니다.
+              </p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popTax')"><span>확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var quick_menu = '';
+
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'tButton',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display:none',
+          },
+          {
+            elemName: 'cButton',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var count = false;
+        var change = false;
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            btn_back();
+          },
+        });
+      });
+
+      // 롤링 배너
+      var swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+      //[new] 큰 글씨
+      $('.btn-big-font').on('click', function () {
+        var $this = $(this);
+        var targetClass = $this.parents('.main-index');
+        var targetText = $this.find('.text');
+        $this.toggleClass('active');
+        targetClass.toggleClass('big-font');
+        if ($this.hasClass('active')) {
+          targetText.text('작은 글씨');
+        } else {
+          targetText.text('큰 글씨');
+        }
+      });
+      // 음소거
+      $('.btn-mute').on('click', function () {
+        var thisCondition = $(this).find('.text').text();
+        if (thisCondition == '음소거') {
+          $(this).addClass('on').children('.text').text('음소거');
+        } else {
+          $(this).removeClass('on').children('.text').text('음소거');
+        }
+      });
+
+      // 음소거 유무 이미지 처리  Start
+      var mute = getUrlParameter('mute'); // 1:음소거 X, 0:음소거 O
+      if (mute != '' && mute != undefined) {
+        if (mute == '0') {
+          $('.btn-mute').removeClass('on').children('.text').text('음소거');
+        } else {
+          $('.btn-mute').addClass('on').children('.text').text('음소거');
+        }
+      } else {
+        // $('.header__btn-mute').addClass('off').removeClass('on');
+        // $('.fixbtn__mute').removeClass('on').children('img').attr('src', '/{version}/img/new_main/btn_bottom_fix1_on.png');
+      }
+      //음소거 유무 이미지 처리 End
+
+      /*--------------------------------------------------------------
+      	top_area_type 값의 따라 감성 멘트 및 이미지 처리
+      	0 = 기본 멘트
+      	1 = 야간 멘트
+      	2 = 생일 멘트
+      	3 = vip 고객 멘트
+      	4 = T 시그니처 고객 멘트
+      	5 = T 아너스 고객 멘트
+      --------------------------------------------------------------*/
+
+      try {
+        var top_area_type = getUrlParameter('top_area_type');
+
+        /* top_area_type 값이 없을 경우 자동  */
+        if (top_area_type == '') {
+          top_area_type = '0';
+        }
+        /*@build-time*/ top_area_type = '3';
+        // 기본 멘트
+        if (top_area_type == 1) {
+          $('.main-index-notice-box').addClass('notice-night');
+          $('.main-index-notice-box').html('<p>지금은 ARS이용, 분실/통화품질, 피싱 피해, 로밍 상담만 가능합니다.</p>');
+        } else if (top_area_type == 2) {
+          $('.main-index-notice-box').html('<p>고객님 생일을 진심으로 축하드립니다</p>');
+        } else if (top_area_type == 3) {
+          $('.main-index-notice-box').addClass('notice-vip');
+          $('.main-index-notice-box').html('<p>VIP 고객님, 환영합니다.</p>');
+        } else if (top_area_type == 4) {
+          $('.main-index-notice-box').html('<p>T 시그니처 고객님 환영합니다.</p>');
+        } else if (top_area_type == 5) {
+          $('.main-index-notice-box').html('<p>T 아너스 고객님 환영합니다.</p>');
+        } else if (top_area_type == 6) {
+          $('.main-index-notice-box').addClass('notice-long');
+          $('.main-index-notice-box').html('<p>장기 우수 고객님, 환영합니다.</p>');
+          // 정의서에 없어 임의 추가 추후 변경
+        } else if (top_area_type == 7) {
+          $('.main-index-notice-box').addClass('notice-best');
+          $('.main-index-notice-box').html('<p>최우수 고객님, 환영합니다.</p>');
+        } else {
+          top_area_type = 1;
+        }
+
+        /* 			// 감성 멘트 우측 이미지 변경 및 크기 조정
+      			$(".header__welcome").css("background", "url('/{version}/images/main/ico_hd" + top_area_type + ".png') no-repeat right 0");
+      			$(".header__welcome").css("background-size", "26px"); */
+
+        // 감성 멘트 부분 노출
+        //			document.getElementById("header__welcome").style.display = "block";
+      } catch (e) {}
+
+      //--------------------------------------------------------------------------------
+      // 화면 상단 알림 처리  Start
+
+      var message = getUrlParameter('message');
+      if (message != '' && message != undefined) {
+        var marquee = document.createElement('marquee');
+        var elemMsg = document.getElementById('main-notice');
+        marquee.setAttribute('style', 'padding: 0 18px;  color: #f9f9f9; font-size: 15px; line-height: 30px; letter-spacing: -0.05em;'); //background: #454545;
+        marquee.innerText = message;
+        elemMsg.appendChild(marquee);
+
+        $('.main-menu').attr('style', 'top:79px;');
+      } else {
+        $('#main-notice').empty();
+        $('#main-notice').remove();
+      }
+
+      // 화면 상단 상단 알림 처리 End
+      //--------------------------------------------------------------------------------
+
+      /*--------------------------------------------------------------
+      		메뉴 개인화 처리
+      		quick_menu 값의 유무의 따라 생성한다.
+      --------------------------------------------------------------*/
+      try {
+        quick_menu = getUrlParameter('quick_menu');
+
+        // quick_menu test 시 아래 값 넣어서 테스트 하세요.
+
+        /*@build-time*/ quick_menu =
+          'PT4,104,청구 요금|PT20,120,나의 요금제</br>/잔여량|PT21,121,휴대폰 할부</br>/선택약정|PT3,103,휴대폰 결제|PT10,002,납부 방법 확인|PD1,117,데이터 리필/선물|PT9,109,휴대폰 구입문의|PD3,213,요금/세금계산서 발송|A15,210,구독 상품';
+
+        //예외case 메뉴별
+        /*--------------------------------------------------------------
+        외국인 : 'AI1,007,외국어상담 For Foreigners'
+        세금계산서 : 'PI3,105,세금계산서 Fax수신'
+        결제이력조회 : 'PI10,206,휴대폰결제/콘텐츠이용료 선결제'
+        5월종소세 : 'PD4,213,납부이력 팩스/이메일 수신'
+        --------------------------------------------------------------*/
+
+        // quick_menu 값 존재로 개인 메뉴화를 진행
+        if (quick_menu != '') {
+          // 메뉴 변경 함수
+          setQuickMenu(quick_menu);
+        } else {
+        }
+
+        // 상단 6개 메뉴 노출
+        //			document.getElementById("container").style.display = "block";
+      } catch (e) {}
+
+      // /*--------------------------------------------------------------
+      // 		quick_menu 값에 의해 메뉴 변경 함수
+      // --------------------------------------------------------------*/
+      function setQuickMenu(quick_menu) {
+        // 			/* 2020.09.22, z폴드 사용자 메뉴명 겹침현상으로 추가  START*/
+        // 			var prevHeight = document.getElementsByTagName("body").item(0).clientHeight; // 화면 전체 높이
+        // 			var prevWidth = document.getElementsByTagName("body").item(0).clientWidth; // 화면 전체 넓이
+        // 			var rate = prevWidth/prevHeight*100/3; // 화면 가로 비율 / 3
+        // 			var line_height = 19 + (rate/10);
+        // 			/* z폴드 사용자 메뉴명 겹침현상으로 추가  END*/
+
+        //         	// ivr 전달 받은 값이 버튼 순서라는 가정
+
+        var quick_menu_set = quick_menu.split('|');
+        var quick_menu_html = '';
+        for (var a = 1; a < quick_menu_set.length + 1; a++) {
+          var quick_menu_item = quick_menu_set[a - 1].split(',');
+          var ivr_param = quick_menu_item[0]; // ivr 전달 인자값
+          var ivr_param_value = ivr_param.toLowerCase(); //소문자로 변경 , 클래스명으로 사용
+          var icon_num = quick_menu_item[1]; // icon 번호
+          var btn_text = quick_menu_item[2]; // 문구
+
+          if (ivr_param == 'SP01') {
+            quick_menu_html += "<li class='recommend'><a href=\"javascript:sendData($(this),'" + ivr_param + '\');"><span class="text">' + btn_text + '</span></a></li>';
+          } else {
+            quick_menu_html += '<li><a class="ivr-' + ivr_param_value + '" href="javascript:sendData($(this),\'' + ivr_param + '\');"><span class="text">' + btn_text + '</span></a></li>';
+          }
+          //     			if(rate < 25){
+          //     				rate = 0;
+          //     			}
+          //     			// (100 - rate)
+          /*      			document.getElementById("li_a_id" + a).innerHTML = "<span style=\"font-size:" + 100 + "% \">" + btn_text + "</span>";
+           			if(icon_num == 'n' || icon_num == 'N'){
+
+           			}else{
+           				$("#li_id" + a).addClass( "often"+icon_num );
+           			}ㅓㅓ
+           			document.getElementById( "li_a_id" + a ).setAttribute( 'href', "javascript:sendData($(this), '" + ivr_param + "');" );
+           			document.getElementById( "li_a_id" + a ).setAttribute( 'style', "line-height: " + line_height + "px;" );//21.323420074349443*/
+        }
+
+        quick_menu_html +=
+          '<li><a href="javascript:sendRepPageData($(this).text().trim(), \'all_menu\', \'menu\');" role="button" title="모든 메뉴보기" class="btn-all-menu"><span class="text">모든 메뉴보기</span></a></li>';
+
+        $('.main-menu').html(quick_menu_html);
+      }
+
+      /*--------------------------------------------------------------
+      		다른 ARS 전환 처리.
+      --------------------------------------------------------------*/
+      function otherARS(obj, dtmf, text) {
+        sendRepPageData('agent', dtmf, text);
+
+        setTimeout(function () {
+          // T전화 기본화면 전환
+          changeoverPhone(true);
+        }, 1000);
+      }
+
+      /*--------------------------------------------------------------
+      		외부 URL 연동.
+      --------------------------------------------------------------*/
+      function urlCall() {
+        var osType_check = getUrlParameter('osType_check');
+        // 메시지
+        var msg = '<p class="popup-text">보이는ARS 종료 후, 에이닷 페이지<br>(데이터 이용료 무료)로 연결됩니다.</p>';
+
+        // 메시지 박스 표시
+        jConfirm(msg, '', function (btnBoolean) {
+          if (btnBoolean) {
+            // true 이면
+            sendRepPageData($(this).text().trim(), 'H26', 'menu');
+          }
+        });
+      }
+
+      var g_check;
+      function radioCheck(val) {
+        if (val == 1) {
+          $("input:radio[id='bank']").prop('checked', true);
+          $("input:radio[id='card']").prop('checked', false);
+          g_check = val;
+        } else {
+          $("input:radio[id='bank']").prop('checked', false);
+          $("input:radio[id='card']").prop('checked', true);
+          g_check = val;
+        }
+      }
+
+      //--------------------------------------------------------------------------------
+      // Flag 값에 따른 팝업 창  Start 2022-10-26 추가
+
+      var flag = getUrlParameter('flag');
+      var popup_name = getUrlParameter('popup_name');
+      var popup_content = getUrlParameter('popup_content');
+
+      // /*@build-time*/ flag = 'Y';
+      // /*@build-time*/ popup_name = '상담사 지연안내';
+      // /*@build-time*/ popup_content =
+      //   '현재 고객문의가 많아 상담사연결이 지연되고 있습니다. 청구 요금 및 납부방법 확인 등 간단한 조회는 보이는ARS(화면+음성) 또는 고객센터 앱을 이용하시면 빠르게 확인 할수 있습니다.';
+      if (flag == 'Y') {
+        document.getElementById('popupTitle').innerText = popup_name;
+        document.getElementById('popupText').innerText = popup_content;
+        $('#popFlag').addClass('show');
+      }
+      //--------------------------------------------------------------------------------
+      // 조세 특별법 Flag 값에 따른 팝업 창  Start 2023-12-13 추가
+
+      // 통신요금 소득공제 신청 안내 팝업
+      var flag = getUrlParameter('tax_popup_yn');
+      // /*@build-time*/ flag = 'Y';
+      if (flag == 'Y' || flag == 'y') {
+        $('#popTax').addClass('show');
+      }
+      /*--------------------------------------------------------------
+      REPORT_PAGE_DATA(사용자 입력 요청 데이터)를 서버로 전송
+      --------------------------------------------------------------*/
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

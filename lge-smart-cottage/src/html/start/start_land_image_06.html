@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 땅 지도"
+  })
+
+  <body>
+    <!-- set unique class : sub-page-land-image -->
+    <div class="wrapper sub-page-land-image">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : false,
+        "list" : false,
+        "className" : "fixed type-logo-white"
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <!-- 전체화면 버튼 (btn-screen-rotate) 선택시 full 클래스 추가 -->
+        <section class="section-container">
+          <div class="section-area">
+            <div class="section-left-box">
+              <div class="canvas-box" id="map">
+                <div class="map-address-box">
+                  <div class="address">충북 진천군 이월면 진광로 928-27</div>
+                  <!-- active : 설치 가능 -->
+                  <div class="status">
+                    <span class="round"></span>
+                    <span class="text">설치 불가능</span>
+                  </div>
+                </div>
+
+                <!-- 해당 구조 위치 좌표 동적으로 적용 -->
+                <div class="controller-box" style="top: 50%; left: 50%">
+                  <!-- ex : 90도 회전 케이스 -->
+                  <div class="house-box" style="--scale: 1; --rotate: 0">
+                    <button type="button" class="btn-drag"></button>
+                    <!-- .error : 설치 불가 -->
+                    <!-- 코티지 사이즈 적용 해 주시면 됩니다. -->
+                    <div class="house" style="width: 120px; height: 70px"></div>
+                    <div class="arrow"></div>
+                    <div class="line"></div>
+                  </div>
+                  <!-- pc 용 -->
+                  <div class="button-box use-pc">
+                    <button type="button" class="btn-control btn-rotate">
+                      <span>회전</span>
+                    </button>
+                    <!-- disabled 회전시 제거 -->
+                    <button type="button" class="btn-control btn-reset" disabled>
+                      <span>원래대로</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 태블릿 이하 모바일 디바이스 용 -->
+                <div class="button-box use-tablet">
+                  <button type="button" class="btn-control btn-rotate">
+                    <span>회전</span>
+                  </button>
+                  <!-- disabled 회전시 제거 -->
+                  <button type="button" class="btn-control btn-reset" disabled>
+                    <span>원래대로</span>
+                  </button>
+                </div>
+
+                <div class="widget-box">
+                  <div class="location-box">
+                    <button type="button" class="btn-location" title="접속위치">
+                      <img src="../../assets/images/icon/ic_pc_start_location_nor.svg" alt="location" />
+                    </button>
+                  </div>
+                  <div class="zoom-box">
+                    <button type="button" class="btn-zoom btn-zoom-in" title="확대">
+                      <img src="../../assets/images/icon/ic_pc_start_plus_nor.svg" alt="plus" />
+                    </button>
+                    <div class="magnification-box">
+                      <button type="button" class="btn-magnification btn-2-magnification" title="2배율">2x</button>
+                      <!-- active : current state -->
+                      <button type="button" class="btn-magnification btn-1-magnification active" title="1배율">1x</button>
+                      <!-- disabled : 비 활성화 -->
+                      <button type="button" class="btn-magnification btn-0-5-magnification" title="0.5배율" disabled>0.5x</button>
+                    </div>
+                    <button type="button" class="btn-zoom btn-zoom-out" title="축소">
+                      <img src="../../assets/images/icon/ic_pc_start_minus_nor.svg" alt="minus" />
+                    </button>
+                  </div>
+                </div>
+
+                <!-- 지도 영역-->
+              </div>
+            </div>
+            <div class="section-right-box">
+              <div class="layout-box">
+                <div class="layout-top-box">
+                  <div class="back-button-box">
+                    <button type="button" class="btn btn-back" title="뒤로가기"></button>
+                  </div>
+                </div>
+                <div class="layout-middle-box">
+                  <div class="layout-content-box">
+                    <div class="layout-content-top">
+                      <div class="title-box">
+                        <h2 class="title">
+                          <span class="bold">
+                            소유하신 땅의 모양이<br />
+                            스마트코티지 설치에 <br class="use-tablet" />적합하지 않아요
+                          </span>
+                        </h2>
+                      </div>
+                      <div class="desc-box">
+                        <p class="desc">다른 주소를 입력하시거나, <br class="use-mobile" />주소 없이 계속 진행하실 수 있어요!</p>
+                      </div>
+                    </div>
+
+                    <div class="layout-content-bottom">
+                      <div class="tip-box">
+                        <div class="label-box">TIP!</div>
+                        <div class="desc-box">
+                          <p class="desc">스마트코티지는 어디에 설치하는 것이 좋을까요?</p>
+                        </div>
+                        <div class="download-box">
+                          <!-- prettier-ignore -->
+                          @@include("button.html", {
+                            "className" : "btn-round btn-download",
+                            "btnColor" : "btn-tan",
+                            "btnSize" : "small",
+                            "property" : "download",
+                            "btnText" : "대지 안내서 다운로드",
+                            "iconClass" : "ic-download",
+                            "iconLeft" : "true",
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="layout-desc-box">
+                    <ul class="layout-desc-lists">
+                      <li class="layout-desc-list">
+                        <span>건폐율과 용적률은 법령 및 조례에서 규정한 수치를 단순 산출한 것으로서 모든 법률적 요건을 계산한 결과가 아닙니다.</span>
+                      </li>
+                      <li class="layout-desc-list">
+                        <span>용도지역별 면적은 단순 추출한 것으로서 전체 면적과 일치하지 않을 수 있습니다.</span>
+                      </li>
+                      <li class="layout-desc-list">
+                        <span>본 서비스는 법적 효력이 없으며, 참고 자료로만 활용이 가능합니다.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="layout-bottom-box">
+                  <div class="button-box">
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "",
+                      "btnColor" : "btn-secondary",
+                      "btnSize" : "large",
+                      "property" : "",
+                      "btnText" : "다른 주소 입력하기",
+                      "iconClass" : "",
+                      "iconLeft" : "",
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "",
+                      "btnColor" : "btn-primary",
+                      "btnSize" : "large",
+                      "property" : "",
+                      "btnText" : "주소 없이 진행하기",
+                      "iconClass" : "",
+                      "iconLeft" : "",
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+
+    <script>
+      const apiKey = '7781CE24-8AB5-3487-94BD-CE4E6CD5571A';
+
+      var registry = new naver.maps.MapTypeRegistry();
+      var cadastralLayer = new naver.maps.CadastralLayer(); //지적도 Layer
+
+      var mapOptions = {
+        //center: new naver.maps.LatLng(37.3595704, 127.105399),
+        center: new naver.maps.LatLng(36.94216272694618, 127.43315065602032),
+        zoom: 18, //지도의 초기 줌 레벨
+        minZoom: 7, //지도의 최소 줌 레벨
+
+        mapDataControl: true,
+        mapTypeControl: true,
+        mapTypeControlOptions: {
+          style: naver.maps.MapTypeControlStyle.BUTTON,
+          position: naver.maps.Position.BOTTOM_RIGHT,
+        },
+        zoomControl: true, //줌 컨트롤의 표시 여부
+        zoomControlOptions: {
+          style: naver.maps.ZoomControlStyle.SMALL,
+          position: naver.maps.Position.BOTTOM_RIGHT,
+        },
+        scaleControl: true,
+        scaleControlOptions: {
+          position: naver.maps.Position.RIGHT_CENTER,
+        },
+        // logoControl: false,
+        // logoControlOptions: {
+        //     position: naver.maps.Position.TOP_LEFT
+        // },
+        mapDataControl: true,
+        mapDataControlOptions: {
+          position: naver.maps.Position.BOTTOM_LEFT,
+        },
+      };
+
+      var map = new naver.maps.Map('map', mapOptions);
+      cadastralLayer.setMap(map);
+
+      function SetSatelliteMap() {
+        map.mapTypes.set(naver.maps.MapTypeId.SATELLITE, naver.maps.NaverStyleMapTypeOptions.getSatelliteMap());
+      }
+
+      function SetHybridMap() {
+        map.mapTypes.set(naver.maps.MapTypeId.HYBRID, naver.maps.NaverStyleMapTypeOptions.getHybridMap());
+      }
+
+      let selAddress, selBcode, selQuery;
+      /* 주소검색관련 */
+      $(document).on('click', '.btn-search', function (e) {
+        new daum.Postcode({
+          oncomplete: function (data) {
+            console.log('result=>', data);
+            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+            // 예제를 참고하여 다양한 활용법을 확인해 보세요.
+            selAddress = data.roadAddress;
+            selBcode = data.bcode;
+            selQuery = data.query;
+            //data.jibunAddress
+            $('#address1').val(selAddress);
+
+            changeStatusBtnView(selAddress, e);
+          },
+        }).open();
+      });
+
+      $(document).on('keypress', '#address2', function (e) {
+        changeStatusBtnView(selAddress + $(this).val(), e);
+      });
+
+      $(document).on('change', '#address2', function (e) {
+        changeStatusBtnView(selAddress + $(this).val(), e);
+      });
+
+      function changeStatusBtnView(_text, e) {
+        let _status = true;
+        if (_text.length > 0) {
+          _status = false;
+        }
+
+        $('.btn-view').prop('disabled', _status); // Element(s) are now enabled.
+      }
+
+      $(document).on('click', '.btn-view', function (e) {
+        const detailAddr = $('#address2').val();
+        if (selAddress.length > 0 || detailAddr.length > 0) {
+          const arr = selAddress.split(' ');
+          searchAddress(arr.slice(-2).join(' '));
+        } else {
+          alert('주소검색 후 땅 검색버튼을 선택하세요.');
+          return;
+        }
+      });
+
+      function searchAddress(_query) {
+        console.log('searchAddress=>', _query);
+
+        $.ajax({
+          url: 'https://dapi.kakao.com/v2/local/search/address.json?query=' + _query + '&analyze_type=similar&page=1&size=20',
+          type: 'get',
+          dataType: 'json',
+          beforeSend: function (xhr) {
+            //$("#loading").css("display", "block")
+            xhr.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+            xhr.setRequestHeader('Authorization', 'KakaoAK b55442cace10febf8984bf405c8b3c9d');
+          },
+          error: function (e) {
+            //$("#loading").css("display", "none")
+            alert('데이터를 불러오는데 실패하였습니다.');
+          },
+          success: function (data) {
+            if (data.documents !== null && data.documents.length > 0) {
+              const _item = data.documents[0];
+              console.log('result=>', _item);
+
+              moveCenterPointinMap(_item.y, _item.x, true, true);
+            } else {
+              alert('검색결과가 없습니다.');
+              return false;
+            }
+          },
+        });
+      }
+
+      function moveCenterPointinMap(_lat, _lng, _isShowMarker, _isWml) {
+        console.log('btnMove:', {
+          _lng,
+          _lat,
+        });
+        // 이동할 위도 경도 위치를 생성합니다
+        var moveLatLon = new naver.maps.LatLng(_lat, _lng);
+
+        // 지도 중심을 이동 시킵니다
+        map.setCenter(moveLatLon);
+
+        if (_isShowMarker) {
+          draw_marker(moveLatLon);
+        }
+
+        if (_isWml) {
+          getWmlData({
+            lat: _lat,
+            lng: _lng,
+          });
+        }
+      }
+
+      function draw_marker(_centerCoord) {
+        console.log('draw_marker=>', _centerCoord);
+        var marker = new naver.maps.Marker({
+          position: new naver.maps.LatLng(_centerCoord._lat, _centerCoord._lng),
+          map: map,
+        });
+      }
+
+      function getWmlData(_target) {
+        const _coordinate = coord4326To3857(_target.lat, _target.lng);
+
+        $.ajax({
+          url: 'https://api.vworld.kr/req/data?',
+          type: 'get',
+          dataType: 'jsonp',
+          data: {
+            service: 'data',
+            version: '2.0',
+            request: 'GetFeature',
+            key: apiKey,
+            format: 'json',
+            size: '1',
+            geomfilter: 'point(' + _coordinate.lng + ' ' + _coordinate.lat + ')',
+            crs: 'EPSG:3857',
+            data: 'LP_PA_CBND_BUBUN',
+          },
+          beforeSend: function () {
+            //$("#loading").css("display", "block")
+          },
+          error: function (e) {
+            //$("#loading").css("display", "none")
+            alert('데이터를 불러오는데 실패하였습니다.');
+          },
+          success: function (data) {
+            console.log('GetFeature=>', data);
+            //let addr = data.response.result.featureCollection.features[0].properties.addr;
+
+            var outlinepaths = data.response.result.featureCollection.features[0].geometry.coordinates[0][0];
+            createPolygon(outlinepaths);
+            //createSmartCoteage(_target);
+          },
+        });
+      }
+
+      function coord4326To3857(lat, lng) {
+        const X = 20037508.34;
+        let long3857 = (lng * X) / 180;
+        let lat3857 = parseFloat(lat) + 90;
+        lat3857 = lat3857 * (Math.PI / 360);
+        lat3857 = Math.tan(lat3857);
+        lat3857 = Math.log(lat3857);
+        lat3857 = lat3857 / (Math.PI / 180);
+
+        lat3857 = (lat3857 * X) / 180;
+
+        return { lat: lat3857, lng: long3857 };
+        // return [long3857, lat3857];
+        // return [lat3857, long3857];
+      }
+
+      function coord3857To4326(coord) {
+        if (Math.abs(coord.lat) > 180 || Math.abs(coord.lng) > 180) {
+          const coordinates = epsg3857toEpsg4326(coord);
+          /*
+            const e_value = 2.7182818284;
+            const X = 20037508.34;
+        
+            // console.log("lng=>", ol.proj.transform(lng, 'EPSG:3857' , 'EPSG:4326'));
+            // console.log("lat=>", ol.proj.transform(lat, 'EPSG:3857' , 'EPSG:4326'));
+            
+            const lat3857 = coord.lat
+            const long3857 = coord.lng;
+            
+            //converting the longitute from epsg 3857 to 4326
+            const long4326 = (long3857*180)/X;
+            
+            //converting the latitude from epsg 3857 to 4326 split in multiple lines for readability        
+            let lat4326 = lat3857/(X / 180);
+            const exponent = (Math.PI / 180) * lat4326;
+            
+            lat4326 = Math.atan(Math.pow(e_value, exponent));
+            lat4326 = lat4326 / (Math.PI / 360); // Here is the fixed line
+            lat4326 = lat4326 - 90;
+        
+            return {lat:lat4326, lng:long4326};
+            */
+          return { lat: coordinates[0], lng: coordinates[1] };
+        } else {
+          return coord;
+        }
+      }
+
+      function epsg3857toEpsg4326(pos) {
+        let x = pos.lat;
+        let y = pos.lng;
+        x = (x * 180) / 20037508.34;
+        y = (y * 180) / 20037508.34;
+        y = (Math.atan(Math.pow(Math.E, y * (Math.PI / 180))) * 360) / Math.PI - 90;
+        return [x, y];
+      }
+
+      function createPolygon(_outlinepaths) {
+        console.log('createPolygon=>', _outlinepaths);
+
+        let polygonPath = []; //좌표 설정
+        _outlinepaths.forEach(function (xylist) {
+          var pCoord = coord3857To4326({ lat: xylist[0], lng: xylist[1] });
+          //console.log("createPolygon private=>", pCoord);
+          polygonPath.push(new naver.maps.LatLng(pCoord.lng, pCoord.lat));
+        });
+
+        const polygonCenterCoord = getOutlineCenter(polygonPath);
+
+        var polygon = new naver.maps.Polygon({
+          map: map,
+          paths: polygonPath,
+          fillColor: '#ff0000',
+          fillOpacity: 0.3,
+          strokeColor: '#ff0000',
+          strokeOpacity: 0.6,
+          strokeWeight: 3,
+        });
+
+        createSmartCoteage(polygonCenterCoord);
+      }
+
+      function getOutlineCenter(_outlinepaths) {
+        let max_x = 0,
+          max_y = 0,
+          min_x = 1000,
+          min_y = 1000;
+        _outlinepaths.map(function (_item, _idx) {
+          if (max_x < _item.x) max_x = _item.x;
+          if (max_y < _item.y) max_y = _item.y;
+          if (min_x > _item.x) min_x = _item.x;
+          if (min_y > _item.y) min_y = _item.y;
+        });
+
+        let center_x = min_x + (max_x - min_x) / 2;
+        let center_y = min_y + (max_y - min_y) / 2;
+
+        console.log('getOutlineCenter=>', center_x + '|' + center_y);
+
+        moveCenterPointinMap(center_y, center_x, true, false);
+
+        return { lng: center_x, lat: center_y };
+      }
+
+      var customoverlay;
+      var lotPos;
+
+      function createSmartCoteage(_centerCoord) {
+        console.log('_centerCoord=>', _centerCoord);
+        var endCoord = distanceSpace(_centerCoord.lat, _centerCoord.lng, 0, 1);
+        console.log('endCoord=>', endCoord);
+        var endCoord2 = distanceSpace(endCoord.lat, endCoord.lng, 90, 0.3);
+        console.log('endCoord2=>', endCoord2);
+
+        // naver.maps.Event.once(map, 'init', function() {
+
+        // console.log('naver event init======');
+        // var drawingManager = new naver.maps.drawing.DrawingManager(
+        //     {
+        //         map: map
+        //         //,drawingControls: [naver.maps.drawing.DrawingMode.RECTANGLE]
+        //         // ,rectangleOptions: {
+        //         //     fillColor: '#ff0000',
+        //         //     fillOpacity: 0.5,
+        //         //     strokeWeight: 3,
+        //         //     strokeColor: '#ff0000'
+        //         // },
+        //     }
+        // );
+
+        // var rect = new naver.maps.Rectangle({
+        //     map: map,
+        //     bounds:
+        //         new naver.maps.LatLngBounds(
+        //             new naver.maps.LatLng(endCoord2.lat, endCoord2.lng)
+        //             ,new naver.maps.LatLng(_centerCoord.lat, _centerCoord.lng)
+        //         ),
+        //     fillColor: '#ff0000',
+        //     fillOpacity: 0.4,
+        //     strokeWeight: 2,
+        //     strokeColor: '#ff0000'
+        // });
+
+        // drawingManager.addListener(naver.maps.drawing.DrawingEvents.SELECT, function(overlay) {
+        //     console.log("Drawing select : " + overlay.id, overlay.name);
+        // });
+
+        // drawingManager.addListener(naver.maps.drawing.DrawingEvents.ADD, function(overlay) {
+        //     console.log("Drawing Add : " + overlay.id, overlay.name);
+        // });
+
+        // drawingManager.addDrawing(rect, naver.maps.drawing.DrawingMode.RECTANGLE, 'my-id');
+        // });
+
+        var rectangle = new naver.maps.Rectangle({
+          map: map,
+          bounds: new naver.maps.LatLngBounds(new naver.maps.LatLng(_centerCoord.lat - 0.0001, _centerCoord.lng - 0.0001), new naver.maps.LatLng(_centerCoord.lat, _centerCoord.lng)),
+          strokeColor: '#5347AA',
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: '#E51D1A',
+          fillOpacity: 0.6,
+        });
+      }
+      /**
+       * 두점의 거리
+       *
+       */
+      function getDistance(lat1, lon1, lat2, lon2) {
+        if (lat1 == lat2 && lon1 == lon2) return 0;
+
+        var radLat1 = (Math.PI * lat1) / 180;
+        var radLat2 = (Math.PI * lat2) / 180;
+        var theta = lon1 - lon2;
+        var radTheta = (Math.PI * theta) / 180;
+        var dist = Math.sin(radLat1) * Math.sin(radLat2) + Math.cos(radLat1) * Math.cos(radLat2) * Math.cos(radTheta);
+        if (dist > 1) dist = 1;
+
+        dist = Math.acos(dist);
+        dist = (dist * 180) / Math.PI;
+        dist = dist * 60 * 1.1515 * 1.609344 * 1000;
+        if (dist < 100) dist = Math.round(dist / 10) * 10;
+        else dist = Math.round(dist / 100) * 100;
+
+        return dist;
+      }
+
+      //위도,경도,각도,미터
+      function distanceSpace(lat, lng, deg, m) {
+        var rad = (deg / 180) * Math.PI; // 각도
+
+        return {
+          lat: m * Math.cos(rad) + lat,
+          lng: m * Math.sin(rad) + lng,
+        };
+
+        //return coordinate;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 모델 변경 팝업"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-01'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : change-option-modal option-energy -->
+    <dialog id="modal-01" class="modal modal-large change-option-modal option-energy">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">에너지를 변경해주세요</span>
+            </div>
+          </div>
+          <div class="modal-middle scroll">
+            <div class="modal-content-box">
+              <div class="select-model-container">
+                <div class="select-model-area">
+                  <div class="select-model-top">
+                    <div class="tab-box">
+                      <div class="tab-bottom-box">
+                        <div class="tab-button-box">
+                          <!-- prettier-ignore -->
+                          @@loop("tab.html", [
+                            {
+                              "className" : "type-solar active",
+                              "label"     : "태양광 설치",
+                              "desc"      : "에너지 효율을 극대화 하고싶다면"
+                            },
+                            {
+                              "className" : "type-no-solar",
+                              "label"     : "태양광 미설치",
+                              "desc"      : "에너지 이용이 많지 않다면"
+                            }
+                          ])
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="select-model-bottom">
+                    <div class="tab-content-box">
+                      <ul class="option-list-box">
+                        <!-- prettier-ignore -->
+                        @@loop("optionList.html", [
+                          {
+                            "viewMore": false,
+                            "id" : "model-option-1",
+                            "property" : "checked",
+                            "imageData" : null,
+                            "modelLabel": "BAPV 태양광 패널",
+                            "modelDesc" : "일반적인 태양광 패널로 스마트코티지 지붕에 덧붙여 시공",
+                            "modelMetaData" : null,
+                            "price" : "+ ￦10,000,000"
+                          },
+                        ])
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "선택",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "비밀번호 찾기", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : homeFindId -->
+    <div class="wrap detail homeFindId">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', secondMenu: '', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>비밀번호 찾기</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="dataInner">
+                <div class="typeCertification">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">본인인증 방법 선택</strong>
+                  </div>
+                  <!-- 본인 인증 : 기본값 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass",
+                      "buttonBlank": true,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": true,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 기본값 -->
+                  <!-- 본인 인증 : 인증 완료 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass active",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증 완료",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 인증 완료 -->
+                  <!-- 본인 인증 : 서비스 점검 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 서비스 점검 -->
+
+                  <div class="field fieldData typeCaution">
+                    <div class="fieldLabel ir">본인인증 안내</div>
+                    <ul class="fieldArea">
+                      <li class="fieldValue">본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>다음</span></button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

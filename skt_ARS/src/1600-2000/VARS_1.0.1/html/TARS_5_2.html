@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="information" iweb-data="out" />
+    <input type="hidden" id="osType_check" iweb-data="out" />
+    <input type="hidden" id="information_1" iweb-data="out" />
+    <input type="hidden" id="information_2" iweb-data="out" />
+    <input type="hidden" id="information_3" iweb-data="out" />
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": 'B tv 서비스 이용안내',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <!-- 2depth 영역 -->
+            <nav class="sub-menu">
+              <ol>
+                <li>
+                  <a href="javascript:sendData($(this), '1');">
+                    <span class="text">인터넷/TV 가입 <br />바로가기</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">B tv 서비스 <br />이용안내</span>
+                  </a>
+                </li>
+                <li id="agent_menu">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                    <span class="text">상담사 연결</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <!-- //2depth 영역 -->
+
+            <!-- 3depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol id="menu_reset">
+                  <li>
+                    <a href="#" onclick="togglePopup('B1', 'information_1')">
+                      <span class="text">월정액 가입</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="togglePopup('B2', 'information_2')">
+                      <span class="text">채널 안내</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="togglePopup('B3', 'information_3')">
+                      <span class="text">콘텐츠 구매 내역</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                      <span class="text">월정액 해지</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //3depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <div id="popBtvCheck" class="popup">
+      <div class="dim"></div>
+      <div class="popup-container">
+        <div class="popup-area">
+          <div class="popup-middle">
+            <div id="alert_tex" class="alert-icon-box">
+              <i class="ic-screen-voice"></i>
+              <p class="popup-text">보이는 ARS 종료 후 <br />앱 페이지로 연결됩니다.</p>
+              <div class="alert-text-box">
+                <p class="alert-text">이용 환경에 따라 데이터 요금이 발생할 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="popup-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-secondary" onclick="togglePopup();"><span>아니오</span></button>
+              <button type="button" class="btn btn-primary" onclick="callURL();"><span>예</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); //초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          // timezone_type  : '0'(야간), '1'(주간), '9'(중식시간)
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '1';
+
+          if (timezone_type == '9') {
+            document.getElementById('agent_menu').style.display = 'none';
+          } else if (timezone_type == '0') {
+            document.getElementById('agent_menu').style.display = 'none';
+          }
+        } catch (e) {}
+
+        common.refreshScroll();
+        // 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+
+      var $document = $(document);
+
+      var value = null;
+      var object = null;
+      var curMenu = null;
+
+      function togglePopup(currVal, currentObj) {
+        if ($('#popBtvCheck').hasClass('show')) {
+          $('#popBtvCheck').removeClass('show');
+        } else {
+          $('#popBtvCheck').addClass('show');
+        }
+
+        value = currVal;
+        object = currentObj;
+        // console.log(object);
+        // console.log(value);
+      }
+
+      function callURL() {
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        var osType_check = getUrlParameter('osType_check');
+        var information = getUrlParameter(object);
+        var callUrl = information.split('://');
+        curMenu = value;
+
+        // console.log(curMenu);
+        // console.log(callUrl);
+
+        if (vars_type == 'T') {
+          document.location = 'intent://' + callUrl[1] + '#Intent;scheme=' + callUrl[0] + ';end';
+          sendRepPageData('', curMenu, 'menu');
+        } else if (osType_check == '2') {
+          sendRepPageData('', curMenu, 'menu');
+        } else {
+          window.CallgateSDK.executeBrowser(information, 'false');
+          sendRepPageData('', curMenu, 'menu');
+        }
+      }
+    </script>
+  </body>
+</html>

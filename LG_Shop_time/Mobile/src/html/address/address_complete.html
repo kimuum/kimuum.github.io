@@ -1,0 +1,120 @@
+@@include("head.html",{
+"title" : "ADD A NEW SHIPPING ADDRESS - 입력완료"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "ADD A NEW SHIPPING ADDRESS",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="field-area">
+          <div class="field">
+            <span class="field-label">PHONE NUMBER</span>
+            <div class="input">
+              <input type="text" name="input01" id="input01" value="821088848561" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+          </div>
+
+          <!-- v1.2 수정 20230524 -->
+          <div class="field">
+            <label for="input-email" class="field-label">EMAIL</label>
+            <div class="input">
+              <input type="text" name="input-email" id="input-email" value="honggildong00@gmail.com" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+          </div>
+          <!-- // v1.2 수정 20230524 -->
+
+          <div class="field">
+            <!--  v1.7 20230905 이름 입력방식 변경 -->
+            <div class="field-divide">
+              <div class="divide-area">
+                <label for="first-name" class="field-label">FIRST NAME</label>
+                <div class="input">
+                  <input type="text" name="first-name" id="first-name" value="Hong" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+              </div>
+              <div class="divide-area">
+                <label for="last-name" class="field-label">LAST NAME</label>
+                <div class="input">
+                  <input type="text" name="last-name" id="last-name" value="Gil dong" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+              </div>
+            </div>
+            <!--  // v1.7 20230905 이름 입력방식 변경 -->
+          </div>
+
+          <div class="field">
+            <span class="field-label">ADDRESS</span>
+            <div class="input">
+              <input type="text" name="input03" id="input03" value="A Colonie Ctr Albany NY 12205" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+            <div class="input">
+              <input type="text" name="input03" id="input03" value="The Bond LIC Apt 7C" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="field-label">CITY</span>
+            <div class="input">
+              <input type="text" name="input04" id="input04" value="New York" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-label">STATE</div>
+            @@include('optionDropdown.html', {
+            'optionTitle': 'Select a State',
+            'option': [
+            {'title': 'title="selected"', 'value': 'Select a State'},
+            {'title': '', 'value': 'option02'},
+            {'title': '', 'value': 'option03'},
+            {'title': '', 'value': 'option04'}
+            ]
+            })
+          </div>
+
+          <div class="field">
+            <span class="field-label">ZIP CODE</span>
+            <div class="input">
+              <input type="text" name="input05" id="input05" value="123456" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+          </div>
+
+          <div class="field field-switch">
+            <label for="switch" class="field-label">Use same address for billing</label>
+            <div class="switch">
+              <input type="checkbox" id="switch" checked>
+              <span class="slider"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>ADD AND CONTINUE</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

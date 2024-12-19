@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전 카드"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .menu-payment : 메뉴 > 결제 수단 관리, 충전카드 설정 페이지
+      -->
+      <main class="main-container menu-payment">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "center",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "결제 수단 추가",
+          },
+          "button" : [
+            {
+              "icon" : "ic-close",
+              "className" : "btn-close",
+              "title" : "닫기",
+            },
+          ]
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="add-card-container">
+              <div class="add-card-area">
+                <!-- [240507] .add-card-top 제거, .add-card-bottom 내 컨텐츠 변경 -->
+                <div class="add-card-bottom">
+                  <div class="add-card-image-box">
+                    <!-- [접근성] 속성 추가 -->
+                    <!-- [240507] 이미지 변경 -->
+                    <img src="../../assets/images/home/img_autocharge_complete.svg" alt="충전 카드 등록 완료" aria-hidden="true" />
+                  </div>
+                  <div class="add-card-desc-box">
+                    <p class="desc">결제 수단 등록이 완료되었습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "확인"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

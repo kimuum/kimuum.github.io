@@ -1,0 +1,34 @@
+@@include('head.html', {
+'title': 'TVApp 종료'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main"></main>
+    <!-- // Main -->
+
+    <!-- popup start 활성화 클래스 : show -->
+    <div class="popup-container show">
+      <div class="pop-center-area">
+        <div class="pop-header">
+          <div class="pop-title">EXIT Shop Time</div>
+        </div>
+        <div class="pop-body">
+          <p class="pop-text">Are you sure you want to exit Shop Time?</p>
+        </div>
+        <div class="pop-footer">
+          <div class="button-box child-flex-none">
+            <button type="button" class="btn-solid-gray"><span>EXIT</span></button>
+            <button type="button" class="btn-solid-gray focused"><span>Cancel</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dim"></div>
+    </div>
+    <!-- //popup end -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

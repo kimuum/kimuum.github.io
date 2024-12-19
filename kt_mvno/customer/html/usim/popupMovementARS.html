@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "ARS 번호 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>ARS 번호 안내</span></button>
+    </div>
+    <div class="popup show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">ARS 번호 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="arsPopContainer">
+            <div class="aboutWrap about01">
+              <div class="aboutTitle">
+                <strong>번호이동 사전동의 ARS 완료 후 </strong><br />
+                <strong>아래 ‘사전체크 확인’ 버튼을 눌러주세요.</strong>
+              </div>
+              <div class="aboutContent">
+                <div class="field fieldData">
+                  <div class="fieldLabel">ARS 번호</div>
+                  <div class="arsInput">
+                    <div class="fieldArea">
+                      <strong class="title">KT</strong>
+                      <span>1588-2935</span>
+                    </div>
+                    <button type="button" class="btn" title="새 창 열림"><span>ARS 연결</span></button>
+                  </div>
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary"><span>사전체크 확인</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="aboutWrap about03">
+              <div class="aboutTitle">
+                <strong>번호이동 이전 통신사 ARS 번호</strong>
+              </div>
+              <div class="aboutContent">
+                <div class="tableContainer normalBgTable">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        번호이동 이전 통신사 ARS 번호 - 통신사, 사전동의 ARS 번호
+                      </caption>
+                      <colgroup>
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th class="alignCenter" scope="col">통신사</th>
+                          <th class="alignCenter" scope="col">사전동의 ARS 번호</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="alignCenter">KT / KT알뜰폰(MVNO)</td>
+                          <td class="alignCenter">1588-2935</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">SKT</td>
+                          <td class="alignCenter">1566-1509</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">SKT 알뜰폰(MVNO)</td>
+                          <td class="alignCenter">1599-0133</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">LGU+ / LGU+알뜰폰(MVNO)</td>
+                          <td class="alignCenter">1544-3553</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">CJ헬로모바일</td>
+                          <td class="alignCenter">070-7336-7766</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">세종텔레콤(스노우맨)</td>
+                          <td class="alignCenter">1688-9345</td>
+                        </tr>
+                        <tr>
+                          <td class="alignCenter">한국케이블텔레콤_KCT</td>
+                          <td class="alignCenter">1877-9120</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

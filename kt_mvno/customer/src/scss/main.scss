@@ -1,0 +1,1920 @@
+// ------- Main ------- //
+.wrap {
+  &.main {
+    &.active {
+      .headerInner {
+        top: 0;
+      }
+    }
+    .headerContainer {
+      position: static;
+    }
+    .headerInner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      width: 100%;
+    }
+  }
+}
+.headerInner {
+  background-color: $white;
+  border-bottom: 1px solid $color-gray-02;
+}
+/* myInfoSummary */
+.main {
+  .headerArea {
+    & > {
+      .myInfoSummary {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        // .subTitleContainer {
+        //   min-height: 14rem;
+        // }
+        .summaryBtnTitle {
+          height: 7.5rem;
+        }
+        .summaryBottom {
+          position: absolute;
+          z-index: 2;
+          top: 7.5rem;
+          left: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .contentContainer {
+    top: -7.5rem;//ie11
+    position: relative;
+    z-index: 1;
+  }
+}
+/* main common */
+.mainTitleArea {
+  @include flex(row, flex-start, center);
+  @include font(1.8rem, normal, $color-gray-04, 1.4);
+  margin-bottom: 3.2rem;
+  .title {
+    @include font(4rem, bold, $black, 1.4);
+  }
+  .line {
+    display: inline-block;
+    position: relative;
+    span {
+      position: relative;
+      z-index: 1;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: -0.2rem;
+      left: -0.2rem;
+      bottom: 0.3rem;
+      z-index: 0;
+      height: 1.7rem;
+      background-color: $accent;
+    }
+  }
+  .btnAllView {
+    margin-left: 5rem;
+  }
+}
+/* 전체보기 */
+.btnAllView {
+  position: relative;
+  display: inline-block;
+  padding-right: 1.5rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid $secondary;
+  @include font(1.8rem, bold, $secondary, 1.4);
+  &:after {
+    content: "";
+    position: absolute;
+    opacity: 0.8;
+    top: 50%;
+    right: 0;
+    width: 7px;
+    height: 10px;
+    margin-top: -7px;
+    background: image("common/arrow_link_r.svg") no-repeat center / cover;
+  }
+}
+/* visualSwiper */
+.swiper {
+  overflow: hidden;
+}
+.mainVisual {
+  position: relative;
+  .swiper-slide {
+    position: relative;
+  }
+
+  // pagenation
+  // 20220719 [운영]기존 .visualPagination 클래스 삭제 (슬라이드 구조 변경으로)
+  .visualBtn {
+    width: 4rem;
+    height: 4rem;
+  }
+  .play {
+    display: none;
+    background: image("common/slide_play.svg") no-repeat center center / 2.6rem
+      auto;
+    &.show {
+      display: block;
+    }
+  }
+  .stop {
+    display: none;
+    background: image("common/slide_pause.svg") no-repeat center center / 2.6rem
+      auto;
+    &.show {
+      display: block;
+    }
+  }
+
+  //시작 만족도 조사 팝업 오픈시 나타나는 스타일 충돌 대응
+  .swiper-pagination-bullets {
+    width: auto !important;
+    bottom: 0 !important;
+    left: 6.1% !important;
+    .swiper-pagination-bullet {
+      margin: 2rem 0 !important;
+    }
+  }
+  //끝 만족도 조사 팝업 오픈시 나타나는 스타일 충돌 대응
+  .slideArea {
+    @include flex(column, center, flex-start);
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+    bottom: 0;
+    z-index: 1;
+  }
+  [class*="slideBg"] {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .slideBgMo {
+    display: none;
+  }
+  .slideTop {
+    margin-bottom: 1.5rem;
+  }
+  .visualTitle {
+    @include font(4.6rem, bold, $black, 1.4);
+  }
+  .visualText {
+    @include font(2rem, normal, $black, 1.5);
+    margin-bottom: 1.4rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .slideMore {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 4.8rem;
+    padding: 0 2.3rem;
+    margin-top: 5.7rem;
+    @include font(1.8rem, bold, $black, 4.4rem);
+    border: 2px solid $black;
+    & > span {
+      position: relative;
+      z-index: 2;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      height: 100%;
+      width: 0;
+      transition: all 0.5s;
+    }
+    &:hover,
+    &:focus {
+      &:after {
+        width: 100%;
+        background-color: rgba($white, 1);
+      }
+    }
+  }
+}
+
+/* 플로팅 메뉴 */
+.floatingArea {
+  position: fixed;
+  right: 6rem;
+  bottom: 5.2rem;
+  z-index: 10;
+  line-height: 0;
+  a, button {
+    width: 12rem;
+    height: 12rem;
+    background-color: $white;
+    border-radius: 12rem;
+    box-shadow: 0px 6px 28px rgba($black, 0.1);
+    box-sizing: border-box;
+  }
+}
+/* 챗봇 */
+.chatBotArea {
+  position: fixed;
+  right: 6rem;
+  bottom: 5.2rem;
+  z-index: 10;
+  line-height: 0;
+  a, button {
+    width: 12rem;
+    height: 12rem;
+    padding: 0.1rem 0.25rem 0.3rem;
+    background-color: $white;
+    border-radius: 12rem;
+    box-shadow: 0px 6px 28px rgba($black, 0.1);
+    box-sizing: border-box;
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      background: image("common/icon_chatbot.svg") no-repeat center;
+      background-size: contain;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* mainCompare */
+.mainCompare {
+  padding-top: 13.6rem;
+  padding-bottom: 14.5rem;
+}
+.compareWrap {
+  overflow: hidden;
+  @include flex(row, flex-start, flex-start);
+  border: 4px solid $border-color-01;
+  border-radius: 2rem;
+  align-items: stretch;
+  & > [class*="compare"] {
+    width: 50%;
+  }
+  .tabContainer {
+    width: 100%;
+  }
+  .compareCharge {
+    @include flex(column, center, flex-start);
+    padding: 6.1rem 7.7rem 6.4rem;
+    background-color: $bgcolor-gray-01;
+    .chargeTop {
+      width: 100%;
+      height: auto;
+      margin-bottom: 4.2rem;
+      border: 0;
+      letter-spacing: -1px;
+
+      .tabButton {
+        position: relative;
+        width: auto;
+        align-items: center;
+        @include font(2rem, bold, $color-gray-08, 1.4);
+        &:before {
+          content: "";
+          display: inline-block;
+          width: 0.2rem;
+          height: 1.2rem;
+          margin: 0 1rem 0 0.8rem;
+          background-color: $border-color-02;
+        }
+        &:first-child {
+          &:before {
+            display: none;
+          }
+        }
+        &[aria-selected="true"] {
+          color: $black;
+          &:after {
+            display: none;
+          }
+          span {
+            display: block;
+            position: relative;
+            &:after {
+              content: "";
+              position: absolute;
+              left: 50%;
+              bottom: -8px;
+              width: 0;
+              margin-left: -4px;
+              border: 8px solid $primary;
+              border-top: 5px solid transparent;
+              border-right: 5px solid transparent;
+              border-left: 5px solid transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+  .chargeBottom {
+    width: 100%;
+  }
+  .chargeInputWrap {
+    overflow: hidden;
+    @include flex(row, flex-start, center);
+    height: 7.8rem;
+    padding: 3rem;
+    margin-bottom: 1.4rem;
+    border: 4px solid $border-color-01;
+    border-radius: 0.8rem;
+    .chargeInput {
+      flex: 1;
+      display: block;
+      width: calc(100% - 14.7rem);
+      background-color: transparent;
+      border: none;
+      @include font(3rem, bold, $black, 2.6rem);
+      text-align: right;
+    }
+  }
+  .chargeCostWrap {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    margin: -0.4rem -0.4rem 2rem;
+    font-size: 0;
+    .btn {
+      width: 18rem;
+      height: 5.6rem;
+      margin: 0.4rem;
+      background-color: $bgcolor-gray-06;
+      border: 4px solid $bgcolor-gray-06;
+      border-radius: 0.8rem;
+      @include font(1.8rem, bold, $color-gray-04);
+      &.active {
+        background-color: $bgcolor-gray-02;
+        border-color: $color-gray-06;
+      }
+    }
+  }
+  .chargeTitle {
+    @include font(1.8rem, normal, $black, 2.6rem);
+    padding-right: 2.6rem;
+    border-right: 1px solid $black;
+  }
+  .chargeBtnArea {
+    @include flex(row, center, center);
+    .compareBtn {
+      flex: 1;
+      height: 8rem;
+      background-color: $black;
+      @include font(1.8rem, bold, $white);
+      border-radius: 0.8rem;
+      &:focus-visible {
+        outline: 5px solid $color-gray-07;
+      }
+    }
+  }
+  .compareImgbox {
+    @include flex(row, center, center);
+    background-color: $border-color-01;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+/* mainRecommend */
+.mainRecommend {
+  position: relative;
+  max-width: 147.6rem;
+  margin: 0 auto 7.3rem;
+  .contentLeft {
+    @include flex(row, flex-start, flex-end);
+    height: 26.5rem;
+    margin: 0 auto;
+    padding-bottom: 6rem;
+    background: image("main/bg_recommend_pc_01.png") no-repeat right 2rem bottom;
+    .mainTitleArea {
+      margin-bottom: 0;
+    }
+  }
+  .contentRight {
+    position: relative;
+  }
+  [class*="monthCharge"] {
+    position: relative;
+    border: 1px solid $border-color-03;
+    border-radius: 2rem;
+    .moreLink {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      border-radius: 2rem;
+      span {
+        @include ir;
+      }
+    }
+    .chargeLabel {
+      position: relative;
+      display: block;
+      padding-bottom: 0.9rem;
+      margin-bottom: 3rem;
+      @include font(1.8rem, bold, $color-gray-04, 1.4);
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1.15rem;
+        width: 2.3rem;
+        height: 3px;
+        background-color: $bgcolor-gray-08;
+      }
+    }
+    .chargeTitle {
+      display: block;
+      margin-bottom: 0.6rem;
+      @include font(3.1rem, bold, $black, 1.3);
+    }
+    .chargeText {
+      @include font(1.9rem, normal, $color-gray-05, 1.4);
+    }
+    .chargeSubText {
+      @include font(1.8rem, normal, $color-gray-05);
+    }
+    .optionLabel,
+    .optionText {
+      display: block;
+      // white-space: nowrap;
+    }
+    .optionLabel {
+      color: transparent;
+      margin-bottom: 2rem;
+    }
+    .optionText {
+      // @include flex(column, flex-start, center); ie11
+      min-height: 6rem;
+      @include font(1.8rem, bold, $black, 1.4);
+    }
+  }
+  .monthChargeTop {
+    flex-basis: 100%;
+    margin-bottom: 3rem;
+    padding: 4.5rem;
+    background-color: $bgcolor-gray-01;
+    .recommendTop {
+      @include flex(row, flex-start, center);
+      padding-left: 0.5rem;
+      margin-bottom: 4rem;
+    }
+    .recommendMiddle {
+      @include flex(row, flex-start, center);
+      margin-bottom: 6rem;
+    }
+    .imgWrap {
+      width: 17.2rem;
+      margin-right: 5.6rem;
+    }
+    .recommendOptionBox {
+      margin-left: 10rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      .optionLabel {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+      }
+      .optionText {
+        font-size: 5.6rem;
+      }
+    }
+    .basicCharge {
+      @include flex(row, flex-start, flex-end);
+      @include font(0, bold, $color-gray-06);
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .label {
+        margin-right: 2rem;
+        font-size: 2rem;
+      }
+      .charge {
+        font-size: 3.2rem;
+        font-weight: bolder;
+      }
+      .won {
+        font-size: 3.2rem;
+      }
+      .subText {
+        align-self: center;
+        margin-left: 0.5rem;
+        @include font(2rem, 400, $color-gray-03);
+      }
+      &.cardType {
+        .label,
+        .charge,
+        .won {
+          color: $primary;
+        }
+      }
+    }
+  }
+  .monthCharge {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    height: 100%;
+    padding: 4.5rem 0;
+    background-color: $white;
+    text-align: center;
+    .recommendTop,
+    .recommendMiddle {
+      width: calc(100% - 2rem);
+    }
+    .recommendTop {
+      margin: 0 1rem 2.5rem;
+      .imgWrap {
+        width: 12.2rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+    .recommendMiddle {
+      margin: 0 1rem 5rem;
+    }
+    .recommendBottom {
+      @include flex(row, space-between, flex-start);
+      width: calc(100% - 8rem);
+      margin: auto 4rem 0;
+      padding: 4.3rem 1rem 2.5rem;
+      background-color: $bgcolor-gray-03;
+      border-radius: 1.6rem;
+    }
+    .recommendOptionBox {
+      flex: 1;
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    .beforeCharge {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 1rem;
+      @include font(2.4rem, normal, $color-gray-03);
+      &:before {
+        content: "";
+        position: absolute;
+        top: 60%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: $color-gray-03;
+      }
+      span {
+        font-size: 2rem;
+      }
+    }
+    .afterCharge {
+      @include flex(row, center, center);
+      @include font(3.2rem, bold, $black);
+      .label {
+        margin-right: 1.3rem;
+      }
+      .charge {
+        font-size: 5.6rem;
+        color: $border-color-01;
+      }
+      .won {
+        margin-left: 0.5rem;
+      }
+    }
+    .recommendOptionBox {
+      // padding: 0 2.2rem;
+      // border-right: 1px solid rgba($border-color-02, 0.5);
+      // &:last-child {
+      //   border-right: none;
+      // }
+      &[class*="iconBefore"] {
+        .optionLabel {
+          overflow: hidden;
+          display: block;
+          width: 5rem;
+          height: 5rem;
+          margin: 0 auto 3rem;
+        }
+      }
+      &.iconBeforeData {
+        .optionLabel {
+          background: image("common/icon_signal.svg") no-repeat center;
+        }
+      }
+      &.iconBeforeCall {
+        .optionLabel {
+          background: image("common/icon_call.svg") no-repeat center;
+        }
+      }
+      &.iconBeforeMessage {
+        .optionLabel {
+          background: image("common/icon_email.svg") no-repeat center;
+        }
+      }
+    }
+  }
+  // 후불/선불 요금제 탭
+  .recommendTabs {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    overflow: hidden;
+    @include flex(row, flex-end, center);
+    .tabBtn {
+      margin: 2px 0.7rem 2px;
+      padding-bottom: 0.3rem;
+      @include font(1.4rem, normal, $secondary);
+      &.active {
+        position: relative;
+        color: $primary;
+        font-weight: bold;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $primary;
+        }
+      }
+    }
+  }
+}
+
+//20220720추가
+.visualSwiper {
+  .visualMainArea {
+    @include flex(row, flex-start, center);
+    position: absolute;
+    z-index: 10;
+    left: 12%;
+    bottom: 5%;
+  }
+  .visualMainPagination {
+    @include flex(row, center, center);
+    margin-right: 0.5rem;
+    @include font(1.6rem, 400, $black, 1);
+    letter-spacing: 1px;
+    .swiper-pagination-current {
+      padding-right: 1rem;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .swiper-pagination-total {
+      padding-left: 1rem;
+    }
+  }
+}
+//20220720추가
+
+.mainPopularSwiper {
+  overflow: hidden;
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+  .swiper-slide {
+    @include flex(row, space-between, flex-start);
+    flex-wrap: wrap;
+    height: auto;
+  }
+}
+
+// new slide
+// .mainNoticePagination, //사업자, 공지사항에 pagenation이 추가 될 경우 스타일 추가
+// .mainBizPagination,
+.mainPopularPagination,
+.mainNoticePagination,
+.mainBizPagination {
+  @include flex(row, space-between, center);
+  position: static;
+  width: 12.6rem;
+  height: 100%;
+  margin: 2.5rem auto 0;
+  [class*=Btn] {
+    overflow: hidden;
+    position: static;
+    width: 3rem;
+    height: 3rem;
+    background: image("common/arrow_pagenation.svg") no-repeat center $white;
+    background-size: cover;
+    border-radius: 50%;
+    & > span {
+      @include ir;
+    }
+    &:hover,
+    &:focus-visible {
+      background-image: image("common/arrow_pagenation_hover.svg");
+    }
+    &:active {
+      background-image: image("common/arrow_pagenation_press.svg");
+    }
+    &.swiper-button-disabled {
+      background-image: image("common/arrow_pagenation_disable.svg");
+    }
+    &[class*=BtnNext],
+    &[class*=bizBtnNext],
+    &[class*=noticeBtnNext] {
+      transform: translateY(0) rotate(180deg);
+    }
+  }
+  [class*=Pagination] {
+    position: static;
+    width: auto;
+    @include font(1.3rem, bold, $color-gray-04);
+    .swiper-pagination-current {
+      color: $primary;
+    }
+  }
+}
+
+/* mainMyBuisness */
+.mainMyBuisness {
+  margin-top: 18.9rem;
+  margin-bottom: 9.8rem;
+  .mainTitleArea {
+    margin: 0 auto 5.7rem;
+  }
+  .btnBizPopup {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100%;
+    padding: 3rem 2.6rem;
+    background-color: #f9f9f9;
+    border-radius: 2rem;
+    border: 1px solid $border-color-02;
+    & + .btnBizPopup {
+      margin-top: 3rem;
+    }
+    &:hover,
+    &:focus-visible {
+      outline: 4px solid $primary;
+      background-color: $white;
+      border-color: transparent;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+    & > img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .text {
+      display: block;
+      @include font(2.4rem, 500, $secondary, 1.4);
+    }
+  }
+}
+
+/* mainMyEvent */
+.mainMyEvent {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  .eventImgbox {
+    width: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .showPc {
+      display: block;
+    }
+    .showMobile {
+      display: none;
+    }
+  }
+}
+
+/* mainService */
+.mainService {
+  margin: 0;
+  padding: 16.3rem 22.1rem;
+  max-width: 100%;
+  align-items: center;
+  background-color: $bgcolor-gray-04;
+  .mainTitleArea {
+    .title {
+      margin-bottom: 4rem;
+      letter-spacing: -1px;
+      color: $color-gray-06;
+    }
+  }
+  .contentBox {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+  }
+  .mainTitleArea,
+  .serviceItem {
+    width: calc(33.33% - 4.2rem);
+    max-width: 44.8rem;
+    margin: 2.1rem;
+  }
+  .serviceItem {
+    @include flex(row, flex-start, center);
+    padding: 4.2rem 3rem 5.3rem 3.5rem;
+    background-color: $white;
+    border-radius: 2rem;
+
+    &[class*="imgBefore"] {
+      &::before {
+        content: "";
+        flex-shrink: 0;
+        display: block;
+        width: 5rem;
+        height: 5rem;
+        margin-right: 3.4rem;
+      }
+    }
+    &.imgBeforeCompany {
+      &::before {
+        background: image("main/img_service_company.svg") no-repeat center/cover;
+      }
+    }
+    &.imgBeforeQuality {
+      &::before {
+        background: image("main/img_service_quality.svg") no-repeat center/cover;
+      }
+    }
+    &.imgBeforePay {
+      &::before {
+        background: image("main/img_service_pay.svg") no-repeat center/cover;
+      }
+    }
+    &.imgBeforeOpen {
+      &::before {
+        background: image("main/img_service_open.svg") no-repeat center/cover;
+      }
+    }
+    &.imgBeforeNo1 {
+      &::before {
+        background: image("main/img_support.svg") no-repeat center/cover;
+      }
+    }
+  }
+  .descWrap {
+    .label {
+      display: block;
+      margin-bottom: 0.2rem;
+      @include font(2rem, bold, $color-gray-06, 2.3);
+    }
+    .text {
+      @include font(1.6rem, 400, $color-gray-06, 1.2);
+    }
+  }
+}
+
+/* mainNotice */
+.mainNotice {
+  max-width: 100%;
+  margin-top: 15rem;
+  margin-bottom: 17.2rem;
+  word-break: break-word;
+  word-wrap: break-word;
+  .mainTitleArea {
+    margin: 0 auto 2rem;
+    .title {
+      color: $color-gray-06;
+    }
+  }
+  .swiper-slide {
+    @include flex(column, flex-start, flex-start);
+    justify-content: flex-start !important;
+    height: auto;
+    padding: 0;
+    border: 1px solid $border-color-02;
+    background-color: $white;
+    border-radius: 2rem;
+
+    > .noticeLink {
+      @include flex(column, flex-start, flex-start);
+      padding: 4rem;
+    }
+
+    > div {
+      width: 100%;
+    }
+  }
+  .noticeTop {
+    min-height: 12rem;
+    margin-bottom: 1rem;
+    @include font(3.2rem, bold, $color-gray-06, 1.4);
+    letter-spacing: -1px;
+    .label {
+      display: block;
+      min-height: 8.8rem;
+    }
+    .iconBgNew {
+      width: 3rem;
+      height: 3rem;
+      vertical-align: -3px;
+    }
+    .date {
+      display: block;
+      margin-top: 0.8rem;
+      @include font(1.6rem, normal, $color-gray-05, 1.4);
+    }
+  }
+  .noticeMiddle {
+    max-height: 10.8rem;
+    margin-bottom: 2.6rem;
+    @include font(1.6rem, normal, $color-gray-05, 1.6);
+    @include multi-text-hidden(ellipsis, 3);
+  }
+  .noticeBottom {
+    margin-top: auto;
+  }
+}
+
+// 좌/우 버튼 슬라이드 공통
+.mainArea {
+  [class*=visualMainBtn] {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 5rem;
+    height: 5rem;
+    background: image("common/arrow_pagenation.svg") no-repeat center $white;
+    background-size: cover;
+    border-radius: 5rem;
+    transform: translateY(-50%) rotate(0);
+    &:hover {
+      background-image: image("common/arrow_pagenation_hover.svg");
+    }
+    &:active {
+      background-image: image("common/arrow_pagenation_press.svg");
+    }
+    &.visualMainBtn {
+      background-color: transparent;
+      top: 37.13%;
+    }
+    &[class*=BtnPrev] {
+      left: 0;
+    }
+    &[class*=BtnNext] {
+      right: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+    & > span {
+      @include ir;
+    }
+  }
+  [class*=visualMainBtn] {
+    background-color: transparent;
+    top: 50%;
+    transform: translate(0, 0);
+  
+    &.mo {
+      display: none;
+    }
+    &.pc {
+      display: block;
+    }
+    &.visualMainBtnPrev {
+      left: 3.34%;
+    }
+    &.visualMainBtnNext {
+      right: 3.34%;
+      transform: translate(0, 0) rotate(180deg);
+    }
+  }
+
+  .mainMyBuisness,
+  .mainNotice {
+    max-width: 100%;
+    .mainTitleArea {
+      max-width: 147.6rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+  .mainBizSwiper,
+  .noticeSwiper {
+    overflow: hidden;
+    position: relative;
+    max-width: 165.6rem;
+    margin: 0 auto;
+    padding: 4px 11rem;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      width: 10rem;
+      height: 100%;
+      background-color: #fff;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+      width: 10rem;
+      height: 100%;
+      background-color: #fff;
+    }
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+  
+    .swiper-slide {
+      @include flex(column, center, stretch);
+      height: auto;
+    }
+  }
+}
+/////////////////////////////////// 이 하 Responsive ////////////////////////////////////
+@media (#{$pc-large}) {
+  /* main common */
+  .main {
+    .contentInner {
+      max-width: 100%;
+      padding-left: 5rem;
+      padding-right: 5rem;
+      &.mainMyEvent {
+        padding: 0;
+      }
+      &.mainService {
+        padding: 8rem 2.9rem;
+      }
+    }
+  }
+  /* mainCompare */
+  .compareWrap {
+    .compareCharge {
+      width: 60%;
+      padding: 3rem;
+    }
+    .compareImgbox {
+      width: 40%;
+    }
+  }
+  /* mainRecommend */
+  /* mainMyBuisness */
+  /* mainMyEvent */
+  /* mainService */
+  .mainService {
+    flex-direction: column;
+    .mainTitleArea,
+    .serviceItem {
+      max-width: 100%;
+      width: calc(50% - 4.2rem);
+    }
+  }
+  /* mainNotice */
+  .mainNotice {
+    .swiper-slide {
+      // padding: 3rem;
+
+      .noticeLink {
+        padding: 3rem;
+      }
+    }
+  }
+}
+
+@media (#{$pc-middle}) {
+  /* main common */
+  // .wrap {
+  //   &.main {
+  //     &.eventBannerOn {
+  //       padding-top: 11.7rem;
+  //       .header {
+  //         top: 3.6rem;
+  //       }
+  //     }
+  //   }
+  // }
+  /* mainCompare */
+  /* mainRecommend */
+  /* mainMyBuisness */
+  /* mainMyEvent */
+  /* mainService */
+  /* mainNotice */
+}
+
+@media (#{$pc-small}) {
+  /* main common */
+  .main {
+    .contentInner {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      &.mainService {
+        padding: 5rem 0.9rem;
+      }
+    }
+  }
+  /* mainCompare */
+  /* mainRecommend */
+  /* mainMyBuisness */
+  /* mainMyEvent */
+  /* mainService */
+  /* mainNotice */
+  .mainNotice {
+    .noticeTop {
+      min-height: 6.7rem;
+      margin-bottom: 2.5rem;
+      font-size: 2.8rem;
+    }
+    .noticeMiddle {
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  .wrap {
+    &.main {
+      padding-top: 6.1rem;
+      .mobileNav {
+        display: none;
+      }
+      // &.eventBannerOn {
+      //   padding-top: 9.7rem;
+      //   .mobileContainer {
+      //     height: calc(100vh - 9.7rem);
+      //   }
+      // }
+    }
+  }
+  /* main common */
+  .main {
+    .headerArea {
+      & > {
+        .myInfoSummary {
+          // .subTitleContainer {
+          //   min-height: 11rem;
+          // }
+          &.beforeLogin {
+            .subTitleContainer {
+              display: flex;
+            }
+          }
+          .summaryBtnTitle {
+            height: 6.4rem;
+          }
+          .summaryBottom {
+            top: 6.4rem;
+          }
+        }
+      }
+    }
+    .contentInner {
+      &.mainService {
+        padding: 5rem 3rem 6rem;
+      }
+    }
+    .contentContainer {
+      top: -6.5rem;//ie11
+    }
+  }
+  .mainTitleArea {
+    margin-bottom: 2.4rem;
+    padding-right: 2.8rem;
+    .title {
+      font-size: 2.4rem;
+    }
+  }
+
+  //20220720추가
+  .visualSwiper {
+    .pagination-area {
+      @include flex(row, flex-start, center);
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+    }
+    .visualMainArea {
+      position: static;
+    }
+    [class*="visualMainBtn"] {
+      flex-basis: 3rem;
+      position: static;
+      width: 3rem;
+      min-width: 3rem;
+      height: 4rem;
+      background: image("common/mo_slide_next_ic.png") no-repeat center;
+      transform: translateY(0);
+      &:hover {
+        background: image("common/mo_slide_next_ic.png") no-repeat center;
+      }
+      &:active {
+        background: image("common/mo_slide_next_ic.png") no-repeat center;
+      }
+      &.mo {
+        display: block;
+      }
+      &.pc {
+        display: none;
+      }
+      &.visualMainBtnNext {
+        transform: translateY(0) rotate(180deg);
+      }
+    }
+    .play,
+    .stop {
+      min-width: 4rem;
+      background-size: 2.4rem auto;
+    }
+    .visualMainPagination {
+      margin-right: 0;
+      .swiper-pagination-current {
+        padding-right: 0.5rem;
+      }
+      .swiper-pagination-total {
+        padding-left: 0.5rem;
+      }
+    }
+  }
+  //20220720추가
+
+  /* 플로팅 메뉴 */
+  .floatingArea {
+    right: 2rem;
+    bottom: 3rem;
+    a {
+      width: 7rem;
+      height: 7rem;
+    }
+  }
+  /* 챗봇 */
+  .chatBotArea {
+    right: 2rem;
+    bottom: 3rem;
+    a {
+      width: 7rem;
+      height: 7rem;
+      padding: 0.1rem 0.1rem 0.2rem;
+    }
+  }
+  /* mainVisual */
+  .mainVisual {
+    .slideArea {
+      justify-content: flex-start;
+      top: 24%;
+      left: 3rem;
+      right: 1rem;
+    }
+    .slideTop {
+      margin-bottom: 1.2rem;
+    }
+    .visualTitle {
+      font-size: 2.4rem;
+    }
+    .visualText {
+      margin-bottom: 0;
+      font-size: 1.5rem;
+    }
+    .slideMore {
+      margin-top: 2rem;
+    }
+    .visualPagination {
+      @include flex(row, flex-start, center);
+      top: auto;
+      left: 3rem;
+      bottom: 2.7rem;
+      .swiper-pagination-bullet {
+        margin: 0 1.6rem 0 0;
+        font-size: 1.3rem;
+      }
+      .swiper-pagination-bullet-active {
+        font-weight: bolder;
+        &:after {
+          display: none;
+        }
+      }
+    }
+    //시작 만족도 조사 팝업 오픈시 나타나는 스타일 충돌 대응
+    .swiper-pagination-bullets {
+      width: auto !important;
+      bottom: 2.7rem !important;
+      left: 3rem !important;
+      .swiper-pagination-bullet {
+        margin: 0 1.6rem 0 0 !important;
+      }
+    }
+    .slideMore {
+      height: 3.6rem;
+      // padding: 0;
+      // border: none;
+      // border-bottom: 1px solid transparent;
+      @include font(1.3rem, bold, $black, 3.2rem);
+
+      &:after {
+        display: none;
+      }
+      &:hover,
+      &:focus {
+        border-bottom-color: $color-gray-04;
+      }
+    }
+  }
+  .btnAllView {
+    font-size: 1.3rem;
+  }
+
+  /* mainCompare */
+  .mainCompare {
+    padding: 5rem 3rem;
+    background-color: $bgcolor-gray-02;
+    .mainTitleArea {
+      margin-bottom: 4rem;
+    }
+  }
+  .compareWrap {
+    border: none;
+    border-radius: 0;
+    .compareCharge {
+      width: 100%;
+      padding: 0;
+      background-color: transparent;
+      .chargeTop {
+        margin-bottom: 4rem;
+        .tabButton {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .compareImgbox {
+      display: none;
+    }
+    .chargeBtnArea {
+      .compareBtn {
+        height: 5rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  /* mainRecommend */
+  .mainRecommend {
+    margin-top: 5rem;
+    .contentLeft {
+      align-items: flex-start;
+      height: 15.7rem;
+      padding-bottom: 0;
+      background: image("main/bg_recommend_mo_01.png") no-repeat right 2rem
+        bottom / 19.9rem 12rem;
+    }
+    .monthChargeTop {
+      margin-bottom: 1rem;
+      padding: 2rem;
+      .recommendOptionBox {
+        margin-left: 4rem;
+        .optionText {
+          font-size: 4rem;
+        }
+      }
+      .recommendTop {
+        flex-wrap: wrap;
+      }
+    }
+    .monthCharge {
+      padding: 2rem 0;
+      .recommendMiddle {
+        @include flex(row, center, center);
+      }
+      .recommendBottom {
+        width: calc(100% - 4rem);
+        padding: 2rem;
+        margin: auto 2rem 0;
+      }
+      .recommendOptionBox {
+        &[class*="iconBefore"] {
+          .optionLabel {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+      .beforeCharge {
+        margin-top: 0.8rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+        font-size: 1.5rem;
+        span {
+          font-size: inherit;
+        }
+      }
+      .afterCharge {
+        .label {
+          margin-top: 0.5rem;
+          margin-right: 0.4rem;
+        }
+        .won {
+          margin-top: 0.5rem;
+          margin-left: 0.2rem;
+        }
+      }
+    }
+    // 후불/선불 요금제 탭
+    .recommendTabs {
+      .tabBtn {
+        font-size: 1.2rem;
+      }
+    }
+  }
+  .mainPopularPagination,
+  .mainBizPagination,
+  .mainNoticePagination {
+    margin-top: 3rem;
+    [class*=Btn] {
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  /* mainMyBuisness */
+  .mainMyBuisness {
+    margin-top: 7rem;
+    margin-bottom: 3.5rem;
+    .mainTitleArea {
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+    .btnBizPopup { //모바일 디바이스 포커스링 삭제 됨 > 테두리 기본값으로 변경
+      &:hover, 
+      &:focus-visible {
+        border-color: $border-color-02;
+      }
+    }
+  }
+  /* mainMyEvent */
+  .mainMyEvent {
+    .eventImgbox {
+      .showPc {
+        display: none;
+      }
+      .showMobile {
+        display: block;
+      }
+    }
+  }
+  /* mainService */
+  .mainService {
+    .mainTitleArea {
+      width: 100%;
+      margin: 0;
+      .title {
+        margin-bottom: 2rem;
+      }
+    }
+    .serviceItem {
+      width: 100%;
+      margin: 0 auto 1.7rem;
+      padding: 2.5rem 1.6rem 2rem 2.5rem;
+      border-radius: 0;
+      &[class*="imgBefore"] {
+        &:before {
+          width: 3.5rem;
+          height: 3.5rem;
+          margin-right: 2.3rem;
+        }
+      }
+    }
+    .descWrap {
+      .text {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  /* mainNotice */
+  .mainNotice {
+    margin-top: 5.6rem;
+    margin-bottom: 7rem;
+    padding-right: 0;
+    .swiper-slide {
+      min-height: 19.6rem;
+      border-radius: 8px;
+      
+      .noticeLink {
+        height: 100%;
+        min-height: 19.6rem;
+        padding: 2.4rem 2rem;
+      }
+    }
+    .noticeTop {
+      height: auto;
+      margin-bottom: 1.4rem;
+      @include font(1.8rem, 600, $color-gray-06, 1.2);
+      .label {
+        min-height: 4.4rem;
+      }
+      .iconBgNew {
+        width: 1.7rem;
+        height: 1.7rem;
+      }
+    }
+    .noticeMiddle {
+      max-height: 9rem;
+      font-size: 1.4rem;
+      line-height: 1.3;
+      @include multi-text-hidden(ellipsis, 5);
+    }
+    .noticeBottom {
+      margin-top: auto;
+    }
+  }
+   // tablet 좌/우 버튼 슬라이드 공통
+  .mainArea {
+    .mainMyBuisness,
+    .mainNotice {
+      .mainTitleArea {
+        padding-left: 0;
+        padding-right: 2rem;
+      }
+    }
+    .mainBizSwiper,
+    .noticeSwiper {
+      padding-left: 5rem;
+      padding-right: 5rem;
+      &:before,
+      &:after {
+        width: 5rem;
+      }
+    }
+  }
+}
+
+@media (#{$foldMax}) {
+  /* main common */
+  .mainRecommend,
+  .mainMyBuisness {
+    .mainTitleArea {
+      display: block;
+      .btnAllView {
+        margin-top: 1.5rem;
+        margin-left: 0;
+      }
+    }
+  }
+  /* mainVisual */
+  .mainVisual {
+    .slideArea {
+      top: 21%;
+    }
+    .slideBgPc {
+      display: none;
+    }
+    .slideBgMo {
+      display: block;
+    }
+  }
+  /* mainCompare */
+  /* mainRecommend */
+  .mainRecommend {
+    .contentRight {
+      max-width: 100%;
+      margin: -1rem 0;
+    }
+    [class*="monthCharge"] {
+      .chargeTitle {
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+      }
+      .optionLabel {
+        margin-bottom: 0.5rem;
+      }
+      .optionText {
+        min-height: 4rem;
+        font-size: 1.4rem;
+      }
+      .chargeLabel {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      .chargeText {
+        font-size: 1.5rem;
+      }
+    }
+    .monthCharge {
+      .recommendTop {
+        margin-bottom: 3.5rem;
+        .imgWrap {
+          width: 10rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .recommendMiddle {
+        margin-bottom: 3rem;
+      }
+      .recommendBottom {
+        padding: 3rem 1rem 1.5rem;
+      }
+      .recommendOptionBox {
+        padding: 0 1.2rem;
+        &[class*="iconBefore"] {
+          .optionLabel {
+            width: 2rem;
+            height: 2rem;
+            background-size: contain;
+          }
+        }
+      }
+      .afterCharge {
+        font-size: 1.8rem;
+        .charge {
+          font-size: 3.5rem;
+        }
+      }
+    }
+    .monthChargeTop {
+      .recommendTop {
+        display: block;
+        margin-bottom: 2rem;
+      }
+      .recommendMiddle {
+        margin-bottom: 2rem;
+      }
+      .imgWrap {
+        width: 8rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  /* mainMyBuisness */
+  /* mainMyEvent */
+  /* mainService */
+  /* mainNotice */
+  .mainNotice {
+    .mainTitleArea {
+      .btnAllView {
+      margin-left: auto;
+      }
+    }
+    .noticeLink {
+      overflow: hidden;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  // mobile 좌/우 버튼 슬라이드 공통
+  .mainArea {
+    .mainBizSwiper,
+    .noticeSwiper {
+      padding: 0;
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (#{$mobile}) {
+  /* main common */
+  /* mainCompare */
+  .compareWrap {
+    .chargeCostWrap {
+      margin: 0 0 1rem;
+      .btn {
+        width: 100%;
+        height: 4.2rem;
+        margin: 0 0 1rem;
+        font-size: 1.4rem;
+      }
+    }
+    .compareCharge {
+      .chargeTop {
+        .tabButton {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .mainPopularSwiper {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .swiper-slide {
+      @include flex(row, space-between, flex-start);
+      flex-wrap: wrap;
+    }
+    // .mainPopularPagination {
+    //   @include flex(row, flex-start, center);
+    //   position: static;
+    //   margin-top: 5rem;
+    //   .swiper-pagination-bullet {
+    //     opacity: 1;
+    //     flex: 1;
+    //     height: 1px;
+    //     margin: 0;
+    //     background-color: $border-color-02;
+    //     border-radius: 0;
+    //     transition: all .5s;
+    //   }
+    // }
+  }
+  /* mainRecommend */
+  .mainRecommend {
+    .contentLeft {
+      padding: 0;
+      background-position: right 0rem bottom;
+    }
+  }
+  /* mainMyBuisness */
+  .mainMyBuisness {
+    .btnBizPopup {
+      padding: 2rem 3rem;
+      & + .btnBizPopup {
+        margin-top: 0.8rem;
+      }
+    }
+  }
+
+  /* mainMyEvent */
+  /* mainService */
+  .mainService {
+    .mainTitleArea {
+      .pcBlock {
+        display: none;
+      }
+      .moBlock {
+        display: block;
+      }
+    }
+    .contentLeft {
+      .contentDesc {
+        font-size: 1.4rem;
+        &.moBlock {
+          display: block;
+        }
+        .mainTitleArea,
+        .serviceItem {
+          width: 100%;
+        }
+      }
+    }
+    .serviceItem {
+      margin-bottom: 1rem;
+      padding: 2rem 1.6rem;
+      &[class*="imgBefore"] {
+        &::before {
+          width: 3.5rem;
+          height: 3.5rem;
+          margin-right: 2.3rem;
+        }
+      }
+    }
+    .descWrap {
+      .label {
+        margin-bottom: 0.5rem;
+        font-size: 1.8rem;
+        line-height: 1.5;
+      }
+      .text {
+        font-size: 1.4rem;
+        line-height: 1.4;
+      }
+    }
+  }
+  /* mainNotice */
+
+  // mobile 좌/우 버튼 슬라이드 공통
+  .mainArea {
+    .mainMyBuisness,
+    .mainNotice {
+      &.contentInner {
+        padding-left: 3rem;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media (#{$mobile-small}) {
+  /* main common */
+  .main {
+    .headerArea {
+      & > .myInfoSummary {
+        .summaryBtnTitle {
+          height: 10.2rem;
+        }
+        .summaryBottom {
+          top: 10.2rem;
+        }
+      }
+    }
+    .contentInner {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      &.mainService {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    .contentContainer {
+      top: -10.5rem;//ie11
+    }
+  }
+  /* mainVisual */
+  .mainVisual {
+    .slideTop {
+      margin-bottom: 0.5rem;
+    }
+    .slideArea {
+      top: 30%;
+      left: 2rem;
+    }
+    .visualTitle {
+      font-size: 2rem;
+    }
+    .visualText {
+      font-size: 1.3rem;
+    }
+    .slideMore {
+      height: 3.2rem;
+      margin-top: 1rem;
+    }
+  }
+  /* mainCompare */
+  /* mainRecommend */
+  .mainRecommend {
+    .contentLeft {
+      background-size: 15rem auto;
+    }
+    .monthCharge {
+      .recommendMiddle {
+        display: block;
+      }
+      .recommendBottom {
+        display: block;
+        padding: 0;
+      }
+      .beforeCharge {
+        margin-right: 0;
+      }
+      .recommendOptionBox {
+        @include flex(row, space-between, center);
+        flex-basis: auto;
+        padding: 0.8rem 0;
+        margin: 0 1.2rem;
+        border-bottom: 1px solid $border-color-02;
+        border-right: none;
+        &:first-child,
+        &:last-child {
+          padding: 0.8rem 0;
+        }
+        &:last-child {
+          border-bottom: none;
+        }
+        &[class*="iconBefore"] {
+          .optionLabel {
+            flex-basis: 1.4rem;
+            width: 1.4rem;
+            height: 1.4rem;
+            margin: 0 0.4rem 0 0;
+          }
+        }
+      }
+    }
+    [class*="monthCharge"] {
+      .optionText {
+        margin-left: auto;
+        text-align: right;
+      }
+    }
+  }
+  /* mainMyBuisness */
+  /* mainMyEvent */
+  /* mainService */
+  /* mainNotice */
+  
+  // mobile small 좌/우 버튼 슬라이드 공통
+  .mainArea {
+    .mainMyBuisness,
+    .mainNotice {
+      &.contentInner {
+        padding-left: 2rem;
+      }
+    }
+  }
+}

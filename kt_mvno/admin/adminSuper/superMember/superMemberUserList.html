@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "고객 회원" , "headProjectName": "| 회원 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superMemberUserList">
+      <!-- 페이지 고유 클래스 : superMemberUserList -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>고객 회원</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>회원 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>고객 회원</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      구분 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">이름</option>
+                                <option value="">아이디</option>
+                                <option value="">휴대폰 번호</option>
+                                <option value="">이메일</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">총 322명의 고객 회원</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer alignCenter">
+                    <table>
+                      <caption>
+                        고객 회원 내역
+                      </caption>
+                      <colgroup>
+                        <col style="width: 56px" />
+                        <col style="width: 110px" />
+                        <col style="width: 148px" />
+                        <col style="width: 148px" />
+                        <col style="width: 148px" />
+                        <col style="width: 224px" />
+                        <col style="width: 200px" />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">이름</th>
+                          <th scope="col">아이디</th>
+                          <th scope="col">휴대폰 번호</th>
+                          <th scope="col">정회원 여부</th>
+                          <th scope="col">이메일</th>
+                          <th scope="col">가입일</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>일반회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>일반회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>4</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>5</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>6</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>7</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>8</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>9</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                        <tr>
+                          <td>10</td>
+                          <td>고*현</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">qkrqudrb1</a></td>
+                          <td>010-81**-*319</td>
+                          <td>정회원</td>
+                          <td>didtjddnr6@naver.com</td>
+                          <td>2022-01-01</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

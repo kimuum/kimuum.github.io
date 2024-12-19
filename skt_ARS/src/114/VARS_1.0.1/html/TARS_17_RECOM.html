@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '추천 서비스',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-microphone">
+                <p class="info-title-desc">
+                  SK텔레콤은 개인정보 보호 강화를 위해 고객님의 목소리를 통해 본인확인 절차를 진행하는 <span class="highlight">“성문인증” 서비스를 무료로 </span>제공하고 있습니다. <br /><br />자세한
+                  안내를 받아 보시겠습니까?
+                </p>
+              </div>
+              <div class="form-recom-box">
+                <div class="field field-checkbox">
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="checkbox" id="range" name="chk" onclick="javascript: sendRepPageData('30일간 보이지 않기', 'Z', 'menu');" />
+                      <label for="range" class="checkbox-label"><a href="javascript:sendRepPageData($(this).text().trim(), 'Z', 'menu');">30일간 보이지 않기</a></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="sendData($(this), 'N');">아니요</button>
+            <button type="button" class="btn btn-primary" onclick="sendData($(this), 'Y');">예</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+        var ui = common.ui;
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+        });
+
+        // 페이지 로딩 후 10초 timer
+        setTimer(
+          10,
+          function () {
+            // 상담원 호출.
+            sendCall('0', 'menu');
+          },
+          null,
+        );
+      });
+
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+
+      // t 전화 기본화면 처리
+      function sendCall(type, txt) {
+        // 자동 상담사 연결 timer 중지 (wforcus.js)
+        clearInterval(errInterval);
+
+        // report page data 요청.
+        sendRepPageData('agent', type, txt);
+
+        setTimeout(function () {
+          changeoverPhone(false);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

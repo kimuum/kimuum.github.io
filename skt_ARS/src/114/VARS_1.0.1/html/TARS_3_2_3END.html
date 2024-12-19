@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="use_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '일시정지',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="content-title-box">
+                <p class="content-text">고객의 요청으로 일정기간 휴대폰 정지하는 서비스</p>
+              </div>
+              <div class="caution-guide-container mt-20">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <div class="caution-title">이용료</div>
+                    <p class="caution-text dot">3,850원 (부가세 포함)</p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">이용안내</div>
+                    <p class="caution-text dot">1회 신청 시 3개월까지 가능하며, 월 4회, 연간 최대 180일 초과 불가</p>
+                    <p class="caution-text dot">발신 정지 시 1주일간 수신은 가능하며, 1주일 이후 발/수신 모두 정지 처리</p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">참고사항</div>
+                    <p class="caution-text dot">정지기간 중 요금할인제도의 혜택은 제공되지 않습니다.</p>
+                    <p id="s_case" class="caution-text dot" style="display: none">
+                      정지 기간은 &lt;T끼리 온가족할인&gt; 또는 &lt;T+인터넷(패밀리형)&gt;의 할인율 계산에 필요한 ‘가족 합산 가입 연수’에서 제외됩니다. 또한 휴대폰 이용 정지가 10일 이상 계속될 경우,
+                      해당 회선의 전체 가입 기간이 ‘가족 합산 가입 연수’에서 제외됩니다. 단, 휴대폰 이용 정지를 해제하면 전체 가입 기간이 다시 ‘가족 합산 가입 연수’에 포함됩니다.
+                    </p>
+                    <p class="caution-text dot">T 기본 약정제도에 가입된 경우 일시정지 기간은 약정기간에 포함되지 않으며, 정지기간 중에는 위약금 또한 줄어 들지 않습니다.</p>
+                    <p class="caution-text dot">T 할부지원 프로그램에 가입된 경우 일시정지 기간 동안에는 T 할부지원 보조금이 제공되지 않으므로 단말기 월 할부금이 그대로 청구됩니다.</p>
+                    <p class="caution-text dot">TB끼리 온 가족 무료 이용 고객은 연속 10일 이상 정지 시(분실정지 포함), 10일째 되는 날부터 회선수 미인정으로 요금이 부과될 수 있습니다.</p>
+                    <p class="caution-text dot">TB끼리 온 가족 프리 가입고객은 30일 이상 일시 정지 시 온 가족프리 회선에서 혜택이 중단되거나, 변경 될 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="service-button-box">
+          <div class="button-box" id="dv_timezone_1">
+            <button type="button" class="btn btn-primary" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">상담사 연결</button>
+          </div>
+          <div class="button-box" id="dv_timezone_0" style="display: none">
+            <button id="agent_menu" type="button" class="btn btn-primary" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">일시정지 신청</button>
+          </div>
+        </div>
+
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          // 1: 주간, 0: 야간, 9:점심시간
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '9';
+          // 주간
+          if (timezone_type == '1') {
+            document.getElementById('dv_timezone_1').style.display = 'block';
+            document.getElementById('dv_timezone_0').style.display = 'none';
+          } else {
+            //야간
+            document.getElementById('dv_timezone_1').style.display = 'none';
+            document.getElementById('dv_timezone_0').style.display = 'block';
+          }
+          // 점심시간
+          if (timezone_type == '9') {
+            document.getElementById('dv_timezone_1').style.display = 'none';
+            document.getElementById('dv_timezone_0').style.display = 'block';
+          }
+        } catch (e) {}
+
+        // <T끼리 온가족 할인>, <t+인터넷 패밀리형> 요금제 사용 고객 문구 처리
+        try {
+          var use_type = getUrlParameter('use_type');
+          /*@build-time*/ use_type = 'n';
+          if (use_type == 'y' || use_type == 'Y') {
+            $('#s_case').show();
+          }
+        } catch (e) {}
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

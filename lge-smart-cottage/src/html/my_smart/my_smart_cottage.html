@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "나의 스마트코티지"
+  })
+
+  <body>
+    <!-- set unique class : my-smart-home -->
+    <div class="wrapper my-smart-home">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : true,
+        "list" : [
+          {
+            "text"     : "스마트코티지는",
+            "property" : "active",
+          },
+          {
+            "text"     : "어떻게 진행되나요?",
+            "property" : "",
+          },
+          {
+            "text"     : "궁금증 해결하고",
+            "property" : "",
+          },
+          {
+            "text"     : "시작하기",
+            "property" : "",
+          },
+        ],
+        "className" : "type-white fixed"
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <section class="section-container">
+          <div class="section-area">
+            <!-- smart-container -->
+            <div class="smart-container">
+              <div class="smart-area">
+                <div class="smart-top">
+                  <div class="title-box">
+                    <span class="text-sm">나의 스마트코티지</span>
+                    <h2 class="text-lg"><span class="strong">홍길동 고객님</span> 안녕하세요!</h2>
+                  </div>
+                </div>
+
+                <div class="smart-middle">
+                  <div class="history-list-box">
+                    <div class="list-box">
+                      <h3 class="title-md">현장실사 신청 내역</h3>
+                      <div class="list-wrap">
+                        <div class="list-box">
+                          <div class="text-area">
+                            <p class="box-title">충북 진천군 이월면 진광 928-27</p>
+                            <div class="date-wrap">
+                              <span class="name">현장실사 예정일</span>
+                              <span class="date">2024년 12월 12일</span>
+                              <div class="badge"><span class="text">D-7</span></div>
+                            </div>
+                            <div class="more-view">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "",
+                                "btnColor" : "btn-text",
+                                "btnSize" : "",
+                                "property" : "",
+                                "btnText" : "자세히 보기",
+                                "iconClass" : "ic-arrow-24",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                          <div class="img-area">
+                            <img src="../../assets/images/img_dummy_thumb.png" alt="" />
+                          </div>
+                          <div class="progress-area">
+                            <div class="progress-wrap">
+                              <ul class="progress-box">
+                                <!-- 신청접수 완료 클래스 :check  -->
+                                <li class="item check">
+                                  <span class="status">1</span>
+                                  <span class="text">신청 접수 완료</span>
+                                </li>
+                                <li class="item">
+                                  <span class="status">2</span>
+                                  <span class="text">현장실사 완료</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-box">
+                          <div class="text-area">
+                            <p class="box-title">충북 진천군 이월면 진광 928-27</p>
+                            <div class="date-wrap">
+                              <span class="name">현장실사 예정일</span>
+                              <span class="date">2024년 12월 12일</span>
+                              <div class="badge"><span class="text">D-7</span></div>
+                            </div>
+                            <div class="more-view">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "",
+                                "btnColor" : "btn-text",
+                                "btnSize" : "",
+                                "property" : "",
+                                "btnText" : "자세히 보기",
+                                "iconClass" : "ic-arrow-24",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                          <div class="img-area">
+                            <img src="../../assets/images/img_dummy_thumb.png" alt="" />
+                          </div>
+                          <div class="progress-area">
+                            <div class="progress-wrap">
+                              <ul class="progress-box">
+                                <!-- 신청접수 완료 클래스 :check  -->
+                                <li class="item check">
+                                  <span class="status">1</span>
+                                  <span class="text">신청 접수 완료</span>
+                                </li>
+                                <!-- 설치 불가능 클래스: fail -->
+                                <li class="item fail">
+                                  <span class="status">2</span>
+                                  <span class="text">현장실사 완료</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-box">
+                          <div class="text-area">
+                            <p class="box-title">충북 진천군 이월면 진광 928-27</p>
+                            <div class="date-wrap">
+                              <span class="name">현장실사 예정일</span>
+                              <span class="date">2024년 12월 12일</span>
+                              <div class="badge"><span class="text">D-7</span></div>
+                            </div>
+                            <div class="more-view">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "",
+                                "btnColor" : "btn-text",
+                                "btnSize" : "",
+                                "property" : "",
+                                "btnText" : "자세히 보기",
+                                "iconClass" : "ic-arrow-24",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                          <div class="img-area">
+                            <img src="../../assets/images/img_dummy_thumb.png" alt="" />
+                          </div>
+                          <div class="progress-area">
+                            <div class="progress-wrap">
+                              <ul class="progress-box">
+                                <!-- 신청접수 완료 클래스 :check  -->
+                                <li class="item check">
+                                  <span class="status">1</span>
+                                  <span class="text">신청 접수 완료</span>
+                                </li>
+                                <!-- 설치 불가능 클래스: fail -->
+                                <li class="item fail">
+                                  <span class="status">2</span>
+                                  <span class="text">현장실사 완료</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="list-box">
+                          <div class="text-area">
+                            <p class="box-title">충북 진천군 이월면 진광 928-27</p>
+                            <div class="date-wrap">
+                              <span class="name">현장실사 예정일</span>
+                              <span class="date">2024년 12월 12일</span>
+                              <div class="badge"><span class="text">D-7</span></div>
+                            </div>
+                            <div class="more-view">
+                              <!-- prettier-ignore -->
+                              @@include("button.html", {
+                                "className" : "",
+                                "btnColor" : "btn-text",
+                                "btnSize" : "",
+                                "property" : "",
+                                "btnText" : "자세히 보기",
+                                "iconClass" : "ic-arrow-24",
+                                "iconLeft" : "",
+                              })
+                            </div>
+                          </div>
+                          <div class="img-area">
+                            <img src="../../assets/images/img_dummy_thumb.png" alt="" />
+                          </div>
+                          <div class="progress-area">
+                            <div class="progress-wrap">
+                              <ul class="progress-box">
+                                <!-- 신청접수 완료 클래스 :check  -->
+                                <li class="item check">
+                                  <span class="status">1</span>
+                                  <span class="text">신청 접수 완료</span>
+                                </li>
+                                <!-- 설치 불가능 클래스: fail -->
+                                <li class="item fail">
+                                  <span class="status">2</span>
+                                  <span class="text">현장실사 완료</span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="extra-text-area">
+                        <p class="text">기존 땅에 스마트코티지를 추가하시려면 신청내역을 눌러 확인해주세요. 이 경우 추가 현장실사 비용이 발생되지 않습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="smart-bottom">
+                  <div class="button-box">
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "",
+                      "btnColor" : "btn-primary",
+                      "btnSize" : "large",
+                      "property" : "",
+                      "btnText" : "새로운 땅에 스마트코티지 추가 신청하기",
+                      "iconClass" : "ic-plus",
+                      "iconLeft" : "",
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //smart-container -->
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+.notice-list-container {
+  padding: 1.6rem 1.4rem;
+  @include bgBoxGray;
+}
+.notice-list-title-box {
+  .notice-list-title {
+    @include font(1.4rem, 700, $black, normal);
+  }
+}
+.notice-list-box {
+  .notice-list {
+    @include flex(row, flex-start, flex-start);
+    margin-top: 0.4rem;
+    @include font(1.4rem, 400, $color-gray-01, normal);
+    letter-spacing: -0.07rem;
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      display: inline-block;
+      width: 0.2rem;
+      height: 0.2rem;
+      margin: 1rem 0.5rem 0.5rem;
+      background-color: $color-gray-01;
+      border-radius: 50%;
+    }
+  }
+}

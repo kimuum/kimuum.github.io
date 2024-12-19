@@ -1,0 +1,23 @@
+<!-- chart ratio -->
+<div class="chart-ratio @@if(!data){empty}">
+  <div class="chart-ratio-inner-box">
+    <!-- prettier-ignore -->
+    @@if(data) {
+    <!-- prettier-ignore -->
+    @@for(var i = 0; i < data.length; i++) {
+    <div class="progress-box" style="width: ` + data[i].data + `%">
+      <div class="text-box">
+        <span class="full-data hidden-text">`+data[i].label+` `+data[i].data+`%</span>
+        <span class="data" aria-hidden="true">`+data[i].data+`%</span>
+      </div>
+    </div>
+    } }
+    <!-- prettier-ignore -->
+    @@if(!data) {
+    <div class="progress-box" style="width: 100%">
+      <div class="text-box">00%</div>
+    </div>
+    }
+  </div>
+  <div class="rec-box"></div>
+</div>

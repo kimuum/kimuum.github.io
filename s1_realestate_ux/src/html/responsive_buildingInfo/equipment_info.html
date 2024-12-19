@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 건물 기본 정보"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+      <div class="breadcrumb-container">
+        <div class="breadcrumb-area">
+          <div class="breadcrumb-left">
+            <div class="page-title-box">
+              <span class="use-pc">건물 기본 정보</span>
+              <span class="use-mobile">장비 관리 상세 정보</span>
+            </div>
+          </div>
+          <div class="breadcrumb-right">
+            <div class="backbutton-box">
+              <button type="button" class="btn-back" title="뒤로가기"></button>
+            </div>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-list">
+                <a href="../home/home.html">Home</a>
+              </li>
+              <li class="breadcrumb-list">
+                <span>건물 기본 정보</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container building-info equipment-info">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">건물 기본 정보</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <!-- prettier-ignore -->
+                @@include("../../components/tab.html",{
+                  "tab" : [
+                    {
+                      "text" : "건물 정보",
+                      "property" : ""
+                    },
+                    {
+                      "text" : "관리 구역",
+                      "property" : ""
+                    },
+                    {
+                      "text" : "장비 관리",
+                      "property" : "active"
+                    },
+                    {
+                      "text" : "도면 관리",
+                      "property" : ""
+                    },
+                    {
+                      "text" : "법규 관리",
+                      "property" : ""
+                    },
+                    {
+                      "text" : "운영 메뉴얼",
+                      "property" : "manual"
+                    },                    
+                    {
+                      "text" : "기타",
+                      "property" : ""
+                    },
+                  ]
+                })
+
+                <div class="tab-content-box">
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div class="filter-table-container">
+                    <div class="filter-table-area">
+                      <div class="filter-table-top">
+                        <div class="filter-box">
+                          <div class="title">
+                            <span class="text">장비 관리 상세 정보</span>
+                          </div>
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>건물명</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">섬유 센터</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>설비 분류</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">설비</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>장비명</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">B4발전기 냉각수펌프</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>위치</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">섬유센터</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>사진</span>
+                                </div>
+                                <div class="filter-info wide">
+                                  <div class="info-box">
+                                    <div class="download">
+                                      <div class="download-box">
+                                        <span class="file-name">8층 인테리어 견적 사진.png</span>
+                                        <span class="file-size">3.2M</span>
+                                        <button
+                                          type="button"
+                                          data-popup="popup-download"
+                                          data-link="../../assets/images/dummy.jpg"
+                                          data-name="8층 인테리어 견적 사진"
+                                          class="download-link"
+                                        >
+                                          <span>저장</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>규격</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">220V</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>사용 여부</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">사용</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>보증기간<br />/주요 장비</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">12개월 / No</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>모델명</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">AE-FF-N</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>설치사명/설치일</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">이노테크 / 2023.01.01</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>제조사명</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">에스원</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>부품 정보</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <div class="inner-table-box">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/table.html", 
+                                      {
+                                        "title" : "테이블 명",
+                    
+                                        "checkbox" : false,
+                                        
+                                        "thead" : [ "번호", "부품명", "내구연한", "제조사", "설치일", ],
+                                        
+                                        "tbody" : [
+                                          [
+                                            {
+                                              "type" : "text",
+                                              "text" : "1234",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "냉각수펌프",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "12개월",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "에스원",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "2023.01.01",
+                                              "property": null,
+                                            },
+                                          ],
+                                          [
+                                            {
+                                              "type" : "text",
+                                              "text" : "1234",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "12개월",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "에스원",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "2023.01.01",
+                                              "property": null,
+                                            },
+                                          ],
+                                          [
+                                            {
+                                              "type" : "text",
+                                              "text" : "1234",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프냉각수펌프",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "12개월",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "에스원",
+                                              "property": null,
+                                            },
+                                            {
+                                              "type" : "text",
+                                              "text" : "2023.01.01",
+                                              "property": null,
+                                            },
+                                          ],
+                                        ],
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 
+                              Comment : PC 용 구조
+                                      : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                            -->
+                            <div class="filter-row use-pc">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>첨부 파일</span>
+                                </div>
+                                <div class="filter-info wide">
+                                  <div class="info-box">
+                                    <div class="download">
+                                      <div class="download-box">
+                                        <span class="file-name">8층 인테리어 견적 사진.png</span>
+                                        <span class="file-size">3.2M</span>
+                                        <button
+                                          type="button"
+                                          data-popup="popup-download"
+                                          data-link="../../assets/images/dummy.jpg"
+                                          data-name="8층 인테리어 견적 사진"
+                                          class="download-link"
+                                        >
+                                          <span>저장</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="button-box">
+                            <button
+                              type="button"
+                              data-popup="popup-pdf-download"
+                              data-link="pdf"
+                              class="btn btn-primary btn-medium download-link btn-card-download"
+                            >
+                              <span>장비이력카드 다운로드</span>
+                            </button>
+                            <!-- prettier-ignore -->
+                            @@include("../../components/button.html", {
+                              "dataValue" : "popup-check-history",
+                              "type" : "primary",
+                              "size" : "medium",
+                              "class" : "btn-popup btn-check-history",
+                              "disabled" : "",
+                              "text" : "점검 이력 조회",
+                            })
+                          </div>
+                        </div>
+                        <div class="button-box">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/button.html", {
+                            "dataValue" : "",
+                            "type" : "primary",
+                            "size" : "large",
+                            "class" : "",
+                            "disabled" : "",
+                            "text" : "목록",
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- 장비이력카드 다운로드 용 element -->
+      <div id="pdf" class="detail-info-container">
+        <div class="detail-info-area">
+          <div class="detail-info-top">
+            <div class="title-box">
+              <span>장비이력카드</span>
+            </div>
+          </div>
+          <div class="detail-info-middle">
+            <div class="filter-box">
+              <div class="filter">
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>건물명</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">섬유 센터 서초센터</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>위치</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">섬유 센터 1층</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>설비 분류</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">설비</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>장비명</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">B4발전기 냉각수펌프</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>설치사명</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">플랙트우즈</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>내구연한</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">180개월</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>사용여부</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">사용</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>설치일</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="info-box">
+                        <span class="text">2023.01.01</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-list">
+                    <div class="filter-label">
+                      <span>사진</span>
+                    </div>
+                    <div class="filter-info">
+                      <div class="image-box">
+                        <img src="../../assets/images/dummy.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-pdf-download",
+        "title" : "",
+        "text" : "장비이력카드를 PDF 파일로 다운로드할까요?",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          }
+        ],
+      })
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-download",
+        "title" : "",
+        "text" : "선택한 파일을 저장할까요?",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          }
+        ],
+      })
+
+      <div id="popup-check-history" class="popup-container popup-max">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">점검 이력 조회</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="filter-table-container filter-field">
+                <div class="filter-table-area">
+                  <div class="filter-table-top">
+                    <!-- 
+                      Comment : PC 용 구조
+                              : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                    -->
+                    <div class="filter-box use-pc">
+                      <div class="filter">
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>조치일</span>
+                            </div>
+                            <div class="filter-field">
+                              <div class="radio-tab-box">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/field_radio.html", {
+                                  "required" : "",
+                                  "label" : "",
+                                  "tooltip" : "",
+                                  "radio" : [
+                                    {
+                                      "name" : "radio-01",
+                                      "label" : "3개월",
+                                      "disabled" : "checked",
+                                    },
+                                    {
+                                      "name" : "radio-01",
+                                      "label" : "6개월",
+                                      "disabled" : "",
+                                    },
+                                    {
+                                      "name" : "radio-01",
+                                      "label" : "12개월",
+                                      "disabled" : "",
+                                    },
+                                  ],
+                                })
+                              </div>
+                              <!-- prettier-ignore -->
+                              @@include("../../components/datepickerRange.html",{
+                                "pickerId" : "inquiry-period",
+                                "size" : "large",
+                                "start" : "id-range-start-01",
+                                "end" : "id-range-end-01",
+                                "placeholder" : "0000.00.00",
+                                "property" : "",
+                              })
+                            </div>
+                          </div>
+                          <div class="button-box">
+                            <!-- prettier-ignore -->
+                            @@include("../../components/button.html", {
+                              "dataValue" : "",
+                              "type" : "secondary",
+                              "size" : "small",
+                              "class" : "",
+                              "disabled" : "",
+                              "text" : "초기화",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../components/button.html", {
+                              "dataValue" : "",
+                              "type" : "primary",
+                              "size" : "small",
+                              "class" : "",
+                              "disabled" : "",
+                              "text" : "검색",
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 
+                      Comment : App 용 구조
+                              : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                    -->
+                    <div class="filter-search-box use-mobile">
+                      <div class="search-category-list-box">
+                        <button type="button" class="search-category-list">
+                          <span>3개월</span>
+                        </button>
+
+                        <div class="detail-search-container">
+                          <div class="detail-search-area">
+                            <div class="detail-search-dim"></div>
+
+                            <div class="detail-search-box">
+                              <div class="detail-search-top">
+                                <div class="detail-search-title-box">
+                                  <span>조치일</span>
+                                </div>
+                                <div class="close-button-box">
+                                  <button type="button" class="btn-detail-search-close" title="닫기"></button>
+                                </div>
+                              </div>
+
+                              <div class="detail-search-middle">
+                                <div class="detail-filter-box">
+                                  <div class="detail-filter">
+                                    <div class="detail-filter-field">
+                                      <div class="radio-tab-box">
+                                        <!-- prettier-ignore -->
+                                        @@include("../../components/field_radio.html", {
+                                          "required" : "",
+                                          "label" : "",
+                                          "tooltip" : "",
+                                          "radio" : [
+                                            {
+                                              "name" : "radio-22222",
+                                              "label" : "3개월",
+                                              "disabled" : "checked",
+                                            },
+                                            {
+                                              "name" : "radio-22222",
+                                              "label" : "6개월",
+                                              "disabled" : "",
+                                            },
+                                            {
+                                              "name" : "radio-22222",
+                                              "label" : "12개월",
+                                              "disabled" : "",
+                                            },
+                                          ],
+                                        })
+                                      </div>
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/datepickerRange.html",{
+                                        "pickerId" : "inquiry-period-2",
+                                        "size" : "large",
+                                        "start" : "id-range-start-01",
+                                        "end" : "id-range-end-01",
+                                        "placeholder" : "0000.00.00",
+                                        "property" : "",
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="detail-search-bottom">
+                                <div class="button-box">
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/button.html", {
+                                    "dataValue" : "",
+                                    "type" : "secondary",
+                                    "size" : "large",
+                                    "class" : "",
+                                    "disabled" : "",
+                                    "text" : "초기화",
+                                  })
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/button.html", {
+                                    "dataValue" : "",
+                                    "type" : "primary",
+                                    "size" : "large",
+                                    "class" : "",
+                                    "disabled" : "",
+                                    "text" : "검색",
+                                  })
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 
+                    Comment : PC 용 구조
+                            : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                  -->
+                  <div class="filter-table-middle use-pc">
+                    <div class="filter-view-container">
+                      <div class="filter-view-area">
+                        <div class="filter-view-top">
+                          <div class="filter-view-top-left">
+                            <div class="total-count-box">
+                              <span>
+                                총
+                                <em class="count">5</em>
+                                건
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="filter-view-middle">
+                          <div class="table-content-box">
+                            <!-- prettier-ignore -->
+                            @@include("../../components/table.html", 
+                            {
+                              "title" : "테이블 명",
+          
+                              "checkbox" : false,
+                              
+                              "thead" : [ "번호", "장비명", "상세 점검 유형", "진행 상태", "조치자", "조치일" ],
+                              
+                              "tbody" : [
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                                [
+                                  {
+                                    "type" : "text",
+                                    "text" : "1",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "공기조화기(AHBB-1) 쇼룸 공조기",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "사전 점검",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "조치완료",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "전자서초 설비 01",
+                                    "property": null,
+                                  },
+                                  {
+                                    "type" : "text",
+                                    "text" : "2023.03.30",
+                                    "property": null,
+                                  },
+                                ],
+                              ],
+                            }
+                          )
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 
+                    Comment : App 용 구조
+                            : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                  -->
+                  <div class="filter-table-middle use-mobile">
+                    <div class="filter-view-container">
+                      <div class="filter-view-area">
+                        <div class="filter-view-top">
+                          <div class="filter-view-top-left">
+                            <div class="total-count-box">
+                              <span>
+                                총
+                                <em class="count">5</em>
+                                건
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="filter-view-middle">
+                          <div class="mTable-list-container">
+                            <div class="mTable-list-area">
+                              <div class="mTable-list-middle">
+                                <div class="mTable-lists">
+                                  <div class="mTable-list type-badge">
+                                    <div class="mTable-list-left">
+                                      <div class="badge-box">
+                                        <span class="badge grey">조치완료</span>
+                                      </div>
+                                    </div>
+                                    <div class="mTable-list-right">
+                                      <div class="list-data-box">
+                                        <div class="list-data-top">
+                                          <div class="list-sub-title-box">
+                                            <span>공기조화기(AHBB-1) 쇼룸 공조기</span>
+                                          </div>
+                                          <div class="list-title-box">
+                                            <span>사전 점검</span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-middle">
+                                          <div class="list-text-box">
+                                            <span>조치자<em class="bold">전자서초 설비 01</em></span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-bottom">
+                                          <div class="list-sub-text-box">
+                                            <span class="data">2023.07.01</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mTable-list type-badge">
+                                    <div class="mTable-list-left">
+                                      <div class="badge-box">
+                                        <span class="badge grey">조치완료</span>
+                                      </div>
+                                    </div>
+                                    <div class="mTable-list-right">
+                                      <div class="list-data-box">
+                                        <div class="list-data-top">
+                                          <div class="list-sub-title-box">
+                                            <span>공기조화기(AHBB-1) 쇼룸 공조기</span>
+                                          </div>
+                                          <div class="list-title-box">
+                                            <span>사전 점검</span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-middle">
+                                          <div class="list-text-box">
+                                            <span>조치자<em class="bold">전자서초 설비 01</em></span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-bottom">
+                                          <div class="list-sub-text-box">
+                                            <span class="data">2023.07.01</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mTable-list type-badge">
+                                    <div class="mTable-list-left">
+                                      <div class="badge-box">
+                                        <span class="badge red">미완료</span>
+                                      </div>
+                                    </div>
+                                    <div class="mTable-list-right">
+                                      <div class="list-data-box">
+                                        <div class="list-data-top">
+                                          <div class="list-sub-title-box">
+                                            <span>공기조화기(AHBB-1) 쇼룸 공조기</span>
+                                          </div>
+                                          <div class="list-title-box">
+                                            <span>사전 점검</span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-middle">
+                                          <div class="list-text-box">
+                                            <span>조치자<em class="bold">전자서초 설비 01</em></span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-bottom">
+                                          <div class="list-sub-text-box">
+                                            <span class="data">-</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="mTable-list type-badge">
+                                    <div class="mTable-list-left">
+                                      <div class="badge-box">
+                                        <span class="badge red">미완료</span>
+                                      </div>
+                                    </div>
+                                    <div class="mTable-list-right">
+                                      <div class="list-data-box">
+                                        <div class="list-data-top">
+                                          <div class="list-sub-title-box">
+                                            <span>공기조화기(AHBB-1) 쇼룸 공조기</span>
+                                          </div>
+                                          <div class="list-title-box">
+                                            <span>사전 점검</span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-middle">
+                                          <div class="list-text-box">
+                                            <span>조치자<em class="bold">전자서초 설비 01</em></span>
+                                          </div>
+                                        </div>
+                                        <div class="list-data-bottom">
+                                          <div class="list-sub-text-box">
+                                            <span class="data">-</span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>확인</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+  <script>
+    // 조회 기간
+    const elem_01 = document.getElementById('inquiry-period');
+    const datepicker_01 = new DateRangePicker(elem_01, {
+      language: 'ko',
+      todayHighlight: false,
+    });
+
+    // 조회 기간
+    const elem_02 = document.getElementById('inquiry-period-2');
+    const datepicker_02 = new DateRangePicker(elem_02, {
+      language: 'ko',
+      todayHighlight: false,
+    });
+  </script>
+</html>

@@ -1,0 +1,1787 @@
+// ------- Usim ------- //
+.usimDirectMain {
+  .contentArea {
+    padding-top: 16rem;
+  }
+}
+.usimTitleArea, .aboutTitleArea {
+  margin-bottom: 7rem;
+  text-align: center; 
+  @include font(1.6rem, 400, $color-gray-06, 2.3rem);
+  &.areaNear {
+    margin-bottom: 3rem;
+  }
+  .title {
+    margin-bottom: 2.8rem; 
+    br {
+      display: none; 
+    }
+    .block {
+      display: block;
+    }
+  }
+  .buttonArea {
+    margin-bottom: 1.5rem; 
+  }
+}
+.gotoSelfArea {
+  .linkUnderline {
+    font-size: 1.6rem; 
+  }
+}
+.speechStepArea {
+  max-width: 48.7rem;
+  margin: 3rem auto;
+  &.bgLightGrayBox {
+    .stepBox {
+      background-color: $bgcolor-gray-03;
+      &::after {
+        border-top-color: $bgcolor-gray-03;
+      }
+    }
+  }
+  .stepBox {
+    position: relative; 
+    margin-bottom: 3.2rem; 
+    padding: 1.6rem 1.6rem 1.8rem;
+    background-color: $white;
+    border-radius: 1.2rem;
+    @include font(1.5rem, 400, $color-gray-06, 1.4);
+    text-align: center;
+    &:after {
+      content: ''; 
+      position: absolute; 
+      left: 50%; 
+      bottom: -3.5rem; 
+      border: 1.8rem solid transparent;
+      border-top-color: $white;
+      transform: translate(-50%, 0);
+    }
+    &:last-child {
+      margin-bottom: 0;
+      &:after {
+        display: none;
+      }
+    }
+    .colorPrimary {
+      color: $color-cyan-02 !important;
+    }
+  }
+  .title {
+    display: block;
+    margin-bottom: 1.2rem; 
+    font-weight: 700;
+  }
+  .desc {
+    @include font(1.2rem, 400, $color-gray-06, 1.4);
+    &Gray {
+      @include font(1.2rem, 400, $secondary, 1.4);
+    }
+  }
+
+  //개통 후 eSIM 프로파일 다운로드
+  .titleWrap {
+    .title {
+      margin-bottom: 0;
+    }
+  }
+  .middleDesc {
+    @include font(1.1rem, normal, $color-gray-06, 1.4);
+    .normalText {
+      margin-bottom: 0.2rem;
+    }
+    .imgWrap {
+      display: block;
+      width: 12rem;
+      margin: 1.4rem auto 0;
+    }
+  }
+  .colorRed {
+    font-size: 1.1rem;
+  }
+  .colorGray {
+    color: $secondary;
+  }
+  .smallDesc {
+    font-size: 1.1rem;
+    .linkUnderline {
+      font-size: 1.2rem;
+    }
+  }
+
+  // 팝업용
+  &.sizeSmall {
+    .stepBox {
+      padding: 1.4rem 1rem;
+      margin-bottom: 3rem;
+      background-color: $bgcolor-gray-03;
+      &:after {
+        border-width: 2rem;
+        bottom: -3.5rem;
+        border-top-color: $bgcolor-gray-03;
+      }
+    }
+    .desc {
+      font-size: 1.1rem;
+    }
+  }
+
+  // 바로배송유심 구매 안내 영역
+  &.fontSizeUp {
+    .stepBox {
+      margin-bottom: 4rem;
+      .title {
+        font-size: 1.6rem;
+      }
+      .desc {
+        font-size: 1.4rem;
+        &Gray {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+.usimDirectPurchase01,
+.usimDirectPurchase02 {
+  .contentContainer {
+    .contentArea {
+      padding: 7rem 0 20rem;
+    }
+  }
+  .fixedFooterArea {
+    .left,
+    .right {
+      .desc {
+        font-size: 3.2rem;
+      }
+    }
+  }
+}
+.usimDirectPurchase01 {
+  .typeAgreementCheck {
+    .fieldCheckbox {
+      .fieldLabel {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.usimDirectPurchase02 {
+  .typeCaution {
+    .fieldArea {
+      padding: 1.4rem 2rem; 
+      .fieldValue {
+        @include font(1.3rem, 400, $color-gray-04, 2rem);
+      }
+    }
+    .linkUnderline {
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-size: 1.3rem;
+    }
+  }
+  .centerContainer {
+    .centerRight {
+      width: 100%;
+      max-width: calc(100% - 15.7rem);
+    }
+    .imgWrap {
+      width: 13.7rem;
+    }
+  }
+}
+.centerArea {
+  &.flex {
+    @include flex(row, flex-start, flex-start);
+    .centerLeft {
+      margin-right: 2rem;
+    }
+  }
+}
+.dataInner {
+  .primaryBox {
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .buttonArea {
+    margin-bottom: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    & + .typeCaution {
+      margin-top: 3rem;
+    }
+    &.block {
+      .btn {
+        margin: 1.2rem 0;
+      }
+    }
+    
+  }
+  .normalText {
+    @include font(1.6rem, normal, $color-gray-06, 1.4);
+  }
+  .speechStepArea {
+    margin-top: 2rem;
+  }
+}
+.areaBottomNotice {
+  margin-top: 2rem; 
+  .notice {
+    @include flex(row, flex-start, center);
+    margin-bottom: 1.8rem; 
+    @include font(1.2rem, normal, $secondary, 2);
+    &::before {
+      content: '';
+      flex-shrink: 0;
+      align-self: flex-start;
+      display: inline-block;
+      vertical-align: middle;
+      width: 0.3rem;
+      height: 0.3rem;
+      margin: 1.1rem 0.5rem 0;
+      background-color: $secondary;
+      border-radius: 50%;
+      transform: skew(-0.03deg);
+    }
+  }
+}
+
+/* 유심유형 선택 */
+.primaryBoxContainer {
+  @include flex(row, flex-start, stretch);
+  margin-bottom: 3rem;
+  .primarySelBox {
+    flex: 1;
+    margin-left: 0.6rem;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+.primarySelBox {
+  .primarySelLabel {
+    @include flex(row, center, center);
+    height: 100%;
+    padding: 1rem 1.6rem;
+    background-color: $white;
+    border: 2px solid $border-color-02;
+    border-radius: 1rem;
+    @include font(1.4rem, bold, $black, 1.4);
+    &:before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 2.8rem;
+      height: 2.8rem;
+      margin-right: 0.5rem;
+      transition: background-image 0.5s;
+    }
+    &:after {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      opacity: 0;
+      width: 1.7rem;
+      height: 1.7rem;
+      margin-left: 0.3rem;
+      transition: opacity 0.5s;
+    }
+    span {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  input {
+    &:focus:checked {
+      & + .primarySelLabel {
+        border-color: $black;
+      }
+    }
+    &:checked {
+      & + .primarySelLabel {
+        border-color: $primary;
+        &:after {
+          opacity: 1;
+          background: image('common/icon_check_chk_primary.svg') no-repeat center;
+        }
+      }
+    }
+  }
+  // icons
+  &.iconUsim {
+    .primarySelLabel {
+      &:before {
+        background: image('common/icon_usim_normal_off.svg') no-repeat center;
+      }
+    }
+    input {
+      &:checked {
+        & + .primarySelLabel {
+          &::before {
+            background-image: image('common/icon_usim_normal_on.svg');
+          }
+        }
+      }
+    }
+  }
+  &.iconUsimNFC {
+    .primarySelLabel {
+      &:before {
+        background: image('common/icon_usim_nfc_off.svg') no-repeat center;
+      }
+    }
+    input {
+      &:checked {
+        & + .primarySelLabel {
+          &::before {
+            background-image: image('common/icon_usim_nfc_on.svg');
+          }
+        }
+      }
+    }
+  }
+}
+
+.popupUsimDirectPayInfo,
+.popupUsimDirectInfo {
+  .checkbox{
+    margin-top: 2rem; 
+    @include font(1.4rem, 500, $black, 2rem);
+  }
+}
+.popupContent {
+  .cautionArea {
+    &:only-child {
+      .cautionWrap {
+        &:only-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}
+
+.popupUsimDirectCompleted {
+  .buttonArea {
+    &+.buttonArea{
+      margin-top: 8px; 
+    }
+  }
+}
+
+  /* 주문조회, 신청 조회 */
+.orderContainer {
+  .orderBottom {
+    margin-top: 7rem;
+  }
+  .nodataContainer {
+    text-align: center;
+  }
+  // 셀프개통 신청리스트 
+  &.newSelfOpening {
+    margin-top: 5rem;
+  }
+  // 바로배송유심 구매
+  // &.usimDirectContainer {}
+}
+.deliveryTitle {
+  @include flex(row, flex-start, center);
+  margin-bottom: 3rem;
+  @include font(1.6rem, normal, $black, 1.4);
+  .number {
+    font-weight: bold;
+  }
+  .date {
+    margin-left: auto
+  }
+  & + .dataTitleArea {
+    margin-top: 5rem;
+  }
+}
+.deliveryStep {
+  @include flex(row, center, center);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+  background-color: $white;
+  border-radius: 0.4rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &.detail {
+    .step {
+      background-position: right 3.5rem top 1rem;
+      color: $color-gray-04;
+    }
+  }
+  .step {
+    padding-right: 8.4rem;
+    background: image('common/arrow_delivery.svg') no-repeat right 4.3rem top 0.5rem;
+    @include font(1.4rem, normal, $color-gray-06, 1.4);
+    text-align: center;
+    &:last-child {
+      padding-right: 0;
+      background-image: none;
+    }
+    &.on {
+      color: $primary;
+      [class*=iconBgDelivery] {
+        &:before {
+          background-size: 100% auto;
+        }
+      }
+    }
+  }
+  .count {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .title {
+    @include flex(row, center, center);
+    margin-top: 1.4rem;
+  }
+  // icon
+  [class*=iconBgDelivery] {
+    display: block;
+    &:before {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: 3.8rem;
+      height: 3.8rem;
+      margin: 0 auto;
+      background-size: 100% auto;
+    }
+    & > span {
+      @include no-ir;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+  .iconState {
+    overflow: hidden;
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-indent: -9999px;
+    background: image('usim/icon_step_on.svg') no-repeat center;
+  }
+}
+.orderList {
+  & > li {
+    margin-bottom: 3rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.orderItem {
+  @include whiteBorderBox(0 2rem);
+  @include font(1.4rem, normal, $black, 1.4);
+  &.noneBorder {
+    border: none;
+    .itemMiddle {
+      padding: 2rem 0;
+    }
+  }
+  .itemTop, .itemMiddle , .itemBottom {
+    position: relative;
+  }
+  .itemTop {
+    @include flex(row, flex-start, center);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $border-color-02;
+    font-weight: bold;
+  }
+  .itemMiddle {
+    @include flex(row, flex-start, center);
+    padding: 3rem 0;
+    & + .itemBottom {
+      margin-top: -1.4rem;
+    }
+  }
+  .itemBottom {
+    @include flex(row, flex-start, center);
+    padding-bottom: 3rem;
+  }
+  .orderTitle {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    .number {
+      margin-right: 2.6rem;
+    }
+    &.iconBgLink {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      width: 100%;
+      height: auto;
+      margin-left: 0;
+      & > span {
+        @include no-ir;
+        display: inline-block;
+        width: auto;
+        padding: 0;
+      }
+    }
+  }
+  .iconBgLink {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    background-position: right center;
+  }
+  [class*=stateTitle] {
+    display: block;
+    margin-bottom: 1.6rem;
+    @include font(1.6rem, bold, $color-gray-06, 1.4);
+    &:only-child {
+      margin-bottom: 0;
+    }
+  }
+  .stateTitlePrimary {
+    color: $primary;
+  }
+  .stateTitleNormal {
+    font-weight: normal;
+  }
+  .samller {
+    font-size: 1.4rem;
+  }
+  [class*=stateLabel] {
+    display: block;
+    @include font(1.6rem, bold, $secondary, 1.4);
+  }
+  .stateLabelPrimary {
+    color: $primary;
+  }
+  .stateLabelRed {
+    color: $color-red-01;
+  }
+  .orderText {
+    @include font(1.8rem, normal, $color-gray-06, 1.4);
+    .title {
+      font-weight: bold;
+    }
+    .number {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+    .won {
+      font-weight: normal;
+      font-size: 1.4rem;
+    }
+    p + p {
+      margin-top: 0.4rem;
+    }
+  }
+  .btnOderCancel {
+    padding: 0.4rem;
+    margin-right: 2rem;
+    background-color: $white;
+    border: 1px solid $secondary;
+    border-radius: 0.4rem;
+    @include font(1.6rem, bold, $secondary, 1.4);
+    &:hover, &:focus {
+      background-color: rgba(0,0,0,0.02);
+    } 
+  }
+  // .dlContainer {}
+  .dlFlexArea {
+    @include flex(row, space-between, flex-start);
+    width: 100%;
+    padding: 0.4rem 0;
+    @include font(1.3rem, normal, $black, 1.4);
+    .dlTitleBox {
+      flex-shrink: 0;
+      margin-right: 1rem;
+    }
+    .dlTextBox {
+      text-align: right;
+    }
+  }
+}
+.orderInfoWrap {
+  @include flex(row, flex-start, center);
+  .imgWrap {
+    @include flex(row, center, center);
+    overflow: hidden;
+    flex-basis: 10rem;
+    width: 10rem;
+    height: 10rem;
+    margin-right: 2.3rem;
+    background-color: $bgcolor-gray-02;
+  }
+  img {
+    display: block;
+    width: 6.2rem;
+    height: auto;
+  }
+}
+.orderSideWrap {
+  margin-left: auto;
+  margin-right: 1rem;
+  &.alignTop {
+    margin-bottom: auto;
+  }
+}
+.otherInfo {
+  @include flex(row, flex-start, center);
+  margin-right: 1rem;
+  &.right {
+    margin-left: auto;
+  }
+  .text {
+    @include font(1.6rem, normal, $color-gray-06, 1.4);
+    .linkUnderline {
+      margin-left: 0;
+    }
+  }
+  .linkUnderline {
+    margin-left: 1.2rem;
+    border-bottom-color: $primary;
+    font-size: 1.6rem;
+    color: $primary !important;
+  }
+}
+// 바로배송유심 구매
+.orderBorderWrap {
+  @include flex(column, flex-start, flex-start);
+  width: 100%;
+  .orderContent {
+    width: 100%;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid $border-color-06;
+    &:first-child {
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0;
+    }
+  }
+  .stateTitleBold {
+    margin-bottom: 0.6rem;
+  }
+}
+
+/* 월 요금 상세 */
+.orderChargeDetail {
+  @include font(1.6rem, normal, $black, 1.4);
+  .chargeRow {
+    @include flex(row, space-between, center);
+    margin-bottom: 0.5rem;
+    text-align: right;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    [class*=rowTitle] {
+      text-align: left;
+    }
+    .rowTitleBold {
+      font-weight: bold;
+    }
+    .bigTitle {
+      font-size: 1.8rem;
+    }
+    .bold {
+      .number {
+        font-size: 2.2rem;
+      }
+    }
+  }
+  .beColorGray {
+    background-color: $bgcolor-gray-07;
+    border-radius: 1rem;
+  }
+  .block {
+    display: block;
+    font-weight: normal;
+  }
+  .chargeAreaTop {
+    margin-bottom: 3rem;
+    @include font(1.6rem, normal, $black, 1.4);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .title {
+      font-weight: bold;
+    }
+  }
+  .chargeAreaMiddle,
+  .chargeAreaBottom {
+    padding: 2rem 3rem;
+  }
+}
+
+/* 셀프개통 */
+.timeInfoBox {
+  padding: 1.4rem 1.6rem;
+  background-color: $bgcolor-gray-07;
+  @include font(1.6rem, normal, $color-gray-06, 1.4);
+  border-radius: 1rem;
+
+  .title {
+    display: block;
+    width: 6rem;
+    margin-right: 1rem;
+  }
+  .text {
+    width: calc(100% - 8rem);
+  }
+  .timeRow {
+    @include flex(row, flex-start, flex-start);
+    margin-bottom: 0.8rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* 요금제 선택 */
+.popupPlanContent {
+  .resultTop {
+    margin-bottom: 2rem;
+  }
+  .resultBottom {
+    margin: 3rem 0 0;
+  }
+  .checkBoxItem {
+    margin-bottom: 1rem;
+    .checkbox {
+      top: 1.2rem;
+      right: 1.1rem;
+    }
+  }
+  .popularDataArea {
+    padding: 2rem;
+    .titleCompany {
+      font-size: 1.1rem;
+    }
+    .dlItemFlex {
+      margin: 0 1.8rem;
+      &.borderType {
+        dt {
+          font-size: 1.2rem;
+        }
+        dd {
+          font-size: 1.4rem;
+        }
+      }
+      [class*=iconBg] {
+        padding-left: 3.6rem;
+        background-size: 2.2rem auto;
+      }
+    }
+    .usageItem {
+      dt {
+        font-size: 1.2rem;
+      }
+      dd {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .summaryTitleArea {
+    font-size: 1.1rem;
+    .summaryBigTitle {
+      font-size: 2rem;
+    }
+  }
+}
+
+/* 유심스캔 팝업 */
+.popupUsimScan {
+  &> .dim {
+    background-color: rgba(0,0,0,0.5);
+  }
+  & > .popupContainer {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+  }
+  .popupTop {
+    border-bottom: none;
+    .popupTitle {
+      color: $white;
+    }
+    .btnClose {
+      background: image('common/btn_white_close.svg') no-repeat center;
+    }
+  }
+  .popupMiddle {
+    height: 100%;
+    max-height: calc(100% - 5rem);
+  }
+  .popupContent {
+    @include flex(column, center, center);
+    height: 100%;
+    @include font(1.4rem, normal, $white, 1.4);
+    text-align: center;
+  }
+  .scanAround {
+    position: relative;
+    width: 100%;
+    max-width: 27.2rem;
+    height: 17.5rem;
+    margin: 2.4rem auto 10rem;
+    border: 1px solid $white;
+    border-radius: 1rem;
+  }
+  .round {
+    span {
+      position: absolute;
+      width: 2.8rem;
+      height: 2.8rem;
+      border: 3px solid $white;
+      &:nth-child(1) {
+        top: -2px;
+        left: -2px;
+        border-right: none;
+        border-bottom: none;
+        border-radius: 1rem 0 0 0;
+      }
+      &:nth-child(2) {
+        top: -2px;
+        right: -2px;
+        border-left: none;
+        border-bottom: none;
+        border-radius: 0 1rem 0 0;
+      }
+      &:nth-child(3) {
+        bottom: -2px;
+        right: -2px;
+        border-left: none;
+        border-top: none;
+        border-radius: 0 0 1rem 0;
+      }
+      &:nth-child(4) {
+        bottom: -2px;
+        left: -2px;
+        border-right: none;
+        border-top: none;
+        border-radius: 0 0 0 1rem;
+      }
+    }
+  }
+  .directInput {
+    text-decoration: underline;
+    color: $white;
+  }
+}
+
+/* 주민등록증 예시 */
+.idCardWrap {
+  margin-bottom: 3rem;
+  text-align: center;
+  .imgWrap {
+    max-width: 32rem;
+  }
+}
+.fieldSelectInput {
+  .dropdownArea {
+    flex: 1;
+    max-width: 14rem;
+    margin-right: 1rem;
+    .dropdownTitle {
+      .titleLabel {
+        height: 5.3rem;
+      }
+    }
+  }
+  .input {
+    flex: 1;
+    width: calc(100% - 15rem);
+  }
+}
+
+/* 신규 번호 생성 */
+.newNumberCreate {
+  margin-bottom: 3rem;
+  @include font(1.6rem, normal, $color-gray-06, 1.4);
+  .phoneNumber {
+    &.bold {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  .phoneNumber {
+    @include flex(row, center, center);
+    height: 10rem;
+    background-color: $bgcolor-gray-07;
+    span {
+      @include flex(row, center, center);
+      &:after {
+        content: '-';
+        display: block;
+        margin: 0 0.5rem;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+    }
+    input {
+      max-width: 7rem;
+      height: 4.8rem;
+      padding: 0 1rem;
+      text-align: center;
+    }
+  }
+  .buttonArea {
+    margin-top: 7rem;
+  }
+  .remainCount {
+    margin-top: 2rem;
+    text-align: right;
+    strong {
+      font-weight: bold;
+    }
+  }
+  .captchaWrap {
+    .captchaImg {
+      flex-basis: 31rem;
+    }
+    .btn {
+      height: 5.5rem;
+      margin-bottom: 1.6rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .fieldInput {
+    margin-top: 1rem;
+  }
+  //완료
+  &.createComplete {
+    .phoneNumber {
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+}
+/* 주민등록증 예시 */
+.imgPassWrap {
+  margin-bottom: 3rem;
+  text-align: center;
+  .imgWrap {
+    max-width: 32rem;
+  }
+}
+
+/* 문자 확인 */
+.confirmBoard {
+  padding: 4.5rem 2rem 2.4rem;
+  background-color: $white;
+  border-radius: 0.8rem;
+  @include font(1.4rem, normal, $black, 1.4);
+  .boardText {
+    text-align: center;
+  }
+  .buttonArea {
+    margin-top: 6rem;
+  }
+}
+
+/* ARS 번호 안내 팝업 */
+// .arsPopContainer {}
+.arsInput {
+  @include flex(row, flex-start, center);
+  .fieldArea {
+    justify-content: flex-start;
+    align-items: center;//ie11
+    width: calc(100% - 8.8rem);//ie11
+    height: 4.8rem;//ie11
+    margin-bottom: 0;
+    padding: 0 1.6rem;
+    @include font(1.4rem, normal, $color-gray-06, 1.4);
+  }
+  .title {
+    @include flex(row, flex-start, center);
+    &:after {
+      content: '';
+      display: block;
+      width: 0.1rem;
+      height: 1rem;
+      margin: 0 0.8rem;
+      background-color: $border-color-02;
+    }
+  }
+  .btn {
+    width: 8rem;//ie11
+    height: 4.8rem;
+    margin-left: 0.8rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* 셀프개통 5/5 6/6 */
+.AutoInputArea,
+.cardInputArea {
+  margin-bottom: 3rem;
+}
+
+.fieldeSimInput {
+  & > .buttonArea {
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* 워치개통 1/2 == combinationArea */
+
+/* 워치개통 팝업 */
+.watchESIMContainer {
+  @include font(1.4rem, normal, $black, 1.4);
+}
+
+/* profile Down */
+.profileDownContainer {
+  .noticeText {
+    font-size: 1.2rem;
+  }
+  .imgWrap {
+    display: block;
+    max-width: 18.8rem;
+    margin: 3rem auto;
+  }
+  .beforeDot {
+    color: $color-gray-04;
+    font-size: 1.2rem;
+  }
+}
+
+/* 단말기 정보 확인 방법 팝업 */
+.terminalContainer {
+  &.popupPairingWatch { //워치 페어링 방법 안내
+    .aboutTitle {
+      .smallText {
+        padding-left: 5.4rem;
+      }
+    }
+    .imgWrap {
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+    }
+  }
+  .tabContainer {
+    margin-top: 2rem;
+  }
+  .imgWrap {
+    display: block;
+    width: 100%;
+    margin: 2rem 0;
+  }
+}
+
+/* EID, IMEI 확인 방법 */
+.eidimeiContainer {
+  .imgWrap {
+    display: block;
+    width: 100%;
+  }
+  .stepTop {
+    .imgWrap {
+      max-width: 12rem;
+      margin: 2rem auto;
+    }
+  }
+}
+
+/* Apply Step */
+.applySteps {
+  @include flex(row, space-between, flex-end);
+  width: 69.8rem;
+  margin: 0 auto 5rem;
+  .title {
+    @include font(2rem, bold, $black);
+  }
+  .steps {
+    @include flex(row, flex-end, center);
+    position: relative;
+    // counter-reset: stepNumber;
+    // li {
+    //   counter-increment: stepNumber;
+    //   &::before {
+    //     content: counter(stepNumber) "";
+    //   }
+    // }
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      transform: translateY(-50%);
+      border-top: 1px solid $bgcolor-gray-08;
+    }
+  }
+  .unit {
+    @include flex(row, center, center);
+    position: relative;
+    overflow: hidden;
+    width: 4rem;
+    height: 4rem;
+    margin: 0 1.5rem;
+    border-radius: 50%;
+    border: 2px solid $primary;
+    background-color: $primary;
+    @include font(1.6rem, bold, $white);
+    text-align: center;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.current {
+      position: relative;
+      background-color: $white;
+      color: $primary;
+      text-decoration: underline;
+      & ~ .unit {
+        border: 1px solid $border-color-02;
+        background-color: $bgcolor-gray-03;
+        color: $secondary;
+      }
+    }
+  }
+  .message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+  }
+}
+
+/* 결제진행 안내 */
+.paymentContent {
+  .imgWrap {
+    display: block;
+    max-width: 35.2rem;
+    margin: 0 auto 5rem;
+  }
+  .text {
+    text-align: center;
+    @include font(3rem, bold, $black, 1.4);
+  }
+}
+
+/* 셀프개통 신청 > 번호이동 04 */
+.fieldPhoneInfo {
+  @include flex(row, flex-start, flex-end);
+  margin-bottom: 3rem;
+  .iconFindAgency {
+    height: 5.5rem;
+    padding-left: 2rem;
+    padding-right: 5rem;
+    margin-right: 0.8rem;
+    background: image('common/icon_search_cyan.svg') no-repeat right 1.7rem center / 1.6rem $white;
+    font-size: 1.6rem;
+    color: $color-gray-06;
+  }
+  .fieldInput {
+    flex: 1;
+  }
+}
+
+/* 셀프개통 신청 메인 */
+[class*=accordionIsland] {
+  &.active {
+    .btnOpenIsland {
+      background-image: image('common/arrow_line_up.svg');
+    }
+    .islandContent {
+      display: block;
+    }
+  }
+  .islandTitle {
+    @include flex(row, flex-start, center);
+    @include font(1.6rem, bold, $black, 1.4);
+  }
+  .btnOpenIsland {
+    display: block;
+    width: 3.2rem;
+    height: 2.2rem;
+    margin-left: auto;
+    background: image('common/arrow_line_down.svg') no-repeat center / 1.2rem auto;
+    & > span {
+      @include ir;
+    }
+  }
+  .islandContent {
+    display: none;
+    margin-top: 3rem;
+    @include font(1.6rem, normal, $color-gray-06, 1.4);
+    text-align: center;
+    .mainText {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .normalText {
+      margin-bottom: 0.5rem;
+    }
+    .colorRed {
+      font-size: 1.4rem;
+    }
+    .imgWrap {
+      width: 16rem;
+      margin: 3rem auto 0;
+    }
+  }
+  .islandBgGray {
+    padding: 4rem 2rem;
+    border-radius: 1rem;
+    background-color: $bgcolor-gray-07;
+  }
+}
+
+/* 자급제 단말등록 */
+.fieldSelfSufficiency {
+  .middleTitle {
+    margin-bottom: 3rem;
+    @include font(1.6rem, bold, $black, 1.4);
+  }
+}
+
+/* 자급제 단말등록/기기변경/셀프개통 */
+.modelDeviceContainer {
+  .deviceBottom {
+    margin-top: 3rem;
+  }
+}
+
+/* 워치 개통 */
+.smartWatchAbout {
+  .stepInner {
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+  .speechStepArea {
+    margin-top: 3rem;
+    .stepBox {
+      padding: 2.4rem;
+      font-size: 1.4rem;
+    }
+    .title {
+      margin-bottom: 0.8rem;
+    }
+    .desc {
+      color: $color-gray-04;
+      font-size: 1.1rem;
+    }
+    .linkUnderline {
+      font-size: 1.1rem;
+      &.colorPrimary {
+        color: $primary !important;
+      }
+    }
+  }
+  .dotList {
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .beforeDot {
+    font-size: 1.2rem;
+    color: $color-gray-06;
+    line-height: 1.8rem;
+  }
+  &.active {
+    .btnOpenInfo {
+      background-image: image('common/arrow_line_up.svg');
+    }
+    .smartWatchContent {
+      display: block;
+    }
+  }
+  .btnOpenInfo {
+    display: block;
+    width: 3.2rem;
+    height: 2.2rem;
+    margin-left: auto;
+    background: image('common/arrow_line_down.svg') no-repeat center / 1.2rem auto;
+    & > span {
+      @include ir;
+    }
+  }
+  .smartWatchContent {
+    display: none;
+  }
+}
+
+
+///////////// pc end ////////////////
+@media (#{$tablet}) {
+  /* 셀프개통 신청 > 번호이동 04 */
+  .fieldPhoneInfo {
+    .iconFindAgency {
+      height: 4.8rem;
+      background-position: right 1.2rem center;
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Apply Step */
+  .applySteps {
+    .message {//mobile ir steps
+      opacity: 0;
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  /* 자급제 단말등록 */
+  .fieldSelfSufficiency {
+    .middleTitle {
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+
+@media (#{$foldMax}) {
+  // 바로배송유심 - 메인
+  .usimDirectMain {
+    .contentArea {
+      padding-top: 5rem;
+    }
+  }
+  .usimTitleArea, .aboutTitleArea {
+    margin-bottom: 5rem; 
+    &.areaNear {
+      margin-bottom: 2rem;
+    }
+    .title {
+      br {
+        display: block; 
+      }
+      .block {
+        display: inline;
+      }
+    }
+  }
+  .gotoSelfArea {
+    font-size: 1.4rem; 
+    .linkUnderline {
+      font-size: 1.4rem; 
+    }
+  }
+  .smartWatchAbout {
+    .speechStepArea {
+      .stepBox {
+        margin-bottom: 3.4rem; 
+        padding: 2rem 2.2rem;
+        font-size: 1.2rem;
+      }
+      .beforeDot {
+        font-size: 1.1rem;
+        line-height: 1.6rem;
+        &::before {
+          top: 0.5rem;
+        }
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  .speechStepArea {
+    .stepBox {
+      margin-bottom: 3.2rem; 
+      padding: 1.2rem;
+    }
+    
+    // 바로배송유심 구매 안내 영역
+    &.fontSizeUp {
+      .stepBox {
+        margin-bottom: 3rem; 
+        .desc {
+          font-size: 1.2rem;
+          &Gray {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .usimDirectPurchase01,
+  .usimDirectPurchase02 {
+    .contentContainer {
+      .contentArea {
+        padding: 3rem 0 10rem;
+      }
+    }
+    .fixedFooterArea {
+      .left,
+      .right {
+        .desc {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  .usimDirectPurchase01 {
+    .typeAgreementCheck {
+      .fieldCheckbox {
+        .fieldLabel {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .usimDirectPurchase02 {
+    .centerContainer {
+      display: block;
+      .centerRight {
+        max-width: 100%;
+      }
+      .imgWrap {
+        width: 15.6rem;
+        height: auto;
+      }
+    }
+  }
+  .centerArea {
+    &.flex {
+      display: block;
+      .centerLeft {
+        margin-right: auto;
+      }
+    }
+  }
+
+  /* 유심유형 선택 */
+  .primaryBoxContainer {
+    display: block;
+    margin-bottom: 2.2rem;
+    .primarySelBox {
+      margin-top: 0.6rem;
+      margin-left: 0;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  /* 주문조회, 신청 조회 */
+  .orderContainer {
+    .orderBottom {
+      margin-top: 4rem;
+    }
+    // 셀프개통 신청리스트 
+    &.newSelfOpening {
+      margin-top: 3rem;
+    }
+  }
+  .deliveryTitle {
+    font-size: 1.4rem;
+  }
+  .deliveryStep {
+    padding: 2rem 1rem;
+    &.detail {
+      .step {
+        background-position: right 1.6rem top 1.2rem;
+      }
+    }
+    .step {
+      padding-right: 4.2rem;
+      background-position: right 2rem top 0.7rem;
+      background-size: 0.8rem auto;
+      font-size: 1.2rem;
+    }
+    [class*=iconBgDelivery] {
+      &:before {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+    .count {
+      font-size: 1.8rem;
+    }
+  }
+  .orderList {
+    & > li {
+      margin-bottom: 2rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .orderItem {
+    font-size: 1.2rem;
+    .itemMiddle {
+      flex-wrap: wrap;
+      padding: 2rem 0;
+    }
+    .itemBottom {
+      padding-bottom: 2rem;
+    }
+    .btnOderCancel {
+      margin-right: 0;
+      font-size: 1.4rem;
+    }
+    [class*=stateTitle],
+    [class*=stateLabel] {
+      font-size: 1.2rem;
+    }
+    .orderText {
+      font-size: 1.6rem;
+      .number {
+        font-size: 1.6rem;
+      }
+      .won {
+        font-size: 1.2rem;
+      }
+    }
+    .dlFlexArea {
+      font-size: 1.2rem;
+    }
+  }
+  .orderInfoWrap {
+    .imgWrap {
+      flex-basis: 8rem;
+      width: 8rem;
+      height: 8rem;
+      margin-right: 1.6rem;
+    }
+    img {
+      width: 5rem;
+    }
+  }
+  .orderSideWrap {
+    margin-right: 0;
+  }
+  .otherInfo {
+    margin-right: 0;
+    .text, .linkUnderline {
+      font-size: 1.2rem;
+    }
+  }
+  // 바로배송유심 구매
+  .orderBorderWrap {
+    .stateTitleBold {
+      font-size: 1.4rem;
+    }
+  }
+
+  /* 월 요금 상세 */
+  .orderChargeDetail {
+    font-size: 1.4rem;
+    .chargeRow {
+      .bigTitle {
+        font-size: 1.6rem;
+      }
+      .bold {
+        .number {
+          font-style: 2rem;
+        }
+      }
+    }
+    .chargeAreaTop {
+      margin-bottom: 2rem;
+      font-size: 1.4rem;
+    }
+    .chargeAreaMiddle,
+    .chargeAreaBottom {
+      padding: 1.4rem 1.6rem;
+    }
+  }
+  
+  /* 셀프개통 */
+  .timeInfoBox {
+    font-size: 1.4rem;
+    .block {
+      display: block;
+    }
+  }
+
+  /* 신규 번호 생성 */
+  .newNumberCreate {
+    font-size: 1.4rem;
+  }
+
+  /* 문자 확인 */
+  .confirmBoard {
+    padding: 3rem 1.6rem 2.4rem;
+    font-size: 1.2rem;
+    .buttonArea {
+      margin-top: 4rem;
+    }
+  }
+
+  
+  /* 워치개통 1/2 == combinationArea */
+  // .phoneNoLine, .usimApply, .smartWatchESIM {
+  //   .phoneLineSummaryDrop {
+  //     .dropdownTitle {
+  //       @include flex(column, center, flex-start);
+  //       height: 10rem;
+  //       background-position: right 2rem top 3rem;
+  //       .titleLabel {
+  //         height: auto;
+  //         .labelGroup {
+  //           max-width: 100%;
+  //         }
+  //       }
+  //       .colorLabel {
+  //         top: auto;
+  //         right: 1.5rem;
+  //         bottom: 0;
+  //       }
+  //     }
+  //     .dropdownList {
+  //       top: 10rem;
+  //       .phoneLine {
+  //         .colorLabel {
+  //           margin-top: 0;
+  //         }
+  //       }
+  //     }
+  //     .labelGroup {
+  //       display: block;
+  //       .product {
+  //         margin-bottom: 1rem;
+  //         font-size: 1.4rem;
+  //       }
+  //       .phone {
+  //         &:before {
+  //           display: none;
+  //         }
+  //         font-size: 1.6rem;
+  //       }
+  //     }
+  //   }
+  // }
+  .dataInner {
+    &.phoneNoLine {
+      .buttonArea {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+    .normalText {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Apply Step */
+  .applySteps {
+    width: 100%;
+    margin-bottom: 4rem;
+    .title {
+      font-size: 1.4rem;
+    }
+    .unit {
+      width: 2rem;
+      height: 2rem;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+    }
+  }
+
+  
+
+  /* 결제진행 안내 */
+  .paymentContent {
+    .imgWrap {
+      margin-bottom: 4rem;
+    }
+    .text {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* 셀프개통 신청 메인 */
+  [class*=accordionIsland] {
+    .islandTitle {
+      font-size: 1.4rem;
+    }
+    .islandContent {
+      font-size: 1.2rem;
+      .mainText {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+      .normalText {
+        margin-bottom: 0;
+        font-size: 1.2rem;
+      }
+      .colorRed {
+        font-size: 1.1rem;
+      }
+      .imgWrap {
+        width: 12rem;
+        margin-top: 2rem;
+      }
+    }
+    .islandBgGray {
+      padding: 3rem 1.5rem;
+    }
+  }
+  
+  /* 셀프개통 신청 > 번호이동 04 */
+  .fieldPhoneInfo {
+    display: block;
+    .iconFindAgency {
+      width: 100%;
+    }
+    .field {
+      margin-top: 2rem;
+    }
+  }
+}
+
+@media (#{$mobile-small}) {
+  /* 주문조회 */
+  .orderSideWrap {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  /* 셀프개통 1/5, 번호이동 1/6 */
+  /* input */
+  .fieldUsimInput {
+    .fieldForm {
+      display: block;
+    }
+    .buttonArea {
+      margin-top: 1rem;
+    }
+  }
+  .formItemArea {
+    .fieldUsimInput {
+      .fieldForm {
+        .buttonArea {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 회원 정보"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <main class="main-container">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : false,
+            "text" : "회원가입",
+          },
+          "button" : null
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="join-container">
+              <div class="join-area">
+                <div class="join-top">
+                  <!-- [접근성] element추가, 속성 추가 -->
+                  <div class="join-heading-box">
+                    <p class="join-heading-text" aria-hidden="true">
+                      <strong class="strong">휴대폰 번호</strong>를<br />
+                      입력해 주세요
+                    </p>
+                    <!-- prettier-ignore -->
+                    <span class="hidden-text">휴대폰 번호를
+                      입력해 주세요</span>
+                  </div>
+                </div>
+                <div class="join-middle">
+                  <div class="join-field-container">
+                    <div class="join-field-area">
+                      <div class="join-field-top">
+                        <!-- prettier-ignore -->
+                        @@include("text_field.html", {
+                          "className" : "",
+                          "size" : "",
+                          "label" : "휴대폰 번호",
+                          "labelHide" : "",
+                          "type" : "tel",
+                          "id" : "number",
+                          "placeholder" : "01012345678",
+                          "value" : "",
+                          "icon" : "",
+                          "button" : "",
+                          "property" : 'maxlength="11" pattern="[0-9]{11}"',
+                          "desc" : "",
+                          "loading" : false,
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "다음"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

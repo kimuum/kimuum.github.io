@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "할인 부가서비스 등록" , "headProjectName": "| 상품 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnIDExtra" onclick="togglePopup('btnIDExtra', 'popupIDExtra')"><span>할인 부가서비스 등록</span></button>
+    </div>
+    <div class="popup popupSizeLarge show" id="popupIDExtra" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <!-- [2차BO] 20221021 수정 -->
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">할인 부가서비스 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDExtra', 'popupIDExtra')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="promotionExtraWrap">
+            <div class="extraTable">
+              <div class="fieldForm promoteFinder">
+                <!-- [BO운영] KMVNO-4198 20231128 수정 -->
+                <div class="select">
+                  <select title="부가서비스명">
+                    <option value="">부가서비스명</option>
+                  </select>
+                </div>
+                <!-- // [BO운영] KMVNO-4198 20231128 수정 -->
+                <div class="input">
+                  <input type="text" title="부가서비스명" placeholder="검색어를 입력해주세요." />
+                  <!-- [BO운영] KMVNO-4198 20231128 수정 -->
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>검색</span></button>
+                </div>
+              </div>
+              <div class="tableContainer alignCenter">
+                <!-- [2차BO] 20221018 수정 -->
+                <table>
+                  <caption>
+                    할인 부가서비스 선택 목록
+                  </caption>
+                  <colgroup>
+                    <col style="width: 70px" />
+                    <col style="width: 150px" />
+                    <col />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col">선택</th>
+                      <th scope="col">부가서비스 코드</th>
+                      <!-- [BO운영] KMVNO-4198 20231128 수정 -->
+                      <th scope="col">부가서비스명</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-01" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-01"> A001 </label>
+                      </td>
+                      <td>공통 할인 부가서비스</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-02" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-02"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-03" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-03"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-04" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-04"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-05" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-05"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-06" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-06"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-07" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-07"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-08" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-08"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-09" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-09"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-10" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-10"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="radio center">
+                          <input type="radio" id="input-extra-11" name="extra" />
+                          <div class="radioLabel"></div>
+                        </div>
+                      </td>
+                      <td>
+                        <label for="input-extra-11"> 코드 </label>
+                      </td>
+                      <td>부가서비스명</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- //[2차BO] 20221018 수정 -->
+              </div>
+            </div>
+
+            <div class="discountTable">
+              <div class="title">
+                <strong>할인부가서비스 부가파람</strong>
+              </div>
+
+              <div class="tableContainer discountCost">
+                <!-- [2차BO] 20221021 수정 -->
+                <table>
+                  <caption>
+                    할인부가서비스 부가파람
+                  </caption>
+                  <colgroup>
+                    <col style="width: 148px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row">요금제 변경시 <br />자동 해지 여부</th>
+                      <td>
+                        <div class="fieldForm">
+                          <div class="radio">
+                            <input type="radio" id="input-auto-01" name="inputAuto" />
+                            <label for="input-auto-01" class="radioLabel">
+                              <span>할인 유지</span>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" id="input-auto-02" name="inputAuto" />
+                            <label for="input-auto-02" class="radioLabel">
+                              <span>할인 해지</span>
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">할인 유형 선택</th>
+                      <td>
+                        <div class="fieldForm">
+                          <div class="radio">
+                            <input type="radio" id="input-type-01" name="inputType" />
+                            <label for="input-type-01" class="radioLabel">
+                              <span>상시 할인</span>
+                            </label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" id="input-type-02" name="inputType" />
+                            <label for="input-type-02" class="radioLabel">
+                              <span>기간 할인</span>
+                            </label>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- [BO운영] KMVNO-4198 20231128 수정 -->
+                    <!-- <tr>
+                      <th scope="row">할인 시작일</th>
+                      <td>
+                        <div class="field fieldDatepicker dateStart" id="datepicker-start-sale02">
+                          <label class="ir" for="input-start-sale02">시작 일자 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-start-sale02" class="singleDatePicker" value="" autocomplete="off" tabindex="-1">
+                          </div>
+                        </div>
+                      </td>
+                    </tr> -->
+                    <!-- <tr>
+                      <th scope="row">할인 종료일</th>
+                      <td>
+                        <div class="field fieldDatepicker dateEnd" id="datepicker-end-sale02">
+                          <label class="ir" for="input-end-sale02">종료 일자 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-end-sale02" class="singleDatePicker" value="" autocomplete="off" tabindex="-1">
+                          </div>
+                        </div>
+                      </td>
+                    </tr> -->
+                    <!-- // [BO운영] KMVNO-4198 20231128 수정 -->
+
+                    <!-- [2차BO] 20221108 삭제
+                    <tr>
+                      <th scope="row">할인율</th>
+                      <td>
+                        <div class="select">
+                          <select title="할인율">
+                            <option value="">5%</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    -->
+
+                    <tr>
+                      <th scope="row">할인 개월 수</th>
+                      <td>
+                        <!-- 
+                        할인 개월수 선택값 : 1개월~12개월
+                      -->
+                        <div class="select">
+                          <select title="할인 기간">
+                            <option value="">1개월</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- [BO운영] KMVNO-4198 20231128 수정 -->
+                    <tr>
+                      <th scope="row">할인 적용 금액</th>
+                      <td>
+                        <div class="fieldInput">
+                          <div class="input">
+                            <input type="text" title="할인 적용 금액" />
+                          </div>
+                          <div class="addExplain">
+                            <strong class="required"><span>필수입력</span></strong>
+                            VAT(부가세) 제외한 금액을 입력해주세요.
+                          </div>
+                        </div>
+                        <div class="descriptionBox">
+                          <p>공급가액 : 3,000</p>
+                          <p>부가세 : 300</p>
+                          <p>최종 할인 금액 : <span class="bold">3,300 원</span></p>
+                          <div class="addExplain">
+                            <strong class="required"></strong>
+                            자동 계산 금액으로 전산에 할인 요청 및 적용됩니다.<!-- [BO운영] KMVNO-4198 20231128 수정-02 -->
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <!-- [BO운영] KMVNO-4198 20231128 수정-02 -->
+                    <tr>
+                      <th scope="row">화면 노출 금액</th>
+                      <td>
+                        <span class="bold">3,300 원</span>
+                        <div class="addExplain">
+                          <strong class="required"></strong>
+                          대고객 화면 및 관리자 페이지에 노출되는 금액입니다.<!-- [BO운영] KMVNO-4198 20231128 수정-02 -->
+                        </div>
+                      </td>
+                    </tr>
+                    <!--[BO운영] KMVNO-4198 20231128 수정-02 -->
+                  </tbody>
+                </table>
+                <!-- //[2차BO] 20221021 수정 -->
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnIDExtra', 'popupIDExtra')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnIDExtra', 'popupIDExtra')"><span>등록</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      // <!-- [2차BO] 20221018 수정 -->
+      $(document).ready(function () {
+        if ($('#datepicker-start-sale02').length > 0 && $('#datepicker-end-sale02').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-sale02', '#datepicker-end-sale02', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-sale02', '#datepicker-end-sale02', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

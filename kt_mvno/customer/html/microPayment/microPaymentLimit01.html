@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "소액결제 한도변경 하기 | 소액결제 내역 | 요금 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : microPayment -->
+    <div class="wrap detail microPayment">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>소액결제 이용한도 변경</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 내역</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 이용한도 변경</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">이용한도</strong>
+                  </div>
+                  <div class="totalPayArea large">
+                    <div class="flexRowBorder">
+                      <span class="title">이번달 잔여한도</span>
+                      <strong class="text">300,000원</strong>
+                    </div>
+                  </div>
+
+                  <div class="accordionGroup">
+                    <div class="informationAccordion03">
+                      <div class="accordionLabel">
+                        <span>이용한도 상세 내역 및 한도 변경</span>
+                        <button type="button" class="btnOpenBtn" aria-expanded="false"><span>이용한도 상세 내역 및 한도 변경 열기</span></button>
+                      </div>
+                      <div class="accordionInformation">
+                        <div class="borderList">
+                          <div class="item">
+                            <div class="itemTop">
+                              <strong>소액결제 이용한도</strong>
+                            </div>
+                            <div class="itemMiddle">300,000원</div>
+                          </div>
+                          <div class="item">
+                            <div class="itemTop">
+                              <strong>결제금액</strong>
+                            </div>
+                            <div class="itemMiddle">0원</div>
+                          </div>
+                          <div class="item">
+                            <div class="itemTop">
+                              <strong>잔여한도</strong>
+                            </div>
+                            <div class="itemMiddle">300,000원</div>
+                          </div>
+                          <div class="item">
+                            <div class="itemTop">
+                              <strong>선결제금액</strong>
+                            </div>
+                            <div class="itemMiddle">0원</div>
+                          </div>
+                        </div>
+                        <div class="totalPayArea large">
+                          <div class="flexRowBorder">
+                            <span class="title">한도 변경</span>
+                            <div class="fieldForm">
+                              <div class="dropdownArea">
+                                <div class="dropdownTitle">
+                                  <div class="titleLabel">
+                                    <span>선택</span>
+                                  </div>
+                                  <button type="button" class="dropdownBtn" aria-expanded="false" title="한도 변경 선택"></button>
+                                </div>
+                                <ul class="dropdownList" aria-label="한도 변경">
+                                  <li><button type="button" title="선택됨">선택</button></li>
+                                  <li><button type="button">한도</button></li>
+                                </ul>
+                              </div>
+                              <button type="button" class="btn"><span>변경</span></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //이용한도 -->
+
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">자동결제상태</strong>
+                  </div>
+                  <div class="totalPayArea large">
+                    <div class="flexRowBorder">
+                      <span class="title">전체 허용</span>
+                      <button type="button" class="btn"><span>자동결제 정보</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                  </div>
+                </div>
+                <!-- //자동결제상태 -->
+
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">이용내역 조회</strong>
+                  </div>
+                  <div class="fieldGroupLine">
+                    <div class="field fieldPayDate">
+                      <div class="fieldLabel">
+                        <span>결제 기간</span>
+                        <div class="fieldTabs" role="tablist">
+                          <button type="button" id="fieldTabAnchor01" class="tabButton" aria-controls="fieldTabContent01" role="tab" aria-selected="true"><span>월별</span></button>
+                          <button type="button" id="fieldTabAnchor02" class="tabButton" aria-controls="fieldTabContent02" role="tab" aria-selected="false"><span>날짜별</span></button>
+                        </div>
+                      </div>
+                      <div class="fieldTabContainer">
+                        <div id="fieldTabContent01" class="fieldTabContent show" role="tabpanel" aria-labelledby="fieldTabAnchor01">
+                          <div class="fieldDatepicker hideInput" id="datepicker-id-date01">
+                            <div class="fieldForm datePickerArea">
+                              <input type="text" class="singleDatePicker" aria-hidden="true" tabindex="-1" />
+                              <button type="button" class="btn btnOpen" aria-expanded="false" title="월별 결제 기간"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div id="fieldTabContent02" class="fieldTabContent" role="tabpanel" aria-labelledby="fieldTabAnchor02">
+                          <div class="periodWrap">
+                            <div class="fieldDatepicker hideInput" id="datepicker-start-period-data">
+                              <div class="fieldForm datePickerArea startDatePickerArea">
+                                <input type="text" class="singleDatePicker startDatePicker" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                                <button type="button" class="btn btnOpen" aria-expanded="false" title="날짜별 결제 기간 시작일"></button>
+                              </div>
+                            </div>
+                            <div class="space"></div>
+                            <div class="fieldDatepicker hideInput" id="datepicker-end-period-data">
+                              <div class="fieldForm datePickerArea endDatePickerArea">
+                                <input type="text" class="singleDatePicker endDatePicker" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                                <button type="button" class="btn btnOpen" aria-expanded="false" title="날짜별 결제 기간 종료일"></button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="fieldButtonFlex payDayButtons">
+                            <button type="button" class="btn active" title="선택 됨"><span>오늘</span></button>
+                            <button type="button" class="btn"><span>1주일</span></button>
+                            <button type="button" class="btn"><span>1개월</span></button>
+                            <button type="button" class="btn"><span>3개월</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="fieldLabel">
+                        <span>서비스</span>
+                        <span class="subText">휴대폰 소액 결제</span>
+                      </div>
+                    </div>
+                    <div class="field fieldRadio">
+                      <div class="fieldLabel">상태</div>
+                      <div class="fieldForm">
+                        <div class="fieldWhiteBox">
+                          <div class="radio">
+                            <input type="radio" id="inputState-1" name="inputState" checked="" />
+                            <label for="inputState-1" class="radioLabel"><span>결제/결제 취소</span></label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" id="inputState-2" name="inputState" />
+                            <label for="inputState-2" class="radioLabel"><span>결제완료</span></label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" id="inputState-3" name="inputState" />
+                            <label for="inputState-3" class="radioLabel"><span>전체결제</span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="groupBottom">
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //이용내역 조회 -->
+
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">조회 결과</strong>
+                  </div>
+                  <div class="totalPayTableContainer">
+                    <div class="totalPayArea">
+                      <div class="flexRowBorder">
+                        <strong class="title">총 이용금액</strong>
+                        <span>0원</span>
+                      </div>
+                    </div>
+                    <div class="tableContainer normalBgTable">
+                      <table>
+                        <caption>
+                          조회 결과 - 결제일, 이용서비스, 상태, 금액, 상세
+                        </caption>
+                        <colgroup>
+                          <col style="width: 15%; width: 50px" />
+                          <col style="width: 30%; width: 100px" />
+                          <col style="width: 20%; min-width: 60px" />
+                          <col style="width: 20%; min-width: 60px" />
+                          <col style="width: 15%; min-width: 50px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col" class="alignLeft">결제일</th>
+                            <th scope="col" class="alignCenter">이용서비스</th>
+                            <th scope="col" class="alignCenter">상태</th>
+                            <th scope="col" class="alignCenter">금액</th>
+                            <th scope="col" class="alignRight">상세</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="alignLeft">2022.08.01</td>
+                            <td class="alignCenter">genie.co.kr(자동)<br />(1577-5337)</td>
+                            <td class="alignCenter">결제</td>
+                            <td class="alignCenter">4,180원</td>
+                            <td class="alignRight"><a href="#" class="linkArrow" title="상세페이지로 이동"></a></td>
+                          </tr>
+                          <tr>
+                            <td class="alignLeft">2022.08.01</td>
+                            <td class="alignCenter">50분<br />(50분/0분)</td>
+                            <td class="alignCenter">결제</td>
+                            <td class="alignCenter">4,180원</td>
+                            <td class="alignRight"><a href="#" class="linkArrow" title="상세페이지로 이동"></a></td>
+                          </tr>
+                          <tr>
+                            <td class="alignCenter" colspan="5">
+                              <div class="nodataContainer">이용 내역이 없습니다.</div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tableBottom">
+                      <div class="pagenation pcType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                      <div class="pagenation moType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //조회 결과 -->
+
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">소액결제 안내</strong>
+                  </div>
+                  <div class="dataNormalText">KT 고객이 온/오프라인 가맹점에서 휴대폰으로 결제하신 내역을 확인하시고, 사용금액을 선결제하실 수 있는 서비스입니다.</div>
+                  <div class="accordionGroup bgWhite bgWhite">
+                    <div class="informationAccordion01">
+                      <div class="accordionLabel">
+                        <span>소액결제 서비스 이용</span>
+                        <button type="button" class="btnOpenBtn" aria-expanded="false"><span>소액결제 서비스 이용 열기</span></button>
+                      </div>
+                      <div class="accordionInformation">
+                        <ol class="numberList marginBtmReset">
+                          <li>온, 오프라인 가맹점에서 구매 상품을 선택</li>
+                          <li>결제 수단 중에서 휴대폰으로 결제하기 선택</li>
+                          <li>휴대폰 번호, 주민등록번호 앞 7자리 입력</li>
+                          <li>고객님의 휴대폰으로 전송된 인증번호 입력</li>
+                          <li>휴대폰 소액결제 완료</li>
+                          <li>요금은 다음달 휴대폰 요금명세서에 합산 청구</li>
+                        </ol>
+                      </div>
+                    </div>
+                    <!-- //소액결제 서비스 이용 -->
+
+                    <div class="informationAccordion02">
+                      <div class="accordionLabel">
+                        <span>유의사항</span>
+                        <button type="button" class="btnOpenBtn" aria-expanded="false"><span>유의사항 열기</span></button>
+                      </div>
+                      <div class="accordionInformation">
+                        <ul class="dotList marginBtmReset">
+                          <li class="beforeDot">이용내역은 최근 1년 내 결제된 내역만 조회할 수 있습니다.</li>
+                          <li class="beforeDot">전체 결제 내역 조회시 ‘결제 확정' 외 ‘결제시도취소'건 확인이 가능합니다.</li>
+                          <li class="beforeDot">이번달 이용한 소액결제금액을 신용카드로 선결제하면 한도 상뱡 변경 없이 결제한 금액만큼 추가로 이용할 수 있습니다.</li>
+                          <li class="beforeDot">월 이용한도는 편의에 따라 4만원, 30만원, 50만원, 60만원, 80만원, 100만원 또는 만원단위 금액으로 직접 조정할 수 있습니다.</li>
+                          <li class="beforeDot">단, 고객님의 통신요금 미납 및 연체이력 등에 따라 한도 상향이 제한될 수 있습니다.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //소액결제 안내 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        // 결제 기간 - 월별
+        if ($(document).find('#datepicker-id-date01').length > 0) {
+          getDatepicker('#datepicker-id-date01', 'monthSimple');
+        }
+        // 결제 기간 - 날짜별
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+
+        // 결제 기간 날짜별 버튼
+        btnSingleActive('.payDayButtons .btn', 'active');
+
+        // 소액결제 안내
+        accordionControl('.informationAccordion01 .btnOpenBtn', '.informationAccordion01 .accordionInformation', '.informationAccordion01', '소액결제 서비스 이용 열기', '소액결제 서비스 이용 닫기');
+
+        // 유의사항
+        accordionControl('.informationAccordion02 .btnOpenBtn', '.informationAccordion02 .accordionInformation', '.informationAccordion02', '유의사항 열기', '유의사항 닫기');
+
+        // 이용한도 상세 내역 및 한도 변경
+        accordionControl('.informationAccordion03 .btnOpenBtn', '.informationAccordion03 .accordionInformation', '.informationAccordion03', '이용한도 상세 내역 및 한도 변경 열기', '이용한도 상세 내역 및 한도 변경 닫기');
+      });
+    </script>
+  </body>
+</html>

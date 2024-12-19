@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="btnTitle1" value="" iweb-data="out" />
+    <input type="hidden" id="btnTitle2" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="ai_check" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper member-contract">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '선택약정할인',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="member-contract-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-discount"></i>
+                <div class="info-box">
+                  <p class="label">이동전화 지원금을 받지 않으셨다면 지원금 대신 요금할인 혜택을 드립니다.</p>
+                  <p class="text">지원금에 상응하는 <span class="highlight">추가 요금할인 (25%)</span> 혜택을 받으세요!</p>
+                </div>
+              </div>
+              <div class="member-contract-image-area">
+                <div class="caution-guide-box">
+                  <div class="caution-title ic-notice-b highlight">지원금에 상응하는 요금 할인이란?</div>
+                  <div class="member-contract-image-box">
+                    <img src="../images/sub/img_contract_info.png" alt="지원금에 상응하는 요금 할인이란?" />
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-container caution-fee">
+                <div class="caution-guide-box bg-none">
+                  <p class="caution-text asterisk">산정방식</p>
+                  <div class="caution-text-inner">
+                    <p class="caution-text"><span>1.&nbsp;</span>요금약정할인제도 대상 요금제 이용시</p>
+                    <p class="caution-text child">
+                      (요금제 월정액 - 24개월 기준 요금약정할인액)<br />
+                      ×선택약정 기준 할인율 25%
+                    </p>
+                  </div>
+                  <div class="caution-text-inner">
+                    <p class="caution-text"><span>2.&nbsp;</span>요금약정할인제도 대상 요금제 이용시</p>
+                    <p class="caution-text child">요금제 월정액 × 선택약정 기준 할인율 25%</p>
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-title">대상</div>
+                <div class="caution-guide-box">
+                  <div class="caution-guide-inner">
+                    <div class="caution-left-box">
+                      <i class="icon icon-user"></i>
+                    </div>
+                    <div class="caution-right-box">
+                      <div class="caution-list">
+                        <p class="caution-text dot">지원금 수혜 이력이 없는 자급/신규 단말</p>
+                        <p class="caution-text dot">최초 개통 후 24개월이 경과된 중고 단말</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-title">가입조건</div>
+                <div class="caution-guide-box">
+                  <div class="caution-guide-inner">
+                    <div class="caution-left-box">
+                      <i class="icon icon-application"></i>
+                    </div>
+                    <div class="caution-right-area">
+                      <div class="caution-list">
+                        <p class="caution-text dot">관련 요금제 및 약정기간(12/24개월) 선택</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-title">요금제</div>
+                <div class="caution-guide-box">
+                  <div class="caution-guide-inner">
+                    <div class="caution-left-box">
+                      <i class="icon icon-pay-plan"></i>
+                    </div>
+                    <div class="caution-right-box">
+                      <div class="caution-list">
+                        <p class="caution-text dot">약정할인제도 가입대상 요금제와 동일</p>
+                        <div class="alert-text-box">
+                          <p class="alert-text">스페셜 약정할인제도, LTE플러스 약정 할인제도, LTE데이터 약정할인제도</p>
+                        </div>
+                        <p class="caution-text dot mt-8">표준요금제 등 약정할인 비대상 요금제도</p>
+                        <div class="alert-text-box">
+                          <p class="alert-text">요금제에 따라 할인금액이 달라집니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-box bg-none">
+                <div class="caution-list">
+                  <div class="caution-title">주의사항</div>
+                  <p class="caution-text dot">월말 기준 제도 유지 시 요금할인 혜택이 제공됩니다.</p>
+                  <p class="caution-text dot">최초 약정기간 선택/가입 후 중도에 약정기간 <br />(12개월 ↔  24개월) 변경은 불가합니다.</p>
+                  <p class="caution-text dot">선택약정할인제도 대상 요금제간 변경은 월 1회만 가능합니다.</p>
+                  <p class="caution-text dot">선택약정할인에 가입된 USIM을 선택약정 가입 가능 단말기로 USIM 기변 가능합니다.</p>
+                  <p class="caution-text dot">선택약정할인제도 가입 기간 중 레인보우 포인트 및 투게더 포인트는 적립이 불가합니다.</p>
+                  <p class="caution-text dot">정지기간은 할인혜택 제공이 중지되며, 정지기간 만큼 약정 만료 기간이 연장됩니다.</p>
+                  <p class="caution-text dot">제도 해지 후 1개월 이내 재가입이 불가하며, 다시 가입을 원할 경우 지점/대리점에서 신청 가능합니다.</p>
+                  <p class="caution-text dot">약정기간 도중 해지/변경 시 할인반환금이 발생합니다.</p>
+                  <div class="alert-text-box">
+                    <p class="alert-text">선택약정 비대상 단말 또는 비대상 요금제로 변경한 경우</p>
+                    <p class="alert-text">약정기간 만료 전 이동전화 서비스 또는 선택약정할인제도를 해지한 경우</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="caution-guide-box bg-none">
+                <div class="caution-title ic-alert">선택약정할인제도 가입은 고객센터, 지점, 대리점 및 온라인 T world에서도 가능합니다.</div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box" id="btn_wrap">
+            <button type="button" class="btn btn-secondary" id="dt_btnTitle2" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');" style="display: none"></button>
+            <button type="button" class="btn btn-secondary" id="dt_btnTitle3" onclick="javascript:sendRepPageData($(this).text().trim(), 'AI', 'menu');" style="display: none">AI 상담</button>
+            <button type="button" class="btn btn-primary" id="dt_btnTitle1" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');" style="display: none"></button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          // {
+          //   elemName: 'btn_wrap',
+          //   varsType: 'C',
+          //   attrType: 'class',
+          //   value: 'btn_wrap btn_wrap2',
+          // },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          // 1: 주간, 그외: 야간, 9:점심
+
+          var timezone_type = getUrlParameter('timezone_type');
+          var ai_check = getUrlParameter('ai_check');
+
+          /*@build-time*/ timezone_type = '1';
+          /*@build-time*/ ai_check = 'Y';
+
+          if (timezone_type != '1') {
+            $('#dt_btnTitle1').show();
+            document.getElementById('dt_btnTitle1').innerText = '확인'; // default 값
+            document.getElementById('dt_btnTitle2').remove();
+
+            if (ai_check == 'Y') {
+              $('#dt_btnTitle3').show();
+            } else {
+              document.getElementById('dt_btnTitle3').remove();
+            }
+          } else {
+            $('#dt_btnTitle1').show();
+            $('#dt_btnTitle2').show();
+            document.getElementById('dt_btnTitle1').innerText = '확인';
+            document.getElementById('dt_btnTitle2').innerText = '상담사 연결';
+            if (ai_check == 'Y') {
+              $('.button-box').addClass('none-flex');
+              $('#dt_btnTitle3').show();
+            } else {
+              document.getElementById('dt_btnTitle3').remove();
+            }
+          }
+
+          // 점심시간
+          if (timezone_type == '9') {
+            $('#dt_btnTitle1').show();
+            document.getElementById('dt_btnTitle1').innerText = '확인'; // default 값
+            document.getElementById('dt_btnTitle2').remove();
+            if (ai_check == 'Y') {
+              $('#dt_btnTitle3').show();
+            } else {
+              document.getElementById('dt_btnTitle3').remove();
+            }
+          } else {
+          }
+        } catch (e) {}
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

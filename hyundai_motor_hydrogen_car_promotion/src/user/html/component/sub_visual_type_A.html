@@ -1,0 +1,68 @@
+<!-- Sub Visual Container -->
+<div class="header-visual-container">
+  <div class="visual-front-area">
+    <div class="visual-inner">
+      <div class="visual-title-middle">
+        <h1 class="visual-title-main">@@front.mainTitle</h1>
+        <div class="visual-text-normal">
+          @@if(front.normalText) {
+          <p>@@front.normalText</p>
+          } @@if(link.url) {
+          <div class="visula-link">
+            <a href="@@link.url" class="link-right">@@link.text</a>
+          </div>
+          }
+        </div>
+      </div>
+      @@if(spec.icon01) {
+      <div class="visual-title-bottom">
+        <div class="data-items-area">
+          <div class="data-item-box">
+            <div class="@@spec.icon01.item01Class"><span>@@spec.icon01.item01Label</span></div>
+            <div class="spec-data-box">
+              <strong class="spec-number">@@spec.icon01.item01Number</strong>
+              @@if(spec.icon01.item01Number) {
+              <span class="spec-unit">@@spec.icon01.item01Unit</span>
+              }
+            </div>
+            <p class="spec-text-box">@@spec.icon01.item01Text</p>
+          </div>
+          <div class="data-item-box">
+            <div class="@@spec.icon02.item02Class"><span>@@spec.icon02.item02Label</span></div>
+            <div class="spec-data-box">
+              <strong class="spec-number">@@spec.icon02.item02Number</strong>
+              @@if(spec.icon02.item02Number) {
+              <span class="spec-unit">@@spec.icon02.item02Unit</span>
+              }
+            </div>
+            <p class="spec-text-box">@@spec.icon02.item02Text</p>
+          </div>
+          <div class="data-item-box">
+            <div class="@@spec.icon03.item03Class"><span>@@spec.icon03.item03Label</span></div>
+            <div class="spec-data-box">
+              <strong class="spec-number">@@spec.icon03.item03Number</strong>
+              @@if(spec.icon03.item03Number) {
+              <span class="spec-unit">@@spec.icon03.item03Unit</span>
+              }
+            </div>
+            <p class="spec-text-box">@@spec.icon03.item03Text</p>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+  <!-- [수정20230825] visual 영역 수정 -->
+  <div class="visual-back-area">
+    <div class="visual-front-box">
+      <div class="content-visual-image-box use-pc" data-parallax="scroll" data-image-src="../../assets/images/@@imageSubBgSrcPC"></div>
+      <div class="content-visual-image-box use-mo" data-parallax="scroll" data-image-src="../../assets/images/@@imageSubBgSrcMO"></div>
+    </div>
+
+    <div class="visual-back-box">
+      <img width="1920px" height="196px" class="use-pc" src="../../assets/images/@@imageSubBgSrcPC" alt="hero banner" />
+      <img width="375px" height="350px" class="use-mo" src="../../assets/images/@@imageSubBgSrcMO" alt="hero banner" />
+    </div>
+  </div>
+</div>
+<!-- // Sub Visual Container -->

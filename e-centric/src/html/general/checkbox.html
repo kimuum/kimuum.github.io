@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Checkbox</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-container">
+        <div class="general-area">
+          <div class="general-top">
+            <div class="general-label">Component</div>
+            <div class="general-title">Checkbox</div>
+          </div>
+          <div class="general-middle">
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">라벨 있는 경우</span>
+                <span class="description"></span>
+              </div>
+              <div class="content-box">
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "",
+                  "id" : "dgddtjnrt",
+                  "value" : "Default",
+                  "property" : "",
+                  "labelHide" : "",
+                  "label": "Default",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "",
+                  "id" : "lkhiho",
+                  "value" : "Checked",
+                  "property" : "checked",
+                  "labelHide" : "",
+                  "label": "Checked",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "disabled",
+                  "id" : "wrhdtgsrw",
+                  "value" : "Disabled",
+                  "property" : "disabled",
+                  "labelHide" : "",
+                  "label": "Disabled",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "disabled",
+                  "id" : "srtrtgdtg",
+                  "value" : "Disabled - Checked",
+                  "property" : "disabled checked",
+                  "labelHide" : "",
+                  "label": "Disabled - Checked",
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">라벨 없는 경우</span>
+                <span class="description"></span>
+              </div>
+              <div class="content-box">
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "",
+                  "id" : "tgdghdrfh",
+                  "value" : "Default",
+                  "property" : "",
+                  "labelHide" : true,
+                  "label": "Default",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "",
+                  "id" : "efsefr",
+                  "value" : "Checked",
+                  "property" : "checked",
+                  "labelHide" : true,
+                  "label": "Checked",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "disabled",
+                  "id" : "erdfhhd",
+                  "value" : "Disabled",
+                  "property" : "disabled",
+                  "labelHide" : true,
+                  "label": "Disabled",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "class" : "disabled",
+                  "id" : "dgfkg",
+                  "value" : "Disabled - Checked",
+                  "property" : "disabled checked",
+                  "labelHide" : true,
+                  "label": "Disabled - Checked",
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Token Checkbox</span>
+                <span class="description"></span>
+              </div>
+              <div class="content-box">
+                <!-- prettier-ignore -->
+                @@include("checkboxToken.html", {
+                  "class" : "",
+                  "id" : "srgsrgwa",
+                  "value" : "Default",
+                  "property" : "",
+                  "label": "Default",
+                  "icon" : false,
+                })
+                <!-- prettier-ignore -->
+                @@include("checkboxToken.html", {
+                  "class" : "",
+                  "id" : "ugjfxr",
+                  "value" : "checked",
+                  "property" : "checked",
+                  "label": "checked",
+                  "icon" : false,
+                })
+                <!-- prettier-ignore -->
+                @@include("checkboxToken.html", {
+                  "class" : "",
+                  "id" : "waegawfa",
+                  "value" : "disabled",
+                  "property" : "disabled",
+                  "label": "disabled",
+                  "icon" : false,
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

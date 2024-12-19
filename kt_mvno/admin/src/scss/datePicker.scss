@@ -1,0 +1,376 @@
+/*=== datePicker === */
+.example {
+  min-height: 70rem;
+}
+
+.fieldDatepicker {
+  position: relative;
+  background-color: $white;
+
+  &:only-child {
+    max-width: 17rem;
+  }
+  &.hideInput {
+    input[type=text] {
+      position: absolute;
+      height: 0;
+      border: none;
+    }
+  }
+
+  &.top {
+    .datepicker {
+      &.datepicker-dropdown {
+        top: auto !important;
+        bottom: 100% !important;
+      }
+    }
+  }
+
+  &.active {
+    position: absolute;
+    &.btnOpen + * {
+      padding-top: 4.8rem;
+    }
+  }
+
+  .datepicker {
+    top: 100% !important;
+    left: 0 !important;
+    width: 320px;
+  }
+
+  //기간 선택 버튼 (1, 3, 6, 12개월)
+  .btnPeriod {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 4.4rem;
+    border-radius: .3rem;
+    border: 1px solid $border-color-02;
+    @include font(1.4rem, 400, $color-gray-01, normal);
+  }
+
+  &.large {
+    // max-width: 70rem;
+
+    .singleDatePicker {
+      @include flex(row, center, center);
+    }
+
+    .datepicker {
+      @include flex(row, center, center);
+      @include font(1.6rem, 400, $black, normal);
+
+      // 날짜 선택 달력 //
+      .datepicker-days {
+        .table-condensed {
+          .datepicker-switch {
+            padding: 2.4rem 0.5rem;
+            @include font(1.8rem, 700, $color-gray-01, normal);
+          }
+          //날짜
+          .day {
+            width: 5.4rem;
+            height: 4.2rem;
+            line-height: 4.2rem;
+
+            //오늘
+            &.today {
+              position: absolute;
+              margin: 0 0.6rem;
+              width: 4.2rem;
+              background-color: $color-cyan-01;
+            }
+
+            //포커싱 된 날짜
+            &.focused {
+              position: absolute;
+              margin-top: -0.5rem;
+              height: 4.2rem;
+              line-height: 4.2rem;
+            }
+          }
+        }
+      }
+
+      .datepicker-months {
+        max-width: 37.6rem;
+
+        .month {
+          width: 8.4rem;
+          height:5rem;
+          margin: 0.5rem;
+          line-height: 4.8rem;
+        }
+      }
+    }
+
+    .btnOpen {
+      height: 5.4rem;
+      font-size: 1.6rem;
+      line-height: 1.4;
+      &:before {
+        width: 2.4rem;
+        height: 2.4rem;
+        background: image('common/icon_calendar.svg') center no-repeat;
+      }
+    }
+  }
+}
+
+.datePickerArea {
+  position: relative;
+  .singleDatePicker {
+    padding: 0 1.25rem;
+    background: image('common/icon_calendar_small.svg') left 1rem center no-repeat;
+    text-align: center;
+  }
+}
+
+.datepicker {
+  // width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid $border-color-03;
+  @include font(1.4rem, 400, $black, normal);
+
+  &.datepicker-dropdown {
+    position: absolute;
+    border: 2px solid $primary;
+    background-color: $white;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .table-condensed {
+    width: 100%;
+    //이전 버튼
+    .prev {
+      width: 3.6rem;
+      height: 3.6rem;
+      padding: 0.5rem;
+      background: image('common/icon_arrow_left.svg') no-repeat center;
+      text-indent: -9999px;
+    }
+    
+    //다음 버튼
+    .next {
+      width: 3.6rem;
+      height: 3.6rem;
+      padding: 0.5rem;
+      background: image('common/icon_arrow_right.svg') no-repeat center;
+      text-indent: -9999px;
+    }
+
+    //현재 선택한 날짜
+    .datepicker-switch {
+      height: auto;
+      padding: 1.4rem 0.5rem;
+      background-color: transparent;
+      @include font(1.6rem, 700, $color-gray-01, normal);
+    }
+  }
+  
+  // 날짜 선택 달력 //
+  .datepicker-days {
+    .table-condensed {
+      width: 100%;
+
+      tr {
+        border: none;
+      }
+      //요일
+      .dow {
+        height: 2.8rem;
+        padding: 0;
+        background-color: transparent;
+        text-align: center;
+        line-height: 2.8rem;
+        color: $primary;
+      }
+      
+      //날짜
+      .day {
+        position: relative;
+        width: 3.6rem;
+        height: 3.6rem;
+        padding: 0;
+        font-family: 'Roboto';
+        text-align: center;
+        line-height: 3.6rem;
+        
+        //오늘, 선택한 날짜, 포커싱 된 날짜의 공통 크기 및 위치
+        &.today {
+          // border: 2px solid $primary;
+          border-radius: 0.4rem;
+          background-color: $color-gray-02;
+
+          &.active, &.focused {
+            background-color: transparent;
+          }
+        }
+        
+        //선택한 날짜
+        &.active {
+          &:before {
+            background-color: $color-cyan-01;
+          }
+        }
+
+        //포커싱 된 날짜
+        &.focused {
+          &:before {
+            width: 3.2rem;
+            height: 3.2rem;
+            border: 2px solid $primary;
+            box-sizing: border-box;
+            line-height: 3.2rem;
+          }
+        }
+
+        &.active, &.focused {
+          font-weight: 700;
+
+          &:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            width: 2.5rem;
+            height: 2.5rem;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+          }
+        }
+        //지난 달, 다음 달 날짜 (흐릿한 회색)
+        &.old, &.new {
+          color: $border-color-03;
+        }
+      }
+    }
+  }
+
+  /* 달 선택 */
+  .datepicker-months {
+    .table-condensed {
+      tr {
+        border: none;
+      }
+      td {
+        padding: 0.6rem;
+      }
+    }
+    .month {
+      display: block;
+      float: left;
+      width: calc(33.33% - 0.5rem);
+      height: 3.8rem;
+      margin: 0.25rem;
+      border-radius: .3rem;
+      border: 1px solid $border-color-02;
+      @include font(1.4rem, 400, $secondary, 3.6rem);
+      text-align: center;
+
+      &.focused {
+        border-radius: 0.4rem;
+        background-color: $primary;
+        font-weight: 700;
+        color: $white;
+      }
+    }
+  }
+
+  //년도 선택
+  .datepicker-years {
+    .year {
+      display: block;
+      float: left;
+      width: 6.6rem;
+      height: 3.8rem;
+      margin: 0.3rem 0.37rem;
+      border-radius: .3rem;
+      border: 1px solid $border-color-02;
+      @include font(1.4rem, 400, $secondary, 3.6rem);
+      text-align: center;
+
+      &.focused {
+        border-radius: 0.4rem;
+        background-color: $primary;
+        font-weight: 700;
+        color: $white;
+      }
+    }
+  }
+}
+
+.periodContainer {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  padding : 2rem;
+  border-radius: 0.3rem;
+  border: 2px solid $primary;
+  background-color: $white;
+
+  &.top {
+    top: auto;
+    bottom: 100%;
+  }
+
+  &.show {
+    display: block;
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.25);
+  }
+
+  .btnPeriod {
+    width: 100%;
+    height: 4.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.datepicker-months {
+  max-width: 37.6rem;
+}
+
+//기간 선택(처음,끝)
+.periodWrap {
+  @include flex(row, flex-start, center);
+  .space {
+    margin: 0 1.4rem;
+    &:before {
+      content: '~';
+      @include font(1.4rem, normal, $color-gray-01, normal);
+    }
+  }
+  .field {
+    width: 17rem;
+    margin: 0;
+    &:last-child {
+      .datepicker {
+        left: auto !important;
+        right: 0 !important;
+      }
+    }
+  }
+}
+.popup {
+  .field.fieldDatepicker {
+    .datePickerArea {
+      margin-top: 0;
+    }
+  }
+  .datePickerArea {
+    .singleDatePicker {
+      padding-left: 2.5rem;
+    }
+  }
+}

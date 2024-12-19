@@ -1,0 +1,177 @@
+@@include("head.html",{
+  "title" : "REGISTER A CREDIT CARD"
+  })
+  
+  <body>
+    <div class="wrapper">
+      @@include('header.html',{
+      "btnPrev": true,
+      "menuBox" : false,
+      "title" : "REGISTER A CREDIT CARD",
+      "iconShare" : true
+      })
+  
+      <!-- Main -->
+      <main class="main">
+        <div class="detail-inner">
+          <div class="field-area">
+            <div class="field">
+              <div class="field-label">CREDIT CARD</div>
+              @@include('optionDropdown.html', {
+                'optionTitle': 'Select a Credit card',
+                'option': [
+                  {'title': 'title="selected"', 'value': 'Select a Credit card'},
+                  {'title': '', 'value': 'option02'},
+                  {'title': '', 'value': 'option03'},
+                  {'title': '', 'value': 'option04'}
+                ]
+              })
+            </div>
+
+            <div class="field">
+              <label for="input01" class="field-label">CARD NUMBER</label>
+              <div class="field-form">
+                <div class="input">
+                  <input type="text" name="input01" id="input01" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+                <div class="input">
+                  <input type="text" name="input02" id="input02" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+                <div class="input">
+                  <input type="text" name="input03" id="input03" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+                <div class="input">
+                  <input type="text" name="input04" id="input04" />
+                  <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="field-label">EXPIRATION DATE</div>
+              <div class="field-form">
+                @@include('optionDropdown.html', {
+                  'disabled': false,
+                  'optionTitle': 'Month',
+                  'option': [
+                    {'title': 'title="selected"', 'value': 'Month'},
+                    {'title': '', 'value': '1'},
+                    {'title': '', 'value': '2'},
+                    {'title': '', 'value': '3'}
+                  ]
+                })
+                @@include('optionDropdown.html', {
+                  'disabled': false,
+                  'optionTitle': 'Year',
+                  'option': [
+                    {'title': 'title="selected"', 'value': 'Year'},
+                    {'title': '', 'value': '20'},
+                    {'title': '', 'value': '21'},
+                    {'title': '', 'value': '22'}
+                  ]
+                })
+              </div>
+            </div>
+
+            <div class="field card-code">
+              <label for="input05" class="field-label">SECURITY CODE (CVV)</label>
+              <div class="input">
+                <input type="text" name="input05" id="input05" placeholder="3-4 digit code"/>
+                <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+              </div>
+            </div>
+            
+            <div class="massage-box icon-warning-gray">
+              To verify the credit card information you registered, there 
+              will be a temporary hold of GBP1. This fee is for verification
+              purposes only and your card will not be charged.
+            </div>
+          </div>
+        </div>
+
+        <!-- Terms and Conditions -->
+        <div class="detail-inner">
+          <div class="list-area">
+            <div class="list-header">
+              <div class="list-title">                
+                <div class="title-left">Terms and Conditions</div>
+              </div>
+            </div>
+            <div class="list-body">
+              <div class="agree-container">
+                <div class="agree-box-all">
+                  <div class="checkbox">
+                    <input type="checkbox" name="chk-all" id="chk-all">
+                    <label for="chk-all" class="check-icon">
+                      <span>I agree to all the following terms and conditions.</span>
+                    </label>
+                  </div>
+                  <ul class="agree-box">
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk01" id="chk01">
+                        <label for="chk01" class="check-icon">
+                          <span>Consent to terms and conditions</span>
+                        </label>
+                      </div>
+                      <div class="agree-right">
+                        <button type="button" class="icon-arrow" title="See terms"></button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk02" id="chk02">
+                        <label for="chk02" class="check-icon">
+                          <span>Consent to terms and conditions</span>
+                        </label>
+                      </div>
+                      <div class="agree-right">
+                        <button type="button" class="icon-arrow" title="See terms"></button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk03" id="chk03">
+                        <label for="chk03" class="check-icon">
+                          <span>Consent to terms and conditions</span>
+                        </label>
+                      </div>
+                      <div class="agree-right">
+                        <button type="button" class="icon-arrow" title="See terms"></button>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk04" id="chk04">
+                        <label for="chk04" class="check-icon">
+                          <span>Consent to terms and conditions</span>
+                        </label>
+                      </div>
+                      <div class="agree-right">
+                        <button type="button" class="icon-arrow" title="See terms"></button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //Terms and Conditions -->
+      </main>
+      <!-- // Main -->
+  
+      <!-- fixed bottom -->
+      <div class="fix-bottom-container">
+        <div class="button-box">
+          <button type="button" class="btn"><span>ADD AND CONTINUE</span></button>
+        </div>
+      </div>
+      <!-- //fixed bottom -->
+    </div>
+  </body>
+  
+  </html>

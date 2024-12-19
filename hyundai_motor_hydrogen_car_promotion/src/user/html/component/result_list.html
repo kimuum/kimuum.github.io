@@ -1,0 +1,33 @@
+<li class="result-list">
+  <div class="result-thumb-box">
+    <a href="javascript:void(0);">
+      <img class="lazy" data-src="../../assets/images/newsroom/@@newsThumbSrc" alt="@@newTitle" />
+    </a>
+  </div>
+  <div class="result-info-box">
+    <div class="result-info-top">
+      <!-- prettier-ignore -->
+      @@if(isBadge){
+        <p class="list-top">
+          <!-- prettier-ignore -->
+          <span class="badge @@if(isBadge.highlight){highlight}">@@if(isBadge.highlight === true){Press Releases}@@if(!isBadge.highlight){Insights}</span>
+          <span class="news-date">@@newsDate</span></p>
+      }
+      <!-- prettier-ignore -->
+      @@if(!isBadge){
+        <p class="list-top"><span class="news-date">@@newsDate</span></p>
+      }
+
+      <a href="javascript:void(0);">
+        <strong class="list-title">@@newTitle</strong>
+      </a>
+
+      <a href="javascript:void(0);">
+        <p class="list-info-text">@@newsInfoText</p>
+      </a>
+    </div>
+    <div class="result-info-bottom">
+      <a href="javascript:void(0);" class="btn-arrow-rt"><span>Read more</span></a>
+    </div>
+  </div>
+</li>

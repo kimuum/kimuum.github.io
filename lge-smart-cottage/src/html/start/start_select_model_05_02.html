@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 모델 선택"
+  })
+
+  <body>
+    <!-- set unique class : sub-page-select-model -->
+    <div class="wrapper sub-page-select-model">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : false,
+        "list" : false,
+        "className" : "fixed"
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <section class="section-container">
+          <div class="section-area">
+            <div class="section-left-box">
+              <div class="model-box full">
+                <div class="model-image-box swiper">
+                  <div class="swiper">
+                    <div class="swiper-wrapper">
+                      <!-- prettier-ignore -->
+                      @@loop("modelSlide.html", [
+                        {
+                          "image" : {
+                            "path" : "../../assets/images/img_interior_dark_01.jpg",
+                            "alt"  : "다크우드 인테리어",
+                          }
+                        },
+                        {
+                          "image" : {
+                            "path" : "../../assets/images/img_interior_dark_02.jpg",
+                            "alt"  : "다크우드 인테리어",
+                          }
+                        },
+                        {
+                          "image" : {
+                            "path" : "../../assets/images/img_interior_dark_03.jpg",
+                            "alt"  : "다크우드 인테리어",
+                          }
+                        },
+                      ])
+                    </div>
+                  </div>
+                </div>
+                <div class="slide-controller-box type-tan">
+                  <div class="swiper-button swiper-button-prev"></div>
+                  <div class="swiper-button swiper-button-next"></div>
+                </div>
+                <div class="model-price-box">
+                  <span class="label-box">예상가격</span>
+                  <span class="price-box">￦200,000,000<em class="tax">부가세 포함</em></span>
+                </div>
+              </div>
+            </div>
+            <div class="section-right-box">
+              <div class="layout-box">
+                <div class="layout-top-box">
+                  <div class="back-button-box">
+                    <button type="button" class="btn btn-back" title="뒤로가기"></button>
+                  </div>
+                </div>
+                <div class="layout-middle-box">
+                  <div class="select-model-container">
+                    <div class="select-model-area">
+                      <div class="select-model-top">
+                        <div class="title-box">
+                          <div class="step-box">STEP 4</div>
+                          <h2 class="title">인테리어를 선택해주세요</h2>
+                        </div>
+                      </div>
+                      <div class="select-model-bottom">
+                        <div class="label-box">구성</div>
+                        <div class="tab-content-box">
+                          <ul class="option-list-box">
+                            <!-- prettier-ignore -->
+                            @@loop("optionList.html", [
+                              {
+                                "viewMore": false,
+                                "id" : "model-option-1",
+                                "property" : "",
+                                "imageData" : null,
+                                "modelLabel": "화이트 인테리어",
+                                "modelDesc" : "LX Z:IN의 크림 화이트 컬러, 모노톤으로 구성된 깔끔한 인테리어",
+                                "modelMetaData" : null,
+                                "price" : "Free"
+                              },
+                              {
+                                "viewMore": false,
+                                "id" : "model-option-2",
+                                "property" : "checked",
+                                "imageData" : null,
+                                "modelLabel": "다크우드 인테리어",
+                                "modelDesc" : "자연적이고 따뜻한 느낌을 주는 우드톤으로 구성된 인테리어",
+                                "modelMetaData" : null,
+                                "price" : "Free"
+                              },
+                            ])
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="layout-bottom-box">
+                  <div class="button-box">
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "",
+                      "btnColor" : "btn-primary",
+                      "btnSize" : "large",
+                      "property" : "",
+                      "btnText" : "선택",
+                      "iconClass" : "",
+                      "iconLeft" : "",
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+  </body>
+</html>

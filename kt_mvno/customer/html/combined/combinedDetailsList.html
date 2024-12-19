@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "결합내역 조회 | 결합서비스 | 상품", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : combinedList -->
+    <div class="wrap combinedList">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-5', 'thirdMenu': 'active-4' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>결합내역 조회</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>상품</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>결합서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_product.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>결합내역 조회</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea combinedDetail">
+          <!-- [운영] KMVNO-3792 20230914 수정 반영 -->
+          <section class="contentInner">
+            <div class="combinedArticle">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchorWireless04" class="tabButton" aria-controls="tabConWireless04" role="tab" aria-selected="true"><span>알뜰폰+알뜰폰 무선 결합</span></button>
+                <button type="button" id="tabAnchorWireless05" class="tabButton" aria-controls="tabConWireless05" role="tab" aria-selected="false"><span>알뜰폰+KT 유/무선 결합</span></button>
+              </div>
+              <div class="tabContainer">
+                <div id="tabConWireless04" class="tabContent" role="tabpanel" aria-labelledby="tabAnchorWireless04">
+                  <div class="tableContainer captionShow">
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선
+                          <span class="ir">- 사업자, 휴대폰 번호, 요금제, 제공 혜택</span>
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row" class="alignCenter">사업자</th>
+                            <td class="alignCenter">KT M 모바일</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="alignCenter">휴대폰 번호</th>
+                            <td class="alignCenter">010-34**-*807</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="alignCenter">요금제</th>
+                            <td class="alignCenter">모두다 맘껏 7.0GB+</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="alignCenter">제공 혜택</th>
+                            <td class="alignCenter">5GB(매월)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          <span class="ir">사업자, 휴대폰 번호, 요금제</span>
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row" class="alignCenter">사업자</th>
+                            <td class="alignCenter">KT M 모바일</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="alignCenter">휴대폰 번호</th>
+                            <td class="alignCenter">010-34**-*807</td>
+                          </tr>
+                          <tr>
+                            <th scope="row" class="alignCenter">요금제</th>
+                            <td class="alignCenter">모두다 맘껏 7.0GB+</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <ul class="dotList marginBtmReset">
+                      <li class="beforeDot">결합 해지는 해당 사업자 고객센터를 통해 신청 바랍니다.</li>
+                    </ul>
+                  </div>
+                </div>
+                <div id="tabConWireless05" class="tabContent" role="tabpanel" aria-labelledby="tabAnchorWireless05">
+                  <!-- [운영] KMVNO-3792 20230921 추가 -->
+                  <div class="nodataContainer">결합 내역이 없습니다.</div>
+                  <!-- //[운영] KMVNO-3792 20230921 추가 -->
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

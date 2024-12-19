@@ -1,0 +1,106 @@
+.table-box {
+  padding: 1.2rem 2.8rem 1.2rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid $primary-15;
+  background-color: $neutral-10;
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    thead {
+      border-bottom: 1px solid rgba($primary-100, 0.1);
+      th {
+        padding-bottom: 0.4rem;
+        text-align: right;
+        .badge-circle {
+          position: relative;
+          top: -0.3rem;
+          display: inline-block;
+          margin-right: 0.4rem;
+        }
+        .label {
+          @include font(1.4rem, 400, $text-03, 2.8rem);
+        }
+        .icon {
+          position: relative;
+          top: 0.2rem;
+          display: inline-block;
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-left: 0.2rem;
+
+          .btn-tooltip {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+
+          .ic {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+
+          .tooltip-box {
+            position: absolute;
+            top: calc(100% + 0.4rem);
+            right: -0.4rem;
+            width: 24.8rem;
+            word-break: keep-all;
+            text-align: right;
+          }
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:first-child {
+          td,
+          th {
+            padding-top: 1.2rem;
+          }
+        }
+      }
+
+      td,
+      th {
+        height: 5.4rem;
+        vertical-align: middle;
+      }
+
+      td {
+        text-align: right;
+        padding: 0.8rem 1.2rem 0.8rem 1.2rem;
+        &:last-child {
+          padding: 0.8rem 0 0.8rem 1.2rem;
+        }
+
+        .data-box {
+          .data {
+            @include font(1.4rem, 700, $text-02, 2rem);
+          }
+        }
+        .sub-data {
+          margin-top: 0.2rem;
+          @include font(1.2rem, 400, $text-04, 1.6rem);
+        }
+      }
+
+      th {
+        padding: 0.8rem 1.2rem 0.8rem 0;
+        text-align: left;
+        .label-box {
+          .label {
+            @include font(1.4rem, 400, $text-04, 2rem);
+            word-break: keep-all;
+          }
+          .sub-label {
+            display: block;
+            @include font(1.2rem, 400, $text-04, 1.6rem);
+            word-break: keep-all;
+          }
+        }
+      }
+    }
+  }
+}

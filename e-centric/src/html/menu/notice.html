@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 공지사항"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-notice
+      -->
+      <main class="main-container page-notice">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "공지사항",
+          },
+          "button" : null
+        })
+
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- notice -->
+            <div class="notice-box">
+              <div class="notice-list-box">
+                <!-- [접근성] 속성 추가 -->
+                <div class="notice-list" role="button">
+                  <div class="notice-list-left">
+                    <div class="notice-title-box">
+                      <!-- 새로운 공지사항 인 경우 노출 -->
+                      <!-- prettier-ignore -->
+                      @@loop("badgeCircle.html",[
+                      {
+                        "badgeColor": "primary",
+                        "badgeText" : "N",
+                        "badgeLabel": "새로운 게시물",
+                      }
+                      ])
+                      <h2 class="notice-title">
+                        <span class="title">
+                          <span class="category">[공지]</span>
+                          <span class="text">공지사항 타이틀을 노출합니다. 노출합니다. 노출합니다. 노출합니다.</span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="date-box">
+                      <span>YYYY.MM.DD</span>
+                    </div>
+                  </div>
+                  <div class="notice-list-right">
+                    <div class="view-more" title="공지사항 상세보기">
+                      <i class="ic ic-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- [접근성] 속성 추가 -->
+                <div class="notice-list" role="button">
+                  <div class="notice-list-left">
+                    <div class="notice-title-box">
+                      <!-- 새로운 공지사항 인 경우 노출 -->
+                      <!-- prettier-ignore -->
+                      @@loop("badgeCircle.html",[
+                      {
+                        "badgeColor": "primary",
+                        "badgeText" : "N",
+                        "badgeLabel": "새로운 게시물",
+                      }
+                      ])
+                      <h2 class="notice-title">
+                        <span class="title">
+                          <span class="category">[공지]</span>
+                          <span class="text">공지사항 타이틀을 노출합니다. 노출합니다. 노출합니다. 노출합니다.</span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="date-box">
+                      <span>YYYY.MM.DD</span>
+                    </div>
+                  </div>
+                  <div class="notice-list-right">
+                    <div class="view-more" title="공지사항 상세보기">
+                      <i class="ic ic-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- [접근성] 속성 추가 -->
+                <div class="notice-list" role="button">
+                  <div class="notice-list-left">
+                    <div class="notice-title-box">
+                      <!-- 새로운 공지사항 인 경우 노출 -->
+                      <!-- prettier-ignore -->
+                      @@loop("badgeCircle.html",[
+                      {
+                        "badgeColor": "primary",
+                        "badgeText" : "N",
+                        "badgeLabel": "새로운 게시물",
+                      }
+                      ])
+                      <h2 class="notice-title">
+                        <span class="title">
+                          <span class="category">[공지]</span>
+                          <span class="text">공지사항 타이틀을 노출합니다. 노출합니다. 노출합니다. 노출합니다.</span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="date-box">
+                      <span>YYYY.MM.DD</span>
+                    </div>
+                  </div>
+                  <div class="notice-list-right">
+                    <div class="view-more" title="공지사항 상세보기">
+                      <i class="ic ic-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- [접근성] 속성 추가 -->
+                <div class="notice-list" role="button">
+                  <div class="notice-list-left">
+                    <div class="notice-title-box">
+                      <!-- 새로운 공지사항 인 경우 노출 -->
+                      <!-- prettier-ignore -->
+                      @@loop("badgeCircle.html",[
+                      {
+                        "badgeColor": "primary",
+                        "badgeText" : "N",
+                        "badgeLabel": "새로운 게시물",
+                      }
+                      ])
+                      <h2 class="notice-title">
+                        <span class="title">
+                          <span class="category">[공지]</span>
+                          <span class="text">공지사항 타이틀을 노출합니다. 노출합니다. 노출합니다. 노출합니다.</span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="date-box">
+                      <span>YYYY.MM.DD</span>
+                    </div>
+                  </div>
+                  <div class="notice-list-right">
+                    <div class="view-more" title="공지사항 상세보기">
+                      <i class="ic ic-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- [접근성] 속성 추가 -->
+                <div class="notice-list" role="button">
+                  <div class="notice-list-left">
+                    <div class="notice-title-box">
+                      <h2 class="notice-title">
+                        <span class="title">
+                          <span class="category">[공지]</span>
+                          <span class="text">공지사항 타이틀을 노출합니다. 노출합니다. 노출합니다. 노출합니다.</span>
+                        </span>
+                      </h2>
+                    </div>
+                    <div class="date-box">
+                      <span>YYYY.MM.DD</span>
+                    </div>
+                  </div>
+                  <div class="notice-list-right">
+                    <div class="view-more" title="공지사항 상세보기">
+                      <i class="ic ic-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

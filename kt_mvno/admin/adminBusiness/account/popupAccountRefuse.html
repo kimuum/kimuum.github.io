@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "계정 반려" , "headProjectName": "| 계정 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>계정 반려</span></button>
+    </div>
+    <!-- 팝업 고유 클래스 : popupAccountRefuse -->
+    <div class="popup popupAccountRefuse hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">계정 반려</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>선택한 계정을 반려하시겠습니까?</p>
+            <div class="field fieldTextarea">
+              <div class="fieldForm">
+                <div class="textarea">
+                  <textarea name="" id="input-id-01" cols="30" rows="10" placeholder="반려사유를 입력해주세요."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnDim" onclick="togglePopup('btnID', 'popupDefault')"><span>반려</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "배송주문조회 상세 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230707 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap usimDeliveryMain">
+      <!-- 페이지 고유클래스 : usimDeliveryMain -->
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': 'active-2' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>배송조회상세</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>배송주문조회</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="dataInner">
+                <div class="deliveryTitle">
+                  <strong class="number">주문번호 123456</strong>
+                  <span class="date">주문날짜 : 2022.06.21</span>
+                </div>
+                <!-- [VOS2차] 결함ID 1122882 수정 -->
+                <div class="deliveryStep detail">
+                  <div class="step">
+                    <div class="iconBgDelivery01"></div>
+                    <strong class="title">배송 준비중</strong>
+                  </div>
+                  <div class="step on">
+                    <!-- 현재 상태 표시 클래스 on -->
+                    <div class="iconBgDelivery02"></div>
+                    <strong class="title">배송중</strong>
+                  </div>
+                  <div class="step">
+                    <div class="iconBgDelivery03"></div>
+                    <strong class="title">배송완료</strong>
+                  </div>
+                </div>
+                <!-- //[VOS2차] 결함ID 1122882 수정 -->
+              </div>
+              <!-- //배송 현황 -->
+
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">주문 상품정보</strong>
+                </div>
+                <div class="orderContainer">
+                  <div class="orderItem">
+                    <div class="itemMiddle">
+                      <div class="orderInfoWrap">
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_usim.jpg" alt="" />
+                        </div>
+                        <div class="orderContent">
+                          <strong class="stateTitlePrimary">배송중</strong>
+                          <div class="orderText">
+                            <p>일반유심</p>
+                            <p><span class="number">6,600</span><span class="won">원</span></p>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 
+                      <div class="orderSideWrap">
+                        <button type="button" class="btnOderCancel"><span>주문 취소</span></button>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //주문 상품정보 -->
+
+              <div class="dataInner">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">주문 상세내역</strong>
+                </div>
+
+                <div class="tableContainer normalBgTable">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        주문 상세내역 - 주문자명, 배송지정보, 수령인명, 연락처
+                      </caption>
+                      <colgroup>
+                        <col style="width: 25%; min-width: 106px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">주문자명</th>
+                          <td>임태*</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">배송지정보</th>
+                          <td>
+                            <p>05551</p>
+                            <p>서울특별시 송파구 올림픽로 300 *****</p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">수령인명</th>
+                          <td>고*</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연락처</th>
+                          <td>010-12**-*000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- //주문 상세내역 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

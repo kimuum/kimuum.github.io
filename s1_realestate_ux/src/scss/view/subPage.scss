@@ -1,0 +1,306 @@
+.sub-page-container {
+  width: $contentSize;
+  margin: auto;
+  padding: 13.2rem 0;
+
+  .sub-page-top {
+    @include flex(row, space-between, flex-start);
+  }
+  .sub-page-title {
+    @include font(4rem, 700, $black, 5.6rem, 0);
+    word-break: keep-all;
+  }
+  .sub-page-desc {
+    margin-top: 1.5rem;
+    @include font(1.6rem, 500, $color_bfb, 1.6rem, 0);
+    word-break: keep-all;
+  }
+  .sub-page-page-desc-box {
+    margin-top: 1.5rem;
+    @include font(1.6rem, 500, $color_bfb, normal);
+    word-break: keep-all;
+  }
+  .sub-page-middle {
+    margin-top: 6.4rem;
+  }
+  .sub-page-bottom {
+    @include flex(row, flex-end, flex-start);
+    margin-top: 4.8rem;
+  }
+
+  .filter-box {
+    margin: 2.4rem 0 5.6rem;
+    & > .button-box {
+      @include flex(row, flex-end, flex-start);
+      margin-top: 4.8rem;
+    }
+    .title {
+      margin-bottom: 1.8rem;
+      @include font(1.8rem, 500, $black, normal, 0);
+    }
+    .field-search {
+      .field-form {
+        width: 48.8rem;
+        min-width: 48.8rem;
+        .input {
+          width: 100%;
+          input[type='search'] {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .desc-box {
+    width: 100%;
+    margin-top: 1.3rem;
+    @include font(1.4rem, 400, $color_666, normal, 0);
+    p {
+      @include flex(row, flex-start, flex-start);
+      margin-top: 0.8rem;
+      word-break: keep-all;
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        top: 0.6rem;
+        min-width: 0.4rem;
+        height: 0.4rem;
+        margin-right: 0.4rem;
+        border-radius: 100%;
+        background-color: $color_b2b;
+      }
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+  .term-container {
+    margin-top: 8rem;
+    .term-top {
+      margin-bottom: 1.6rem;
+      .title-box {
+        @include font(1.8rem, 500, $black, normal, 0);
+      }
+    }
+  }
+
+  .field-input {
+    &.field-large {
+      &.field-product-name {
+        input[type='text'] {
+          width: 51.6rem;
+        }
+      }
+    }
+  }
+}
+
+.detail-info-container {
+  // display: none;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 100rem;
+  .detail-info-area {
+    padding: 6.4rem;
+  }
+  .detail-info-top {
+    margin-bottom: 2.2rem;
+    .title-box {
+      @include font(2.4rem, 700, $black, normal, 0);
+    }
+  }
+}
+
+@media #{$tablet} {
+  .sub-page-container {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .sub-page-container {
+        width: 100%;
+        padding: 2rem 2rem 4rem;
+        &.lost-item {
+          padding-bottom: 0;
+        }
+        &.voc {
+          padding-bottom: 0;
+          .tab-content-box {
+            padding-bottom: 4rem;
+          }
+        }
+        &.notice,
+        &.survey-list {
+          .filter-view-container {
+            .no-content {
+              position: fixed;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              height: auto;
+              margin-top: 5.2rem;
+            }
+          }
+        }
+
+        .sub-page-top {
+          @include flex(column, flex-start, flex-start);
+        }
+
+        .sub-page-title {
+          @include font(2.4rem, 700, $black, 3.4rem);
+        }
+
+        .step-container {
+          margin-top: 2.4rem;
+          padding-bottom: 2.4rem;
+        }
+
+        .sub-page-middle {
+          margin-top: 4rem;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        .term-container {
+          margin-top: 3rem;
+        }
+
+        .sub-page-bottom {
+          margin-top: 0;
+          .button-box {
+            padding: 4rem 0;
+          }
+        }
+
+        .filter-box {
+          margin: 0;
+          + .filter-box {
+            margin-top: 6.4rem;
+          }
+
+          > .button-box {
+            margin-top: 3.2rem;
+          }
+
+          &:not(.type2) {
+            .filter {
+              border: 0;
+
+              .filter-row {
+                display: block;
+                + .filter-row {
+                  margin-top: 3.2rem;
+                  border-top: 0;
+                }
+                .filter-list {
+                  display: block;
+                  + .filter-list {
+                    margin-top: 3.2rem;
+                  }
+                  .filter-label {
+                    display: block;
+                    width: auto;
+                    margin-bottom: 1.2rem;
+                    background-color: transparent;
+                    text-align: left;
+                    @include font(1.4rem, 500, $color_353, normal);
+                  }
+                  .filter-info {
+                    max-width: 100%;
+                    padding: 0;
+                    @include font(1.6rem, 700, $black, normal);
+                    .download {
+                      font-size: 1.4rem;
+                      font-weight: 700;
+                    }
+                    .download-box {
+                      position: relative;
+                      padding: 1.6rem 2rem;
+                      background-color: $color_f2f;
+                      border-radius: 0.8rem;
+                      &::before {
+                        margin-right: 0.8rem;
+                      }
+                      .file-size,
+                      .file-name {
+                        z-index: 11;
+                        position: relative;
+                      }
+                      .file-size {
+                        display: none;
+                      }
+                      .download-link {
+                        z-index: 12;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        display: block;
+                        margin: 0;
+                        font-size: 0;
+                        text-indent: -9999px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .title {
+            font-size: 2rem;
+            font-weight: 700;
+          }
+
+          .field-search {
+            .field-form {
+              width: 100%;
+              min-width: 100%;
+            }
+          }
+        }
+
+        .field-input {
+          &.field-large {
+            &.field-product-name {
+              input[type='text'] {
+                width: 100%;
+              }
+            }
+          }
+        }
+
+        .desc-box {
+          margin-top: 3.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 380px) {
+  html.mobile {
+    .sub-page-container {
+      &.notice,
+      &.survey-list {
+        .filter-view-container {
+          .no-content {
+            position: static;
+            transform: none;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

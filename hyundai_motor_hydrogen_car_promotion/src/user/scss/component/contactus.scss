@@ -1,0 +1,106 @@
+.contactus-container {
+  max-width: calc(117rem + 4rem);
+  margin: 14.5rem auto 24rem;
+  padding: 0 2rem;
+}
+.contactus-footer {
+  margin-top: 6rem;
+}
+.terms-agreement-box {
+  & + & {
+    margin-top: 2rem;
+  }
+  .terms-agreement-middle {
+    margin-bottom: 1.2rem;
+  }
+  .terms-agreement-bottom {
+    padding-left: 4rem;
+  }
+  .terms-text-normal {
+    @include font(1.6rem, 400, $color-888888, 2.4rem);
+  }
+  .checkbox {
+    input[type='checkbox'] {
+      + .label {
+        @include fontfamtext;
+        font-size: 2rem;
+        &::after {
+          display: none;
+        }
+        .check-icon {
+          margin-right: 1.5rem;
+        }
+      }
+    }
+  }
+  .field-error {
+    margin-top: 1.2rem;
+  }
+}
+/* Inquiry received complete */
+.inquiry-popup-container {
+  @include font(1.4rem, 400, $black, 1.8);
+}
+
+/* Privacy Policy */
+.privacy-popup-container {
+  overflow-y: auto;
+  height: 100%;
+  .terms-area {
+    display: block;
+    margin-bottom: 1.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .terms-title {
+      display: block;
+      margin-bottom: 1.5rem;
+      @include font(2rem, 400, $black, 1.5);
+      letter-spacing: -0.5px;
+    }
+    .terms-content {
+      display: block;
+      @include font(1.2rem, 400, $color-999999, 1.8);
+      letter-spacing: -0.5px;
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .contactus-container {
+    padding: 0 2rem;
+    margin: 8rem 0 16rem;
+  }
+  .contactus-footer {
+    margin-top: 4rem;
+    .buttons-box {
+      button {
+        &:only-child {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+  .terms-agreement-box {
+    .checkbox {
+      input[type='checkbox'] {
+        + .label {
+          font-size: 1.8rem;
+          .check-icon {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+    .terms-agreement-middle {
+      margin-bottom: 1.4rem;
+    }
+    .terms-agreement-bottom {
+      padding-left: 2.8rem;
+    }
+    .terms-text-normal {
+      font-size: 1.4rem;
+      line-height: 2rem;
+    }
+  }
+}

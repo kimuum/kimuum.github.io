@@ -1,0 +1,470 @@
+@@include('head.html', {
+'title': 'MY ORDERS'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+
+      <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 화면 전체 스크롤 -->
+      <div class="content-container" style="transform: translateY(0px);">
+        <div class="sub-title-container">
+          <div class="sub-main-title">MY ORDERS</div>
+        </div>
+        <div class="sub-content-container none-flex">
+          <!-- my page contents -->
+          <div class="sub-content-area">
+            <div class="my-page-content-container">
+              <div class="my-page-content-middle">
+                <div class="tab-container">
+                  <div class="tab-button-area">
+                    <div class="tab-button-left">
+                      <!-- 
+                            현재 위치 포커스 클래스 : focused
+                          -->
+                      <button type="button" class="btn-tab selected"><span>orders</span></button>
+                      <button type="button" class="btn-tab"><span>cancelled orders</span></button>
+                    </div>
+                    <!-- 기획서 v1.07 동기화 : 20230920 콤보박스 추가 -->
+                    <div class="tab-button-right">
+                      <div class="dropdown-container">
+                        <!-- 활성화 클래스 : active -->
+                        <div class="dropdown-area">
+
+                          <!-- 포커스클래스 : focused -->
+                          <button type="button" class="btn-open">
+                            <span>Past 3 months</span>
+                          </button>
+                          <ul class="dropdown-list">
+                            <li class="list focused">
+                              <button type="button" class="option"><span>Past 3 months</span></button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //기획서 v1.07 동기화 : 20230920 콤보박스 추가 -->
+                  </div>
+                  <div class="tab-content-container">
+                    <div class="tab-content-area">
+                      <!-- 230907-V1.05 수정 -->
+                      <div class="order-info-box">
+                        <div class="info-header-wrap">
+
+                          <!-- 231020 전체취소 버튼 추가 -->
+                          <p class="header-title">ORDER NUMBER : <span class="order-number">AA12349575h6</span></p>
+                          <button type="button" class="btn-solid-dark"><span>Cancel order</span></button>
+                        </div>
+                        <div class="info-body-wrap order-summary">
+                          <div class="info-list-box">
+                            <div class="info-list">
+                              <div class="info-label">PAYMENT METHOD</div>
+                              <div class="info-value">Mastercard / ****-1199</div>
+                            </div>
+                            <div class="info-list">
+                              <div class="info-label">ORDER DATE</div>
+                              <div class="info-value">January 5, 2023</div>
+                            </div>
+                          </div>
+                          <div class="order-summary-box">
+                            <p class="summary-item">
+                              <span class="item label">Items</span>
+                              <span class="item value">4</span>
+                            </p>
+                            <p class="summary-item">
+                              <span class="item label">Items Total</span>
+                              <span class="item value">$90.40</span>
+                            </p>
+                            <p class="summary-item">
+                              <span class="item label">Option</span>
+                              <span class="item value">$4.40</span>
+                            </p>
+                            <p class="summary-item">
+                              <span class="item label">S&H</span>
+                              <span class="item value">$4.40</span>
+                            </p>
+                            <p class="summary-item">
+                              <span class="item label">tax</span>
+                              <span class="item value">$5.00</span>
+                            </p>
+                            <p class="summary-item">
+                              <span class="item label">Coupon</span>
+                              <span class="item value">-$10.00</span>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="info-footer-wrap">
+                          <span class="footer-label">Estimated Total</span>
+                          <sapn class="footer-value">$ 95.80</sapn>
+                        </div>
+                      </div>
+                      <!-- //230907-V1.05 수정 -->
+                      <!-- 주문 목록 -->
+                      <div class="order-product-item-box">
+                        <div class="product-item-area">
+                          <!-- 230907-V1.05 수정 -->
+                          <!-- 기획서 v1.07 동기화 : 20230920 상태 정의 추가 -->
+                          <!-- 
+                            상품 상태 클래스 목록
+                            배송/반품/교환 준비중 : .status-prepare
+                            배송/반품/교환 진행중 : .status-ing
+                            배송/반품/교환 완료 : .status-completed
+                            취소/취소처리중/취소완료 : .status-cancelled
+                          -->
+                          <!-- //기획서 v1.07 동기화 : 20230920 상태 정의 수정 -->
+                          <div class="product-box-container status-prepare">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Preparing for shipment</span>
+                                <span>Arriving January 10~ January 15</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">OPTION: $5.50</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit focused">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>CANCEL ITEM</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="product-box-container status-ing">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">In Transit</span>
+                                <span>Arriving January 7, 2023</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit focused">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>RETURN ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>EXCHANGE ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>TRACK PACKAGE</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="product-box-container status-completed">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Delivered</span>
+                                <span>Arriving January 10~ January 30</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>RETURN ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>EXCHANGE ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>TRACK PACKAGE</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-box-container status-prepare">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Exchange request</span>
+                                <span class="status-label">Exchange processing</span>
+                                <span class="status-label">Return request</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>TRACK PACKAGE</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-box-container status-ing">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Exchange processing</span>
+                                <span class="status-label">Return processing</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>TRACK PACKAGE</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-box-container status-completed">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Exchange completed</span>
+                                <span class="status-label">Return complete</span>
+                                <span class="status-label">Refund completed</span>
+                              </div>
+                              <!-- 기획서 v1.14 동기화 : Refund completed 상태 일 경우 view order details 버튼 삭제 -->
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>view order details</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit">
+                                  <span>buy it again</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>RETURN ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>EXCHANGE ITEM</span>
+                                </button>
+                                <button type="button" class="btn-order-submit">
+                                  <span>TRACK PACKAGE</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- //230907-V1.05 수정 -->
+                        </div>
+                      </div>
+                      <!-- //주문 목록 -->
+
+                      <!-- 기획서 v1.07 동기화 : 20230920 위치 수정 -->
+                      <!-- 주문 목록 없는 경우 -->
+                      <div class="notice-container icon-billing">
+                        <div class="text-notice-area">
+                          <div class="text-large-box">
+                            No order history found.
+                          </div>
+                          <div class="text-middle-box">
+                            Use the search above to see the past orders.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //주문 목록 없는 경우 -->
+                      <!-- //기획서 v1.07 동기화 : 20230920 위치 수정 -->
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //my page contents -->
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

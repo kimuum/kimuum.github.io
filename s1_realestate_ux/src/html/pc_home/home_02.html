@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/lib/sortable.min.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | Home</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header-container owner">
+        <div class="header-area">
+          <div class="header-top-container">
+            <div class="header-top-area">
+              <div class="header-top-left">
+                <div class="search-box">
+                  <div class="building-select-box">
+                    <div class="field field-dropdown">
+                      <div class="field-form">
+                        <div class="dropdown-container dropdown-small">
+                          <div class="dropdown-area">
+                            <div class="dropdown-top">
+                              <button type="button" class="btn-dropdown">
+                                <span class="text">ENA 빌딩</span>
+                                <span class="placeholder hidden"></span>
+                              </button>
+                              <div class="dropdown-list-container">
+                                <div class="dropdown-list-area">
+                                  <div class="dropdown-list-box">
+                                    <div class="dropdown-list active">ENA 빌딩</div>
+                                    <div class="dropdown-list">한화이글스파크스타디움</div>
+                                    <div class="dropdown-list">나는길이가긴빌딩입니다.!!</div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button-box">
+                    <button type="button" class="btn-go-to-page">
+                      <span>건물 정보</span>
+                    </button>
+                    <div class="tooltip-container">
+                      <div class="tooltip-area">
+                        <div class="tooltip-icon-box">
+                          <button type="button" class="btn-tooltip"><i class="ic ic-tooltip"></i></button>
+                        </div>
+                        <div class="tooltip-box">
+                          <ul>
+                            <li class="tooltip-text">
+                              <span>현재 설정된 건물의 정보입니다. 건물은 변경이 가능합니다.</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="header-top-right">
+                <div class="header-menu-lists">
+                  <div class="header-menu-list">
+                    <div class="user-box">
+                      <div class="user-name-box">
+                        <span>에스원님 안녕하세요!</span>
+                      </div>
+                      <div class="button-box">
+                        <button type="button" class="btn btn-secondary btn-xsmall btn-edit">
+                          <span>내 정보</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-menu-list">
+                    <div class="button-box">
+                      <button type="button" class="btn-go-to-page">
+                        <span>다른 건물 등록</span>
+                      </button>
+                      <div class="tooltip-container">
+                        <div class="tooltip-area">
+                          <div class="tooltip-icon-box">
+                            <button type="button" class="btn-tooltip"><i class="ic ic-tooltip"></i></button>
+                          </div>
+                          <div class="tooltip-box">
+                            <ul>
+                              <li class="tooltip-text">
+                                <span>다른 건물을 등록하시면 해당 텍스트를 눌러 주세요.</span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="header-menu-list">
+                    <div class="link-box">
+                      <button type="button" class="btn-icon btn-mgmt">
+                        <span>입주사 관리</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="header-menu-list">
+                    <!--
+                  comment : 로그인 시 노출
+                -->
+                    <div class="logout-box">
+                      <button type="button" class="btn-text btn-logout">
+                        <span>로그아웃</span>
+                      </button>
+                    </div>
+                    <!--
+                  comment : 로그아웃 시 노출
+                -->
+                    <!-- <div class="login-box">
+                  <p class="guide">로그인이 필요합니다</p>
+                  <button type="button" class="btn btn-secondary btn-xsmall btn-login">
+                    <span>로그인</span>
+                  </button>
+                </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-bottom-container">
+            <div class="header-bottom-area">
+              <div class="header-bottom-left">
+                <div class="header-logo-box">
+                  <a href="javascript:void(0);" class="header-logo-link">
+                    <img src="../../assets/images/img_logo.svg" alt="에스원 LIVIS" />
+                  </a>
+                </div>
+              </div>
+              <div class="header-bottom-middle">
+                <div class="gnb-box">
+                  <ul class="gnb-lists">
+                    <li class="gnb-list">
+                      <a href="javascript:void(0)" class="link">문의하기</a>
+                    </li>
+                    <li class="gnb-list">
+                      <a href="javascript:void(0)" class="link">문의 내역</a>
+                    </li>
+                    <li class="gnb-list">
+                      <a href="javascript:void(0)" class="link">건물 점검</a>
+                    </li>
+                    <li class="gnb-list">
+                      <a href="javascript:void(0)" class="link">공사 관리</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="header-bottom-right">
+                <div class="menu-button-box">
+                  <button type="button" class="btn-icon btn-menu" title="메뉴"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-container">
+            <div class="menu-area">
+              <div class="menu-top">
+                <div class="menu-title-box">
+                  <span>전체메뉴</span>
+                </div>
+                <div class="menu-button-box">
+                  <button type="button" class="btn-menu-close" title="메뉴 닫기"></button>
+                </div>
+              </div>
+              <div class="menu-middle">
+                <div class="menu">
+                  <ul class="menu-lists">
+                    <li class="menu-list">
+                      <div class="depth-1-box">
+                        <button type="button" class="name">건물 현황</button>
+                      </div>
+                      <div class="depth-2-box">
+                        <ul class="depth-2-menu-lists">
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">문의 현황</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">점검 관리</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">건물 리포트</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">에너지 실적 조회</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">에너지 증감 분석</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list">
+                      <div class="depth-1-box">
+                        <button type="button" class="name">건물 기본 정보</button>
+                      </div>
+                      <div class="depth-2-box">
+                        <ul class="depth-2-menu-lists">
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">건물 정보</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">관리 구역</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">장비 관리</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">도면 관리</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">법규 관리</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">운영메뉴얼</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list">
+                      <div class="depth-1-box">
+                        <button type="button" class="name">문의하기</button>
+                      </div>
+                      <div class="depth-2-box">
+                        <ul class="depth-2-menu-lists">
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link active">업무 문의 등록</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">서비스 문의 등록</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">나의 문의 내역</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">오늘의 문의 내역</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list">
+                      <div class="depth-1-box">
+                        <button type="button" class="name">분실물 관리</button>
+                      </div>
+                      <div class="depth-2-box">
+                        <ul class="depth-2-menu-lists">
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">분실물 조회</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">습득물 등록</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="menu-list">
+                      <div class="depth-1-box">
+                        <button type="button" class="name">고객센터</button>
+                      </div>
+                      <div class="depth-2-box">
+                        <ul class="depth-2-menu-lists">
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">공지사항</a>
+                          </li>
+                          <li class="depth-2-menu-list">
+                            <a href="javascript:void(0)" class="link">고객만족도 설문</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- prettier-ignore -->
+      @@include("../../block/banner.html")
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="main-container">
+            <div class="main-area">
+              <!-- Block - ENA 빌딩 현황입니다. -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-top">
+                    <div class="main-block-top-left">
+                      <h2 class="main-block-title">ENA 빌딩 현황입니다.</h2>
+                    </div>
+                    <div class="main-block-top-right">
+                      <div class="refresh-button-box">
+                        <button type="button" class="btn-refresh">
+                          <span>2023년 01월 01일</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="main-block-middle">
+                    <div class="building-state-container">
+                      <div class="building-state-area">
+                        <div class="building-state-middle">
+                          <div class="building-state-middle-left">
+                            <div class="building-state-box">
+                              <div class="building-state-box-top">
+                                <div class="title-box">
+                                  <span>전체 문의 내역</span>
+                                  <span class="date-box">2023년 01월</span>
+                                </div>
+                                <div class="link-box">
+                                  <a href="javascript:void(0);" class="link">바로가기</a>
+                                </div>
+                              </div>
+
+                              <div class="building-state-box-middle">
+                                <div class="state-list-box">
+                                  <div class="state-lists">
+                                    <div class="state-list">
+                                      <div class="label-box">전체 문의</div>
+                                      <div class="data-box primary">
+                                        <span class="data">1000</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">조치 예정</div>
+                                      <div class="data-box primary">
+                                        <span class="data">50</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">조치 완료</div>
+                                      <div class="data-box">
+                                        <span class="data">950</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="building-state-box">
+                              <div class="building-state-box-top">
+                                <div class="title-box">
+                                  <span>오늘의 문의 현황</span>
+                                </div>
+                              </div>
+
+                              <div class="building-state-box-middle">
+                                <div class="building-progress-box">
+                                  <!-- .building-progress : typeColor 클래스명 설명 
+                                    default : 기타, .primary : 고장수리 ,
+                                    .green : 온도 조절, .orange : 청소 교체 ,
+                                    .purple : 냉난방 , .pink : 상품문의 
+                                  -->
+                                  <div class="building-progress primary">
+                                    <div class="legend-box">
+                                      <div class="label">고장/수리/불편신고</div>
+                                    </div>
+                                    <div class="progress-box">
+                                      <div class="progress-bar">
+                                        <div class="value">완료율<span class="unit">60</span>%</div>
+                                        <div class="bar" style="width: 60%"></div>
+                                      </div>
+                                      <div class="info-text">
+                                        <span class="text">전체건수</span>
+                                        <span class="value">100건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="building-progress green">
+                                    <div class="legend-box">
+                                      <div class="label">온도 조절</div>
+                                    </div>
+                                    <div class="progress-box">
+                                      <div class="progress-bar">
+                                        <div class="value">완료율<span class="unit">60</span>%</div>
+                                        <div class="bar" style="width: 60%"></div>
+                                      </div>
+                                      <div class="info-text">
+                                        <span class="text">전체건수</span>
+                                        <span class="value">100건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="building-progress orange">
+                                    <div class="legend-box">
+                                      <div class="label">청소/소모품 교체</div>
+                                    </div>
+                                    <div class="progress-box">
+                                      <div class="progress-bar">
+                                        <div class="value">완료율<span class="unit">40</span>%</div>
+                                        <div class="bar" style="width: 40%"></div>
+                                      </div>
+                                      <div class="info-text">
+                                        <span class="text">전체건수</span>
+                                        <span class="value">10건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="building-progress pink">
+                                    <div class="legend-box">
+                                      <div class="label">냉난방/조명 연장 신청</div>
+                                    </div>
+                                    <div class="progress-box">
+                                      <div class="progress-bar">
+                                        <div class="value">완료율<span class="unit">60</span>%</div>
+                                        <div class="bar" style="width: 60%"></div>
+                                      </div>
+                                      <div class="info-text">
+                                        <span class="text">전체건수</span>
+                                        <span class="value">100건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="building-state-middle-right">
+                            <div class="building-state-box">
+                              <div class="building-state-box-top">
+                                <div class="title-box">
+                                  <span>전체 건물 점검 내역</span>
+                                  <span class="date-box">2023년 01월</span>
+                                </div>
+                                <div class="link-box">
+                                  <a href="javascript:void(0);" class="link">바로가기</a>
+                                </div>
+                              </div>
+
+                              <div class="building-state-box-middle">
+                                <div class="state-list-box">
+                                  <div class="state-lists">
+                                    <div class="state-list">
+                                      <div class="label-box">전체 점검 현황</div>
+                                      <div class="data-box primary">
+                                        <span class="data">21,000</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">점검 예정</div>
+                                      <div class="data-box primary">
+                                        <span class="data">50</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">점검 완료</div>
+                                      <div class="data-box">
+                                        <span class="data">950</span>
+                                        <span class="unit">건</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="building-state-box">
+                              <div class="building-state-box-top">
+                                <div class="title-box">
+                                  <span>에너지 사용량</span>
+                                  <div class="tooltip-container">
+                                    <div class="tooltip-area">
+                                      <div class="tooltip-icon-box">
+                                        <button type="button" class="btn-tooltip"><i class="ic ic-tooltip"></i></button>
+                                      </div>
+                                      <div class="tooltip-box">
+                                        <ul>
+                                          <li class="tooltip-text">
+                                            <span>에너지 유형에 따라 날짜 기준이 다를 수 있어요.</span>
+                                          </li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="link-box">
+                                  <a href="javascript:void(0);" class="link">바로가기</a>
+                                </div>
+                              </div>
+
+                              <div class="building-state-box-middle">
+                                <div class="state-list-box">
+                                  <div class="state-lists">
+                                    <div class="state-list">
+                                      <div class="label-box">연간 경영계획 비용</div>
+                                      <div class="data-box primary">
+                                        <span class="data">21,000</span>
+                                        <span class="unit">원</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">누적 비용</div>
+                                      <div class="data-box primary">
+                                        <span class="data">50</span>
+                                        <span class="unit">원</span>
+                                      </div>
+                                    </div>
+                                    <div class="state-list">
+                                      <div class="label-box">사용 비용율</div>
+                                      <div class="data-box">
+                                        <span class="data">10</span>
+                                        <span class="unit">%</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="usage-graph-box">
+                                    <div class="usage-graph green">
+                                      <div class="date-box">2023년 01월 01일 - 02월 01일</div>
+                                      <div class="graph-box">
+                                        <canvas class="doughnut-chart simple green" width="128" height="104"></canvas>
+                                      </div>
+                                      <div class="graph-info-box">
+                                        <div class="usage-box">
+                                          <span class="label">전력</span>
+                                          <span class="data">89.129kWh</span>
+                                        </div>
+                                        <div class="compare-box">
+                                          <span class="label">작년 동월대비</span>
+                                          <span class="data">10,000</span>
+                                          <span class="arrow down"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                    <div class="usage-graph blue">
+                                      <div class="date-box">2023년 01월 01일 - 02월 01일</div>
+                                      <div class="graph-box">
+                                        <canvas class="doughnut-chart simple blue" width="128" height="104"></canvas>
+                                      </div>
+                                      <div class="graph-info-box">
+                                        <div class="usage-box">
+                                          <span class="label">용수</span>
+                                          <span class="data">89.129m</span>
+                                        </div>
+                                        <div class="compare-box">
+                                          <span class="label">작년 동월대비</span>
+                                          <span class="data">10,000</span>
+                                          <span class="arrow up"></span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block : 고장/수리 블록 -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-middle">
+                    <div class="inquiry-block-container">
+                      <div class="inquiry-block-area">
+                        <div class="inquiry-block-middle">
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-111",
+                            "imgName" : "ic_fixing",
+                            "title" : "고장/수리/불편신고",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-222",
+                            "imgName" : "ic_cleaning",
+                            "title" : "청소/소모품 교체",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-333",
+                            "imgName" : "ic_temperature",
+                            "title" : "온도 조절",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-444",
+                            "imgName" : "ic_cool_n_light",
+                            "title" : "냉난방/조명 연장 신청",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../block/inquiryBlock.html", {
+                            "id" : "item-555",
+                            "imgName" : "ic_product_q",
+                            "title" : "상품문의",
+                          })
+                        </div>
+                        <div class="inquiry-block-bottom">
+                          <div class="text-button-box">
+                            <button type="button" class="btn-text btn-history">
+                              <span>나의 문의 내역</span>
+                            </button>
+                            <button type="button" class="btn-text btn-popup btn-edit" data-popup="popup-edit">
+                              <span>내 서비스 편집</span>
+                              <i class="ic ic-setting"></i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block - 업무 요청사항이 있으신가요? -->
+              <div class="main-block-container banner">
+                <div class="main-block-area">
+                  <div class="main-block-middle">
+                    <h2 class="main-block-title">업무 요청사항이 있으신가요?</h2>
+                    <div class="link-box">
+                      <a href="javascript:void(0);" class="link">바로가기</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block - 주인을 찾아요! -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-top">
+                    <div class="main-block-top-left">
+                      <h2 class="main-block-title">주인을 찾아요!</h2>
+                    </div>
+                    <div class="main-block-top-right">
+                      <div class="link-box">
+                        <a href="javascript:void(0);" class="link">전체보기</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="main-block-middle">
+                    <div class="find-owner-box">
+                      <!-- prettier-ignore -->
+                      @@loop("../../block/findOwner.html", [
+                        {
+                          "property" : "new",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                        {
+                          "property" : "",
+                          "icon"  : "ic_smartphone_nor",
+                          "title" : "갤럭시 S23",
+                          "place" : "1층 국민은행 대기실",
+                          "date"  : "23.04.01"
+                        },
+                      ])
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Block - 주요시설을 알려드려요! -->
+              <div class="main-block-container">
+                <div class="main-block-area">
+                  <div class="main-block-top">
+                    <div class="main-block-top-left">
+                      <h2 class="main-block-title">주요시설을 알려드려요!</h2>
+                    </div>
+                  </div>
+                  <div class="main-block-middle">
+                    <!-- isotope -->
+                    <div class="isotope-container">
+                      <div class="isotope-area">
+                        <div class="isotope-top">
+                          <div class="isotope-button-box button-group filters-button-group">
+                            <button class="isotope-button active" data-group="all">전체</button>
+                            <button class="isotope-button" data-group="data1">편의시설</button>
+                            <button class="isotope-button" data-group="data2">공용시설</button>
+                            <button class="isotope-button" data-group="data3">식당</button>
+                          </div>
+                        </div>
+
+                        <div class="isotope-middle">
+                          <div class="isotope-content-box">
+                            <div class="facility-block-swiper-button-prev swiper-button-prev"></div>
+                            <div class="facility-block-swiper-button-next swiper-button-next"></div>
+                            <div class="facility-block-container swiper">
+                              <div class="facility-block-area isotope-content-box grid swiper-wrapper">
+                                <!-- prettier-ignore -->
+                                @@loop("../../block/blockFacility.html", [
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "국민은행",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "새마을 식당",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data1",
+                                    "category" : "편의시설",
+                                    "title"    : "GS편의점",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data3",
+                                    "category" : "식당",
+                                    "title"    : "싸다 김밥",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                  {
+                                    "isotope"  : "data2",
+                                    "category" : "공용시설",
+                                    "title"    : "공용시설명",
+                                    "number"   : "02-1234-1234",
+                                    "floor"    : "1F"
+                                  },
+                                ])
+                              </div>
+                            </div>
+                            <div class="facility-block-swiper-pagination"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="building-information-container">
+                      <div class="building-information-area">
+                        <div class="building-information-middle">
+                          <div class="building-information-box">
+                            <div class="title-box">
+                              <i class="ic ic-building"></i>
+                              <span>삼성전자 빌딩</span>
+                            </div>
+                            <div class="data-box">
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>도로명</span>
+                                </div>
+                                <div class="data">
+                                  <span>서울시 서초구 서초대로 74길 11 삼성전자 빌딩</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>지번</span>
+                                </div>
+                                <div class="data">
+                                  <span>서초동 1320-10</span>
+                                  <button type="button" class="btn-view-map">
+                                    <span>건물 지도 보기</span>
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="building-information-box">
+                            <div class="title-box">
+                              <i class="ic ic-contact"></i>
+                              <span>주요 연락처</span>
+                            </div>
+                            <div class="data-box">
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>안내센터</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>안내센터</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>주차문의</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                              <div class="data-box-row">
+                                <div class="label">
+                                  <span>주차문의</span>
+                                </div>
+                                <div class="data">
+                                  <span>02-1234-1234</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Quick Menu -->
+      <!-- prettier-ignore -->
+      @@include("../../components/quickMenu.html")
+
+      <!-- Popup -->
+      <div id="popup-survey" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">고객 만족도 설문 안내</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="text-box">
+                <!-- prettier-ignore -->
+                <p>OOO고객님!
+                  고객님은 ‘에스원 부동산 솔루션’의 만족도 설문 대상자로 선정되신 귀중한 고객님이십니다.
+                  바쁘시겠지만, 잠시 시간을 내어 설문에 참여 부탁 드립니다. 
+                  고객님의 의견을 소중하게 생각하고 서비스 제공에 
+                  소홀함이 없도록 더욱 노력하는 에스원이 되겠습니다.
+                </p>
+              </div>
+
+              <div class="alert-box">
+                <p>고객님의 소중한 의견을 기다립니다</p>
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>만족도 설문 참여하기</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popup -->
+      <div id="popup-edit" class="popup-container popup-large">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">서비스 즐겨찾기 편집</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="text-box">
+                <p>홈 화면에 노출할 서비스를 관리해 보세요.</p>
+              </div>
+              <div class="popup-edit-container">
+                <div class="popup-edit-area">
+                  <div class="edit-fav-container">
+                    <div class="edit-fav-area">
+                      <div class="edit-fav-top">
+                        <div class="edit-fav-title-box">
+                          <span class="title">즐겨찾기 보기</span>
+                        </div>
+                      </div>
+                      <div class="edit-fav-middle">
+                        <div class="edit-fav-block-container">
+                          <div id="fav" class="edit-fav-block-area">
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-1",
+                              "imgName" : "ic_fixing",
+                              "title" : "고장/수리/불편신고",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-2",
+                              "imgName" : "ic_cleaning",
+                              "title" : "청소/소모품 교체",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-3",
+                              "imgName" : "ic_temperature",
+                              "title" : "온도 조절",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-4",
+                              "imgName" : "ic_cool_n_light",
+                              "title" : "냉난방/조명 연장 신청",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-5",
+                              "imgName" : "ic_product_q",
+                              "title" : "상품문의",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-6",
+                              "imgName" : "ic_fixing",
+                              "title" : "고장/수리/불편신고",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-7",
+                              "imgName" : "ic_cleaning",
+                              "title" : "청소/소모품 교체",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-8",
+                              "imgName" : "ic_temperature",
+                              "title" : "온도 조절",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-9",
+                              "imgName" : "ic_cool_n_light",
+                              "title" : "냉난방/조명 연장 신청",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-10",
+                              "imgName" : "ic_product_q",
+                              "title" : "상품문의",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-11",
+                              "imgName" : "ic_fixing",
+                              "title" : "고장/수리/불편신고",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-12",
+                              "imgName" : "ic_cleaning",
+                              "title" : "청소/소모품 교체",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-13",
+                              "imgName" : "ic_temperature",
+                              "title" : "온도 조절",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-14",
+                              "imgName" : "ic_cool_n_light",
+                              "title" : "냉난방/조명 연장 신청",
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("../../block/inquiryBlock.html", {
+                              "id" : "item-15",
+                              "imgName" : "ic_product_q",
+                              "title" : "상품문의",
+                            })
+                          </div>
+                          <div class="empty-box">
+                            <p class="desc-box">홈 화면에 노출할 서비스를 관리해 보세요.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="edit-fav-container">
+                    <div class="edit-fav-area">
+                      <div class="edit-fav-top">
+                        <div class="edit-fav-title-box">
+                          <span class="title">즐겨찾기 숨김</span>
+                        </div>
+                      </div>
+                      <div class="edit-fav-middle">
+                        <div class="edit-fav-block-container empty">
+                          <div id="favHide" class="edit-fav-block-area"></div>
+                          <div class="empty-box">
+                            <p class="desc-box">여기에 끌어 놓으면 홈에서 안보여요.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-secondary btn-medium">
+                  <span>취소</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>저장</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

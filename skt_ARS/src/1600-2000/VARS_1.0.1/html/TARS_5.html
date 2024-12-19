@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- 20240627 신규요건 : Btv 서비스 이용안내 메뉴추가 -->
+    <input type="hidden" id="btv_yn" iweb-data="out" />
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '인터넷/TV 가입 문의',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <!-- 1depth 영역 -->
+            <nav class="sub-menu">
+              <ol>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                    <span class="text">요금/납부 조회</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M2', 'menu');">
+                    <span class="text">이전설치 문의</span>
+                  </a>
+                </li>
+                <li id="time_2">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M3', 'menu');">
+                    <span class="text">해지 문의</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                    <span class="text">고장신고 및 처리</span>
+                  </a>
+                </li>
+                <li id="internet_tv">
+                  <a href="#" class="on">
+                    <span class="text">인터넷/TV <br />가입문의</span>
+                  </a>
+                </li>
+                <li id="time_6">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M6', 'menu');">
+                    <span class="text">휴대폰 관련 상담</span>
+                  </a>
+                </li>
+                <li id="time_agent">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M0', 'menu');">
+                    <span class="text">상담사 연결</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+
+            <!-- //1depth 영역 -->
+
+            <!-- 2depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol>
+                  <li>
+                    <a href="javascript:sendData($(this), '1');">
+                      <span class="txt">인터넷/TV 가입<br />바로가기</span>
+                    </a>
+                  </li>
+                  <!-- 20240627 신규요건 : Btv 서비스 이용안내 메뉴추가 -->
+                  <li id="btvCheck" style="display: none">
+                    <a href="javascript:sendData($(this), '2');">
+                      <span class="txt">B tv 서비스 <br />이용안내</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                      <span class="txt">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //2depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          // timezone_type  : '0'(야간), '1'(주간), '9'(중식시간)
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '0';
+
+          if (timezone_type == '9') {
+            var internetTv = document.getElementById('internet_tv').querySelector('a');
+            internetTv.innerHTML = '인터넷/TV <br />가입문의';
+            document.getElementById('time_agent').style.display = 'block';
+            document.getElementById('agent_menu').style.display = 'none';
+            $('#time_2').css('display', 'none');
+            $('#time_6').css('display', 'none');
+          } else if (timezone_type == '0') {
+            var internetTv = document.getElementById('internet_tv').querySelector('a');
+            internetTv.innerHTML = '인터넷/TV <br />가입문의';
+            document.getElementById('agent_menu').style.display = 'none';
+            document.getElementById('time_agent').style.display = 'none';
+            $('#time_2').css('display', 'none');
+            $('#time_6').css('display', 'none');
+          }
+        } catch (e) {}
+
+        // 20240627 신규요건 : Btv 서비스 이용안내 메뉴추가
+        var btv_yn = getUrlParameter('btv_yn');
+        /*@build-time*/ btv_yn = 'y';
+        if (btv_yn == 'Y' || btv_yn == 'y') {
+          // console.log(btv_yn);
+          $('#btvCheck').css('display', 'block');
+        }
+
+        common.refreshScroll();
+        // 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

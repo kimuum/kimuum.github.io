@@ -1,0 +1,353 @@
+// ------- icons ------- //
+/* 
+  .iconBg 접두어, ir기법을 사용하는 규칙 적용
+  그 외 .iconImg ~
+*/
+[class*=iconBg] {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  // hide
+  & > span {
+    @include ir;
+  }
+}
+.iconLogout {
+  background: image('common/btn_logout.svg') no-repeat center / 3rem;
+  &:hover {
+    background: image('common/btn_logout_cyan.svg') no-repeat center / 3rem;
+  }
+}
+.iconBgHome {
+  background: image('common/icon_home.svg') no-repeat left center;
+}
+.iconBgNew {
+  background: image('common/icon_new.svg') no-repeat center / cover;
+}
+.iconBgSetting {
+  background: image('common/icon_settings.svg') no-repeat right center;
+}
+.iconBgLink {
+  background: image('common/icon_navi_next_bk.svg') no-repeat right center;
+}
+.iconBgData {
+  background: image('common/icon_summary_data.svg') no-repeat left center;
+}
+.iconBgCost {
+  background: image('common/icon_summary_coin.svg') no-repeat left center;
+}
+.iconBgLock {
+  background: image('common/icon_summary_lock.svg') no-repeat left center;
+}
+.iconBgRefesh {
+  background: image('common/icon_summary_refesh.svg') no-repeat left center;
+}
+.iconBgCall {
+  background: image('common/icon_summary_call.svg') no-repeat left center;
+}
+.iconBgSMS {
+  background: image('common/icon_summary_sms.svg') no-repeat left center;
+}
+.iconBgCall02 {
+  background: image('common/icon_call_center.svg') no-repeat center;
+}
+.iconBgTime {
+  background: image('common/icon_time.svg') no-repeat center;
+}
+.iconBgView {
+  background: image('common/icon_view.svg') no-repeat left center;
+}
+.iconBgCharge {
+  background: image('common/icon_charge.svg') no-repeat center;
+}
+.iconRefresh {
+  &:before {
+    content: '';
+    background: image('common/icon_refresh.svg') no-repeat center;
+  }
+}
+.iconVoice {
+  &:before {
+    content: '';
+    background: image('common/icon_Voice.svg') no-repeat center;
+  }
+}
+.iconPhone {
+  &:before {
+    content: '';
+    background: image('common/icon_phone.svg') no-repeat center;
+  }
+}
+.iconSmartDevice {
+  &:before {
+    content: '';
+    background: image('common/icon_smart_device.svg') no-repeat center;
+  }
+}
+.iconBgDelivery01 {
+  &:before {
+    content: '';
+    background: image('usim/icon_delivery_step01.svg') no-repeat center;
+  }
+}
+.iconBgDelivery02 {
+  &:before {
+    content: '';
+    background: image('usim/icon_delivery_step02.svg') no-repeat center;
+  }
+}
+.iconBgDelivery03 {
+  &:before {
+    content: '';
+    background: image('usim/icon_delivery_step03.svg') no-repeat center;
+  }
+}
+.step.on {
+  .iconBgDelivery01 {
+    &:before {
+      background: image('usim/icon_delivery_step01_on.svg') no-repeat center;
+    }
+  }
+  .iconBgDelivery02 {
+    &:before {
+      background: image('usim/icon_delivery_step02_on.svg') no-repeat center;
+    }
+  }
+  .iconBgDelivery03 {
+    &:before {
+      background: image('usim/icon_delivery_step03_on.svg') no-repeat center;
+    }
+  }
+}
+
+//납부방법변경
+.iconDirect {
+  background: image('myThrifty/icon_direct.svg') no-repeat center;
+}
+.iconCredit {
+  background: image('myThrifty/icon_credit.svg') no-repeat center;
+}
+
+/* page icon */
+.character01 {
+  position: relative;
+  max-width: 143.6rem;
+  height: 10rem;
+  margin: -10rem auto 0;
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 24.7rem;
+    height: 16.8rem;
+    background: image('common/img_character01.svg') no-repeat top center;
+  }
+}
+
+.character02 {
+  position: absolute;
+  left: -8.8rem;
+  bottom: 9.9rem;
+  width: 11.1rem;
+  height: 11.7rem;
+  background: image('common/img_character02.svg') no-repeat center;
+}
+
+.character03 {
+  position: absolute;
+  right: 3.4rem;
+  top: -8.5rem;
+  width: 24.1rem;
+  height: 14.6rem;
+  background: image('common/img_character03.svg') no-repeat center;
+}
+
+.character04 {
+  position: relative;
+  max-width: 143.6rem;
+  height: 18rem;
+  margin: 0 auto;
+  &:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 58.1rem;
+    height: 12.8rem;
+    background: image('common/img_character04.svg') no-repeat right center;
+  }
+}
+
+.character05 {
+  position: absolute;
+  top: 30.2rem;
+  right: -10.5rem;
+  width: 17.3rem;
+  height: 17.3rem;
+  background: image('common/img_character05.svg') no-repeat center;
+}
+
+.character06 {
+  position: absolute;
+  top: 13.6rem;
+  right: 9.4rem;
+  width: 18.4rem;
+  height: 30.7rem;
+  background: image('common/img_character06.svg') no-repeat center;
+}
+
+.character07 {
+  position: absolute;
+  top: 2.8rem;
+  right: 23.6rem;
+  width: 48.7rem;
+  z-index: -1;
+  height: 30.5rem;
+  background: image('common/img_character07.svg') no-repeat center;
+}
+
+/* 메인 */
+.iconBgResearch {
+  background: image('common/icon_research.svg') no-repeat center /cover;
+}
+
+/* 로그인 연동 */
+.iconBgConnect {
+  background: image('common/icon_connect.svg') no-repeat center/cover;
+}
+
+.iconBgDisconnect {
+  background: image('common/icon_disconnect.svg') no-repeat center/cover;
+}
+
+/* 로딩바 */
+.iconLoading {
+  background: image('common/icon_progress.png') no-repeat center/cover;
+}
+
+/* 상품 > 로밍서비스 아이콘 202301 추가 */
+.iconKakao {
+  &:before {
+    background: image('product/icon_loaming_kakao.svg') no-repeat center;
+  }
+}
+.iconWeb {
+  &:before {
+    background: image('product/icon_loaming_web.svg') no-repeat center;
+  }
+}
+.iconGoolge {
+  &:before {
+    background: image('product/icon_loaming_goolge.svg') no-repeat center;
+  }
+}
+.iconMovie {
+  &:before {
+    background: image('product/icon_loaming_movie.svg') no-repeat center;
+  }
+}
+.iconCheck {
+  &:before {
+    background: image('product/icon_loaming_check.svg') no-repeat center/100%;
+  }
+}
+.iconSpeed {
+  &:before {
+    background: image('product/icon_loaming_speed.svg') no-repeat center;
+  }
+}
+.iconTime {
+  &:before {
+    background: image('product/icon_loaming_time.svg') no-repeat center;
+  }
+}
+.iconCountry {
+  &:before {
+    background: image('product/icon_loaming_country.svg') no-repeat center;
+  }
+}
+
+.iconFlag {
+  &:before {
+    background: image('product/icon_loaming_flag.svg') no-repeat center;
+  }
+}
+
+.iconTalk {
+  &:before {
+    background: image('product/icon_loaming_talk.svg') no-repeat center;
+  }
+}
+
+.iconCalender {
+  &:before {
+    background: image('product/icon_loaming_calender.svg') no-repeat center;
+  }
+}
+
+.iconCallBlock {
+  &:before {
+    background: image('product/icon_loaming_call_block.svg') no-repeat center;
+  }
+}
+
+.iconDataBlock {
+  &:before {
+    background: image('product/icon_loaming_data_block.svg') no-repeat center;
+  }
+}
+
+.iconCall {
+  &:before {
+    background: image('product/icon_loaming_call.svg') no-repeat center;
+  }
+}
+
+.iconCircleAddNum {
+  &:before {
+    background: image('product/icon_loaming_addnumber.svg') no-repeat center;
+  }
+}
+
+.iconCircleStudent {
+  &:before {
+    background: image('product/icon_loaming_student.svg') no-repeat center;
+  }
+}
+
+.iconCircleMessage {
+  &:before {
+    background: image('product/icon_loaming_message.svg') no-repeat center;
+  }
+}
+
+.iconCircleShareAll {
+  &:before {
+    background: image('product/icon_loaming_share_all.svg') no-repeat center;
+  }
+}
+
+@media (#{$pc-middle}) {
+  .character07 {
+    right: 9.2rem;
+  }
+}
+
+@media (#{$tablet}) {
+  .character01 {
+    display: none;
+  }
+  .character03 {
+    top: -11rem;
+  }
+  .character07 {
+    display: none;
+  }
+}
+@media (#{$foldMax}) {
+  [class*=character] {
+    display: none;
+  }
+}

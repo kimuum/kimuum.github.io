@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | NFC 충전"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-nfc
+      -->
+      <main class="main-container page-nfc">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "NFC 충전",
+          },
+          "button" : [
+            {
+              "icon" : "ic-settings-fill",
+              "className" : "btn-setting",
+              "title" : "setting"
+            },
+          ]
+        })
+
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="nfc-charge-container">
+              <div class="nfc-charge-area">
+                <div class="nfc-charge-top">
+                  <div class="nfc-charge-heading-box">
+                    <!-- [접근성] 속성 추가 -->
+                    <h2 class="nfc-charge-heading-text" aria-hidden="true"><strong class="strong">결제할 카드</strong>를<br />선택해주세요</h2>
+                    <!-- [접근성] 아래와 같이 텍스트 개행 부탁드립니다. -->
+                    <!-- prettier-ignore -->
+                    <span class="nfc-charge-heading-text hidden-text">결제할 카드를
+                      선택해주세요</span>
+                  </div>
+                </div>
+
+                <div class="nfc-charge-middle">
+                  <div class="payment-card-add-button-box">
+                    <div class="payment-card-add-button">
+                      <button type="button" class="add-card">
+                        <img src="../../assets/images/home/img_add_card.svg" alt="카드 추가하기" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

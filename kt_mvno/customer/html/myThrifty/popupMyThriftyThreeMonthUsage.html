@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "popup", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>최근 3개월 이용량 보기</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">최근 3개월 이용량 보기</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="usageGraphContent">
+              <div class="usageTabContainer">
+                <div class="tabList" role="tablist">
+                  <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>데이터</span></button>
+                  <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>음성</span></button>
+                  <button type="button" id="tabAnchor03" class="tabButton" aria-controls="tabCon03" role="tab" aria-selected="false"><span>문자</span></button>
+                </div>
+
+                <div class="tabContainer">
+                  <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                    <div class="stickChartArea">
+                      <div class="chartInner">
+                        <div class="itemAverage">
+                          <div class="item">
+                            <span class="label">3개월 평균</span>
+                            <span class="labelData">12GB</span>
+                            <!-- [2차] 20221026 추가 -->
+                            <div class="itemStick">
+                              <!-- 3개월 평균 사용한 데이터 % -->
+                              <div class="colorStick" style="height: 65%"></div>
+                              <!-- [2차] 20221026 수정 -->
+                            </div>
+                          </div>
+                          <div class="line" style="bottom: 65%"></div>
+                        </div>
+                        <ul class="chartArea">
+                          <li class="item">
+                            <span class="label">10월</span>
+                            <span class="labelData">13.6GB</span>
+                            <!-- [2차] 20221026 추가 -->
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 80%"></div>
+                              <!-- [2차] 20221026 수정 -->
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">11월</span>
+                            <span class="labelData">12GB</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 70%"></div>
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">12월</span>
+                            <span class="labelData">7.5GB</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 50%"></div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox">
+                        <dl class="dlItemFlex">
+                          <dt>3개월 사용량 평균</dt>
+                          <dd class="colorPrimary">12GB</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>현재 요금제 제공량</dt>
+                          <dd>15GB</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                    <div class="stickChartArea">
+                      <div class="chartInner">
+                        <div class="itemAverage">
+                          <div class="item">
+                            <span class="label">3개월 평균</span>
+                            <span class="labelData">60분</span>
+                            <!-- [2차] 20221026 추가 -->
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 70%"></div>
+                              <!-- [2차] 20221026 수정 -->
+                            </div>
+                          </div>
+                          <div class="line" style="bottom: 70%"></div>
+                        </div>
+                        <ul class="chartArea">
+                          <li class="item">
+                            <span class="label">10월</span>
+                            <span class="labelData">30분</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 80%"></div>
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">11월</span>
+                            <span class="labelData">30분</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 70%"></div>
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">12월</span>
+                            <span class="labelData">30분</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 50%"></div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox">
+                        <dl class="dlItemFlex">
+                          <dt>3개월 사용량 평균</dt>
+                          <dd class="colorPrimary">80분</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>현재 요금제 제공량</dt>
+                          <dd>100분</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tabCon03" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor03">
+                    <div class="stickChartArea">
+                      <div class="chartInner">
+                        <div class="itemAverage">
+                          <div class="item">
+                            <span class="label">3개월 평균</span>
+                            <!-- [2차] 20221026 추가 -->
+                            <span class="labelData">130건</span>
+                            <div class="itemStick">
+                              <!-- [2차] 20221026 수정 -->
+                              <div class="colorStick" style="height: 55%"></div>
+                            </div>
+                          </div>
+                          <div class="line" style="bottom: 55%"></div>
+                        </div>
+                        <ul class="chartArea">
+                          <li class="item">
+                            <span class="label">10월</span>
+                            <span class="labelData">200건</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 80%"></div>
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">11월</span>
+                            <span class="labelData">120건</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 70%"></div>
+                            </div>
+                          </li>
+                          <li class="item">
+                            <span class="label">12월</span>
+                            <span class="labelData">80건</span>
+                            <div class="itemStick">
+                              <div class="colorStick" style="height: 50%"></div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox">
+                        <dl class="dlItemFlex">
+                          <dt>3개월 사용량 평균</dt>
+                          <dd class="colorPrimary">340건</dd>
+                        </dl>
+                        <dl class="dlItemFlex">
+                          <dt>현재 요금제 제공량</dt>
+                          <dd>무제한</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Header</title>
+
+    <style>
+      .header-container {
+        position: static !important;
+        width: 100%;
+      }
+
+      .general-middle {
+        background-color: tan;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-container">
+        <div class="general-area">
+          <div class="general-top">
+            <div class="general-label">Component</div>
+            <div class="general-title">Header</div>
+          </div>
+          <div class="general-middle">
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Default</span>
+              </div>
+              <div class="content-box" style="background-color: white">
+                <!-- prettier-ignore -->
+                @@include("header.html", {
+                  "title" : "Header",
+                  "myPage" : true,
+                  "list" : [
+                    {
+                      "text"     : "스마트코티지는",
+                      "property" : "active",
+                    },
+                    {
+                      "text"     : "어떻게 진행되나요?",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "궁금증 해결하고",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "시작하기",
+                      "property" : "",
+                    },
+                  ],
+                  "className" : ""
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Default - Scroll</span>
+              </div>
+              <div class="content-box" style="background-color: white">
+                <!-- prettier-ignore -->
+                @@include("header.html", {
+                  "title" : "Header",
+                  "myPage" : true,
+                  "list" : [
+                    {
+                      "text"     : "스마트코티지는",
+                      "property" : "active",
+                    },
+                    {
+                      "text"     : "어떻게 진행되나요?",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "궁금증 해결하고",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "시작하기",
+                      "property" : "",
+                    },
+                  ],
+                  "className" : "scroll-fixed"
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Type White</span>
+              </div>
+              <div class="content-box" style="background-color: black">
+                <!-- prettier-ignore -->
+                @@include("header.html", {
+                  "title" : "Header",
+                  "myPage" : true,
+                  "list" : [
+                    {
+                      "text"     : "스마트코티지는",
+                      "property" : "active",
+                    },
+                    {
+                      "text"     : "어떻게 진행되나요?",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "궁금증 해결하고",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "시작하기",
+                      "property" : "",
+                    },
+                  ],
+                  "className" : "type-white"
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Type White - Scroll</span>
+              </div>
+              <div class="content-box" style="background-color: black">
+                <!-- prettier-ignore -->
+                @@include("header.html", {
+                  "title" : "Header",
+                  "myPage" : true,
+                  "list" : [
+                    {
+                      "text"     : "스마트코티지는",
+                      "property" : "active",
+                    },
+                    {
+                      "text"     : "어떻게 진행되나요?",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "궁금증 해결하고",
+                      "property" : "",
+                    },
+                    {
+                      "text"     : "시작하기",
+                      "property" : "",
+                    },
+                  ],
+                  "className" : "type-white scroll-fixed"
+                })
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">Type Logo White</span>
+              </div>
+              <div class="content-box" style="background-color: transparent">
+                <!-- prettier-ignore -->
+                @@include("header.html", {
+                  "title" : "Header",
+                  "myPage" : false,
+                  "list" : "",
+                  "className" : "type-logo-white"
+                })
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

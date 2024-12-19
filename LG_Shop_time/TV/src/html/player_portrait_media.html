@@ -1,0 +1,28 @@
+@@include('head.html', {
+'title': 'full_player_media'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- 영상 : portrait media -->
+    @@include('common_player.html', {
+      'hide': null,
+      'type': null,
+      'rate': 'rate-portrait',
+      'src': './images/thumbnail/test_img_ver_01.jpg',
+      'indicator': false,
+      'rightPopup': false,
+      'rightPopupClass': false,
+      'rightPopupData': false,
+      'rightPopupSecondTab': 'SHOW NOW',
+      'rightPopupSecondTabSelect': false,
+      'chat': false,
+      'chatNodata': false,
+      'chatMessage': false,
+      'disclamer' : false
+    })
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

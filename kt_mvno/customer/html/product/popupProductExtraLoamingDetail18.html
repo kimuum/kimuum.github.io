@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터로밍 요금 알림(태블릿 PC용) | 로밍 부가서비스 상세", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnIDLoamingDetail18, popupLoamingDetail18 -->
+      <button type="button" class="btn" id="btnIDLoamingDetail18" onclick="togglePopup('btnIDLoamingDetail18', 'popupLoamingDetail18')">
+        <span>로밍 부가서비스 상세 팝업</span>
+      </button>
+    </div>
+
+    <!-- 웹 접근성 적용 필수 아이디 : popupLoamingDetail18, popupTitleLoamingDetail18 -->
+    <div class="popup popupExtraLoamingDetail show" id="popupLoamingDetail18" role="dialog" aria-labelledby="popupTitleLoamingDetail18" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleLoamingDetail18, btnIDLoamingDetail18, popupLoamingDetail18 -->
+          <strong class="popupTitle" id="popupTitleLoamingDetail18">로밍 부가서비스 상세</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDLoamingDetail18', 'popupLoamingDetail18')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="loamingDetailContainer typeAllDay">
+              <div class="loamingDetailHead">
+                <div class="topTitle">
+                  <p><strong>데이터로밍 요금 알림</strong> <br /><strong>(태블릿 PC용)</strong></p>
+                  <strong class="colorRed">무료</strong>
+                  <span class="desc">사업자 고객센터에서 신청가능</span>
+                  <!-- [운영] 20230425 DR-2023-15756 문구 수정 -->
+                </div>
+                <div class="topContent">
+                  <div class="loamingRecomand">
+                    <div class="recomandCircleData iconCircleMessage">
+                      <p>별도 태블릿 PC 전용 <br />문자 안내</p>
+                    </div>
+                    <div class="recomandCircleData iconCountry">
+                      <p>전세계</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="loamingDetailBody">
+                <div class="loamingDetailTabContainer01">
+                  <div class="tabList" role="tablist">
+                    <button type="button" id="loamingDetailTab01" class="tabButton" aria-controls="loamingDetailCon01" role="tab" aria-selected="true">
+                      <span>상품 정보</span>
+                    </button>
+                    <button type="button" id="loamingDetailTab02" class="tabButton" aria-controls="loamingDetailCon02" role="tab" aria-selected="false">
+                      <span>필수 안내</span>
+                    </button>
+                  </div>
+                  <div class="tabContainer">
+                    <div id="loamingDetailCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingDetailTab01">
+                      <div class="loamingProductInfo">
+                        <div class="tableContainer productTable hideCaption info">
+                          <table>
+                            <caption>
+                              <span class="ir">혜택, 요금, 지원 국가, 신청 방법</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 30%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">혜택</th>
+                                <td>
+                                  <p>데이터로밍 사용량 안내문자를 받지 못하는 패드 단말(아이패드, 갤럭시탭 등) 이용 고객의 불편 해소를 위해 고객이 별도로 지정한 휴대폰 번호로 해당 단말의 데이터로밍 사용 요금 알림 문자 발송</p>
+
+                                  <div class="tdInfoConatiner">
+                                    <div class="tdInfoHead">
+                                      <strong class="colorRed">[부가서비스 미 가입 시]</strong>
+                                    </div>
+                                    <div class="tdInfoBody">
+                                      <p>데이터 <strong>사용 요금</strong> 알림 문자 발송</p>
+                                      <ul class="dotList marginBtmReset">
+                                        <li class="beforeDot">제휴국가: 하루 5,500원/11,000원 초과 시 마다 안내</li>
+                                        <li class="beforeDot">비제휴국가: 당월 첫사용/5,500원/1.1만원/3.3만원/5.5만원/8.8만원/11만원 초과 시 안내 (이후 22만원 단위, 110만원 초과시 55만원 안내)</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+
+                                  <div class="tdInfoConatiner">
+                                    <div class="tdInfoHead">
+                                      <strong class="colorRed">[부가서비스 가입 시]</strong>
+                                    </div>
+                                    <div class="tdInfoBody">데이터 <strong>사용량</strong> 알림 문자 발송</div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">요금</th>
+                                <td>
+                                  <strong>무료</strong>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">지원 국가</th>
+                                <td>전세계</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">신청 방법</th>
+                                <td>
+                                  <p class="beforeDot">온라인 신청 불가 사업자 고객센터</p>
+                                  <!-- [운영] 20230425 DR-2023-15756 문구 수정 -->
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="loamingDetailCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingDetailTab02">
+                      <p class="beforeDot">데이터 사용량 알림 문자는 태블릿 단말 1대당 1개의 휴대폰번호에 대해 지정하실 수 있습니다. (타사 이동 전화번호도 가능)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //popupContent -->
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

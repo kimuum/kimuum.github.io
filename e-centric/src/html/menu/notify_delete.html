@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 알림"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .menu-notify : 알림
+      -->
+      <main class="main-container menu-notify">
+        <!-- [240429] 알림 삭제 버튼 대체텍스트 변경 -->
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "align" : "between",
+            "logo" : false,
+            "title" : {
+              "show" : true,
+              "text" : "알림 삭제",
+            },
+            "button" : ""
+          })
+
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="notify-list-container">
+              <div class="notify-list-area">
+                <!-- [240429] 삭제 페이지 -->
+                <ul>
+                  <li class="notify-list active">
+                    <div class="notify-list-box">
+                      <div class="field field-checkbox">
+                        <div class="field-form">
+                          <input type="checkbox" name="checkbox-01" id="checkbox-01" value="checkbox" class="input-checkbox" checked="" />
+                          <div class="checkbox-box">
+                            <span class="checkbox-icon" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [실제 screen reader가 읽어 주는 text] -->
+                      <label for="checkbox-01" class="notify-content-box ir">[공지] 공지사항 타이틀을 노출합니다. 2024년 1월 1일</label>
+                      <!-- [화면에 노출 되는 text] -->
+                      <div for="checkbox-01" class="notify-content-box" aria-hidden="true">
+                        <div class="notify-content-top">
+                          <!-- .alert : 화재 경보 카테고리 style 클래스 부여 -->
+                          <span class="category">[공지]&nbsp;</span>
+                          <span class="title">공지사항 타이틀을 노출합니다.</span>
+                        </div>
+                        <div class="notify-content-bottom">
+                          <!-- [240429] 시간 aria 속성 추가, .ir 엘리먼트 추가 -->
+                          <span class="time" aria-hidden="true">2024.01.01</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="notify-list active">
+                    <div class="notify-list-box">
+                      <div class="field field-checkbox">
+                        <div class="field-form">
+                          <input type="checkbox" name="checkbox-02" id="checkbox-02" value="checkbox" class="input-checkbox" checked="" />
+                          <div class="checkbox-box">
+                            <span class="checkbox-icon" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [실제 screen reader가 읽어 주는 text] -->
+                      <label for="checkbox-02" class="notify-content-box ir">
+                        [화재 경보] 공지사항 타이틀을 노출합니다. 공지사항 타이틀을 노출합니다. 공지사항 타이틀을 노출합니다. 2024년 1월 1일
+                      </label>
+                      <!-- [화면에 노출 되는 text] -->
+                      <div for="checkbox-02" class="notify-content-box" aria-hidden="true">
+                        <div class="notify-content-top">
+                          <span class="category alert">[화재 경보]&nbsp;</span>
+                          <span class="title">공지사항 타이틀을 노출합니다. 공지사항 타이틀을 노출합니다. 공지사항 타이틀을 노출합니다. </span>
+                        </div>
+                        <div class="notify-content-bottom">
+                          <span class="time" aria-hidden="true">2024.01.01</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="notify-list">
+                    <div class="notify-list-box">
+                      <div class="field field-checkbox">
+                        <div class="field-form">
+                          <input type="checkbox" name="checkbox-03" id="checkbox-03" value="checkbox" class="input-checkbox" />
+                          <div class="checkbox-box">
+                            <span class="checkbox-icon" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- [실제 screen reader가 읽어 주는 text] -->
+                      <label for="checkbox-03" class="notify-content-box ir">[이벤트] (광고) 공지사항 타이틀을 노출합니다. 2024년 1월 1일</label>
+                      <!-- [화면에 노출 되는 text] -->
+                      <div for="checkbox-03" class="notify-content-box" aria-hidden="true">
+                        <div class="notify-content-top">
+                          <span class="category">[이벤트]&nbsp;</span>
+                          <span class="title">(광고) 공지사항 타이틀을 노출합니다.</span>
+                        </div>
+                        <div class="notify-content-bottom">
+                          <span class="time" aria-hidden="true">2024.01.01</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-secondary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "취소"
+          })
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "삭제"
+          })
+        </div>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.input-checkbox');
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('input', function (e) {
+            const target = e.target;
+            const checked = target.checked;
+            const parents = target.closest('.notify-list');
+            if (checked) {
+              parents.classList.add('active');
+            } else {
+              parents.classList.remove('active');
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

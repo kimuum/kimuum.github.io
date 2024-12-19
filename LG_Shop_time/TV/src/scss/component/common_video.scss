@@ -1,0 +1,284 @@
+// 영상 - 기본값 가로
+.video-container {
+  overflow: hidden;
+  @include flex(column, center, center);
+  border-radius: 10px;
+  background-color: $color-black;
+  & > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+// 영상 - 세로
+.rate-portrait {
+  .video-container,
+  &.video-container {
+    & > * {
+      min-width: initial;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+// pasrtners 영상
+.section-video-box {
+  @include flex(row, flex-start, flex-start);
+  margin: 0 50px;
+  .notice-container {
+    height: 420px;
+    border: 1px solid $color-gray-dadada;
+    border-radius: 10px;
+  }
+}
+.video-preview-box {
+  flex-shrink: 0;
+  overflow: hidden;
+  position: relative;
+  width: 1002px;
+  height: 564px;
+  border-radius: 10px;
+  &.focused,
+  &.hover {
+    z-index: 1;
+    &:after {
+      @extend .afterBorder;
+      border-radius: 10px;
+    }
+    .badge-ranking {
+      background-color: $focused;
+    }
+  }
+  .video-container {
+    width: 100%;
+    height: 100%;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 324px;
+      background-image: linear-gradient(
+        to top,
+        rgba($color-black, 0),
+        rgba($color-black, 0.8),
+        rgba($color-black, 0.8)
+      );
+    }
+  }
+  .info-container {
+    overflow: hidden;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include flex(row, flex-start, center);
+    width: 100%;
+    padding: 18px 18px 30px;
+    box-sizing: border-box;
+
+    .badge-live {
+      flex-shrink: 0;
+      position: static;
+    }
+    &.row-1 {
+      .info-main-title {
+        display: block;
+        @include ellipsis;
+      }
+    }
+  }
+  .info-middle {
+    margin-left: 12px;
+    overflow: hidden;
+  }
+  .info-bottom {
+    margin-top: 10px;
+  }
+  .info-main-title {
+    width: 100%;
+    min-height: 41px;
+    margin-right: 100px;
+    @include multi-ellipsis(true, 2);
+    @include font(30px, bold, $color-white, 1.27);
+  }
+  .info-sub-text {
+    @include font(24px, normal, $color-white, 1.33);
+  }
+
+  .call-order-wrap {
+    position: absolute;
+    bottom: 110px;
+    left: 70px;
+  }
+
+  .call-order-area {
+    @include flex(column, center, center);
+    width: 150px;
+    height: 64px;
+    padding: 0 6px;
+    border: 2px solid rgba($color-white, 0.7);
+    background-color: $color-gray-1e1e1e;
+    box-shadow:
+      inset 0px -5px 5px 0px rgba(0, 0, 0, 0.7),
+      inset 0 3px 5px 0px rgba($color-white, 0.7),
+      5px 8.7px 15px 0 rgba(6, 0, 1, 0.5);
+    border-radius: 10px;
+
+    .call-label {
+      width: 84px;
+      height: 18px;
+      margin-right: auto;
+      padding: 3px;
+      background-color: $color-gray-606060;
+      @include font(12px, 600, $color-white, 1.1);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .call-to-order {
+      width: 102px;
+      height: 35px;
+      margin-bottom: 12px;
+      background: asset-image("tag_calltoorder.png") no-repeat center/cover;
+    }
+
+    .call-number {
+      @include flex(row, flex-start, center);
+      margin-top: 8px;
+      @include font(18px, 700, $color-white);
+      letter-spacing: -0.9px;
+
+      &::before {
+        content: "";
+        flex-shrink: 0;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        background: asset-image("ic_wh_call.png") no-repeat center/20px;
+      }
+    }
+  }
+}
+.video-list-box {
+  overflow: hidden;
+  position: relative;
+  height: 564px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 17px;
+    bottom: -1px;
+    width: 100%;
+    height: 80px;
+    background-image: linear-gradient(to bottom, rgba(#f7f7f7, 0), rgba(#f7f7f7, 0.5), rgba(#f7f7f7, 1));
+    pointer-events: none;
+  }
+  .section-list-box {
+    @include flex(column, flex-start, flex-start);
+    // overflow-y: auto;
+    width: 642px;
+    // height: 100%;
+    margin: 0;
+    padding: 0 18px 80px; //그림자
+    &:after {
+      display: none;
+    }
+  }
+  .section-list {
+    width: 100%;
+    margin: 10px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .list-area {
+    max-width: 100%;
+    height: 238px;
+    padding: 18px;
+  }
+  .list-flex-row {
+    align-items: stretch;
+    .thumb-box {
+      flex-shrink: 0;
+      width: 200px;
+      height: 200px;
+    }
+    .desc-box {
+      flex: 1;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      margin-left: 18px;
+    }
+    .product-desc {
+      margin-top: auto;
+    }
+  }
+}
+// bedge common
+.badge-live {
+  z-index: 1;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 108px;
+  height: 48px;
+}
+
+// LIVE 방송 없음_full/half
+.video-notice-box {
+  overflow: hidden;
+  @include flex(column, center, center);
+  position: relative;
+  width: 1002px;
+  height: 564px;
+  border: 1px solid $color-gray-dadada;
+  background:
+    asset-image("thumbnail/img_watchnow_video_01.png") no-repeat center/contain,
+    $color-gray-f2f2f2;
+  border-radius: 10px;
+  text-align: center;
+  &:only-child {
+    flex: 1;
+  }
+  .video-notice-top {
+    @include flex(column, center, center);
+    &::before {
+      content: "";
+      display: block;
+      width: 72px;
+      height: 72px;
+      margin-bottom: 27px;
+    }
+    &.icon-bell {
+      &::before {
+        background: asset-image("ic_upcomings_nor.png") no-repeat center/72px;
+      }
+    }
+  }
+  .video-notice-bottom {
+    padding-top: 93px;
+  }
+  .show-time-box {
+    margin-bottom: 33px;
+    @include font(30px, bold, $color-c70850);
+  }
+  .show-title {
+    margin-bottom: 20px;
+    @include font(36px, bold, $color-gray-333333);
+  }
+  .show-host {
+    @include font(24px, normal, $color-gray-808080);
+  }
+  .button-box {
+    button {
+      width: 330px;
+      text-transform: none;
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 이용 내역"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!-- 
+        .menu-history: 메뉴 > 이용 내역 페이지 class
+      -->
+      <main class="main-container menu-history">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "이용 내역",
+          },
+          "button" : null
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="history-container">
+              <div class="history-area">
+                <div class="history-top">
+                  <div class="history-info-container">
+                    <div class="history-info-area">
+                      <div class="history-info-top">
+                        <!-- [240401] 날짜 선택기 추가 -->
+                        <div class="calendar-box" id="calendar-range">
+                          <div class="icon-box">
+                            <i class="ic ic-calendar-fill"></i>
+                          </div>
+                          <div class="input-box">
+                            <button type="button" class="calendar-open-button calendar-open-button-start">2024년 4월 1일</button>
+                            <input
+                              type="text"
+                              class="calendar-input"
+                              id="start"
+                              name="range"
+                              value="2024.04.01"
+                              aria-controls="datepicker-1"
+                              aria-haspopup="dialog"
+                              aria-expanded="false"
+                              aria-hidden="true"
+                            />
+                          </div>
+                          <span class="separator" aria-hidden="true">&nbsp;~&nbsp;</span>
+                          <div class="input-box">
+                            <button type="button" class="calendar-open-button calendar-open-button-end">2024년 6월 3일</button>
+                            <input
+                              type="text"
+                              class="calendar-input"
+                              id="end"
+                              name="range"
+                              value="2024.06.03"
+                              aria-controls="datepicker-2"
+                              aria-haspopup="dialog"
+                              aria-expanded="false"
+                              aria-hidden="true"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="history-info-bottom">
+                        <ul class="history-info-list-box">
+                          <li class="history-info-list" role="group">
+                            <div class="label-box">
+                              <span class="label">충전 횟수</span>
+                            </div>
+                            <div class="data-box">
+                              <!-- [240425] 디자인 변경으로 인한 엘리먼트 추가 -->
+                              <span class="data"><span class="data-label">완속 </span>123 건</span>
+                              <span class="data"><span class="data-label">급속 </span>123 건</span>
+                            </div>
+                          </li>
+                          <li class="history-info-list" role="text">
+                            <div class="label-box">
+                              <span class="label">충전량</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">1234 kWh</span>
+                            </div>
+                          </li>
+                          <li class="history-info-list" role="text">
+                            <div class="label-box">
+                              <span class="label">충전금액</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">123,456 원</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="history-bottom">
+                  <div class="history-content-container">
+                    <div class="history-content-area">
+                      <div class="history-content-top">
+                        <div class="history-content-title-box">
+                          <h2 class="title">이용 내역</h2>
+                        </div>
+                        <button type="button" class="btn-filter" aria-label="이용 내역 필터"><i class="ic ic-filter-fill"></i></button>
+                      </div>
+                      <div class="history-content-bottom">
+                        <ul class="history-list-box">
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "급속",
+                                "badgeLabel": "급속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "결제 완료",
+                                "badgeLabel" : "결제 완료",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소1"
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "완속",
+                                "badgeLabel" : "완속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "secondary",
+                                "badgeText" : "미결제",
+                                "badgeLabel" : "미결제",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소2"
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "급속",
+                                "badgeLabel" : "급속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "결제 완료",
+                                "badgeLabel" : "결제 완료",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소3"
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "급속",
+                                "badgeLabel" : "급속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "secondary",
+                                "badgeText" : "미결제",
+                                "badgeLabel" : "미결제",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소4"
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "급속",
+                                "badgeLabel" : "급속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "결제 완료",
+                                "badgeLabel" : "결제 완료",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소5"
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("historyLink.html", {
+                            "badge" : [
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "급속",
+                                "badgeLabel" : "급속",
+                                "property"  : "small"
+                              },
+                              {
+                                "iconClass" : "",
+                                "badgeColor": "secondary",
+                                "badgeText" : "미결제",
+                                "badgeLabel" : "미결제",
+                                "property"  : "small"
+                              },
+                            ],
+                            "title" : "서초그랑자이 전기차충전소6"
+                          })
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // [240426] 월 선택 script 추가
+        // 월 선택
+        const calendarBox = document.getElementById('calendar-range');
+        const calendarOpenBtns = calendarBox.querySelectorAll('.calendar-open-button');
+
+        calendarOpenBtns.forEach((calendarOpenBtn) => {
+          calendarOpenBtn.addEventListener('click', (e) => {
+            const target = e.target;
+            const parent = target.closest('.input-box');
+            const calendarInput = parent.querySelector('.calendar-input').getAttribute('id');
+
+            parent.querySelector('dialog').showModal();
+
+            if (calendarInput === 'start') {
+              datepicker_01.datepickers[0].show();
+              datepicker_01.datepickers[1].hide();
+            } else {
+              datepicker_01.datepickers[0].hide();
+              datepicker_01.datepickers[1].show();
+            }
+          });
+        });
+
+        let initialStartDate = document.getElementById('start').value;
+        let initialEndDate = document.getElementById('end').value;
+        const elem_01 = document.getElementById('calendar-range');
+        const datepicker_01 = new DateRangePicker(elem_01, {
+          title: '날짜선택',
+          language: 'ko',
+          todayHighlight: true,
+          clearButton: false,
+          canclButton: true,
+          confirmButton: true,
+          maxView: 1,
+          pickLevel: 0,
+          defaultStart: new Date(initialStartDate).getTime(),
+          defaultEnd: new Date(initialEndDate).getTime(),
+          format: 'yyyy.mm.dd',
+        });
+
+        const calendarRange = document.getElementById('calendar-range');
+        const calendarInputs = calendarRange.querySelectorAll('.calendar-input');
+
+        calendarInputs.forEach(function (calendarInput) {
+          const calendarOpenButton = calendarInput.closest('.input-box').querySelector('.calendar-open-button');
+
+          elem_01.addEventListener('changeDate', function (e) {
+            const inputValue = calendarInput.value;
+            const formattedDate = formatDate(inputValue);
+            calendarOpenButton.textContent = formattedDate;
+          });
+        });
+
+        // ele
+        function formatDate(dateString) {
+          const [year, month, day] = dateString.split('.');
+          const formattedMonth = month.padStart(2, '0');
+          const formattedDay = day.padStart(2, '0');
+
+          return `${year}년 ${formattedMonth}월 ${formattedDay}일`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 건물 인증 완료"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/appHeader.html", {
+        "back" : true,
+        "title" : "권한 신청",
+        "close" : false,
+      })
+
+      <!-- Content -->
+      <main class="app-content-container">
+        <div class="app-content-area">
+          <div class="content-container">
+            <div class="content-area">
+              <div class="content-middle">
+                <div class="full-confrim-content">
+                  <i class="icon icon-smile-02"></i>
+                  <div class="title">건물이 인증되었어요</div>
+                  <div class="text">(앱명)으로 건물을 편리하게 이용하세요.</div>
+                </div>
+              </div>
+              <div class="content-bottom">
+                <div class="bottom-button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "h50",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "홈으로",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전 카드"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="header-container"></div>
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- [접근성] 참고용 바텀시트 열기 버튼 -->
+            <button id="openPopupButton" style="padding: 20px; background-color: black; color: #fff">Open Bottom Sheet</button>
+          </div>
+        </section>
+
+        <!-- .bottom-sheet-popup start -->
+        <!-- .show: 바텀시트팝업 활성화 제어클래스 -->
+        <!-- aria-hidden="true" : 바텀시트팝업 활성화 제어 속성 -->
+        <!-- [접근성] 접근성을 위한 속성 추가 -->
+        <dialog class="bottom-sheet-popup" id="card-remove" aria-label="충전 카드 관리">
+          <div class="bottom-sheet-popup-container" tabindex="0">
+            <!-- [240427] 닫기 버튼 추가 -->
+            <button type="button" class="btn-close">
+              <span>닫기</span>
+              <i class="ic ic-handler" aria-hidden="true"></i>
+            </button>
+            <div class="bottom-sheet-popup-area">
+              <div class="bottom-sheet-popup-top">
+                <!-- [접근성] 접근성을 위한 element 추가 -->
+                <div id="bottomSheetTitle" class="bottom-sheet-popup-title ir" aria-hidden="true">충전 카드 관리</div>
+              </div>
+              <div class="bottom-sheet-popup-middle">
+                <div class="card-edit-container">
+                  <div class="card-edit-area">
+                    <div class="card-edit-top">
+                      <div class="list-d-list-box">
+                        <!-- prettier-ignore -->
+                        @@include("listTypeD.html", {
+                          "className" : "no-border",
+                          "image" : "others",
+                          "category" : null,
+                          "title" : "공공충전인프라 멤버십",
+                          "badgeText" : "",
+                          "desc" : "1234-56**-****-****",
+                          "type" : "edit",
+                          "modalId" : "",
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-sheet-popup-bottom">
+                <button class="btn btn-primary btn-large" aria-controls="modal-card-remove" aria-haspopup="dialog" aria-expanded="false">
+                  <span>충전 카드 삭제</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <!-- [접근성] 참고용 바텀시트 열기 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButton = popup.querySelector('.btn-close');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButton) {
+          closePopupButton.addEventListener('click', function () {
+            popup.close();
+            openPopupButton.focus();
+            openPopupButton.setAttribute('tabindex', '-1');
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

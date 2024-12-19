@@ -1,0 +1,59 @@
+@keyframes fade-in {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.toast {
+  z-index: 102;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  padding: 1.6rem 2rem;
+  border-radius: 1.6rem;
+  background-color: rgba($black, 0.8);
+  @include font(bs, $white);
+  text-align: center;
+  word-break: keep-all;
+  transition: 0.2s ease;
+  &.show {
+    transform: translate(-50%, -5rem);
+    animation: fade-in 0.75s linear;
+  }
+}
+
+@media #{$tablet} and (orientation: landscape) and (pointer:coarse) {
+  .toast {
+    position: fixed;
+  }
+}
+
+@media #{$tablet} {
+  .toast {
+    position: fixed;
+    left: 50%;
+    width: 100%;
+    max-width: 27.6rem;
+    padding: 1.2rem 2rem;
+    border-radius: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    &.show {
+      transform: translate(-50%, -4rem);
+    }
+  }
+}

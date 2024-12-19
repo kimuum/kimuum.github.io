@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "탑 배너 상세 | 탑 배너 관리 | 서비스 관리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>탑 배너 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>서비스 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>탑 배너 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>탑 배너 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <!-- [운영BO] DR-2023-40905 20230707 -->
+          <div class="contentArea">
+            <!-- 목록 -->
+            <div class="detailContainer">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>삭제</span></button>
+                  <button type="button" class="btn"><span>변경</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">탑 베너 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        탑 배너 정보 목록
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">노출 구분</th>
+                          <td>기간</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">노출 기간</th>
+                          <td>2022.06.30~2022.09.30</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">탑 배너명</th>
+                          <td>마이알뜰폰 1주년 프로모션</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">탑 배너(PC)</th>
+                          <td>ktmyr_main_banner_01_pc.png</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">탑 배너(Moblie)</th>
+                          <td>ktmyr_main_banner_01_mo.png</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">화면 연결 여부</th>
+                          <td>연결</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연결 링크</th>
+                          <td>https://ktmyr.com/fe/service/event/promo/eventPromoView.do?evNo=21</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+          <!-- //[운영BO] DR-2023-40905 20230707 -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

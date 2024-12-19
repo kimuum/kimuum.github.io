@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "4단계 번호 조회·선택 | 데이터 쉐어링 결합 | 마이알뜰폰", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : sharingApply -->
+    <div class="wrap detail sharingApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-8', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>데이터 쉐어링 결합 신청</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 쉐어링</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 쉐어링 결합 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>4<!-- [VOS2차] 결함ID 1122059 --></li>
+              </ul>
+            </div>
+            <div class="formContainer">
+              <form>
+                <fieldset class="formInner">
+                  <legend class="formTitleArea">
+                    <strong class="formTitle">희망번호 선택</strong>
+                  </legend>
+
+                  <!-- 희망번호 선택 -->
+                  <div class="newNumberCreate createNumberInput">
+                    <div class="phoneNumber">
+                      <span>010</span>
+                      <span>****</span>
+                      <input type="text" value="3807" title="번호 마지막 네자리" autocomplete="false" />
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>번호 조회</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                    <div class="remainCount">조회 가능 횟수 <strong>20</strong>회</div>
+                  </div>
+
+                  <!-- 결과 -->
+                  <div class="newNumberCreate createComplete" style="display: none">
+                    <div class="phoneNumber">
+                      <span>010</span>
+                      <span>6319</span>
+                      <span>3807</span>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>번호 취소</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                    <div class="remainCount">조회 가능 횟수 <strong>19</strong>회</div>
+                  </div>
+                  <!-- //결과 -->
+
+                  <!-- 10회 이상 시도 시 인증 -->
+                  <div class="newNumberCreate createAuthentication" style="display: none">
+                    <div class="phoneNumber bold">
+                      <span>010</span>
+                      <span>6319</span>
+                      <span>3807</span>
+                    </div>
+                    <div class="captchaWrap">
+                      <div class="captchaImg">
+                        <img src="../../assets/images/common/img_captcha01.jpg" alt="" />
+                      </div>
+                      <div class="captchaBtn">
+                        <input type="button" class="btn iconRefresh" value="새로고침" />
+                        <input type="button" class="btn iconVoice" value="음성으로 듣기" />
+                      </div>
+                    </div>
+                    <div class="field fieldInput">
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="password" id="input-id-03" title="보안문자" placeholder="위 이미지를 보이는 대로 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>번호 조회</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                    <div class="remainCount">조회 가능 횟수 <strong>10</strong>회</div>
+                  </div>
+                  <!-- //10회 이상 시도 시 인증 -->
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">가입할 번호는 데이터쉐어링 서비스를 이용할 실제회선 번호이며, 모회선 번호가 변경되는 것은 아닙니다.</li>
+                      <li class="fieldValue">쉐어링 이용 회선은 음성/영상통화(데이터를 이용한 통화 포함), 문자(MMS(사진/영상메세지)/LMS(장문 메세지)/ SMS), 채팅+(채팅플러스) 서비스는 사용 불가합니다.</li>
+                    </ul>
+                  </div>
+
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary" disabled><span>결합 신청</span></button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

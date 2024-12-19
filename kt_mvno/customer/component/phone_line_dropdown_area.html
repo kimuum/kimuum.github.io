@@ -1,0 +1,51 @@
+<div class="dropdownArea phoneLineSummaryDrop@@if(addClass){ @@addClass}">
+  <div class="dropdownTitle">
+    <div class="titleLabel">
+      <span class="colorLabel">대표번호</span>@@if(image){ <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>}
+      <span class="labelGroup">
+        <span class="product">@@product</span>
+        <strong class="phone">010-00**-*00</strong>
+      </span>
+    </div>
+    <button type="button" class="dropdownBtn" aria-expanded="false"><span>회선 변경</span></button>
+  </div>
+  <ul class="dropdownList" aria-label="회선">
+    <li>
+      <button type="button" class="phoneLine" title="선택됨">
+        <span class="colorLabel">대표번호</span>@@if(image){ <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>}
+        <span class="labelGroup">
+          <span class="product">@@product</span>
+          <strong class="phone">010-00**-*00</strong>
+        </span>
+      </button>
+    </li>
+    @@if(!hasDisabled){
+    <li>
+      <button type="button" class="phoneLine">
+        @@if(image){ <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>}
+        <span class="labelGroup">
+          <span class="product">@@product</span>
+          <strong class="phone">010-00**-*00</strong>
+        </span>
+      </button>
+    </li>
+    }
+    <!-- prettier-ignore -->
+    @@if(hasDisabled){
+    <!-- [운영] 20230110 영역 추가 -->
+    <li>
+      <button type="button" class="phoneLine disabled">
+        @@if(image){ <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>}
+        <span class="labelGroup">
+          <span class="product">@@product</span>
+          <strong class="phone">010-00**-*00</strong>
+        </span>
+        <span class="labelBottom">
+          <span class="colorRed">사용불가 회선(회선 관리에서 삭제 가능합니다.)</span>
+        </span>
+      </button>
+    </li>
+    <!-- //[운영] 20230110 영역 추가 -->}
+  </ul>
+  @@if(setting){ <button type="button" class="dropSetting" title="나의 알뜰폰 번호 설정하기"></button>}
+</div>

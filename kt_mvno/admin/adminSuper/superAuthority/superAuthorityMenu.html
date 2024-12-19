@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사용자별 메뉴 권한 관리" , "headProjectName": "| 권한 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superAuthorityMenu">
+      <!-- 페이지 고유 클래스 : superAuthorityMenu -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>사용자별 메뉴 권한 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>권한 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사용자별 메뉴 권한 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      사용자별 메뉴 권한 관리 - 구분, 그룹구분 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">이름</option>
+                                <option value="">아이디(사번)</option>
+                                <option value="">휴대폰 번호</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." title="구분값 검색" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">
+                      사용자 목록
+                      <span class="bar">총 1개</span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="tableContainer alignCenter">
+                  <table>
+                    <caption>
+                      사용자 목록 - 아이디, 이름, 이메일, 휴대폰 번호, 권한그룹명, 사업자명, 승인여부
+                    </caption>
+                    <colgroup>
+                      <col style="width: 124px" />
+                      <col style="width: 92px" />
+                      <col style="width: 200px" />
+                      <col style="width: 145px" />
+                      <col style="width: 124px" />
+                      <col style="width: 124px" />
+                      <col style="width: 124px" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">아이디</th>
+                        <th scope="col">이름</th>
+                        <th scope="col">이메일</th>
+                        <th scope="col">휴대폰 번호</th>
+                        <th scope="col">권한그룹명</th>
+                        <th scope="col">사업자명</th>
+                        <th scope="col">승인여부</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="buttonArea">
+                            <button type="button" class="btnUnderLine"><span>lim1234</span></button>
+                          </div>
+                        </td>
+                        <td>임*일</td>
+                        <td>lim****@kt*********</td>
+                        <td>010-12**-*234</td>
+                        <td>사업자(운영)</td>
+                        <td>(주)케이티엠모바일</td>
+                        <td>예</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!-- // 사용자 목록 목록 -->
+
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">
+                      메뉴 목록
+                      <span class="bar">총 691개</span>
+                    </h2>
+                  </div>
+                  <div class="topRight">
+                    <span class="topLabel">선택 된 메뉴</span>
+                    <div class="select">
+                      <select title="사용여부">
+                        <option value="">사용 여부</option>
+                        <option value="">사용</option>
+                        <option value="">사용안함</option>
+                      </select>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnLineGray"><span>일괄변경</span></button>
+                      <button type="button" class="btn"><span>저장</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer alignCenter">
+                    <table>
+                      <caption>
+                        메뉴 목록 표- 선택, 메뉴 번호, 메뉴명, 메뉴경로, 화면번호, 화면명, 노출여부, 사용여부
+                      </caption>
+                      <colgroup>
+                        <col style="width: 56px" />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-all" />
+                              <label for="input-id-all" class="checkboxLabel">
+                                <span class="ir">전체 선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </th>
+                          <th scope="col">메뉴 번호</th>
+                          <th scope="col">메뉴명</th>
+                          <th scope="col">메뉴 경로</th>
+                          <th scope="col">화면 번호</th>
+                          <th scope="col">화면명</th>
+                          <th scope="col">노출여부</th>
+                          <th scope="col">사용여부</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-01" checked />
+                              <label for="input-id-chk-01" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-02" checked />
+                              <label for="input-id-chk-02" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-03" checked />
+                              <label for="input-id-chk-03" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-04" checked />
+                              <label for="input-id-chk-04" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-05" checked />
+                              <label for="input-id-chk-05" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-06" checked />
+                              <label for="input-id-chk-06" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="checkbox">
+                              <input type="checkbox" id="input-id-chk-07" checked />
+                              <label for="input-id-chk-07" class="checkboxLabel">
+                                <span class="ir">선택</span>
+                                <span class="checkIcon"></span>
+                              </label>
+                            </div>
+                          </td>
+                          <td>MENU01010101</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>상품 관리 > 요금제 관리 > 요금제 비교 팝업</td>
+                          <td>001</td>
+                          <td>요금제 비교 팝업</td>
+                          <td>노출</td>
+                          <td>
+                            <div class="select">
+                              <select title="사용여부">
+                                <option value="">사용</option>
+                                <option value="" selected>사용안함</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 메뉴 목록 -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

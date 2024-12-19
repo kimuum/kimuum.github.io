@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="main_menu_type" iweb-data="out" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="payment" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '요금제/휴대폰할부/약정',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section id="content" class="content-area">
+            <!-- 1depth 영역 -->
+            <div class="sub-menu">
+              <ol>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                    <span class="text">요금 및 납부조회</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">요금제/휴대폰<br />할부/약정</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M3', 'menu');">
+                    <span class="text">데이터 리필/선물</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                    <span class="text">구독/인터넷가입/<br />부가서비스</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M5', 'menu');">
+                    <span class="text">휴대폰 결제/<br />콘텐츠이용료</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M6', 'menu');">
+                    <span class="text">정지/분실/<br />기기변경</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M7', 'menu');">
+                    <span class="text">T로밍서비스</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M0', 'menu');">
+                    <span class="text">상담사 연결</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <!-- //1depth 영역 -->
+            <!-- 2depth 영역 -->
+            <div class="sub-menu-child">
+              <div class="top-info">
+                <div class="top-info-inner">
+                  <p id="refill_info" class="info-text">사용중인 요금제</p>
+                  <p class="info-text-value"><span id="payment_value" class="highlight text-large"></span></p>
+
+                  <div class="badge-box">
+                    <a href="javascript: sendRepPageData('요금제', '1', 'menu');" id="refill_bt" class="btn-detail">상세확인</a>
+                  </div>
+                </div>
+              </div>
+              <nav class="child-menu">
+                <!-- 뎁스별 클래스가 변경 됩니다. ex) depth1, depth2, /{version}/{version}/{version}. -->
+                <ol id="menu_reset">
+                  <!-- 								<li>
+                <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                  <span class="text">요금제</span>
+                </a>
+              </li> -->
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                      <span class="text">잔여 기본통화</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">휴대폰 할부 정보</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">선택약정 할인</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //2depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        ////setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          /* 메인 메뉴 타입 */
+          // N: 기본
+          // Y: 법인
+          var main_menu_type = getUrlParameter('main_menu_type');
+          // 법인 메뉴 일 때
+          if (main_menu_type != 'Y') {
+            document.getElementById('corp_yn').style.display = 'none';
+          }
+        } catch (e) {}
+
+        try {
+          /* 부가서비스 신청여부 display */
+          // Y: visiable = yes
+          // N visiable = no
+          var req_service1 = getUrlParameter('req_service1');
+          if (req_service1 == 'N') {
+            document.getElementById('req1').style.display = 'none';
+          }
+
+          /* 부가서비스 해지여부 display */
+          // Y: visiable = yes
+          // N: visiable = no
+          var req_service2 = getUrlParameter('req_service2');
+          if (req_service2 == 'N') {
+            document.getElementById('req2').style.display = 'none';
+          }
+        } catch (e) {}
+
+        try {
+          var payment = getUrlParameter('payment'); // '1': 쿠폰있음, '2': 쿠폰없음
+
+          /*@build-time*/ payment = '뉴 T끼리 맞춤형 (200분+700MB)';
+
+          if (payment == '') {
+            document.getElementById('refill_bt').style.display = 'none';
+            document.getElementById('refill_info').innerText = '고객님은';
+            document.getElementById('payment_value').innerHTML = '요금제가 없습니다.';
+
+            //document.getElementById('refill_coupon_value').innerHTML = (refill_coupon == "" ? "<em class='reillValue'>0</em>" : "<em class='reillValue'>" + formatCommas(parseInt(refill_coupon))) + "</em>장";
+          } else {
+            document.getElementById('payment_value').classList.add('text-large');
+            document.getElementById('payment_value').innerHTML = payment;
+          }
+        } catch (e) {}
+
+        try {
+          // 1: 주간, 0: 야간
+          var timezone_type = getUrlParameter('timezone_type');
+
+          // 주간이 아닐 때
+          if (timezone_type != '1') {
+            document.getElementById('agent_menu').style.display = 'none';
+            // 상담원에 대한 class 세팅.
+            document.getElementById('menu_reset').setAttribute('class', 'night');
+          } else {
+            document.getElementById('agent_menu').style.display = 'block';
+          }
+        } catch (e) {}
+
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      // report page data 호출.
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper subscription-product">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": 'FLO 앤데이터',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-flo"></i>
+                <div class="info-box">
+                  <p class="label"><span class="highlight">모바일 무제한 음악 듣기 서비스</span>와 FLO 전용 데이터 3G를 제공해 드리는 음악감상 서비스</p>
+                </div>
+              </div>
+              <div class="usage-fee-box">
+                <p class="label">이용료&nbsp;<span>7,900원 (부가세 포함)</span></p>
+                <div class="alert-text-box">
+                  <p class="alert-text">가입대상 : 5G/LTE 요금제 이용고객 <br />(일부 LTE 요금제는 가입 제한 될 수 있음)</p>
+                </div>
+              </div>
+              <div id="" class="caution-guide-container">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <div class="caution-title">가입 프로모션 안내</div>
+                    <p class="caution-text dot">서비스 최초 가입 후 이용권을 발급하는 경우 가입일 포함 30일 동안 100원으로 이용 가능</p>
+                    <p class="caution-text dot">5GX플래티넘, T플랜 맥스 요금제를 이용하는 고객 모두 무료</p>
+                    <p class="caution-text dot">5GX프라임, T플랜 스페셜 요금제를 이용하는 고객 70% 할인</p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">이용안내</div>
+                    <p class="caution-text dot">모바일 무제한 듣기를 무료로 이용할 수 있습니다.</p>
+                    <div class="caution-text-inner">
+                      <p class="caution-text dash">음원 다운로드를 제외한 스트리밍 서비스에 한해 이용 가능하며, 음원 저작권자의 요청에 따라 일부 음성은 재생이 불가할 수 있습니다.</p>
+                    </div>
+                    <p class="caution-text dot mt-8">FLO 이용 전용 데이터 3GB를 제공해 드립니다.</p>
+                    <div class="caution-text-inner">
+                      <p class="caution-text dash">월 사용량 3GB를 초과하는 경우, 이용에 제한이 있을 수 있습니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <a href="#" class="btn btn-secondary" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">해지</a>
+            <a href="#" class="btn btn-primary" onclick="javascript: sendRepPageData($(this).text().trim(), 'SMS', 'menu');">신청</a>
+            <!-- <a href="#" class="btn-primary one" onclick="javascript: sendRepPageData($(this).text().trim(), 'CA', 'menu');">상담사 연결</a> -->
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) {
+          vars_type = 'C';
+        }
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+
+    <div class="wrapper intro">
+      <main class="main">
+        <header class="header-box">
+          <h1 class="logo"><img src="/{version}/images/icon/logo_b.png" alt="sk telecom sk텔레콤 고객센터에 오신 것을 환영합니다." /></h1>
+        </header>
+        <div class="content-container intro-container">
+          <div class="intro-content" id="new_intro">
+            <div class="intro-title">
+              SK 텔레콤 고객센터에 <br />
+              오신 것을 환영합니다.
+            </div>
+            <div class="intro-guide-text">원하시는 서비스를 선택해 주세요.</div>
+            <div class="cs-list-container">
+              <ul class="cs-list-area">
+                <li class="cs-list-box">
+                  <a href="#" id="ARS_VOICE" class="cs-list-btn btn-voice">
+                    <span class="cs-list-text">음성</span>
+                    <span class="cs-list-label">버튼식 ARS</span>
+                  </a>
+                </li>
+                <li class="cs-list-box">
+                  <a href="#" id="ARS_VIEW" class="cs-list-btn btn-view">
+                    <span class="cs-list-text">화면으로 보는</span>
+                    <span class="cs-list-label">보이는 ARS</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="intro-bg-area">
+            <div class="intro-loading-box">
+              <div class="intro-loading-icon"></div>
+              <p class="intro-loading-text">보이는 ARS로 연결 중입니다.</p>
+            </div>
+            <div class="intro-bg-box" style="background-color: #f1f3ff">
+              <!-- 이벤트 공통 인트로 이미지 영역 -->
+              <img src="../images/intro/intro_40th.jpg" alt="창사 40주년 기념" />
+            </div>
+          </div>
+        </div>
+
+        <div class="intro-guide-text bottom">보이는 ARS를 이용하시면 상담사 연결 대기없이 빠르게 이용 가능합니다.</div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var prevHeight = 0; // 최초 진입 시 화면 높이
+
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        $('#new_intro').css('display', 'block');
+
+        // 일정 시간 반응 없을 시 보이는 ars 자동 진입
+        var timer = setTimeout(function () {
+          doARS('인트로', 'T', 'menu');
+        }, 30000);
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            // 플리킹 메인호출
+            //callMain('0');
+          },
+          'swipe.right': function (e, data) {
+            // 플리킹 메인호출
+            //callMain('0');
+          },
+        });
+
+        $('#ARS_VOICE').bind('touchstart', function (e) {
+          doARS('음성', 'I', 'menu');
+        });
+
+        $('#ARS_VIEW').bind('touchstart', function (e) {
+          doARS('인트로', 'V', 'menu');
+        });
+      });
+
+      function doARS(obj, dtmf, text) {
+        $('.intro-loading-box').show();
+        $('#new_intro').css('display', 'none');
+        $('.intro-bg-area').css('display', 'block');
+
+        // 메인호출.
+        sendRepPageData(obj, dtmf, 'menu');
+
+        if (dtmf == 'I') {
+          setTimeout(function () {
+            // T전화 기본화면 전환
+            changeoverPhone(true);
+          }, 500);
+        }
+      }
+    </script>
+  </body>
+</html>

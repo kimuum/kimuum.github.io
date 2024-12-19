@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 건물 기본 정보"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : "",
+        "currentPage" : "건물 기본 정보",
+      })
+
+      <!-- App Gnb -->
+      <div class="mobile-gnb-container use-mobile">
+        <div class="mobile-gnb-area">
+          <div class="mobile-gnb-lists">
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb home">
+                <i class="icon"></i>
+                <span>홈</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb building-info active">
+                <i class="icon"></i>
+                <span>건물정보</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb inquiry">
+                <i class="icon"></i>
+                <span>문의현황</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb inspection">
+                <i class="icon"></i>
+                <span>건물점검</span>
+              </button>
+            </div>
+            <div class="mobile-gnb-list">
+              <button type="button" class="mobile-gnb all">
+                <i class="icon"></i>
+                <span>전체</span>
+              </button>
+            </div>
+          </div>
+          <!-- 
+        Comment : .active 클래스 추가 시 lnb 노출
+      -->
+          <div class="mobile-lnb-container">
+            <div class="mobile-lnb-area">
+              <div class="mobile-lnb-top">
+                <div class="my-profile-box">
+                  <a href="" class="my-profile">
+                    <span>김에스님</span>
+                  </a>
+                </div>
+                <div class="setting-button-box">
+                  <button type="button" class="btn-setting">
+                    <i class="ic ic-gnb-setting"></i>
+                  </button>
+                </div>
+                <div class="mobile-lnb-shortcut-lists">
+                  <div class="mobile-lnb-shortcut-list">
+                    <a href="" class="mobile-lnb-shortcut">
+                      <span>입주사 관리</span>
+                    </a>
+                  </div>
+                  <div class="mobile-lnb-shortcut-list">
+                    <a href="" class="mobile-lnb-shortcut">
+                      <span>건물 인증</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-lnb-middle">
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category building-info">
+                    <i class="icon"></i>
+                    <span class="category">건물 정보</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>주요 시설 안내</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>대피 안내도</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>장비 관리</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category efficiency">
+                    <i class="icon"></i>
+                    <span class="category">건물 현황</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>문의 현황</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>점검 관리</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>건물 리포트</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category inquiry">
+                    <i class="icon"></i>
+                    <span class="category">문의하기</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>업무 문의 등록</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>서비스 문의 등록</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>나의 문의 내역</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>오늘의 문의 내역</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category lost">
+                    <i class="icon"></i>
+                    <span class="category">분실물 관리</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>분실물 조회</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>습득물 등록</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="mobile-lnb-list-box">
+                  <div class="mobile-lnb-list-category help">
+                    <i class="icon"></i>
+                    <span class="category">고객센터</span>
+                  </div>
+                  <div class="mobile-lnb-lists">
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>공지사항</span>
+                      </a>
+                    </div>
+                    <div class="mobile-lnb-list">
+                      <a href="" class="mobile-lnb">
+                        <span>고객만족도 설문</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mobile-lnb-bottom">
+                <div class="mobile-lnb-list">
+                  <a href="" class="mobile-lnb">
+                    <span>로그아웃</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container building-info">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">건물 기본 정보</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <!-- prettier-ignore -->
+                @@include("../../components/tab.html",{
+                  "tab" : [
+                    {
+                      "text" : "건물 정보",
+                      "property" : "tab-building active"
+                    },
+                    {
+                      "text" : "관리 구역",
+                      "property" : "tab-area"
+                    },
+                    {
+                      "text" : "장비 관리",
+                      "property" : "tab-equipment"
+                    },
+                    {
+                      "text" : "도면 관리",
+                      "property" : "floor"
+                    },
+                    {
+                      "text" : "법규 관리",
+                      "property" : "law"
+                    },
+                    {
+                      "text" : "운영 메뉴얼",
+                      "property" : "manual"
+                    },
+                    {
+                      "text" : "기타",
+                      "property" : "etc"
+                    },
+                  ]
+                })
+
+                <div class="tab-content-box">
+                  <div class="filter-table-container">
+                    <div class="filter-table-area">
+                      <div class="filter-table-top">
+                        <div class="filter-box">
+                          <div class="title">
+                            <span class="text">건물 정보</span>
+                            <div class="button-box">
+                              <button
+                                type="button"
+                                class="btn btn-building-history btn-popup"
+                                data-popup="popup-building-history"
+                              >
+                                <span class="text">건물 이력 보기</span>
+                                <i class="ic ic-more-w"></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list filter-list-name">
+                                <div class="filter-label">
+                                  <span>건물명</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">에스원 건물</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list filter-list-number">
+                                <div class="filter-label">
+                                  <span>대표 전화번호</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">02-1234-5678</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row">
+                              <div class="filter-list filter-list-address">
+                                <div class="filter-label">
+                                  <span>주소</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">서울시 강남구 테헤란로 111 에스원</span>
+                                  </div>
+                                  <div class="button-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/button.html", {
+                                      "dataValue" : "",
+                                      "type" : "secondary",
+                                      "size" : "small",
+                                      "class" : "",
+                                      "disabled" : "",
+                                      "text" : "지도로 보기",
+                                    })
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list filter-list-person">
+                                <div class="filter-label">
+                                  <span>관리소장</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">김에스</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list filter-list-date">
+                                <div class="filter-label">
+                                  <span>준공일</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">2023.01.01</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>주차 대수</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">360</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>동수(동)</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">2</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>층수(지상/지하)</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">14/2</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>면적(㎡)</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">23,123,123</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>연면적(평)</span>
+                                </div>
+                                <div class="filter-info">
+                                  <div class="info-box">
+                                    <span class="text">23,123,123</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter-table-middle">
+                        <!-- isotope -->
+                        <div class="isotope-container">
+                          <div class="isotope-area">
+                            <div class="isotope-top">
+                              <div class="isotope-title-box">
+                                <span>시설 안내</span>
+                              </div>
+                              <div class="isotope-button-box button-group filters-button-group">
+                                <button class="isotope-button active" data-filter="*">전체</button>
+                                <button class="isotope-button" data-filter=".data1">편의시설</button>
+                                <button class="isotope-button" data-filter=".data2">공용시설</button>
+                                <button class="isotope-button" data-filter=".data3">식당</button>
+                              </div>
+                            </div>
+
+                            <div class="isotope-middle">
+                              <div class="isotope-content-box">
+                                <div class="facility-block-swiper-button-prev swiper-button-prev"></div>
+                                <div class="facility-block-swiper-button-next swiper-button-next"></div>
+                                <div class="facility-block-container swiper">
+                                  <div class="facility-block-area isotope-content-box grid swiper-wrapper">
+                                    <!-- prettier-ignore -->
+                                    @@loop("../../block/blockFacility.html", [
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "국민은행",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "새마을 식당",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "GS편의점",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "싸다 김밥",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data2",
+                                        "category" : "공용시설",
+                                        "title"    : "공용시설명",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "국민은행",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "새마을 식당",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "GS편의점",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "싸다 김밥",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data2",
+                                        "category" : "공용시설",
+                                        "title"    : "공용시설명",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "국민은행",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "새마을 식당",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data1",
+                                        "category" : "편의시설",
+                                        "title"    : "GS편의점",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data3",
+                                        "category" : "식당",
+                                        "title"    : "싸다 김밥",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                      {
+                                        "isotope"  : "data2",
+                                        "category" : "공용시설",
+                                        "title"    : "공용시설명",
+                                        "number"   : "02-1234-1234",
+                                        "floor"    : "1F"
+                                      },
+                                    ])
+                                  </div>
+                                </div>
+                                <div class="facility-block-swiper-pagination"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="filter-table-bottom">
+                        <div class="evacuation-container">
+                          <div class="evacuation-area">
+                            <div class="evacuation-area-top">
+                              <div class="evacuation-top-left">
+                                <div class="title-box">대피 안내도</div>
+                                <div class="desc-box">
+                                  <p>대피 안내도는 위치별로 다를 수 있습니다.</p>
+                                </div>
+                              </div>
+                              <div class="evacuation-top-right">
+                                <div class="button-box">
+                                  <a
+                                    href="../../assets/images/대피안내도.zip"
+                                    class="btn btn-primary btn-medium"
+                                    download
+                                    title="다운로드"
+                                  >
+                                    <span>대피 안내도 다운로드</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="evacuation-area-middle">
+                              <div class="evacuation-area-middle-right tab-container">
+                                <div class="floor-select-container">
+                                  <div class="floor-select-area tab-area">
+                                    <div class="floor-lists tabs">
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab active">
+                                          <span>7F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>6F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>5F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>4F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>3F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>2F</span>
+                                        </button>
+                                      </div>
+                                      <div class="floor-list tab">
+                                        <button type="button" class="floor btn-tab">
+                                          <span>1F</span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="evacuation-area-middle-left tab-content-box">
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>7F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>7F B구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>6F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>6F C구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>6F C구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>5F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>4F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>3F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>2F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+
+                                <div class="accordion-container normal">
+                                  <div class="accordion-area">
+                                    <ul class="accordion-list">
+                                      <li class="accordion-item">
+                                        <div class="accordion-content">
+                                          <div class="content-top">
+                                            <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+                                            <div class="content-top-left">
+                                              <div class="title-box">
+                                                <span>1F A구역</span>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                          <div class="content-bottom">
+                                            <!-- 대피 안내도 이미지 -->
+                                            <div class="content-image-box">
+                                              <img src="../../assets/images/dummy.jpg" alt="" />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                  <div style="display: none"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- Footer -->
+
+      <div id="popup-building-history" class="popup-container popup-large">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">건물 이력 상세 정보</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <!-- prettier-ignore -->
+              @@include("../../components/tab.html",{
+                "tab" : [
+                  {
+                    "text" : "주요 공사",
+                    "property" : "active"
+                  },
+                  {
+                    "text" : "안전 사고",
+                    "property" : ""
+                  },
+                  {
+                    "text" : "법정 점검",
+                    "property" : ""
+                  },
+                ]
+              })
+
+              <!-- 
+                Comment : PC 용 구조
+                        : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+              -->
+              <div class="tab-content-box use-pc">
+                <div class="popup-table-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/table.html", 
+                    {
+                      "title" : "주요 공사",
+
+                      "checkbox" : false,
+                      
+                      "thead" : [ "공사명", "공사월", "금액(백만)", "공사 업체" ],
+                      
+                      "tbody" : [
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "비상발전기 소모품 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "냉각탑 충진재 교체 공사",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "비상발전기 소모품 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "냉각탑 충진재 교체 공사냉각탑 충진재 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "비상발전기 소모품 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "냉각탑 충진재 교체 공사",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "비상발전기 소모품 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "냉각탑 충진재 교체 공사냉각탑 충진재 교체",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "40",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "이지테크",
+                            "property": null,
+                          },
+                        ],
+                      ],
+                    }
+                  )
+                </div>
+                <div class="popup-table-box" style="display: none">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/table.html", 
+                    {
+                      "title" : "안전사고",
+
+                      "checkbox" : false,
+                      
+                      "thead" : [ "관리번호", "사고 유형", "사고 등급", "사고 내용", "발생일", "주요 원인" ],
+                      
+                      "tbody" : [
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "5678",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "법규위반",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2등급",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "스프링쿨러 간격 미유지",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2023.01.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "4ft",
+                            "property": null,
+                          },
+                        ],
+                      ],
+                    }
+                  )
+                </div>
+                <div class="popup-table-box" style="display: none">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/table.html", 
+                    {
+                      "title" : "테이블 명",
+
+                      "checkbox" : false,
+                      
+                      "thead" : [ "점검명", "시작일", "종료일", "내용" ],
+                      
+                      "tbody" : [
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                        [
+                          {
+                            "type" : "text",
+                            "text" : "물탱크 청소 작업 (저수조)",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.01",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "2016.03.02",
+                            "property": null,
+                          },
+                          {
+                            "type" : "text",
+                            "text" : "3월 27일 물탱크 청소 완료",
+                            "property": null,
+                          },
+                        ],
+                      ],
+                    }
+                  )
+                </div>
+              </div>
+
+              <!-- 
+                Comment : App 용 구조
+                        : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+              -->
+              <div class="tab-content-box use-mobile">
+                <div class="popup-list-box">
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>비상발전기 소모품 교체</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사월</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2016.03</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>금액(백만)</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>40</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사 업체</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>이지테크</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>비상발전기 소모품 교체</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사월</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2016.03</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>금액(백만)</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>40</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사 업체</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>이지테크</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>비상발전기 소모품 교체</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사월</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2016.03</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>금액(백만)</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>40</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>공사 업체</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>이지테크</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup-list-box" style="display: none">
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 유형</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>법규 위반</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 등급</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2등급</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>스프링쿨러 간격 미유지</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>발생일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.06.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>주요 원인</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>4tt</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 유형</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>법규 위반</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 등급</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2등급</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>스프링쿨러 간격 미유지</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>발생일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.06.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>주요 원인</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>4tt</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 유형</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>법규 위반</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 등급</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2등급</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>사고 내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>스프링쿨러 간격 미유지</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>발생일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.06.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>주요 원인</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>4tt</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="popup-list-box" style="display: none">
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>점검명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>물탱크 청소 작업(저수조)</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>시작일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>종료일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.02</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>1월 2일 물탱크 청소 완료</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>점검명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>물탱크 청소 작업(저수조)</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>시작일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>종료일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.02</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>1월 2일 물탱크 청소 완료</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popup-lists">
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>점검명</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>물탱크 청소 작업(저수조)</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>시작일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.01</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>종료일</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>2010.01.02</span>
+                      </div>
+                    </div>
+                    <div class="popup-list">
+                      <div class="list-label-box">
+                        <span>내용</span>
+                      </div>
+                      <div class="list-data-box">
+                        <span>1월 2일 물탱크 청소 완료</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>확인</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

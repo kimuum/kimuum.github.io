@@ -1,0 +1,42 @@
+<div class="table-box">
+  <table class="table">
+    <caption class="hidden">
+      @@title
+    </caption>
+    <colgroup>
+      <!-- prettier-ignore -->
+      @@if(checkbox) {
+      <col width="102px" />
+      }
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < thead.length; i++) {
+      <col width="auto" />
+      }
+    </colgroup>
+    <thead>
+      <tr>
+        @@if(checkbox) {
+        <th>
+          <div class="checkbox">
+            <input type="checkbox" name="@@title" id="@@title" class="table-checkbox-all" />
+            <label for="@@title"></label>
+          </div>
+        </th>
+        }
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < thead.length; i++) {
+        <th>`+thead[i]+`</th>
+        }
+      </tr>
+    </thead>
+    <tbody>
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < tbody.length; i++) {
+      <tr>
+        <!-- prettier-ignore -->
+        @@loop("../../components/td.html", `+(JSON.stringify(tbody[i]))+`)
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

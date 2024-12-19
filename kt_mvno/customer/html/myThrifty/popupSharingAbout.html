@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터 쉐어링", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>데이터쉐어링 소개</span></button>
+    </div>
+    <div class="popup show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">데이터쉐어링 소개</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="sharingPopContainer">
+            <div class="aboutWrap about01">
+              <div class="aboutTitle">
+                <strong>1. 데이터쉐어링 신청 가능시간</strong>
+              </div>
+              <div class="aboutContent">
+                <div class="primaryBox">
+                  <strong class="bold">신청 가능시간 : 09시~21시</strong>
+                </div>
+              </div>
+            </div>
+            <!-- //1. 데이터쉐어링 신청 가능시간 -->
+            <div class="aboutWrap about02">
+              <div class="aboutTitle">
+                <strong>2. 데이터쉐어링이란?</strong>
+              </div>
+              <div class="aboutContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">사용하고 있는 무제한 요금제에서 기본으로 제공하는 데이터를 추가요금 없이 태블릿, 또는 다른 스마트기기와 나눠 쓸 수 있는 서비스입니다. (1회선/무료)</li>
+                  <li class="beforeDot">기본 제공량 초과 시 최대 200kbps 속도로 데이터 지속 사용 가능</li>
+                </ul>
+
+                <div class="sharingProgress smaller">
+                  <div class="progressAreaLeft iconPhone">
+                    <span>모회선</span>
+                  </div>
+                  <div class="middle">
+                    <span>공유데이터</span>
+                    <div class="arrow"></div>
+                  </div>
+                  <div class="progressAreaRight iconSmartDevice">
+                    <span>스마트기기</span>
+                  </div>
+                </div>
+                <p>데이터 사용량이 많지 않아 별도로 요금을 내면서까지 사용하기에는 부담스런 유심 사용 기기와 연결</p>
+              </div>
+            </div>
+            <!-- //2. 데이터쉐어링이란? -->
+            <div class="aboutWrap about03">
+              <div class="aboutTitle">
+                <strong>3. 사용/신청 방법</strong>
+              </div>
+              <div class="aboutContent">
+                <ol class="numberList marginBtmReset">
+                  <li>데이터쉐어링이 사용 가능한 요금제인지 확인</li>
+                  <li>유심칩을 준비</li>
+                  <li>데이터쉐어링을 신청할 회선 정보를 넣고 데이터쉐어링 셀프개통</li>
+                  <li>신청 시 사용하고 있는 모회선과 같은 명의로 쉐어링 요금제에 가입/개통되며, 유심을 사용하고자 하는 기기에 꽃아 사용</li>
+                </ol>
+              </div>
+            </div>
+            <!-- //3. 사용/신청 방법 -->
+            <div class="aboutWrap about04">
+              <div class="aboutTitle">
+                <strong>4. 데이터쉐어링 이용가능한 요금제</strong>
+              </div>
+              <div class="aboutContent">
+                <p class="beforeDot bold"><strong>KT M 모바일</strong></p>
+                <div class="dataFolderWrap popupDataRowWrap03 active">
+                  <div class="folderTitle">
+                    <p class="title">데이터쉐어링 가능 요금제</p>
+                    <button type="button" class="folderBtn" aria-expanded="true">
+                      <span>데이터쉐어링 가능 요금제 정보 닫기</span>
+                    </button>
+                  </div>
+                  <div class="folderContent">
+                    <div class="tableContainer normalBgTable">
+                      <div class="tableArea">
+                        <table>
+                          <caption>
+                            KT M 모바일 데이터쉐어링 가능 요금제 - 요금제 리스트
+                          </caption>
+                          <!-- [VOS2차] 결함ID 1122019 -->
+                          <colgroup>
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th class="alignCenter" scope="col">요금제 리스트</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                            <tr>
+                              <td class="alignCenter">구글플레이기프트(100GB+/통화맘껏)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="nodataContainer">
+                      <p>데이터 쉐어링 가능 요금제가 없습니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //4. 데이터쉐어링 이용가능한 요금제 -->
+            <div class="aboutWrap about05">
+              <div class="aboutTitle">
+                <strong>5. 유의사항</strong>
+              </div>
+              <div class="aboutContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">데이터쉐어링은 1회선까지 등록 가능하며, 신청 시 무료로 제공됩니다.</li>
+                  <li class="beforeDot">데이터쉐어링 회선의 데이터는 모회선의 기본 데이터 소진 후 200Kbps 속도로 지속 이용 가능합니다.</li>
+                  <li class="beforeDot">모회선과 데이터쉐어링 회선의 명의자 및 다를 경우 데이터쉐어링 개통이 불가능합니다.</li>
+                  <li class="beforeDot">모회선 또는 데이터쉐어링 회선의 해지/명의변경/일시정지/요금제 변경 시 연동이 해지되어 데이터쉐어링 이용이 불가합니다.</li>
+                  <li class="beforeDot">데이터 쉐어링 회선은 가입 후 요금제 변경이나 번호이동으로 타사 이동이 불가하며 일반 해지만 가능합니다.</li>
+                  <li class="beforeDot">데이터쉐어링 서비스는 추가 제공 데이터로는 사용이 불가합니다.</li>
+                </ul>
+              </div>
+            </div>
+            <!-- //5. 유의사항 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        accordionControl(
+          '.popupDataRowWrap03 .folderBtn',
+          '.popupDataRowWrap03 .folderContent',
+          '.popupDataRowWrap03',
+          'KT M 모바일 데이터쉐어링 가능 요금제 정보 열기', //[VOS2차] 결함ID 1122019
+          'KT M 모바일 데이터쉐어링 가능 요금제 정보 닫기', //[VOS2차] 결함ID 1122019
+        );
+      });
+    </script>
+  </body>
+</html>

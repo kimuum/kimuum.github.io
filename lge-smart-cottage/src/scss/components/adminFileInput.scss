@@ -1,0 +1,88 @@
+.field-container {
+  .field-file-upload-box {
+    @include flex(row-reverse, flex-start, flex-start);
+    gap: 0.6rem;
+    .field-file-left {
+      flex: 1;
+      > a {
+        display: block;
+        @include font(1.4rem, 500, $gray-500, normal);
+      }
+    }
+
+    .field-file-right {
+      .btn-file-remove {
+        width: 1.6rem;
+        height: 1.6rem;
+        font-size: 0;
+        background: admin-image('ic_admin_co_cancle.svg') no-repeat center / contain;
+      }
+    }
+  }
+
+  .field-file-box {
+    @include flex(row, flex-start, center);
+    gap: 1rem;
+    input[type='file'] {
+      display: none;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+    .file-name {
+      min-width: 31.5rem;
+      color: $gray-200;
+      background-color: $white;
+    }
+    .field-file-right {
+      @include flex(row, flex-start, center);
+    }
+    .btn-file-upload {
+      cursor: pointer;
+      @include flex(row, flex-start, center);
+      gap: 0.3rem;
+      position: relative;
+      @include font(1.4rem, 500, $gray-400, 1.8rem);
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 1.6rem;
+        height: 1.6rem;
+        background: admin-image('ic_admin_co_file.svg') no-repeat center / contain;
+      }
+    }
+    .btn-file-remove {
+      position: relative;
+      margin-left: 0.6rem;
+      padding-left: 0.6rem;
+      @include font(1.4rem, 500, $gray-400, 1.8rem);
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0.1rem;
+        height: 1.2rem;
+        background-color: $gray-100;
+      }
+      span {
+        @include flex(row, flex-start, center);
+        gap: 0.3rem;
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1.6rem;
+          height: 1.6rem;
+          background: admin-image('ic_admin_co_delete.svg') no-repeat center / contain;
+        }
+      }
+    }
+  }
+}

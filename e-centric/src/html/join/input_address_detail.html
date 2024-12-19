@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 회원가입"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .find-address : 회원가입 > 주소 찾기 페이지 class
+      -->
+      <main class="main-container find-address">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : false,
+            "text" : "회원가입",
+          },
+          "button" : null
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- .find-address-container: 주소 정보 찾기 컨테이너 -->
+            <div class="find-address-container">
+              <div class="find-address-area">
+                <div class="find-address-top">
+                  <!-- prettier-ignore -->
+                  @@include("text_field.html", {
+                    "className" : "",
+                    "size" : "",
+                    "label" : "주소 정보",
+                    "labelHide" : "",
+                    "type" : "text",
+                    "id" : "address",
+                    "placeholder" : "건물, 지번 또는 도로명 검색",
+                    "value" : "",
+                    "icon" : "",
+                    "button" : "",
+                    "property" : "",
+                    "desc" : "",
+                    "loading" : false,
+                  })
+                </div>
+                <div class="find-address-middle">
+                  <div class="search-result-num-box">
+                    <span class="text">검색 결과</span>
+                    <span class="num">123건</span>
+                  </div>
+                </div>
+                <div class="find-address-bottom">
+                  <div class="search-result-container">
+                    <div class="search-result-area">
+                      <ul class="search-result-list-box">
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                        <!-- prettier-ignore -->
+                        @@include("addressSearchResultList.html")
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "셀프개통 신청내역 | 유심 판매/개통 관리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>셀프개통 신청내역</span>
+                  <!-- [운영] DR-2023-25738 20230502 -->
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>유심 판매/개통 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>셀프개통 신청내역</span></a>
+                    <!-- [운영] DR-2023-25738 20230502 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      사업자, 셀프개통 기간, SIM유형(상품 유형), 개통상태, 주문번호, 주문자명, 요금제명, 요금제 코드 검색
+                    </caption>
+                    <!-- [운영] DR-2023-25738 20230502 -->
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <!-- [운영BO] KMVNO-4209 20231201 수정 -->
+                      <tr>
+                        <th scope="row">셀프개통 기간</th>
+                        <td colspan="3">
+                          <!-- prettier-ignore -->
+                          @@include('common_filter_date_period.html')
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">사업자</th>
+                        <td>
+                          <!-- [2차BO] 20221102 수정 -->
+                          <div class="select">
+                            <select title="사업자">
+                              <option value="">전체</option>
+                              <option value="">사업자</option>
+                              <option value="">사업자</option>
+                              <option value="">사업자</option>
+                            </select>
+                          </div>
+                          <!-- //[2차BO] 20221102 수정 -->
+                        </td>
+                        <th scope="row">가입유형</th>
+                        <td>
+                          <div class="select">
+                            <select title="사업자">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- //[운영BO] KMVNO-4209 20231201 수정 -->
+                      <tr>
+                        <th scope="row">SIM유형<br />(상품유형)</th>
+                        <!-- [운영BO] KMVNO-4209 20231201 수정 -->
+                        <td>
+                          <div class="select">
+                            <select title="SIM유형">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                        <!-- [2차BO] 20221103 수정 -->
+                        <th scope="row">개통상태</th>
+                        <td>
+                          <div class="select">
+                            <select title="개통상태">
+                              <option value="">전체</option>
+                              <option value="">개통완료</option>
+                              <option value="">개통실패</option>
+                            </select>
+                          </div>
+                        </td>
+                        <!-- [2차BO] 20221103 수정 -->
+                      </tr>
+                      <!-- [운영] DR-2023-25738 20230502 -->
+                      <tr>
+                        <th scope="row">주문번호</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" value="" title="주문번호" placeholder="주문번호를 입력해주세요." />
+                          </div>
+                        </td>
+                        <th scope="row">주문자명</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" value="" title="주문자명" placeholder="주문자명을 입력해주세요." />
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">요금제명</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" value="" title="요금제명" placeholder="요금제명를 입력해주세요." />
+                          </div>
+                        </td>
+                        <th scope="row">요금제 코드</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" value="" title="요금제 코드" placeholder="요금제 코드을 입력해주세요." />
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- //[운영] DR-2023-25738 20230502 -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle"><span class="bar">총 32 건</span></h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>마스킹 해제</span></button>
+                      <!-- [운영] DR-2023-25738 20230502 -->
+                      <button type="button" class="btn"><span>액셀 다운로드</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer" tabindex="0">
+                    <!-- [2차BO] 20221012 수정 -->
+                    <table>
+                      <caption>
+                        셀프개통 신청현황 목록- No, 신청번호, 사업자 브랜드명, SIM 유형, 요금제명, 요금제 코드, 월요금, 주문자명, 휴대폰번호, 주문일, 개통상태, 신청경로
+                      </caption>
+                      <colgroup>
+                        <col style="width: 70px" />
+                        <col style="width: 100px" />
+                        <col style="width: 120px" />
+                        <col style="width: 100px" />
+                        <col style="width: 200px" />
+                        <col style="width: 100px" />
+                        <col style="width: 100px" />
+                        <col style="width: 100px" />
+                        <col style="width: 170px" />
+                        <col style="width: 120px" />
+                        <col style="width: 100px" />
+                        <col style="width: 100px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">신청번호</th>
+                          <th scope="col">사업자 브랜드명</th>
+                          <th scope="col">SIM 유형</th>
+                          <th scope="col">요금제명</th>
+                          <th scope="col">요금제 코드</th>
+                          <th scope="col">월요금</th>
+                          <th scope="col">주문자명</th>
+                          <th scope="col">휴대폰번호</th>
+                          <th scope="col">주문일</th>
+                          <th scope="col">개통상태</th>
+                          <th scope="col">신청경로</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>
+                            <a href="#" class="linkPrimary">123456</a>
+                            <!-- [운영] DR-2023-25738 20230502 -->
+                          </td>
+                          <td>KT M 모바일</td>
+                          <td>일반유심</td>
+                          <td>데이터 맘껏 12GB+/100분</td>
+                          <td>ABC123</td>
+                          <td>19,800원</td>
+                          <td>임태*</td>
+                          <td>010-23**-*098</td>
+                          <td>2022.07.01</td>
+                          <td>개통완료</td>
+                          <td>PC웹</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>
+                            <a href="#" class="linkPrimary">123456</a>
+                          </td>
+                          <td>KT M 모바일</td>
+                          <td>일반유심</td>
+                          <td>데이터 맘껏 12GB+/100분</td>
+                          <td>ABC123</td>
+                          <td>19,800원</td>
+                          <td>임태*</td>
+                          <td>010-23**-*098</td>
+                          <td>2022.07.01</td>
+                          <td class="colorRed">개통실패</td>
+                          <td>모바일웹</td>
+                        </tr>
+                        <tr style="display: none">
+                          <td colspan="12">조회하려는 사업자를 선택해주세요.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- //[2차BO] 20221012 수정 -->
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

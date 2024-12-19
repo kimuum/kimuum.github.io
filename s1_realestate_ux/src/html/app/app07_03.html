@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 입주사 임직원 초대"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/appHeader.html", {
+        "back" : true,
+        "title" : "입주사 임직원 초대",
+        "close" : false,
+      })
+
+      <!-- Content -->
+      <main class="app-content-container">
+        <div class="app-content-area">
+          <div class="content-container">
+            <div class="content-area">
+              <div class="content-middle">
+                <!-- 임직원 초대 -->
+                <div class="invite-container">
+                  <div class="invite-area">
+                    <div class="invite-top-box button-box">
+                      <button type="button" class="btn btn-secondary btn-medium">
+                        <span>연락처 불러오기</span>
+                      </button>
+                    </div>
+                    <div class="invite-middle-box">
+                      <div class="invite-list-box">
+                        <div class="title-box">
+                          <span class="title">임직원1</span>
+                          <a href="#" class="btn-text-underline btn-list-remove"><span>삭제</span></a>
+                        </div>
+                        <div class="invite-list">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/field_input.html", {
+                            "size" : "medium",
+                            "required" : "",
+                            "error" : "",
+                            "valid" : "",
+                            "class" : "",
+                            "label" : "이름",
+                            "tooltip" : "",
+                            "id" : "text-input-01",
+                            "value" : "홍길동",
+                            "placeholder" : "입력해 주세요.",
+                            "property" : "",
+                            "errorText" : "",
+                            "validText" : "",
+                            "button" : "",
+                            "fieldDesc" : "",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../components/field_input.html", {
+                            "size" : "medium",
+                            "required" : "",
+                            "error" : "",
+                            "valid" : "",
+                            "class" : "",
+                            "label" : "휴대전화번호",
+                            "tooltip" : "",
+                            "id" : "text-input-02",
+                            "value" : "01012341234",
+                            "placeholder" : "입력해 주세요.",
+                            "property" : "",
+                            "errorText" : "",
+                            "validText" : "",
+                            "button" : "",
+                            "fieldDesc" : [
+                            {
+                              "class" : "",
+                              "text" : "휴대전화번호 ‘-’ 제외하고 입력해 주세요."
+                            },
+                            ],
+                          })
+                        </div>
+                      </div>
+                      <div class="invite-list-box">
+                        <div class="title-box">
+                          <span class="title">임직원1</span>
+                          <a href="#" class="btn-text-underline btn-list-remove"><span>삭제</span></a>
+                        </div>
+                        <div class="invite-list">
+                          <!-- prettier-ignore -->
+                          @@include("../../components/field_input.html", {
+                            "size" : "medium",
+                            "required" : "",
+                            "error" : "",
+                            "valid" : "",
+                            "class" : "",
+                            "label" : "이름",
+                            "tooltip" : "",
+                            "id" : "text-input-01",
+                            "value" : "홍길동",
+                            "placeholder" : "입력해 주세요.",
+                            "property" : "",
+                            "errorText" : "",
+                            "validText" : "",
+                            "button" : "",
+                            "fieldDesc" : "",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("../../components/field_input.html", {
+                            "size" : "medium",
+                            "required" : "",
+                            "error" : "",
+                            "valid" : "",
+                            "class" : "",
+                            "label" : "휴대전화번호",
+                            "tooltip" : "",
+                            "id" : "text-input-02",
+                            "value" : "01012341234",
+                            "placeholder" : "입력해 주세요.",
+                            "property" : "",
+                            "errorText" : "",
+                            "validText" : "",
+                            "button" : "",
+                            "fieldDesc" : [
+                            {
+                              "class" : "",
+                              "text" : "휴대전화번호 ‘-’ 제외하고 입력해 주세요."
+                            },
+                            ],
+                          })
+                        </div>
+                      </div>
+                      <div class="invite-add-box">
+                        <button type="button" class="btn-list-add">
+                          <span>임직원 추가</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="content-bottom">
+                <div class="bottom-button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-invite-corfrim",
+                    "type" : "primary",
+                    "size" : "h50",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "초대",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--초대 알림 팝업 -->
+      <div id="popup-invite-corfrim" class="popup-container popup-alert">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="corfrim-box">
+                <p class="text">홍길동님 외 2명에게 초대 알림톡이 전송됩니다.</p>
+              </div>
+              <div class="popup-bottom">
+                <div class="button-box">
+                  <button type="button" class="btn btn-primary btn-medium">
+                    <span>확인</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

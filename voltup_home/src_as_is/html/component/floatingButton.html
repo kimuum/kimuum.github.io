@@ -1,0 +1,25 @@
+<div class="floating-button-box">
+  <!-- 메인 페이지에서 sub04.html로 이동 -->
+  <div class="support-link @@if(page==='main') {show}">
+    <div class="support-link-box">
+      <a href="./html/sub/sub04.html">
+        <span class="strong">24H</span>
+        <span>고객센터</span>
+      </a>
+    </div>
+  </div>
+  <!-- 서브 페이지에서 sub04.html로 이동 -->
+  <div class="support-link @@if(page==='sub') {show}">
+    <div class="support-link-box">
+      <a href="./sub04.html">
+        <span class="strong">24H</span>
+        <span>고객센터</span>
+      </a>
+    </div>
+  </div>
+  <button type="button" class="btn-inquiry">
+    <span class="icon-inquiry"></span>
+    <span>설치문의</span>
+  </button>
+  <button type="button" class="btn-top"></button>
+</div>

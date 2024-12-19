@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <main class="main-container">
+        <section id="contentSection" class="content-container">
+          <!-- [접근성] 팝업 열기 버튼 예시 -->
+          <button id="openPopupButton" style="padding: 20px; background-color: black; color: #fff">Open Modal Popup</button>
+        </section>
+
+        <!-- 충전 중지 확인 팝업 -->
+        <dialog class="popup unique-class" id="popup-alert">
+          <div class="popup-container" tabindex="0">
+            <div class="popup-area">
+              <div class="popup-top">
+                <div id="popup-title" class="popup-title">충전 중지</div>
+              </div>
+              <div class="popup-middle">
+                <!-- prettier-ignore -->
+                <div class="popup-text">충전을 중지할까요?
+                  지금까지 충전된 양만큼 결제됩니다.</div>
+              </div>
+              <div class="popup-bottom">
+                <!-- prettier-ignore -->
+                @@loop("button.html",[
+                  {
+                    "property": "",
+                    "iconClass": false,
+                    "btnColor" : 'btn-secondary',
+                    "btnSize" : 'medium',
+                    "class" : '',
+                    "text": "충전 중지하기"
+                  },
+                  {
+                    "property": "",
+                    "iconClass": false,
+                    "btnColor" : 'btn-primary',
+                    "btnSize" : 'medium',
+                    "class" : '',
+                    "text": "취소"
+                  },
+                ])
+              </div>
+            </div>
+          </div>
+        </dialog>
+        <!-- // 충전 중지 확인 팝업 -->
+      </main>
+    </div>
+
+    <!-- [접근성] 팝업 스크립트 예시 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButtons = popup.querySelectorAll('.btn');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButtons) {
+          closePopupButtons.forEach((closePopupButton) => {
+            closePopupButton.addEventListener('click', function () {
+              popup.close();
+              openPopupButton.focus();
+              openPopupButton.setAttribute('tabindex', '-1');
+            });
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

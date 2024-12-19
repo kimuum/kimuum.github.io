@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터쉐어링 가입 완료", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>데이터쉐어링 가입 완료</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">데이터쉐어링 가입 완료</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">데이터 쉐어링 가입이 완료되었습니다.</p>
+          </div>
+
+          <div class="tableContainer normalBgTable captionShow">
+            <div class="tableArea">
+              <table>
+                <caption>
+                  대표회선(모회선)
+                  <span class="ir">- 휴대폰 번호, 요금제</span>
+                </caption>
+                <colgroup>
+                  <col style="width: 40%" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">휴대폰 번호</th>
+                    <td class="alignCenter">010-34**-*807</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">요금제</th>
+                    <td class="alignCenter">모두다 맘껏 7.0GB+</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tableContainer normalBgTable captionShow">
+            <div class="tableArea">
+              <table>
+                <caption>
+                  데이터쉐어링 등록 회선
+                  <span class="ir">- 휴대폰 번호, 요금제</span>
+                </caption>
+                <colgroup>
+                  <col style="width: 40%" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">휴대폰 번호</th>
+                    <td class="alignCenter">010-34**-*807</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">요금제</th>
+                    <td class="alignCenter">데이터쉐어링 전용요금제</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>개통 재요청</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

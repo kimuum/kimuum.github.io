@@ -1,0 +1,2959 @@
+// ------- common ------- //
+html,
+body {
+  font-size: 10px;
+  letter-spacing: -0.5px;
+}
+body {
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+a {
+  color: inherit;
+}
+em {
+  font-style: normal; 
+}
+button {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+.hidden {
+  display: none !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.imgWrap {
+  display: inline-block;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+.swiper-notification {
+  @include ir;
+}
+
+// color 
+.colorPrimary {
+  color: $primary !important;
+}
+.colorRed {
+  color: $color-red-01 !important;
+}
+.colorYellow {
+  color: $color-yellow-01 !important;
+}
+.colorPurple02 {
+  color: $bgcolor-purple-02 !important;
+}
+
+// a태그 포커스 클래스
+.focusA {
+  outline: 2px solid $black;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+}
+
+/* line 16, scss/common.scss */
+::-webkit-scrollbar-track {
+	background-color: #fff;
+}
+
+/* line 20, scss/common.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+	background-color: #919191;
+}
+
+.ir {
+  text-indent: -9999px;
+  display: block !important;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%); 
+  width: 1px;
+  height: 1px;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  padding: 0;
+  position: fixed;
+  left: -9999px;
+  white-space: nowrap;
+  font-size: 1px !important;
+  transform: translateX(-100px) scale(0.0001);
+  z-index: -1;
+}
+
+// links
+.linkUnderline {
+  @include font(1.4rem, normal, $color-gray-04, 1.2);
+  border-bottom: 1px solid $color-gray-04;
+  word-break: break-all;
+  &:hover {
+    font-weight: bold;
+  }
+  //arrow
+  &.iconArrow {
+    padding-right: 1rem;
+    border-bottom: 1px solid $color-gray-04;
+    background: image('common/arrow_link_r.svg') no-repeat right center / 6px auto;
+    transition: all .5s;
+    &:hover, &:focus {
+      padding-right: 3rem;
+    }
+  }
+  //narmal
+  &.colorPrimary {
+    color: $primary;
+    border-bottom: 1px solid $primary;
+  }
+  &.colorCyan01 {
+    color: $color-cyan-02;
+    border-bottom: 1px solid $color-cyan-02;
+    &.iconArrow {
+      border-bottom: 1px solid $color-cyan-02;
+      background-image: image('common/arrow_link_r_cyan.svg');
+    }
+  }
+  &.colorGray {
+    color: $color-gray-05;
+    border-bottom-color: $color-gray-05;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+
+// .eventPrinter {
+//   display: block;
+//   position: fixed;
+//   left:0;
+//   bottom:0;
+//   z-index: 9999;
+//   width: 100%;
+//   height: 2rem;
+//   background-color: $black;
+//   @include font(1.6rem, bold, $white, 2rem);
+//   text-align: center;
+// }
+.skip {
+  a, button {
+    position: fixed;
+    top: -2rem;
+    display: block;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 2rem;
+    border-radius: 0;
+    background-color: $black;
+    appearance: none;
+    @include font(1.6rem, bold, $white, 2rem);
+    text-align: center;
+    &:focus {
+      top: 0;
+    }
+    &:active {
+      top: 0;
+    }
+    &.moType {
+      display: none;
+    }
+  }
+}
+
+// ------- layout ------- //
+.wrap {
+  position: relative;
+  overflow: hidden; //
+  max-width: 192rem;
+  min-width: 28rem;
+  margin: 0 auto;
+  padding-top: 14.5rem;
+
+  // 본문에 타이틀이 없는 경우 여백
+  &.main,
+  &[class*=homeJoinStep],
+  &.homeSearchResult {
+    padding-top: 8.1rem;
+  }
+  &.mobileNavActive {
+    .mobileNav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 102;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.12);
+      border-bottom: none;
+    }
+  }
+
+  // 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+  // &.eventBannerOn {
+  //   padding-top: 13.7rem;
+  //   // 메인
+  //   &.main {
+  //     .header {
+  //       top: 5.6rem;
+  //     }
+  //     &.mobileNavActive {
+  //       .header {
+  //         top: 0;
+  //       }
+  //     }
+  //   }
+  // }
+
+
+  // 끝. 상단 이벤트 띠 배너
+}
+.moType {
+  display: none;
+}
+
+// ------- header ------- //
+.headerIcons {
+  &.moType {
+    display: none;
+  }
+}
+.btnLogout {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  right: 15rem;
+  width: 3rem;
+  height: 3rem;
+  transform: translateY(-50%);
+  & > span {
+    @include ir;
+  }
+}
+.btnChatbot {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  right: 10.5rem;
+  width: 4rem;
+  height: 4rem;
+  transform: translateY(-50%);
+  background: image('common/icon_chatbot.svg') no-repeat center /3rem auto;
+  &:hover {
+    background: image('common/icon_chatbot_cyan.svg') no-repeat center /3rem auto;
+  }
+}
+.headerContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  // max-width: 192rem;
+  z-index: 100;
+  width: 100%;
+  transition: all .5s;
+  background-color: $white;
+  &.hover, &.focus {
+    .subMenu {
+      display: block;
+    }
+    .gnbBottom {
+      &.pcType {
+        display: flex;
+        top: $headerHeight;
+        height: 57rem;//마이알뜰폰 홈 메뉴 추가
+      }
+    }
+  }
+  &.opendMenu {
+    .gnbContainer {
+      display: block;
+    }
+  }
+  .headerArea {
+    position: relative;
+    z-index: 100;
+    max-width: 192rem;
+    margin: 0 auto;
+  }
+}
+
+// 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+// .headerBanner {
+//   @include flex(row, space-between, center);
+// }
+// .eventBanner {
+//   height: 5.6rem;
+//   padding: 0 4rem 0 5rem;
+//   background-color: $bgcolor-gray-03;
+//   &.show {
+//     display: flex;
+//   }
+//   &.popup {
+//     z-index: 100;
+//     @include flex(row, space-between, center);
+//     display: none;
+//     width: 100%;
+//   }
+//   .eventLink {
+//     @include flex(row, flex-start, center);
+//     @include font(1.4rem, normal, $black);
+//     .iconArrow {
+//       @include flex(row, flex-start, center);
+//       display: inline-flex;
+//       margin-left: 0.5rem;
+//       font-weight: bold;
+
+//       &:after {
+//         content: '';
+//         display: inline-block;
+//         width: 2.1rem;
+//         height: 2.1rem;
+//         background: image('common/navigate_next.svg') no-repeat center;
+//       }
+//     }
+//   }
+//   .popupClose {
+//     width: 2.4rem;
+//     height: 2.4rem;
+//     padding: 1rem;
+//     background: image('common/close.svg') no-repeat center;
+//     & > span {
+//       @include ir;
+//     }
+//     &:focus-visible {
+//       outline: 2px solid $black;
+//     }
+//   }
+// }
+// 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+
+.header, .logoHeader {
+  @include flex(row, space-between, center);
+  position: relative;
+  z-index: 200;
+  height: $headerHeight;
+  padding: 0 5rem 0 5.4rem;
+  .logo {
+    display: block;
+    position: relative;
+    z-index: 10;
+    & > * {
+      display: block;
+      width: 10.8rem;
+      height: 3.8rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+.userMenu {
+  position: relative;
+  z-index: 10;
+  @include flex(row, flex-end, center);
+  margin-left: auto;
+}
+.logoutBtn {
+  @include flex(row, flex-start, center);
+  text-decoration: underline;
+  &:before {
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    background: image('common/btn_logout.svg') no-repeat left center / 3rem;
+  }
+}
+.mobileHeader {
+  display: none;
+  margin-left: 1.4rem;
+  [class*=btn] {
+    overflow: hidden;
+    width: 5rem;
+    height: 5rem;
+    & > span {
+      @include ir;
+    }
+  }
+}
+.btnMenuOpen {
+  background: image('common/toggle_menu_open.svg') no-repeat center;
+}
+.btnMenuClose {
+  display: none;
+  background: image('common/toggle_menu_close.svg') no-repeat center;
+}
+.gnbContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  .gnb {
+    @include flex(row, flex-start, flex-start);
+    width: 100%;
+    max-width: 120rem;
+    margin: 0 auto;
+    & > li {
+      @include flex(row, flex-start, center);
+      position: relative;
+      width: 25%;
+      height: $headerHeight;
+    }
+    .depth01 {
+      display: block;
+      @include font(1.6rem, bold, $black, 1);
+      white-space: nowrap;
+      text-align: center;
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover, &:focus {
+        color: $primary;
+      }
+    }
+    .moDepth01 {
+      display: none;
+    }
+  }
+  a {
+    @include font(1.6rem, normal, $black);
+    white-space: nowrap;
+  }
+  .bottomButtons {
+    & > * {
+      @include font(1.4rem, 500, $primary);
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+.bottomButtons {
+  @include flex(row, flex-end, center);
+  // text-decoration: underline;
+  .hideInfoBtn {
+    @include flex(row, flex-end, center);
+    &:after {
+      content: '';
+      display: block;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-left: 0.5rem;
+      background: image('common/icon_summary_lock_primary.svg') no-repeat center;
+      background-size: cover;
+    }
+  }
+  &.pcType {
+    position: absolute;
+    z-index: 1;
+    right: 5.2rem;
+    bottom: 2.7rem;
+    .hideInfoBtn {
+      margin-right: 3.5rem;
+    }
+  }
+  &.moType {
+    display: none;
+  }
+  & > * {
+    @include font(1.4rem, normal, $black, 1);
+  }
+  .subTextArea {
+    font-size: 1.3rem;
+    a {
+      margin-left: 0.5rem;
+      font-size: 1.4rem;
+    }
+  }
+}
+.subMenu {
+  position: absolute;
+  display: none;
+  z-index: 10;
+  top: $headerHeight;
+  left: 0;
+  width: calc(100% - 2rem);
+  margin-top: 1.8rem;
+  & > li {
+    position: relative;
+    padding: 0.8rem 0;
+    &.active {
+      .subMenuChild {
+        display: block;
+      }
+      .openDepth03 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .depth02 {
+    display: inline-block;   
+    position: relative;
+    line-height: 1.4;
+    &:hover, &:focus {
+      font-weight: bold;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -.3rem;
+        width: 100%;
+        border-bottom: 2px solid $accent;
+      }
+    }
+    &:active {
+      color: $color-gray-06;
+    }
+  }
+  .openDepth03 {
+    overflow: hidden;
+    position: absolute;
+    top: 0.5rem;
+    right: 0;
+    z-index: 2;
+    width: 3rem;
+    height: 3rem;
+    background: image('common/arrow_gnb.svg') no-repeat center/1.2rem auto;
+    text-indent: -99999px;
+  }
+  .subMenuChild {
+    display: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    a {
+      position: relative;
+      display: block;
+      margin-bottom: 1rem;
+      @include font(1.4rem, normal, $color-gray-04, 1.4);
+      &:hover, &:focus {
+        font-weight: bold;
+      }
+      &:before {
+        content: '-';
+        position: absolute;
+        top: 0.1rem;
+        left: -1rem;
+        z-index: 1;
+      }
+    }
+  }
+}
+.gnbBottom {
+  @include flex(row, flex-start, flex-end);
+  align-content: stretch;
+  flex-wrap: nowrap;
+  position: absolute;
+  top: -9999px;
+  height: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: $bgcolor-gray-03;
+  border-top: 1px solid $color-gray-02;
+  border-bottom: 1px solid $border-color-02;
+  &.moType {
+    display: none;
+  }
+}
+.gnbBtmMenu {
+  @include flex(row, center, center);
+  width: 100%;
+  height: 7.5rem;
+  background-color: $bgcolor-gray-04;
+  .gnbBtmMenuTitle {
+    @include flex(row, center, center);
+    @include font(1.6rem, normal, $black);
+    .iconBgSetting {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      margin-left: .6rem;
+      background: none;
+    }
+  }
+  .bottomMenu {
+    overflow: hidden;
+    overflow-x: auto;
+    @include flex(row, flex-start, center);
+    margin-left: 5rem;
+    max-width: 45rem;
+    padding: 0.2rem;
+    /* line 16, scss/common.scss */
+    &::-webkit-scrollbar-track {
+      background-color: $bgcolor-gray-04;
+    }
+    & > li {
+      margin-right: 1.4rem;
+    }
+    .btnMenu {
+      display: block;
+      min-width: 7.4rem;
+      padding: 0 1.1rem;
+      border: 1px solid rgba($black, 0.2);
+      background-color: rgba($white, 0.8);
+      border-radius: .4rem;
+      @include font(1.4rem, normal, $black, 3.3rem);
+      text-align: center;
+    }
+  }
+}
+/* header user Data */
+.myInfoSummary {
+  //infoSummary
+  .infoSummaryTop {
+    background-color: $white;
+  }
+  .infoSummaryBottom {
+    position: relative;
+    background-color: rgba($white, 0.7);
+    .summaryField {
+      overflow: hidden;
+    }
+  }
+  .summaryField {
+    width: 143rem;
+    margin: 0 auto;
+  }
+  //subTitleContainer
+  .subTitleContainer {
+    @include flex(row, space-between, center);
+    padding: 3.2rem 0;
+    .btn {
+      height: 5rem;
+      padding: 0 2rem;
+      line-height: 5rem;
+      white-space: normal;
+      .underline {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+    .iconBgLink {
+      &.btn {
+        padding-right: 5.7rem;
+      }
+      background-position: right 2rem center;
+    }
+    .iconBgSetting {
+      display: block;
+      width: 6rem;
+      height: 4rem;
+      margin-right: -2rem;
+      background-position: center;
+      span {
+        @include ir;
+      }
+    }
+    .titleLinks {
+      @include flex(row, flex-start, center);
+      position: relative;
+      z-index: 1;
+      height: 5.7rem;
+      padding: 0 2rem;
+      border-radius: 0.4rem;
+      background-color: $white;
+      border: 1px solid $border-color-02;
+      @include font(1.6rem, normal, $black, 1.4);
+      .underline {
+        font-weight: bold;
+      }
+      .iconBgSetting {
+        margin-left: 5rem;
+      }
+    }
+    .hideInfoBtn {
+      padding-right: 0;
+    }
+    .strongText {
+      @include font(2.4rem, bold, $black, 1.4);
+      &.iconBgLink {
+        padding-right: 4.6rem;;
+        font-weight: normal;
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  .bottomButtons {
+    margin-top: 1.5rem;
+  }
+  .phoneLineSummaryDrop {
+    min-width: 35.5rem;
+  }
+}
+.mobileContainer {
+  .myInfoSummary {
+    display: none;
+  }
+}
+// ie 대응
+@media screen and (min-width:0\0){
+  /* header user Data */
+  .myInfoSummary {
+    .blurCover {
+      display: none;
+    }
+  }
+}
+//infoSummaryBottom
+.infoSummaryBottom {
+  &.active {
+    .summaryTop {
+      background-color: $bgcolor-gray-03;
+    }
+    .summaryBottom {
+      display: block;
+    }
+  }
+  .summaryBottom {
+    display: none;
+    padding: 4rem;
+    background-color: $bgcolor-gray-05;
+  }
+
+  //summaryBtnTitle
+  .summaryBtnTitle {
+    @include flex(row, flex-start, center);
+    padding: 1.4rem 0;
+  }
+  .summaryItem {
+    @include flex(row, space-between, center);
+    width: 28rem;
+    height: 4.7rem;
+    padding: 0 1.7rem 0 1.9rem;
+    margin-right: 1rem;
+    background-color: $white;
+    border: 1px solid $border-color-02;
+    border-radius: 0.8rem;
+    background-position: left 2rem center;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .summaryTitle {
+    @include font(1.4rem, bold, $black, 4.7rem);
+    &[class*=iconBg] {
+      height: 100%;//ie11
+      padding-left: 2.5rem;
+      & > span {
+        @include no-ir;
+      }
+    }
+  }
+  .summaryData {
+    @include flex(row, flex-start, center);
+    @include font(1.4rem, bold, $black, 1);
+    & > span {
+      padding-left: 0.4rem;
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+    .data {
+      margin-top: -0.2rem;
+      font-weight: normal;
+      font-size: 2.4rem;
+      color: $primary;
+    }
+  }
+  .summaryBtn {
+    display: block;
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-left: auto;
+    background: image('common/btn_navi_down_bk.svg') no-repeat center / 2.6rem;
+    & > span {
+      @include ir;
+    }
+    &[aria-expanded=true] {
+      transform: rotate(180deg)
+    }
+  }
+  .summaryNotice {
+    max-width: calc(100% - 3rem);
+    @include font(1.6rem, normal, $black, 1.4);
+    a {
+      font-weight: bold;
+    }
+  }
+
+  //summaryInfoArea
+  .summaryInfoArea {
+    .swiper-wrapper {
+      align-items: stretch;
+      padding-bottom: 1px;
+    }
+    .swiper-slide {
+      // overflow: hidden;
+      height: auto;
+      background-color: $white;
+      border: 1px solid $border-color-02;
+      border-radius: 1.2rem;
+    }
+    .summaryPagination, 
+    .summaryPagination2 {
+      display: none;
+      text-align: center;
+      .swiper-pagination-bullet {
+        display: inline-block;
+        opacity: 1;
+        width: 2rem;
+        height: 0.6rem;
+        margin: 0 0.3rem;
+        background-color: $border-color-03;
+        border-radius: 4rem;
+        & > span {
+          @include ir;
+        }
+        &.swiper-pagination-bullet-active {
+          width: 5rem;
+          background-color: $black;
+        }
+      }
+    }
+  }
+  .summaryInfoTitle {
+    @include flex(column, center, flex-start);
+    height: 5.5rem;
+    padding: 0 2rem;
+    border-bottom: 1px solid $border-color-02;
+    @include font(1.6rem, bold, $black, 1.4);
+    &.iconBgLink {
+      background-position: right 2rem center;
+    }
+  }
+  .summaryInfoContent {
+    position: relative;
+    height: calc(100% - 5.2rem);
+    [class*=iconBg] {
+      width: 2.8rem;
+      height: 2.8rem;
+      background-position: center;
+      & > span {
+        @include no-ir;
+        color: transparent;
+      }
+    }
+    .iconBgRefesh {
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-left: .9rem;
+    }
+  }
+  //summary common
+  .flex {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    &.center {
+      @include flex(row, center, flex-start);
+    }
+  }
+  .grayBox {
+    padding: 2rem;
+    background-color: $bgcolor-gray-03;
+    border-radius: 1rem;
+    &.hyphen {
+      dt {
+        margin-bottom: 1.2rem;
+      }
+      dd {
+        margin-bottom: 0.8rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &:before {
+          content: '-';
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
+        @include font(1.6rem, normal, $color-gray-06, 1.4);
+      }
+    }
+    .flexRow {
+      dt {
+        font-weight: normal;
+      }
+      dd {
+        font-weight: bold;
+      }
+    }
+  }
+  // logout상태 // 선불요금제 회원
+  .summaryData, .noPhoneLineShow {
+    .imgWrap {
+      .pcType {
+        display: block;
+      }
+      .moType {
+        display: none;
+      }
+    }
+  }
+  .noPhoneLineShow {
+    height: 100%;
+    background-color: $bgcolor-noLine;
+    font-size: 0;
+    .imgWrap {
+      width: 100%;
+      img {
+        max-height: 30rem;
+      }
+    }
+    .floating {
+      @include flex(column, center, center);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .floatText {
+      width: 100%;
+      max-width: 35.1rem;
+      height: auto;
+      padding: 2rem 3rem 2rem 6rem;
+      border-radius: 0.4rem;
+      background-color: $color-cyan-03;
+      border: 1px solid $color-cyan-03;
+      @include font(1.6rem, bold, $black, 1.4);
+    }
+    .smallText {
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+    .iconBgLock {
+      background-position: left 2.5rem top 2rem;
+    }
+  }
+  dt {
+    font-weight: bold;
+  }
+  strong {
+    font-weight: bold;
+  }
+  .colorPrimary {
+    padding-right: 0.5rem;
+  }
+  .flexRow {
+    @include flex(row, flex-start, flex-start);
+  }
+  .itemHalf {
+    @include flex(row, center, center);
+    &:after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 1.8rem;
+      margin: 0 3.4rem;
+      background-color: $color-gray-06;
+    }
+    &:last-child {
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .informationItem {
+    padding: 3rem;
+    @include font(1.6rem, normal, $color-gray-06, 1.4);
+    .itemTop {
+      margin-bottom: 2.6rem;
+      .bigTitle {
+        display: block;
+        @include font(2.8rem, bold, $black, 1.4);
+      }
+      .unitDate {
+        @include font(1.6rem, normal, $color-gray-05, 1.4);
+        white-space: nowrap;
+      }
+      .imgWrap {
+        max-width: 9.9rem;
+      }
+    }
+    .itemBottom {
+      .title {
+        @include font(1.8rem, bold, $black, 1.4);
+      }
+      .text {
+        margin-left: auto;
+        @include font(3.2rem, bold, $black, 1.1);
+      }
+      .smallText {
+        @include font(1.3rem, normal, $color-gray-05, 1.4);
+      }
+    }
+    .itemData {
+      width: 100%;
+      margin-bottom: 3rem;
+      .flexRow {
+        margin-bottom: 1.5rem;
+      }
+      .text {
+        order: 1;
+        margin-left: auto;
+      }
+    }
+    .gageBar {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 1.3rem;
+      border-radius: 2rem;
+      background-color: $white;
+      box-shadow: inset 1px 1px 4px rgba($black, 0.2);
+      .bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background-color: $accent;
+        border-radius: 2rem;
+      }
+    }
+  }
+  //사용량 조회
+  .usageSummary {
+    .itemTop {
+      padding-bottom: 4.2rem;
+    }
+  }
+  //요금제 정보
+  .costSummary {
+    .informationItem {
+      padding-top: 1rem;
+    }
+    .itemTop {
+      margin-bottom: 3.4rem;
+    }
+    .itemBottom {
+      &.grayBox {
+        padding: 2.5rem;
+      }
+    }
+  }
+  //요금 명세서
+  .specsSummary {
+    .itemTop {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: flex-end;
+      .bigTitle {
+        width: 21rem;
+      }
+      .unitDate {
+        width: 12.6rem;
+      }
+    }
+    .itemBottom {
+      &.grayBox {
+        padding: 2.5rem 2.4rem;
+      }
+      .flexRow {
+        justify-content: space-between;
+        margin-bottom: 1.1rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.welcomeArea {
+  @include font(1.6rem, normal, $color-gray-04, 1.4);
+  p {
+    margin-bottom: 0.4rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// ------- header - search ------- //
+
+/* mobile menu */
+.mobileNav {
+  position: relative;
+  display: none;
+  z-index: 10;
+  background-color: $bgcolor-gray-03;
+  // border-bottom: 1px solid $color-gray-02;
+  .menuList {
+    @include flex(row, flex-start, center);
+    overflow-x: auto;
+    padding: 0 2rem;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+    & > li {
+      margin: 0 2.25rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+  .menu {
+    position: relative;
+    display: block;
+    height: 4.8rem;
+    @include font(1.5rem, bold, $color-gray-05, 4.8rem);
+    white-space: nowrap;
+    &.active {
+      color: $black;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $accent;
+      }
+    }
+  }
+  .mobileMenu {
+    z-index: 10;
+    width: 100%;
+    background-color: $bgcolor-gray-03;
+    padding: 0 2rem;
+    border-bottom: 1px solid $color-gray-02;
+    &.active {
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.12);
+      border-bottom: none;
+      .mobileSubMenuList {
+        &:after {
+          display: none;
+        }
+      }
+      .mobileSubMenu {
+        display: block;
+        padding: 0.5rem 0;
+        margin: 0;
+        & > li {
+          margin: 0.5rem 0.2rem;
+        }
+      }
+      .btnShowAll {
+        &:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .titleContainer {
+    width: 100%;
+
+    .titleArea {
+      @include flex(row, flex-start, center);
+    }
+
+    .currentPageTitle {
+      display: none;
+      padding: 1rem 0;
+      @include font(1.6rem, 400, $black, 2.4rem);
+    }
+
+    .btnGoBack {
+      position: relative;
+      left: -0.7rem;
+      width: 2.1rem;
+      height: 2rem;
+      background: image('/common/icon_arrow_left.svg') no-repeat center /1rem auto;
+    }
+  }
+
+  .mobileSubMenuList {
+    position: relative;
+    width: calc(100% - 1rem);
+
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   right: 0;
+    //   width: 1rem;
+    //   height: 100%;
+    //   background: linear-gradient(90deg, rgba($white, 0) 0%, $bgcolor-gray-03 50%);
+    // }
+  }
+  .mobileSubMenuArea {
+    display: none;
+    position: relative;
+    overflow-x: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+    &.show {
+      display: block;
+      // overflow: hidden;
+    }
+  }
+  .mobileSubMenu {
+    @include flex(row, flex-start, center);
+    width: fit-content;
+    margin: 0 -0.2rem;
+    padding: 0.8rem 0.5rem 0.8rem 0;
+    font-size: 0;
+    & > li {
+      display: inline-block;
+      margin: 0 0.2rem;
+    }
+    .depth02 {
+      display: block;
+      padding: 0.4rem 1rem;
+      border: 1px solid $border-color-02;
+      border-radius: 4rem;
+      @include font(1.3rem, normal, $black, 1);
+      white-space: nowrap;
+      &.active {
+        border-color: $black;
+        font-weight: bold;
+      }
+    }
+  }
+  .btnShowAll {
+    overflow: hidden;
+    @include flex(row, center, center);
+    position: absolute;
+    top: 4.8rem;
+    right: 0;
+    z-index: 1;
+    width: 3rem;
+    height: 4.3rem;
+    &:after {
+      content: '';
+      display: block;
+    }
+    &:after {
+      width: 100%;
+      height: 100%;
+      background: image('/common/arrow_mobileMenu.svg') no-repeat center /1rem auto;
+    }
+    &.disabled, &:disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    & > span {
+      @include ir;
+    }
+  }
+
+  .mobileThirdMenuArea {
+    display: none;
+    overflow: hidden;
+    overflow-x: auto;
+    padding: 0 1.5rem;
+    margin: 0 -2rem;
+    border-top: 1px solid $color-gray-02;
+    
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+    }
+
+    &.show {
+      display: block;
+    }
+  }
+
+  .mobileThirdMenu {
+    @include flex(row, flex-start, center);
+    
+    .depth03 {
+      display: block;
+      padding: 1rem 0.8rem;
+      @include font(1.2rem, 400, $color-gray-05, normal);
+      white-space: nowrap;
+      &.active {
+        font-weight: bold;
+      }
+    }
+    & > li:last-child {
+      @include flex(row, flex-end, center);
+      &:after {
+        content: '';
+        display: inline-block;
+        width: 3rem;
+        height: 1rem;
+      }
+    }
+  }
+}
+
+// ------- contents ------- //
+// sub title
+.pageTitleContainer {
+  position: fixed;
+  top: 8.1rem;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: $bgcolor-gray-03;
+  .pageTitleContent {
+    @include flex(row, space-between, center);
+    width: 143.6rem;
+    height: 6.4rem;
+    margin: 0 auto;
+  }
+  .titleAreaRight {
+    height: 100%;
+  }
+  .title {
+    @include flex(row, flex-start, center);
+    height: 100%;
+    padding: 1rem 0;
+    & > * {
+      display: block;
+      @include font(1.8rem, bold, $black, 1.3);
+    }
+  }
+  .titleArrow {
+    width: 2.4rem;
+    height: 4rem;
+    margin-right: 0.6rem;
+    background: image('common/icon_navi_prev.svg') no-repeat left center;
+  }
+  .breadcrumbContainer {
+    @include flex(row, flex-end, center);
+    height: 100%;
+    .breadcrumb {
+      position: relative;
+      @include flex(row, flex-start, center);
+      height: 100%;
+      margin-right: 3rem;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -1.8rem;
+        width: 0.7rem;
+        height: 1rem;
+        margin-top: -0.5rem;
+        background: image('common/icon_navi_next_bk.svg') no-repeat center;
+        pointer-events: none;        
+      }
+      &.iconBgHome {
+        overflow: visible;
+        display: block;
+        width: 1.8rem;
+        height: 1.8rem;
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      .breadcrumbTitle {
+        @include font(1.4rem, normal, $black, 1.4);
+      }
+    }
+  }
+
+  // navi 하위 메뉴
+  .breadcrumbDrop {
+    &.active {
+      .breadcrumbDropList {
+        display: block;
+      }
+    }
+    .breadcrumbBtn {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 0.6rem;
+      background: image('common/btn_navi_down_bk.svg') no-repeat center;
+      & > span {
+        @include ir;
+      }
+      &:focus-visible {
+        outline: 1px solid $black;
+      }
+    }
+    .breadcrumbDropList {
+      overflow: hidden;
+      overflow-y: auto;
+      position: absolute;
+      display: none;
+      top: 5.5rem;
+      left: 0;
+      z-index: 10;
+      min-width: 14.5rem;
+      max-height: 30rem;
+      padding: 1.4rem 0;
+      border: 2px solid $black;
+      background-color: $white;
+      border-radius: 12px;
+      box-shadow: 3px 3px 5px 0px #00000026;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 1.4rem;
+        @include font(1.4rem, normal, $black, 3.4rem);
+        &:hover {
+          outline: 0;
+          background-color: rgba(0, 0, 0, 0.04);
+          color: $primary;
+          text-decoration: underline;
+        }
+        &:focus-visible {
+          outline: 2px solid $black;
+        }
+        &:active {
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            right: -2px;
+            bottom: 0;
+            z-index: 2;
+            border: 2px solid $primary;
+          }
+        }
+      }
+    }
+  }
+}
+.fieldTitle01 {
+  @include flex(row, flex-start, center);
+  @include font(1.6rem, bold, $black, 1.4);
+  a {
+    display: block;
+    width: 100%;
+    color: inherit;
+  }
+  .iconBgLink {
+    background-position: right center;
+    background-size: 0.9rem auto;
+  }
+}
+// .contentContainer {}
+.contentArea {
+  position: relative;
+  z-index: 2;
+  padding-top: 7rem;
+  padding-bottom: 16.3rem;
+  background-color: $bgcolor-gray-05;
+  &.bgColorWhite {
+    background-color: $white;
+  }
+  &.paddingTop0 {
+    padding-top: 0;
+  }
+  &.paddingBottom0 {
+    padding-bottom: 0;
+  }
+}
+.contentInner {
+  max-width: 147.6rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.titleContent {
+  background-color: $white;
+  border: 2px solid $primary;
+  border-radius: 1.2rem;
+}
+//약관 동의 영역
+.typeAgreementCheck, .typeAgreementBlank {
+  .fieldCheckbox {
+    @include flex(row, flex-start, center);
+    margin-bottom: 0.8rem;
+    .fieldLabel {
+      margin-left: 1rem;
+      margin-bottom: 0;
+      @include font(1.4rem, 500, $black, 2rem);
+    }
+    .fieldForm {
+      min-width: 2.2rem;
+    }
+  }
+}
+.typeAgreementCheck {
+  .fieldData {
+    .fieldArea {
+      overflow-y: auto;
+      display: block;
+      height: auto;
+      height: 20rem;
+      margin-bottom: 0;
+      padding: 2rem;
+      border-color: $black;
+      .fieldValue {
+        font-size: 1.2rem;
+        color: $black;
+        line-height: 1.6;
+        span {
+          display: block;
+          margin: 1.5rem 0;
+        }
+      }
+    }
+  }
+}
+.typeAgreementBlank {
+  .btnOpenBlank {
+    margin-left: auto;
+    width: 3.2rem;
+    height: 2.2rem;
+    background: image('common/icon_arrow_right.svg') no-repeat center/0.75rem auto;
+    & > span {
+      @include ir;
+    }
+  }
+}
+// 본인인증 방법 선택 버튼
+.typeCertification {
+  .certificationWrap {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin: -0.6rem;
+    [class*=btnCertify], .btnNotService {
+      position: relative;
+      flex: 1;
+      @include flex(column, center, center);
+      min-width: 16.5rem;
+      height: 14rem;
+      margin: 0.6rem;
+      @include font(1.4rem, normal, $color-gray-06, 1.5);
+      letter-spacing: -1px;
+      background-color: $white;
+      border-radius: 0.4rem;
+      &[aria-disabled="true"] {
+        cursor: default;
+        pointer-events: none;
+        background-color: $bgcolor-gray-07;
+        &:after {
+          display: none;
+        }
+        &.active {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .icon {
+        width: 10.4rem;
+        height: 6.5rem;
+        margin-bottom: 1.5rem;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        display: none;
+        top: -1px;
+        right: -1px;
+        bottom: -1px;
+        left: -1px;
+        border: 2px solid $primary;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      &:hover, &.active {
+        &:after {
+          display: block;
+        }
+      }
+      &:active {
+        opacity: 0.7;
+      }
+    }
+    .btnCertifyPass {
+      .icon {
+        background: image('common/img_certify_pass.png') no-repeat center/9.8rem 3.5rem;
+      }
+    }
+    .btnCertifyToss {
+      .icon {
+        background: image('common/img_certify_toss.png') no-repeat center/10.1rem 2.6rem;
+      }
+    }
+    .btnCertifyCard {
+      .icon {
+        background: image('common/img_certify_card.png') no-repeat center/6.4rem 4.9rem;
+      }
+    }
+    .btnCertifyNaver {
+      .icon {
+        background: image('common/img_certify_naver.png') no-repeat center/9.3rem 6.5rem;
+      }
+    }
+    .btnCertifyKakao {
+      .icon {
+        background: image('common/img_certify_kakao.png') no-repeat center/10.4rem 5rem;
+      }
+    }
+    //서비스 점검
+    .btnNotService {
+      opacity: 0.6;
+      flex: 1;
+      @include flex(column, flex-end, center);
+      min-width: 16.5rem;
+      height: 14rem;
+      padding-bottom: 1.6rem;
+      margin: 0.6rem;
+      background-color: $white;
+      border-radius: 0.4rem;
+      @include font(1.8rem, bold, $color-gray-06, 1.5);
+      .label {
+        display: block;
+        margin-top: 3rem;
+        font-size: 1.4rem;
+        font-weight: normal;
+      }
+    }
+    &+.field {
+      margin-top: 7rem;
+    }
+  }
+  .typeCaution {
+    margin-top: 4rem;
+    .fieldArea {
+      margin-bottom: 0;
+      .fieldValue {
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+
+  &.disabled {
+    .dataTitleArea {
+      border-color: $secondary;
+    }
+    .dataTitle {
+      color: $secondary;
+    }
+    .certificationWrap {
+      [class*=btnCertify] {
+        background-color: rgba(255, 255, 255, .7);
+        opacity: 0.7;
+        cursor: default;
+        &:hover, &:focus {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+}
+//하단 주의사항
+.typeCaution {
+  .fieldArea {
+    display: block;
+    height: auto;
+    padding: 3rem;
+    border: none;
+    background-color: $bgcolor-gray-09;
+
+    .fieldValue {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1.8rem;
+      @include font(1.4rem, normal, $color-gray-04, 1.5);
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        top: 10px;
+        left: 0;
+        width: 0.3rem;
+        height: 0.3rem;
+        background-color: $color-gray-04;
+        border-radius: 50%;
+        transform: skew(-0.03deg);
+      }
+    }
+    .colorRed:not(.fieldRefer) {
+      font-size: 1.3rem;
+    }
+  }
+  .desc {
+    font-size: 1.2rem;
+  }
+}
+//인풋 하단 추가설명
+.addExplain {
+  @include font(1.4rem, normal, $primary, 1.5);
+  &:first-of-type {
+    margin-bottom: 1rem;
+  }
+  &.colorBlack {
+    color: $color-gray-06;
+  }
+}
+// 하단 안내
+.explainContainer {
+  @include font(1.6rem, normal, $color-gray-06, 1.5);
+  // 첫번째가 아니면 마진을 갖음
+  &:not(:first-child) {
+    margin-top: 1rem;
+  }
+  .beforeStar {
+    font-size: inherit;
+    color: inherit;
+  }
+}
+// ------- footer ------- //
+
+.footer {
+  padding: 7rem 13rem 0;
+  background-color: $bgcolor-gray-03;
+  .footerTop {
+    @include flex(row, space-between, flex-start);
+  }
+  .footerBottom {
+    @include flex(row, space-between, flex-start);
+    padding: 2.5rem 0 3rem;
+    margin-top: 7rem;
+    border-top: 1px solid $border-color-02;
+  }
+  .footerLogo {
+    display: block;
+    width: 15.9rem;
+    height: 5.6rem;
+    margin-bottom: 3rem;
+    opacity: 0.6;
+    & > span {
+      @include ir;
+    }
+    > img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .footerAdress {
+    @include font(1.4rem, normal, rgba($black, 0.6), 1.5);
+    span {
+      display: block;
+    }
+  }
+  .siteMap {
+    @include flex(row, flex-end, flex-start);
+    & > li {
+      margin-left: 6.5rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .title {
+      @include font(1.4rem, bold, rgba($black, 0.6), 1.4);
+    }
+    .list {
+      margin-top: 1.2rem;
+      a {
+        @include font(1.2rem, normal, rgba($black, 0.6), 2);
+      }
+    }
+  }
+  .footerMenu {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    & > li {
+      font-size: 0;
+      margin-right: 1rem;
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      &:after {
+        content: '';
+        display: inline-block;
+        padding-right:1rem;
+        height: 1rem;
+        border-right: 1px solid rgba($black, 0.4);
+      }
+    }
+    a {
+      @include font(1.4rem, normal, rgba($black, 0.6), 1.1);
+    }
+  }
+  .copyright {
+    @include font(1.2rem, normal, rgba($black, 0.6), 1.2);
+    white-space: nowrap;
+  }
+}
+
+/* 주소검색 API 로고 변경 */
+.pop-address-search {
+  .logo {
+    width: 108px;
+    height: 38px;
+    background: image('common/logo_black.svg') 0 0 no-repeat !important;
+  }
+}
+
+/////////////////////////////////// 이 하 Responsive ////////////////////////////////////
+@media (#{$pc-middle}) {
+  // ------- header ------- //
+  .header {
+    padding: 0 0 0 2.8rem;
+    .logo {
+      & > * {
+        width: 8.9rem;
+        height: 3.2rem;
+      }
+    }
+  }
+  .btnLogout {
+    right: 10rem;
+  }
+  .btnChatbot {
+    right: 5.5rem;
+  }
+
+  // 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+  // .eventBanner {
+  //   height: 3.6rem;
+  //   padding: 0 1.5rem 0 2rem;
+  // }
+
+  .gnbContainer {
+    padding: 0 5rem 0 13.4%;
+  }
+  .gnbEtcArea {
+    width: 22%;
+    .gnbEvent {
+      width: 85%;
+    }
+  }
+  // breadcrumb
+  .pageTitleContainer {
+    .breadcrumbDrop {
+      .breadcrumbDropList {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+  // myInfoSummary
+  .myInfoSummary {
+    .summaryField {
+      width: calc(100% - 4rem);
+    }
+  }
+  .infoSummaryBottom {
+    .summaryBottom {
+      padding: 4rem 0;
+    }
+    .informationItem {
+      .itemHalf {
+        &:after {
+          margin: 0 2rem;
+        }
+      }
+    }
+  }
+  // ------- pc-middle header - search ------- //
+  // ------- contents ------- //
+  // .contentArea {
+  //   padding: 7rem 3rem;
+  // }
+  .pageTitleContainer {
+    .pageTitleContent {
+      width: 100%;
+      padding: 0 3rem;
+    }
+  }
+  // ------- footer ------- //
+  .footer {
+    padding: 3.4rem 4rem 0;
+  }
+}
+
+@media (#{$pc-small}) {
+  // ------- pc-middle -- header ------- //
+  .gnbContainer {
+    .gnb {
+      max-width: 92rem;
+      margin-left: 0;
+    }
+  }
+  .subMenu {
+    .subMenuChild {
+      padding-left: 1rem;
+    }
+  }
+  .bottomButtons {
+    &.pcType {
+      right: 2rem;
+      .hideInfoBtn {
+        margin-right: 2rem;
+      }
+    }
+  }
+  .infoSummaryBottom {
+    .summaryBottom {
+      padding: 2rem 0;
+    }
+    .summaryInfoTitle {
+      height: 5.2rem;
+      font-size: 1.4rem;
+    }
+    .summaryItem {
+      min-width: 12.7rem;
+      margin-right: 0.8rem;
+    }
+    .summaryData {
+      .data {
+        margin-top: 0;
+        font-size: 1.6rem;
+        span {
+          padding: 0 0.5rem 0 1.6rem;
+        }
+      }
+    }
+
+    .grayBox {
+      padding: 1.6rem;
+      font-size: 1.4rem;
+      &.hyphen {
+        dt {
+          margin-bottom: 0.6rem;
+        }
+        dd {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    
+    .noPhoneLineShow {
+      .btn {
+        width: calc(100% - 2.6rem);
+        height: 5.7rem;
+        padding: 0 2rem 0 4.65rem;
+        font-size: 1.4rem;
+        &.iconBgLock {
+          background-position: left 2.3rem center;
+          background-size: 1.3rem auto;
+        }
+      }
+      .floating {
+        .floatText {
+          width: calc(100% - 2rem);
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    .informationItem {
+      padding: 2rem;
+      .itemHalf {
+        &:after {
+          height: 1.4rem;
+        }
+      }
+      .itemData {
+        align-items: center;
+      }
+      .itemTop {
+        margin-bottom: 1.5rem;
+        .bigTitle {
+          width: 100%;
+          font-size: 2.4rem;
+        }
+      }
+      .itemBottom {
+        .flexRow {
+          align-items: center;
+        }
+        .title {
+          font-size: 1.4rem;
+        }
+        .text {
+          font-size: 2.8rem;
+        }
+      }
+    }
+    .summaryInfoContent {
+      .iconBgRefesh {
+        height: 2rem;
+        margin-left: 0.7rem;
+        background-size: 1.3rem;
+      }
+    }
+    .usageSummary {
+      .itemTop {
+        padding-bottom: 3rem;
+      }
+    }
+    .costSummary {
+      .itemBottom {
+        &.grayBox {
+          padding: 1.6rem;
+        }
+      }
+    }
+    .specsSummary {
+      .itemTop {
+        display: block;
+        .bigTitle {
+          margin-bottom: 1rem;
+          .moFull {
+            display: block;
+          }
+        }
+        .unitDate {
+          width: 100%;
+          font-size: 1.4rem;
+        }
+      }
+      .itemBottom {
+        &.grayBox {
+          padding: 1.6rem;
+        }
+      }
+    }
+  }
+  // ------- pc-middle -- search ------- //
+  // ------- pc-middle -- contents ------- //
+  // ------- pc-middle -- footer ------- //
+  .footer {
+    .footerTop {
+      display: block;
+    }
+    .siteMap {
+      justify-content: flex-start;
+      margin-top: 3rem;
+      & > li {
+        margin-left: 5%;
+      }
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  .wrap {
+    // 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+    // &.eventBannerOn {
+    //   // 메인
+    //   &.main {
+    //     padding-top: 9.7rem;
+    //     .header {
+    //       top: 3.6rem;
+    //     }
+    //   }
+    // }
+  }
+  // .wrap {
+  //   &.eventBannerOn {
+  //     // 메인
+  //     &.main {
+  //       padding-top: 9.7rem;
+  //     }
+  //   }
+  // }
+  // .skip {
+  //   a {
+  //     &.pcType {
+  //       display: none;
+  //     }
+  //     &.moType {
+  //       display: block;
+  //     }
+  //   }
+  // }
+  
+  // a태그 포커스 클래스
+  .focusA {
+    outline: none;
+  }
+  .wrap {
+    padding-top: 0;
+    &.main,
+    &.policiesAndTerms, 
+    &[class*=homeJoinStep],
+    &[class*=homeFind],
+    &.homeLogin,
+    &.homeJoinIntro,
+    &.homeSearchResult {
+      padding-top: 0;
+      .mobileNav {
+        display: none;
+      }
+    }
+    // 모바일 메뉴 오픈 시
+    &.moMenuOpen {
+      .btnMenuOpen {
+        display: none;  
+      }
+      .btnMenuClose {
+        display: block;
+      }
+      .mobileContainer {
+        display: block;
+        left: 0;
+      }
+    }
+    //모바일 네비 스크롤 이벤트
+    &.mobileNavActive {
+      .mobileNav {
+        .menuList {
+          display: none;
+        }
+      }
+
+      // 기본값 - 스크롤 시 모바일 네비 모션
+      .mobileMenu {
+        .titleContainer {
+
+          .currentPageTitle {
+            @include flex(row, flex-start, center);
+          }
+          
+          .btnShowAll {
+            position: static;
+          }
+        }
+
+        .mobileSubMenuList {
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
+
+        .mobileThirdMenuList {
+          display: none;
+          &.show {
+            display: block;
+          }
+        }
+        
+        &.active {
+          .mobileSubMenuList {
+            display: block;
+          }
+
+          .mobileThirdMenuList {
+            display: block;
+          }
+        }
+      }
+
+      // 상세 모바일 네비 모션
+      &.detail,
+      &.homeJoinIntro {
+        // .mobileNav {
+        //   position: relative;
+        //   box-shadow: none;
+        // }
+        // .mobileMenu {
+        //   .mobileSubMenuList {
+        //     display: block;
+        //   }
+        // }
+        .pageTitleContainer {
+          position: static;
+          top: 4.4rem;
+          left: 0;
+          z-index: 101;
+          width: 100%;
+        }
+      }
+
+      // 기타 페이지 모바일 네비 모션
+      .totalSearchContainer,// 통합검색
+      .homeJoinTopContainer,// 회원가입
+      .tabScrollWrap {// 정책 및 약관
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 103;
+        width: 100%;
+      }
+    }
+  }
+
+  // ------- tablet -- header ------- //
+  .subMenu {
+    .subMenuChild {
+      br {
+        display: none;
+      }
+    }
+  }
+  .headerIcons {
+    position: absolute;
+    top: 50%;
+    right: 9rem;
+    transform: translate(0,-50%);
+    &.moType {
+      @include flex(row, center, center);
+    }
+    .btnChatbot {
+      transform: translate(0,0);
+    }
+    & > * {
+      position: static;
+    }
+  }
+  .btnLogout {
+    &.pcType {
+      display: none;
+    }
+  }
+  .btnChatbot {
+    &:hover {
+      background-image: image('common/icon_chatbot.svg');
+    }
+    &.moType {
+      display: block;
+    }
+    &.pcType {
+      display: none;
+    }
+    right: 9rem;
+  }
+  .headerContainer {
+    position: static;
+  }
+  .header, .logoHeader {
+    height: 6.1rem;
+    .logo {
+      & > * {
+        width: 8.9rem;
+        height: 3.2rem;
+      }
+    }
+  }
+  .header {
+    padding-right: 0.5rem;
+    padding-left: 2rem;
+  }
+  .mobileHeader {
+    display: block;
+    margin-left: -1rem;
+  }
+  .mobileContainer {
+    display: none;
+    overflow-y: auto;
+    position: absolute;
+    top: 6.2rem;
+    left: -100%;
+    z-index: 10;
+    width: 100%;
+    height: calc(100vh - 6.1rem); // -($headerHeight)
+    padding-bottom: 5rem;
+    transition: all .5s;
+    background-color: $bgcolor-gray-03;
+    .gnbContainer, .myInfoSummary {
+      position: static;
+    }
+    .gnbContainer {
+      padding: 0;
+      .gnb {
+        display: block;
+        max-width: 100%;
+        .depth01 {
+          font-size: 1.6rem;
+          line-height: 6rem;
+          text-align: left;
+          border-bottom: 1px solid $border-color-03;
+        }
+        .moDepth01 {
+          position: absolute;
+          display: block;
+          z-index: 5;
+          top: 0;
+          right: 0;
+          width: 6rem;
+          height: 6rem;
+          background: image('common/icon_menu_plus.svg') no-repeat center;
+          text-indent: -99999px;
+        }
+        & > li {
+          display: block;
+          width: 100%;
+          height: auto;
+          padding: 0 2rem;
+          &.active {
+            .moDepth01 {
+              background: image('common/icon_menu_minus.svg') no-repeat center;
+            }
+            .subMenu {
+              display: block;
+            }
+          }
+        }
+      }
+      .logoutBtn {
+        position: static;
+        order: 1;
+      }
+    }
+    .gnbBottom {
+      display: block;
+      position: static;
+      height: auto;
+      border-bottom: none;
+    }
+    .gnbBtmMenu {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      height: auto;
+      padding: 2rem 2rem 1.6rem;
+      .gnbBtmMenuTitle {
+        width: calc(100% - 5rem);
+        justify-content: flex-start;
+      }
+      .bottomMenu {
+        order: 2;
+        flex-wrap: wrap;
+        margin: 1.3rem -0.7rem -0.7rem;
+        & > li {
+          margin: 0.7rem;
+        }
+      }
+    }
+    .subMenu {
+      position: static;
+      width: 100%;
+      margin: 0;
+      padding: 1rem 2rem;
+      padding-right: 1rem;
+      background-color: $white;
+      & > li {
+        padding: 1rem 0;
+        text-align: left;
+      }
+      
+      .depth02 {
+        &:hover, 
+        &:focus {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .bottomButtons {
+    &.pcType {
+      display: none;
+    }
+    &.moType {
+      display: flex;
+      margin-top: 1.6rem;
+      padding: 0 2rem;
+    }
+    & > * {
+      font-size: 1.2rem;
+    }
+  }
+  .gnbBottom {
+    &.moType {
+      display: block;
+    }
+    &.pcType {
+      display: none;
+    }
+  }
+
+  // 구 소스 삭제 [MVNO]탑배너 시인성 제고 및 기능 고도화_DR-2023-55179
+  // .eventBanner {
+  //   .popupClose {
+  //     &:focus-visible {
+  //       outline: none;
+  //     }
+  //   }
+  // }
+  /* tablet -- mobile menu */
+  .mobileNav {
+    display: block;
+  }
+  .userMenu {
+    z-index: 20;
+    margin-left: auto;
+    .btn {
+      &.iconBgLock {
+        display: none;
+      }
+    }
+  }
+  /* tablet -- myInfoSummary */
+  .mobileContainer {
+    .myInfoSummary {
+      display: block;
+    }
+  }
+  .myInfoSummary {
+    .summaryField {
+      width: 100%;
+    }
+    .subTitleContainer {
+      display: block;
+      padding: 2rem;
+      border-bottom: 1px solid $border-color-02;
+      .subTitleLeft {
+        display: none;
+      }
+      .subTitleRight {
+        width: 100%;
+      }
+      .iconBgSetting {
+        margin-left: auto;
+      }
+      .titleLinks {
+        height: auto;
+        margin-right: 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        .subText {
+          max-width: calc(100% - 3rem);
+        }
+        br {
+          display: none;
+        }
+        .iconBgSetting {
+          margin-left: auto;
+        }
+      }
+    }
+  }
+  .infoSummaryBottom {
+    .summaryInfoArea {
+      .summaryPagination, 
+      .summaryPagination2 {
+        display: block;
+      }
+    }
+  }
+  .infoSummaryBottom {
+    background-color: $white;
+    .summaryBtnTitle {
+      padding: 0.9rem 0;
+    }
+    .summaryItem {
+      width: auto;
+      padding: 0 1.4rem;
+      margin-right: 3rem;
+      border: 0;
+    }
+    .summaryTitle {
+      &[class*=iconBg] {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+        & > span {
+          @include ir;
+        }
+      }
+    }
+    .summaryTop {
+      padding: 0 2rem;
+    }
+    .summaryBottom {
+      padding: 2rem;
+    }
+  }
+  // ------- tablet -- header - search ------- //
+  // ------- tablet -- contents ------- //
+  .pageTitleContainer {
+    // display: none;
+    position: static;
+    z-index: 10;
+    .pageTitleContent {
+      display: block;
+      height: auto;
+      padding: 0;
+    }
+    .titleArrow {
+      width: 5rem;
+      height: 4.8rem;
+      margin-right: 0;
+      background-position: center;
+      background-size: 8px auto;
+    }
+    // .titleAreaLeft {
+    //   display: none;
+    // }
+    .titleAreaRight {
+      display: none;
+      padding: 0 2rem;
+      background-color: $bgcolor-gray-07;
+    }
+    .title {
+      padding: 0;
+      height: 4.8rem;
+      background-color: $bgcolor-gray-03;
+      & > * {
+        font-size: 1.6rem;
+        &:only-child {
+          padding-left: 2rem;
+        }
+      }
+    }
+    .breadcrumbContainer {
+      justify-content: flex-start;
+      .breadcrumb {
+        height: 3.6rem;
+        &:after {
+          background-image: image('common/icon_navi_next_bk.svg');
+        }
+        &.iconBgHome {
+          display: none;
+        }
+        .breadcrumbTitle {
+          color: $black;
+        }
+      }
+    }
+    // navi 하위 메뉴
+    .breadcrumbDrop {
+      .breadcrumbBtn {
+        background-image: image('common/btn_navi_down_bk.svg');
+        &:focus-visible {
+          outline-color: $black;    
+        }
+      }
+      &.active {
+        .breadcrumbDropList {
+          top: 3.5rem;
+          left: 0;
+          right: auto;
+        }
+      }
+      
+      .breadcrumbDropList {
+        max-height: 30rem;
+      }
+    } 
+  }
+  // 상세 페이지에서 breadcrumb 영역 숨김
+  .detail,
+  .homeJoinIntro {
+    .pageTitleContainer {
+      display: block;
+      position: static;
+      .titleAreaLeft {
+        display: block;
+        @include no-ir;
+      }
+      .titleAreaRight {
+        display: none;
+      }
+    }
+  }
+  /* tablet -- 본인인증 방법 선택 버튼 */
+  .typeCertification {
+    .certificationWrap {
+      [class*=btnCertify] {
+        &:hover {
+          &:after {
+            display: none;
+          }
+        }
+      }
+      .btnNotService {
+        height: 9.8rem;
+        font-size: 1.4rem;
+        .label {
+          margin-top: 1.7rem;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .typeCaution {
+      margin-top: 2rem;
+    }
+  }
+
+  /* tablet -- 회원가입 약관 */
+  .typeAgreementCheck {
+    .fieldData {
+      .fieldArea {
+        height: auto;
+        max-height: 45rem;
+      }
+    }
+  }
+
+  // 하단 안내
+  .explainContainer {
+    font-size: 1.4rem;
+  }
+}
+
+@media (#{$foldMax}) {
+  .moType {
+    display: block;
+  }
+  .pcType {
+    display: none;
+  }
+  // ------- foldMax -- header ------- //
+  /* myInfoSummary */
+  .myInfoSummary {
+    .subTitleContainer {
+      .subTitleRight {
+        width: 100%;
+      }
+      .btn {
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        line-height: 1.4;
+        font-size: 1.3rem;
+        &:only-child {
+          width: 100%;
+        }
+      }
+      .iconBgLink {
+        &.btn {
+          padding-right: 4rem;
+        }
+      }
+    }
+    .phoneLineSummaryDrop {
+      min-width: 100%;
+    }
+  }
+  .infoSummaryBottom {
+    .summaryBtnTitle {
+      padding: 1.2rem 0;
+    }
+    .summaryItem {
+      width: auto;
+      height: 4rem;
+      padding: 0 1rem;
+      border: none;
+      border-radius: 4px;
+    }
+    .summaryData {
+      & > span {
+        padding: 0;
+        text-indent: -0.4rem;
+      }
+    }
+    // logout상태 // 선불요금제 회원
+    .summaryData, .noPhoneLineShow {
+      .imgWrap {
+        .pcType {
+          display: none;
+        }
+        .moType {
+          display: block;
+        }
+      }
+    }
+  }
+  .bottomButtons {
+    .subTextArea {
+      font-size: 1.1rem;
+      a {
+        font-size: 1.3rem;
+      }
+    }
+  }
+  // ------- foldMax -- contents ------- //
+  .contentArea {
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+    .contentInner {
+      &:first-child {
+        &:first-child {
+          .combinedArticle {
+            margin-top:-3rem;
+          }
+        }
+      }
+    }
+    .contentInner {
+      &:last-child {
+        .combinedArticle {
+          margin-bottom:-7rem;
+        }
+      }
+    }
+  }
+  .contentInner {
+    .combinedArticle {
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+  }
+  //foldMax -- 하단 주의사항
+  .typeCaution {
+    .fieldArea {
+      padding: 2.4rem 1.6rem;
+      .fieldValue {
+        margin-bottom: 1.8rem;
+        font-size: 1.3rem;
+        &::before {
+          top: 8px;
+        }
+      }
+    }
+  }
+  //foldMax -- 인풋 하단 추가설명
+  .addExplain {
+    font-size: 1.3rem;
+  }
+  // ------- foldMax -- footer ------- //
+  .footer {
+    padding: 3rem 3rem 0;
+    .siteMap {
+      display: none;
+    }
+    .footerBottom {
+      position: static;
+      display: block;
+    }
+  }
+}
+
+@media (#{$mobile}) {
+  // ------- mobile -- common ------- //
+  .linkUnderline {
+    font-size: 1.3rem;
+  }
+  // ------- mobile -- header ------- //
+  .infoSummaryBottom {
+    .summaryItem {
+      min-width: 0;
+    }
+    
+    .summaryNotice {
+      font-size: 1.4rem;
+    }
+
+    .informationItem {
+      .itemHalf {
+        &:after {
+          margin: 0 1rem;
+        }
+      }
+    }
+  }
+  // ------- mobile -- contents ------- //
+  .fieldTitle01 {
+    font-size: 1.4rem;
+    .iconBgLink {
+      background-size: 0.7rem auto;
+    }
+  }
+  /* mobile -- 본인인증 방법 선택 버튼 */
+  .typeCertification {
+    .certificationWrap {
+      margin: -0.2rem;
+      [class*=btnCertify] {
+        width: auto;
+        height: 9.8rem;
+        margin: 0.2rem;
+        font-size: 1.3rem;
+        .icon {
+          width: 6.4rem;
+          height: 4.5rem;
+          margin-bottom: 0.9rem;
+        }
+      }
+      .btnCertifyPass {
+        .icon {
+          background-size: 6.2rem 2.2rem;
+        }
+      }
+      .btnCertifyToss {
+        .icon {
+          background-size: 6.1rem 1.9rem;
+        }
+      }
+      .btnCertifyCard {
+        .icon {
+          background-size: 3.9rem 3rem;
+        }
+      }
+      .btnCertifyNaver {
+        .icon {
+          background-size: 6.4rem 4.5rem;
+        }
+      }
+      .btnCertifyKakao {
+        .icon {
+          background-size: 6.4rem 3.1rem;
+        }
+      }
+      .btnNotService {
+        margin: 0.2rem;
+      }
+    }
+  }
+  // ------- mobile -- footer ------- //
+  .footer {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    .footerBottom {
+      margin-top: 2.5rem;
+      padding: 0.8rem 0 3rem;
+      .footerLeft {
+        margin-bottom: 5.2rem;
+      }
+    }
+    .footerLogo {
+      width: 11.4rem;
+      height: 4rem;
+      margin-bottom: 1.8rem;
+    }
+    .footerAdress {
+      // color: rgba($black, 0.3);
+      word-break: keep-all;
+      span {
+        display: inline;
+      }
+    }
+    .footerMenu {
+      & > li {
+        &:after {
+          border-right-color: rgba($black, 0.2);
+        }
+      }
+      a {
+        line-height: 1.7;
+        // color: rgba($black, 0.3);
+      }
+    }
+  }
+}
+
+@media (#{$mobile-small}) {
+  // ------- mobile-small -- header ------- //
+  .infoSummaryBottom {
+    .summaryInfoTitle {
+      height: 4rem;
+    }
+    .summaryBtnTitle {
+      flex-wrap: wrap;
+      padding: 0.8rem 0;
+    }
+    .summaryItem {
+      width: 85%;
+      height: 3.5rem;
+      margin-right: 0;
+      margin-bottom: 0.8rem;
+    }
+    .grayBox {
+      padding: 1rem;
+      font-size: 1.2rem;
+      &.hyphen {
+        dd {
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .costSummary {
+      .itemBottom {
+        &.grayBox {
+          padding: 1rem;
+        }
+      }
+    }
+    .usageSummary {
+      .itemTop {
+        padding-bottom: 1rem;
+      }
+    }
+    // 사용량 조회
+    .informationItem {
+      padding: 1rem;
+      .itemTop {
+        margin-bottom: 0.5rem;
+        .imgWrap {
+          width: 7rem;
+        }
+        .bigTitle {
+          margin-bottom: 0.5rem;
+          font-size: 1.6rem;
+        }
+      }
+      .itemData {
+        margin-bottom: 1rem;
+        .text {
+          width: 100%;
+        }
+        .flexRow {
+          flex-wrap: wrap;
+          margin-bottom: 0.5rem;
+          .itemHalf {
+            width: 100%;
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+      .itemBottom {
+        .text {
+          font-size: 2rem;
+        }
+        .smallText {
+          font-size: 1.1rem;
+        }
+      }
+    }
+    .costSummary {
+      .informationItem {
+        .itemTop {
+          .bigTitle {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+    }
+    .specsSummary {
+      .itemBottom {
+        &.grayBox {
+          padding: 1rem;
+        }
+        .flexRow {
+          margin-bottom: 0;
+        }
+      }
+    }
+    // floating
+    .noPhoneLineShow {
+      .floatText {
+        padding: 1rem 1rem 1rem 4rem;
+      }
+      .smallText {
+        margin-top: 1rem;
+      }
+      .iconBgLock {
+        background-position: top 1.5rem left 1rem;
+        background-size: 1.4rem auto;
+      }
+    }
+  }
+}

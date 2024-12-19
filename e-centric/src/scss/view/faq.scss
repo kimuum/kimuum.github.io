@@ -1,0 +1,58 @@
+.page-faq {
+  background-color: $neutral-10;
+}
+
+.faq-container {
+  padding: 2rem 0;
+
+  .faq-middle {
+    margin-top: 2rem;
+  }
+
+  .faq-filter-box {
+    .filter-title-box {
+      padding: 0.6rem 0;
+      .title {
+        @include font(1.4rem, 700, $text-01, 2rem);
+      }
+    }
+
+    .filter-list-box {
+      @include flex(row, flex-start, flex-start);
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+      .btn-filter {
+        width: calc(25% - 0.6rem);
+        padding: 1rem 0;
+        &.active {
+          background-color: $primary_80;
+          color: $text_06;
+        }
+      }
+    }
+  }
+
+  .faq-content-box {
+    margin-top: 3.6rem;
+    .faq-content-box-top {
+      padding: 0.6rem 0;
+      .label-box {
+        @include flex(row, flex-start, center);
+        .label,
+        .separator {
+          @include font(1.4rem, 400, $text-03, 2rem);
+        }
+
+        .count {
+          margin-left: 0.8rem;
+          @include font(1.4rem, 700, $text-01, 2rem);
+        }
+      }
+    }
+  }
+
+  .faq-empty-box {
+    margin-top: 12rem;
+  }
+}

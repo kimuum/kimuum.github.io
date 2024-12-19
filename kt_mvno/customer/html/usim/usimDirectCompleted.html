@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "바로배송유심 구매 완료 | 바로배송유심 주문 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : usimDirectCompleted -->
+    <div class="wrap detail usimDirectCompleted">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': 'active-1' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>바로배송유심 구매 완료</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>바로배송유심 주문</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>바로배송유심 구매 완료</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <!-- [2차] 20220906 기획 추가 -->
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="usimTitleArea areaNear">
+                <div class="title">
+                  <p>바로배송유심 구매가 완료되었습니다.</p>
+                  <p>바로배송유심을 받고 셀프개통으로 알뜰폰을 개통해보세요.</p>
+                </div>
+              </div>
+              <div class="dataInner">
+                <div class="speechStepArea">
+                  <div class="stepBox">
+                    <strong class="title">알뜰폰 유심 받기</strong>
+                    <p class="desc">주문한 <strong class="bold">바로배송유심</strong>을 빠르고 편하게 유심을 받아보세요.</p>
+                  </div>
+                  <div class="stepBox">
+                    <strong class="title">알뜰폰 요금제 선택</strong>
+                    <p class="desc">요금제 비교를 통해 나에게 딱 맞는 요금제를 선택해 보세요!</p>
+                  </div>
+                  <div class="stepBox">
+                    <strong class="title">알뜰폰 개통</strong>
+                    <p class="desc">셀프개통으로 직접 개통할 수 있어요!</p>
+                  </div>
+                </div>
+              </div>
+              <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>요금제 상품 바로가기</span></button>
+                <button type="button" class="btn btnPrimary"><span>배송주문조회 바로가기</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //[2차] 20220906 기획 추가 -->
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "셀프개통 대시보드 | 통계 " , "headProjectName": "| 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>셀프개통 대시보드</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>통계</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>셀프개통 대시보드</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="dashBoardContainer dashBoardListSelf">
+            <div class="boardSearchBar">
+              <div class="searchTop">
+                <h2>조회 조건</h2>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>초기화</span></button>
+                  <button type="button" class="btn"><span>조회</span></button>
+                </div>
+              </div>
+              <div class="searchBottom">
+                <div class="searchRow">
+                  <div class="title">조회기간</div>
+                  <div class="fieldGroup">
+                    <div class="periodWrap">
+                      <div class="field fieldDatepicker" id="datepicker-start-date">
+                        <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                        <div class="fieldForm datePickerArea">
+                          <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                        </div>
+                      </div>
+                      <div class="space"></div>
+                      <div class="field fieldDatepicker" id="datepicker-end-date">
+                        <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                        <div class="fieldForm datePickerArea">
+                          <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sortButtons">
+                      <button type="button" class="btn"><span>오늘</span></button>
+                      <button type="button" class="btn"><span>최근 7일</span></button>
+                      <button type="button" class="btn active"><span>최근 30일</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="boardWrap">
+              <div class="boardContent bgColorGray maxWidth40">
+                <div class="boardAreaTop">
+                  <h3 class="topTitle">주간 셀프개통 상품 BEST</h3>
+                </div>
+                <div class="boardAreaBottom">
+                  <div class="boardField">
+                    <ol class="fieldRank">
+                      <li>
+                        <p>초알뜰 1GB/60분</p>
+                        <div class="rankPoint">
+                          <strong>13 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>4건(4%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>모두다 맘껏 7GB++</p>
+                        <div class="rankPoint">
+                          <strong>11 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowDown"><span>하락</span></div>
+                            <span>4건(4%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowDown"><span>하락</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <p>데이터 맘것 안심 100MB+/50분</p>
+                        <div class="rankPoint">
+                          <strong>7 건</strong>
+                          <div class="rankInfo">
+                            <div class="arrowTop"><span>상승</span></div>
+                            <span>0건(%)</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <!-- //주간 셀프개통 상품 BEST -->
+              <div class="boardFlexWrap">
+                <div class="boardContent bgColorGray rowHalf">
+                  <div class="boardAreaTop noneBorder">
+                    <h3 class="topTitle">데이터쉐어링/주고받기 신청</h3>
+                  </div>
+                  <div class="boardAreaBottom">
+                    <div class="applyDlWrap">
+                      <div class="applyRow">
+                        <dl class="applyDlMajor">
+                          <dt>데이터쉐어링 결합</dt>
+                          <dd><span class="number">31</span>건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="applyDlWrap">
+                      <div class="applyRow">
+                        <dl class="applyDlMajor">
+                          <dt>데이터주고받기 결합</dt>
+                          <dd><span class="number">12</span>건</dd>
+                        </dl>
+                      </div>
+                      <div class="applyRow">
+                        <dl class="applyDlNormal">
+                          <dt>데이터주기</dt>
+                          <dd><span class="number">6</span>건</dd>
+                        </dl>
+                      </div>
+                      <div class="applyRow">
+                        <dl class="applyDlNormal">
+                          <dt>데이터받기</dt>
+                          <dd><span class="number">6</span>건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardContent bgColorGray rowHalf">
+                  <div class="boardAreaTop noneBorder">
+                    <h3 class="topTitle">셀프 개통 유형</h3>
+                  </div>
+                  <div class="boardAreaBottom">
+                    <div class="caseCountBox">
+                      <div class="countBox newSign">
+                        <span class="fieldLabel">신규가입</span>
+                        <span class="counter">31건</span>
+                      </div>
+                      <div class="countBox joinUs">
+                        <span class="fieldLabel">번호이동</span>
+                        <span class="counter">31건</span>
+                      </div>
+                    </div>
+
+                    <div class="caseCountCircle">
+                      <div class="couterTotal">
+                        <p class="title">총 셀프개통</p>
+                        <p class="counter">40건</p>
+                      </div>
+                      <canvas id="signupRate" width="280" height="140"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="boardContent bgColorGray rowFull">
+                  <div class="boardAreaTop noneBorder">
+                    <h3 class="topTitle">시간대별 개통 신청 현황</h3>
+                  </div>
+                  <div class="boardAreaBottom">
+                    <div class="fieldGraphSticks graphCol">
+                      <div class="parcentGuide">
+                        <span>0</span>
+                        <span>50</span>
+                        <span>100</span>
+                      </div>
+                      <div class="fieldGraphGroup">
+                        <div class="fieldGraph">
+                          <div class="graphUnit">
+                            <span class="title">08시~09시</span>
+                            <div class="stickArea"></div>
+                            <!-- nodata -->
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">09시~10시</span>
+                            <div class="stickArea">
+                              <div class="stick" style="width: 30%">
+                                <p class="label">37<span>건</span></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">11시~12시</span>
+                            <div class="stickArea">
+                              <div class="stick" style="width: 100%">
+                                <p class="label">100+<span>건</span></p>
+                                <!-- max -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">13시~14시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">15시~16시</span>
+                            <div class="stickArea">
+                              <div class="stick" style="width: 10%">
+                                <p class="label">10<span>건</span></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">17시~18시</span>
+                            <div class="stickArea">
+                              <div class="stick" style="width: 80%">
+                                <p class="label">80<span>건</span></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">18시~19시</span>
+                            <div class="stickArea">
+                              <div class="stick" style="width: 20%">
+                                <p class="label">20<span>건</span></p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">20시~21시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">21시~22시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">22시~23시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">23시~24시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">23시~24시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">23시~24시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                          <div class="graphUnit">
+                            <span class="title">23시~24시</span>
+                            <div class="stickArea"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/chart.js-2.9.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+    <script>
+      //---------- 셀프 개통 유형 차트 ----------//
+
+      var ctx = document.getElementById('signupRate').getContext('2d');
+      var gradient = ctx.createLinearGradient(90, 90, 220, 220);
+      gradient.addColorStop(0.0, '#33D3C2');
+      gradient.addColorStop(1.0, '#1DAC9D');
+
+      const data = {
+        datasets: [
+          {
+            label: '셀프 개통 유형',
+            data: [50, 20, 30], // 비율 : [ eSIM, 일반 유심, 워치 ]
+            backgroundColor: ['#33D3C2', '#FA9963', '#0A6BA1'],
+            borderWidth: 0,
+            hoverOffset: 0,
+          },
+        ],
+        labels: ['eSIM 개통' + '10건', '일반 유심 개통' + '10건', '워치 개통' + '10건'],
+      };
+
+      const config = {
+        type: 'doughnut',
+        data: data, // 상단에 있는 데이터
+        options: {
+          responsive: true, // 반응형 웹 대응
+          borderWidth: 0, // 도넛을 구성하는 값과 값 사이의 외곽선 (현재는 외곽선을 뺌)
+          cutoutPercentage: 65, // 도넛의 중심을 기준으로 하얀색 원을 몇 % 만큼 채울 것인지 입력 (0% 면 Pie 차트가 되고, 100% 면 차트가 안 보임)
+          legend: {
+            position: 'right',
+            align: 'center',
+            display: true,
+            padding: 15,
+            labels: {
+              usePointStyle: true,
+              boxWidth: 8,
+              padding: 10,
+              fontFamily: "'Roboto', 'Noto Sans KR', 'sans-serif'",
+              fontSize: 11,
+              fontColor: '#555555',
+            },
+          },
+        },
+      };
+
+      const myChart = new Chart(document.getElementById('signupRate'), config);
+    </script>
+  </body>
+</html>

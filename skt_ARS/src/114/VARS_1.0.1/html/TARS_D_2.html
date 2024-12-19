@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+           "headerType" : "default",
+          "title": '데이터 선물하기 ',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-gift"></i>
+                <div class="info-box">
+                  <p class="label">SK텔레콤에서 제공하는 특정 요금제 가입고객이 자신의 기본 데이터를 최대 50%까지 가족, 지인들에게 선물 할 수 있는 서비스입니다.</p>
+                </div>
+              </div>
+
+              <div class="bg-line">
+                <div class="caution-guide-box bg-none">
+                  <div class="caution-list">
+                    <div class="caution-title">이용안내</div>
+                    <p class="caution-text dot">데이터 선물 시 사용중인 요금제의 월 기본제공 <span class="highlight">데이터의 50%까지 선물 가능</span> <br /></p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">참고사항</div>
+                    <p class="caution-text dot">선물하기는 월 2회까지 가능합니다.</p>
+                    <p class="caution-text dot">선물하기 이용 신청 후 취소는 불가합니다.</p>
+                    <p class="caution-text dot">선물받은 데이터는 당월에 한해 사용 가능합니다.</p>
+                    <p class="caution-text dot">선물받은 데이터는 기본 데이터 보다 먼저 사용되며 모두 소진 후 기본 데이터가 사용됩니다.</p>
+                    <p class="caution-text dot">선물받은 데이터는 재 선물 및 타인과 공유 사용이 불가합니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">선물하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

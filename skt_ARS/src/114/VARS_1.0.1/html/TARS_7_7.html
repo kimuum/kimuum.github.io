@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="el_type" iweb-data="out" />
+    <input type="hidden" id="phone_number" iweb-data="out" />
+    <input type="hidden" id="enabled_date" iweb-data="out" />
+    <input type="hidden" id="holiday" iweb-data="out" />
+    <input type="hidden" id="current_time" iweb-data="out" />
+
+    <!-- 상담예약 hidden input -->
+    <input type="hidden" id="el" iweb-data="in" />
+    <input type="hidden" id="elDate" iweb-data="in" />
+    <input type="hidden" id="rt_tel" iweb-data="in" />
+
+    <input type="hidden" id="todayDateOut" />
+    <input type="hidden" id="in_tel1" />
+    <input type="hidden" id="in_tel2" />
+    <input type="hidden" id="in_tel3" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="roaming_yn" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper consultation-reservation">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '상담예약 서비스',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="consultation-reservation-container">
+              <div class="form-consulation-reservation">
+                <div class="field field-radio">
+                  <div class="field-label">상담유형</div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="radio" id="el01" name="el" value="1" />
+                      <label for="el01" class="radio-label">일반상담</label>
+                    </div>
+                    <div class="field-area">
+                      <input type="radio" id="el02" name="el" value="2" />
+                      <label for="el02" class="radio-label">통화품질</label>
+                    </div>
+                    <!-- <li id="roaming"><input type="radio" id="el03" name="el" value="3"> <label for="el03">로밍상담</label></li> -->
+                  </div>
+                </div>
+
+                <div id="reserve_T" class="field field-select">
+                  <div class="field-label">예약 시간</div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <span id="todayDate"></span>
+                    </div>
+                    <div class="field-area">
+                      <select class="selectDesign" id="timeSelect" onchange="setComboValue(this.value)"></select>
+                    </div>
+                    <div class="field-text">
+                      <span>시</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="reserve_C" class="field field-select">
+                  <div class="field-label">예약 시간</div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <span id="todayDate">년 월 일</span>
+                    </div>
+                    <div class="field-area">
+                      <div class="dropdown-area select-combo">
+                        <a id="selectTime" href="#" class="btn-open select-combo-btn">
+                          <span>시간 선택</span>
+                        </a>
+                        <ul id="timeTable" class="dropdown-list inpsel2-group"></ul>
+                        <span class="background-layer"></span>
+                      </div>
+                    </div>
+                    <div class="field-text">
+                      <span>시</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="" class="field field-tel">
+                  <div class="field-label">
+                    연락번호
+                    <div class="field-checkbox">
+                      <input type="checkbox" id="publ06" name="publ" value="" onclick="checkChange()" />
+                      <label for="publ06" class="checkbox-label">직접입력</label>
+                    </div>
+                  </div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="tel" id="rt_tel1" placeholder="연락번호 입력" iweb-data="in" disabled />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="caution-guide-container">
+                <div class="caution-guide-box">
+                  <div class="caution-title">상담예약서비스 안내</div>
+                  <p class="caution-text dot">평일 오전 10시 - 오후 5시 이전까지 접수 하시면, <br />고객님이 예약한 시간에 연락드립니다.</p>
+                  <p class="caution-text dot">예약한 시간에 상담이 많을 경우, 상담사 연결이 <br />늦어질 수 있습니다.</p>
+                  <p class="caution-text dot">
+                    오후 5시 이후와 주말/공휴일에는 다음 날로 예약<br />
+                    됩니다. (영업일 기준)
+                  </p>
+                  <p class="caution-text dot">
+                    12시 - 13시 30분은 점심시간 운영으로 예약이<br />
+                    불가합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button id="reserve_ok" type="button" class="btn btn-primary" onclick="sendData($(this), 'RT')">예약하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var isCollapse = false; //콜게이트 select 박스 클릭 여부
+
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'reserve_T',
+            varsType: 'C',
+            attrType: 'temp',
+            value: 'remove',
+          },
+          {
+            elemName: 'reserve_C',
+            varsType: 'T',
+            attrType: 'temp',
+            value: 'remove',
+          },
+
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        var roaming_yn = getUrlParameter('roaming_yn');
+
+        if (roaming_yn == 'N' || roaming_yn == 'n') {
+          $('#roaming').css('display', 'none');
+        } else {
+        }
+
+        //영업가능일자 yyyymmdd
+        var enabled_date = getUrlParameter('enabled_date');
+
+        //휴일여부
+        var holiday = getUrlParameter('holiday');
+
+        // 현재시간
+        var current_time = getUrlParameter('current_time');
+        //20190809 		201908081659
+
+        //예약시간 설정
+        if (vars_type == 'T') {
+          setTimeListT(enabled_date, holiday, current_time);
+        } else {
+          var selectTime = document.getElementById('selectTime');
+          /*
+			selectTime.addEventListener("click", function()
+			{
+				var timeTable	= document.getElementById("timeTable");
+				if (!isCollapse)
+				{
+					timeTable.setAttribute("style", "display:block");
+					isCollapse	= true;
+				}
+				else
+				{
+					timeTable.setAttribute("style", "display:none");
+					isCollapse	= false;
+				}
+					
+			}, true);
+			*/
+
+          setTimeListC(enabled_date, holiday, current_time);
+
+          //셀렉트 콤보박스
+          $.fn.selCombo = function () {
+            var selCombo = this;
+            selCombo.each(function () {
+              var selThis = $(this);
+              var initBtn = selThis.find('.btn-open');
+              var itemBtn = selThis.find('.list a');
+              initBtn.on('click', function (e) {
+                e.preventDefault();
+                selThis.toggleClass('active');
+              });
+              itemBtn.on('click', function () {
+                var txt = $(this).text();
+                itemBtn.removeClass('selected');
+                $(this).addClass('selected');
+                initBtn.text(txt);
+                initBtn.addClass('in');
+                selThis.removeClass('active');
+              });
+              selThis.find('.background-layer').on('click', function () {
+                selThis.removeClass('active');
+              });
+            });
+          };
+          $('.dropdown-area').selCombo();
+        }
+
+        //이전 상담 예약 유형
+        var el_type = getUrlParameter('el_type');
+        /*@build-time*/ el_type = '1^3';
+
+        //이전 상담 예약 유형 상세
+        var el_type_arr = el_type.split('^');
+
+        for (var i = 0; i < el_type_arr.length; i++) {
+          // index == 0 부터 처리.
+          if (el_type_arr[i] == '1') {
+            document.getElementById('el01').disabled = true;
+          } else if (el_type_arr[i] == '2') {
+            document.getElementById('el02').disabled = true;
+          }
+          /* 			else if (el_type_arr[i] == "3"){
+				document.getElementById('el03').disabled = true;
+			} */
+        }
+
+        //연락받을번호
+        var phone_number = getUrlParameter('phone_number');
+        // /*@build-time*/ phone_number = '010-1234-5678';
+        $('#rt_tel1').val(phone_number);
+        // if (phone_number != '') {
+        //   //연락받을번호 상세
+        //   var phone_number_arr = phone_number.split('-');
+
+        //   document.getElementById('rt_tel1').value = phone_number_arr[0];
+        //   document.getElementById('rt_tel2').value = phone_number_arr[1];
+        //   document.getElementById('rt_tel3').value = phone_number_arr[2];
+
+        //   document.getElementById('in_tel1').value = phone_number_arr[0];
+        //   document.getElementById('in_tel2').value = phone_number_arr[1];
+        //   document.getElementById('in_tel3').value = phone_number_arr[2];
+        // }
+      });
+
+      // 예약시간 세팅.
+      function setComboValue(val) {
+        document.getElementById('elDate').value = document.getElementById('todayDateOut').value + val;
+      }
+
+      function checkChange() {
+        if (document.getElementById('publ06').checked) {
+          document.getElementById('rt_tel1').disabled = false;
+          document.getElementById('rt_tel1').focus();
+        } else {
+          document.getElementById('rt_tel1').disabled = true;
+        }
+      }
+
+      // report page data 호출.
+      function sendData(obj, dtmf) {
+        if (!document.getElementById('el01').checked && !document.getElementById('el02').checked) {
+          //!(document.getElementById('el03').checked)
+          jAlert('<p class="popup-alert-text">상담유형을 선택하세요.</p>', '');
+          return;
+        }
+
+        if (document.getElementById('elDate').value == '') {
+          jAlert('<p class="popup-alert-text">예약시간을 선택하세요.</p>', '');
+          return;
+        }
+
+        var rt_tel1 = document.getElementById('rt_tel1').value;
+        if (rt_tel1 == null || rt_tel1 == '') {
+          jAlert('<p class="popup-alert-text">상담예약 받으실 연락처를 입력하세요.</p>', '');
+          return;
+        }
+
+        // document.getElementById('rt_tel').value = document.getElementById('rt_tel1').value + '-' + document.getElementById('rt_tel2').value + '-' + document.getElementById('rt_tel3').value;
+
+        var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?[0-9]{3,4}-?[0-9]{4}$/;
+        // console.log(rt_tel1);
+        if (!regExp.test(rt_tel1)) {
+          jAlert('<p class="popup-alert-text">잘못된 전화번호 형식입니다.</p>', '');
+          return;
+        }
+
+        if (document.getElementById('el01').checked) {
+          document.getElementById('el').value = '1';
+        }
+
+        if (document.getElementById('el02').checked) {
+          document.getElementById('el').value = '2';
+        }
+
+        /* 		if(document.getElementById('el03').checked){
+			document.getElementById('el').value = "3";
+		} */
+
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+
+      // 주말 체크 설정
+      function isWeekend(date) {
+        // 토요일, 일요일인 경우는 false반환
+        if (date.getDay() == 6 || date.getDay() == 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // 예약시간 설정
+      function setTimeListT(enabled_date, holiday, current_time) {
+        var today = new Date();
+        var startHour;
+        var startMinutes;
+        var checkNextDay = false;
+
+        var currntYear;
+        var currntMonth;
+        var currntDay;
+
+        var currntHours;
+        var currentMinutes;
+
+        currntYear = parseInt(current_time.substr(0, 4));
+        currntMonth = parseInt(current_time.substr(4, 2));
+        currntDay = parseInt(current_time.substr(6, 2));
+
+        currntHours = parseInt(current_time.substr(8, 2));
+        currentMinutes = parseInt(current_time.substr(10, 2));
+
+        if (holiday == 'Y') {
+          //휴일일때
+          checkNextDay = true;
+          startHour = 10;
+          startMinutes = 0;
+        } else {
+          //주말이 아닐때
+
+          //10시부터 4시까지만 체크
+          if (currntHours > 9 && currntHours < 17) {
+            startHour = currntHours;
+
+            if (currentMinutes > 30) {
+              startMinutes = 0;
+              startHour = currntHours + 1;
+            } else {
+              startMinutes = 30;
+            }
+          } else if (currntHours < 10) {
+            startHour = 10;
+            startMinutes = 0;
+          } else {
+            //익일 예약으로
+            //today.setDate(today.getDate() + 1); //하루 더하여 setting
+            checkNextDay = true;
+            startHour = 10;
+            startMinutes = 0;
+          }
+        }
+
+        document.getElementById('timeSelect').innerHTML = '';
+
+        var s = document.getElementById('timeSelect');
+        //s.options[s.options.length]= new Option('선택해 주세요', '');
+
+        for (var i = startHour; i < 18; i++) {
+          if (i == startHour) {
+            if (startMinutes == 0) {
+              if (i == 9) {
+                s.options[s.options.length] = new Option('09:00', '090000');
+                s.options[s.options.length] = new Option('09:30', '093000');
+              } else if (i == 17) {
+                s.options[s.options.length] = new Option(i + ':00', i + '0000');
+              } else {
+                if (i != 12 && i != 13) {
+                  s.options[s.options.length] = new Option(i + ':00', i + '0000');
+                  s.options[s.options.length] = new Option(i + ':30', i + '3000');
+                }
+              }
+            } else {
+              if (i == 9) {
+                s.options[s.options.length] = new Option('09:30', '093000');
+              } else if (i == 17) {
+              } else {
+                if (i != 12 && i != 13) {
+                  s.options[s.options.length] = new Option(i + ':30', i + '3000');
+                }
+              }
+            }
+          } else if (i == 17) {
+            s.options[s.options.length] = new Option(i + ':00', i + '0000');
+          } else {
+            if (i != 12 && i != 13) {
+              s.options[s.options.length] = new Option(i + ':00', i + '0000');
+              s.options[s.options.length] = new Option(i + ':30', i + '3000');
+            }
+          }
+        }
+
+        var year = currntYear;
+        var month = currntMonth;
+        var day = currntDay;
+
+        if (month.toString().length == 1) month = '0' + month;
+
+        if (day.toString().length == 1) day = '0' + day;
+
+        if (checkNextDay) {
+          document.getElementById('todayDateOut').value = enabled_date;
+          document.getElementById('todayDate').innerHTML = enabled_date.substring(0, 4) + '년 ' + enabled_date.substring(4, 6) + '월 ' + enabled_date.substring(6, 8) + '일 ';
+        } else {
+          document.getElementById('todayDateOut').value = year + '' + month + '' + day;
+          document.getElementById('todayDate').innerHTML = year + '년' + month + '월' + day + '일';
+        }
+
+        document.getElementById('elDate').value = document.getElementById('todayDateOut').value + document.getElementById('timeSelect').value;
+
+        t = setTimeout(function () {
+          setTimeListT(enabled_date, holiday, current_time);
+        }, 30000);
+      }
+
+      // 예약시간 설정
+      function setTimeListC(enabled_date, holiday, current_time) {
+        var today = new Date();
+        var startHour;
+        var startMinutes;
+        var checkNextDay = false;
+
+        var currntYear;
+        var currntMonth;
+        var currntDay;
+
+        var currntHours;
+        var currentMinutes;
+
+        currntYear = parseInt(current_time.substr(0, 4));
+        currntMonth = parseInt(current_time.substr(4, 2));
+        currntDay = parseInt(current_time.substr(6, 2));
+
+        currntHours = parseInt(current_time.substr(8, 2));
+        currentMinutes = parseInt(current_time.substr(10, 2));
+
+        if (holiday == 'Y') {
+          //휴일일때
+          checkNextDay = true;
+          startHour = 10;
+          startMinutes = 0;
+        } else {
+          //주말이 아닐때
+
+          //10시부터 4시까지만 체크
+          if (currntHours > 9 && currntHours < 17) {
+            startHour = currntHours;
+
+            if (currentMinutes > 30) {
+              startMinutes = 0;
+              startHour = currntHours + 1;
+            } else {
+              startMinutes = 30;
+            }
+          } else if (currntHours < 10) {
+            startHour = 10;
+            startMinutes = 0;
+          } else {
+            //익일 예약으로
+            //today.setDate(today.getDate() + 1); //하루 더하여 setting
+            checkNextDay = true;
+            startHour = 10;
+            startMinutes = 0;
+          }
+        }
+
+        document.getElementById('timeTable').innerHTML = '';
+
+        var timeTable = document.getElementById('timeTable');
+        var selectTime = document.getElementById('selectTime');
+        //s.options[s.options.length]= new Option('선택해 주세요', '');
+
+        for (var i = startHour; i < 18; i++) {
+          if (i == startHour) {
+            if (startMinutes == 0) {
+              if (i == 9) {
+                //s.options[s.options.length]= new Option('09:00', '090000');
+                //s.options[s.options.length]= new Option('09:30', '093000');
+
+                var timeItem1 = makeTimeTableItem('09:00', '090000');
+                var timeItem2 = makeTimeTableItem('09:30', '093000');
+                timeTable.appendChild(timeItem1);
+                timeTable.appendChild(tiemItem2);
+
+                if (selectTime.innerText == '') {
+                  selectTime.innerText = '09:00';
+                  selectTime.value = '090000';
+                }
+              } else if (i == 17) {
+                //s.options[s.options.length]= new Option(i + ':00', i + '0000');
+                var timeItem1 = makeTimeTableItem(i + ':00', i + '0000');
+                timeTable.appendChild(timeItem1);
+
+                if (selectTime.innerText == '') {
+                  selectTime.innerText = i + ':00';
+                  selectTime.value = i + '0000';
+                }
+              } else {
+                if (i != 12 && i != 13) {
+                  //s.options[s.options.length]= new Option(i + ':00', i + '0000');
+                  //s.options[s.options.length]= new Option(i + ':30', i + '3000');
+                  var timeItem1 = makeTimeTableItem(i + ':00', i + '0000');
+                  var timeItem2 = makeTimeTableItem(i + ':30', i + '3000');
+                  timeTable.appendChild(timeItem1);
+                  timeTable.appendChild(timeItem2);
+
+                  if (selectTime.innerText == '') {
+                    selectTime.innerText = i + ':00';
+                    selectTime.value = i + '0000';
+                  }
+                }
+              }
+            } else {
+              if (i == 9) {
+                //s.options[s.options.length]= new Option('09:30', '093000');
+                var timeItem1 = makeTimeTableItem('09:30', '093000');
+                timeTable.appendChild(timeItem1);
+
+                if (selectTime.innerText == '') {
+                  selectTime.innerText = '09:30';
+                  selectTime.value = '093000';
+                }
+              } else if (i == 17) {
+              } else {
+                if (i != 12 && i != 13) {
+                  //s.options[s.options.length]= new Option(i + ':30', i + '3000');
+                  var timeItem1 = makeTimeTableItem(i + ':30', i + '3000');
+                  timeTable.appendChild(timeItem1);
+
+                  if (selectTime.innerText == '') {
+                    selectTime.innerText = i + ':30';
+                    selectTime.value = i + '3000';
+                  }
+                }
+              }
+            }
+          } else if (i == 17) {
+            //s.options[s.options.length]= new Option(i + ':00', i + '0000');
+            var timeItem1 = makeTimeTableItem(i + ':00', i + '0000');
+            timeTable.appendChild(timeItem1);
+          } else {
+            if (i != 12 && i != 13) {
+              //s.options[s.options.length]= new Option(i + ':00', i + '0000');
+              //s.options[s.options.length]= new Option(i + ':30', i + '3000');
+              var timeItem1 = makeTimeTableItem(i + ':00', i + '0000');
+              var timeItem2 = makeTimeTableItem(i + ':30', i + '3000');
+              timeTable.appendChild(timeItem1);
+              timeTable.appendChild(timeItem2);
+
+              if (selectTime.innerText == '') {
+                selectTime.innerText = i + ':00';
+                selectTime.value = i + '0000';
+              }
+            }
+          }
+        }
+
+        var year = currntYear;
+        var month = currntMonth;
+        var day = currntDay;
+
+        if (month.toString().length == 1) month = '0' + month;
+
+        if (day.toString().length == 1) day = '0' + day;
+
+        if (checkNextDay) {
+          document.getElementById('todayDateOut').value = enabled_date;
+          document.getElementById('todayDate').innerHTML = enabled_date.substring(0, 4) + '년 ' + enabled_date.substring(4, 6) + '월 ' + enabled_date.substring(6, 8) + '일 ';
+        } else {
+          document.getElementById('todayDateOut').value = year + '' + month + '' + day;
+          document.getElementById('todayDate').innerHTML = year + '년' + month + '월' + day + '일';
+        }
+        var defaultTime = document.getElementById('selectTime').value;
+
+        document.getElementById('elDate').value = document.getElementById('todayDateOut').value + defaultTime;
+        //	document.getElementById('elDate').value = document.getElementById('todayDateOut').value + document.getElementById('timeSelect').value
+      }
+
+      function makeTimeTableItem(aTime, vTime) {
+        var timeItem1 = document.createElement('li');
+        timeItem1.setAttribute('class', 'inpsel2-item select-combo-item list');
+
+        var itemLink1 = document.createElement('a');
+
+        itemLink1.setAttribute('href', "javascript:selectTimeData('" + aTime + "', '" + vTime + "')");
+        itemLink1.innerText = aTime;
+
+        timeItem1.appendChild(itemLink1);
+
+        return timeItem1;
+      }
+
+      function selectTimeData(aTime, vTime) {
+        document.getElementById('elDate').value = document.getElementById('todayDateOut').value + vTime;
+
+        var timeTable = document.getElementById('timeTable');
+        // timeTable.setAttribute('style', 'display:none');
+        isCollapse = false;
+
+        var selectTime = document.getElementById('selectTime');
+        selectTime.innerText = aTime;
+        return;
+      }
+    </script>
+  </body>
+</html>

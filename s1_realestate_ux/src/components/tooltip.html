@@ -1,0 +1,17 @@
+<div class="tooltip-container">
+  <div class="tooltip-area">
+    <div class="tooltip-icon-box">
+      <button type="button" class="btn-tooltip"><i class="ic ic-tooltip"></i></button>
+    </div>
+    <div class="tooltip-box">
+      <ul>
+        <!-- prettier-ignore -->
+        @@for (var i = 0; i < text.length; i++) {
+        <li class="tooltip-text">
+          <span>`+text[i]+`</span>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

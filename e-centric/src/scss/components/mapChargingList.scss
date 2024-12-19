@@ -1,0 +1,129 @@
+.map-charging-list {
+  position: relative;
+  padding: 2rem;
+  &:not(:last-child) {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 2rem;
+      right: 2rem;
+      bottom: 0;
+      height: 0.1rem;
+      background-color: rgba($primary_100, 0.1);
+    }
+  }
+  .map-charging-title-box {
+    @include flex(row-reverse, flex-end, center);
+    gap: 0.8rem;
+    .bookmark-box {
+      position: relative;
+      width: 1.6rem;
+      height: 1.6rem;
+      .bookmark-checkbox {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+  }
+  .map-charging-title {
+    @include flex(row, flex-start, center);
+    gap: 0.8rem;
+    .name {
+      @include font(1.6rem, 700, $text_02, normal);
+      word-break: break-all;
+    }
+    .icon {
+      display: inline-block;
+      min-width: 1.6rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: asset-image('icon/ic_arrow_right.svg') no-repeat center / contain;
+      font-size: 0;
+      text-indent: -999px;
+    }
+  }
+  .map-charging-info {
+    margin-top: 0.8rem;
+
+    .info-top {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      gap: 1rem;
+      .badge-text {
+        margin-bottom: 0;
+        height: auto;
+        min-height: 2rem;
+        padding: 0.2rem 0.6rem;
+      }
+
+      .info {
+        span:not(:first-child) {
+          &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 0.1rem;
+            height: 1rem;
+            margin: 0 0.6rem;
+            background-color: rgba($primary_100, 0.2);
+          }
+        }
+      }
+    }
+    span {
+      @include font(1.2rem, 400, $text_03, 1.56rem);
+      word-break: keep-all;
+    }
+
+    .info-bottom {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      text-align: left;
+      margin-top: 0.8rem;
+    }
+    .address {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 0.2rem;
+        height: 0.2rem;
+        border-radius: 50%;
+        background-color: $text_03;
+        margin: 0 0.4rem;
+        vertical-align: middle;
+      }
+    }
+  }
+  .map-charging-left {
+    @include flex(row, flex-start, center);
+    gap: 2rem;
+    margin-right: 2rem;
+    .badge-text {
+      width: fit-content;
+    }
+    .info {
+      margin-left: 0.6rem;
+    }
+  }
+  .map-charging-right {
+    @include flex(row, flex-start, center);
+    .bookmark-box {
+      margin: 0 1.4rem;
+    }
+  }
+
+  .btn-get-directions {
+    @include flex(column, center, center);
+    min-width: 5.6rem;
+    padding: 0.8rem;
+    background: $primary_10;
+    border: 0.1rem solid $primary_15;
+    border-radius: 0.8rem;
+    span {
+      @include font(1.2rem, 400, $text_02, 1.56rem);
+    }
+  }
+  .map-charge-device-list-top {
+    @include flex(row, space-between, center);
+  }
+}

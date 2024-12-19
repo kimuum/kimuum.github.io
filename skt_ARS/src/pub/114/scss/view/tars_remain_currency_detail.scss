@@ -1,0 +1,156 @@
+.remain-currency-detail {
+  .content-title-box {
+    @include flex(row, space-between, flex-start);
+  }
+
+  .re-base-currency-top {
+    .re-base-chart-box {
+      .chart-box-row {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+    .data-box-info {
+      margin-left: 2rem;
+    }
+    .data-box-info01 {
+      @include font(1.4rem, 400, rgba($black, 0.7), normal);
+      letter-spacing: -0.07rem;
+    }
+    .data-box-info02 {
+      margin-top: 0.4rem;
+      span {
+        display: inline-block;
+      }
+      .sub01 {
+        @include font(1.6rem, 700, $primary, normal);
+        letter-spacing: -0.032rem;
+      }
+      .bar {
+        display: inline-block;
+        vertical-align: middle;
+        width: 0.1rem;
+        height: 1.3rem;
+        margin: 0 0.8rem;
+        background-color: rgba($black, 0.1);
+        color: transparent;
+      }
+      .sub02,
+      .sub03,
+      .sub04 {
+        @include font(1.4rem, 500, rgba($black, 0.7), normal);
+        letter-spacing: -0.07rem;
+      }
+      .sub04 {
+        margin-left: 0.2rem;
+        font-weight: 400;
+      }
+    }
+  }
+  .share-data {
+    margin-top: 1.4rem;
+    padding-top: 2rem;
+    border-top: 0.1rem solid rgba($black, 0.1);
+    .data-box-bot {
+      @include flex(row, space-between, center);
+      @include font(1.4rem, 500, $black, normal);
+      letter-spacing: -0.07rem;
+      > strong {
+        font-weight: 400;
+      }
+      .data-box-bot03 {
+        color: $primary;
+        font-weight: 400;
+      }
+    }
+  }
+  .re-base-chart-area {
+    margin-bottom: 2.4rem;
+    &.re-base-currency-top {
+      margin-bottom: 0.8rem;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .re-base-title-box {
+      @include flex(row, flex-start, center);
+      margin-bottom: 1rem;
+      .box-label {
+        @include font(1.7rem, 500, $black, normal);
+        letter-spacing: -0.032rem;
+      }
+      .data-box-total {
+        margin-left: auto;
+        @include font(1.4rem, 500, $primary, normal);
+        letter-spacing: -0.07rem;
+        span {
+          font-weight: 700;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+  .re-base-chart-box {
+    padding: 2rem;
+    @include bgBoxGray();
+
+    .chart-box-row {
+      @include flex(row, flex-start, center);
+      border-bottom: 0.1rem solid rgba($black, 0.1);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+      .info {
+        margin-left: 1rem;
+        .info-txt01 {
+          margin-bottom: 0.4rem;
+          @include font(1.4rem, 400, rgba($black, 0.7), normal);
+          letter-spacing: -0.07rem;
+        }
+        .info-txt02 {
+          @include flex(row, flex-start, center);
+          flex-wrap: wrap;
+        }
+        .info-txt02-sub {
+          .sub01 {
+            font-weight: 500;
+          }
+          .sub01,
+          .sub02 {
+            @include font(1.6rem, 700, rgba($black, 1), normal);
+            letter-spacing: -0.032rem;
+          }
+          .sub03,
+          .sub04 {
+            @include font(1.4rem, 400, rgba($black, 0.7), normal);
+            letter-spacing: -0.07rem;
+          }
+          .line-bar {
+            margin: 0 1rem;
+            display: inline-block;
+            width: 0.1rem;
+            height: 1.3rem;
+            background-color: rgba($black, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+@media #{$mobile_320} {
+  .remain-currency-detail {
+    .re-base-chart-box {
+      .chart-box-row {
+        .info {
+          .info-txt02 {
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.voice-auth {
+  .caution-guide-container {
+    .caution-guide-box {
+      & + .caution-guide-box {
+        margin-top: 1.4rem;
+      }
+      .caution-guide-inner {
+        &.align-top {
+          align-items: flex-start;
+          .caution-text-black {
+            padding-left: 1rem;
+            @include font(1.4rem, 400, rgba($black, 0.7), normal);
+            letter-spacing: -0.07rem;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,562 @@
+@charset "UTF-8";
+
+.Lnb-dark .nav-Lnb .nav-item-header .text-uppercase {
+  font-size: 48px;
+  color: #ffffff;
+  margin-left: 90px;
+}
+.wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+/* JCK 200605 영역잡기 */
+.wrap.mypage_wrap {
+  display:flex;
+  padding-top:125px;
+  min-height:100vh;
+  background: #f2f6fb;
+  box-sizing: border-box;
+}
+.wrap.mypage_wrap .container::after {
+  /* content:''; */
+  display:block;
+  position: absolute; left:0; top:100%;
+  width:100%; height:100vh;
+  background: #f2f6fb;
+}
+.Lnb {
+  flex: 0 0 auto;
+  width: 414px;
+  position: fixed;
+  left:0; top:125px;
+  height: 100%;
+  display: block;
+  z-index: 9;
+}
+.Lnb .Lnb-content {
+  width: 100%;
+  background-color: #2c343f;
+  color: #cccccc;
+  height: 100%;
+}
+.Lnb .Lnb-content .card {
+  overflow: hidden;
+  height: 100%;
+}
+.Lnb .vers {
+  font-size: 24px;
+  padding: 18px 5px 15px 90px;
+  position: fixed;
+  bottom: 31px;
+  color: #cccccc;
+  display: block;
+}
+.Lnb-dark {
+  background-color: #2c343f;
+  color: #cccccc;
+}
+.nav.nav-Lnb {
+  letter-spacing: -0.5px;
+  outline: none;
+}
+.nav-Lnb .nav-item:not(.nav-item-divider) {
+  margin-bottom: 0px;
+  outline: none;
+}
+.nav-Lnb .nav-item-header {
+  margin: 0;
+  padding: 73px 0 35px;
+}
+.nav-Lnb .nav-link {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  outline: none;
+  padding: 28px 5px 25px 90px;
+  transition: background-color ease-in-out 0.15s, color ease-in-out 0.15s;
+}
+/* .nav-Lnb .nav-link:hover, */
+.nav-Lnb .nav-link.pin {
+  color: #fff;
+  /* box-shadow: -2px 6px 13px rgb(33, 37, 43, 0.5); */
+  outline: none;
+}
+.nav-Lnb .nav-link.active.pin::before {
+  content: '';
+  border:4px solid #c70850;
+  box-sizing: border-box;
+  position: absolute;
+  top:0;
+  left:0;
+  width:  414px;
+  height: 100%;
+  z-index: 2;
+}
+.nav-Lnb .nav-link.pin {
+  color: #fff;
+  background-color: #c70850;
+  box-shadow: -2px 6px 13px rgb(33, 37, 43, 0.5);
+  z-index: 2;
+  outline: none;
+}
+.nav-Lnb .nav-link.active {
+  color: #fff;
+  /* background-color: #98053c; */
+  /* background-color: #18181b; */
+  background-color: #282a31;
+  box-shadow: -2px 6px 13px rgb(33, 37, 43, 0.5);
+  z-index: 2;
+  outline: none;
+}
+/* .Lnb-dark .nav-Lnb .nav-link:not(.disabled):hover,
+.Lnb-light
+  .card[class*="bg-"]:not(.bg-light):not(.bg-white):not(.bg-transparent)
+  .nav-Lnb
+  .nav-link:not(.disabled):hover {
+  color: #fff;
+  background-color: #c70850;
+  box-shadow: 0px 9px 4px -3px rgb(33, 37, 43, 0.5);
+  z-index: 1;
+  outline: none;
+}
+.Lnb-dark .nav-Lnb .nav-link:not(.disabled):focus,
+.Lnb-light
+  .card[class*="bg-"]:not(.bg-light):not(.bg-white):not(.bg-transparent)
+  .nav-Lnb
+  .nav-link:not(.disabled):focus {
+  color: #fff;
+  background-color: #c70850;
+  box-shadow: 0px 9px 4px -3px rgb(33, 37, 43, 0.5);
+  z-index: 1;
+  outline: none;
+} */
+
+.nav-Lnb .nav-link i.ico {
+  margin-right: 20px;
+  /* margin-top: 3px; */
+  margin-bottom: 0;
+  font-size: 34px;
+  width: 40px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+.nav-Lnb .nav-link i.ico.ico_my01 {
+  background-image: url("../images/icon_my01.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my01, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my01, */
+.nav-Lnb .nav-link.pin i.ico.ico_my01,
+.nav-Lnb .nav-link.active i.ico.ico_my01 {
+  background-image: url("../images/icon_my01_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my02 {
+  background-image: url("../images/icon_my02.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my02, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my02, */
+.nav-Lnb > .nav-item > .nav-link .nav-Lnb .nav-link.pin i.ico.ico_my02,
+.nav-Lnb > .nav-item > .nav-link .nav-Lnb .nav-link.active i.ico.ico_my02 {
+  background-image: url("../images/icon_my02_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my03 {
+  background-image: url("../images/icon_my03.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my03, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my03, */
+.nav-Lnb .nav-link.pin i.ico.ico_my03,
+.nav-Lnb .nav-link.active i.ico.ico_my03 {
+  background-image: url("../images/icon_my03_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my04 {
+  background-image: url("../images/icon_my04.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my04, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my04, */
+.nav-Lnb .nav-link.pin i.ico.ico_my04,
+.nav-Lnb .nav-link.active i.ico.ico_my04 {
+  background-image: url("../images/icon_my04_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my05 {
+  background-image: url("../images/icon_my05.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my05, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my05, */
+.nav-Lnb .nav-link.pin i.ico.ico_my05,
+.nav-Lnb .nav-link.active i.ico.ico_my05 {
+  background-image: url("../images/icon_my05_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my06 {
+  background-image: url("../images/icon_my06.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my06, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my06, */
+.nav-Lnb .nav-link.pin i.ico.ico_my06,
+.nav-Lnb .nav-link.active i.ico.ico_my06 {
+  background-image: url("../images/icon_my06_on.png");
+  width: 40px;
+}
+.nav-Lnb .nav-link i.ico.ico_my07 {
+  background-image: url("../images/icon_my07.png");
+  width: 40px;
+}
+/* .nav-Lnb .nav-link:hover i.ico.ico_my06, */
+/* .nav-Lnb .nav-link:focus i.ico.ico_my06, */
+.nav-Lnb .nav-link.pin i.ico.ico_my07,
+.nav-Lnb .nav-link.active i.ico.ico_my07 {
+  background-image: url("../images/icon_my07_on.png");
+  width: 40px;
+}
+
+.nav-Lnb > .nav-item > .nav-link {
+  font-size: 30px;
+  font-weight: 500;
+}
+.nav-Lnb.de > .nav-item > .nav-link,
+.nav-Lnb.ru > .nav-item > .nav-link {font-size:27px;}
+.nav-item-submenu > .nav-link:after {
+  content: "";
+}
+.nav span {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  background: none;
+  z-index: 1;
+  letter-spacing: -1px;
+  transform-origin: 4px 0px;
+}
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #f2f6fb;
+}
+
+/* Select to Delete */
+.slide-item.deleteChk .delDim {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background: #000000;
+  opacity: 0.5;
+  border-radius: 5px;
+}
+.slide-item .delSelect {
+  display:none;
+}
+.slide-item.deleteChk .delSelect {
+  display: block;
+  color: #fcfcfc;
+  font-size: 36px;
+  font-weight: bold;
+  user-select: none;
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 115;
+}
+.delSelect {
+  position: relative;
+}
+.delSelect input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.delSelect input[type="checkbox"] + label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.delSelect input[type="checkbox"] + label:before {
+  content: " ";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 36px;
+  margin: -2px 8px 0 0;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+  background: #fafafa;
+  border: 2px solid #cacece;
+  border-radius: 6px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+}
+
+.delSelect.pin input + label:before{
+  border: 2px solid #c70850;
+}
+
+.delSelect input[type="checkbox"] + label:active:before,
+.delSelect input[type="checkbox"]:checked + label:active:before {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.delSelect input[type="checkbox"]:checked + label:before {
+  content: "";
+  background: url("../images/chk_.png") center no-repeat;
+  background-color: #fff;
+  box-shadow: none;
+}
+/* JCK 200607 키우는걸 의도한건지 모르겟으나 말이 나와서 삭제
+.slide-item:hover .delSelect input[type="checkbox"] + label:before,
+.slide-item:focus .delSelect input[type="checkbox"] + label:before,
+.slide-item.pin .delSelect input[type="checkbox"] + label:before {
+  width: 40px;
+  height: 40px;
+}
+.slide-item.deleteChk:hover .delSelect,
+.slide-item.deleteChk:focus .delSelect,
+.slide-item.deleteChk.pin .delSelect {
+  top: 8px;
+  left: 8px;
+}
+*/
+/* JCK 200605 myHead가이드수정 */
+/* myHead */
+.myHead {
+  position: relative;
+  display:flex;
+  justify-content:flex-end;
+  width: 100%;
+  height:75px;
+  margin-top:30px;
+  padding:0 90px 0 66px;
+  margin-bottom: 20px;
+  align-items:center;
+  box-sizing: border-box;
+}
+.myHead::before{
+  content: '';
+  width: 1349px;
+  height: 100%;
+  display: block;
+  background: #d3d9e2;
+  position: absolute;
+  top: 0;
+  left: 67px;
+  z-index: 0;
+}
+.myHead.mt0 {
+  margin-top:0;
+}
+.myHead::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+.notify {
+  font-size: 26px;
+  font-weight: 500;
+  color: #333333;
+  /* line-height: 54px; */
+  letter-spacing: -0.5px;
+  /* text-align: left; */
+  /* width: 72%; */
+  text-align: right;
+  /* width: 100%; */
+  width: 100%;
+  padding:0 40px;
+  /* float: left; */
+  /* height: 54px; */
+  /* margin: 20px 0px 0px 67px; */
+  z-index: 1;
+}
+.myHead .area-button {
+  display: block;
+  flex:none;
+  /* overflow:hidden; 그림자가림 */
+  /* width: 20%; */
+  /* height: 55px; */
+  /* margin: 20px 0px; */
+  margin: 0 10px 0 0px;
+  z-index: 1;
+}
+.myHead .area-button::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+/* JCK 200605 가이드수정 */
+/* 클래스버튼으로 통합
+.area-button button {
+  padding: 0 10px;
+  margin-right: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2), 0px 6px 7px rgba(0, 0, 0, 0.1);
+}
+*/
+.myHead .area-button .btn-more {
+  position: relative;
+  width: 232px;
+  height:54px;
+  font-size: 26px;
+  color: #fff;
+  background-color: #666666;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 10px;
+  /* margin-right: 40px; */
+  border-radius: 10px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2), 0px 6px 7px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+/* 기능 미 구현으로 임시 제거 */
+/* .favorites .myHead .area-button .btn-more:first-child{display: none;} */
+/* .recently .myHead .area-button .btn-more:first-child{display: none;} */
+/* 
+.myHead .area-button .btn-more + .btn-more {
+  margin-left:10px;
+}
+ */
+
+/* //JCK 200605 가이드수정 */
+.myHead .area-button .btn-more:hover {
+  /* width: 223px; */
+  color: #fff;
+  background-color: #666666;
+  /* display: block; */
+}
+/* .myHead .area-button .btn-more.hover, */
+/* .myHead .area-button .btn-more:hover, */
+/* .myHead .area-button .btn-more:focus  */
+.myHead .area-button .btn-more.pin{
+  /* transition: all 0.2s; Duration기본상태사용 */
+  /* width: 223px; */
+  font-size: 30px;
+  outline: 0;
+  color: #fff;
+  background-color: #333333;
+  /* display: block; */
+  /* box-shadow: 0px 18px 28.2px 1.8px rgba(0, 0, 0, 0.4); JCK 200607 하단영역에 그림자가림 */
+}
+.myHead .area-button .btn-more:active,
+.myHead .area-button .btn-more.active {
+  font-size: 26px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2), 0px 6px 7px rgba(0, 0, 0, 0.1);
+  background-color: #666666;
+}
+/* .myHead .area-button .btn-more.hover::after, */
+/* .myHead .area-button .btn-more:hover::after, */
+/* .myHead .area-button .btn-more:focus::after  */
+.myHead .area-button .btn-more.pin::after{
+  content:'';
+  display:block;
+  position:absolute;
+  left:0; top:0; right:0; bottom:0;
+  border: 4px solid #c70850;
+  border-radius: 10px;
+}
+/* //JCK 200605 가이드수정 */
+
+
+/* All Delete */
+.myHead .area-button .delSelect{
+  float: right;
+  height: 54px;
+  line-height: 54px;
+  margin-right:20px;
+}
+.myHead .area-button .delSelect span{
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  color: #333333;
+}
+.myHead .area-button .delSelect::after{
+  content: 'All';
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -.5px;
+  color: #333333;
+}
+
+.myHead .area-button .btn-more + .delSelect,
+.h-section .dataInfo span + .delSelect {
+  display: block;
+}
+.h-section .dataInfo .delSelect {
+  margin-left: -20px;
+  margin-right: 30px;
+  margin-top: 10px;
+}
+
+/* colurm */
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.row:before {
+  display: table;
+  content: " ";
+}
+.row:after {
+  clear: both;
+}
+.col-2 {
+  width: 50%;
+  float: left;
+  position: relative;
+}
+
+
+
+/* nodata */
+.h-max.nodata{
+  font-size: 50px;
+  letter-spacing: -.5px;
+  font-weight: 300;
+  color: #333333;
+  margin-top: 267px;
+}
+
+
+/* Mypages Section */
+.wrap.mypage_wrap .container .myUpcoming,
+.wrap.mypage_wrap .container .recently,
+.wrap.mypage_wrap .container .mySupport,
+.wrap.mypage_wrap .container .myTermService,
+.wrap.mypage_wrap .container .favorites,
+.wrap.mypage_wrap .container .myInfo {
+  position: relative;
+  left:0; top:0;
+  padding-left:414px;
+  width:100%;
+  height:3000px;
+}

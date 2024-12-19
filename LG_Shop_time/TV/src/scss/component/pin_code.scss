@@ -1,0 +1,100 @@
+// PIN CODE
+.pincode-container {
+  @include flex(column, flex-start, center);
+  width: 744px;
+  .pincode-header {
+    margin-bottom: 30px;
+    @include font(30px, normal, $color-gray-808080, 1);
+  }
+  .pincode-keypad-area {
+    @include flex(column, flex-start, center);
+    margin-bottom: 15px;
+  }
+
+  //pin code input
+  .pincode-inputs-box {
+    @include flex(row, flex-start, center);
+    margin-bottom: 24px;
+    input {
+      display: block;
+      width: 114px;
+      height: 114px;
+      background-color: $color-white;
+      border: 1px solid $color-gray-dadada;
+      @include font(30px, normal, $color-white, 1);
+      text-align: center;
+    }
+    .pincode-input {
+      margin: 0 6px;
+      &.password {
+        position: relative;
+        &:before {
+          content: '';
+          display: block;
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          height: 100%;
+          background-color: $color-white;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 2;
+          top: 50%;
+          left: 50%;
+          width: 18px;
+          height: 18px;
+          margin-top: -6px;
+          margin-left: -6px;
+          background-color: $color-gray-4b4b4b;
+          border-radius: 18px;
+        }
+      }
+      &.focused, &.hover {
+        input {
+          background-color: $focused;
+        }
+      }
+    }
+  }
+  //pin code number
+  .pincode-buttons-box {
+    @include flex(row, center, flex-start);
+    flex-wrap: wrap;
+    width: 496px;
+    margin: -1.5px;
+    button {
+      @include flex(row, center, center);
+      width: 162px;
+      height: 78px;
+      margin: 1.5px;
+      background-color: $color-gray-373737;
+      @include font(30px, normal, $color-white, 1);
+      &.focused, &.hover {
+        background-color: $focused;
+      }
+    }
+    .btn-pincode:nth-child(10) {
+      order: 1;
+    }
+    .btn-delete {
+      order: 0;
+    }
+    .btn-enter {
+      order: 1;
+      font-size: 30px;
+      letter-spacing: -0.75px;
+    }
+    .btn-delete {
+      &:before {
+        content: '';
+        display: block;
+        width: 54px;
+        height: 54px;
+        background: asset-image('ic_delete.png') no-repeat;
+      }
+    }
+    // ic_delete
+  }
+}

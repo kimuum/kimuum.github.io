@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "신규 이벤트 등록" , "headProjectName": "| 이벤트 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유 클래스 : EventAdd -->
+    <div class="wrap EventAdd">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>신규 이벤트 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>신규 이벤트 등록</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>승인 요청</span></button>
+                </div>
+                <div class="buttonArea" style="display: none">
+                  <button type="button" class="btn btnLineGray"><span>삭제</span></button>
+                  <button type="button" class="btn"><span>승인 요청</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">이벤트 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        이벤트 상세 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            이벤트명<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="[2월] 바로배송 유심" title="이벤트명 검색" aria-required="true" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            이벤트 기간<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-start-date">
+                                <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                </div>
+                              </div>
+                              <div class="space"></div>
+                              <div class="field fieldDatepicker" id="datepicker-end-date">
+                                <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            노출일<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date">
+                                <label class="ir" for="input-select-date">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">당첨자 발표 여부</th>
+                          <td>
+                            <div class="select">
+                              <select title="당첨자 발표 여부">
+                                <option value="">O</option>
+                                <option value="">X</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">당첨자 발표일</th>
+                          <td>
+                            <div class="periodWrap">
+                              <div class="field fieldDatepicker" id="datepicker-select-date02">
+                                <label class="ir" for="input-select-date02">날짜 선택 : 2022년 03월 09일</label>
+                                <div class="fieldForm datePickerArea">
+                                  <input type="text" id="input-select-date02" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            이벤트 썸네일<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <!-- [운영] DR-2023-25740 20230502 -->
+                            <div class="descriptionWrap">
+                              <div class="fieldForm maxWidth">
+                                <div class="file">
+                                  <input type="file" id="fileUpload" title="썸네일 이미지 업로드" aria-required="true" />
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn"><span>업로드</span></button>
+                                </div>
+                              </div>
+                              <p class="dotted colorPrimary">460 px * 220 px / 5MB 이하 / png.jpeg</p>
+                            </div>
+                            <!-- //[운영] DR-2023-25740 20230502 -->
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            공유하기 설정<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-20" checked="" aria-required="true" />
+                                <label for="input-id-20" class="checkboxLabel">
+                                  <span class="checkIcon"></span>
+                                  <span>링크 복사</span>
+                                </label>
+                              </div>
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-21" checked="" />
+                                <label for="input-id-21" class="checkboxLabel">
+                                  <span class="checkIcon"></span>
+                                  <span>카카오</span>
+                                </label>
+                              </div>
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-22" checked="" />
+                                <label for="input-id-22" class="checkboxLabel">
+                                  <span class="checkIcon"></span>
+                                  <span>페이스북</span>
+                                </label>
+                              </div>
+                              <div class="checkbox">
+                                <input type="checkbox" id="input-id-23" checked="" />
+                                <label for="input-id-23" class="checkboxLabel">
+                                  <span class="checkIcon"></span>
+                                  <span>문자</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- [운영] DR-2023-25740 20230502 -->
+                        <tr>
+                          <th scope="row">
+                            이벤트 상세<strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="editGuideContainer">
+                              <div class="editGuideArea">
+                                <div class="guideHeader">
+                                  <strong class="guideTitle">이벤트 상세 에디터 가이드</strong>
+                                </div>
+                                <div class="guideBody">
+                                  <ol class="dottedBox">
+                                    <li class="dotted">이미지로 업로드 시 PC 기준 ‘가로 1280px * 세로’ 사이즈 권장</li>
+                                    <li class="dotted">이미지 링크 연결 필요 시 에디터 ‘링크 삽입/변경’ 기능 활용</li>
+                                  </ol>
+                                </div>
+                              </div>
+                              <div class="highTextArea">
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                                에디터 영역입니다. <br />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <!-- //[운영] DR-2023-25740 20230502 -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+        if ($('#datepicker-select-date02').length > 0) {
+          getDatepicker('#datepicker-select-date02', 'calendar');
+        }
+      });
+    </script>
+  </body>
+</html>

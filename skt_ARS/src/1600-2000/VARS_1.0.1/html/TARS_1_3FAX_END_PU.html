@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <input type="hidden" id="agent_yn" iweb-data="out" />
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '납부이력 발송',
+          "isBtn" : false
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-fax">
+                <p class="info-title"><span class="highlight">납부이력을 팩스</span>로<br />발송해 드리겠습니다.</p>
+              </div>
+
+              <div id="agent_n" class="service-button-box" style="display: none">
+                <div class="button-box">
+                  <button type="button" class="btn btn-primary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');">확인</button>
+                </div>
+              </div>
+              <div id="agent_y" class="service-button-box" style="display: none">
+                <div class="button-box">
+                  <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">상담사 연결</button>
+                  <button type="button" class="btn btn-primary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');">확인</button>
+                </div>
+              </div>
+              <div class="offer-info-box bg-line">
+                <div id="add_service_wrap">
+                  <!-- 우편이용고객여부 hidden값 -->
+                  <input type="hidden" id="gbn_type" iweb-data="out" />
+                  <!-- prettier-ignore -->
+                  @@include('offerArea.html', {
+                    "title" : "사용 요금이 궁금하세요?",
+                    "titleDesc" : "고객님의 월별 사용요금을 알려드립니다.",
+                    "buttonType" : "default",
+                    "offterBtn": [
+                      {
+                        "buttonTitle" : "1.이번 달 사용요금 확인",
+                        "buttonDesc" : "이번달 지난달의 월 별 사용요금을 확인하세요."
+                      }
+                    ]
+                  })
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 업데이트 1. 상담사 연결 버튼 노출 유무 [2023.04.18]
+        var agent_yn = getUrlParameter('agent_yn');
+        /*@build-time*/ agent_yn = 'n';
+        if (agent_yn == 'Y') {
+          $('#agent_y').css('display', 'block');
+        } else {
+          $('#agent_n').css('display', 'block');
+        }
+      });
+    </script>
+  </body>
+</html>

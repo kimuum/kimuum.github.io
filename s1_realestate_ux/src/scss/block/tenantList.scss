@@ -1,0 +1,77 @@
+.tenant-list-container {
+  .tenant-lists {
+    border-top: 0.2rem solid $color_333;
+    border-bottom: 0.2rem solid $color_eee;
+    .tenant-list {
+      @include flex(row, flex-start, flex-start);
+      padding: 4rem 1.4rem 4rem 1.6rem;
+      + .tenant-list {
+        border-top: 2px solid $color_eee;
+      }
+      .list-left {
+        flex: 1;
+      }
+
+      .tenant-row {
+        @include flex(row, flex-start, flex-start);
+        + .tenant-row {
+          margin-top: 4rem;
+        }
+        &.empty {
+          .data-box {
+            font-weight: 400;
+            color: $color_bfb;
+          }
+        }
+
+        .label-box {
+          width: 23.4rem;
+          @include font(1.6rem, 700, $color_353, normal);
+        }
+        .data-box {
+          @include font(1.6rem, 700, $color_353, normal);
+
+          .data {
+            @include flex(row, flex-start, center);
+            + .data {
+              margin-top: 1.2rem;
+            }
+            .data-label {
+              width: 9.3rem;
+              @include font(1.4rem, 400, $color_bfb, 2rem);
+            }
+            .data-text {
+              @include font(1.4rem, 400, $color_7f7, 2rem);
+            }
+          }
+        }
+      }
+
+      .btn-invite {
+        width: 15.2rem;
+      }
+    }
+  }
+  .tenant-list-bottom {
+    position: relative;
+    @include flex(row, flex-end, center);
+    margin-top: 1.6rem;
+
+    .pagination {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    .field-dropdown {
+      .dropdown-container {
+        width: 22rem;
+        .btn-dropdown {
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "후불 요금제 | 상품", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : productPlanCompare -->
+    <div class="wrap productPlanCompare">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>후불 요금제</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>상품</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>후불 요금제</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_product.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="productListContainer">
+            <div class="contentInner">
+              <div class="resultContainer">
+                <div class="resultTop">
+                  <div class="topLeft">
+                    <h3 class="topTitle"><span class="ir">조회 결과</span><strong>총 51개</strong> 요금제</h3>
+                  </div>
+                  <div class="topMiddle">
+                    <a href="javascript:void(0);" class="linkUnderline colorPrimary">비교하기 종료</a>
+                  </div>
+                  <div class="topRight">
+                    <div class="typeSearchSelect">
+                      <div class="dropdownArea">
+                        <div class="dropdownTitle">
+                          <button type="button" class="titleLabel dropdownBtn" aria-expanded="false" title="정렬방법">
+                            <span>데이터 많은 순</span>
+                          </button>
+                        </div>
+                        <ul class="dropdownList" aria-label="정렬">
+                          <li><button type="button" title="선택됨">데이터 많은 순</button></li>
+                          <li><button type="button">데이터 많은 순</button></li>
+                          <li><button type="button">데이터 많은 순</button></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="resultMiddle">
+                  <div class="popularDataList">
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId01" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId01"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem smaller">
+                          <dt>월 기본요금</dt>
+                          <dd>
+                            <span class="del"></span><span><em class="ir">정상가</em>29,700</span>원
+                          </dd>
+                        </dl>
+                        <dl class="usageItem">
+                          <dt>프로모션 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId02" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId02"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId03" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId03"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId04" checked />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId04"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId05" checked />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId05"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId06" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId06"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId05" checked />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId05"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId06" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId06"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId05" checked />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId05"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId06" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId06"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId05" checked />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId05"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <div class="checkBoxItem">
+                      <div class="checkbox">
+                        <input type="checkbox" id="chkId06" />
+                        <div class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                        </div>
+                      </div>
+                      <div class="popularDataArea bgColorGray">
+                        <!-- [VOS2차] 결함 ID 1122863 div로 변경 -->
+                        <div class="summaryTitleArea">
+                          <label class="summaryBigTitle" for="chkId06"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                          <!-- [VOS2차] 결함 ID 1122863 label 변경, for 추가 -->
+                          <p>
+                            데이터 무제한에<br />
+                            네이버페이 5000P 제공!
+                          </p>
+                        </div>
+                        <div class="dlColorBoxArea">
+                          <div class="dlWhiteBox noneBorder">
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgData">데이터</dt>
+                              <dd class="colorPrimary">15GB + 3Mbps</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgCall">음성통화</dt>
+                              <dd class="colorPrimary">300분</dd>
+                            </dl>
+                            <dl class="dlItemFlex borderType">
+                              <dt class="iconBgSMS">메세지</dt>
+                              <dd class="colorPrimary">300건</dd>
+                            </dl>
+                          </div>
+                        </div>
+                        <dl class="usageItem">
+                          <dt>월 기본 요금</dt>
+                          <dd><span>29,700</span>원</dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="resultBottom">
+                  <div class="pagenation pcType">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="numPageBtn"><span>5</span></button>
+                    <button type="button" class="numPageBtn"><span>6</span></button>
+                    <button type="button" class="numPageBtn"><span>7</span></button>
+                    <button type="button" class="numPageBtn"><span>8</span></button>
+                    <button type="button" class="numPageBtn"><span>9</span></button>
+                    <button type="button" class="numPageBtn"><span>10</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                  <div class="pagenation moType">
+                    <button type="button" class="prevPageBtn" title="이전"></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fixedFooterContainer">
+            <div class="fixedFooterArea">
+              <!-- prettier-ignore -->
+              @@include('../component/fixed_footer_area_compare.html')
+              <!-- //END descArea -->
+              <!-- 가입하기 -->
+              <div class="buttonArea">
+                <!-- 활성화 버튼 클래스 : btn btnPrimary -->
+                <button type="button" class="btn btnDim"><span>비교하기</span></button>
+              </div>
+            </div>
+            <!-- //END fixedFooterArea -->
+          </div>
+          <!-- //END fixedFooterContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        commonEvent();
+        // 하단 고정 모바일용 스크립트
+        bottomFiexdControl('.openBtn', '.field', '.fieldForm', '요금제 비교 열기', '요금제 비교 닫기'); // [VOS2차] 결함ID 1123028 수정
+
+        //masonry
+        $('.popularDataList').masonry({
+          itemSelector: '.checkBoxItem',
+          columnWidth: '.checkBoxItem',
+          percentPosition: true,
+        });
+      });
+    </script>
+  </body>
+</html>

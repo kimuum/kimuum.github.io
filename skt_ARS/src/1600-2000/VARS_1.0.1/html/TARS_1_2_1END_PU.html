@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '납부계좌',
+          "isBtn" : false
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-message">
+                <p class="info-title">
+                  요청하신 <span class="highlight">납부계좌</span>를 <br />
+                  문자로 발송해 드리겠습니다.
+                </p>
+              </div>
+              <div class="service-button-box">
+                <div class="button-box">
+                  <button type="button" class="btn btn-primary" onclick="sendRepPageData($(this).text().trim(), 'OK', 'menu')">확인</button>
+                </div>
+              </div>
+              <div class="offer-info-box bg-line">
+                <div id="add_service_wrap">
+                  <!-- 우편이용고객여부 hidden값 -->
+                  <input type="hidden" id="gbn_type" iweb-data="out" />
+                  <div class="offer-area">
+                    <div class="offer-title-box">
+                      <p class="offer-title">사용 요금이 궁금하세요?</p>
+                      <p class="offer-title-desc">고객님의 월별 사용요금을 알려드립니다.</p>
+                    </div>
+                    <div class="offer-button-box">
+                      <button type="button" class="btn-offer" onclick="sendRepPageData($(this).text().trim(), 'M', 'menu')">
+                        <span class="btn-title">1.이번 달 사용요금 확인</span>
+                        <span class="btn-desc">이번달 지난달의 월별 사용요금을 확인하세요.</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

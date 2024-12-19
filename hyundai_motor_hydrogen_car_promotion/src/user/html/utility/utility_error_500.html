@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "500",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", { "type" : "depth01", "pageTitle" : "" } )
+
+      <main class="main utility">
+        <div class="content-container">
+          <section class="content-middle">
+            <!-- prettier-ignore -->
+            @@include("../component/error_content.html", {
+                "errorTitle" : "We’re sorry.<br />The Page You're Looking for is Temporarily Unavailable.",
+                "errorText" : "The requested service was not processed properly. Please try again later. <br /> We will do our best to provide you with more accurate and convenient services. Thank you."
+            })
+          </section>
+          <!-- //content middle -->
+
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : false,
+      "masonry" : false,
+      "parallax" : false
+    })
+  </body>
+</html>

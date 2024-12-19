@@ -1,0 +1,71 @@
+.progress-bar-box {
+  overflow: hidden;
+  width: 100%;
+  height: 1.6rem;
+  margin: 1.2rem 0 2.8rem;
+  border-radius: 0.4rem;
+  background-color: $primary_15;
+  .progress-bar-inner {
+    height: 100%;
+    background: linear-gradient(143deg, #15c8a7 15.62%, #71eab6 86.06%);
+  }
+}
+.progress-bar-handler-box {
+  @include flex(row, flex-start, center);
+  width: 100%;
+
+  .range-bar-box {
+    position: relative;
+    flex: 1;
+    input {
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      outline: none;
+      width: 100%;
+      height: 0.8rem;
+      margin: 0;
+      border-radius: 0.4rem;
+      background-color: $primary_15;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 2rem;
+        height: 2rem;
+        background-color: #fff;
+        box-shadow: 0 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.25);
+        border-radius: 100%;
+      }
+    }
+  }
+  .progress-bar-handler-inner {
+    position: relative;
+    width: 100%;
+    height: 0.8rem;
+    border-radius: 0.4rem;
+    background-color: $primary_20;
+    &.low-data {
+      .btn-handler {
+        margin-right: -2rem;
+      }
+    }
+    &.high-data {
+      .btn-handler {
+        margin-right: 0;
+      }
+    }
+  }
+  .progress-bar-inner {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(143deg, #15c8a7 15.62%, #71eab6 86.06%);
+    border-radius: 0.4rem;
+    transition: width 0.3s;
+  }
+  .progress-bar-value {
+    padding: 0.4rem 1rem;
+    margin-left: 0.8rem;
+    @include font(1.2rem, 500, $text_03, 1.56rem);
+    border-radius: 1.6rem;
+    border: 0.1rem solid $secondary_15;
+  }
+}

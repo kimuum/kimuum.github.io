@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | ID/PW 찾기"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .find-id : ID/PW 찾기 페이지 class
+      -->
+      <main class="main-container find-id">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "center",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "아이디 찾기",
+          },
+          "button" : [
+            {
+              "icon" : "ic-close",
+              "className" : "btn-close",
+              "title" : "닫기",
+            },
+          ]
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="join-container">
+              <div class="join-area">
+                <div class="join-top">
+                  <div class="find-id-desc-box">
+                    <!-- [240503] 텍스트 변경 / 개행처리 그대로 적용 부탁 드립니다 -->
+                    <!-- prettier-ignore -->
+                    <p class="find-id-desc">가입하신 이메일로 아이디가 발송되었습니다.
+                      이메일을 확인해 주세요.</p>
+                  </div>
+                </div>
+                <div class="join-middle">
+                  <div class="find-id-container">
+                    <div class="find-id-area">
+                      <div class="find-id-top">
+                        <div class="find-id-info-box">
+                          <span class="id-info">LGeCentr**@**.com</span>
+                        </div>
+                        <div class="find-id-info-box">
+                          <span class="id-info">ID**@**.com</span>
+                        </div>
+                      </div>
+                      <div class="find-id-bottom">
+                        <div class="re-mail-box">
+                          <div class="re-mail-text">
+                            <span class="text">메일을 받지 못하셨나요?</span>
+                          </div>
+                          <div class="re-mail-button-box">
+                            <!-- prettier-ignore -->
+                            @@include("button.html", {
+                              "property": "",
+                              "iconClass": false,
+                              "btnColor" : '',
+                              "btnSize" : 'small',
+                              "class" : 'btn-link',
+                              "text": "재전송"
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="find-pw-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : '',
+            "btnSize" : 'small',
+            "class" : 'btn-link',
+            "text": "비밀번호 찾기"
+          })
+        </div>
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "완료"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+//200%
+@supports (font: -apple-system-short-caption1) {
+  html, body {
+    font: -apple-system-short-caption1 !important;
+    font-family: "LG Smart Condensed", "LG Smart", "Sans-serif" !important;
+    font-weight: inherit !important;
+  }
+}
+
+//200% layout 
+@supports (font: -apple-system-short-caption1) {
+  .header-container {
+    .header-area {
+      padding: 0 10px;
+    }
+    .title {
+      flex: auto;
+      line-break: anywhere;
+      white-space: initial;
+      word-break: keep-all;
+    }
+  }
+  .product-swiper {
+    .swiper-controller {
+      .swiper-pagination {
+        width: auto;
+      }
+    }
+  }
+  .title-box .title {
+    max-height: initial;
+  }
+  
+  input[type=text], input[type=number], input[type=tel], input[type=email], input[type=password], input[type=search] {
+    height: 3rem;
+  }
+
+  .field-box {
+    input {
+      padding-right: 133px;
+    }
+    .btn-icon-clear {
+      top: 0.25rem;
+      right: 1.85rem;
+      background-size: cover;
+    }
+  }
+  .quantity-container {
+    input {
+      height: 4rem;
+      padding: 0;
+    }
+    [class^=btn-] {
+      height: 4rem;
+    }
+  }
+}

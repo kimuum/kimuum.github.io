@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 차량 상세"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : .menu-vehicle 
+      -->
+      <main class="main-container menu-vehicle">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "align" : "between",
+            "logo" : false,
+            "title" : {
+              "show" : true,
+              "text" : "차량 상세",
+            },
+            "button" : '',
+          })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="vehicle-container">
+              <div class="vehicle-area">
+                <div class="vehicle-detail-list-box">
+                  <ul class="list-a-box">
+                    <!-- [240207] li 내 .data 엘리먼트 .highlight 추가 클래스 제거 -->
+                    <!-- prettier-ignore -->
+                    @@loop("listTypeA.html", [
+                    {
+                      "link": false,
+                      "label": "차량 번호",
+                      "rightText" : "12가1234",
+                      "property" : "",
+                      "dataClass" : "",
+                      "dataType": "rightText"
+                    },
+                    {
+                      "link": false,
+                      "label": "차량 정보",
+                      "rightText" : "기아 EV6",
+                      "property" : "",
+                      "dataClass" : "",
+                      "dataType": "rightText"
+                    },
+                    {
+                      "link": false,
+                      "label": "MAC/VIN",
+                      "rightText" : "12:34:**:**:**:**:12:34",
+                      "property" : "",
+                      "dataClass" : "",
+                      "dataType": "rightText"
+                    },])
+                    <!-- .charge-info-list : 충전기 정보 리스트 -->
+                    <li class="list-a-list charge-info-list">
+                      <div class="list-a-left">
+                        <div class="label-box">
+                          <span class="label">충전기 정보</span>
+                        </div>
+                      </div>
+                      <div class="list-a-right">
+                        <div class="data-box">
+                          <!-- prettier-ignore -->
+                          @@include("btnChargeCategory.html")
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "disabled",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "차량 정보 삭제"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

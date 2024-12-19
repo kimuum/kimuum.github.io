@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "단말기 정보 확인 방법", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>단말기 정보 확인 방법</span></button>
+    </div>
+    <div class="popup show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">단말기 정보 확인 방법</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="terminalContainer">
+            <div class="tabList" role="tablist">
+              <button type="button" id="appleAnchor" class="tabButton" aria-controls="appleContent" role="tab" aria-selected="true"><span>APPLE</span></button>
+              <button type="button" id="samsungAnchor" class="tabButton" aria-controls="samsungContent" role="tab" aria-selected="false"><span>SAMSUNG</span></button>
+            </div>
+
+            <div class="tabContainer">
+              <div id="appleContent" class="tabContent" role="tabpanel" aria-labelledby="appleAnchor">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>iPhone, iPad 또는 iPod touch에서 모델명 또는 일련번호 찾기</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <ol class="numberList marginBtmReset">
+                      <li>설정 > 일반으로 이동하여 ‘정보’를 탭합니다.</li>
+                      <li>일련 번호를 찾습니다.</li>
+                      <li>이 정보를 Apple 등록 또는 지원 양식에 붙여 넣으려면 복사할 번호를 길게 터치합니다.</li>
+                    </ol>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_apple_terminal.jpg" alt="" />
+                    </div>
+                    <ul class="dotList marginBtmReset">
+                      <li class="beforeDot">자세한 내용은 <a class="linkUnderline" href="https://support.apple.com/ko-kr/HT204073" target="_blank" title="새 창 열림">애플 홈페이지</a>를 확인해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div id="samsungContent" class="tabContent" role="tabpanel" aria-labelledby="samsungAnchor">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>제품 본체에서 확인 방법</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">
+                      휴대폰 구매 후 뒷면 하단에 일련번호가 각인되어 있습니다. <br />
+                      백글래스 파손 등으로 A/S를 받은 경우 교체 부품에는 일련번호가 각인되지 않습니다. <br />
+                      케이스를 교체하신 경우 설정 → 휴대전화 정보 → 규제 정보에서 확인 가능합니다.
+                    </p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_samsung_terminal01.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>휴대폰 메뉴에서 확인 방법</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">갤럭시S8 이후 출시 제품부터 설정 → 휴대전화 정보 → 규제 정보 → 일련번호 확인이 가능합니다.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_samsung_terminal02.jpg" alt="" />
+                    </div>
+                    <ul class="dotList marginBtmReset">
+                      <li class="beforeDot">자세한 내용은 <a class="linkUnderline" href="https://www.samsungsvc.co.kr/solution/37679" target="_blank" title="새 창 열림">삼성 홈페이지</a>를 확인해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

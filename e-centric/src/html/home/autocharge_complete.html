@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | Autocharge"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .auto-charge-complete : Autocharge 완료 페이지 class
+      -->
+      <main class="main-container auto-charge-complete">
+        <!-- [240503] 타이틀만 노출 -->
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "center",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "Autocharge",
+          },
+          "button" : null,
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="auto-charge-container">
+              <div class="auto-charge-area">
+                <div class="auto-charge-middle">
+                  <div class="auto-charge-deco-image-box">
+                    <!-- [접근성] 속성 편집 -->
+                    <img src="../../assets/images/home/img_autocharge_complete.svg" alt="자동충전 설정 완료" aria-hidden="true" />
+                  </div>
+                  <!-- [240503] 마크업 순서 변경 -->
+                  <div class="title-box">
+                    <!-- [240503] .sub-title 엘리먼트 추가 -->
+                    <h2 class="title">설정이 완료되었습니다.</h2>
+                    <span class="sub-title"
+                      >충전기 연결만으로<br />
+                      간편한 충전을 시작해보세요.</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- [240503] 버튼 추가 -->
+        <div class="bottom-button-box column">
+          <div class="text-button-box">
+            <!-- prettier-ignore -->
+            @@include("button.html", {
+              "property": "",
+              "iconClass": false,
+              "btnColor" : '',
+              "btnSize" : 'medium',
+              "class" : 'btn-link',
+              "text": "Autocharge 상세 설정"
+            })
+          </div>
+
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "다음에 설정하기"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

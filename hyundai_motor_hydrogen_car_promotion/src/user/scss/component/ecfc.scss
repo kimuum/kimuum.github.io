@@ -1,0 +1,722 @@
+// Product > Elec City Fuel Cell page
+.ecfc {
+  .parts-desc-container {
+    .parts-desc-image-box {
+      .parts-desc-image {
+        .image-box {
+          &:nth-child(4) {
+            .overlay-image-box-2 {
+              animation-delay: 1s;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-container {
+    .section-highlights {
+      .highlights-image {
+        position: relative;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include imgbox;
+          // display: block;
+          // width: 100%;
+        }
+        &.highlights-image-02 {
+          max-width: 60rem;
+          width: 55%;
+          padding-bottom: 48.5%;
+          margin-right: 2rem;
+        }
+        &.highlights-image-03 {
+          overflow: hidden;
+          flex: 1;
+          max-width: 48.2rem;
+          padding-bottom: 48.5%;
+        }
+      }
+
+
+      .section-middle {
+        max-width: 121rem;
+        margin: 0 auto;
+      }
+
+      .section-bottom {
+        position: relative;
+        justify-content: flex-end;
+        max-width: 192rem;
+        padding: 0;
+        padding-left: 13.125%;
+        .section-bottom-left {
+          flex: 0 0 44.3rem;
+          margin-top: 15.1rem;
+          .highlights-text-block-desc {
+            @include font(1.6rem, 400, #1d1d1b, 2.8rem);
+          }
+        }
+        .section-bottom-right {
+          flex: 1;
+          .highlights-image-box {
+            @include flex(row, flex-end, flex-end);
+            margin-top: 6rem;
+          }
+        }
+      }
+
+      .highlights-image-swiper-controller {
+        @include flex(row, space-between, center);
+        position: absolute;
+        bottom: 0;
+        left: 25.2rem;
+        width: 44.3rem;
+        .swiper-navigation {
+          @include flex(row, flex-start, center);
+          .btn-navigation {
+            width: 6rem;
+            height: 6rem;
+            margin-right: 1.5rem;
+            border: 1px solid #eee;
+            &.btn-prev {
+              background: image('common/icon_detail_img_arrow_prev.png') no-repeat center / 6rem;
+            }
+            &.btn-next {
+              background: image('common/icon_detail_img_arrow_next.png') no-repeat center / 6rem;
+            }
+          }
+        }
+        .swiper-pagination {
+          position: static;
+          width: auto;
+          @include font(1.8rem, 400, #000, 2.4rem);
+        }
+      }
+    }
+    .grey-bg-container {
+      margin-top: 18rem;
+      .grey-bg-top {
+        padding: 16.8rem 0 11rem;
+      }
+      .grey-bg-title-box {
+        max-width: 55.6rem;
+      }
+      .grey-bg-image-box {
+        @include flex(row, flex-start, flex-end);
+        flex-direction: row-reverse;
+        img {
+          &.grey-bg-image-01 {
+            max-width: 64.5rem;
+          }
+          &.grey-bg-image-02 {
+            z-index: 1;
+            max-width: 36.8rem;
+            margin-right: -15.8rem;
+          }
+        }
+      }
+      .grey-bg-content-box {
+        top: 46%;
+        max-width: 55.6rem;
+      }
+    }
+    .section-technology {
+      padding: 0;
+      .section-bottom {
+        overflow: hidden;
+        @include flex(row-reverse, flex-end, flex-start);
+        max-width: 192rem;
+        margin: 18rem auto 0;
+        padding-right: 12%;
+        .section-bottom-right {
+          // width: 113.4rem;
+          flex: 1;
+        }
+        .technology-image-container {
+          @include flex(row-reverse, flex-start, flex-start);
+        }
+        .technology-image-box {
+          width: 50%;
+          &.technology-image-box-02 {
+            margin-right: 3rem;
+          }
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include imgbox;
+          }
+          .technology-image {
+            position: relative;
+            padding-bottom: 84%;
+          }
+          .technology-image-overlay-title {
+            @include flex(row, center, center);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            @include fontfamhead;
+            @include font(2.4rem, 500, $white, 2.8rem);
+            text-align: center;
+            span {
+              max-width: 25.6rem;
+            }
+          }
+          .technology-image-desc {
+            margin-top: 2rem;
+            @include font(1.8rem, 400, $color-1D1D1B, 2.2rem);
+            &::after {
+              content: '*';
+              color: #00AAD2;
+            }
+          }
+        }
+        .technology-text-block-box {
+          width: 42.8rem;
+          margin-left: 12rem;
+          padding-right: 2rem;
+          .technology-text-block-title {
+            @include fontfamhead;
+            @include font(4.4rem, 500, $black, 5rem);
+          }
+          .technology-text-block-desc {
+            margin-top: 2rem;
+            @include font(1.6rem, 400, $color-1D1D1B, 2.8rem);
+          }
+        }
+      }
+    }
+  }
+
+  .gallery-block {
+    &.interior {
+      .dot-box {
+        .dot {
+          &.dot-1 {
+            top: 37%;
+            left: 44%;
+          }
+          &.dot-2 {
+            top: 16%;
+            left: 43%;
+          }
+          &.dot-3 {
+            top: 16%;
+            left: 43%;
+          }
+          &.dot-4 {
+            top: 44%;
+            left: 12%;
+          }
+        }
+      }
+    }
+    &.exterior {
+      .dot-box {
+        .dot {
+          &.dot-1 {
+            top: 68.5%;
+            left: 57.5%;
+          }
+          &.dot-2 {
+            top: 68%;
+            left: 25%;
+          }
+          &.dot-3 {
+            top: 54%;
+            left: 88%;
+          }
+          &.dot-4 {
+            top: 36%;
+            left: 1.5%;
+          }
+          &.dot-5 {
+            top: 70%;
+            left: 88%;        
+          }
+        }
+      }
+    }
+  }
+
+  .key-specs-box {
+    margin-top: 6rem;
+  }
+
+  .fuel-cell-image-box {
+    width: 108.9rem;
+    margin: 0 auto 8.8rem;
+    img {
+      width: 100%;
+    }
+    .counter-01 {
+      top: 0;
+      left: 0;
+    }
+    .counter-02 {
+      bottom: -0.6rem;
+      left: 0;
+    }
+    .counter-03 {
+      top: 0;
+      right: 3rem;
+    }
+    .counter-04 {
+      bottom: -0.6rem;
+      right: 3rem;
+    }
+  }
+
+  .fuel-cell-specs-box {
+    margin-top: 10rem;
+  }
+}
+
+@media #{$pc_max} {
+  .ecfc {
+    .product-container {
+      .section-highlights {
+        .section-bottom {
+          padding-left: 2rem;
+          .section-bottom-left {
+            flex: 0 0 30%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$pc_middle} {
+  .ecfc {
+    .product-container {
+      .section-highlights {
+        .section-bottom {
+          .section-bottom-left {
+            margin-top: 0;
+          }
+        }
+      }
+
+      .grey-bg-container {
+        .grey-bg-top {
+          padding: 6rem 0 4rem;
+        }
+        .grey-bg-title-box {
+          max-width: unset;
+          margin-bottom: 3rem;
+        }
+        .grey-bg-image-box {
+          flex-direction: column;
+          align-items: center;
+          img {
+            &.grey-bg-image-01 {
+              max-width: 50rem;
+            }
+            &.grey-bg-image-02 {
+              margin: 0;
+            }
+          }
+        }
+        .grey-bg-content-box {
+          max-width: unset;
+        }
+      }
+      .section-technology {
+        .section-bottom {
+          padding-right: 0;
+          .technology-text-block-box {
+            margin-left: 4rem;
+          }
+          .technology-image-box {
+            .technology-image-overlay-title {
+              font-size: 2rem;
+              line-height: normal;
+              span {
+                max-width: 24.2rem;
+              }
+            }
+            .technology-image-desc {
+              font-size: 1.4rem;
+                br {
+                  display: none;
+                }
+            }
+          }
+        }
+      }
+    }
+    .fuel-cell-image-box {
+      width: 60rem;
+      margin-bottom: 5rem;
+      .counter-01 {
+        top: -0.5rem;
+        left: -4rem;
+      }
+      .counter-02 {
+        bottom: -4.5rem;
+        left: -4rem;
+      }
+      .counter-03 {
+        top: -0.5rem;
+        right: -5rem;
+      }
+      .counter-04 {
+        bottom: -4.5rem;
+        right: -5rem;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .ecfc {
+    .product-container {
+      .section-highlights {
+        .section-bottom {
+          flex-direction: column-reverse;
+          padding: 0 2rem;
+          .section-bottom-left {
+            flex: unset;
+            margin: 0;
+          }
+          .section-bottom-right {
+            margin: 0 0 4rem 0;
+            .highlights-image-box {
+              margin-top: 4rem;
+            }
+          }
+        }
+        .highlights-image {
+          position: relative;
+          width: 50%;
+          margin: 0;
+          &.highlights-image-02 {
+            max-width: unset;
+            width: 50%;
+            padding-bottom: 50%;
+          }
+          &.highlights-image-03 {
+            flex: none;
+            max-width: unset;
+            width: 50%;
+            padding-bottom: 50%;
+          }
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include imgbox;
+          }
+        }
+      }
+
+      .section-technology {
+        .section-bottom {
+          display: block;
+          .technology-text-block-box {
+            width: 100%;
+            margin: 0;
+            padding: 0 2rem;
+          }
+
+          .section-bottom-right {
+            margin-top: 4rem;
+          }
+
+          .technology-image-container {
+            padding: 0 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .ecfc {
+    .content-visual-container {
+      .content-visual-content-box {
+        .content-visual-desc-box {
+          .desc {
+            max-width: 25rem;
+          }
+        }
+      }
+    }
+
+    .product-container {
+      .section-highlights {
+        .section-top {
+          padding: 0 2rem;
+        }
+
+        .section-bottom {
+          .section-bottom-right {
+            .highlights-image-box {
+              display: block;
+            }
+          }
+        }
+
+        .highlights-image {
+          width: 100%;
+          margin-top: 2rem;
+          padding-bottom: 0;
+          &:first-child {
+            margin-top: 0;
+          }
+
+          &.highlights-image-02 {
+            width: 100%;
+            margin: 0;
+            padding-bottom: 89%;
+          }
+          &.highlights-image-03 {
+            width: 100%;
+            padding-bottom: 89%;
+          }
+        }
+      }
+      .highlights-text-block-title {
+        font-size: 2.4rem;
+      }
+      .section-technology {
+        .section-bottom {
+          flex-direction: column;
+          margin-top: 12rem;
+          padding: 0 2rem;
+          .technology-text-block-box {
+            width: auto;
+            margin: 0;
+            padding: 0;
+            .technology-text-block-title {
+              font-size: 2.4rem;
+              line-height: normal;
+            }
+            .technology-text-block-desc {
+              margin-top: 2rem;
+              @include font(1.6rem, 400, $color-444444, 2.2rem);
+            }
+          }
+          .section-bottom-right {
+            width: 100%;
+          }
+          .technology-image-container {
+            margin-top: 2rem;
+          }
+          .technology-image-box {
+            width: 100%;
+            &.technology-image-box-01 {
+              max-width: none;
+              margin: auto;
+            }
+            .technology-image-desc {
+              margin-top: 2rem;
+            }
+            .technology-image {
+              padding-bottom: 55%;
+            }
+
+            .technology-image-overlay-title {
+              padding: 0 4.5rem;
+            }
+          }
+        }
+      }
+    }
+    .fuel-cell-image-box {
+      .counter-01 {
+        top: 0.7rem;
+        left: 4rem;
+      }
+      .counter-02 {
+        bottom: 4.5rem;
+        left: 4rem;
+      }
+      .counter-03 {
+        top: 0.7rem;
+        right: 3rem;
+      }
+      .counter-04 {
+        bottom: 4rem;
+        right: 3rem;
+      }
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .ecfc {
+    .gallery-block {
+      &.interior {
+        .dot-box {
+          .dot {
+            &.dot-1 {
+              top: 45%;
+              left: 47%;
+            }
+            &.dot-2 {
+              top: 21%;
+              left: 46%;
+            }
+            &.dot-3 {
+              top: 21%;
+              left: 46%;
+            }
+            &.dot-4 {
+              top: 51%;
+              left: 16%;
+            }
+          }
+        }
+      }
+      &.exterior {
+        .dot-box {
+          .dot {
+            &.dot-1 {
+              top: 73.5%;
+              left: 61.5%;
+            }
+            &.dot-2 {
+              top: 73%;
+              left: 27%;
+            }
+            &.dot-3 {
+              top: 54%;
+              left: 90%;
+            }
+            &.dot-4 {
+              top: 41%;
+              left: 4.5%;
+            }
+            &.dot-5 {
+              top: 71%;
+              left: 91%;     
+            }
+          }
+        }
+      }
+    }
+
+    .product-container {
+      .section-highlights {
+        .section-bottom {
+          display: flex;
+          margin: 12rem 0 0;
+          .section-bottom-left {
+            .highlights-text-block-desc {
+              color: $color-444444;
+              line-height: 2.2rem;
+              br {
+                content: none;
+                display: block;
+                padding: 0;
+              }
+            }
+          }
+        }
+      }
+      .grey-bg-container {
+        margin-top: 5rem;
+        .grey-bg-title-box {
+          text-align: left;
+        }
+        .grey-bg-image-box {
+          img {
+            &.grey-bg-image-02 {
+              max-width: 20rem;
+            }
+          }
+        }
+      }
+      .section-technology {
+        .section-bottom {
+          .technology-image-container {
+            flex-direction: column;
+            padding: 0;
+          }
+          .technology-image-box {
+            &.technology-image-box-02 {
+              max-width: unset;
+              margin: 2rem 0 0 0;
+            }
+            .technology-image-desc {
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
+    }
+    .fuel-cell-image-box {
+      width: 34.4rem;
+      margin-bottom: 5rem;
+      .counter-01 {
+        top: 0;
+        left: 0;
+      }
+      .counter-02 {
+        bottom: 2rem;
+        left: 0;
+      }
+      .counter-03 {
+        top: 0;
+        right: -2rem;
+      }
+      .counter-04 {
+        bottom: 2rem;
+        right: -2rem;
+      }
+    }
+
+    .key-specs-box {
+      margin-top: 4rem;
+    }
+  }
+}
+
+@media #{$mobile_middle} {
+  .ecfc {
+    .product-container {
+      .section-highlights {
+        .section-bottom {
+          .section-bottom-right {
+            .highlights-image-box {
+              flex-direction: column;
+            }
+            .highlights-image {
+              &.highlights-image-02 {
+                margin: 0 0 2rem 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .fuel-cell-image-box {
+      width: calc(100% - 4rem);
+      .counter-01 {
+        top: -0.4rem;
+        left: -1rem;
+      }
+      .counter-02 {
+        bottom: 0;
+        left: -2rem;
+      }
+      .counter-03 {
+        top: -0.4rem;
+        right: -2rem;
+      }
+      .counter-04 {
+        bottom: -2rem;
+        right: -2rem;
+      }
+    }
+  }
+}

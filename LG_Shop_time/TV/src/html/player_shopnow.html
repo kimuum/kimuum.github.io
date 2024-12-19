@@ -1,0 +1,28 @@
+@@include('head.html', {
+'title': 'shop now'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- 영상 : show now -->
+    @@include('common_player.html', {
+      'hide': null,
+      'type': 'live',
+      'rate': '',
+      'src': './images/thumbnail/img_home_banner_h_01.png',
+      'indicator': true,
+      'rightPopup': true,
+      'rightPopupClass': 'show',
+      'rightPopupData': true,
+      'rightPopupSecondTab': 'LIVE CHANNEL',
+      'rightPopupSecondTabSelect': false,
+      'chat': false,
+      'chatNodata': false,
+      'chatMessage': false,
+      'disclamer' : true
+    })
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

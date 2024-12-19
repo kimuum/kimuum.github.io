@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "쿠폰 등록", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnCouponNewAdd" onclick="togglePopup('btnCouponNewAdd', 'popupCouponNewAdd')"><span>쿠폰 등록</span></button>
+      <button type="button" class="btn" id="btnCouponAllianceAdd" onclick="togglePopup('btnCouponAllianceAdd', 'popupCouponAllianceAdd')"><span>제휴 쿠폰 등록</span></button>
+    </div>
+
+    <!-- 쿠폰 등록 -->
+    <div class="popup" id="popupCouponNewAdd" role="dialog" aria-labelledby="popupTitleCouponNewAdd" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleCouponNewAdd">쿠폰 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnCouponNewAdd', 'popupCouponNewAdd')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="couponAddInfoContainer">
+            <div class="tableContainer captionShow">
+              <div class="tableArea">
+                <table>
+                  <caption>
+                    쿠폰 정보
+                    <span class="ir">- 쿠폰명, 등록 후 사용가능기간, 휴대폰 번호</span>
+                  </caption>
+                  <colgroup>
+                    <col style="width: 110px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="alignCenter">쿠폰명</th>
+                      <td class="alignCenter">웰컴 데이터 쿠폰 10GB</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="alignCenter">등록 후 사용가능기간</th>
+                      <td class="alignCenter">2023.07.27 ~ 2023.10.27</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="alignCenter">휴대폰 번호</th>
+                      <td class="alignCenter"><strong>010-81**-*319</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <ul class="dotList marginBtmReset">
+              <li class="beforeDot">쿠폰을 통해 충전된 데이터/통화/알은 기본 및 무료 제공량 보다 우선 차감됩니다.</li>
+              <li class="beforeDot">쿠폰 등록 후 취소/재등록/변경 불가합니다.</li>
+              <li class="beforeDot">보유 쿠폰 매수에 따른 중복 등록이 가능합니다. 중복등록을 원치 않으실 경우 기존 등록 내역을 꼭 확인하시기 바랍니다.</li>
+            </ul>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>쿠폰 등록</span></button>
+          </div>
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- 제휴 쿠폰 등록 -->
+    <div class="popup" id="popupCouponAllianceAdd" role="dialog" aria-labelledby="popupTitleCouponAllianceAdd" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleCouponAllianceAdd">쿠폰 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnCouponAllianceAdd', 'popupCouponAllianceAdd')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="couponAddInfoContainer">
+            <div class="tableContainer captionShow">
+              <div class="tableArea">
+                <table>
+                  <caption>
+                    쿠폰 정보
+                    <span class="ir">- 쿠폰명, 등록 후 사용가능기간, 휴대폰 번호</span>
+                  </caption>
+                  <colgroup>
+                    <col style="width: 110px" />
+                    <col />
+                  </colgroup>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="alignCenter">쿠폰명</th>
+                      <td class="alignCenter">밀리의서재 1개월 이용권</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="alignCenter">등록 후 사용가능기간</th>
+                      <td class="alignCenter">2023.07.27 ~ 2023.10.27</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="alignCenter">휴대폰 번호</th>
+                      <td class="alignCenter"><strong>010-81**-*319</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="unitListContainer">
+              <!-- [운영] KMVNO-3987 20231129 클래스 오타 수정 -->
+              <strong class="normalTitle">밀리의 서재 1개월 이용권 등록 및 이용 안내</strong>
+              <ul class="dotList marginBtmReset">
+                <li class="beforeDot">밀리의 서재 이용권은 중복 등록이 불가하며, 기 등록 한 쿠폰의 이용기간 만료 후 추가 등록하여 이용하실 수 있습니다.</li>
+                <li class="beforeDot">밀리의서재 쿠폰 등록 후, <a href="https://www.millie.co.kr/v3/login" class="linkUnderline colorPrimary" target="_blank" title="새창열림">밀리의 서재 사이트 회원가입</a> 및 계정 연동이 필요합니다. (쿠폰을 발급받은 본인의 알뜰폰 번호로 본인인증 후 사용 가능)</li>
+                <li class="beforeDot">밀리의 서재 구독상품(첫달 무료 혜택 포함)을 기 이용중인 장기 혜택 쿠폰을 등록하는 경우, 기존 구독상품은 일시중단되고 알뜰폰 쿠폰 이용기간 만료 후 기존 구독상품 이용이 재개됩니다.</li>
+                <li class="beforeDot">단, 알뜰폰 밀리의서재 쿠폰으로 밀리의서재를 처음 이용하는 경우, 밀리의 서재에서 제공하는 첫달 무료혜택은 이용하실 수 없습니다.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="buttonArea block">
+            <a href="https://www.millie.co.kr/v3/management/combine" class="btn btnPrimary" target="_blank" title="새창열림">쿠폰 등록 및 링크 연결</a>
+            <button type="button" class="btn btnSecondary"><span>취소</span></button>
+          </div>
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

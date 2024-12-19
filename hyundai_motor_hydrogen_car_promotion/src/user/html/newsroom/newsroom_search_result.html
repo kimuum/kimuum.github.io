@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "Insights | Newsroom",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "type" : "link",
+        "pageTitle" : "",
+        "depth2" : [
+          {
+            "text" : "All",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Insights",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Press Releases",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Media Gallery",
+            "link" : "",
+            "property" : ""
+          },
+        ]
+      })
+
+      <!-- main -->
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("sub_visual_type_A.html", {
+          "front" : {
+            "mainTitle" : "Newsroom",
+          },
+          "link" : {
+            "url" : null,
+          },
+          "spec" : {
+            "icon01" : null,
+          },
+          "imageSubBgSrcPC" : "newsroom/hyundai-ecv-newsroom-header-pc.webp",
+          "imageSubBgSrcMO" : "newsroom/hyundai-ecv-newsroom-header-mo.webp"
+        })
+        <div class="content-container">
+          <section class="content-top">
+            <!-- [수정20230824] -->
+            <div class="top-breadcrumb-container">
+              <!-- prettier-ignore -->
+              @@include("sub_top_breadcrumb.html", {
+                "breadArr": [
+                  {
+                    "bread": "Newsroom"
+                  },
+                  {
+                    "bread": "Search"
+                  },
+                ]
+              })
+              <!-- prettier-ignore -->
+              @@include("sub_top_search.html")
+            </div>
+          
+          </section>
+          <!-- //content top -->
+          <section class="content-middle">
+            <!-- [수정20231018] : newsroom-container로 감쌋습니다.  -->
+            <div class="newsroom-container">
+              <div class="search-result-container">
+                <div class="result-view-container">
+                  <div class="result-view-top">
+                    <div class="result-tag-container">
+                      <p><strong>15</strong> Medias for ‘<strong>XCIENT Fuel Cell Truck</strong>’</p>
+                    </div>
+                  </div>
+                  <div class="result-view-middle">
+                    <div class="card-item-container">
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery01.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery02.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery03.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery04.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery05.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery01.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery02.jpg" /></div>
+                      </div>
+                      <div class="card-item-area">
+                        <div class="card-img-box"><img src="../../assets/images/newsroom/img_newsroom_gallery03.jpg" /></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="result-view-bottom">
+                    <div class="buttons-box">
+                      <div class="btn-more"><span>View more</span></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //result Medias -->
+  
+                <div class="result-list-container">
+                  <div class="result-list-top">
+                    <div class="result-tag-container">
+                      <p><strong>15</strong> search results for ‘<strong>hydrogen</strong>’</p>
+                    </div>
+                  </div>
+                  <div class="result-list-middle">
+                    <ul class="result-list-area">
+                      <!-- prettier-ignore -->
+                      @@include('result_list_search_result.html')
+                      <!-- prettier-ignore -->
+                      @@include('result_list_search_result.html')
+                      <!-- prettier-ignore -->
+                      @@include('result_list_search_result.html')
+                      <!-- prettier-ignore -->
+                      @@include('result_list_search_result.html')
+                    </ul>
+                  </div>
+                  <div class="result-list-bottom">
+                    <!-- pagenation -->
+                    <div class="pagenation-container">
+                      <div class="pagenation-middle">
+                        <button type="button" class="btn-pager-prev" title="prev pages" disabled></button>
+                        <div class="pager-box">
+                          <a href="javascript:void(0);" class="page" title="page">1</a>
+                          <a href="javascript:void(0);" class="page" title="page">2</a>
+                          <a href="javascript:void(0);" class="page current" title="current page">3</a>
+                          <a href="javascript:void(0);" class="page" title="page">4</a>
+                          <a href="javascript:void(0);" class="page" title="page">5</a>
+                          <span href="javascript:void(0);" class="ellipsis">...</span>
+                          <a href="javascript:void(0);" class="page" title="last page">25</a>
+                        </div>
+                        <button type="button" class="btn-pager-next" title="next pages"></button>
+                      </div>
+                    </div>
+                    <!-- //pagenation -->
+                  </div>
+                </div>
+                <!-- //result list -->
+              </div>
+            </div>
+
+          </section>
+          <!-- //content middle -->
+
+          <section class="content-bottom">
+            <!-- prettier-ignore -->
+            @@include("bottom_sub_subscript.html")
+            <!-- //newsroom Subscribe -->
+          </section>
+          <!-- //content bottom -->
+          <!-- [수정220831] 추가 -->
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : true,
+      "masonry" : false,
+      "parallax" : true
+    })
+    <script>
+      $(document).ready(function () {
+
+      });
+
+      // 인터렉션 //
+      window.onload = function(){
+        const resultContainer = document.querySelector('.result-list-container');
+        const resultList = resultContainer.querySelectorAll('.result-list');
+  
+        slideUp(resultList);
+      };
+    </script>
+  </body>
+</html>

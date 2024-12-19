@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="osType_check" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <script type="text/javascript" src="/{version}/js/common.js"></script>
+    <script type="text/javascript" src="/{version}/js/wforcus.js"></script>
+    <script type="text/javascript" src="/{version}/js/tphone.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type');
+        if (vars_type == '' || vars_type == undefined) vars_type = 'T';
+
+        var osType_check = getUrlParameter('osType_check');
+
+        if (vars_type == 'T') {
+          document.location = 'intent://tdatacoupon.co.kr/landing/Landing.do?bpCode=701541#Intent;scheme=https;end';
+        } else if (osType_check == '2') {
+          var url = 'https://tdatacoupon.co.kr/landing/Landing.do?bpCode=701541';
+          location.href = url;
+          //window.open(url);
+        } else {
+          var url = 'https://tdatacoupon.co.kr/landing/Landing.do?bpCode=701541';
+          window.CallgateSDK.executeBrowser(url, 'false');
+        }
+      });
+    </script>
+  </body>
+</html>

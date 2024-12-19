@@ -1,0 +1,79 @@
+.announce-container {
+  @include flex(column, center, center);
+  position: relative;
+  top: -8rem;
+  min-height: calc(100vh - 8rem);
+
+  .announce-middle {
+    @include flex(column, center, center);
+    padding: 0 2rem;
+
+    .deco-image-box {
+      margin-bottom: 2.4rem;
+      img {
+        display: block;
+        width: 20rem;
+        height: auto;
+      }
+    }
+
+    .title-box {
+      margin-bottom: 1.2rem;
+      @include font(2.4rem, 700, #000, 3.5rem);
+    }
+
+    .message-box {
+      .message {
+        @include font(2.2rem, 500, #61606c, 3.2rem);
+        text-align: center;
+      }
+    }
+
+    .date-box {
+      margin-top: 3rem;
+      padding: 2.7rem 6.2rem;
+      border-radius: 2rem;
+      background-color: #F7F8FB;
+      .text-box {
+        @include font(2.2rem, 400, #8c8b9a, 3.3rem);
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .announce {
+    .footer {
+      display: none;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .announce-container {
+    top: -4.8rem;
+    min-height: calc(100vh - 4.8rem);
+    .announce-middle {
+      .deco-image-box {
+        margin-bottom: 1.2rem;
+        img {
+          width: 10rem;
+        }
+      }
+      .message-box {
+        .message {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+      .date-box {
+        margin-top: 3.2rem;
+        padding: 2rem;
+        .text-box {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}

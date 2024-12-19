@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "화면 관리" , "headProjectName": "| 메뉴 및 화면 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superSetScreen">
+      <!-- 페이지 고유 클래스 : superSetScreen -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>화면 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>메뉴 및 화면 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>화면 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      사용여부, 화면유형, 구분 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">사용 여부</th>
+                        <td>
+                          <div class="select">
+                            <select title="사용 여부">
+                              <option value="">전체</option>
+                              <option value="">사용</option>
+                              <option value="">사용안함</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th scope="row">화면 유형</th>
+                        <td>
+                          <div class="select">
+                            <select title="화면 유형">
+                              <option value="">전체</option>
+                              <option value="">일반</option>
+                              <option value="">팝업</option>
+                              <option value="">새창</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">구분</th>
+                        <td colspan="3">
+                          <div class="fieldForm">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">화면명</option>
+                                <option value="">버튼명</option>
+                                <option value="">화면설명</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." title="구분값 검색" />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">총 500개</h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="select typeRow">
+                      <select title="정렬 수">
+                        <option value="">10개</option>
+                        <option value="">20개</option>
+                        <option value="">30개</option>
+                        <option value="">40개</option>
+                        <option value="">50개</option>
+                      </select>
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>화면 등록</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer alignCenter">
+                    <table>
+                      <caption>
+                        화면 관리 가능한 목록
+                      </caption>
+                      <colgroup>
+                        <col style="width: 105px" />
+                        <col style="width: 144px" />
+                        <col style="width: 105px" />
+                        <col style="width: 115px" />
+                        <col style="width: 300px" />
+                        <col style="width: 105px" />
+                        <col style="width: 164px" />
+                        <col style="width: 300px" />
+                        <col style="width: 105px" />
+                        <col style="width: 115px" />
+                        <col style="width: 105px" />
+                        <col style="width: 115px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">화면 번호</th>
+                          <th scope="col">화면명</th>
+                          <th scope="col">화면유형</th>
+                          <th scope="col">사용여부</th>
+                          <th scope="col">URL</th>
+                          <th scope="col">버튼수</th>
+                          <th scope="col">버튼명</th>
+                          <th scope="col">화면설명</th>
+                          <th scope="col">등록자</th>
+                          <th scope="col">등록일</th>
+                          <th scope="col">수정자</th>
+                          <th scope="col">수정일</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>500</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 비교 팝업</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>-</td>
+                          <td>요금제 비교 팝업(최대 3개)</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <td>500</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 비교 팝업</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>-</td>
+                          <td>요금제 비교 팝업(최대 3개)</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <td>500</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 리스트</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>요금제 비교, 조회</td>
+                          <td>요금제 리스트</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <td>500</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 상세</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>-</td>
+                          <td>요금제 상세</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <td>500</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 삭제</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>-</td>
+                          <td>요금제 삭제</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                        <tr>
+                          <td>491</td>
+                          <td>
+                            <div class="buttonArea">
+                              <button type="button" class="btnUnderLine"><span>요금제 비교 팝업</span></button>
+                            </div>
+                          </td>
+                          <td>팝업</td>
+                          <td>사용</td>
+                          <td>/prod/simulatorPplTagRelAddPopView</td>
+                          <td>0</td>
+                          <td>-</td>
+                          <td>요금제 비교 팝업(최대 3개)</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                          <td>ADMIN</td>
+                          <td>2022-02-28</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

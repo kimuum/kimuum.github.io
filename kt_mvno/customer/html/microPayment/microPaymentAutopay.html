@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "자동결제 정보 | 소액결제 내역 | 요금 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : microPayment -->
+    <div class="wrap detail microPayment">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>자동결제 정보</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 내역</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>자동결제 정보</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">자동결제상태</strong>
+                  </div>
+                  <div class="totalPayArea large">
+                    <div class="flexRowBorder">
+                      <span class="title">전체 허용</span>
+                      <button type="button" class="btn"><span>자동결제 정보</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    </div>
+                  </div>
+                </div>
+                <!-- //자동결제상태 -->
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">자동결제 차단 내역</strong>
+                  </div>
+                  <div class="autoPayTableContainer">
+                    <div class="tableContainer normalBgTable">
+                      <table>
+                        <caption>
+                          자동결제 차단 내역 - 이용업체, 이용서비스, 차단일, 차단해제
+                        </caption>
+                        <colgroup>
+                          <col style="min-width: 70px" />
+                          <col style="min-width: 70px" />
+                          <col style="min-width: 70px" />
+                          <col style="min-width: 60px" />
+                        </colgroup>
+                        <thead>
+                          <tr>
+                            <th scope="col" class="alignCenter">이용업체</th>
+                            <th scope="col" class="alignCenter">이용서비스</th>
+                            <th scope="col" class="alignCenter">차단일</th>
+                            <th scope="col" class="alignCenter">차단해제</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="alignCenter">(주)지니뮤직</td>
+                            <td class="alignCenter">지니(자동)</td>
+                            <td class="alignCenter">2022.01.11</td>
+                            <td class="alignCenter">
+                              <button type="button" class="btn"><span>해제</span></button>
+                              <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="alignCenter">(주)지니뮤직</td>
+                            <td class="alignCenter">지니(자동)</td>
+                            <td class="alignCenter">2022.01.11</td>
+                            <td class="alignCenter">
+                              <button type="button" class="btn"><span>해제</span></button>
+                              <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- <div class="tableBottom">
+                      <div class="pagenation pcType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                      <div class="pagenation moType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- //자동결제 차단 내역 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

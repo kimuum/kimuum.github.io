@@ -1,0 +1,87 @@
+<div class="field-area">
+        <!-- .error : 라인 색상 변경 -->
+        <div class="field@@if(error){ error}">
+          <span class="field-label">PHONE NUMBER</span>
+          <div class="input">
+            <input type="text" name="input01" id="input01" value="@@valuePHONE" />
+            <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+          </div>
+          @@if(error){
+          <p class="error-desc">Please enter a Phone number.</p>
+          }
+        </div>
+
+        <!-- v1.2 수정 20230524 -->
+        <div class="field@@if(error){ error}">
+          <label for="input-email" class="field-label">EMAIL</label>
+          <div class="input">
+            <input type="text" name="input-email" id="input-email" value="@@valueEMAIL" />
+            <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+          </div>
+          @@if(error){
+          <p class="error-desc">Please enter a email.</p>
+          }
+        </div>
+        <!-- // v1.2 수정 20230524 -->
+
+        <div class="field@@if(error){ error}">
+          <!--  v1.7 20230905 이름 입력방식 변경 -->
+          <div class="field-divide">
+            <div class="divide-area">
+              <label for="first-name" class="field-label">FIRST NAME</label>
+              <div class="input">
+                <input type="text" name="first-name" id="first-name" value="@@valueFIRST" />
+                <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+              </div>
+            </div>
+            <div class="divide-area">
+              <label for="last-name" class="field-label">LAST NAME</label>
+              <div class="input">
+                <input type="text" name="last-name" id="last-name" value="@@valueLAST" />
+                <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+              </div>
+            </div>
+          </div>
+          @@if(error){
+          <p class="error-desc">Please enter a name.</p>
+          }
+          <!--  // v1.7 20230905 이름 입력방식 변경 -->
+        </div>
+
+        <!-- v1.78 수정 반영 -->
+        <div class="field@@if(error){ error} field-zipcode">
+          <span class="field-label">ZIP CODE</span>
+          <div class="field-box">
+            <div class="input">
+              <input type="text" name="input05" id="input05" value="@@valueCODE" />
+              <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+            </div>
+            <button type="button" class="btn btn-small"><span>SEARCH</span></button>
+          </div>
+
+          <div class="input readonly">
+            <input type="text" name="input05" id="input05" value="@@valueADDRESS" readonly/>
+          </div>
+          @@if(error){
+          <p class="error-desc">Please enter a ZIP or Postal code.</p>
+          }
+        </div>
+        <!-- //v1.78 수정 반영 -->
+
+        <!-- v1.78 ADDRESS 삭제 -->
+        <!-- v1.78 CITY 삭제 -->
+
+        <div class="field@@if(error){ error}">
+          <div class="field-label">STREET ADDRESS</div>
+          <div class="input">
+            <input type="text" name="input05" id="input05" value="@@valueSTREET" />
+            <button type="button" class="btn-icon-clear" title="Clear search keywords"></button>
+          </div>
+          <p class="desc">EX) Street address or P.O. Box/Apt, Suite, Unit, Building(optional)</p>
+          @@if(error){
+          <p class="error-desc">Please enter a Street address.</p><!-- v1.80 기획/디자인 문구 수정 -->
+          }
+        </div>
+
+        <!-- v1.78 Use same address for billing 삭제 -->
+      </div>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-schedule-change'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-schedule-change -->
+    <dialog id="modal-schedule-change" class="modal modal-large schedule-change-modal">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">현장실사 일정 변경</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <div class="schedule-box">
+                <div class="schedule-select-box">
+                  <!-- prettier-ignore -->
+                  @@include("datepicker.html", {
+                    "topBtn" : false
+                  })
+                </div>
+                <div class="schedule-select-box">
+                  <div class="time-box">
+                    <!-- prettier-ignore -->
+                    @@loop("radio.html", [
+                      {
+                        "className" : "type-text",
+                        "radioId" : "radio-text-1",
+                        "radioName" : "radio-text",
+                        "property" : "checked",
+                        "label": "오전 10:00",
+                      },
+                      {
+                        "className" : "type-text",
+                        "radioId" : "radio-text-2",
+                        "radioName" : "radio-text",
+                        "property" : "",
+                        "label": "오전 11:00",
+                      },
+                    ])
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "btn-confirm",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "확인",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

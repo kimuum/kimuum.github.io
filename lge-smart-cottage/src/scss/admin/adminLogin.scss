@@ -1,0 +1,55 @@
+.login-container {
+  @include flex(row, center, center);
+  height: 100vh;
+  background: admin-image('img_admin_login_bg.jpg') no-repeat center / cover;
+  &.admin-id {
+    .login-area {
+      padding: 4rem 5rem;
+      .login-middle {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+  .login-area {
+    width: 46.4rem;
+    padding: 6rem 8.5rem 4.5rem;
+    border-radius: 2rem;
+    background-color: $white;
+
+    .login-middle {
+      margin: 3.8rem 0 6.3rem;
+    }
+  }
+
+  .login-title-box {
+    @include flex(row, space-between, center);
+    .login-title {
+      @include font(2rem, 700, $gray-900, 2.8rem);
+    }
+    .login-desc {
+      @include font(1.4rem, 500, $gray-400, 1.8rem);
+    }
+  }
+
+  .logo-box {
+    width: 20rem;
+    margin: auto;
+  }
+
+  .btn-login {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border-radius: 1rem;
+    line-height: 1.8rem;
+    letter-spacing: -0.028rem;
+  }
+
+  .btn-regist {
+    margin: 2.4rem auto 0;
+    padding: 0;
+    @include font(1.4rem, 500, $gray-500, 1.8rem);
+    letter-spacing: -0.028rem;
+    text-decoration: underline;
+    text-align: center;
+  }
+}

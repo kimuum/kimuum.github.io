@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="payment_system" iweb-data="out" />
+    <input type="hidden" id="datanum" iweb-data="out" />
+    <input type="hidden" id="data" iweb-data="out" />
+    <input type="hidden" id="voice" iweb-data="out" />
+    <input type="hidden" id="message" iweb-data="out" />
+    <input type="hidden" id="t_data" iweb-data="out" />
+
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper remain-currency">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '잔여 기본통화',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="remain-currency-container">
+              <!-- 상세안내 -->
+              <div class="remain-currency-area">
+                <div class="remain-currency-middle">
+                  <div class="currency-detail-area">
+                    <div class="currency-detail-box">
+                      <div class="currency-detail-label icon-rate-plan">
+                        <span>요금제</span>
+                      </div>
+                      <div class="currency-detail-data">
+                        <div class="currency-detail-data-inner">
+                          <span id="paymentname"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="currency-detail-box">
+                      <div class="currency-detail-label icon-remain">
+                        <span>잔여일</span>
+                      </div>
+                      <div class="currency-detail-data">
+                        <div class="currency-detail-data-inner">
+                          <span id="lastday"></span>
+                          <span class="unit">일</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 잔여 기본통화 상세정보 -->
+              <div class="remain-currency-area" id="currencyGraph">
+                <div class="remain-currency-top">
+                  <div class="remain-currency-title">잔여 기본통화 상세정보</div>
+                </div>
+                <div class="remain-currency-middle">
+                  <div class="currency-graph-area">
+                    <div class="currency-graph-top">
+                      <div class="currency-graph-label">실시간 잔여량</div>
+                      <a href="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');" class="btn-move-detail"></a>
+                    </div>
+                    <div class="currency-graph-middle">
+                      <!-- // 배포시 주석처리 start -->
+                      <!-- <div class="round-graph-area" data-percent="">
+                        <div class="round-graph-title"></div>
+                      </div>
+                      <div class="bar-graph-area">
+                        <div class="bar-graph-box bar-graph-green">
+                          <div class="bar-graph-title">잔여 기본통화 상세정보</div>
+                          <div class="bar-box">
+                            <span class="bar" id="bar_voice"></span>
+                          </div>
+                          <div class="bar-data-text" id="fare_voice"></div>
+                        </div>
+                        <div class="bar-graph-box bar-graph-yellow">
+                          <div class="bar-graph-title">SMS/MMS/메신저 기본</div>
+                          <div class="bar-box">
+                            <span class="bar" id="bar_massage"></span>
+                          </div>
+                          <div class="bar-data-text" id="fare_message"></div>
+                        </div>
+                      </div>
+                      <div class="currency-graph-bottom">
+                        <div class="graph-result-area">
+                          <div class="result-label">T데이터</div>
+                          <div class="result-data-box">
+                            <div class="total">총 30MB 중</div>
+                            <div class="result">15MB 남음</div>
+                          </div>
+                        </div>
+                      </div> -->
+                      <!-- // 배포시 주석처리 end -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="javascript: sendRepPageData($(this).text().trim(), '1', 'menu');">실시간 요금</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript: sendRepPageData($(this).text().trim(), '2', 'menu');">데이터 리필하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script src="/{version}/js/jquery.easypiechart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+        try {
+        } catch (e) {}
+      });
+
+      var payment_system = getUrlParameter('payment_system');
+
+      /*@build-time*/ payment_system = '뉴 T끼리 맞춤형 (200분+700MB)';
+
+      var fare_data = getUrlParameter('data');
+      var fare_voice = getUrlParameter('voice');
+      var fare_message = getUrlParameter('message');
+      var datanum = getUrlParameter('datanum');
+      var t_data = getUrlParameter('t_data');
+
+      $('#paymentname').text(payment_system);
+      $('#lastday').text(lastDate());
+
+      /*@build-time*/ fare_data = '20|100|15000|100|20';
+      /*@build-time*/ fare_voice = '70|영상, 부가전화|100|100|100';
+      /*@build-time*/ fare_message = '70|SMS, MMS|100|100';
+      /*@build-time*/ t_data = '100|T데이터|50|70';
+
+      var fare_data_arr = fare_data.split('|');
+      var fare_voice_arr = fare_voice.split('|');
+      var fare_message_arr = fare_message.split('|');
+      var t_data_arr = t_data.split('|');
+
+      var fare_html = '';
+      if (fare_data_arr[1] == undefined) {
+        fare_html += '';
+      } else {
+        if (fare_data_arr[0] == 100) {
+          fare_html += '<div class="round-graph-area round-normal" data-percent="100">';
+        } else if (fare_data_arr[0] > 95) {
+          fare_html += '<div class="round-graph-area round-normal" data-percent="95">';
+        } else if (fare_data_arr[0] == 0) {
+          fare_html += '<div class="round-graph-area round-zero" data-percent="0">';
+        } else {
+          fare_html += '<div class="round-graph-area round-normal" data-percent="' + fare_data_arr[0] + '">';
+        }
+        if (fare_data_arr[4] == '1' || fare_data_arr[4] == 'M') {
+          fare_html += '<div class="round-graph-title"><span>무제한</span></div></div>'; //<br/>'+packetConversion(fare_data_arr[3])+'사용
+        } else if (fare_data_arr[4] == 'B') {
+          fare_html += '<div class="round-graph-title">기본제공</div></div>';
+        } else {
+          fare_html += '<div class="round-graph-title"><span>' + packetConversion(fare_data_arr[2]) + '</span>' + '</div></div>';
+        }
+      }
+
+      // 영상, 부가전화 잔여
+      if (fare_voice_arr[1] == undefined) {
+        fare_html += '';
+      } else {
+        fare_html += '<div class="bar-graph-area">';
+        fare_html += '<div class="bar-graph-box bar-graph-green">';
+        fare_html += '<div class="bar-graph-title">' + fare_voice_arr[1] + '</div>';
+        fare_html += '<div class="bar-box">';
+        fare_html += '<span class="bar" id="bar_voice"></span></div>';
+        if (fare_voice_arr[4] == '1' || fare_voice_arr[4] == 'M') {
+          fare_html += '<div class="bar-data-text" id="fare_voice">무제한</div></div>';
+        } else if (fare_voice_arr[4] == 'B') {
+          fare_html += '<div class="bar-data-text" id="fare_voice">기본제공</div></div>';
+        } else {
+          fare_html += '<div class="bar-data-text" id="fare_voice">' + humanReadable(fare_voice_arr[2]) + ' 남음</div></div>';
+        }
+      }
+
+      // SMS,MMS 잔여
+      if (fare_message_arr[1] == undefined) {
+        fare_html += '';
+      } else {
+        fare_html += '<div class="bar-graph-box bar-graph-yellow">';
+        fare_html += '<div class="bar-graph-title">' + fare_message_arr[1] + '</div>';
+        fare_html += '<div class="bar-box">';
+        fare_html += '<span class="bar" id="bar_massage"></span></div>';
+        if (fare_message_arr[4] == '1' || fare_message_arr[4] == 'M') {
+          fare_html += '<div class="bar-data-text" id="fare_message">무제한</div>';
+        } else if (fare_message_arr[4] == 'B') {
+          fare_html += '<div class="bar-data-text" id="fare_message">기본제공</div>';
+        } else if (fare_message_arr[4] == 'N') {
+          default_currency_etc_html += '';
+        } else {
+          fare_html += '<div class="bar-data-text" id="fare_message">' + fare_message_arr[3] + ' 건</div>';
+        }
+      }
+      fare_html += '</div></div></div>';
+
+      // T데이터 잔여
+      if (t_data_arr[1] == undefined || t_data_arr[1] == null) {
+        fare_html += '';
+      } else {
+        fare_html += '<div class="currency-graph-bottom">';
+        fare_html += '<div class="graph-result-area">';
+        fare_html += '<div class="result-label">' + t_data_arr[1] + '</div>';
+        fare_html += '<div class="result-data-box">';
+        fare_html += '<div class="total">총 ' + packetConversion(t_data_arr[2]) + ' 중</div>';
+        fare_html += '<div class="result"> ' + packetConversion(t_data_arr[3]) + '남음</div>';
+        fare_html += '</div></div></div>';
+      }
+
+      $('.currency-graph-middle').html(fare_html);
+
+      //음성 그래프 제어
+      if (fare_voice_arr[0] == 100) {
+        $('#bar_voice').css('width', '100%');
+      } else if (fare_voice_arr[0] > 95) {
+        $('#bar_voice').css('width', '96%');
+      } else {
+        $('#bar_voice').css('width', fare_voice_arr[0] + '%');
+      }
+
+      //메시지 그래프
+      if (fare_message_arr[0] == 100) {
+        $('#bar_massage').css('width', '100%');
+      } else if (fare_message_arr[0] > 95) {
+        $('#bar_massage').css('width', '96%');
+      } else {
+        $('#bar_massage').css('width', fare_message_arr[0] + '%');
+      }
+
+      if (t_data_arr[1] == undefined && fare_voice_arr[1] == undefined && fare_data_arr[1] == undefined && fare_message_arr[1] == undefined) {
+        $('#currencyGraph').css('display', 'none');
+      }
+
+      /* 	if(fare_data_arr[1] == undefined){
+		
+	}else{
+	var len = 0;
+	for(var i=0; i < fare_data_arr[1].length; i++){
+		if(escape(fare_data_arr[1].charAt(i).length) == 6){
+			len++;
+		}
+		len++;
+	}
+	if(len >= 21){
+		$(".round-graph-title").addClass('size21');
+	}else if(len >= 20){
+		$(".round-graph-title").addClass('size20');
+	}else if(len >= 19){
+		$(".round-graph-title").addClass('size19');
+	}else if(len >= 16){
+		$(".round-graph-title").addClass('size16');
+	}else if(len >= 15){
+		$(".round-graph-title").addClass('size15');
+	}else if(len >= 13){
+		$(".round-graph-title").addClass('size13');
+	}else if(len >= 12){
+		$(".round-graph-title").addClass('size12');
+	}else if(len >= 10){
+		$(".round-graph-title").addClass('size10');
+	}else if(len >= 8){
+		$(".round-graph-title").addClass('size8');
+	}else if(len >= 7){
+		$(".round-graph-title").addClass('size7');
+	}else if(len >= 5){
+		$(".round-graph-title").addClass('size5');
+	}else{
+		
+	}
+} */
+
+      function humanReadable(seconds) {
+        var hours = Math.floor(seconds / 3600);
+        var mins = Math.floor((seconds - hours * 3600) / 60);
+        var secs = seconds - hours * 3600 - mins * 60;
+
+        //return addZero(hours) + '시간' + addZero(mins) + '분' + addZero(secs) + '초';
+        if (hours > 0 && mins > 0 && secs > 0) {
+          return hours + '시간 ' + mins + '분';
+        } else if (hours <= 0) {
+          return mins + '분 ' + secs + '초';
+        } else if (secs <= 0) {
+          return hours + '시간 ' + mins + '분';
+        } else {
+          return mins + '분 ' + secs + '초';
+        }
+      }
+
+      function lastDate() {
+        var today = new Date();
+        var lastday = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+
+        var day = 1000 * 60 * 60 * 24;
+
+        var last = lastday.getDate();
+
+        var interval = last - today.getDate() + 1;
+
+        return interval;
+      }
+
+      /* function packetConversion(packet){
+	
+	
+	var mb_conversion = Math.round(packet / 1024);
+	var kb_conversion = mb_conversion % 1024
+	var gb_conversion = Math.round(mb_conversion / 1024);
+	
+	if(gb_conversion > 0){
+		return gb_conversion + 'GB';
+	}else if(mb_conversion > 0){
+		return mb_conversion + 'MB';
+	}else {
+		return kb_conversion + 'KB';
+	}
+	
+} */
+
+      function packetConversion(packet) {
+        var kb = packet / 1024;
+        var mb_conversion = parseFloat(packet / 1024).toFixed(1);
+        var kb_conversion = kb % 1024;
+        var gb = mb_conversion / 1024;
+        var gb_conversion = parseFloat(gb.toFixed(1));
+        //	var gb_mok = parseFloat(mb_conversion % 1024)
+
+        /* 	if(gb_mok == 0){
+		return parseInt(gb_conversion) + ' GB ';
+	}else  */
+        if (parseInt(gb_conversion) > 0) {
+          return gb_conversion + 'GB';
+        } else if (parseInt(mb_conversion) > 0) {
+          if (mb_conversion.length >= 3) {
+            return parseInt(mb_conversion) + 'MB';
+          } else {
+            return mb_conversion + 'MB';
+          }
+        } else {
+          return parseInt(kb_conversion) + 'KB';
+        }
+      }
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+
+      // 파이 그래프 위에 플러그인 파일 연결 후 실행
+      $('.round-normal').easyPieChart({
+        barColor: '#3617CE', //차트가 그려질 색
+        trackColor: '#D9D9D9', // 차트가 그려지는 트랙의 기본 배경색(chart1 의 회색부분)
+        scaleColor: false, // 차트 테두리에 그려지는 기준선 (chart2	의 테두리 선)
+        lineCap: 'round', // 차트 선의 모양 chart1 butt / chart2 round / chart3 square
+        lineWidth: 8, // 차트 선의 두께
+        size: 104, // 차트크기
+        animate: 1000, // 그려지는 시간
+        onStart: $.noop,
+        onStop: $.noop,
+      });
+
+      $('.round-zero').easyPieChart({
+        barColor: '#D9D9D9', //차트가 그려질 색
+        trackColor: '#D9D9D9', // 차트가 그려지는 트랙의 기본 배경색(chart1 의 회색부분)
+        scaleColor: false, // 차트 테두리에 그려지는 기준선 (chart2	의 테두리 선)
+        lineCap: 'round', // 차트 선의 모양 chart1 butt / chart2 round / chart3 square
+        lineWidth: 8, // 차트 선의 두께
+        size: 104, // 차트크기
+        animate: 1000, // 그려지는 시간
+        onStart: $.noop,
+        onStop: $.noop,
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+.offer-title-box {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    z-index: 1;
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 0.6rem;
+    background: image('icon/ic_notice_b.png') no-repeat center/cover;
+  }
+  .offer-title {
+    margin-bottom: 0.4rem;
+    @include font(1.6rem, 700, $black, 2.4rem);
+    letter-spacing: -0.02rem;
+  }
+  .offer-title-desc {
+    @include font(1.4rem, 500, rgba($black, 0.7), normal);
+    letter-spacing: -0.07rem;
+  }
+  .offer-desc {
+    @include font(1.4rem, 500, rgba($black, 0.7), normal);
+    letter-spacing: -0.07rem;
+    word-break: keep-all;
+  }
+}
+.offer-button-box {
+  & + .offer-button-box {
+    margin-top: 1rem;
+  }
+  .btn-offer {
+    @include flex(column, flex-start, flex-start);
+    width: 100%;
+    padding: 1.4rem 4.5rem 1.4rem 1.6rem;
+    background: #f0f1f3 image('icon/btn_connect_counselor.png') no-repeat right 2rem center/1.5rem;
+    @include font(1.4rem, 500, $primary, normal);
+    letter-spacing: -0.07rem;
+    border-radius: 1rem;
+    text-align: left;
+    white-space: pre-line;
+    .btn-desc {
+      margin-top: 0.4rem;
+      color: rgba($black, 0.7);
+    }
+  }
+  .btn-desc {
+    margin-top: 0.8rem;
+    @include font(1.4rem, 400, rgba($black, 0.7), normal);
+    letter-spacing: -0.07rem;
+    &:only-child {
+      margin-top: 0;
+    }
+  }
+}

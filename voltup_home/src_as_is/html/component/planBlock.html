@@ -1,0 +1,72 @@
+<div class="plan-block-box">
+  <div class="plan-block">
+    <div class="top-box">
+      <div class="img-box">
+        <img src="../../assets/images/@@image" alt="@@title">
+      </div>
+    </div>
+    <div class="bottom-box">
+      <div class="title-box">
+        <span>@@title</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- show 클래스로 제어 -->
+  <div class="popup-container flat-rate-system">
+    <div class="dim"></div>
+    <div class="popup-area">
+      <div class="popup-box">
+        <div class="popup-top">
+          @@if(popup.title) {
+            <div class="title-box">
+              <span>@@popup.title</span>
+            </div>
+          }
+          <button type="button" class="btn-icon-close"></button>
+        </div>
+        <div class="popup-bottom">
+          <div class="flat-rate-system-container">
+            <div class="flat-rate-system-area">
+              @@if(popup.desc) {
+                <div class="flat-rate-system-desc-box">
+                  <p>@@popup.desc</p>
+                </div>
+              }
+
+              <div class="flat-rate-system-info-box">
+                @@if(popup.infoTitle) {
+                  <div class="flat-rate-system-info-title-box">
+                    <span>@@popup.infoTitle</span>
+                  </div>
+                }
+
+                @@if(popup.infoDesc) {
+                  <div class="flat-rate-system-info-desc-box">
+                    <p>@@popup.infoDesc</p>
+                  </div>
+                }
+
+                @@if(popup.infoList) {
+                  <div class="flat-rate-system-info-list-box">
+                    @@for (var i = 0; i < popup.infoList.length; i++) {
+                      <div class="flat-rate-system-info-list">
+                        <div class="flat-rate-system-info-list-title `+popup.infoList[i].title+`">
+                          <span>`+popup.infoList[i].title+`</span>
+                        </div>
+                        <div class="flat-rate-system-info-list-data">
+                          <span>`+popup.infoList[i].data+`</span>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Popup -->
+</div>

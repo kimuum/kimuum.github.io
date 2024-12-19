@@ -1,0 +1,1055 @@
+.top-breadcrumb-container {
+  .page-search-area {
+    margin-left: auto;
+    max-width: 36rem;
+    .input-box {
+      position: relative;
+      @include flex(row, flex-start, flex-start);
+      height: 4.5rem;
+      width: 100%;
+      padding: 0 0.4rem 0 2rem;
+      border-bottom: 1px solid $color-222222;
+      input {
+        height: 100%;
+        @include fontfamtext;
+        @include font(1.8rem, 400, $color-1D1D1B, normal);
+        border: 0;
+        &::placeholder {
+          font-size: $color-888888;
+        }
+      }
+    }
+    .btn-delete {
+      margin-left: 1rem;
+      min-width: 1.6rem;
+      height: 100%;
+      background: image('common/icon_delete.svg') no-repeat center / 1.6rem;
+    }
+    .btn-search {
+      margin-left: 0.8rem;
+      min-width: 2.6rem;
+      height: 100%;
+      background: image('common/icon_search.png') no-repeat center / 2.6rem;
+    }
+  }
+}
+/* newsroom layout */
+.content-container {
+  &.detail {
+    padding-top: 8rem;
+  }
+}
+.newsroom-container {
+  margin: 11.5rem auto 24rem;
+  .page-title-container {
+    width: 100%;
+    max-width: 145rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+    &.active {
+      .page-title-box {
+        border-bottom: 0;
+      }
+    }
+  }
+  
+  .page-title-box {
+    @include flex(row, space-between, center);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #CACACA;
+    .title-box {
+      @include fontfamhead;
+      @include font(3.2rem, 400, #000, normal);
+    }
+
+    .filter-btn-box {
+      .btn-filter {
+        @include flex(row, flex-start, center);
+        @include fontfamhead;
+        @include font(1.8rem, 400, $color-00AAD2, normal);
+        &.active {
+          &::after {
+            transform: rotate(180deg);
+          }
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 1.1rem;
+          height: 0.9rem;
+          margin-left: 1.2rem;
+          background: image('common/icon_newsroom_filter.svg') no-repeat center / 1.1rem 0.9rem;
+        }
+      }
+    }
+  }
+
+  .newsroom-top {
+    display: none;
+    width: 100%;
+    max-width: 141rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3rem;
+    background-color: $color-F7F7F7;
+    &.active {
+      display: block;
+      border-top: 1px solid #CACACA;
+    }
+    & + .newsroom-middle {
+      margin-top: 6rem;
+    }
+  }
+
+  .news-top-inner {
+    padding: 0 3rem;
+    background-color: $white;
+  }
+  .search-result-container {
+    margin-bottom: 0;
+  }
+
+  .newsroom-middle {
+    @extend .max-width-1416;
+  }
+}
+// 뉴스 Region 체크박스
+.region-container {
+  padding-top: 3rem;
+  .news-filter-area {
+    padding: 0;
+  }
+}
+
+/* 뉴스 지도 */
+.news-map-container {
+  overflow: hidden;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+  max-width: 92.4rem;
+  margin: 0 auto;
+  // padding-right: 6.6rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  .map-front-box {
+    position: absolute;
+    @include flex(row, flex-start, stretch);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .map-back-box {
+    position: relative;
+    z-index: 0;
+    width: 85.8rem;
+    // margin: auto;
+    margin: 0 3.3rem;
+    img {
+      @include imgbox;
+      height: auto;
+    }
+  }
+}
+.map-mark-box {
+  .checkbox {
+    input[type='checkbox'] {
+      position: relative;
+      z-index: 2;
+      &:checked {
+        + .label {
+          font-weight: 500;
+        }
+      }
+      + .label {
+        align-items: center;
+        position: absolute;
+        z-index: 1;
+        height: 4.7rem;
+        padding: 0 2rem;
+        color: $color-CCCCCC;
+        border: 0.5px solid $color-CCCCCC;
+        background-color: $white;
+        white-space: nowrap;
+        .check-icon {
+          top: -0.1rem;
+          margin-top: 0;
+          margin-right: 0.7rem;
+        }
+      }
+      ~ .map-img {
+        position: absolute;
+        top: 0;
+        left: 3.3rem;
+        z-index: 0;
+        pointer-events: none;
+        width: 85.8rem;
+        height: 100%;
+      }
+    }
+  }
+  //america
+  &.map-america {
+    input[type='checkbox'] {
+    top: 25.6rem;
+      left: 2.1rem;
+
+      &:checked {
+        ~ .map-img {
+          width: 85.8rem;
+          margin: auto;
+          background: image('newsroom/img_newsroom_map_america.webp') no-repeat top left;
+        }
+      }
+      + .label {
+        top: 25.6rem;
+        left: 2.1rem;
+      }
+    }
+  }
+  // europe
+  &.map-europe {
+    input[type='checkbox'] {
+      top: 13.4rem;
+      left: 30.5rem;
+
+      &:checked {
+        ~ .map-img {
+          background: image('newsroom/img_newsroom_map_europe.webp') no-repeat top left;
+        }
+      }
+      + .label {
+        top: 13.4rem;
+        left: 30.5rem;
+      }
+    }
+  }
+  // east-africa
+  &.map-east-africa {
+    input[type='checkbox'] {
+      top: 25.6rem;
+      left: 42.5rem;
+
+      &:checked {
+        ~ .map-img {
+          background: image('newsroom/img_newsroom_map_africa.webp') no-repeat top left;
+        }
+      }
+      + .label {
+        top: 25.6rem;
+        left: 42.5rem;
+      }
+    }
+  }
+  // asia
+  &.map-asia {
+    input[type='checkbox'] {
+      top: 18.4rem;
+      left: 74.5rem;
+
+      &:checked {
+        ~ .map-img {
+          background: image('newsroom/img_newsroom_map_asia.webp') no-repeat top left;
+        }
+      }
+      + .label {
+        top: 18.4rem;
+        left: 74.5rem;
+      }
+    }
+  }
+}
+
+/* 뉴스 필터 */
+.news-filter-area {
+  @include flex(row, flex-start, center);
+  position: relative;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid $color-DDDDDD;
+  &:last-child,
+  &:only-child {
+    border-bottom: none;
+  }
+  // 년도
+  &.filter-yaers-box {
+    padding-right: 8rem;
+  }
+  .filter-box-left {
+    @include flex(row, flex-start, center);
+    flex-shrink: 0;
+    width: 17rem;
+  }
+  .filter-box-right {
+    padding-right: 7.9rem;
+  }
+  .filter-title {
+    @include fontfamhead;
+    @include font(1.8rem, 500, $color-444444, normal);
+  }
+  .btn-open-month {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 7.9rem;
+    height: 7.9rem;
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-B8B8B8;
+    }
+    &:before {
+      width: 2rem;
+      height: 2px;
+    }
+    &:after {
+      width: 2px;
+      height: 2rem;
+    }
+    &:hover {
+      &:before,
+      &:after {
+        background-color: $color-00AAD2;
+      }
+    }
+  }
+}
+.filter-item-list {
+  @include flex(row, flex-start, center);
+  flex-wrap: wrap;
+  margin: -1rem -2.4rem;
+  .item-list {
+    margin: 1rem 2.4rem;
+  }
+}
+// 뉴스 달력 필터 열림
+.opend-calender {
+  &.news-filter-area {
+    padding: 1.2rem 0;
+  }
+  .filter-box-right {
+    @include flex(row, flex-start, center);
+    width: 100%;
+  }
+  .filter-calendar-container {
+    width: 100%;
+    max-width: 67rem;
+    margin-left: 4.8rem;
+  }
+  .btn-open-month {
+    &:before,
+    &:after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
+
+/* 뉴스 결과 */
+
+.newsroom-result-area {
+  .newsroom-result-body {
+    .result-info-top {
+      width: 100%;
+    }
+  }
+  .result-list-container {
+    .result-list-top {
+      padding-bottom: 0;
+      margin-bottom: 2rem;
+      border-bottom: 0;
+    }
+    .result-list {
+      margin-bottom: 6rem;
+      &:last-child,
+      &:only-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .result-title {
+    @include font(3.2rem, 400, $black, 1);
+    @include fontfamhead;
+  }
+  .badge {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 100px;
+    border: 1px solid #CBCBCB;
+    @include font(1.5rem, 500, $color-222222, normal);
+    @include fontfamhead;
+    &.highlight {
+      color: $color-00AAD2;
+    }
+  }
+}
+.result-list-container {
+  // @include motionHidden;
+  .result-list-top {
+    padding-bottom: 0.8rem;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid $color-EDEDED;
+  }
+  .result-list-bottom {
+    margin-top: 6rem;
+  }
+  .result-list {
+    display: flex;
+    margin-bottom: 6rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .result-thumb-box {
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 41.2rem;
+    height: 28.8rem;
+    margin-right: 3rem;
+    + .result-info-box {
+      width: calc(100% - 43.2rem);
+    }
+    img {
+      @include imgbox;
+    }
+  }
+
+  .result-info-box {
+    @include flex(column, space-between, flex-start);
+  }
+  
+  .result-info-top {
+    > * {
+      display: block;
+    }
+    .list-top {
+      margin-bottom: 2.1rem;
+    }
+
+    .news-date {
+      @include font(1.8rem, 400, $color-A4A4A4, normal);
+    }
+    .list-title {
+      margin-bottom: 1.2rem;
+      @include fontfamhead;
+      @include font(2.4rem, 500, $color-222222, 3.6rem);
+      @include multi-ellipsis(true, 2);
+    }
+    .list-info-text {
+      @include font(1.8rem, 400, $color-444444, 2.8rem);
+      @include multi-ellipsis(true, 3);
+      .keyword-color {
+        font-weight: 500;
+      }
+    }
+    .list-sub-text {
+      margin-top: 2rem;
+      @include font(1.8rem, 400, $color-A3A3A3, normal);
+    }
+  }
+
+  .keyword-color {
+    color: #00aad2;
+    font-weight: 700;
+  }
+}
+.result-tag-container {
+  @include font(1.8rem, 500, $black, normal);
+  span:not(.mo-block),
+  strong {
+    color: $color-00AAD2;
+  }
+}
+
+/* sub subscribe */
+.content-bottom {
+  position: relative;
+}
+
+.sub-subscribe-container {
+  @include flex(row, flex-start, stretch);
+  max-width: 192rem;
+  margin: 0 auto;
+  padding-top: 4.6rem;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: calc(100% - 4.6rem);
+    background-color: $color-F6F3F2;
+  }
+  .subscribe-left {
+    overflow: hidden;
+    position: relative;
+    top: -4.6rem;
+    z-index: 1;
+    flex: 0 0 51.5%;
+    max-width: 98.9rem;
+    max-height: 55.8rem;
+  }
+  .subscribe-right {
+    flex: 0 0 49.5%;
+    max-width: 73.8rem;
+    position: relative;
+    z-index: 1;
+    padding: 7.25rem 6rem 17.4rem 6rem;
+  }
+  .image-box {
+    width: 100%;
+    height: 100%;
+  }
+  .field-form {
+    max-width: 61.8rem;
+  }
+  .checkbox input[type=checkbox] + .label {
+    align-items: flex-start;
+    font-size: 1.6rem;
+    line-height: normal;
+  }
+}
+.subscribe-area {
+  height: 100%;
+
+  .subscribe-body {
+    height: 100%;
+  }
+  
+  .scribe-title-box {
+    margin-bottom: 4rem;
+    @include fontfamhead;
+    @include font(2.4rem, 400, $black, normal);
+    em {
+      display: block;
+      margin-top: 2rem;
+      @include fontfamtext;
+      color: $color-444444;
+    }
+  }
+  .scribe-title-large {
+    font-size: 4.8rem;
+    font-weight: 500;
+  }
+  .field {
+    .field-label {
+      margin-bottom: 1rem;
+      @include fontfamhead;
+      @include font(1.6rem, 400, $black, normal);
+    }
+  }
+  .buttons-box {
+    justify-content: flex-start;
+    margin-top: 4rem;
+  }
+  .input {
+    flex: 1;
+    input {
+      width: 100%;
+      height: 6.5rem;
+      padding: 0 2rem;
+      background-color: $white;
+      border-bottom: 1px solid $color-E5E5E5;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #000;
+      line-height: normal;
+    }
+  }
+  .field-desc {
+    margin-top: 2rem;
+    margin-right: -3px;
+  }
+  .btn-line-wh {
+    width: 24rem;
+    height: 6.5rem;
+    @include fontfamhead;
+    font-weight: 400;
+  }
+
+  .subscribe-complete-box {
+    padding-top: 12.45rem;
+    @include flex(column, center, center);
+    height: 100%;
+    .icon-box {
+      width: 7.2rem;
+      height: 7.2rem;
+      background: image('common/icon_subscribe_complete.svg') no-repeat center / 7.2rem auto;
+    }
+
+    .text-box {
+      margin: 3rem 0 1rem;
+      @include fontfamhead;
+      @include font(3.2rem, 500, #000, normal);
+    }
+    
+    .desc-box {
+      @include fontfamhead;
+      @include font(1.8rem, 400, #747474, 2.8rem);
+    }
+  }
+}
+
+
+@media screen and (min-width: 1921px) {
+  .sub-subscribe-container {
+    justify-content: center;
+  }
+}
+
+// ------ pc end
+@media #{$pc_large} {
+  .content-container {
+    &.detail {
+      padding-top: 6rem;
+    }
+  }
+  /* sub subscribe */
+  .sub-subscribe-container {
+    .subscribe-right {
+      padding: 4rem 3rem;
+    }
+  }
+
+  .subscribe-area {
+    .subscribe-complete-box {
+      padding-top: 0;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .opend-calender {
+    .filter-calendar-container {
+      margin-left: 2rem;
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .content-container {
+    &.detail {
+      padding-top: 5rem;
+    }
+  }
+  .top-breadcrumb-container {
+    .page-search-area {
+      max-width: 100%;
+      .input-box {
+        height: 5rem;
+        padding-right: 2rem;
+        border: 1px solid $color-DDDDDD;
+        input {
+          height: 100%;
+          @include font(1.8rem, 400, $color-1D1D1B, normal);
+          border: 0;
+          &::placeholder {
+            @include fontfamhead;
+            font-size: $color-888888;
+          }
+        }
+      }
+      .btn-delete {
+        min-width: 1.4rem;
+        right: 5.2rem;
+        background-size: 1.4rem;
+      }
+      .btn-search {
+        margin-left: 0.9rem;
+        min-width: 2.3rem;
+        background-size: 2.3rem;
+      }
+    }
+  }
+  /* newsroom layout */
+  .newsroom-container {
+    margin: 4rem 0 16rem;
+    .page-title-box {
+      padding-bottom: 1rem;
+      .title-box {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+
+      .filter-btn-box {
+        .btn-filter {
+          font-size: 1.6rem;
+        }
+      }
+    }
+
+    .newsroom-top {
+      padding: 2rem;
+      & + .newsroom-middle {
+        margin-top: 4rem;
+      }
+    }
+
+    .news-top-inner {
+      padding: 0 2rem 2rem;
+    }
+  }
+
+  .news-filter-area {
+    display: block;
+    padding: 1.2rem 0;
+    .filter-box-left {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .btn-open-month {
+      position: relative;
+      width: 3rem;
+      height: 3rem;
+      margin-left: auto;
+      &:before {
+        width: 16px;
+      }
+      &:after {
+        height: 16px;
+      }
+    }
+
+    .filter-box-right {
+      padding-right: 0;
+    }
+  }
+
+  .region-container {
+    padding-top: 2rem;
+  }
+
+  .news-map-container {
+    width: 100%;
+  }
+
+  .map-arrow-box {
+    display: none;
+    &.active {
+      @include flex(row, space-between, center);
+    }
+  }
+  
+  .map-arrow {
+    visibility: hidden;
+    width: 1.5rem;
+    height: 0.9rem;
+    &.active {
+      visibility: visible;
+    }
+    &.map-arrow-left {
+      left: 0;
+      background: image('common/ico_map_arrow_l.svg') no-repeat center / 1.5rem 0.9rem;
+    }
+    &.map-arrow-right {
+      right: 0;
+      background: image('common/ico_map_arrow_r.svg') no-repeat center / 1.5rem 0.9rem;
+    }
+  }
+
+  /* 뉴스 결과 */
+  .newsroom-result-area {
+    .result-title {
+      font-size: 2.8rem;
+    }
+    .badge {
+      padding: 0.8rem 1rem;
+    }
+    .result-list-container {
+      .result-list {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  .result-list-container {
+    .result-list {
+      flex-wrap: wrap;
+    }
+    .result-list-bottom {
+      margin-top: 4rem;
+    }
+    .result-info-top {
+      .news-date {
+        font-size: 1.4rem;
+      }
+      .list-title {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+      }
+      .list-info-text {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+      }
+    }
+
+    .result-info-bottom {
+      margin-top: 2rem;
+    }
+
+    .result-thumb-box {
+      width: 100%;
+      height: 21.4rem;
+      margin-right: 0;
+      margin-bottom: 2rem;
+      + .result-info-box {
+        width: 100%;
+      }
+    }
+
+    .result-info-box {
+      display: block;
+      width: 100%;
+    }
+    .result-info-top {      
+      .list-top {
+          margin-bottom: 1rem;
+      }
+    }
+
+  }
+  .result-tag-container {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+  /* 지도 */
+  .news-map-container {
+    .map-back-box {
+      width: 58.8rem;
+    }
+  }
+
+  .map-mark-box {
+    .checkbox {
+      input[type=checkbox] {
+        &~ .map-img {
+          width: 58.8rem;
+        }
+      }
+    }
+  }
+  
+  .map-mark-box {
+    .checkbox {
+      input[type='checkbox'] {
+        + .label {
+          height: 3.7rem;
+          padding: 0 0.7rem;
+        }
+
+        + .map-img {
+          width: 58.8rem;
+        }
+      }
+    }
+    &.map-america {
+      input[type='checkbox'] {
+        top: 18rem;
+        left: 3rem;
+        + .label {
+          top: 18rem;
+          left: 3rem;
+        }
+
+        &:checked {
+          ~ .map-img {
+            width: 58.8rem;
+            background-size: 58.8rem;
+          }
+        }
+      }
+    }
+
+    &.map-europe {
+      input[type='checkbox'] {
+        &:checked {
+          ~ .map-img {
+            width: 58.8rem;
+            background-size: 58.8rem;
+          }
+        }
+      }
+    }
+
+    &.map-east-africa {
+      input[type='checkbox'] {
+        + .label {
+          left: 36rem;
+        }
+
+        &:checked {
+          ~ .map-img {
+            width: 58.8rem;
+            background-size: 58.8rem;
+          }
+        }
+      }
+    }
+
+    &.map-asia {
+      input[type='checkbox'] {
+        left: 50rem;
+        + .label {
+          left: 50rem;
+        }
+
+        &:checked {
+          ~ .map-img {
+            width: 58.8rem;
+            background-size: 58.8rem;
+          }
+        }
+      }
+    }
+  }
+  /* 뉴스 필터 */
+  .news-filter-area {
+    padding: 2rem 0;
+  }
+  .filter-item-list {
+    margin: -0.5rem -0.6rem;
+    .item-list {
+      min-width: 9rem;
+      margin: 0.8rem 0.6rem;
+    }
+  }
+  .opend-calender {
+    .filter-box-right {
+      display: block;
+      padding: 0;
+    }
+    .filter-calendar-container {
+      max-width: 100%;
+      margin-left: 0;
+      margin-top: 1.2rem;
+    }
+    &.news-filter-area {
+      padding-bottom: 0;
+    }
+  }
+  .region-container {
+    .news-filter-area {
+      .filter-box-right {
+        margin-left: auto;
+      }
+    }
+  }
+
+  /* sub subscribe */
+  .subscribe-area {
+    .scribe-title-box {
+      margin-bottom: 4rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      .scribe-title-large {
+        font-size: 2.8rem;
+        line-height: normal;
+      }
+
+      em {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        line-height: 2rem;
+        br {
+          content: " ";
+          display: inline-block;
+          padding: 0 2px;
+        }
+      }
+    }
+
+    .field {
+      .field-label {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    .field-desc {
+      margin-top: 2rem;
+    }
+
+    .buttons-box {
+      margin-top: 4rem;
+      .btn-line-wh {
+        max-width: 100%;
+        height: 5rem;
+      }
+    }
+  }
+
+  /* sub subscribe */
+  .sub-subscribe-container {
+    display: block;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 11.7rem;
+    &:after {
+      height: calc(100% - 9.4rem);
+    }
+    .subscribe-left {
+      top: 0;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      padding: 0 2rem;
+    }
+    .subscribe-right {
+      max-width: 100%;
+      margin-top: 2rem;
+      padding: 0 2rem;
+    }
+    .subscribe-complete-box {
+      margin-top: 12rem;
+      padding-bottom: 0;
+      .icon-box {
+      }
+  
+      .text-box {
+        margin: 2rem 0 1rem;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+      }
+      
+      .desc-box {
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+      }
+    }
+    .field-form {
+      width: 100%;
+      max-width: none;
+      
+    }
+    .subscribe-area {
+      .input {
+        input {
+          height: 4.4rem;
+        }
+      }
+    }
+    .checkbox input[type=checkbox] + .label {
+      white-space: normal;
+      line-height: 2rem;
+      .check-icon {
+        top: 0;
+        width: 1.8rem;
+        height: 1.8rem;
+        background-size: 1.8rem;
+      }
+    }
+  }
+}

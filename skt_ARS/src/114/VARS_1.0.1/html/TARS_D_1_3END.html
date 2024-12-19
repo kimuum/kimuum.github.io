@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 데이타 리필쿠폰 총개수 -->
+    <input type="hidden" id="refill_coupon" iweb-data="out" />
+    <!-- 데이타 리필쿠폰 상세 -->
+    <input type="hidden" id="coupon_detail" iweb-data="out" />
+
+    <!-- 데이타 리필쿠폰 데이터 넘기기 -->
+    <input type="hidden" id="select_coupon_number" iweb-data="in" />
+    <input type="hidden" id="select_coupon_date1" iweb-data="in" />
+    <input type="hidden" id="select_coupon_date2" iweb-data="in" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page tars-3">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '쿠폰조회',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-refill"></i>
+                <div class="info-box">
+                  <p class="label">고객님의 현재 사용가능한 리필 쿠폰은</p>
+                  <p class="label">총 <span class="highlight text-large" id="refill_coupon_value"></span>장 입니다.</p>
+                </div>
+              </div>
+              <div class="refill-coupon-container">
+                <div class="accordion-area">
+                  <div class="accordion-title-box">
+                    <div class="accordion-title">리필쿠폰 상세 현황</div>
+                  </div>
+                  <div class="accordion-content-box">
+                    <ul class="coupon-list-box" id="dt_coupon_detail"></ul>
+                  </div>
+                </div>
+              </div>
+              <ul class="alert-text-box">
+                <li class="alert-text">데이터 리필하기 서비스는 월 1회 사용이 가능하며, 각 쿠폰은 반드시 유효기간(발급일로부터 1년) 내에 모두 사용 하셔야 합니다.</li>
+                <li class="alert-text">리필한 데이터/음성은 당월에 한해 사용 가능하며, 해당 기간 내에 사용하지 않은 쿠폰은 자동 소멸됩니다.</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+
+      // 아코디언
+      $(function () {
+        var $accordionTitleBox = $('.accordion-title-box');
+        var $accordionArea = $('.accordion-area');
+
+        $accordionTitleBox.on('click', function () {
+          if (!$accordionArea.hasClass('active')) {
+            $accordionArea.addClass('active');
+          } else {
+            $accordionArea.removeClass('active');
+          }
+        });
+      });
+
+      try {
+        /* 리필 쿠폰 갯수 */
+        var refill_coupon = getUrlParameter('refill_coupon');
+        document.getElementById('refill_coupon_value').innerHTML = refill_coupon == '' ? '0' : formatCommas(parseInt(refill_coupon));
+      } catch (e) {}
+
+      //리필쿠폰 상세 현황
+      var coupon_detail = getUrlParameter('coupon_detail');
+
+      /*@build-time*/ coupon_detail =
+        'AAA000001113270356|2024.02.26|2024.03.01^AAA000001113270359|2024.02.26|2024.03.01^AAA000001113270358|2024.02.26|2024.03.01^AAA000001113270356|2024.02.26|2024.03.01';
+
+      // 리턴 타입
+      // 쿠폰번호|유효기간시작일|유효기간종료일^쿠폰번호|유효기간시작일|유효기간종료일
+
+      var coupon_detail_arr = coupon_detail.split('^'); // 리필쿠폰 상세 현황
+
+      var coupon_html = '';
+
+      for (var i = 0; i < coupon_detail_arr.length; i++) {
+        // index == 0 부터 처리.
+
+        var detail_list_arr = coupon_detail_arr[i].split('|');
+
+        var detail_count = detail_list_arr.length;
+        if (1 < detail_count) {
+          coupon_html +=
+            '			<li class="coupon-list"><a href="javascript:selectCoupon($(this).text().trim(), \'' +
+            detail_list_arr[0] +
+            "', '" +
+            detail_list_arr[1] +
+            "', '" +
+            detail_list_arr[2] +
+            '\');" class="coupon-link">';
+          coupon_html += '				<div class="coupon-left"><span class="coupon-order">' + (i + 1) + '</span></div>';
+          coupon_html += '				<div class="coupon-right"><div class="coupon-num">쿠폰번호<div class="num">' + detail_list_arr[0] + '</div></div>';
+          coupon_html += '				<div class="coupon-period">유효기간<div class="period">' + detail_list_arr[1] + ' ~ ' + detail_list_arr[2] + '</div></div>';
+          coupon_html += '			</div></a></li>';
+        } else {
+          coupon_html += '		<li class="coupon-list coupon-empty"><p>사용가능한 리필쿠폰이 없습니다</p></li>';
+        }
+      }
+
+      document.getElementById('dt_coupon_detail').innerHTML = coupon_html;
+
+      //쿠폰 선택하기
+      function selectCoupon(stitle, val1, val2, val3) {
+        //쿠폰번호
+        document.getElementById('select_coupon_number').value = val1;
+        //유효기간 시작일
+        document.getElementById('select_coupon_date1').value = val2;
+        //유효기간 종료일
+        document.getElementById('select_coupon_date2').value = val3;
+
+        sendRepPageData(stitle, '0', 'menu');
+      }
+    </script>
+  </body>
+</html>

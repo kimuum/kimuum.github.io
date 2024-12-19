@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Table</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-wrapper">
+        <div class="general-container">
+          <div class="general-area">
+            <div class="general-top">
+              <div class="general-label">Component</div>
+              <div class="general-title">Table</div>
+            </div>
+            <div class="general-middle">
+              <div class="general-content">
+                <div class="content-box">
+                  <!-- table -->
+                  <div class="table-box">
+                    <table aria-label="월별 충전 정보">
+                      <thead>
+                        <tr>
+                          <th scope="col"></th>
+                          <th scope="col">
+                            <!-- prettier-ignore -->
+                            @@loop("badgeCircle.html",[
+                            {
+                              "badgeColor": "primary",
+                              "badgeText" : "",
+                              "badgeLabel": "",
+                            },
+                            ])
+                            <span class="label">7월</span>
+                          </th>
+                          <th scope="col">
+                            <span class="label">8월</span>
+                            <span class="icon">
+                              <i class="ic ic-info-fill"></i>
+                            </span>
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            <div class="label-box">
+                              <span class="label">충전량</span>
+                              <span class="sub-label">(전월대비)</span>
+                            </div>
+                          </th>
+                          <td>
+                            <div class="data-box">
+                              <span class="data">100 kWh</span>
+                              <span class="sub-data">(00/00)</span>
+                            </div>
+                            <div class="sub-data">-000kWh</div>
+                          </td>
+                          <td>
+                            <div class="data-box">
+                              <span class="data">100 kWh</span>
+                              <span class="sub-data">(00/00)</span>
+                            </div>
+                            <div class="sub-data">-000kWh</div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            <div class="label-box">
+                              <span class="label">충전금액</span>
+                              <span class="sub-label">(전월대비)</span>
+                            </div>
+                          </th>
+                          <td>
+                            <div class="data-box">
+                              <span class="data">100 kWh</span>
+                              <span class="sub-data">(00/00)</span>
+                            </div>
+                            <div class="sub-data">-000kWh</div>
+                          </td>
+                          <td>
+                            <div class="data-box">
+                              <span class="data">100 kWh</span>
+                              <span class="sub-data">(00/00)</span>
+                            </div>
+                            <div class="sub-data">-000kWh</div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

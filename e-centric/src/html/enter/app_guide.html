@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 앱 접근 권한 안내"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <!--
+      .app-guide : 앱 접근 권한 안내 페이지
+    -->
+    <main class="main-container app-guide">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "align" : "center",
+        "logo" : false,
+        "title" : {
+          "show" : true,
+          "text" : "권한요청",
+        },
+        "button" : [
+        {
+          "icon" : "ic-close",
+          "className" : "btn-close",
+          "title" : "닫기",
+        },
+        ]
+      })
+
+      <!-- [접근성] 태그변경 -->
+      <section id="contentSection" class="content-container">
+        <div class="content-area">
+          <div class="app-guide-container">
+            <div class="app-guide-area">
+              <div class="app-guide-top">
+                <div class="app-guide-content-box">
+                  <div class="app-guide-title-box">
+                    <span class="title">필수적 접근 권한</span>
+                  </div>
+                  <div class="app-guide-info-box" role="list">
+                    <!-- prettier-ignore -->
+                    @@include("chargeDeviceList.html", {
+                      "iconClass" : "ic-save-fill",
+                      "ir" : "",
+                      "label" : "저장 (필수)",
+                      "count" : "",
+                      "deviceInfo" : [
+                        {
+                          "info" : "간편로그인 사용자 ID저장, 자동로그인 보안 유지 및 사용자 인증을 위해 접근"
+                        },
+                      ],
+                      "badge": "",
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("chargeDeviceList.html", {
+                      "iconClass" : "ic-call-fill",
+                      "ir" : "",
+                      "label" : "전화 (필수)",
+                      "count" : "",
+                      "deviceInfo" : [
+                        {
+                          "info" : "사용자 인증 및 식별, 충전소 전화를 위해 접근"
+                        },
+                      ],
+                      "badge": "",
+                    })
+                  </div>
+                </div>
+                <div class="app-guide-content-box">
+                  <div class="app-guide-title-box">
+                    <span class="title">선택적 접근 권한</span>
+                  </div>
+                  <div class="app-guide-info-box" role="list">
+                    <!-- prettier-ignore -->
+                    @@include("chargeDeviceList.html", {
+                      "iconClass" : "ic-gps-fill",
+                      "ir" : "",
+                      "label" : "GPS (선택)",
+                      "count" : "",
+                      "deviceInfo" : [
+                        {
+                          "info" : "충전소 위치 탐색을 위해 접근"
+                        },
+                      ],
+                      "badge": "",
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("chargeDeviceList.html", {
+                      "iconClass" : "ic-camera",
+                      "ir" : "",
+                      "label" : "카메라 (선택)",
+                      "count" : "",
+                      "deviceInfo" : [
+                        {
+                          "info" : "충전소 QR코드 스캔을 위해 접근"
+                        },
+                      ],
+                      "badge": "",
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("chargeDeviceList.html", {
+                      "iconClass" : "ic-notification-tone",
+                      "ir" : "",
+                      "label" : "푸시 알림 (선택)",
+                      "count" : "",
+                      "deviceInfo" : [
+                        {
+                          "info" : "시스템 알림 및 마케팅, 소식, 각종 정보를 위해 접근"
+                        },
+                      ],
+                      "badge": "",
+                    })
+                  </div>
+                </div>
+              </div>
+              <div class="app-guide-bottom">
+                <ul class="app-guide-desc-list-box">
+                  <li class="app-guide-desc-list">
+                    <i class="ic ic-info"></i>
+                    <p class="text">선택적 권한은 서비스 사용 중 필요한 시점에 동의를 받고 있으며, 휴대폰 ‘설정>개인정보보호’에서도 설정을 변경하실 수 있습니다.</p>
+                  </li>
+                  <li class="app-guide-desc-list">
+                    <i class="ic ic-info"></i>
+                    <p class="text">선택 접근 권한에 동의하지 않아도, 해당 권한을 제외한 서비스 이용이 가능합니다.</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

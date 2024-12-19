@@ -1,0 +1,21 @@
+@@for(var i = 0; i < subMenu.length; i++) {
+  <li>
+    <a 
+    @@if(`+subMenu[i].active+`){href="#' class="on"}
+    @@if(!`+subMenu[i].active+`){
+      href="javascript:sendRepPageData($(this).text().trim(), '`+subMenu[i].menu+`', 'menu')"
+    }
+    >
+      <span class="txt `+subMenu[i].menu+`">
+        <!-- @@if(`+subMenu[i].menu+` == 'm1'){요금 및 납부조회}
+        @@if(`+subMenu[i].menu+`== 'm2'){m2}
+        @@if(`+subMenu[i].menu+`== 'm3'){m3}
+        @@if(`+subMenu[i].menu+`== 'm4'){m4}
+        @@if(`+subMenu[i].menu+`== 'm5'){m5}
+        @@if(`+subMenu[i].menu+`== 'm6'){m6}
+        @@if(`+subMenu[i].menu+`== 'm7'){m7}
+        @@if(`+subMenu[i].menu+`== 'm0'){m8} -->
+      </span>
+    </a>
+  </li>
+}

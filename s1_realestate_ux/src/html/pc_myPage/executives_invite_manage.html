@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1280" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/images/favicon/favicon_32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon/favicon_16.png" />
+    <link rel="shortcut icon" sizes="192x192" href="../../assets/images/favicon/favicon_192.png" />
+    <link rel="shortcut icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="shortcut icon" sizes="96x96" href="../../assets/images/favicon/favicon_96.png" />
+    <link rel="shortcut icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="shortcut icon" sizes="48x48" href="../../assets/images/favicon/favicon_48.png" />
+    <link rel="shortcut icon" sizes="36x36" href="../../assets/images/favicon/favicon_36.png" />
+    <link rel="apple-touch-icon" href="../../assets/images/favicon/apple-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/images/favicon/favicon_180.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/images/favicon/favicon_152.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/images/favicon/favicon_144.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/images/favicon/favicon_120.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/images/favicon/favicon_114.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../../assets/images/favicon/favicon_76.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="../../assets/images/favicon/favicon_72.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="../../assets/images/favicon/favicon_60.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../../assets/images/favicon/favicon_57.png" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <script src="../../assets/js/lib/vanillajs-datepicker.js"></script>
+    <script src="../../assets/js/lib/swiper-bundle.min.js"></script>
+
+    <script src="../../assets/js/lib/html2canvas.js"></script>
+    <script src="../../assets/js/lib/jspdf.debug.js"></script>
+    <script src="../../assets/js/lib/chart.min.js"></script>
+    <script src="../../assets/js/lib/chartjs-plugin-datalabels.js"></script>
+    <script src="../../assets/js/bundle.js"></script>
+    <title>에스원 | 임직원 관리</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : "",
+        "currentPage" : "임직원 관리",
+      })
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container invite">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">건물의 임직원 초대와 관리가 가능합니다.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="filter-table-content-container">
+                  <div class="filter-table-content-area">
+                    <div class="filter-table-content-top">
+                      <div class="filter-table-container">
+                        <div class="filter-table-area">
+                          <div class="filter-table-top">
+                            <div class="filter-box">
+                              <div class="filter">
+                                <div class="filter-row">
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>건물 정보</span>
+                                    </div>
+                                    <div class="filter-info wide">
+                                      <div class="info-box">
+                                        <span class="text"
+                                          >서울특별시 서초구 서초대로74길 11 삼성전자 서초사옥<br />8F,9F,10F,11F
+                                          디자인그룹실</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="filter-row half">
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>유효기간</span>
+                                    </div>
+                                    <div class="filter-info">
+                                      <div class="info-box">
+                                        <span class="text">2023.06.30</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>인증일</span>
+                                    </div>
+                                    <div class="filter-info">
+                                      <div class="info-box">
+                                        <span class="text">2023.06.30</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="button-box">
+                              <!-- prettier-ignore -->
+                              @@include("../../components/button.html", {
+                                "dataValue" : "",
+                                "type" : "primary",
+                                "size" : "large",
+                                "class" : "",
+                                "disabled" : "",
+                                "text" : "임직원 초대",
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="filter-table-content-bottom">
+                      <div class="filter-table-container filter-field">
+                        <div class="filter-table-area">
+                          <div class="filter-table-top">
+                            <div class="filter-box">
+                              <div class="filter">
+                                <div class="filter-row half">
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>이름</span>
+                                    </div>
+                                    <div class="filter-field">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/field_search.html", {
+                                        "size" : "small",
+                                        "class" : "",
+                                        "id" : "search-01",
+                                        "placeholder" : "임직원 이름을 입력해 주세요.",
+                                        "disabled" : "",
+                                      })
+                                    </div>
+                                  </div>
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>담당자 여부</span>
+                                    </div>
+                                    <div class="filter-field">
+                                      <div class="field field-dropdown">
+                                        <div class="field-form">
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/dropdown.html",{
+                                            "title" : "담당자 여부",
+                                            "size" : "small",
+                                            "value" : "전체",
+                                            "placeholder" : "",
+                                            "option" : [ 
+                                              {
+                                                "text" : "전체",
+                                                "property" : "active",
+                                              },
+                                              {
+                                                "text" : "Y",
+                                                "property" : "",
+                                              },
+                                              {
+                                                "text" : "N",
+                                                "property" : "",
+                                              },
+                                            ],
+                                            "disabled" : false,
+                                          })
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="filter-row half">
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>위치(층)</span>
+                                    </div>
+                                    <div class="filter-field">
+                                      <div class="field field-dropdown">
+                                        <div class="field-form">
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/dropdown.html",{
+                                            "title" : "위치(층)",
+                                            "size" : "small",
+                                            "value" : "전체",
+                                            "placeholder" : "",
+                                            "option" : [ 
+                                              {
+                                                "text" : "전체",
+                                                "property" : "active",
+                                              },
+                                              {
+                                                "text" : "8F",
+                                                "property" : "",
+                                              },
+                                              {
+                                                "text" : "9F",
+                                                "property" : "",
+                                              },
+                                              {
+                                                "text" : "10F",
+                                                "property" : "",
+                                              },
+                                              {
+                                                "text" : "11F",
+                                                "property" : "",
+                                              },
+                                            ],
+                                            "disabled" : false,
+                                          })
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="filter-list">
+                                    <div class="filter-label">
+                                      <span>인증 여부</span>
+                                    </div>
+                                    <div class="filter-field">
+                                      <div class="field field-dropdown">
+                                        <div class="field-form">
+                                          <!-- prettier-ignore -->
+                                          @@include("../../components/dropdown.html",{
+                                            "title" : "인증 여부",
+                                            "size" : "small",
+                                            "value" : "전체",
+                                            "placeholder" : "",
+                                            "option" : [ 
+                                              {
+                                                "text" : "전체",
+                                                "property" : "active",
+                                              },
+                                              {
+                                                "text" : "미인증",
+                                                "property" : "",
+                                              },
+                                              {
+                                                "text" : "정상",
+                                                "property" : "",
+                                              },
+                                            ],
+                                            "disabled" : false,
+                                          })
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="button-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/button.html", {
+                                      "dataValue" : "",
+                                      "type" : "secondary",
+                                      "size" : "small",
+                                      "class" : "",
+                                      "disabled" : "",
+                                      "text" : "초기화",
+                                    })
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/button.html", {
+                                      "dataValue" : "",
+                                      "type" : "primary",
+                                      "size" : "small",
+                                      "class" : "",
+                                      "disabled" : "",
+                                      "text" : "검색",
+                                    })
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="filter-table-middle">
+                            <!-- prettier-ignore -->
+                            @@include("../../components/filterView.html",{
+                              "button" : [
+                                {
+                                  "dataValue" : "",
+                                  "type" : "secondary",
+                                  "size" : "medium",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "삭제",
+                                },
+                                {
+                                  "dataValue" : "",
+                                  "type" : "secondary",
+                                  "size" : "medium",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "담당자 해제",
+                                },
+                                {
+                                  "dataValue" : "",
+                                  "type" : "primary",
+                                  "size" : "medium",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "담당자 지정",
+                                },
+                              ],
+      
+                              "test" : {
+                                "title" : "test",
+                              },
+      
+                              "table" : [
+                                {
+                                  "title" : "테이블 명",
+        
+                                  "checkbox" : true,
+        
+                                  "thead" : [ "번호", "이름", "위치(층)", "세부 위치", "인증 여부", "인증일" ],
+                                  
+                                  "tbody" : [
+                                    [
+                                      {
+                                        "type" : "checkbox",
+                                        "text" : "table-check-5",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "5",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "badgeText",
+                                        "text" : "김에스",
+                                        "property": "본인",
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "8F",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "디자인 그룹실",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "정상",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "2023.05.05",
+                                        "property": null,
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        "type" : "checkbox",
+                                        "text" : "table-check-4",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "5",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "김에스",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "8F",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "디자인 그룹실",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "미인증",
+                                        "property": "red",
+                                      },
+                                      {
+                                        "type" : "button",
+                                        "text" : "문자 재발송",
+                                        "property": "secondary",
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        "type" : "checkbox",
+                                        "text" : "table-check-3",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "3",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "badgeText",
+                                        "text" : "김에스",
+                                        "property": "담당자",
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "8F",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "디자인 그룹실",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "정상",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "2023.05.05",
+                                        "property": null,
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        "type" : "checkbox",
+                                        "text" : "table-check-2",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "2",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "김에스",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "8F",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "디자인 그룹실",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "정상",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "2023.05.05",
+                                        "property": null,
+                                      },
+                                    ],
+                                    [
+                                      {
+                                        "type" : "checkbox",
+                                        "text" : "table-check-1",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "1",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "김에스",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "8F",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "디자인 그룹실",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "정상",
+                                        "property": null,
+                                      },
+                                      {
+                                        "type" : "text",
+                                        "text" : "2023.05.05",
+                                        "property": null,
+                                      },
+                                    ],
+                                  ],
+                                }
+                              ],
+                              "accordion" : null,
+                              "empty" : null,
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

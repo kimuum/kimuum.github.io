@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "셀프개통 신청현황 | 셀프개통 신청현황 | 유심 개통 관리 " , "headProjectName": "| 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>셀프개통 신청상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>유심 개통 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>셀프개통 신청현황</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>셀프개통 신청현황</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">신청 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <!-- [2차BO] 20221012 수정 -->
+                    <table>
+                      <caption>
+                        신청 정보- 주문 번호, 주문 일자, 신청 상태, 신청 경로
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">주문 번호</th>
+                          <td>123456</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">주문 일자</th>
+                          <td>2022-01-02</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">신청 상태</th>
+                          <td>개통완료</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">신청 경로</th>
+                          <td>PC웹<!-- 모바일웹 --></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- //[2차BO] 20221012 수정 -->
+                  </div>
+                </div>
+              </div>
+              <!-- //신청 정보 -->
+
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">신청 상세 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        신청 상세 정보- SIM 유형, 요금제명, 명세서 유형, 요금납부방법, 주문자명 , 연락처, 이메일주소, 주소
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">SIM 유형</th>
+                          <td>eSIM</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금제명</th>
+                          <td>데이터 맘껏 12GB+/100분</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금제 코드</th>
+                          <td>ABC123</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">명세서 유형</th>
+                          <td>이메일</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">요금납부방법</th>
+                          <td>신용카드 (현대카드 374664030******)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">주문자명</th>
+                          <td>임태*</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">연락처</th>
+                          <td>010-26**-*526</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이메일주소</th>
+                          <td>im3***@naver.com</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">주소</th>
+                          <td>04314 / 서울특별시 용산구 원효로93길 ******</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- //신청 상세 정보 -->
+              <div class="detailBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>목록으로</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "음성로밍 차단 | 로밍 부가서비스 상세", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnIDLoamingDetail07, popupLoamingDetail07 -->
+      <button type="button" class="btn" id="btnIDLoamingDetail07" onclick="togglePopup('btnIDLoamingDetail07', 'popupLoamingDetail07')"><span>로밍 부가서비스 상세 팝업</span></button>
+    </div>
+
+    <!-- 웹 접근성 적용 필수 아이디 : popupLoamingDetail07, popupTitleLoamingDetail07 -->
+    <div class="popup popupExtraLoamingDetail show" id="popupLoamingDetail07" role="dialog" aria-labelledby="popupTitleLoamingDetail07" aria-modal="true">
+      <!-- [운영] 20230308 부가서비스 개선 : 클래스 추가 -->
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleLoamingDetail07, btnIDLoamingDetail07, popupLoamingDetail07 -->
+          <strong class="popupTitle" id="popupTitleLoamingDetail07">로밍 부가서비스 상세</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDLoamingDetail07', 'popupLoamingDetail07')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="loamingDetailContainer typeAllDay">
+              <div class="loamingDetailHead">
+                <div class="topTitle">
+                  <strong>음성로밍 차단</strong>
+                  <strong class="colorRed">무료</strong>
+                  <span class="desc">온라인/사업자 고객센터를 통해 가입 가능</span>
+                  <!-- [운영] 20230426 DR-2023-25881 문구 수정 -->
+                </div>
+                <div class="topContent">
+                  <div class="loamingRecomand">
+                    <div class="recomandCircleData iconCallBlock">
+                      <p>통화 차단<br />(문자 발신 불가)</p>
+                    </div>
+                    <div class="recomandCircleData iconCountry">
+                      <p>전세계</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="loamingDetailBody">
+                <div class="loamingDetailTabContainer01">
+                  <div class="tabList" role="tablist">
+                    <button type="button" id="loamingDetailTab01" class="tabButton" aria-controls="loamingDetailCon01" role="tab" aria-selected="true"><span>상품 정보</span></button>
+                    <button type="button" id="loamingDetailTab02" class="tabButton" aria-controls="loamingDetailCon02" role="tab" aria-selected="false"><span>필수 안내</span></button>
+                  </div>
+                  <div class="tabContainer">
+                    <div id="loamingDetailCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingDetailTab01">
+                      <div class="loamingProductInfo">
+                        <div class="tableContainer productTable hideCaption info">
+                          <table>
+                            <caption>
+                              <span class="ir">혜택, 요금, 지원 국가, 신청 방법</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 27%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">혜택</th>
+                                <td>해외에서 음성로밍/영상로밍 및 문자 발신을 차단하는 서비스 (문자 수신만 가능)</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">요금</th>
+                                <td>무료</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">지원 국가</th>
+                                <td>전세계</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">신청 방법</th>
+                                <td>온라인/사업자 고객센터를 통해 가입 가능</td>
+                                <!-- [운영] 20230426 DR-2023-25881 문구 수정 -->
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="loamingDetailCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingDetailTab02">
+                      <div class="customerContainer">
+                        <div class="customerType">
+                          <div class="typeBody">
+                            <ul class="marginBtmReset">
+                              <li class="beforeDot">사업자에 따라 해당 상품 제공 여부 상이할 수 있습니다.</li>
+                              <li class="beforeDot">제휴하고 있는 해외국가 및 통신사 사정으로 갑자기 서비스 제공이 중단되는 경우가 있사오니, <span class="colorRed">‘지원국가’</span> 확인 후 가입하시기 바랍니다.</li>
+                              <li class="beforeDot">가입 시 해외에서 음성통화(수발신), 영상통화(수발신), 문자 발신이 불가합니다.</li>
+                              <li class="beforeDot">국내 복귀 후에도 서비스가 지속 유지되므로, 다음번 해외 방문 시 음성로밍을 이용하실 예정이라면 꼭 서비스를 해지해 주시기 바랍니다.</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [운영] 20230308 부가서비스 개선 : 추가 -->
+            <div class="poroductCommandBottom">
+              <div class="productfixedArea">
+                <div class="productfixedTop">
+                  <div class="topLeft">
+                    <strong class="productName">음성로밍 차단</strong>
+                  </div>
+                  <div class="topRight">
+                    <p class="productPrice">
+                      <span class="price">무료</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="productfixedBottom">
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>신청하기</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //[운영] 20230308 부가서비스 개선 : 추가 -->
+          </div>
+          <!-- //popupContent -->
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+<div class="headerContainer">
+  <div class="headerArea">
+    <!-- prettier-ignore -->
+    @@include('headerInner.html')
+  </div>
+  <nav class="mobileNav">
+    <!-- 2차 GNB 구조변경 -->
+    <ul class="menuList" role="tablist" aria-label="KT마이알뜰폰 대메뉴">
+      <li>
+        <button type="button" id="mainMenuChor01" class="menu @@mythrifty.firstMenu" aria-controls="mainMenu01" role="tab" aria-selected="@@mythrifty.aria-selected"><span>마이알뜰폰</span></button>
+      </li>
+      <li>
+        <button type="button" id="mainMenuChor02" class="menu @@product.firstMenu" aria-controls="mainMenu02" role="tab" aria-selected="@@product.aria-selected"><span>상품</span></button>
+      </li>
+      <li>
+        <button type="button" id="mainMenuChor03" class="menu @@usim.firstMenu" aria-controls="mainMenu03" role="tab" aria-selected="@@usim.aria-selected"><span>유심/eSIM</span></button>
+      </li>
+      <li>
+        <button type="button" id="mainMenuChor04" class="menu @@event.firstMenu" aria-controls="mainMenu04" role="tab" aria-selected="@@event.aria-selected"><span>이벤트</span></button>
+      </li>
+      <li>
+        <button type="button" id="mainMenuChor05" class="menu @@support.firstMenu" aria-controls="mainMenu05" role="tab" aria-selected="@@support.aria-selected"><span>고객지원</span></button>
+      </li>
+      <li>
+        <button type="button" id="mainMenuChor06" class="menu @@service.firstMenu" aria-controls="mainMenu06" role="tab" aria-selected="@@service.aria-selected"><span>서비스</span></button>
+      </li>
+    </ul>
+    <div class="mobileMenu">
+      <div class="titleContainer">
+        <div class="titleArea">
+          <div class="currentPageTitle">
+            <button type="button" class="btnGoBack"><span class="ir">이전 페이지로 돌아가기</span></button>
+            <strong class="menuTitle">사용량 조회</strong
+            ><!-- [VOS2차] 결함ID 1122632 헤딩태그 삭제, 클래스 추가 -->
+          </div>
+          <button type="button" class="btnShowAll" aria-expanded="false" title="하위 메뉴 전체보기"></button>
+        </div>
+      </div>
+      <div class="mobileSubMenuList">
+        <div id="mainMenu01" class="mobileSubMenuArea @@mythrifty.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor01">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="../myThrifty/myThriftyMain.html" class="depth02" title="선택 됨">마이알뜰폰 홈</a></li>
+            <!-- [개발] 현재 페이지/선택 된 하위 메뉴에 title="선택 됨" / 클래스 active 초기값 추가 -->
+            <li><a href="javascript:void(0);" id="secondMenu_1_2" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_1_2">가입/계정</a></li>
+            <li><a href="../myThrifty/myThriftyListUsage.html" class="depth02">사용량 조회</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_1_4" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_1_4">요금</a></li>
+            <li><a href="../myThrifty/myThriftyListPlan.html" class="depth02">요금제/부가서비스</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_1_6" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_1_6">회선</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_1_7" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_1_7">분실/일시정지</a></li>
+            <li><a href="../myThrifty/sharingMain.html" id="secondMenu_1_8" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_1_8">데이터 쉐어링</a></li>
+            <!-- [2차] 공통 하위 메뉴 추가 -->
+            <li><a href="../myThrifty/exchangeMain.html" class="depth02">데이터 주고받기</a></li>
+            <li><a href="../myThrifty/myThriftyPrepaidPlanDetail.html" class="depth02">선불 잔액 조회</a></li>
+            <li><a href="../myThrifty/myThriftyListCoupon.html" class="depth02">쿠폰함</a></li>
+            <!-- [운영] KMVNO-3987 메뉴 변경 -->
+            <li><a href="../myThrifty/myThriftyListReview.html" class="depth02">나의 후기</a></li>
+          </ul>
+        </div>
+        <!-- //마이알뜰폰 -->
+
+        <div id="mainMenu02" class="mobileSubMenuArea @@product.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor02">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth02">후불 요금제</a></li>
+            <li><a href="javascript:void(0);" class="depth02">선불 요금제</a></li>
+            <li><a href="javascript:void(0);" class="depth02">부가서비스</a></li>
+            <li><a href="javascript:void(0);" class="depth02">로밍 서비스</a></li>
+            <!-- [운영] KMVNO-3792 20230906 메뉴 추가 -->
+            <li><a href="javascript:void(0);" id="secondMenu_2_5" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_2_5">결합서비스</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_2_6" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_2_6">추천 서비스</a></li>
+            <!-- [운영] KMVNO-3792 20230906 메뉴 추가 -->
+          </ul>
+        </div>
+        <!-- //상품 -->
+
+        <div id="mainMenu03" class="mobileSubMenuArea @@usim.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor03">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="javascript:void(0);" id="secondMenu_3_1" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_3_1">유심구매</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_3_2" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_3_2">유심개통</a></li>
+            <li><a href="javascript:void(0);" class="depth02">자급제단말등록</a></li>
+            <li><a href="javascript:void(0);" id="secondMenu_3_4" class="depth02 hasThirdMenu" role="tab" aria-controls="thirdMenu_3_4">단말</a></li>
+          </ul>
+        </div>
+        <!-- //유심/eSIM -->
+
+        <div id="mainMenu04" class="mobileSubMenuArea @@event.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor04">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth02">진행중 이벤트</a></li>
+            <li><a href="javascript:void(0);" class="depth02">종료된 이벤트</a></li>
+            <li><a href="javascript:void(0);" class="depth02">당첨자 발표</a></li>
+          </ul>
+        </div>
+        <!-- //이벤트 -->
+
+        <div id="mainMenu05" class="mobileSubMenuArea @@support.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor05">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth02">FAQ</a></li>
+            <li><a href="javascript:void(0);" class="depth02">고객상담</a></li>
+            <li><a href="javascript:void(0);" class="depth02">고객센터 안내</a></li>
+            <li><a href="javascript:void(0);" class="depth02">공지사항</a></li>
+            <li><a href="javascript:void(0);" class="depth02">이용가이드</a></li>
+          </ul>
+        </div>
+        <!-- //고객지원 -->
+
+        <div id="mainMenu06" class="mobileSubMenuArea @@service.secondMenu" role="tabpanel" aria-labelledby="mainMenuChor06">
+          <ul class="mobileSubMenu" aria-label="하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth02">마이알뜰폰 소개</a></li>
+            <li><a href="javascript:void(0);" class="depth02">마이알뜰폰 프렌즈</a></li>
+            <li><a href="javascript:void(0);" class="depth02">KT 알뜰폰 사업</a></li>
+            <li><a href="javascript:void(0);" class="depth02">바로유심(편의점)</a></li>
+            <!-- [2차] 20221123 공통 메뉴명 수정 -->
+          </ul>
+        </div>
+        <!-- //서비스 -->
+      </div>
+
+      <div class="mobileThirdMenuList">
+        <div id="thirdMenu_1_2" role="tabpanel" aria-labelledby="secondMenu_1_2" class="mobileThirdMenuArea @@mythrifty.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">가입 정보</a></li>
+            <li><a href="javascript:void(0);" class="depth03">내 계정 정보</a></li>
+            <!-- [2차] 20220919 추가 -->
+            <li><a href="javascript:void(0);" class="depth03">기기변경(eSIM)</a></li>
+            <li><a href="javascript:void(0);" class="depth03">번호 변경</a></li>
+            <li><a href="javascript:void(0);" class="depth03">유심 변경</a></li>
+            <!-- //[2차] 20220919 추가 -->
+          </ul>
+        </div>
+        <!-- //그룹 - 가입/계정 -->
+
+        <div id="thirdMenu_1_4" role="tabpanel" aria-labelledby="secondMenu_1_4" class="mobileThirdMenuArea @@mythrifty.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">요금 조회</a></li>
+            <li><a href="javascript:void(0);" class="depth03">명세서유형변경</a></li>
+            <li><a href="javascript:void(0);" class="depth03">납부방법변경</a></li>
+            <li><a href="javascript:void(0);" class="depth03">소액결제 내역</a></li>
+            <!-- [2차] 20220901 추가 -->
+          </ul>
+        </div>
+        <!-- //그룹 - 요금 -->
+
+        <div id="thirdMenu_1_6" role="tabpanel" aria-labelledby="secondMenu_1_5" class="mobileThirdMenuArea @@mythrifty.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">회선 관리</a></li>
+            <li><a href="javascript:void(0);" class="depth03">회선 추가</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 회선 -->
+
+        <div id="thirdMenu_1_7" role="tabpanel" aria-labelledby="secondMenu_1_7" class="mobileThirdMenuArea @@mythrifty.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">분실/일시정지 관리</a></li>
+            <li><a href="javascript:void(0);" class="depth03">분실 신고</a></li>
+            <li><a href="javascript:void(0);" class="depth03">일시 정지</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 분실/일시정지 -->
+
+        <!-- [2차] 공통 하위 메뉴 추가 -->
+        <div id="thirdMenu_1_8" role="tabpanel" aria-labelledby="secondMenu_1_8" class="mobileThirdMenuArea @@mythrifty.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">데이터쉐어링 결합</a></li>
+            <li><a href="javascript:void(0);" class="depth03">개통신청조회</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 분실/일시정지 -->
+        <!-- //[2차] 공통 하위 메뉴 추가 -->
+        <!-- [운영] KMVNO-3792 20230906 메뉴 추가 -->
+        <div id="thirdMenu_2_5" role="tabpanel" aria-labelledby="secondMenu_2_5" class="mobileThirdMenuArea @@product.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">알뜰폰+알뜰폰 무선결합</a></li>
+            <li><a href="javascript:void(0);" class="depth03">알뜰폰+KT 유/무선결합(본인)</a></li>
+            <li><a href="javascript:void(0);" class="depth03">알뜰폰+KT 유/무선결합(가족)</a></li>
+            <li><a href="javascript:void(0);" class="depth03">결합 내역 조회</a></li>
+          </ul>
+        </div>
+        <!-- //[운영] KMVNO-3792 20230906 메뉴 추가 -->
+        <!-- //결합서비스 -->
+
+        <!-- [운영] 20230525 메뉴 추가 -->
+        <div id="thirdMenu_2_6" role="tabpanel" aria-labelledby="secondMenu_2_6" class="mobileThirdMenuArea @@product.thirdMenu">
+          <!-- [운영] KMVNO-3792 20230906 id값 수정 -->
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">원스토어</a></li>
+            <li><a href="javascript:void(0);" class="depth03">PASS</a></li>
+            <li><a href="javascript:void(0);" class="depth03">휴대폰 결제</a></li>
+          </ul>
+        </div>
+        <!-- //[운영] 20230525 메뉴 추가 -->
+
+        <div id="thirdMenu_3_1" role="tabpanel" aria-labelledby="secondMenu_3_1" class="mobileThirdMenuArea @@usim.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">바로배송유심 주문</a></li>
+            <li><a href="javascript:void(0);" class="depth03">배송주문조회</a></li>
+            <li><a href="javascript:void(0);" class="depth03">바로유심(편의점)</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 유심구매 -->
+
+        <div id="thirdMenu_3_2" role="tabpanel" aria-labelledby="secondMenu_3_2" class="mobileThirdMenuArea @@usim.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">셀프개통(USIM/eSIM)</a></li>
+            <li><a href="javascript:void(0);" class="depth03">워치개통(eSIM)</a></li>
+            <li><a href="javascript:void(0);" class="depth03">개통신청조회</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 유심개통 -->
+
+        <div id="thirdMenu_3_4" role="tabpanel" aria-labelledby="secondMenu_3_4" class="mobileThirdMenuArea @@usim.thirdMenu">
+          <ul class="mobileThirdMenu" aria-label="최하위 메뉴">
+            <li><a href="javascript:void(0);" class="depth03">기기변경</a></li>
+            <li><a href="javascript:void(0);" class="depth03">번호변경</a></li>
+            <li><a href="javascript:void(0);" class="depth03">유심변경</a></li>
+          </ul>
+        </div>
+        <!-- //그룹 - 단말 -->
+      </div>
+    </div>
+    <!-- //2차 GNB 구조변경 -->
+  </nav>
+</div>

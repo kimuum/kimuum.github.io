@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <!-- 청구요금 상세 hidden값 -->
+    <input type="hidden" id="dt_month_type" iweb-data="out" />
+    <input type="hidden" id="dt_curr_month" iweb-data="out" />
+    <input type="hidden" id="dt_before_month" iweb-data="out" />
+    <input type="hidden" id="dt_period_start" iweb-data="out" />
+    <input type="hidden" id="dt_period_end" iweb-data="out" />
+    <input type="hidden" id="dt_amts_total" iweb-data="out" />
+    <input type="hidden" id="dt_items1" iweb-data="out" />
+    <input type="hidden" id="dt_items2" iweb-data="out" />
+    <input type="hidden" id="dt_items3" iweb-data="out" />
+    <input type="hidden" id="dt_items4" iweb-data="out" />
+    <input type="hidden" id="dt_items5" iweb-data="out" />
+    <input type="hidden" id="dt_items6" iweb-data="out" />
+    <input type="hidden" id="dt_items7" iweb-data="out" />
+    <input type="hidden" id="dt_items8" iweb-data="out" />
+    <input type="hidden" id="dt_items9" iweb-data="out" />
+    <input type="hidden" id="dt_items10" iweb-data="out" />
+
+    <input type="hidden" id="dt_summary1" iweb-data="out" />
+    <input type="hidden" id="dt_summary2" iweb-data="out" />
+    <input type="hidden" id="dt_summary3" iweb-data="out" />
+    <input type="hidden" id="dt_summary4" iweb-data="out" />
+    <input type="hidden" id="dt_summary5" iweb-data="out" />
+    <input type="hidden" id="dt_summary6" iweb-data="out" />
+    <input type="hidden" id="dt_summary7" iweb-data="out" />
+    <input type="hidden" id="dt_summary8" iweb-data="out" />
+    <input type="hidden" id="dt_summary9" iweb-data="out" />
+    <input type="hidden" id="dt_summary10" iweb-data="out" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper charge-check">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '청구요금 확인',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="tab-container">
+              <a href="javascript:sendRepPageData($(this).text().trim(), 'AM', 'menu');" class="on" id="curr_month">0월</a>
+              <a href="javascript:sendRepPageData($(this).text().trim(), 'LM', 'menu');" id="before_month">0월</a>
+            </div>
+            <div class="tab-content charge-tab-content">
+              <dl class="charge-info-box">
+                <dt><i class="ic-billing-52"></i></dt>
+                <dd>
+                  <div class="total-price"><em id="amts_total">0</em>&nbsp;원</div>
+                  <div id="period"></div>
+                </dd>
+              </dl>
+              <dl class="charge-info-box detail">
+                <dt>청구요약</dt>
+                <dd>
+                  <ul id="summary" class="charge-detail-box">
+                    <!-- // 배포시 주석처리 start -->
+                    <li>
+                      <div class="first-list list">이동전화<span class="sum">77,000 원</span></div>
+                    </li>
+                    <!-- // 배포시 주석처리 end -->
+                  </ul>
+                </dd>
+              </dl>
+              <dl class="charge-info-box detail">
+                <dt>상세내역</dt>
+                <dd>
+                  <ul id="items">
+                    <!-- 아이콘 변경 클래스 목록 :
+                      이동전화 - type-mobile
+                      인터넷 - type-internet
+                      유선전화 - type-wireline
+                      iptv - type-iptv
+                    -->
+                    <!-- // 배포시 주석처리 start -->
+                    <li class="charge-detail-box">
+                      <dl class="detail-wrap type-mobile">
+                        <dt class="detail-title">이동전화<span class="sum">8,000</span>&nbsp;원</dt>
+                        <dd>
+                          <ul>
+                            <li>
+                              <div class="first-list list">사용요금<span class="sum">89,000&nbsp;원</span></div>
+                              <p class="list">월정액<span class="sum">69,000</span>&nbsp;원</p>
+                              <p class="list">T메모링 프리미엄<span class="sum">1,500</span>&nbsp;원</p>
+                              <p class="list">T안심콜라이트<span class="sum">1,000</span>&nbsp;원</p>
+                              <p class="list">컬러링<span class="sum">900</span>&nbsp;원</p>
+                              <p class="list">인증서 휴대폰 저장<span class="sum">900</span>&nbsp;원</p>
+                              <p class="list">oksusu 안심팩(할인)<span class="sum">5,000</span>&nbsp;원</p>
+                              <p class="list">멜론콘텐츠<em class="vat">&nbsp;*</em><span class="sum">14,300</span>&nbsp;원</p>
+                              <p class="list">소액결제_다날<em class="vat">&nbsp;*</em><span class="sum">18,981</span>&nbsp;원</p>
+                            </li>
+                            <li>
+                              <div class="first-list list">요금할인<span class="sum">-34,801&nbsp;원</span></div>
+                              <p class="list">온가족플랜_이동<span class="sum">-20,000</span>&nbsp;원</p>
+                              <p class="list">선택약정할인<span class="sum">-13,800</span>&nbsp;원</p>
+                              <p class="list">TB끼리 TV플러스할인<span class="sum">-1,000</span>&nbsp;원</p>
+                              <p class="list">원단위조정금액<em class="vat">&nbsp;*</em><span class="sum">-1</span>&nbsp;원</p>
+                            </li>
+                          </ul>
+                        </dd>
+                      </dl>
+                    </li>
+                    <!-- // 배포시 주석처리 end -->
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="alert-text-box">
+              <p class="alert-text"><span>*</span> 항목은 부가세 제외 항목입니다.</p>
+              <p class="alert-text none-asterisk"><span>#</span> 표시 항목은 당사에서 청구 대행하는 타사 요금입니다.</p>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        initUIComponents(true); // 초기화 function
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var dt_curr_month = getUrlParameter('dt_curr_month'); // 현재월
+
+          /*@build-time*/ dt_curr_month = '04';
+
+          document.getElementById('curr_month').innerText = dt_curr_month + '월';
+        } catch (e) {}
+
+        try {
+          var dt_before_month = getUrlParameter('dt_before_month'); // 이전월
+
+          /*@build-time*/ dt_before_month = '03';
+
+          document.getElementById('before_month').innerText = dt_before_month + '월';
+        } catch (e) {}
+
+        try {
+          // 수정 진행중 ===============================================  사용기간 세팅 완료.
+
+          var dt_month_type = getUrlParameter('dt_month_type'); // 현재/이전월 구분자
+          var dt_period = '';
+
+          /*@build-time*/ dt_curr_month = '02';
+          /*@build-time*/ dt_before_month = '01';
+          /*@build-time*/ dt_month_type = 'AM';
+
+          //이전월 체크
+          if (dt_month_type == 'LM') {
+            document.getElementById('curr_month').setAttribute('class', '');
+            document.getElementById('before_month').setAttribute('class', 'on');
+
+            if (parseInt(dt_before_month) == 1 || parseInt(dt_before_month) == 12) {
+              var now = new Date();
+              var yyyy = now.getFullYear() - 1;
+              if (yyyy < 0) yyyy = '0000';
+
+              var mm;
+              if (parseInt(dt_before_month) == 1) mm = '12';
+              if (parseInt(dt_before_month) == 12) mm = '11';
+
+              dt_period = getLastDay(yyyy + mm, '.');
+            } else {
+              dt_period = getCurrYearLastDay(parseInt(dt_before_month - 1), '.');
+            }
+          } else {
+            document.getElementById('curr_month').setAttribute('class', 'on');
+            document.getElementById('before_month').setAttribute('class', '');
+
+            if (parseInt(dt_curr_month) == 1) {
+              var now = new Date();
+              var yyyy = now.getFullYear() - 1;
+              if (yyyy < 0) yyyy = '0000';
+              var mm = '12';
+
+              dt_period = getLastDay(yyyy + mm, '.');
+            } else {
+              dt_period = getCurrYearLastDay(parseInt(dt_curr_month - 1), '.');
+            }
+          }
+
+          var dt_period_start = dt_period.substr(0, dt_period.length - 3) + (dt_period == '' ? '' : '.01');
+          var dt_period_end = dt_period;
+
+          /*@build-time*/ dt_period_start = '2024.04.01';
+          /*@build-time*/ dt_period_end = '2024.04.31';
+
+          document.getElementById('period').innerText = dt_period_start + ' ~ ' + dt_period_end;
+          // ========================================================
+        } catch (e) {}
+
+        try {
+          var dt_amts_total = getUrlParameter('dt_amts_total'); // 총금액
+
+          /*@build-time*/ dt_amts_total = '109570';
+
+          document.getElementById('amts_total').innerText = formatCommas(parseInt(dt_amts_total));
+        } catch (e) {}
+
+        try {
+          // 생성용 html
+          var makeHTML = '';
+          var makeSummaryHTML = '';
+          var depth1sum = 0;
+
+          /*@build-time*/ var itemArray1 = [];
+          /*@build-time*/ var itemArray2 = [];
+          //   itemArray1.push(
+          //  '이동전화|통신서비스요금|월정액^51000:통신서비스 장애 보상*^-3264:선택약정할인^-12750:온가족프리이동전화할인^-3000:TB끼리 TV플러스할인^-2000:원단위조정금액*^-1:부가세총액*^6880:할인부가세*^-500:선택약정할인 부가세*^-1275||이동전화|부가사용금액|T메모링^900:컬러링^900:로그인강화서비스^1000:T신용지키미^3000:마이 스마트콜^2000:SK텔링크국제통화료^10000||이동전화|단말기할부금|단말기분할상환금*^37530:단말기분할상환수수료*^3860',
+          //   );
+
+
+          //청구요약 만들기
+          for (var i = 1; i <= 10; i++) {
+            var tempStr = getUrlParameter('dt_summary' + i);
+
+            /*@build-time*/ var tempStr = itemArray2[i - 1];
+
+            if (tempStr != '') {
+              var dt_summary_arr = tempStr.split('|');
+              makeSummaryHTML += '<li><div class="first-list list">' + dt_summary_arr[0] + '<span class="sum">' + formatCommas(parseInt(dt_summary_arr[1])) + '원</span></div></li>';
+            }
+          }
+
+          //상세내역 만들기
+          for (var i = 1; i <= 10; i++) {
+            depth1sum = 0;
+            var tempStr = getUrlParameter('dt_items' + i);
+
+            /*@build-time*/ var tempStr = itemArray1[i - 1];
+
+            if (tempStr != '') {
+              var dt_items_arr = tempStr.split('||');
+
+              makeHTML += '<li class="charge-detail-box">';
+              makeHTML += '<dl class="detail-wrap type{typeno}">';
+              makeHTML += '<dt class="detail-title">{depth1name}<span class="sum">{depth1sum}</span>&nbsp;원</dt>';
+              makeHTML += '<dd>';
+              makeHTML += '<ul>';
+
+              //분류별
+              for (var j = 0; j < dt_items_arr.length; j++) {
+                var dt_item_depth_arr = dt_items_arr[j].split('|');
+                //대분류
+                var depth1 = dt_item_depth_arr[0];
+                //중분류
+                var depth2 = dt_item_depth_arr[1];
+                //소분류,값
+                var depth3 = dt_item_depth_arr[2];
+
+                var dt_items_depth3_arr = dt_item_depth_arr[2].split(':');
+                makeHTML += '<li>';
+                makeHTML += '<div class="first-list list">' + depth2 + '<span class="sum">{depth2sum}&nbsp;원</span></div>';
+
+                var depth2_sum = 0;
+                for (var k = 0; k < dt_items_depth3_arr.length; k++) {
+                  var dt_items_depth3_value_arr = dt_items_depth3_arr[k].split('^');
+
+                  var depth3_name = dt_items_depth3_value_arr[0];
+                  var depth3_won = dt_items_depth3_value_arr[1];
+
+                  depth2_sum += parseInt(depth3_won);
+                  // depth1sum += parseInt(depth3_won);
+
+                  if (depth3_name.lastIndexOf('*') == depth3_name.length - 1) {
+                    depth3_name = depth3_name.substr(0, depth3_name.length - 1) + '<em class="vat">&nbsp;*</em>';
+                  }
+
+                  if (depth3_name.lastIndexOf('#') == depth3_name.length - 1) {
+                    depth3_name = depth3_name.substr(0, depth3_name.length - 1) + '<em class="hash">#</em>';
+                  }
+
+                  makeHTML += '<p class="list">' + depth3_name + '<span class="sum">' + formatCommas(parseInt(depth3_won)) + '</span>&nbsp;원</p>';
+                }
+
+                //중분류 합계 설정
+                makeHTML = makeHTML.replace('{depth2sum}', formatCommas(parseInt(depth2_sum)));
+                makeHTML += '</li>';
+              }
+
+              //대분류 이름 / 합계 설정
+              makeHTML = makeHTML.replace('{depth1sum}', formatCommas(parseInt(depth1sum)));
+              makeHTML = makeHTML.replace('{depth1name}', depth1);
+
+              //대분류 아이콘 설정
+              switch (depth1) {
+                case '이동전화':
+                  makeHTML = makeHTML.replace('{typeno}', '-mobile');
+                  break;
+                case '인터넷':
+                  makeHTML = makeHTML.replace('{typeno}', '-internet');
+                  break;
+                case '유선전화':
+                  makeHTML = makeHTML.replace('{typeno}', '-wireline');
+                  break;
+                case 'IPTV':
+                  makeHTML = makeHTML.replace('{typeno}', '-iptv');
+                  break;
+                // default:
+                //   makeHTML = makeHTML.replace('{typeno}', '0');
+                //   break;
+              }
+
+              //makeSummaryHTML += "<li><div class=\"claimBox\">" + depth1 + "<span class=\"totalSum\">" + formatCommas(parseInt(depth1sum)) + "<sub>원</sub></span></div></li>";
+              makeHTML += '</ul>';
+              makeHTML += '</dd>';
+              makeHTML += '</dl>';
+              makeHTML += '</li>';
+            }
+          }
+
+          //alert(makeHTML);
+          // 생성한 dom 내용 세팅.
+          document.getElementById('items').innerHTML = makeHTML;
+          document.getElementById('summary').innerHTML = makeSummaryHTML;
+        } catch (e) {}
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+
+        // 화면저장버튼 활성화
+        $('#btn_screen_save').prop('disabled', false);
+      }
+    </script>
+  </body>
+</html>

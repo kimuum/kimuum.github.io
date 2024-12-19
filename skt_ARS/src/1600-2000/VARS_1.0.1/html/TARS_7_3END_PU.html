@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <!-- 멘트관련 텍스트 -->
+    <input type="hidden" id="transfer_text" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '상담사 연결',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-customer-center">
+                <p class="info-title">상담사를 연결해 드리겠습니다.</p>
+                <p class="info-title-desc center">상담 연결 시 보이는 ARS가 종료됩니다.</p>
+              </div>
+              <div class="service-button-box">
+                <div class="button-box">
+                  <button type="button" class="btn btn-primary" onclick="sendCall('0', 'menu')">확인</button>
+                </div>
+              </div>
+              <div class="notice-b-box black mt-24">
+                <p>상담사 연결시 서비스 품질관리를 위해 통화내용이 녹음되오며, 본인이 아니면 업무처리에 제한을 받을 수 있습니다.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 페이지 로딩 후 11초 timer
+        setTimer(
+          14,
+          function () {
+            // 상담원 호출.
+            sendCall('0', 'menu');
+          },
+          null,
+        );
+      });
+
+      // t 전화 기본화면 처리
+      function sendCall(type, txt) {
+        // 자동 상담사 연결 timer 중지 (wforcus.js)
+        clearInterval(errInterval);
+
+        // report page data 요청.
+        sendRepPageData('agent', type, txt);
+
+        setTimeout(function () {
+          changeoverPhone(false);
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

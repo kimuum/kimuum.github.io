@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "약관 등록" , "headProjectName": "| 기본 정보 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유 클래스 : basicAddTerms -->
+    <div class="wrap basicAddTerms">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>약관 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>기본 정보</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>약관 정보 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>약관 등록</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer edit boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>승인 요청</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">약관 정보</h2>
+                  </div>
+                </div>
+                <!-- [2차BO] 수정 -->
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        약관 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">약관명</th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" value="-" title="약관명" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">필수여부</th>
+                          <td colspan="3">
+                            <!-- [BO 운영] KMVNO-3792 20230920 수정 -->
+                            <div class="fieldRadio">
+                              <div class="fieldForm">
+                                <div class="radio">
+                                  <input type="radio" id="input-id-01" name="radio" checked />
+                                  <label for="input-id-01" class="radioLabel"><span>필수</span></label>
+                                </div>
+                                <div class="radio">
+                                  <input type="radio" id="input-id-02" name="radio" />
+                                  <label for="input-id-02" class="radioLabel"><span>선택</span></label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">설정 조건</th>
+                          <!-- [BO 운영] KMVNO-3792 20230920 수정 -->
+                          <td colspan="3">
+                            <div class="fieldCheckbox fieldNear">
+                              <div class="fieldForm">
+                                <div class="checkbox">
+                                  <input type="checkbox" id="inputCheck01" />
+                                  <label for="inputCheck01" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>공통(전체 선택)</span>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="inputCheck02" />
+                                  <label for="inputCheck02" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>신규가입(셀프개통)</span>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="inputCheck03" />
+                                  <label for="inputCheck03" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>번호이동(셀프개통)</span>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="inputCheck04" />
+                                  <label for="inputCheck04" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>알뜰폰+알뜰폰 무선결합</span>
+                                  </label>
+                                </div>
+                                <div class="checkbox">
+                                  <input type="checkbox" id="inputCheck05" />
+                                  <label for="inputCheck05" class="checkboxLabel">
+                                    <span class="checkIcon"></span>
+                                    <span>알뜰폰+KT 유/무선결합</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <!-- //[BO 운영] KMVNO-3792 20230920 수정 -->
+                        </tr>
+                        <tr>
+                          <th scope="row">개정일</th>
+                          <td>
+                            <div class="field fieldDatepicker" id="datepicker-change">
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">노출일</th>
+                          <td>
+                            <div class="field fieldDatepicker" id="datepicker-show">
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">등록일</th>
+                          <td colspan="3">-</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">약관 내용</th>
+                          <td colspan="3">
+                            <div class="termsContainer">
+                              <div class="termsGuideWrap">
+                                <div class="termsGuide">
+                                  <strong class="title">약관 에디터 가이드</strong>
+                                  <ol class="option">
+                                    <li class="dotted">글꼴 : 기본값</li>
+                                    <li class="dotted">큰 제목 크기 : 18(B)</li>
+                                    <li class="dotted">중간 제목 크기 : 16</li>
+                                    <li class="dotted">소 제목 크기 : 14</li>
+                                    <li class="dotted">본문 크기 : 12</li>
+                                  </ol>
+                                </div>
+                                <div class="termsExample">
+                                  <strong class="title">[예시]</strong>
+                                  <div class="preview">
+                                    <p class="font18">이용약관</p>
+                                    <p class="font16">제 1장 총칙</p>
+                                    <p class="font14">제 1 조(목적)</p>
+                                    <p class="font12">이 약관은 주식회사 OOOO(이하 “회사”라 합니다.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="highTextArea">에디터 영역입니다.</div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- //[2차BO] 수정 -->
+              </div>
+              <!-- // Contents -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">사업자(마스터) 승인</h2>
+                    <!-- [2차BO] 수정 -->
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        사업자(마스터) 승인
+                      </caption>
+                      <!-- [2차BO] 수정 -->
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">승인/거절 일시</th>
+                          <!-- [BO 운영] KMVNO-3792 20230920 수정 -->
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+
+              <!-- [2차BO] 추가 : 정보 변경 시 하단에 노출 -->
+              <div class="contents" style="display: none">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">변경 전/후 코멘트</h2>
+                    <p class="addExplain">
+                      <strong class="required"><span>필수입력</span></strong
+                      >변경 전/후 내용은 간략하게 입력해주세요.
+                    </p>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        변경 전/변경 후 코멘트
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">변경 전</th>
+                          <td>
+                            <div class="fieldTextarea">
+                              <div class="textarea">
+                                <textarea name="" id="" cols="30" rows="10" title="변경 전 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                <!-- [2차BO] 수정 -->
+                                <p class="textCounter"><strong>0</strong> / 4000자</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">변경 후</th>
+                          <td>
+                            <div class="fieldTextarea">
+                              <div class="textarea">
+                                <textarea name="" id="" cols="30" rows="10" title="변경 후 코멘트" placeholder="내용을 입력해주세요."></textarea>
+                                <!-- [2차BO] 수정 -->
+                                <p class="textCounter"><strong>0</strong> / 4000자</p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- //[2차BO] 추가 : 정보 변경 시 하단에 노출 -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        // [2차BO] 달력 추가
+        if ($('#datepicker-change').length > 0) {
+          getDatepicker('#datepicker-change', 'calendar');
+        }
+        if ($('#datepicker-show').length > 0) {
+          getDatepicker('#datepicker-show', 'calendar');
+        }
+      });
+    </script>
+  </body>
+</html>

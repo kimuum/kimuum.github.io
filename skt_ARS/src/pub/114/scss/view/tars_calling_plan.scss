@@ -1,0 +1,145 @@
+.calling-plan-container {
+  .current-pee-box {
+    text-align: center;
+    .current-pee-title {
+      @include font(2.2rem, 700, $black, 2.86rem);
+    }
+    .current-pee-price {
+      margin-top: 0.4rem;
+      span {
+        @include font(1.8rem, 400, $black, normal);
+        letter-spacing: -0.09rem;
+      }
+      .current-pee-price01 {
+        margin-right: 0.6rem;
+        color: $primary;
+        font-weight: 700;
+        letter-spacing: 0;
+      }
+    }
+    .current-pee-date {
+      margin-top: 0.6rem;
+      @include font(1.4rem, 400, rgba($black, 0.7), normal);
+      letter-spacing: -0.07rem;
+      span {
+        margin-left: 0.4rem;
+        font-weight: 500;
+      }
+    }
+    .current-pee-list {
+      margin-top: 1.9rem;
+      @include flex(row, flex-start, flex-start);
+      align-items: stretch;
+
+      .pee-item {
+        flex: 1;
+        padding: 1.4rem 0.5rem 1.5rem;
+        margin-right: 1rem;
+        @include bgBoxGray($bg-gray, 0.6rem);
+        [class^='ic-'] {
+          margin: 0 auto 1rem;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+        .pee-item-img {
+          margin-bottom: 1rem;
+          img {
+            width: 5.2rem;
+            height: 5.2rem;
+          }
+        }
+        .pee-item-text {
+          @include flex(column, center, center);
+          margin-top: 1rem;
+          &.highlight {
+            .data {
+              color: $primary;
+            }
+          }
+          .label {
+            margin-bottom: 0.3rem;
+            @include font(1.4rem, 400, rgba($black, 0.7), normal);
+            letter-spacing: -0.07rem;
+          }
+          .data {
+            @include font(1.6rem, 500, $black, 2.1rem);
+            letter-spacing: -0.08rem;
+          }
+        }
+      }
+    }
+  }
+  .current-pee-button-box {
+    @include flex(row, flex-start, flex-start);
+    margin-top: 2rem;
+    button {
+      flex: 1;
+      & + button {
+        margin-left: 0.8rem;
+      }
+    }
+    .btn-change-fee {
+      &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: bottom;
+        width: 2.4rem;
+        height: 2.4rem;
+        margin-right: 0.4rem;
+        background: url(../images/icon/ic_headphone_b.png) no-repeat center / 100% auto;
+      }
+    }
+  }
+  .pee-additional-events {
+    margin: 3.6rem 0 5.4rem;
+    text-align: center;
+
+    .pee-additional-events-cont {
+      padding: 1.4rem 3rem;
+      margin-bottom: 1rem;
+      @include bgBoxGray;
+    }
+    .pee-additional-events-title {
+      @include font(1.6rem, 700, $primary, normal);
+      letter-spacing: -0.032rem;
+    }
+    .pee-additional-events-text {
+      margin-top: 1rem;
+      @include font(1.4rem, 400, $black, normal);
+      letter-spacing: -0.032rem;
+      strong {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+}
+
+@media #{$mobile_320} {
+  .calling-plan-container {
+    .current-pee-box {
+      .current-pee-list {
+        .pee-item {
+          .pee-item-text {
+            .data {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+    .current-pee-button-box {
+      button {
+        font-size: 1.4rem;
+      }
+      .btn-change-fee {
+        &::before {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

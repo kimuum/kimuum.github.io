@@ -1,0 +1,9 @@
+<div class="specs-row">
+  <div class="specs-header">@@specsHeader</div>
+  <ul class="specs-list">
+    <!-- prettier-ignore -->
+    @@for(var i = 0; i < list.length; i++) {
+      @@include("specs_list.html", `+(JSON.stringify(list[i]))+`)
+    }
+  </ul>
+</div>

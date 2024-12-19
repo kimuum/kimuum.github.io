@@ -1,0 +1,11 @@
+<!-- prettier-ignore -->
+@@if(badgeLabel) {
+<!-- [접근성] 속성 추가 -->
+}
+<span class="badge-text @@badgeColor @@property">
+  <!-- [접근성] 속성 추가 -->
+  <span class="text" @@if(badgeLabel) {aria-hidden="true" }>@@badgeText</span>
+  @@if(badgeLabel) {
+  <span class="ir-text">@@badgeLabel</span>
+  }
+</span>

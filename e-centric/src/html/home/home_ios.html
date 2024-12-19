@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | Home"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-home
+      -->
+      <main class="main-container page-home">
+        <!-- [240130] 디자인 변경으로 인한 구조 수정 -->
+        <div class="header-container">
+          <div class="header-area">
+            <div class="header-box align-between">
+              <div class="header-box-left">
+                <div class="logo-box">
+                  <h1 class="logo">
+                    <img src="../../assets/images/home/logo_ecentric.svg" alt="LG e-Centric" />
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="notification-container">
+              <!-- prettier-ignore -->
+              @@include("notification.html", {
+                "text" : "공지사항 제목이 표시됩니다. 공지사항 제목이 표시됩니다. 공지사항 제목이 표시됩니다."
+              })
+            </div>
+
+            <div class="charge-container">
+              <div class="charge-area">
+                <div class="charge-top">
+                  <h2 class="ir">충전</h2>
+                </div>
+
+                <div class="charge-middle">
+                  <!-- 충전 중 (완속) -->
+                  <div class="charge-state-container">
+                    <div class="charge-state-area">
+                      <div class="charge-state-top">
+                        <div class="message-box">
+                          <!-- [240411] 추가 클래스, 아이콘, 텍스트 변경 -->
+                          <span class="text-box large">
+                            <i class="ic ic-charging"></i>
+                            충전 중
+                          </span>
+                        </div>
+
+                        <div class="progress-box">
+                          <!-- [240411] 마크업 변경, 이미지 적용 -->
+                          <img src="../../assets/images/home/charge_arrow.webp" alt="충전 중" aria-hidden="true" />
+                        </div>
+                      </div>
+
+                      <div class="charge-state-middle">
+                        <div class="state-info-box">
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 시간</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">hh:mm 시간경과</span>
+                              <span class="sub-text">/ 총 hh:mm</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전량</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">NN% 완료</span>
+                              <span class="sub-text">/ 총 NN%</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 금액</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">12,345원</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="charge-state-bottom">
+                        <div class="button-box">
+                          <button type="button" class="btn-text btn-charge-view">
+                            <span>충전 정보 보기</span>
+                            <i class="ic ic-arrow-right-w"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- [240415] 충전 중 (급속) -->
+                  <div class="charge-state-container">
+                    <div class="charge-state-area">
+                      <div class="charge-state-top">
+                        <div class="message-box">
+                          <!-- [240411] 추가 클래스, 아이콘, 텍스트 변경 -->
+                          <span class="text-box large">
+                            <i class="ic ic-charging"></i>
+                            <!-- [240425] 엘리먼트 추가 -->
+                            <span class="highlight">75%</span>
+                            충전 중
+                          </span>
+                        </div>
+
+                        <div class="progress-box">
+                          <!-- [240415] 급속 progress bar -->
+                          <div class="progress-bar-box">
+                            <div class="progress-bar-inner" style="width: 20%"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="charge-state-middle">
+                        <div class="state-info-box">
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 시간</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">hh:mm 시간경과</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전량</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">N,NNN Kwh 충전</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 금액</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">12,345원</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="charge-state-bottom">
+                        <div class="button-box">
+                          <button type="button" class="btn-text btn-charge-view">
+                            <span>충전 정보 보기</span>
+                            <i class="ic ic-arrow-right-w"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 충전 완료 -->
+                  <div class="charge-state-container">
+                    <div class="charge-state-area">
+                      <div class="charge-state-top">
+                        <div class="button-box">
+                          <!-- 닫기 버튼 클릭 시 .charge-state-container 숨김 -->
+                          <button type="button" class="btn-close" title="닫기">
+                            <i class="ic ic-close-white"></i>
+                          </button>
+                        </div>
+
+                        <div class="message-box">
+                          <!-- [240411] 추가 클래스, 아이콘 변경 -->
+                          <span class="text-box medium"><i class="ic ic-charging"></i>충전이 완료되었습니다. </span>
+                          <span class="text-box small">원활한 충전소 사용을 위해 출차해주세요 :)</span>
+                        </div>
+                      </div>
+
+                      <div class="charge-state-middle">
+                        <div class="state-info-box">
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 시간</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">hh:mm 시간경과</span>
+                              <span class="sub-text">/ 총 hh:mm</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전량</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">NN% 완료</span>
+                              <span class="sub-text">/ 총 NN%</span>
+                            </div>
+                          </div>
+
+                          <div class="state-info-list" role="text">
+                            <div class="label-box">
+                              <span>충전 금액</span>
+                            </div>
+                            <div class="data-box">
+                              <span class="data">12,345원</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="charge-state-bottom">
+                        <div class="button-box">
+                          <button type="button" class="btn-text btn-charge-view">
+                            <span>충전 정보 보기</span>
+                            <i class="ic ic-arrow-right-w"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- [240130] 디자인 변경으로 인한 구조/텍스트 수정 -->
+                  <div class="charge-button-box">
+                    <div class="charge-button-left">
+                      <!-- [접근성] button 태그에서 div 태그로 변경, role 속성 추가 -->
+                      <div role="button" class="charge-button qr">
+                        <div class="label-box">
+                          <span class="icon">
+                            <i class="ic ic-qr"></i>
+                          </span>
+                          <span class="label">QR 스캔</span>
+                        </div>
+                        <div class="desc-box">
+                          충전소의 QR을<br />
+                          스캔해보세요
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="charge-button-right">
+                      <div role="button" class="charge-button report">
+                        <div class="label-box">
+                          <span class="icon">
+                            <i class="ic ic-report"></i>
+                          </span>
+                          <span class="label">충전 리포트</span>
+                        </div>
+                        <div class="desc-box">
+                          내 충전 습관을<br />
+                          확인해보세요
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-container">
+              <div class="article-area">
+                <div class="article-top">
+                  <div class="title-box">
+                    <h2>즉시 충전</h2>
+                  </div>
+
+                  <div class="button-box">
+                    <button type="button" class="btn-refresh">
+                      <i class="ic ic-refresh"></i>
+                      <span>새로고침</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="article-middle">
+                  <div class="island-box">
+                    <div class="island">
+                      <div class="instant-charging-box">
+                        <div class="instant-charging-top">
+                          <div class="label-box">서울역 LG충전소</div>
+                          <div class="distance-box">
+                            <i class="ic ic-route-fill"></i>
+                            <span>10m</span>
+                          </div>
+                        </div>
+
+                        <div class="instant-charging-middle" role="list">
+                          <!-- [접근성] button 태그 클래스명 오타 수정 (small) -->
+                          <!-- prettier-ignore -->
+                          @@loop("chargeDeviceList.html", [ 
+                          {
+                            "iconClass" : "ic-device-rapidity-fill",
+                            "ir" : "",
+                            "label" : "급속",
+                            "count" : "5",
+                            "deviceInfo" : [
+                              {
+                                "info" : "DC콤보"
+                              },
+                              {
+                                "info" : "DC데모"
+                              },
+                              {
+                                "info" : "NACS"
+                              },
+                            ],
+                            "badge": [
+                              { 
+                                "iconClass" : "",
+                                "badgeColor": "confirm",
+                                "badgeText" : "사용 가능",
+                                "badgeLabel": "사용 가능",
+                                "property"  : "small"
+                              }
+                            ]
+                          },
+                          {
+                            "iconClass" : "ic-device-slow-fill",
+                            "ir" : "",
+                            "label" : "완속",
+                            "count" : "15",
+                            "deviceInfo" : [
+                              {
+                                "info" : "A3상"
+                              },
+                              {
+                                "info" : "완속"
+                              },
+                            ],
+                            "badge": [
+                              { 
+                                "iconClass" : "",
+                                "badgeColor": "secondary",
+                                "badgeText" : "사용 불가",
+                                "badgeLabel": "사용 불가",
+                                "property"  : "small"
+                              }
+                            ]
+                          }
+                          ])
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 즉시 충전 권한 미허용 case -->
+                    <div class="island">
+                      <div class="instant-charging-box">
+                        <p class="description">
+                          위치 접근 권한을 허용하고<br />
+                          내 주변 가장 가까운 충전소 정보를 확인해 보세요.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="article-container">
+              <div class="article-area">
+                <div class="article-top">
+                  <div class="title-box">
+                    <h2>충전소 바로가기</h2>
+                  </div>
+                </div>
+
+                <div class="article-middle">
+                  <div class="island-box">
+                    <div class="island half">
+                      <div class="go-charge-station-box">
+                        <div class="go-charge-station-middle">
+                          <!-- [240503] 마크업 순서 수정 -->
+                          <div class="favorite-box">
+                            <!-- prettier-ignore -->
+                            @@include("btnFavorite.html", {
+                              "active" : true,
+                              "label"  : "favorite1-label",
+                              "desc"   : {
+                                "id"   : "favorite1",
+                                "text" : "즐겨찾기 서울 특별시 강남논현빌딩 충전소",
+                              }
+                            })
+                          </div>
+
+                          <div class="name-box">
+                            <a href="javascript:void(0);" class="name-link">서울 특별시 강남논현빌딩 충전소</a>
+                          </div>
+
+                          <div class="distance-box">
+                            <span>500m</span>
+                          </div>
+
+                          <!--
+                            enabled : 사용 가능 충전소가 있는 경우
+                          -->
+                          <!-- [240508] 마크업 순서 수정 -->
+                          <div class="status-box enabled">
+                            <span>급속 3, 완속 2 사용가능</span>
+                          </div>
+                        </div>
+
+                        <div class="go-charge-station-bottom">
+                          <button type="button" class="btn-get-directions">
+                            <i class="ic ic-route-fill"></i>
+                            <span class="btn-text-box">길찾기</span>
+                            <span class="btn-name-box ir-text">서울 특별시 강남논현빌딩 충전소</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="island half">
+                      <div class="go-charge-station-box">
+                        <div class="go-charge-station-middle">
+                          <!-- [240503] 마크업 순서 수정 -->
+                          <div class="favorite-box">
+                            <!-- prettier-ignore -->
+                            @@include("btnFavorite.html", {
+                              "active" : true,
+                              "label"  : "favorite2-label",
+                              "desc"   : {
+                                "id"   : "favorite2",
+                                "text" : "즐겨찾기 서울 특별시 강남논현빌딩 충전소",
+                              }
+                            })
+                          </div>
+
+                          <div class="name-box">
+                            <a href="javascript:void(0);" class="name-link">서울 특별시 강남논현빌딩 충전소</a>
+                          </div>
+
+                          <div class="distance-box">
+                            <span>500m</span>
+                          </div>
+
+                          <!-- [240508] 마크업 순서 수정 -->
+                          <div class="status-box">
+                            <span>급속 0, 완속 0</span>
+                          </div>
+                        </div>
+
+                        <div class="go-charge-station-bottom">
+                          <button type="button" class="btn-get-directions">
+                            <i class="ic ic-route-fill"></i>
+                            <span class="btn-text-box">길찾기</span>
+                            <span class="btn-name-box ir-text">서울 특별시 강남논현빌딩 충전소</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="island half">
+                      <div class="go-charge-station-box">
+                        <div class="go-charge-station-middle">
+                          <!-- [240503] 마크업 순서 수정 -->
+                          <div class="favorite-box">
+                            <!-- prettier-ignore -->
+                            @@include("btnFavorite.html", {
+                              "active" : false,
+                              "label"  : "favorite3-label",
+                              "desc"   : {
+                                "id"   : "favorite3",
+                                "text" : "즐겨찾기 서울 특별시 강남논현빌딩 충전소",
+                              }
+                            })
+                          </div>
+
+                          <div class="name-box">
+                            <a href="javascript:void(0);" class="name-link">서울 특별시 강남논현빌딩 충전소</a>
+                          </div>
+
+                          <div class="distance-box">
+                            <span>500m</span>
+                          </div>
+
+                          <!--
+                            enabled : 사용 가능 충전소가 있는 경우
+                          -->
+                          <!-- [240508] 마크업 순서 수정 -->
+                          <div class="status-box enabled">
+                            <span>급속 3, 완속 2 사용가능</span>
+                          </div>
+                        </div>
+
+                        <div class="go-charge-station-bottom">
+                          <button type="button" class="btn-get-directions">
+                            <i class="ic ic-route-fill"></i>
+                            <span class="btn-text-box">길찾기</span>
+                            <span class="btn-name-box ir-text">서울 특별시 강남논현빌딩 충전소</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="island half">
+                      <div class="go-charge-station-box">
+                        <div class="go-charge-station-middle">
+                          <!-- [240503] 마크업 순서 수정 -->
+                          <div class="favorite-box">
+                            <!-- prettier-ignore -->
+                            @@include("btnFavorite.html", {
+                              "active" : false,
+                              "label"  : "favorite4-label",
+                              "desc"   : {
+                                "id"   : "favorite4",
+                                "text" : "즐겨찾기 서울 특별시 강남논현빌딩 충전소",
+                              }
+                            })
+                          </div>
+
+                          <div class="name-box">
+                            <a href="javascript:void(0);" class="name-link">서울 특별시 강남논현빌딩 충전소</a>
+                          </div>
+
+                          <div class="distance-box">
+                            <span>500m</span>
+                          </div>
+
+                          <!-- [240508] 마크업 순서 수정 -->
+                          <div class="status-box">
+                            <span>급속 0, 완속 0</span>
+                          </div>
+                        </div>
+
+                        <div class="go-charge-station-bottom">
+                          <button type="button" class="btn-get-directions">
+                            <i class="ic ic-route-fill"></i>
+                            <span class="btn-text-box">길찾기</span>
+                            <span class="btn-name-box ir-text">서울 특별시 강남논현빌딩 충전소</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- [240425] gnb 마크업 위치 수정 -->
+        <!-- prettier-ignore -->
+        @@include("gnb.html", {
+          "list" : [
+            {
+              "type"     : "home",
+              "text"     : "홈",
+              "property" : "active",
+              "alarm"      : false
+            },
+            {
+              "type"     : "search",
+              "text"     : "충전소 찾기",
+              "property" : "",
+              "alarm"      : false
+            },
+            {
+              "type"     : "menu",
+              "text"     : "메뉴",
+              "property" : "",
+              "alarm"      : true
+            },
+          ]
+        })
+      </main>
+
+      <!-- [240130] gnb가 있는 경우 토스트 팝업 위치 값 적용 테스트를 위한 구조 추가 -->
+      <!--toast popup start -->
+      <!-- prettier-ignore -->
+      @@include("toastPopup.html", {
+        "id" : "home-toast-popup",
+        "align" : "bottom",
+        "toastContent" : {
+          "id" : "home-toast-popup-message",
+          "text" : "TEXT TEXT TEXT TEXT TEXT"
+        }
+      })
+    </div>
+  </body>
+</html>

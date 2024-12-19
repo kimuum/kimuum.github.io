@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금제(셀룰러) 설정 안내", "titleHidden": "<!-- [운영] 20230113 수정 -->" })
+  <body>
+    <div class="buttonArea">
+      <!--<button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>워치 페어링 방법 안내</span></button> popupSmartWatchConfirm.html 로 합침 -->
+      <button type="button" class="btn" id="btnIDCellular" onclick="togglePopup('btnIDCellular', 'popupWatchCellular')"><span>요금제(셀룰러) 설정 안내</span></button>
+    </div>
+    <div class="popup" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">워치 페어링 방법 안내</strong>
+          <!-- [운영] 20230113 수정 -->
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="terminalContainer popupPairing">
+            <!-- [운영] 20221229 수정 클래스 추가 -->
+            <div class="tabList" role="tablist">
+              <button type="button" id="appleAnchor" class="tabButton" aria-controls="appleContent" role="tab" aria-selected="true"><span>APPLE</span></button>
+              <button type="button" id="samsungAnchor" class="tabButton" aria-controls="samsungContent" role="tab" aria-selected="false"><span>SAMSUNG</span></button>
+            </div>
+
+            <!-- [운영] 20221229 수정 -->
+            <div class="tabContainer">
+              <div id="appleContent" class="tabContent" role="tabpanel" aria-labelledby="appleAnchor">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 1. 페어링 준비</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">
+                      애플 워치 전원을 켜면 아이폰에 팝업이 나타납니다.<br />
+                      팝업 하단의 [계속]을 눌러주세요.
+                    </p>
+                    <p class="smallText colorDark">팝업이 나타나지 않는다면 아이폰에서 Watch 앱을 실행하여 하단의 [연결시작]을 눌러주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_apple_01.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 2. 애플워치 연동</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">연동하고자 하는 애플워치의 화면을 [노란 박스]에 맞춰 주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_apple_02.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 3. 애플워치 연결 진행</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">워치 연결, 손목 선택, 이용약관 동의, 아이폰 설정 공유, 암호 설정, 활동 설정, 긴급구조 요청을 순서에 맞게 진행해주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_apple_03.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 4. 셀룰러 선택 건너뛰기</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">셀룰러 설정 ‘이 단계 건너뛰기'를 선택주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_apple_04.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 5. 페어링 완료</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">아이폰 내 Watch 앱에서 페어링 완료 상태를 확인해주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_apple_05.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="samsungContent" class="tabContent" role="tabpanel" aria-labelledby="samsungAnchor">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 1. 워치 실행 및 어플리케이션 실행</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">갤럭시 워치 전원을 켜주세요.</p>
+                    <p class="smallText colorDark">Galaxy Wearable 앱을 실행하시고 <br />“메뉴”를 클릭하여 “새 디바이스 연결"을 통해 연결합니다.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_samsung_01.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 2. 휴대폰 - 워치 블루투스 연결</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">휴대폰과 워치의 인증번호가 동일하면, 확인을 눌러주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_samsung_02.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 3. 이용약관 동의 및 삼성 클라우드 백업 및 복원</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">
+                      이용약관을 확인 후 동의해주세요. <br />
+                      삼성클라우드백업 및 복원 절차를 진행해주세요. <br />
+                      (건너뛰기 가능)
+                    </p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_samsung_03.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 4. 모바일 요금제 건너뛰기</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">건너뛰기를 선택해주세요.</p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_samsung_04.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>STEP 5. 페어링 완료</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <p class="smallText colorDark">
+                      페어링이 완료 되었습니다. <br />
+                      *만약 웨어러블매니저 구형 버전 ‘워치용 모바일 서비스' 화면이 나온다면 반드시 건너뛰기를 클릭해주세요!
+                    </p>
+                    <div class="imgWrap">
+                      <img src="../../assets/images/usim/img_pairing_samsung_05.jpg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //[운영] 20221229 수정 -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- [운영] 20230113 추가 -->
+    <!-- [운영] 20230116 수정 -->
+    <div class="popup show" id="popupWatchCellular" role="dialog" aria-labelledby="popupTitle-WatchCellular" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-WatchCellular">요금제(셀룰러) 설정 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupWatchCellular')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="terminalContainer popupPairingWatch">
+            <div class="tabList" role="tablist">
+              <button type="button" id="appleAnchor02" class="tabButton" aria-controls="appleContent02" role="tab" aria-selected="true"><span>APPLE</span></button>
+              <button type="button" id="samsungAnchor02" class="tabButton" aria-controls="samsungContent02" role="tab" aria-selected="false"><span>SAMSUNG</span></button>
+            </div>
+
+            <div class="tabContainer">
+              <div id="appleContent02" class="tabContent show" role="tabpanel" aria-labelledby="appleAnchor02">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>Apple Watch APP에서 셀룰러(eSIM) 설정하기</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <ol class="numberList marginBtmReset sizeBigger">
+                      <li>
+                        iPhone에서 Apple Watch 앱을 실행해주세요.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_apple_01.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        ‘나의 시계’를 선택 후 ‘셀룰러’를 선택합니다.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_apple_02.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        Watch에 할당받은 셀룰러 요금제(eSIM)을 조회 하여 다운로드를 진행합니다.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_apple_03.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        셀룰러 요금제(eSIM) 다운로드가 완료되면 셀룰러 요금제에 통신사 명과 느낌표가 표시됩니다. <br />
+                        *통신사 명 옆에 느낌표가 아닌 로딩이 돌아가고 있다면 느낌표가 될 때까지 기다려주세요.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_apple_04.jpg" alt="" />
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+              <div id="samsungContent02" class="tabContent" role="tabpanel" aria-labelledby="samsungAnchor02">
+                <div class="aboutWrap">
+                  <div class="aboutTitle">
+                    <strong>Galaxy Wearable APP에서 요금제 설정하기</strong>
+                  </div>
+                  <div class="aboutContent">
+                    <ol class="numberList marginBtmReset sizeBigger">
+                      <li>
+                        Galaxy Wearable 앱을 실행해주세요.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_samsung_01.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        ‘워치 설정’을 선택 후 ‘모바일 요금제’를 선택합니다.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_samsung_02.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        개통한 요금제를 자동으로 조회하여 다운로드합니다.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_samsung_03.jpg" alt="" />
+                        </div>
+                      </li>
+                      <li>
+                        모바일 요금제 화면에서 상세 내용을 확인 할 수 있습니다.
+                        <div class="imgWrap">
+                          <img src="../../assets/images/usim/img_watch_cellular_samsung_04.jpg" alt="" />
+                        </div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[운영] 20230113 추가 -->
+    <!-- //[운영] 20230116 수정 -->
+
+    <!-- Start Script -->
+  </body>
+</html>

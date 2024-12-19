@@ -1,0 +1,181 @@
+.identity-guide {
+  background-color: $tan-100;
+  .guide-container {
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+
+    .guide-area {
+      @include flex(column, center, center);
+      width: 100%;
+      height: 100%;
+    }
+
+    .guide-top {
+      text-align: center;
+      .title {
+        @include font(h3);
+      }
+      .sub-text {
+        margin-top: 2.4rem;
+        @include font(bm, $gray-600);
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .guide-bottom {
+      margin-top: 9.4rem;
+      .button-box {
+        @include flex(column, center, center);
+        gap: 3rem;
+        width: 37.5rem;
+        .btn {
+          width: 100%;
+        }
+        .btn-underline {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  &.phone-number-guide-modal {
+    .btn-close {
+      background: asset-image('icon/ic_pc_co_close_white.svg') no-repeat center / contain;
+    }
+
+    .modal-top {
+      margin: 0;
+    }
+
+    .modal-container {
+      padding: 0;
+    }
+
+    .modal-bottom {
+      margin-top: 3.2rem;
+    }
+
+    .guide-text-box {
+      padding: 4rem 4rem 0;
+      .title-box {
+        .title {
+          @include font(bl, $black);
+        }
+      }
+
+      .desc-box {
+        margin-top: 2rem;
+        p {
+          @include font(bs, $gray-500);
+        }
+      }
+
+      .mail-box {
+        margin-top: 1.8rem;
+        padding: 1.4rem 2.2rem;
+        border-radius: 1.6rem;
+        background-color: $tan-100;
+
+        strong {
+          @include flex(row, center, center);
+          gap: 0.7rem;
+          @include font(bm, $black);
+
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 2.6rem;
+            height: 2.6rem;
+            background: asset-image('icon/ic_pc_my_mail.svg') no-repeat center / contain;
+          }
+        }
+      }
+    }
+
+    .modal-button-box {
+      padding: 0 4rem 5rem;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .identity-guide {
+    .guide-container {
+      padding: 5.6rem 2rem 2rem;
+      .guide-area {
+        align-items: unset;
+      }
+      .guide-top {
+        flex: 1;
+        text-align: unset;
+        .title {
+          font-size: 2rem;
+          line-height: 2.6rem;
+        }
+        .sub-text {
+          margin-top: 1.6rem;
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+          br {
+            display: block;
+          }
+        }
+      }
+      .guide-bottom {
+        margin: 0;
+        .button-box {
+          gap: 1.2rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .modal {
+    &.phone-number-guide-modal {
+      .btn-close {
+        background: asset-image('icon/ic_mo_co_close_white.svg') no-repeat center / contain;
+      }
+      .guide-text-box {
+        padding: 3.2rem 2rem 0;
+        .title-box {
+          .title {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+          }
+        }
+        .desc-box {
+          p {
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+          }
+        }
+      }
+      .modal-button-box {
+        padding: 0 2rem 2rem;
+      }
+    }
+  }
+}
+
+@media #{$mobile_small} {
+  .modal {
+    &.phone-number-guide-modal {
+      .guide-text-box {
+        .desc-box {
+          p {
+            word-break: keep-all;
+            br {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

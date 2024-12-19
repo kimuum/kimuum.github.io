@@ -1,0 +1,140 @@
+@@include("head.html",{
+"title" : "CART"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "CART",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="list-area">
+          <div class="list-header">
+            <div class="list-brand">
+              <span class="brand-image">
+                <img src="../../assets/images/icon_brand_qvc.jpg" alt="">
+              </span>
+              <span class="brand-name">QVC</span>
+              <span class="brand-count">(2 items)</span>
+            </div>
+          </div>
+          <div class="list-body">
+            <div class="product-item-area">
+              <div class="drag-area"><!-- 드래그 활성화 클래스 : show-trash -->
+                <div class="drag-item-box">
+                  <div class="item-area">
+                    <div class="product-top">
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk03" id="chk03">
+                        <label for="chk03" class="check-icon"></label>
+                      </div>
+                      <div class="product-id">ID: DOC-V354</div>
+                      <div class="product-title">Isaac Mizrahi Live! Sport Bezel Watch</div>
+                    </div>
+                    <div class="product-middle">
+                      <div class="thumbnail-area type-combo">
+                        <div class="img-area">
+                          <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                        </div>
+                        @@include('quantityContainer.html', {
+                        'label' : false,
+                        'title' : true
+                        })
+                      </div>
+                      <div class="info-area">
+                        <div class="product-info">
+                          <div class="spec">Light Coffee / L(Large)</div>
+                        </div>
+                        <div class="product-price">
+                          <span class="price">$41.99</span>
+                          <span class="discount">$45.49</span>
+                          <span class="small-price">Option : $5.50</span>
+                          <span class="small-price">S&amp;H : $3.50</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="drag-icon-box">
+                  <button type="button" class="btn-delete icon-trash" title="delete this product"></button>
+                </div>
+              </div>
+              <div class="drag-area"><!-- 드래그 활성화 클래스 : show-trash -->
+                <div class="drag-item-box">
+                  <div class="item-area">
+                    <div class="product-top">
+                      <div class="checkbox">
+                        <input type="checkbox" name="chk04" id="chk04">
+                        <label for="chk04" class="check-icon"></label>
+                      </div>
+                      <div class="product-id">ID: DOC-V354</div>
+                      <div class="product-title">Diamonique Solitaire Ring Sterling Silver</div>
+                    </div>
+                    <div class="product-middle">
+                      <div class="thumbnail-area type-combo">
+                        <div class="img-area">
+                          <img src="../../assets/images/dummy/img_coupon_03.jpg" alt="Diamonique Solitaire Ring Sterling Silver">
+                        </div>
+                        @@include('quantityContainer.html', {
+                        'label' : false,
+                        'title' : true
+                        })
+                      </div>
+                      <div class="info-area">
+                        <div class="product-info">
+                          <div class="spec">Light Coffee / L(Large)</div>
+                        </div>
+                        <div class="product-price">
+                          <span class="price">$41.99</span>
+                          <span class="discount">$45.49</span>
+                          <span class="small-price">Option : $5.50</span>
+                          <span class="small-price">S&amp;H : $3.50</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="drag-icon-box">
+                  <button type="button" class="btn-delete icon-trash" title="delete this product"></button>
+                </div>
+              </div>
+              <div class="product-total">
+                <p>Product Total $83.98 + Option $5.50 + S&H $7.00</p>
+                <strong>TOTAL $90.98</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>CHECKOUT</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+
+  <!-- Popup -->
+  <!-- 출력 여부 클래스 .show -->
+  <div class="popup popup-toast show">
+    <div class="popup-container">
+      <div class="popup-area">
+        <div class="popup-middle">
+          <div class="massage-box icon-toast-warning">Out of stock products are included</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

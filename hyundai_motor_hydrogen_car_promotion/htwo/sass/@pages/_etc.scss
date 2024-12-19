@@ -1,0 +1,374 @@
+.page-etc {
+    .sub-header {
+        background-image: url('../img/etc/subvisual.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: 0;
+        height:356px;
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.77;
+        }
+    }
+
+}
+
+.term-wrap {
+    padding-top: 140px;
+    .container {
+        max-width: 1340px;
+    }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Hyundai Sans Text KR'; font-weight: 500; }
+    h2 { font-size:28px; margin-bottom: 24px; }
+    p { margin-bottom: 24px; }
+    li p { margin-bottom: 16px; }
+    li p:last-of-type { margin-bottom: 0; }
+    p, li { font-size:16px; line-height: 1.75; }
+    hr { border: 0px; background-color: #d8d8d8; height: 2px; margin: 60px 0; }
+    a { text-decoration: underline; }
+    ol, ul {
+        margin-bottom: 24px;
+    }
+    ol {
+        counter-reset: list;
+        padding: 0;
+        > li {
+            position: relative;
+            padding-left: 20px;
+            list-style: none;
+            &::before {
+                counter-increment: list;
+                content: counter(list) ") ";
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+    ul { 
+        margin-left: 20px;
+        padding: 0;
+        li { list-style-type: square; 
+            > ul li { 
+                list-style-type: disc; 
+            }
+        }
+    }
+    li + li {
+        margin-top: 12px;
+    }
+    table { 
+        border-collapse: collapse;
+        table-layout: fixed;
+        width:100%;
+        margin: 25px 0;
+        th,td {
+            text-align: center;
+            font-size:16px;
+            color: #5e5e5e;
+            word-break: break-word;
+        }
+        th { background-color: #F9FAFB; padding: 22px 20px; }
+        thead {
+            th {
+                border-top:2px solid #333; 
+                border-bottom: 1px solid #d8d8d8;
+                border-right: 1px solid #d8d8d8;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+        tbody {
+            td {
+                padding: 24px 20px;
+                border-bottom: 1px solid #d8d8d8;
+                border-right: 1px solid #d8d8d8;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+.sitemap-wrap {
+    padding-top: 140px;
+    // .container { max-width: 1340px; }
+    .sitemap-home {
+        display: inline-block;
+        margin-bottom: 90px; 
+        h2 { font-size:28px; line-height: 1.5; }
+    }
+} 
+.sitemap {
+    @include flexbox;
+    @include justify-content(space-between);
+    > li {
+        @include flex(1);
+        width: 20%;
+        padding-bottom: 38px;
+        & + li { padding-left: 50px;padding-right: 20px; border-left: 2px solid #d8d8d8; }
+        a { font-size: 18px; color: #5e5e5e; line-height: 1.77; } 
+        h2 {
+            font-size:28px;
+            line-height: 1.5;
+            margin-bottom: 28px;
+            span { color: $colorPrimary; }
+        }
+        .sm-menu {
+            margin-bottom: 22px;
+            &:last-of-type { margin-bottom: 0px; }
+        }
+        .sublink {
+            margin-top: -10px;
+            margin-bottom: 22px;
+            > li {
+                position: relative;
+                padding-left: 28px;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 11px; top: 50%; margin-top: -2px;
+                    display: block;
+                    width: 4px; height: 4px;
+                    border-radius: 50%;
+                    background-color: #5d5d5d;
+                }
+            }
+        }
+    }
+}
+
+.error {
+    padding: 240px 0 200px; 
+    text-align: center;
+    h1 {
+        font-family: 'Hyundai Sans Head KR', 'Hyundai Sans Head';
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+    p { font-size: 18px; margin-bottom: 50px; }
+    &+ .sitemap-wrap {
+        border-top: 10px solid #f5f5f5;
+        padding-top: 110px;
+    }
+    &.error-500 {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 138px 0 100px; 
+        border-bottom: 1px solid #d8d8d8;
+        .error-logo {
+            border-bottom: 2px solid #333;
+            padding-bottom: 16px;
+            margin-bottom: 120px;
+            img { width: 47px; height: auto; }
+        }
+    }
+    &.error-parking {
+        max-width: 750px;
+        margin: 0 auto;
+        padding: 0;
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            .error-logo {
+                padding-bottom: 24px;
+                img { width: 72px; height: auto; }
+            }
+            h1 {
+                padding-bottom: 11px;
+            }
+            p{
+                padding-bottom: 30px;
+            }
+        }
+    }
+}
+
+
+@include respond-to('desktop-under') {
+    .page-etc {
+        .sub-header {
+            height: 320px;
+            p {
+                margin-top: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+    .error{
+        &.error-parking {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0;
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                .error-logo {
+                    padding-bottom: 10px;
+                    img { width: 36px; height: auto; }
+                }
+                h1 {
+                    font-size: 26px;
+                    padding-bottom: 0;
+                    margin-bottom: 10px;
+                }
+                p{
+                    padding-bottom: 0;
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+    .sitemap-wrap {
+        padding-top: 100px;
+        .sitemap-home {
+            margin-bottom: 60px; 
+            h2 { font-size: 24px; }
+        }
+    } 
+    .sitemap {
+        > li {
+            padding-bottom: 20px;
+            & + li { padding-left: 20px;padding-right: 0; border-left-width: 1px; }
+            a { font-size: 15px; }
+            h2 {
+                font-size:24px;
+                margin-bottom: 22px;
+            }
+            .sm-menu {
+                margin-bottom: 17px;
+            }
+            .sublink {
+                margin-top: -8px;
+                margin-bottom: 17px;
+                > li {
+                    padding-left: 22px;
+                    &::before {
+                        left: 11px; margin-top: -2px;
+                        width: 4px; height: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+@include respond-to('tablet') {
+    .sitemap {
+        display: table;
+        width: 100%;
+        > li {
+            float: left;
+            width: 50%;
+            & + li { padding-left: 0;border: none; }
+            &:nth-child(even){margin-bottom: 40px; padding-left: 30px;border-left:2px solid #d8d8d8}
+        }
+    }
+}
+@include respond-to('mobile') {
+    .page-etc {
+        .sub-header {
+            background-image: url('../img/etc/subvisual_m.jpg');
+            height: 274px;
+            p {
+                margin-top: 16px;
+                font-size: 14px;
+            }
+            .container { padding-top: 65px; }
+        }
+    }
+    .term-wrap {
+        padding-top: 60px;
+        h2 { font-size: 20px; margin-bottom: 12px; }
+        p { margin-bottom: 20px; }
+        li p { margin-bottom: 12px; }
+        li p:last-of-type { margin-bottom: 0; }
+        p, li { font-size: 13px; line-height: 1.6; }
+        hr { height: 1px; margin: 18px 0; }
+        ol > li { padding-left: 18px; }
+        ul { margin-left: 18px; }
+        ol, ul { margin-bottom: 12px; }
+        li + li {
+            margin-top: 6px;
+        }
+        table { 
+            table-layout: auto;
+            margin: 14px 0;
+            border-top: 2px solid #333;
+            th,td { font-size:13px; padding: 17px 10px; }
+            th { min-width: 100px; border-bottom: 1px solid #d8d8d8; }
+        }
+    }
+    .sitemap-wrap {
+        padding-top: 60px;
+        .sitemap-home {
+            margin-bottom: 20px; 
+            h2 { font-size:20px; }
+        }
+    }
+    .sitemap {
+        @include flex-direction(column);
+        @include justify-content(flex-start);
+        > li {
+            width: 100%;
+            padding: 16px 0;
+            border-top: 1px solid #d8d8d8;
+            & + li { padding-left: 0; border-left: none; }
+            a { font-size: 13px; }
+            h2 {
+                font-size:20px;
+                margin-bottom: 16px;
+            }
+            .sm-menu {
+                margin-bottom: 11px;
+            }
+            .sublink {
+                margin-top: -6px;
+                margin-bottom: 11px;
+                > li {
+                    padding-left: 14px;
+                    &::before {
+                        left: 6px; margin-top: -2px;
+                        width: 4px; height: 4px;
+                    }
+                }
+            }
+        }
+    }
+    .error{
+        &.error-parking {
+            .container {
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+html[lang="en"] {
+    .error {
+        &.error-parking {
+            max-width: 800px;
+        }
+    }
+}
+html[lang="zh"] {
+    .term-wrap {
+        h1,h2,h3,h4,h5,h6 { font-family: 'Hyundai Sans Head', 'Noto Sans SC'; }
+    }
+    .error {
+        h1 { font-family: 'Hyundai Sans Head', 'Noto Sans SC'; }
+        &.error-parking {
+            max-width: 800px;
+        }
+    }
+}

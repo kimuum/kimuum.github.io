@@ -1,0 +1,80 @@
+/*
+	functions
+*/
+@function funcVW($px, $width: $base-desktop) {
+  $w: 1 / ($width / 1px) * 100;
+  $vws: null;
+
+  @each $v in $px {
+    @if type-of($v) == number {
+      $px: $v / 1px;
+      $vw: $px * $w;
+      $vws: append($vws, if($vw == 0, 0, $vw + vw));
+    } @else {
+      $vws: append($vws, $v);
+    }
+  }
+
+  @return $vws;
+}
+
+@function column($column, $gutter: 20, $totalColumn: 12) {
+	@return calc(((100% - (#{$gutter}px * #{$totalColumn - 1})) / #{$totalColumn}) * #{$column} + (#{$gutter}px * #{$column - 1}))
+}
+
+/* z-index */
+$z-layers: (
+	'modal':            1000,
+	'modaless':          900,
+	'gnb':	             800,
+	'dropdown':          500,
+	'hover':             200,
+	'tooltip':           100,
+	'default':             1,
+	'bottomless-pit': -10000
+);
+
+@function z($layer) {
+	@if not map-has-key($z-layers, $layer) {
+		@warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+	}
+
+	@return map-get($z-layers, $layer);
+}
+
+
+/* String Replace */
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+/* rem */
+@function rem($pixels, $context: 16) {
+	@return #{$pixels/$context}rem;
+}
+
+@function em($pixels, $context: 16) {
+	@return #{$pixels/$context}em;
+}
+
+@function px($pixels) {
+	@return #{$pixels}px;
+}
+
+
+/* custom mixin to replace a defined fill color with another one */
+@function svg-url-with-replaced-fill($svg, $fill-to-replace, $new-fill) {
+	$replaced-svg: str-replace($svg, $fill-to-replace, $new-fill);
+	$replaced-svg-url: url('data:image/svg+xml,#{$replaced-svg}');
+	@return $replaced-svg-url;
+}
+@function svg-url($svg) {
+	$replaced-svg-url: url('data:image/svg+xml,#{$svg}');
+	@return $replaced-svg-url;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "업무 알림" , "headProjectName": "| 마이알뜰폰 사업자" })
+
+  <body>
+    <!-- <div id="loading">
+    <div class="iconLoading"></div>
+    <p>잠시만 기다려주세요.</p>
+  </div> -->
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h2 class="title">
+                  <span>업무 알림</span>
+                </h2>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>업무 알림</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+          <div class="workBoardContainer">
+            <div class="timeLineUnit">
+              <div class="unitTop">
+                <h3>오늘</h3>
+              </div>
+              <div class="unitMiddle">
+                <ul class="workList">
+                  <!-- [운영] KMVNO-3924 20230905 -->
+                  <li>
+                    <div class="iconBgBell active">
+                      <!-- 새로운 알림 활성화 클래스 active -->
+                      <span class="iconBgNew"><span>New</span></span>
+                    </div>
+                    <div class="workContent">
+                      <a href="#" class="title">[쿠폰관리] 웰컴 데이터 쿠폰 10GB 보유수량을 확인해주세요.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                  <!-- //[운영] KMVNO-3924 20230905 -->
+                  <li>
+                    <div class="iconBgBell active">
+                      <span class="iconBgNew"><span>New</span></span>
+                    </div>
+                    <div class="workContent">
+                      <a href="#" class="title">[상담관리] 1:1 문의가 등록되었습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBgBell active">
+                      <!-- 링크 이동시 active 제거 -->
+                      <span class="iconBgNew"><span>New</span></span>
+                    </div>
+                    <div class="workContent">
+                      <a href="#" class="title">[상담관리] 후기가 등록되었습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="timeLineUnit">
+              <div class="unitTop">
+                <h3>2022년 08월 07일</h3>
+              </div>
+              <div class="unitMiddle">
+                <ul class="workList">
+                  <li>
+                    <div class="iconBgBell">
+                      <span class="iconBgNew"><span>New</span></span>
+                    </div>
+                    <div class="workContent">
+                      <a href="#" class="title">[승인관리] 사업자 정보 1차 승인 요청이 왔습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBgBell"></div>
+                    <div class="workContent">
+                      <a href="#" class="title">[승인관리] 부가서비스 1차 승인 요청이 왔습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBgBell"></div>
+                    <div class="workContent">
+                      <a href="#" class="title">[승인관리] 약관 승인 요청이 왔습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="iconBgBell"></div>
+                    <div class="workContent">
+                      <a href="#" class="title">[승인관리] 이벤트 승인 1차 요청이 왔습니다.</a>
+                      <span class="date">오전 10시 31분</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <!-- [2차BO] 20220826 더보기 추가 -->
+              <div class="unitBottom">
+                <button type="button" class="btnMoreUnit"><span>더보기</span></button>
+              </div>
+              <!-- //[2차BO] 20220826 더보기 추가 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        // 더보기 버튼 클릭시 버튼에 hide 클래스 추가하여 숨김처리
+        $('.btnMoreUnit').on('click', function () {
+          $(this).addClass('hide');
+        });
+      });
+    </script>
+  </body>
+</html>

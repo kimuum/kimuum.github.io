@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>List</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-container">
+        <div class="general-area">
+          <div class="general-top">
+            <div class="general-label">Component</div>
+            <div class="general-title">List</div>
+          </div>
+          <div class="general-middle">
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">List Type A</span>
+                <span class="description">전체 링크</span>
+              </div>
+              <div class="content-box">
+                <!-- list-a start -->
+                <ul class="list-a-box">
+                  <!-- prettier-ignore -->
+                  @@loop("listTypeA.html", [
+
+                    {
+                      "link": true,
+                      "property" : "",
+                      "label": "결제 수단",
+                      "rightText" : null,
+                      "dataClass" : "",
+                    },
+                    {
+                      "link": true,
+                      "property" : "",
+                      "label": "차량 설정",
+                      "rightText" : "KIA 코나 EV・12가1234",
+                      "dataClass" : "highlight",
+                    },
+
+                    ])
+                </ul>
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">List Type A</span>
+                <span class="description">리스트 우측 타입들</span>
+              </div>
+              <div class="content-box">
+                <!-- list-a start -->
+                <ul class="list-a-box">
+                  <!-- prettier-ignore -->
+                  @@loop("listTypeA.html", [
+                  {
+                    "link": false,
+                    "label": "버전 정보",
+                    "property" : "",
+                    "dataClass" : 'highlight',
+                    "rightText" : "text",
+                    "dataType": null,
+                  },
+                  {
+                    "link": false,
+                    "label": "버전 정보", 
+                    "property" : "",
+                    "dataClass" : '',
+                    "rightText" : "gray text",
+                    "dataType": null,
+                  },
+                  {
+                    "link": false,
+                    "label": "버전 정보",
+                    "property" : "",
+                    "dataClass" : "error",
+                    "rightText" : "error text",
+                    "dataType": null,
+                  },
+                    {
+                      "link": false,
+                      "label": "버전 정보",
+                      "property" : "",
+                      "dataClass" : null,
+                      "rightText" : "최신 버전이 출시되었습니다.",
+                      "dataType": "linkBtn",
+                      "linkBtn" : [
+                        {
+                          "iconClass": false,
+                          "btnColor" : 'btn-primary',
+                          "btnSize" : 'small',
+                          "class" : 'btn-update',
+                          "text": "업데이트"
+                        },
+                      ]
+                    },
+                    {
+                      "link": false,
+                      "label": "버전 정보",
+                      "property" : "",
+                      "dataClass" : null,
+                      "rightText" : null,
+                      "dataType": "linkBtn",
+                      "linkBtn" : [
+                        {
+                          "iconClass": false,
+                          "btnColor" : 'btn-primary',
+                          "btnSize" : 'small',
+                          "class" : 'btn-update',
+                          "text": "업데이트"
+                        },
+                      ]
+                    },
+                    ])
+                  <!-- [접근성] button 태그 내 불필요한 property(null) 제거 -->
+                  <!-- prettier-ignore -->
+                  @@include("listTypeA.html", {
+                      "link": false,
+                      "label": "버전 정보",
+                      "property" : "",
+                      "dataClass" : null,
+                      "rightText" : null,
+                      "dataType": "btn",
+                      "btn" : [
+                        {
+                          "property": "",
+                          "iconClass": false,
+                          "btnColor" : 'btn-primary',
+                          "btnSize" : 'small',
+                          "class" : 'btn-pay',
+                          "text": "재결제하기"
+                        },
+                      ]
+                    })
+                </ul>
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">List Type C</span>
+                <span class="description"></span>
+              </div>
+              <div class="content-box" role="list">
+                <!-- [접근성] button 태그 클래스명 오타 수정 (small) -->
+                <!-- prettier-ignore -->
+                @@loop("chargeDeviceList.html", [ 
+                  {
+                    "iconClass" : "ic-device-rapidity-fill",
+                    "ir" : "",
+                    "label" : "급속",
+                    "count" : "5",
+                    "deviceInfo" : [
+                      {
+                        "info" : "DC콤보"
+                      },
+                      {
+                        "info" : "DC데모"
+                      },
+                      {
+                        "info" : "NACS"
+                      },
+                    ],
+                    "badge": [
+                      { 
+                        "iconClass" : "",
+                        "badgeColor": "confirm",
+                        "badgeText" : "사용 가능",
+                        "badgeLabel": "사용 가능",
+                        "property"  : "small"
+                      }
+                    ]
+                  },
+                  {
+                    "iconClass" : "ic-device-slow-fill",
+                    "ir" : "",
+                    "label" : "완속",
+                    "count" : "15",
+                    "deviceInfo" : [
+                      {
+                        "info" : "A3상"
+                      },
+                      {
+                        "info" : "완속"
+                      },
+                    ],
+                    "badge": [
+                      { 
+                        "iconClass" : "",
+                        "badgeColor": "secondary",
+                        "badgeText" : "사용 불가",
+                        "badgeLabel": "사용 불가",
+                        "property"  : "small"
+                      }
+                    ]
+                  }
+                ])
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">List Type D</span>
+                <span class="description">Default (메뉴 > 충전 카드 설정, 차량 설정)</span>
+              </div>
+              <div class="content-box">
+                <div class="list-d-list-box">
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "warning",
+                    "image" : true,
+                    "category" : "로밍사명",
+                    "title" : "카드명",
+                    "badgeText" : [
+                      {
+                        "iconClass" : "",
+                        "badgeColor": "confirm",
+                        "badgeText" : "대표",
+                        "badgeLabel": "대표",
+                        "property"  : "small"
+                      }
+                    ],
+                    "desc" : "1234-5678-1234-5678",
+                    "type" : "more",
+                    "modalId" : "",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "warning",
+                    "image" : true,
+                    "category" : "로밍사명",
+                    "title" : "카드명",
+                    "badgeText" : "",
+                    "desc" : "1234-5678-1234-5678",
+                    "type" : "more",
+                    "modalId" : "",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "disabled",
+                    "image" : true,
+                    "category" : "로밍사명",
+                    "title" : "카드명",
+                    "badgeText" : "",
+                    "desc" : "1234-5678-1234-5678",
+                    "type" : "more",
+                    "modalId" : "",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "",
+                    "image" : "others",
+                    "category" : "로밍사명",
+                    "title" : "카드명",
+                    "badgeText" : "",
+                    "desc" : "1234-5678-1234-5678",
+                    "type" : "menu",
+                    "modalId" : "",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "",
+                    "image" : "",
+                    "category" : "기아 EV6",
+                    "title" : "12가 1234",
+                    "badgeText" : [
+                      {
+                        "iconClass" : "",
+                        "badgeColor": "confirm",
+                        "badgeText" : "대표",
+                        "badgeLabel": "대표",
+                        "property"  : "small"
+                      }
+                    ],
+                    "desc" : "12:34**:**:**:**:12:34",
+                    "type" : "arrow",
+                    "modalId" : "",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "",
+                    "image" : "",
+                    "category" : "기아 EV6",
+                    "title" : "12가 1234",
+                    "badgeText" : [
+                      {
+                        "iconClass" : "",
+                        "badgeColor": "confirm",
+                        "badgeText" : "대표",
+                        "badgeLabel": "대표",
+                        "property"  : "small"
+                      }
+                    ],
+                    "desc" : "12:34**:**:**:**:12:34",
+                    "type" : "radio",
+                    "modalId" : "",
+                    "radio" : [
+                      {
+                        "class" : "",
+                        "name" : "radio-01",
+                        "id" : "radio-01",
+                        "value" : "radio-01",
+                        "property" : "",
+                        "labelHide" : true,
+                        "label": "radio-01",
+                      }
+                    ]
+                  })
+                </div>
+                <!-- [접근성] .btn-add-list 상위 요소로 이동 (구조 수정) -->
+                <button type="button" class="btn-add-list">
+                  <span class="text">결제 수단 추가하기</span>
+                  <i class="ic ic-add"></i>
+                </button>
+              </div>
+            </div>
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label">List Type D</span>
+                <span class="description">border 없는 경우 (메뉴 > 충전 카드 설정)</span>
+              </div>
+              <div class="content-box">
+                <div class="list-d-list-box">
+                  <!-- prettier-ignore -->
+                  @@include("listTypeD.html", {
+                    "className" : "no-border",
+                    "image" : "",
+                    "category" : "로밍사명",
+                    "title" : "카드명",
+                    "badgeText" : "",
+                    "desc" : "1234-5678-1234-5678",
+                    "type" : "edit",
+                    "modalId" : "",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

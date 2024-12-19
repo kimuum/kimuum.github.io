@@ -1,0 +1,7 @@
+<!-- chart bar (vertical) -->
+<div class="chart-bar-ver">
+  <!-- prettier-ignore -->
+  @@for(var i = 0; i < data.length; i++) {  
+    @@include("chartBarVerList.html",  `+(JSON.stringify(data[i]))+`)
+  }
+</div>
