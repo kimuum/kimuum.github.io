@@ -16,6 +16,8 @@ const setHTML = () =>
     .pipe(newer(config.htmlSetting.dist))
     .pipe(ejs())
     // 2개이상의 개행을 하나의 개행으로 변경
+    .pipe(htmlhint('templates/htmlhint.json'))
+    .pipe(htmlhint.reporter())
     .pipe(replace(/(\r\n|\r|\n){2,}/g, '\r\n', { skipBinary: true }))
     .pipe(
       // 클래스 빈 공간 제거
@@ -39,8 +41,6 @@ const setHTML = () =>
         }
         }),
     )
-    .pipe(htmlhint('templates/htmlhint.json'))
-    .pipe(htmlhint.reporter())
     .pipe(beautify({
         config: '.jsbeautifyrc',
         mode: 'VERIFY_AND_WRITE'

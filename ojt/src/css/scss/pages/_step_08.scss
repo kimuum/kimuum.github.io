@@ -4,21 +4,37 @@ $lnbWidth: 200px;
 
 .wrap_step_08 {
   overflow: hidden;
+  position: relative;
   max-width: initial;
   .main {
-    overflow-y: auto;
+    overflow: hidden;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    z-index: 1;
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
-  .content_container {
-    height: 200vh;
+  .content_container  {
+    overflow: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 100%;
+    margin-left: 200px;
+    padding: 0;
+    .content_inner {
+      width: 100%;
+      height: 200vh;
+      min-width: 4000px;
+      padding: 0 50px;
+    }
   }
 }
 .header_container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
   width: 100%;
   min-width: 1000px;
   height: $headerHeight;
@@ -37,17 +53,14 @@ $lnbWidth: 200px;
   }
 }
 .lnb_container {
-  position: fixed;
-  top: 80px;
+  position: absolute;
+  top: 0;
   left: 0;
   z-index: 1;
   width: $lnbWidth;
   height: 100%;
   padding: 0 20px;
   background-color: rgb(202, 161, 197);
-  & + .main {
-    padding: $headerHeight 0 0 $lnbWidth;
-  }
   .lnb_area {
     @include flexbox;
     @include flex-direction(column);
