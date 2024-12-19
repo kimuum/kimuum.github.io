@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="information" iweb-data="out" />
+    <input type="hidden" id="osType_check" iweb-data="out" />
+    <input type="hidden" id="agent_yn" iweb-data="out" />
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": 'B tv 월정액 상품해지',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-btv-cancellation">
+                <p class="info-sub-title">다시 한번 생각해주세요.</p>
+                <p class="info-title mt-24">
+                  아직 보여드리지 못한 <br />
+                  많은 콘텐츠가 기다리고 있어요.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="togglePopup('popBtvCheck')">쿠폰 확인하기</button>
+            <button type="button" class="btn btn-secondary" onclick="togglePopup('popBtvCheck')">월정액 해지하기</button>
+          </div>
+          <div class="button-box">
+            <button type="button" id="agentMenu" class="btn btn-secondary" style="display: none" onclick="sendRepPageData($(this).text().trim(), '0', 'menu')">상담사 연결</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <div class="popup" id="popBtvCheck">
+      <div class="dim"></div>
+      <div class="popup-container">
+        <div class="popup-area">
+          <div class="popup-middle">
+            <div id="alert_tex" class="alert-icon-box">
+              <i class="ic-screen-voice"></i>
+              <p class="popup-text">보이는 ARS 종료 후 <br />앱 페이지로 연결됩니다.</p>
+              <div class="alert-text-box">
+                <p class="alert-text">이용 환경에 따라 데이터 요금이 발생할 수 있습니다.</p>
+              </div>
+            </div>
+          </div>
+          <div class="popup-bottom">
+            <div class="button-box">
+              <button type="button" class="btn btn-secondary" onclick="togglePopup('popBtvCheck')"><span>아니오</span></button>
+              <button type="button" class="btn btn-primary" onclick="javascript:callURL('OK');"><span>예</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+      });
+
+      // 20240627 신규요건 : Btv 서비스 이용안내 메뉴추가
+      var agent_yn = getUrlParameter('agent_yn');
+      /*@build-time*/ agent_yn = 'y';
+      if (agent_yn == 'Y' || agent_yn == 'y') {
+        $('#agentMenu').css('display', 'block');
+      }
+
+      var curURL = '';
+      var curMenu = '';
+      var gubun = '';
+      function callURL(menu) {
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        var osType_check = getUrlParameter('osType_check');
+        curMenu = menu;
+        var information = getUrlParameter('information');
+        var callUrl = information.split('://');
+
+        if (vars_type == 'T') {
+          document.location = 'intent://' + callUrl[1] + '#Intent;scheme=' + callUrl[0] + ';end';
+          sendRepPageData('', curMenu, 'menu');
+        } else if (osType_check == '2') {
+          sendRepPageData('', curMenu, 'menu');
+        } else {
+          window.CallgateSDK.executeBrowser(information, 'false');
+          sendRepPageData('', curMenu, 'menu');
+        }
+      }
+      // 팝업
+      var $document = $(document);
+      function togglePopup(id) {
+        var $popup = $document.find('#' + id);
+        if ($popup.hasClass('show')) {
+          $popup.removeClass('show');
+        } else {
+          $popup.addClass('show');
+        }
+      }
+    </script>
+  </body>
+</html>

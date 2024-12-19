@@ -1,0 +1,113 @@
+.filter-view-container {
+  width: 100%;
+
+  .filter-view-top {
+    @include flex(row, space-between, flex-end);
+    margin-bottom: 1.6rem;
+  }
+
+  .filter-view-top-right {
+    @include flex(row, flex-start, center);
+  }
+
+  .filter-view-middle {
+    width: 100%;
+  }
+
+  .filter-view-bottom {
+    position: relative;
+    @include flex(row, flex-end, center);
+    margin-top: 1.6rem;
+
+    .pagination {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+
+    .field-dropdown {
+      .dropdown-container {
+        width: 22rem;
+        .btn-dropdown {
+          padding-top: 1.4rem;
+          padding-bottom: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .no-content {
+    @include flex(column, center, center);
+    height: 30rem;
+    span {
+      @include font(1.6rem, 400, $color_c4c);
+    }
+    &::before {
+      content: '';
+      display: block;
+      margin-bottom: 1.2rem;
+      width: 6.4rem;
+      height: 6.4rem;
+      background: asset-image('/app/ic_worry.svg') no-repeat center / 6.4rem;
+    }
+  }
+
+  .empty-box {
+    @include flex(column, center, center);
+    height: 24rem;
+    border-radius: 1.2rem;
+    background-color: #fafafa;
+    @include font(1.6rem, 400, $color_7f7, normal, 0);
+    .icon {
+      display: block;
+      width: 6.5rem;
+      height: 6.5rem;
+      margin-bottom: 1.2rem;
+      background: asset-image('ic_no_list.svg') no-repeat center / 6.5rem;
+    }
+    .btn {
+      margin-top: 2.4rem;
+    }
+  }
+}
+
+.total-count-box {
+  @include font(1.8rem, 400, $black, 2.2rem);
+  .count {
+    font-weight: 700;
+    color: $primary;
+  }
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .filter-view-container {
+        .filter-view-top {
+          margin-bottom: 1.2rem;
+        }
+        .filter-view-bottom {
+          display: none;
+        }
+        .empty-box {
+          height: 15.9rem;
+          border-radius: 0.8rem;
+          background-color: $color_f2f;
+          @include font(1.2rem, 400, $color_bfb, normal);
+          .icon {
+            display: none;
+          }
+        }
+      }
+
+      .total-count-box {
+        font-size: 1.6rem;
+        .count {
+          font-weight: 700;
+          color: $primary;
+        }
+      }
+    }
+  }
+}

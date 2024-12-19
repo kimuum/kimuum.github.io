@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "분실/일시정지 관리 | 마이알뜰폰", "titleHidden": "<!-- DR-2023-34353 20230718 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyListLostPause -->
+    <div class="wrap myThriftyListLostPause">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-7', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>분실/일시정지</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>분실/일시정지</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <section class="summaryArea summary01">
+                <div class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">분실신고 및 정지</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <!--
+                    일시정지 된 상태 일 경우 주석처리 된 영역의 텍스트 활성화 + 버튼 텍스트 변경
+                    -->
+                    <div class="noticeArea">
+                      <p><span class="moBlock">휴대폰을 분실하신 경우</span> <span class="moBlock">휴대폰 분실신고를 접수하세요.</span></p>
+                      <!-- <p><span class="moBlock">현재 <span class="bold">분실신고된 회선</span>입니다.</span><span class="moBlock">(신고일 : 2022-01-01)</span></p> -->
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnPrimary"><span>분실신고 접수하기</span></button>
+                      </div>
+                    </div>
+                    <div class="noticeArea">
+                      <p><span class="moBlock">회선 정지를 원하시는 경우</span> <span class="moBlock">정지를 신청해주세요.</span></p>
+                      <!-- <p><span class="moBlock">현재 <span class="bold">발신 정지된 회선</span>입니다.</span><span class="moBlock">(2022-01-01 ~ 2022-03-01)</span></p> -->
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnPrimary"><span>정지 신청하기</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <!-- //분실신고 및 정지 -->
+              <div class="summaryArea summary02 half">
+                <section class="summaryInner summaryInner01">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">분실신고 안내</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <ul class="shortcutArea">
+                      <li class="shortcutItem">
+                        삼성 핸드폰을 분실했다면,
+                        <span class="moBlock">
+                          <span class="bold">삼성 디바이스 찾기</span>
+                          <a href="https://smartthingsfind.samsung.com/login?result=true" class="linkUnderline colorPrimary" title="새 창 열림" target="_blank">바로가기</a>
+                          <!-- [운영] DR-2023-44360 20230724 -->
+                        </span>
+                      </li>
+                      <li class="shortcutItem">
+                        아이폰을 분실했다면,
+                        <span class="moBlock">
+                          <span class="bold">아이클라우드 나의 찾기</span>
+                          <a href="javascript:;" class="linkUnderline colorPrimary">바로가기</a>
+                        </span>
+                      </li>
+                      <li class="shortcutItem">
+                        구글 계정을 사용하신다면,
+                        <span class="moBlock">
+                          <span class="bold">구글 계정 위치 추적</span>
+                          <a href="javascript:;" class="linkUnderline colorPrimary">바로가기</a>
+                        </span>
+                      </li>
+                      <li class="shortcutItem">
+                        <span class="moBlock">
+                          <span class="bold">경찰청 유실물 종합안내</span>
+                          <a href="javascript:;" class="linkUnderline colorPrimary">바로가기</a>
+                        </span>
+                      </li>
+                      <li class="shortcutItem">
+                        <span class="moBlock">
+                          <span class="bold">핸드폰 찾기 콜센터</span>
+                          <a href="javascript:;" class="linkUnderline colorPrimary">바로가기</a>
+                        </span>
+                      </li>
+                      <li class="shortcutItem">
+                        <span class="moBlock">
+                          <span class="bold">서울시 대중교통 통합분실물센터</span>
+                          <a href="javascript:;" class="linkUnderline colorPrimary">바로가기</a>
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+                <!-- //분실신고 안내 -->
+                <section class="summaryInner summaryInner02">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">일시정지 안내</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="cautionArea">
+                      <strong class="label">휴대폰 일시정지 주의사항</strong>
+                      <ul class="cautionWrap">
+                        <li>일시정지 기간 종류 후 자동해제되며, 휴대폰은 이용 중 상태로 복구됩니다.</li>
+                        <li>이용중인 서비스 일시정지 시, 결합할인이 미제공됩니다.</li>
+                        <li>단말기 분할상환 금액이 남은 경우 일시정지 기간에도 청구됩니다.</li>
+                        <li>일시정지 자동해제 된 이후 추가로 일시정지를 원하는 경우에는 다시 신청해주시기 바랍니다. (연 최대 2회 신청가능)</li>
+                        <li>일시정지 해제 신청 후, 정상 이용이 되지 않을 경우 휴대폰 전원을 off/on 시도하시기 바랍니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+                <!-- //일시정지 안내 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+      });
+    </script>
+  </body>
+</html>

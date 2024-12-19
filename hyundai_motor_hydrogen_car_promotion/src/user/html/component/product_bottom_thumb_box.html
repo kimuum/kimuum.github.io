@@ -1,0 +1,14 @@
+<div class="product-bottom-thumb-box">
+  <ul>
+    @@for(var i = 0; i < thumb.length; i++) {
+      <li>
+        <a href="../products/`+thumb[i].url+`">
+          <div class="image-box">
+            <img width="914px" height="386px" class="lazy" data-src="../../assets/images/products/`+thumb[i].src+`" alt="`+thumb[i].alt+`" />
+            <div class="title `+thumb[i].property+`">`+thumb[i].title+`</div>
+          </div>
+        </a>
+      </li>
+    }
+  </ul>
+</div>

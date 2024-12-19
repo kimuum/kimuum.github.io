@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Accordion</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-wrapper">
+        <div class="general-container">
+          <div class="general-area">
+            <div class="general-top">
+              <div class="general-label">Component</div>
+              <div class="general-title">Accordion</div>
+            </div>
+            <div class="general-middle">
+              <div class="general-content">
+                <div class="content-box">
+                  <!-- accordion start -->
+                  <div class="accordion-contaniner">
+                    <div class="accordion-area">
+                      <!-- prettier-ignore -->
+                      @@loop("accordion.html", [
+                      {
+                        "class": "",
+                        "accordionTitle" : "[카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.",
+                        "accordionContent" : "답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. ",
+                      },
+                      {
+                        "class": "active",
+                        "accordionTitle" : "[카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.카테고리] FAQ 질문이 노출됩니다.",
+                        "accordionContent" : "답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. 답변 내용이 노출됩니다. ",
+                      }])
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

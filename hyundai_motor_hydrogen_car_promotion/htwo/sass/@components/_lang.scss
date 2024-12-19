@@ -1,0 +1,139 @@
+.change-lang {
+    position: relative;
+    > button {
+        font-size: inherit;
+        color: inherit;
+        > span { vertical-align: middle; }
+        &::after {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: 16px; height: 16px;
+            margin-left: 8px;
+            background: inline-svg('arrow_bottom', #000) no-repeat center / 100%;
+        }
+    }
+    /*
+    span::before {
+        content: '';
+        display: inline-block;
+        vertical-align: -2px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .lang-list {
+        a[href*="/ko"] > span::before { background: inline-svg('flag_ko') no-repeat center / 100%; }
+        a[href*="/en"] > span::before { background: inline-svg('flag_en') no-repeat center / 100%; }
+        a[href*="/zh"] > span::before { background: inline-svg('flag_zh') no-repeat center / 100%; }
+        a[href*="/ko"].true > span::before { background: inline-svg('flag_ko_on') no-repeat center / 100%; }
+        a[href*="/en"].true > span::before { background: inline-svg('flag_en_on') no-repeat center / 100%; }
+        a[href*="/zh"].true > span::before { background: inline-svg('flag_zh_on') no-repeat center / 100%; }
+    }
+    */
+    @include respond-to('notmobile') {
+        .lang-list {
+            position: absolute; 
+            right: 0; top: 40px;
+            z-index: 1;
+            padding: 20px 22px 20px 22px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.12);
+            min-width: 122px;
+            transition: transform 0.3s ease-in-out, opacity 0.3s;
+            transform: translateY(-20%);
+            opacity: 0;
+            pointer-events: none;
+            > a {
+                display: block;
+                font-size: 16px;
+                font-weight: 500;
+                color: #aaa;
+                &+a {
+                    margin-top: 8px;
+                }
+                &.true {
+                    color: #000;
+                    // &::after {
+                    //     content: '';
+                    //     display: inline-block;
+                    //     vertical-align: middle;
+                    //     width: 16px; height: 16px;
+                    //     margin-left: 8px;
+                    //     background: inline-svg('arrow_bottom', #000) no-repeat center / 100%;
+                    // }
+                }
+                &:hover { color: $colorPrimary; }
+            }
+        }
+        /*
+        span::before {
+            width: 16px; height: 16px; margin-right: 6px;
+        }
+        */
+    
+        &.on {
+            > button {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+            .lang-list {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    }
+    @include respond-to('mobile') {
+        width: 114px;
+        display: inline-block;
+        > button {
+            display: block; width: 100%;
+            font-size: 12px; font-weight: 500; text-align: left;
+            padding: 10px 13px;
+            line-height: 1;
+            background-color: #fff;
+            border: 1px solid #000;
+            &::after {
+                position: absolute; top: 10px; right: 13px; 
+                display: inline-block; width: 13px; height: 13px; 
+            }
+        }
+        // span::before {
+        //     width: 12px; height: 12px; margin-right: 4px;
+        // }
+        .lang-list {
+            position: absolute; left: 0; right: 0; top: calc(100% - 1px); z-index: 1;
+            //border: 1px solid #000;
+            box-shadow: inset 0px 0px 0px 1px #000;
+            border-top-color: #fff;
+            background-color: #fff; overflow: hidden;
+            transition: height 0.3s ease-in-out;
+            height: 0px; 
+            pointer-events: none;
+            > a {
+                position: relative;
+                display: block; padding: 10px 13px;
+                font-size: 12px; font-weight: 500; text-align: left;
+                line-height: 1;
+                &.true {
+                    display: none;
+                }
+            }
+        }
+        &.on {
+            > button {
+                &::after {
+                    transform: rotate(180deg);
+                }
+            }
+            .lang-list {
+                
+                height: 66px;
+                pointer-events: auto;
+            }
+        }
+    }
+}
+

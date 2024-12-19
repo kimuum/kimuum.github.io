@@ -1,0 +1,140 @@
+@@include('head.html', {
+'title': 'Details item information'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main"></main>
+    <!-- // Main -->
+
+    <!-- popup start 활성화 클래스 : show -->
+    <div class="popup-container show">
+      <div class="pop-center-area">
+        <div class="pop-body">
+          <div class="pop-inner-container">
+            <div class="pop-inner-top">
+              <div class="product-info-area">
+                <div class="product-info-left">
+                  <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                </div>
+                <div class="product-info-right">
+                  <div class="brand-top-box">
+                    <span class="icon-partners"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></span>
+                    <div class="brand-id-number">ID: M90221</div>
+                  </div>
+                  <div class="brand-middle-box">
+                    <div class="brand-title">
+                      Farmer Jon`s 25ct Mini Bags of Microwave Popcorn in Flavor Choice
+                    </div>
+                  </div>
+                  <div class="brand-bottom-box">
+                    <div class="star-box">
+                      <!-- 
+                          0점 : img_detail_star_0_0.png
+                          0.5점 : img_detail_star_0_5.png
+                          1점 : img_detail_star_1_0_.png
+                          1.5점 : img_detail_star_1_5_.png
+                          2점 : img_detail_star_2_0.png
+                          2.5점 : img_detail_star_2_5.png
+                          3점 : img_detail_star_3_0.png
+                          3.5점 : img_detail_star_3_5.png
+                          4점 : img_detail_star_4_0.png
+                          4.5점 : img_detail_star_4_5.png
+                          5점 : img_detail_star_5_0.png
+                        -->
+                      <img src="./images/img_detail_star_5_0.png" alt="star rating 5 out of 5">
+                    </div>
+                    <!-- [SHOPTIME-1188] 20231013 뱃지 추가 -->
+                    <!-- [SHOPTIME-1188] 20231016 뱃지 쿠폰 추가/텍스트로 변경 -->
+                    @@include('detail_badge.html')
+                    <!-- //[SHOPTIME-1188] 20231016 뱃지 쿠폰 추가/텍스트로 변경 -->
+                    <!-- //[SHOPTIME-1188] 20231013 뱃지 추가 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pop-inner-middle">
+              <div class="tab-container">
+                <div class="tab-button-area">
+                  <div class="tab-button-left">
+                    <!-- 
+                        현재 선택 된 탭 클래스 : selected
+                        현재 위치 포커스 클래스 : focused
+                        현재 위치 마우스 오버 클래스 : hover
+                      -->
+                    <button type="button" class="btn-tab selected"><span>RETURNS & EXCHANGES</span></button>
+                  </div>
+                </div>
+                <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+                <!-- 디자인 스크롤바 컨테이너 : scroll-ui-container -->
+                <div class="tab-content-container scroll-ui-container">
+                  <!-- 디자인 스크롤바 -->
+                  <div class="scroll-control-area">
+                    <!-- 사용 불가 클래스 : disabled -->
+                    <button type="button" class="scroll-btn-up disabled" title="Up"></button>
+                    <div class="scroll-ui-area">
+                      <div class="scroll-bar" style="top: 0; height: 70%;"></div>
+                    </div>
+                    <!-- 활성화 클래스 : focused hover -->
+                    <button type="button" class="scroll-btn-down focused" title="Down"></button>
+                  </div>
+                  <!-- //디자인 스크롤바 -->
+                  <div class="scroll-box-area" style="transform: translateY(0px);"><!-- 스크롤 동작 : translateY -->
+                    <div class="tab-content-area">
+                      <p class="description">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                        dummy text ever since the 1500s, when an unknown printer took a gallLLorem Ipsum is simply dummy text of the printing
+                        and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuri
+                        es, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with
+                        the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+                        Aldus PageMaker including versions of Lorem Ipsum Contrary to popular belief, Lorem Ipsum is not simply random text. It
+                        has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
+                        Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from
+                        a Lorem Ipsum passage, and going through thLorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                        type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+                        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including versions of Lorem Ipsum Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a
+                        piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                        Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+                        passage, and going through thorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                        scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                        containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                        Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+                        passage, and going through they of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                        1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                        software like Aldus PageMaker including versions of Lorem Ipsum Contrary to popular belief, Lorem Ipsum is not simply
+                        random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+                        McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                        consectetur, from a Lorem Ipsum passage, and going through th
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- //[SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="button-box child-flex-none">
+            <button type="button" class="btn-solid-gray"><span>CLOSE</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dim"></div>
+    </div>
+    <!-- //popup end -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 문의 등록"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "문의하기",
+          },
+          {
+            "link" : "/",
+            "page" : "나의 문의 내역",
+          },
+        ],
+        "currentPage" : "나의 문의 내역 상세",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container voc">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">문의 진행 사항</span>
+                  </div>
+                </div>
+                <div class="step-container">
+                  <div class="step-area">
+                    <!-- prettier-ignore -->
+                    @@include("../../components/step_box.html", {
+                      "status" : "complete",
+                      "text" : "접수",
+                      "num" : "1",
+                    })
+                    <div class="line"></div>
+                    <!-- prettier-ignore -->
+                    @@include("../../components/step_box.html", {
+                      "status" : "current",
+                      "text" : "조치중",
+                      "num" : "2",
+                    })
+                    <div class="line"></div>
+                    <!-- prettier-ignore -->
+                    @@include("../../components/step_box.html", {
+                      "status" : "",
+                      "text" : "조치완료",
+                      "num" : "3",
+                    })
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="inquiry-table-container">
+                  <div class="inquiry-table-area">
+                    <div class="filter-box">
+                      <div class="title">
+                        <span class="text">문의 상세 내역</span>
+                      </div>
+                      <div class="filter">
+                        <div class="filter-row half">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>요청 유형</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">자료 요청</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>요청 일시</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">2023.05.19 12:30</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-row">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>요청 내용</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text"
+                                  >8층 건물 인테리어 공사 견적 요청 드립니다. 가격과 견적서를 비교해서 답변주세요.<br />상세
+                                  정보는 첨부파일 확인 부탁 드립니다.</span
+                                >
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 
+                          Comment : PC 용 구조
+                                  : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                        -->
+                        <div class="filter-row use-pc">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>첨부 파일</span>
+                            </div>
+                            <div class="filter-info wide">
+                              <div class="info-box">
+                                <div class="download">
+                                  <div class="download-box">
+                                    <span class="file-name">8층 인테리어 견적 사진.png</span>
+                                  </div>
+                                  <div class="download-box">
+                                    <span class="file-name">8층 인테리어 견적 사진.png</span>
+                                  </div>
+                                  <div class="download-box">
+                                    <span class="file-name">8층 인테리어 견적 사진.png</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "확인",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-download",
+        "title" : "",
+        "text" : "선택한 파일을 저장할까요?",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          }
+        ],
+      })
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

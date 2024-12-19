@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터로밍 기가팩 중일 | 로밍 부가서비스 상세", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnIDLoamingDetail05, popupLoamingDetail05 -->
+      <button type="button" class="btn" id="btnIDLoamingDetail05" onclick="togglePopup('btnIDLoamingDetail05', 'popupLoamingDetail05')">
+        <span>로밍 부가서비스 상세 팝업</span>
+      </button>
+    </div>
+
+    <!-- 웹 접근성 적용 필수 아이디 : popupLoamingDetail05, popupTitleLoamingDetail05 -->
+    <!-- [운영] 20230308 부가서비스 개선 : 클래스 추가 -->
+    <div class="popup popupExtraLoamingDetail show" id="popupLoamingDetail05" role="dialog" aria-labelledby="popupTitleLoamingDetail05" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleLoamingDetail05, btnIDLoamingDetail05, popupLoamingDetail05 -->
+          <strong class="popupTitle" id="popupTitleLoamingDetail05">로밍 부가서비스 상세</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDLoamingDetail05', 'popupLoamingDetail05')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="loamingDetailContainer typeAllDay">
+              <div class="loamingDetailHead">
+                <div class="topTitle">
+                  <strong>데이터로밍 기가팩 중일</strong>
+                  <strong>5일 <span class="colorRed">25,000</span>원</strong>
+                  <span class="tax">(부가세 포함)</span>
+                </div>
+                <div class="topContent">
+                  <div class="loamingRecomand">
+                    <div class="recomandCircleData iconSpeed">
+                      <p>2.5GB/5일</p>
+                    </div>
+                    <div class="recomandCircleData iconFlag">
+                      <p>중국, 일본</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="loamingDetailBody">
+                <div class="loamingDetailTabContainer01">
+                  <div class="tabList" role="tablist">
+                    <button type="button" id="loamingDetailTab01" class="tabButton" aria-controls="loamingDetailCon01" role="tab" aria-selected="true">
+                      <span>상품 정보</span>
+                    </button>
+                    <button type="button" id="loamingDetailTab02" class="tabButton" aria-controls="loamingDetailCon02" role="tab" aria-selected="false">
+                      <span>필수 안내</span>
+                    </button>
+                  </div>
+                  <div class="tabContainer">
+                    <div id="loamingDetailCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingDetailTab01">
+                      <div class="loamingProductInfo">
+                        <div class="productInfoArea">
+                          <div class="productInfoTop flex">
+                            <div class="imgWrap">
+                              <img src="../../assets/images/product/loaming_product_info_05.svg" alt="" />
+                            </div>
+                            <div class="descWrap">
+                              <strong class="colorRed">속도제어 없이 5일동안 2.5GB 사용</strong>
+                              <span>데이터 이용량 문자 안내 (500MB 단위) 및 제공량 소진 시 자동차단</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="productInfoArea">
+                          <div class="productInfoTop">
+                            <div class="descWrap">
+                              <span>설정한 이용기간 이전/이후에는</span>
+                              <strong class="colorRed">데이터가 자동으로 차단됩니다.</strong>
+                            </div>
+                          </div>
+                          <div class="productInfoMiddle">
+                            <div class="imgWrap">
+                              <img src="../../assets/images/product/loaming_product_info_06.svg" alt="24시간 단위 설정 후 5일간 이용 가능하며, 설정 기간 이전/이후로는 데이터 자동 차단 됩니다." />
+                            </div>
+                            <div class="descWrap">
+                              <p class="colorPrimary">※ 설정하신 시작 시간부터 5일간 이용 가능합니다.</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tableContainer productTable hideCaption info">
+                          <table>
+                            <caption>
+                              <span class="ir">혜택, 요금, 지원 국가, 신청 방법</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 27%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">혜택</th>
+                                <td>
+                                  중국‧일본 해외 제휴 통신사 LTE/3G 망에서 5일동안 데이터 2.5GB를 이용할 수 있는 서비스<br />
+                                  <span class="colorRed">(2.5GB를 다 쓰면, 데이터 자동 차단)</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">요금</th>
+                                <td>
+                                  <strong>5일 <span class="colorRed">25,000</span>원</strong> (부가세 포함)
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">지원 국가</th>
+                                <td>중국, 일본</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">신청 방법</th>
+                                <td>데이터를 이용할 시작 시간 지정</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="tableContainer productTable servingData">
+                          <table>
+                            <caption>
+                              데이터 소모량
+                              <span class="ir">구분, 데이터 소모량, 300MB 이용시, 1GB 이용시, 카카오톡, 페이스북, 웹, 게임, 웹툰, 음악, 실시간TV</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 27%" />
+                              <col />
+                              <col />
+                              <col />
+                              <col />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th scope="col" colspan="2" class="bgLightGray">구분</th>
+                                <th scope="col">데이터<br />소모량</th>
+                                <th scope="col">300MB<br />이용시</th>
+                                <th scope="col">1GB<br />이용시</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">카카오톡</th>
+                                <td>메시지 1건 전송 <br /><span class="small">(사진파일 별도)</span></td>
+                                <td>0.01MB</td>
+                                <td>3만건</td>
+                                <td>10만<br />2400건</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">페이스북</th>
+                                <td>1건 업데이트<br />기준</td>
+                                <td>0.2MB</td>
+                                <td>1500건</td>
+                                <td>5120건</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">웹</th>
+                                <td>1페이지 열기 <span class="small">(네이버 메인 기준)</span></td>
+                                <td>0.5MB</td>
+                                <td>600페이지</td>
+                                <td>2048페이지</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">게임</th>
+                                <td>1분 사용 <span class="small">(쿠키런 기준)</span></td>
+                                <td>0.35MB</td>
+                                <td>14시간</td>
+                                <td>48시간</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">웹툰</th>
+                                <td>1회분 보기</td>
+                                <td>4MB</td>
+                                <td>75회분</td>
+                                <td>256회분</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">음악</th>
+                                <td>1곡 듣기 <span class="small">(스트리밍)</span></td>
+                                <td>4MB</td>
+                                <td>75곡</td>
+                                <td>256곡</td>
+                              </tr>
+                              <tr>
+                                <th scope="row" rowspan="2">실시간TV</th>
+                                <td>1분 시청 <span class="small">(표준화질)</span></td>
+                                <td>5MB</td>
+                                <td>1시간</td>
+                                <td>204분</td>
+                              </tr>
+                              <tr>
+                                <td>1시간 시청 <span class="small">(고화질)</span></td>
+                                <td>500MB</td>
+                                <td>36분</td>
+                                <td>2시간</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="tableBottom colorPrimary">※ 상기 내용은 사용량에 대한 예시이며, 여러 환경 요소에 따라 용량은 변동 될 수 있습니다.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="loamingDetailCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingDetailTab02">
+                      <div class="loamingDetailTabContainer02">
+                        <div class="tabList roundTab" role="tablist">
+                          <button type="button" id="loamingOptionTab01" class="tabButton" aria-controls="loamingOptionCon01" role="tab" aria-selected="true">
+                            <span>가입</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab02" class="tabButton" aria-controls="loamingOptionCon02" role="tab" aria-selected="false">
+                            <span>이용</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab03" class="tabButton" aria-controls="loamingOptionCon03" role="tab" aria-selected="false">
+                            <span>요금 부과</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab04" class="tabButton" aria-controls="loamingOptionCon04" role="tab" aria-selected="false">
+                            <span>종료(해지)</span>
+                          </button>
+                        </div>
+                        <div class="tabContainer">
+                          <div id="loamingOptionCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingOptionTab01">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot">사업자에 따라 해당 상품 제공 여부 상이할 수 있습니다.</li>
+                                    <li class="beforeDot">데이터로밍 차단에 가입되어 있으면, 해당 상품을 먼저 해지하셔야 합니다.</li>
+                                    <li class="beforeDot">제휴하고 있는 해외국가 및 통신사 사정으로 갑자기 서비스 제공이 중단되는 경우가 있사오니, <span class="colorRed">‘지원국가’</span> 확인 후 가입하시기 바랍니다.</li>
+                                    <li class="beforeDot">청소년 요금제 이용 고객님은 ‘청소년 로밍 허용’ 또는 ‘청소년 로밍 일시 허용’을 먼저 가입하셔야 합니다. 미 가입된 고객님은 보호자(법정대리인)의 동의 하에 ‘청소년 로밍 허용’이 동시 가입 됩니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab02">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot colorRed">데이터 기본 제공량을 이용할 수 있으며, 데이터 기본 제공량을 다 쓰면, 데이터로밍 안심차단 됩니다.</li>
+                                    <li class="beforeDot">LTE로밍 이용을 위해 휴대폰 설정에서 ‘LTE로밍’을 켜주세요.</li>
+                                    <li class="beforeDot">현지 사업자의 통신 사정에 의해 LTE 이용이 불가한 경우 3G로 연결됩니다.</li>
+                                    <li class="beforeDot">해외 현지 통신망 사정에 따라 속도 저하 및 끊김 현상이 발생할 수 있습니다.</li>
+                                    <li class="beforeDot colorRed">고객님이 지정한 시작 시간부터 5일간 서비스 이용 가능합니다. (24시간 단위 지정)<br />예) 시작 일시를 6월 1일 14시로 지정할 경우, 6월 6일 14시까지 이용 가능</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon03" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab03">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot colorRed">기간 중 데이터를 1회라도 사용 시 요금 전액이 청구됩니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon04" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab04">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot">서비스 종료 시, 데이터로밍 안심차단 됩니다.</li>
+                                    <li class="beforeDot">서비스 종료 후 안심 차단 기능은 귀국 후 별도 절차 없이 해제됩니다.</li>
+                                    <li class="beforeDot">다음 출국 시 데이터로밍 이용을 원치 않으시면 데이터로밍 차단을 신청하시기 바랍니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [운영] 20230308 부가서비스 개선 : 추가 -->
+            <div class="poroductCommandBottom">
+              <div class="productfixedArea">
+                <div class="productfixedTop">
+                  <div class="topLeft">
+                    <strong class="productName">데이터로밍 기가팩 중일</strong>
+                  </div>
+                  <div class="topRight">
+                    <p class="productPrice"><span class="price">25,000</span>원</p>
+                  </div>
+                </div>
+                <div class="productfixedBottom">
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>신청하기</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //[운영] 20230308 부가서비스 개선 : 추가 -->
+          </div>
+          <!-- //popupContent -->
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

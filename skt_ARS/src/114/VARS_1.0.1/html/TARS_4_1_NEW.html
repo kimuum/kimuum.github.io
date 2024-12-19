@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="tpass" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "headerType" : "default",
+            "title": '구독상품',
+            "isBtn" : true
+          })
+        <div class="content-container">
+          <section id="content" class="content-area">
+            <!-- 2depth 영역 -->
+            <div class="sub-menu">
+              <ol>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">구독상품</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'M4');">
+                    <span class="text">인터넷/TV가입</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'M2');">
+                    <span class="text">부가서비스 신청</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'M3');">
+                    <span class="text">부가서비스 해지</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <!-- //2depth 영역 -->
+            <!-- 3depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol id="menu_reset" class="old" style="display: none">
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">우주패스 all/mini</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                      <span class="text">V컬러링</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                      <span class="text">FLO 앤데이터</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">Wavve 앤데이터</span>
+                    </a>
+                  </li>
+                </ol>
+                <ol id="menu_reset" class="new" style="display: none">
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">우주패스 all/mini</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '5', 'menu');">
+                      <span class="text">우주패스 life</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                      <span class="text">V컬러링</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                      <span class="text">FLO 앤데이터</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">Wavve 앤데이터</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //3depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        var tpass = getUrlParameter('tpass');
+        /*@build-time*/ tpass = 'Y';
+        if (tpass == 'Y' || tpass == 'y') {
+          $('.new').css('display', 'block');
+        } else {
+          $('.old').css('display', 'block');
+        }
+      });
+
+      // 청구요금/실시간/잔여기본통화 : dtmf =M1
+      // 휴대폰 결제 사용요금 조회/차단신청 : dtmf =M2
+      // 청구/수납/세금계산서 FAX 수신 : dtmf =M3
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+/* STEP05 */ 
+.wrap_step_05 {
+  .content_box:not(.content_center) {
+    width: 200px;
+  }
+  .content_center {
+    width: calc(100% - 400px); 
+  }
+  // Grid
+  .content_grid {
+    grid-template-columns: 200px auto 200px; 
+    .content_box {
+      width: auto;
+    }
+  }
+  // Position
+  .content_position {
+    .content_center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+

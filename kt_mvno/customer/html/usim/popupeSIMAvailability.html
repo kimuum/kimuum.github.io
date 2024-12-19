@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "eSIM 개통 가능 여부 결과", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>eSIM 개통 가능 여부 결과</span></button>
+    </div>
+    <div class="popup show" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">eSIM 개통 가능 여부 결과</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <!-- [2차] 20221102 수정 -->
+          <div class="popupContent">
+            <!-- <p class="smallText">
+              eSIM 지원 단말이 아닙니다. 
+              유심(USIM)으로 셀프개통 진행해주세요.
+            </p>
+
+            <p class="smallText">
+              휴대폰 정보가 올바른지 다시 확인하시기 바랍니다.
+            </p>
+
+            <p class="smallText">
+              eSIM 셀프개통이 가능합니다. 
+              다음 화면으로 이동해주세요.
+            </p>
+
+            <p class="smallText">
+              현재 IMEI2가 사용중입니다.
+            </p> -->
+
+            <p class="smallText">
+              자급제 단말 정보가 등록이 되어 있지 않습니다. <br />
+              등록한 휴대폰 정보의 유효성 체크를 해주세요.
+            </p>
+          </div>
+          <!-- //[2차] 20221102 수정 -->
+
+          <!-- [2차] 20221102 수정 -->
+          <div class="buttonArea">
+            <!-- <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>확인</span></button> -->
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>유효성 체크하기</span></button>
+            <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+          </div>
+          <!-- //[2차] 20221102 수정 -->
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper space-pass">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '우주패스 life',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div id="sub_content" class="space-pass-content">
+                <img src="/{version}/images/sub/SPACE_STANDARD.jpg" />
+              </div>
+            </div>
+          </section>
+        </div>
+        <div id="gu" class="service-button-box" style="display: none">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">변경/문의</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RE', 'menu');">가입/해지</button>
+          </div>
+        </div>
+
+        <div id="check" class="service-button-box" style="display: none">
+          <a href="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');" class="btn btn-primary">확인</a>
+        </div>
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+    <script type="text/javascript" src="/{version}/js/index_jquery/script.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        if (vars_type == 'C') {
+          $('.sub_content').css({ top: '93px', bottom: '107px' });
+        }
+
+        try {
+          // 1: 주간, 0: 야간
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '1';
+          // 주간만 노출(중식/야간/휴일은 비노출)
+          if (timezone_type == '1') {
+            $('#gu').css('display', 'block');
+          } else {
+            $('#check').css('display', 'block');
+          }
+        } catch (e) {}
+      });
+    </script>
+  </body>
+</html>

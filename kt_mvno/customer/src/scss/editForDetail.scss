@@ -1,0 +1,122 @@
+@import './abstracts/editor5';
+@import './abstracts/editor4';
+/* --------- EDITOR STYLES  ---------------------------------------------------------------------------------------- */
+.highTextArea {
+  // 추가 에디터 스타일
+  overflow-x: auto;
+  h2, h3, h4 {
+    font-weight: bold;
+    line-height: 1.4;
+  }
+  h1 {
+    font-size: 42px;
+    font-weight: 100;
+    line-height: 1.04;
+    margin-bottom: 25px;
+  }
+  h2 {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 25px;
+  }
+  h3 {
+    font-size: 28px;
+    line-height: 30px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+  pre {
+    display: block;
+    font-family: monospace;
+    margin: 1em 0px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    -moz-tab-size: 4;
+    tab-size: 4;
+  }
+  strong {
+    font-weight: bold;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  ol, li, ul, p {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+  ol, ul {
+    padding-left: 4rem;
+  }
+  ul {
+    list-style-type: disc;
+    ul {
+      list-style-type: circle;
+      margin-block-start: 0px;
+      margin-block-end: 0px;
+    }
+  }
+  ol {
+    & > li {
+      list-style: decimal;
+    }
+  }
+  blockquote {
+    display: block;
+    padding: 2px 0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    padding-right: 8px;
+    border-left-width: 5px;
+    font-style: italic;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    border-style: solid;
+    border-color: #ccc;    
+  }
+  table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border: 1px solid gray;
+    tbody {
+      display: table-row-group;
+      vertical-align: middle;
+      border-color: inherit;
+      tr {
+        &:last-child {
+          th, td {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+    tr {
+      display: table-row;
+      vertical-align: inherit;
+    }
+    
+    th, td {
+      padding: 0.5rem;
+      border-bottom: 1px solid gray;
+      border-right: 1px solid gray;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    td {
+      display: table-cell;
+      vertical-align: inherit;
+    }
+    th {
+      text-align: center;
+      background-color: $bgcolor-gray-02;
+    }
+  }
+  
+}

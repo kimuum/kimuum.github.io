@@ -1,0 +1,30 @@
+/*=== 고객 회원 상세 === */
+.meberPhoneLineArea {
+  padding: 3rem;
+  background-color: $bgcolor-gray-03;
+  border-radius: 0.8rem;
+  @include font(1.6rem, bold, $color-gray-01, 2.3rem);
+  .name {
+    color: $black;
+    font-weight: bold;
+    > span {
+      font-weight: normal;
+    }
+  }
+  .profileLabel {
+    @include flex(row, flex-start, center);
+    margin-top: 0.9rem;
+    .memberLevel {
+      height: 2.3rem;
+      margin-right: 0.8rem;
+      padding: 0 0.6rem;
+      border: 1px solid $primary;
+      font-size: 1.4rem;
+      color: $primary;
+      border-radius: 3px;
+    }
+    .normal {
+      font-weight: normal;
+    }
+  }
+}

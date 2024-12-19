@@ -1,0 +1,1164 @@
+@@include('head.html', {
+'title': 'Home'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+
+      <div class="content-container" style="transform: translateY(0px);"><!-- 본문 스크롤 이동 시 translateY값으로 조절 -->
+        <div class="home-area">
+          <!-- Main Contents Banner - Templete 01 -->
+          <div class="banner-container">
+            <div class="banner-flex-col">
+              <!-- 현재 위치 표시 클래스 : focused -->
+              <div class="banner-area focused">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper00">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <!-- 라이브 아이콘 -->
+                      <!-- <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span> -->
+
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_01.png" alt="">
+                      </div>
+                      <div class="none-video-container">
+                        <div class="none-image-box">
+                          <img src="./images/ic_tab_partners_hsn.png" alt="">
+                        </div>
+                        <div class="none-content-box">
+                          <strong class="none-title">Click the screen <br>to see more products!</strong>
+                        </div>
+                        <!-- 231010 Call to Order 추가 -->
+                        <div class="call-order-wrap">
+                          <div class="call-order-area">
+                            <span class="call-label">Call to Order</span>
+                            <div class="call-number">
+                              <span>080-284-3100</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="none-video-container">
+                        <div class="none-image-box">
+                          <img src="./images/ic_tab_partners_hsn.png" alt="">
+                        </div>
+                        <div class="none-content-box">
+                          <strong class="none-title">Click the Screen</strong>
+                          <p class="none-text">to explore more products!</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="none-video-container">
+                        <div class="none-image-box">
+                          <img src="./images/ic_tab_partners_hsn.png" alt="">
+                        </div>
+                        <div class="none-content-box">
+                          <strong class="none-title">Click the screen <br>to see more products!</strong>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- [v1.01 업데이트] 20230807 간헐적 live 정책 추가 -->
+                <!-- <div class="none-video-container">
+                  <div class="none-image-box">
+                    <img src="./images/ic_tab_partners_hsn.png" alt="">
+                  </div>
+                  <div class="none-content-box">
+                    <strong class="none-title">Click the Screen</strong>
+                    <p class="none-text">to explore more products!</p>
+                  </div>
+                </div> -->
+                <!-- //[v1.01 업데이트] 20230807 간헐적 live 정책 추가 -->
+              </div>
+              <div class="banner-area">
+                <div class="swiper banner-slide-swiper" id="swiper01">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_thumb_empty_hor.jpg" alt=""><!-- default 이미지 -->
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_thumb_empty_ver.jpg" alt=""><!-- default 이미지 -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+
+                <!-- <div class="banner-slide-wrapper">
+                    <div class="banner-slide-container" style="transform: translateX(-1488px);">
+                      <div class="slide-item"></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                    </div>
+                    <div class="banner-slide-pagenation">
+                      <span class="btn-prev selected"></span>
+                      <span class="btn-next"></span>
+                    </div>
+                  </div> -->
+                <div class="banner-corner">
+                  <div class="icon-partners size-large"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-flex-row">
+              <div class="banner-area">
+                <div class="swiper banner-slide-swiper" id="swiper02">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_01.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <!-- 배너 이미지 없을경우 디폴트 이미지 -->
+                        <img src="./images/thumbnail/img_home_banner_empty_ver.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+
+                <!-- <div class="banner-slide-wrapper">
+                    <div class="banner-slide-container" style="transform: translateX(-1488px);">
+                      <div class="slide-item"></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                    </div>
+                    <div class="banner-slide-pagenation">
+                      <span class="btn-prev selected"></span>
+                      <span class="btn-next"></span>
+                    </div>
+                  </div> -->
+                <div class="banner-corner">
+                  <div class="icon-partners size-large"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></div>
+                </div>
+              </div>
+              <div class="banner-area focused">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper03">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- <div class="thumb-box"><img src="./images/thumbnail/img_home_banner_v_02.png" alt=""></div> -->
+
+                <div class="banner-corner">
+                  <div class="icon-partners size-large"><img src="./images/ic_partners_netflix.png" alt="netflix"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //Main Contents Banner - Templete 01 -->
+          <!-- Main Contents Banner - Templete 02 -->
+          <div class="banner-container">
+            <div class="banner-flex-row">
+              <div class="banner-area focused">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper04">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <!-- VOD 일 때 플레이어 버튼 -->
+                      <!-- <div class="vod-play-box">
+                                    <button type="button" class="btn-vod-play"></button>
+                                  </div> -->
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- Live 표시 라벨 -->
+                <!-- <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span> -->
+                <!-- VOD 일 때 플레이어 버튼 -->
+                <!-- <div class="vod-play-box">
+                                <button type="button" class="btn-vod-play"></button>
+                              </div> -->
+                <!-- <div class="video-container">
+                              <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                            </div> -->
+                <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+              </div>
+            </div>
+
+            <div class="banner-flex-col">
+              <div class="banner-area">
+                <div class="swiper banner-slide-swiper" id="swiper05">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_h_02.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- <div class="banner-slide-wrapper">
+                    <div class="banner-slide-container" style="transform: translateX(-1488px);">
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                    </div>
+                    <div class="banner-slide-pagenation">
+                      <span class="btn-prev selected"></span>
+                      <span class="btn-next"></span>
+                    </div>
+                  </div> -->
+                <div class="banner-corner">
+                  <div class="icon-partners size-large"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></div>
+                </div>
+              </div>
+              <!-- 현재 위치 표시 클래스 : focused -->
+              <div class="banner-area focused">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper06">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-row">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 : 2줄 표현 클래스 textline2 -->
+                              <span class="product-offer textline2">60% Off! + <br />FREE Shipping</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/img_thumb_empty_560.jpg" alt=""><!-- default 이미지 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-row">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <span class="product-price">$120.99</span>
+                              <span class="product-discount">$999.99</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/img_thumb_empty_ver.jpg" alt=""><!-- default 이미지 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-row">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <span class="product-price">$120.99</span>
+                              <span class="product-discount">$999.99</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/img_thumb_empty_ver.jpg" alt=""><!-- default 이미지 -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- <div class="top-deal-box">
+                  <div class="top-deal-row">
+                    <div class="desc-box">
+                      <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                      <div class="product-desc">
+                        <span class="product-price">$120.99</span>
+                        <span class="product-discount">$999.99</span>
+                      </div>
+                    </div>
+                    <div class="thumb-box">
+                      <img src="./images/thumbnail/img_thumb_empty_ver.jpg" alt="">
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+              </div>
+            </div>
+            <div class="banner-flex-row">
+              <div class="banner-area">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper07">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <!-- 영상 – LIVE, VOD 재생 없음 -->
+                      <div class="none-video-container">
+                        <div class="none-image-box">
+                          <img src="./images/ic_tab_partners_hsn.png" alt="">
+                        </div>
+                        <div class="none-content-box">
+                          <strong class="none-title">Click the screen <br>to see more products!</strong>
+                        </div>
+                      </div>
+                      <!-- //영상 – LIVE, VOD 재생 없음 -->
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- <div class="banner-corner"> -->
+                <!-- <div class="icon-partners size-large"><img src="./images/ic_partners_netflix.png" alt="netflix"></div> -->
+                <!-- </div> -->
+              </div>
+            </div>
+          </div>
+          <!-- //Main Contents Banner - Templete 02 -->
+          <!-- Main Contents Banner - Templete 03 -->
+          <div class="banner-container">
+            <div class="banner-flex-row">
+              <!-- 현재 위치 표시 클래스 : focused -->
+              <div class="banner-area">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper08">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-col">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 : 2줄 표현 클래스 textline2 -->
+                              <span class="product-offer textline2">60% Off! + <br />FREE Shipping</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-col">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <span class="product-price">$120.99</span>
+                              <span class="product-discount">$999.99</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="top-deal-box">
+                        <div class="top-deal-col">
+                          <div class="desc-box">
+                            <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                            <div class="product-desc">
+                              <span class="product-price">$120.99</span>
+                              <span class="product-discount">$999.99</span>
+                            </div>
+                          </div>
+                          <div class="thumb-box">
+                            <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- <div class="top-deal-box">
+                  <div class="top-deal-col">
+                    <div class="desc-box">
+                      <div class="product-name">BALENCIAGA / ADIDAS STAN SMIT BALENCIAGA / ADIDAS STAN SMIT</div>
+                      <div class="product-desc">
+                        <span class="product-price">$120.99</span>
+                        <span class="product-discount">$999.99</span>
+                      </div>
+                    </div>
+                    <div class="thumb-box">
+                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+              </div>
+              <div class="banner-area">
+                <!-- [중간시연 요구사항] 73행 롤링 수정 -->
+                <div class="swiper banner-slide-swiper" id="swiper09">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="thumb-box">
+                        <img src="./images/thumbnail/img_home_banner_v_02.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+                <!-- // [중간시연 요구사항] 73행 롤링 수정 -->
+
+                <!-- <div class="thumb-box"><img src="./images/thumbnail/img_home_banner_v_02.png" alt=""></div> -->
+                <div class="banner-corner">
+                  <div class="icon-partners size-large"><img src="./images/ic_partners_netflix.png" alt="netflix"></div>
+                </div>
+              </div>
+            </div>
+            <div class="banner-flex-col">
+              <div class="banner-area">
+                <div class="swiper banner-slide-swiper" id="swiper010">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <!-- VOD 일 때 플레이어 버튼 -->
+                      <!-- <div class="vod-play-box">
+                        <button type="button" class="btn-vod-play"></button>
+                      </div> -->
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_h_01.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_h_01.png" alt="">
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <!-- Live 표시 라벨 -->
+                      <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span>
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_h_01.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="banner-slide-pagenation">
+                    <span class="btn-prev focused"></span>
+                    <span class="btn-next"></span>
+                  </div>
+                </div>
+
+                <!-- Live 표시 라벨 -->
+                <!-- <span class="badge-live"><img src="./images/tag_liveshow.png" alt="LIVE"></span> -->
+                <!-- VOD 일 때 플레이어 버튼 -->
+                <!-- <div class="vod-play-box">
+                  <button type="button" class="btn-vod-play"></button>
+                </div>
+                <div class="video-container">
+                  <img src="./images/thumbnail/img_home_banner_h_01.png" alt="">
+                </div> -->
+              </div>
+              <div class="banner-area">
+                <div class="swiper banner-slide-swiper" id="swiper011">
+                  <div class="none-video-container">
+                    <div class="none-image-box">
+                      <img src="./images/ic_tab_partners_hsn.png" alt="">
+                    </div>
+                    <div class="none-content-box">
+                      <strong class="none-title">Click the screen <br>to see more products!</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="banner-slide-wrapper">
+                    <div class="banner-slide-container" style="transform: translateX(-1488px);">
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                      <div class="slide-item"><img src="./images/thumbnail/img_home_banner_h_02.png" alt=""></div>
+                    </div>
+                    <div class="banner-slide-pagenation">
+                      <span class="btn-prev"></span>
+                      <span class="btn-next"></span>
+                    </div>
+                  </div> -->
+
+              </div>
+            </div>
+          </div>
+          <!-- //Main Contents Banner - Templete 03 -->
+        </div>
+
+        <div class="content-middle">
+          <div class="section-container">
+            <!-- product -->
+            <div class="home-tab-area">
+              <div class="home-tab-box" style="transform: translateX(0px);"><!-- 본문 스크롤 이동 시 translateX값으로 조절 -->
+                <!-- 
+                    카테고리 아이콘 추가 클래스 정의
+
+                    기본값 : 추가 클래스 없음
+                    선택 됨 : .selected
+                    선택 됨 + 포커스 : .selected.focused
+                    포커스 : .focused
+                  -->
+                @@loop('homeIconCateTab.html', '../data/home_icon_cate_tab.json')
+              </div>
+            </div>
+            <div class="section-list-container bg-gray">
+              <div class="section-list-box" style="transform: translateX(0px);"><!-- 본문 스크롤 이동 시 translateX값으로 조절 -->
+                <div class="section-list">
+                  <div class="product-area">
+                    <div class="list-flex-col">
+                      <div class="thumb-box">
+                        <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                        <img src="./images/thumbnail/img_thumb_empty_product.jpg" alt=""><!-- default 이미지 -->
+                      </div>
+                      <div class="desc-box">
+                        <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                        <div class="product-desc">
+                          <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 -->
+                          <span class="product-offer">60% Off! + FREE Shipping</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-list">
+                  <div class="product-area">
+                    <div class="list-flex-col">
+                      <!-- 수정 20230419 : 제품 썸네일 케이스 추가 -->
+                      <div class="thumb-box">
+                        <!-- 
+                            제품 썸네일 타입 목록 :
+                            badge-ranking : 랭킹 뱃지
+                            badge-sale : 세일 뱃지
+                            sold-out : 품절
+                          -->
+                        <div class="badge-sale"><span>88%</span></div>
+                        <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                        <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                      </div>
+                      <!-- //수정 20230419 : 제품 썸네일 케이스 추가 -->
+                      <div class="desc-box">
+                        <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                        <div class="product-desc">
+                          <span class="product-price">$120.99</span>
+                          <span class="product-discount">$999.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-list">
+                  <div class="product-area">
+                    <div class="list-flex-col">
+                      <!-- 수정 20230419 : 제품 썸네일 케이스 추가 -->
+                      <div class="thumb-box">
+                        <!-- 
+                            제품 썸네일 타입 목록 :
+                            badge-ranking : 랭킹 뱃지
+                            badge-sale : 세일 뱃지
+                            sold-out : 품절
+                          -->
+                        <div class="sold-out"><span>Sold Out</span></div>
+                        <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                        <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                      </div>
+                      <!-- //수정 20230419 : 제품 썸네일 케이스 추가 -->
+                      <div class="desc-box">
+                        <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                        <div class="product-desc">
+                          <span class="product-price">$120.99</span>
+                          <span class="product-discount">$999.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-list">
+                  <div class="product-area">
+                    <div class="list-flex-col">
+                      <div class="thumb-box">
+                        <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                        <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                      </div>
+                      <div class="desc-box">
+                        <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                        <div class="product-desc">
+                          <span class="product-price">$120.99</span>
+                          <span class="product-discount">$999.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-list">
+                  <div class="product-area">
+                    <div class="list-flex-col">
+                      <div class="thumb-box">
+                        <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                        <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                      </div>
+                      <div class="desc-box">
+                        <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                        <div class="product-desc">
+                          <span class="product-price">$120.99</span>
+                          <span class="product-discount">$999.99</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-list focused">
+                  <div class="product-area">
+                    <div class="more-button-box">
+                      <button type="button" class="btn-more"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //product -->
+
+            <!-- ON SALE -->
+            <div class="section-area">
+              <div class="section-title-box">
+                <div class="section-title">
+                  <span>ON SALE</span>
+                </div>
+              </div>
+
+              <div class="section-list-container">
+                <div class="section-list-box" style="transform: translateX(0px);"><!-- 본문 스크롤 이동 시 translateX값으로 조절 -->
+                  <!-- 
+                      현재 위치 포커스 클래스 : focused
+                    -->
+
+
+                  <div class="section-list focused">
+                    <div class="category-area">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                          <img src="./images/thumbnail/test_img_banner_01.jpg" alt="">
+                        </div>
+                        <!--
+                          231004 컬러 반복 클래스 순서
+                          1. fashion 
+                          2. beauty
+                          3. health
+                          4. home
+                          5. jewerly
+                        -->
+                        <div class="desc-box fashion">
+                          <div class="category">FASHION</div>
+                          <div class="percent"><span class="upto">up to</span><span>24%</span></div>
+                          <div class="product-name">Product Name Product Name Product Name Product Name Product Name Product Name</div>
+                          <div class="product-desc">
+                            <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 -->
+                            <span class="product-offer">60% Off! + FREE Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="category-area">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                          <img src="./images/thumbnail/img_thumb_empty_product.jpg" alt=""><!-- default 이미지 -->
+                        </div>
+                        <div class="desc-box beauty">
+                          <div class="category">BEAUTY</div>
+                          <div class="percent"><span class="upto">up to</span><span>24%</span></div><!-- 기획서 v1.07 동기화 : 20230921 문구 수정 -->
+                          <div class="product-name">Product Name Product Name Product Name Product Name Product Name Product Name</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="category-area">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                          <img src="./images/thumbnail/test_img_banner_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box health">
+                          <div class="category">KITCHEN & FOOD</div>
+                          <div class="percent"><span class="upto">up to</span><span>24%</span></div>
+                          <div class="product-name">Product Name Product Name Product Name Product Name Product Name Product Name</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="section-list">
+                    <div class="category-area">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                          <img src="./images/thumbnail/test_img_banner_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box home">
+                          <div class="category">HOME</div>
+                          <div class="percent"><span class="upto">up to</span><span>24%</span></div>
+                          <div class="product-name">Product Name Product Name Product Name Product Name Product Name Product Name</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="category-area">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box jewerly">
+                          <div class="category">jewelry</div>
+                          <div class="percent"><span class="upto">up to</span><span>24%</span></div>
+                          <div class="product-name">Product Name Product Name Product Name Product Name Product Name Product Name</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- [SHOPTIME-909] 20231012 on sale 더보기 버튼 삭제 -->
+                </div>
+              </div>
+            </div>
+            <!-- //ON SALE -->
+
+            <!-- POPULAR SHOW -->
+            <div class="section-area">
+              <div class="section-title-box">
+                <div class="section-title">
+                  <span>POPULAR SHOW</span>
+                </div>
+              </div>
+
+              <div class="section-list-container">
+                <div class="section-list-box" style="transform: translateX(0px);"><!-- 본문 스크롤 이동 시 translateX값으로 조절 -->
+                  <!-- 
+                      현재 위치 포커스 클래스 : focused
+                    -->
+                  <div class="section-list">
+                    <!-- [v1.01 업데이트] 20230807 파트너 추가 클래스 : has-partner -->
+                    <div class="list-area has-partner">
+                      <div class="list-flex-col">
+                        <div class="thumb-box">
+                          <!-- 20230802 파트너사 아이콘 삭제 -->
+                          <img src="./images/thumbnail/img_thumb_empty_hor.jpg" alt=""><!-- default 이미지 -->
+                        </div>
+                        <div class="desc-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 추가 -->
+                          <div class="icon-partners"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></div>
+                          <div class="product-name"><span class="name-box">Product Name</span></div>
+                          <!-- SHOPTIME-942 20231023 호스트네임 삭제 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <!-- [v1.01 업데이트] 20230807 파트너 추가 클래스 : has-partner -->
+                    <div class="list-area has-partner">
+                      <div class="list-flex-col">
+                        <div class="thumb-box">
+                          <!-- 20230802 파트너사 아이콘 삭제 -->
+                          <img src="./images/thumbnail/img_thumb_empty_hor.jpg" alt=""><!-- default 이미지 -->
+                        </div>
+                        <div class="desc-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 추가 -->
+                          <div class="icon-partners"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></div>
+                          <div class="product-name textline2">
+                            <span class="name-box">
+                              Product Name Product Name Product Name Product Name Product Name Product Name Product Name Product Name Product Name</span>
+                          </div>
+                          <!-- SHOPTIME-942 20231023 호스트네임 삭제 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list focused">
+                    <div class="list-area has-partner">
+                      <div class="list-flex-row">
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/img_thumb_empty_ver.jpg" alt=""><!-- default 이미지 -->
+                        </div>
+                        <div class="desc-box">
+                          <!-- [v1.01 업데이트] 20230807 파트너 추가 -->
+                          <span class="icon-partners"><img src="./images/ic_partners_bestbuy.png" alt="bestbuy"></span>
+                          <div class="product-name">
+                            <span class="name-box">
+                              Exclusive! Jessica Simpson Bonita Chiffon Dress Exclusive! Jessica Simpson Bonita Chiffon Dress
+                              Exclusive! Jessica Simpson Bonita Chiffon Dress Exclusive! Jessica Simpson Bonita Chiffon Dress
+                              Exclusive! Jessica Simpson Bonita Chiffon Dress Exclusive! Jessica Simpson Bonita Chiffon Dress
+                            </span>
+                          </div>
+                          <!-- SHOPTIME-942 20231023 호스트네임 삭제 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="list-area">
+                      <div class="more-button-box">
+                        <button type="button" class="btn-more"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //POPULAR SHOW -->
+
+            <!-- BEST SELLER -->
+            <div class="section-area">
+              <div class="section-title-box">
+                <div class="section-title">
+                  <span>BEST SELLER</span>
+                </div>
+              </div>
+
+              <div class="section-list-container">
+                <div class="section-list-box" style="transform: translateX(0px);"><!-- 본문 스크롤 이동 시 translateX값으로 조절 -->
+                  <div class="section-list focused">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">1</span>
+                        </div>
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 -->
+                            <span class="product-offer">60% Off! + FREE Shipping</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <!-- 
+                            제품 썸네일 타입 목록 :
+                            badge-ranking : 랭킹 뱃지
+                            badge-sale : 세일 뱃지
+                            sold-out : 품절
+                          -->
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">2</span>
+                        </div>
+                        <!-- 수정 20230419 : 제품 썸네일 케이스 추가 -->
+                        <div class="thumb-box">
+                          <div class="sold-out"><span>Sold Out</span></div>
+                          <div class="badge-sale"><span>88%</span></div>
+                          <!-- 20230802 파트너사 아이콘 삭제 -->
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <!-- //수정 20230419 : 제품 썸네일 케이스 추가 -->
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">3</span>
+                        </div>
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">4</span>
+                        </div>
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">5</span>
+                        </div>
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="section-list">
+                    <div class="product-area">
+                      <div class="list-flex-col">
+                        <div class="badge-ranking">
+                          <span>TOP</span>
+                          <span class="num">6</span>
+                        </div>
+                        <div class="thumb-box">
+                          <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                        </div>
+                        <div class="desc-box">
+                          <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                          <div class="product-desc">
+                            <span class="product-price">$120.99</span>
+                            <span class="product-discount">$999.99</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 수정 20230922 : 더보기 버튼 추가 -->
+                  <div class="section-list">
+                    <div class="list-area">
+                      <div class="more-button-box">
+                        <button type="button" class="btn-more"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //BEST SELLER -->
+          </div>
+        </div>
+
+
+        <div class="top-button-box">
+          <button type="button" class="btn-top"></button>
+        </div>
+      </div>
+      <div class="scroll-button-box">
+        <button type="button" class="btn-scroll"></button>
+      </div>
+    </main>
+    <!-- // Main -->
+
+
+  </div>
+  @@include('scale_js.html')
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    bannerSwiper('#swiper00');
+    bannerSwiper('#swiper01');
+    bannerSwiper('#swiper02');
+    bannerSwiper('#swiper03');
+    bannerSwiper('#swiper04');
+    bannerSwiper('#swiper05');
+    bannerSwiper('#swiper06');
+    bannerSwiper('#swiper07');
+    bannerSwiper('#swiper08');
+    bannerSwiper('#swiper09');
+    bannerSwiper('#swiper010');
+    bannerSwiper('#swiper011');
+    function bannerSwiper (swiper) {
+      var swiper = new Swiper(swiper, {
+        touchRatio: 0,
+        slidesPerView: 1,
+        navigation: {
+          nextEl: swiper + " .banner-slide-pagenation .btn-next",
+          prevEl: swiper + " .banner-slide-pagenation .btn-prev",
+        },
+      });
+    }
+  </script>
+</body>
+
+</html>

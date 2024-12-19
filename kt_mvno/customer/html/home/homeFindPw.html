@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "비밀번호 찾기", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : homeFindPw -->
+    <div class="wrap detail homeFindPw">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', secondMenu: '', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>비밀번호 찾기</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <fieldset class="formInner">
+                <div class="formItemArea">
+                  <div class="field fieldInput">
+                    <label for="input-id-01" class="fieldLabel">이름</label>
+                    <div class="fieldForm">
+                      <div class="input">
+                        <input type="text" id="input-id-01" value="" placeholder="이름을 입력해주세요." />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field fieldInput">
+                    <label for="input-id-02" class="fieldLabel">아이디</label>
+                    <div class="fieldForm">
+                      <div class="input">
+                        <input type="text" id="input-id-02" value="" placeholder="아이디를 입력해주세요." />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<li class="recommend-list">
+  <a href="javascript:;" title="Go to product details">
+    <div class="img-area">
+      <img src="../../assets/images/dummy/@@image" alt="@@product">
+      <div class="badge-box">10%<span class="ir">discount</span></div>
+    </div>
+    <div class="desc-area">
+      <div class="star-box satr-small">
+        <img src="../../assets/images/@@starImage" alt="@@starTitle">
+      </div>
+      <div class="title-box">
+        <div class="title">@@product</div>
+      </div>
+      <div class="price-box">
+        <span class="price">@@price</span>
+        <span class="discount">@@discount</span>
+      </div>
+      <div class="tag-box">
+        <!-- 
+                        태그 아이템 클래스 목록 :
+                        .tsv
+                        .free
+                        .sale
+                        .time-price
+                      -->
+        @@for(var i = 0; i < tag.length; i++) {<span class="tag-`+tag[i].class+`">`+tag[i].title+`</span>}
+      </div>
+    </div>
+  </a>
+</li>

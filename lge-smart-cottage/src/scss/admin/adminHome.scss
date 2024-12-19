@@ -1,0 +1,34 @@
+.anchor-box {
+  .anchor-lists {
+    @include flex(row, flex-start, center);
+    gap: 1rem;
+    .anchor-list {
+      flex: 1;
+      .anchor {
+        @include flex(row, space-between, center);
+        padding: 2rem 1.8rem;
+        border-radius: 2rem;
+        background-color: $white;
+        &.disabled {
+          .label,
+          .data,
+          .unit {
+            color: $gray-100 !important;
+          }
+        }
+
+        .label {
+          @include font(1.4rem, 500, $gray-500, 1.8rem);
+        }
+
+        .data {
+          @include flex(row, flex-start, center);
+          @include font(2.4rem, 700, $adminAlert, 3.2rem);
+          .unit {
+            @include font(1.8rem, 700, $gray-900, normal);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금제 변경 불가 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>요금제 변경 불가 안내 1</span></button>
+      <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>요금제 변경 불가 안내 2</span></button>
+      <!-- [2차] 20221004 기획 추가 -->
+      <button type="button" class="btn" id="btnID04" onclick="togglePopup('btnID04', 'popupDefault04')"><span>요금제 변경 불가 안내 3</span></button>
+      <button type="button" class="btn" id="btnID03" onclick="togglePopup('btnID03', 'popupDefault03')"><span>변경 불가 안내</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">요금제 변경 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>요금제 변경이 불가합니다.</p>
+            <br />
+            <p>사용중이신 <strong class="bold">데이터쉐어링 결합하기</strong> 해지 후 요금제 변경을 다시 시도해주시기 바랍니다.</p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary"><span>마이알뜰폰 홈 바로가기</span></button>
+          </div>
+          <div class="linkGroup alignCenter">
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터쉐어링 바로가기</a>
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터주고받기 바로가기</a>
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">부가서비스 신청/해지 바로가기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">요금제 변경 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>요금제 변경이 불가합니다.</p>
+            <br />
+            <p>사용중이신 부가서비스 중 <strong class="bold">부가서비스명</strong> 해지 후 요금제 변경을 다시 시도해주시기 바랍니다.</p>
+            <p>마이알뜰폰 서비스에서 해지 불가능한 부가서비는 사업자 고객센터로 문의바랍니다.</p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary"><span>마이알뜰폰 홈 바로가기</span></button>
+          </div>
+          <div class="linkGroup alignCenter">
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터쉐어링 바로가기</a>
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터주고받기 바로가기</a>
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">부가서비스 신청/해지 바로가기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- [2차] 20220906 기획 추가 -->
+    <div class="popup hide" id="popupDefault03" role="dialog" aria-labelledby="popupTitle-03" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-03">변경 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID03', 'popupDefault03')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>요금제 변경이 불가능한 상품입니다.</p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[2차] 20220906 기획 추가 -->
+
+    <!-- [2차] 20221004 기획 추가 -->
+    <div class="popup hide" id="popupDefault04" role="dialog" aria-labelledby="popupTitle-04" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-04">요금제 변경 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID04', 'popupDefault04')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>
+              요금제 변경이 불가합니다. <br />
+              사용하고 계신 사업자 고객센터로 문의해주시기 바랍니다.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary"><span>요금제/부가서비스 화면으로 이동</span></button>
+          </div>
+          <div class="linkGroup alignCenter">
+            <a href="javascript:void(0);" class="linkUnderline colorPrimary">고객센터 안내 바로가기</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[2차] 20221004 기획 추가 -->
+
+    <!-- Start Script -->
+  </body>
+</html>

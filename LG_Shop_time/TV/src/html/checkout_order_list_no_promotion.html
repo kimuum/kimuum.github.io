@@ -1,0 +1,55 @@
+@@include('head.html', {
+  'title': 'ITEM COUPON'
+})
+  <body>
+    <div class="wrapper">
+      <!-- Main -->
+      <main class="main"></main>
+      <!-- // Main -->
+  
+      <!-- popup start 활성화 클래스 : show -->
+      <div class="popup-container show">
+        <div class="pop-right-area">
+          <div class="pop-header">
+            <div class="popup-title-area">
+              <button type="button" class="popup-prev-btn"></button>
+              <div class="title-box">OFFERS & PROMOTION</div>
+            </div>
+          </div>
+          <div class="pop-body">
+            <div class="pop-body-inner">
+              <!-- COUPON -->
+              <div class="inner-section-container flex-row">
+                <div class="inner-section-header">COUPON</div>
+                <!-- 기획서 v1.16 Maximum Benefit 삭제 -->
+                <!-- <div class="inner-content-body">
+                  <div class="checkbox">
+                    <label for="chk-max-benefit">Maximum Benefit</label>
+                    <input type="checkbox" name="chk-max-benefit" id="chk-max-benefit" checked="">
+                    <div class="check-icon"></div>
+                  </div>
+                </div> -->
+              </div>
+              <!-- //COUPON -->
+  
+              <div class="inner-section-container">
+                <div class="inner-section-header">ITEM COUPON</div>
+                <div class="inner-content-body">
+                  <!-- coupon empty -->
+                  <div class="coupon-empty-box">
+                    <div class="empty-text-box">There are no registered coupons.</div>
+                  </div>
+                  <!-- //coupon empty -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dim"></div>
+      </div>
+      <!-- //popup end -->
+    </div>
+    @@include('scale_js.html')
+  </body>
+  
+  </html>

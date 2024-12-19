@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 배경이미지 선택"
+  })
+
+  <body>
+    <!-- set unique class : sub-page-select-situation -->
+    <div class="wrapper sub-page-select-situation">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : false,
+        "list" : false,
+        "className" : ""
+      })
+      <main class="main-container">
+        <!-- select-option-container -->
+        <section class="select-option-container">
+          <div class="select-option-area">
+            <div class="select-option-top">
+              <div class="back-button-box">
+                <button type="button" class="btn btn-back" title="뒤로가기"></button>
+              </div>
+              <h1 class="message-box">꿈을 실현할 수 있는 <br class="use-mobile" />준비가 되었나요?</h1>
+            </div>
+            <div class="select-option-bottom">
+              <div class="select-option-box">
+                <ul class="select-option-list-box">
+                  <li class="select-option-list type-field">
+                    <div class="select-option">
+                      <div class="image-box">
+                        <img src="../../assets/images/img_option_land.jpg" alt="땅" />
+                      </div>
+                      <div class="text-box">
+                        <div class="desc-box">스마트코티지와 함께할</div>
+                        <div class="name-box">땅이 있어요</div>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("button.html", {
+                        "className" : "btn-round btn-select",
+                        "btnColor" : "btn-secondary",
+                        "btnSize" : "large",
+                        "property" : "",
+                        "btnText" : "선택",
+                        "iconClass" : "",
+                        "iconLeft" : "",
+                      })
+                    </div>
+                  </li>
+                  <li class="select-option-list type-mountain">
+                    <div class="select-option">
+                      <div class="image-box">
+                        <img src="../../assets/images/img_option_interest.jpg" alt="관심" />
+                      </div>
+                      <div class="text-box">
+                        <div class="desc-box">땅은 없지만 스마트코티지에</div>
+                        <div class="name-box">관심이 있어요</div>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("button.html", {
+                        "className" : "btn-round btn-select",
+                        "btnColor" : "btn-secondary",
+                        "btnSize" : "large",
+                        "property" : "",
+                        "btnText" : "선택",
+                        "iconClass" : "",
+                        "iconLeft" : "",
+                      })
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- // select-option-container -->
+      </main>
+    </div>
+  </body>
+</html>

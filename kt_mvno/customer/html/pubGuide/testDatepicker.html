@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Datepicker", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 메인 고유클래스 : main -->
+    <div class="wrap main example">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', secondMenu: '', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <!--
+        <div class="datePickerContainer hideInput" id="datepicker-usage-data">
+          <div class="datePickerArea">
+            <label for="input-usage-data">달 선택 1월(2022.01.01 ~ 2022.01.28)</label>
+            <input type="text" id="input-usage-data" class="singleDatePicker " value="" autocomplete="off" aria-hidden="true" tabindex="-1">
+            <button type="button" class="btn btnOpen" aria-expanded="false">1992년 4월 15일</button>
+          </div>
+        </div>
+
+        <div class="datePickerContainer" id="datepicker-select-date">
+          <div class="datePickerArea">
+            <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1">
+            <button type="button" class="btn btnOpen" aria-expanded="false">1992년 4월 15일</button>
+          </div>
+        </div>
+        -->
+
+        <div class="formContainer">
+          <form action="#" method="post">
+            <fieldset class="formInner">
+              <legend class="formTitleArea">
+                <strong class="formTitle">Datepicker - Noraml Size</strong>
+              </legend>
+              <div class="formItemArea">
+                <div class="periodWrap">
+                  <div class="field fieldDatepicker hideInput" id="datepicker-start-period-data">
+                    <div class="fieldLabel">시작일</div>
+                    <div class="fieldForm datePickerArea startDatePickerArea">
+                      <input type="text" id="input-start-date" class="singleDatePicker startDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                      <button type="button" class="btn btnOpen" aria-expanded="false" title="시작일"></button>
+                    </div>
+                  </div>
+                  <div class="space"></div>
+                  <div class="field fieldDatepicker hideInput" id="datepicker-end-period-data">
+                    <div class="fieldLabel">종료일</div>
+                    <div class="fieldForm datePickerArea endDatePickerArea">
+                      <input type="text" id="input-end-date" class="singleDatePicker endDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                      <button type="button" class="btn btnOpen" aria-expanded="false" title="종료일"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 달 선택 : 1월(2022.01.01 ~ 2022.01.31) -->
+                <div class="field fieldDatepicker hideInput" id="datepicker-usage-data">
+                  <div class="fieldLabel">월 기간 선택</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-usage-data" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="월 선택">1월(2022.01.01 ~ 2022.01.28)</button>
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- 날짜 선택 : 2022년 03월 09일 -->
+                <div class="field fieldDatepicker hideInput" id="datepicker-select-date">
+                  <div class="fieldLabel">날짜 선택</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="날짜 선택">2022년 03월 09일</button>
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- 기간 선택 : 기준 월 최대 3개월 -->
+                <div class="field fieldDatepicker hideInput" id="datepicker-select-period">
+                  <div class="fieldLabel">기준 월 최대 3개월</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" id="btn-open-period" class="btn btnOpen btnOpenPeriod" onclick="togglePopup('btn-open-period', 'period-container')" aria-expanded="false" title="기준 월 최대 3개월">1999.01 ~ 1999.01</button>
+
+                    <div id="period-container" class="periodContainer">
+                      <div class="periodArea">
+                        <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1월</button>
+                        <button type="button" class="btn btnPeriod btnMonth3" month="2">2월</button>
+                        <button type="button" class="btn btnPeriod btnMonth6" month="3">3월</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="formInner">
+              <legend class="formTitleArea">
+                <strong class="formTitle">Datepicker - Large Size</strong>
+              </legend>
+              <div class="formItemArea">
+                <!-- 달 선택 : 1월(2022.01.01 ~ 2022.01.31) -->
+                <div class="field fieldDatepicker hideInput large" id="datepicker-start-data">
+                  <div class="fieldLabel">기간 선택 : 1월(2022.01.01 ~ 2022.01.31)</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-usage-data-large" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="기간 선택">1월(2022.01.01 ~ 2022.01.28)</button>
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- 날짜 선택 : 2022년 03월 09일 -->
+                <div class="field fieldDatepicker hideInput large" id="datepicker-end-data">
+                  <div class="fieldLabel">날짜 선택 : 2022년 03월 09일</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-select-date-large" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" class="btn btnOpen" aria-expanded="false" title="날짜 선택">2022년 03월 09일</button>
+                  </div>
+                </div>
+
+                <hr />
+
+                <!-- 기간 선택 : 1, 3, 6, 12개월 -->
+                <div class="field fieldDatepicker hideInput large" id="datepicker-select-period-large">
+                  <div class="fieldLabel">기간 선택 : 1, 3, 6, 12개월</div>
+                  <div class="fieldForm datePickerArea">
+                    <input type="text" id="input-select-date-large" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                    <button type="button" id="btn-open-period-large" class="btn btnOpen btnOpenPeriod" onclick="togglePopup('btn-open-period-large', 'period-container-large')" title="기간 선택">1999.01 ~ 1999.01</button>
+
+                    <div id="period-container-large" class="periodContainer top">
+                      <div class="periodArea">
+                        <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1개월</button>
+                        <button type="button" class="btn btnPeriod btnMonth3" month="3">3개월</button>
+                        <button type="button" class="btn btnPeriod btnMonth6" month="6">6개월</button>
+                        <button type="button" class="btn btnPeriod btnMonth12" month="12">12개월</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

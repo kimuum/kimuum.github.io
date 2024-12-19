@@ -1,0 +1,31 @@
+.field-textarea-box {
+  width: 100%;
+  height: 17.4rem;
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: 1.7rem 2.2rem;
+    @include font(bs);
+    border: 0.1rem solid $gray-100;
+    border-radius: 1.6rem;
+    background: $tan-50;
+    outline: none;
+    outline-offset: 0;
+    box-sizing: border-box;
+    resize: none;
+    &::placeholder {
+      color: $gray-400;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .field-textarea-box {
+    height: 11.8rem;
+    textarea {
+      padding: 1.5rem 1.8rem;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+  }
+}

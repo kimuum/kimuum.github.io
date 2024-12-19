@@ -1,0 +1,454 @@
+// 팝업 공통 style
+.scroll-lock {
+  overflow: hidden;
+}
+.popup-container {
+  ::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #999999;
+    border-radius: 0.4rem;
+  }
+  ::-webkit-scrollbar-track { // 전체
+    background: #ECECEC;
+    border-radius: 0.4rem;
+  }
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left : 0;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  &.show {
+    display: block;
+  }
+  .dim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .popup-area {
+    @include flex(row, center, center);
+    width: 100%;
+    height: 100%;
+    padding: 0 2rem;
+    .popup-box {
+      overflow: hidden;
+      @include flex(column, flex-start, center);
+      position: relative;
+      width: 100%;
+      max-width: 114rem;
+      min-height: 65.5rem;
+      max-height: 82rem;
+      padding: 3rem 3rem 3rem 5rem;
+      border-radius: 2rem;
+      background-color: $white;
+    }
+    .popup-top {
+      @include flex(row, flex-start, flex-start);
+      position: relative;
+      width: 100%;
+      height: 5rem;
+      .title-box {
+        @include font(2.2rem, 700, $black, 3.2rem);
+      }
+      .btn-icon-close {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 5rem;
+        height: 5rem;
+        background: url("../images/ic_popup_close.svg") no-repeat 100% center;
+      }
+    }
+
+    .popup-bottom {
+      flex: 1;
+      width: 100%;
+    }
+  }
+}
+
+// 충전기 소개 팝업 style
+.product-popup {
+  .popup-bottom {
+    overflow: auto;
+    width: 100%;
+    max-height: 66rem;
+    margin-top: 2rem;
+    padding-right: 5.8rem;
+    .popup-content-container {
+      display: none;
+      &.show-popup {
+        display: block;
+      }
+    }
+    .product-info-container {
+      .info-box {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        margin-top: 1.3rem;
+        @include font(1.6rem, 500, #666, 2.3rem);
+        span {
+          position: relative;
+          padding-left: 2rem;
+          &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 0.4rem;
+            height: 0.4rem;
+            margin-left: 0.8rem;
+            border-radius: 50%;
+            background-color: #666;
+            transform: translateY(-50%);
+          }
+          &:not(:last-of-type) {
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .popup-content-block {
+    @include flex(row, flex-start, center);
+    padding: 2rem 0;
+    &:not(:first-of-type) {
+      border-top: 2px solid #dbdbdb;
+    }
+    .popup-left-container {
+      .img-box {
+        img {
+          display: block;
+          width: 49rem;
+          height: 100%;
+        }
+      }
+    }
+    .popup-right-container {
+      margin-left: 4rem;
+      .info-area {
+        @include flex(column, flex-start, flex-start);
+        .item-box {
+          @include flex(row, flex-start, flex-start);
+          @include font(1.4rem, 500, #666, 2rem);
+          &:not(:first-of-type) {
+            margin-top: 0.8rem;
+          }
+          .category {
+            min-width: 7.2rem;
+            max-width: 7.2rem;
+            width: 7.2rem;
+            margin-right: 2rem;
+          }
+          .info {
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  .notice-box {
+    margin-top: 2.4rem;
+    @include font(1.6rem, 500, #666, 2.3rem);
+  }
+}
+
+// 약관 팝업
+.terms-popup {
+  &.popup-container {
+    .popup-area {
+      .popup-box {
+        height: 87.5%;
+        padding-bottom: 6rem;
+      }
+      .popup-top {
+        height: auto;
+      }
+      .popup-bottom {
+        overflow: hidden;
+        margin: 3.8rem 0 0 0;
+      }
+    }
+  }
+  .terms-container {
+    @include flex(column, space-between, center);
+    height: 100%;
+    word-break: keep-all;
+  }
+  .terms-area {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 5.8rem;
+    box-sizing: border-box;
+  }
+  .terms-box {
+    margin-bottom: 2rem;
+    .title {
+      display: block;
+      margin-bottom: 0.8rem;
+      @include font(1.8rem, 500, $black, 2.6rem);
+    }
+    .terms-list {
+      @include font(1.6rem, 400, #666, 2.7rem);
+      &.sub {
+        padding-left: 1.4rem;
+      }
+      .bold {
+        font-weight: bold;        
+      }
+    }
+  }
+  .terms-table {
+    margin: 1rem 0;
+    table {
+      table-layout: fixed;
+      width: 100%;
+      border: 1px solid #666;
+    }
+    caption {
+      position: absolute;
+      text-indent: -9999px;
+    }
+    thead {
+      background-color: #ddd;
+    }
+    th, td {
+      padding: 1.4rem 1.2rem;
+      border-right: 1px solid #666;
+      border-bottom: 1px solid #666;
+      @include font(1.4rem, 500, $black, 1.8rem);
+      text-align: center;
+      vertical-align: middle;
+      &.left {
+        text-align: left;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+    td {
+      font-weight: 400;
+      color: #666;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+// mobile
+@media #{$mobile} {
+  .popup-container {
+    .popup-area {
+      display: block;
+      padding: 0;
+
+      .popup-box {
+        height: 100% !important;
+        max-width: 100%;
+        max-height: 100%;
+        padding: 0;
+        border-radius: 0;
+        .popup-top {
+          padding: 1.3rem 2rem 1.2rem;
+          .title-box {
+            font-size: 1.6rem;
+            line-height: 2.3rem;
+          }
+          .btn-icon-close {
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            width: 2.4rem;
+            height: 2.4rem;
+            background-size: 2.4rem;
+          }
+        }
+        .popup-bottom {
+          padding: 0 2rem 5.5rem;
+          -ms-overflow-style: none; /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+          &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera*/
+          }
+        }
+      }
+    }
+  }
+
+  .product-popup {
+    .popup-bottom {
+      max-height: unset;
+      .product-info-container {
+        .logo-box {
+          img {
+            display: block;
+            width: 10.2rem;
+            height: auto;
+          }
+        }
+        .info-box {
+          display: block;
+          margin-top: 1.6rem;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          span {
+            display: block;
+          }
+        }
+      }
+      .popup-block-container {
+        margin-top: 2rem;
+      }
+    }
+
+    .popup-content-block {
+      display: block;
+      padding: 0;
+      &:not(:first-of-type) {
+        margin-top: 2rem;
+        border-top: 0;
+      }
+      .popup-left-container {
+        .img-box {
+          width: calc(100% + 4rem);
+          margin: 0 -2rem;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      .popup-right-container {
+        width: 100%;
+        margin: 0;
+
+        .info-area {
+          padding: 2rem;
+          border-radius: 1.2rem;
+          background-color: #F7F8FB;
+          .item-box {
+            margin-top: 0.6rem;
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+        }
+      }
+    }
+    .notice-box {
+      margin-top: 1.6rem;
+      font-size: 1.2rem;
+      line-height: 1.7rem;
+    }
+  }
+
+  .terms-popup {
+    &.popup-container {
+      .popup-area {
+        .popup-box {
+          padding-bottom: 0;
+        }
+        .popup-bottom {
+          margin: 3.2rem 0 0 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+    .terms-area {
+      padding-right: 0;
+      padding-bottom: 3.2rem;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+    }
+    .terms-box {
+      .title {
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+      .terms-list {
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        &.sub {
+          padding-left: 1.2rem;
+        }
+      }
+    }
+    .terms-table {
+      th, td {
+        padding: 1.4rem 0.6rem;
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        &.left {
+          text-align: unset;
+        }
+      }
+    }
+  }
+}
+
+
+.flat-rate-system-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem;
+
+  .flat-rate-system-desc-box {
+    margin-bottom: 2rem;
+    @include font(1.8rem, 500, #000, 2.6rem);
+  }
+  
+  .flat-rate-system-info-title-box {
+    @include font(1.8rem, 700, #EB008B, 2.6rem);
+  }
+  
+  .flat-rate-system-info-desc-box {
+    margin-top: 0.8rem;
+    @include font(1.6rem, 400, #666, 2.7rem);
+  }
+
+  .flat-rate-system-info-list-box {
+    margin-top: 1.2rem;
+  }
+
+  .flat-rate-system-info-list {
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    border-radius: 0.6rem;
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .flat-rate-system-info-list-title {
+      margin-bottom: 0.8rem;
+      @include font(1.8rem, 500, #000, 2.6rem);
+    }
+    
+    .flat-rate-system-info-list-data {
+      span {
+        display: block;
+        @include font(1.6rem, 400, #666, 2.7rem);
+        word-break: keep-all;
+        white-space: pre-line;
+      }
+    }
+  }
+}

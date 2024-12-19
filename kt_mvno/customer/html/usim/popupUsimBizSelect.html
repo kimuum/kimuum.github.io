@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "알뜰폰 사업자 선택", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>알뜰폰 사업자 선택</span></button>
+    </div>
+    <div class="popup popupUsimDirectSelect" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">알뜰폰 사업자 선택</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <ul class="checkList" aria-label="알뜰폰 사업자">
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-01" name="radio" checked />
+                  <label for="input-id-01" class="checkboxLabel">
+                    <span>KT엠모바일</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-02" name="radio" />
+                  <label for="input-id-02" class="checkboxLabel">
+                    <span>KTskylife</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-03" name="radio" />
+                  <label for="input-id-03" class="checkboxLabel">
+                    <span>모빙</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-04" name="radio" />
+                  <label for="input-id-04" class="checkboxLabel">
+                    <span>스노우맨</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-05" name="radio" />
+                  <label for="input-id-05" class="checkboxLabel">
+                    <span>리브모바일</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-06" name="radio" />
+                  <label for="input-id-06" class="checkboxLabel">
+                    <span>프리티</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-07" name="radio" />
+                  <label for="input-id-07" class="checkboxLabel">
+                    <span>핀플레이</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-08" name="radio" />
+                  <label for="input-id-08" class="checkboxLabel">
+                    <span>티플러스</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-09" name="radio" />
+                  <label for="input-id-09" class="checkboxLabel">
+                    <span>A모바일</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="checkboxLine">
+                  <input type="radio" id="input-id-10" name="radio" />
+                  <label for="input-id-10" class="checkboxLabel">
+                    <span>헬로모바일</span>
+                    <span class="checkIcon"></span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+            <div class="areaBottomNotice">
+              <p class="notice">이외 사업자는 바로배송유심 준비 중입니다.</p>
+            </div>
+            <div class="buttonArea">
+              <button type="button" class="btn"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

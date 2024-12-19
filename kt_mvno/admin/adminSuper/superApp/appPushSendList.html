@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "앱 푸시 발송 관리" , "headProjectName": " | 앱 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>앱 푸시 발송 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 푸시 발송 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      앱 푸시 발송 관리 조회 - 발송 유형, 발송 제목
+                    </caption>
+                    <colgroup>
+                      <col style="width: 148px" />
+                      <col />
+                      <col style="width: 148px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">발송 유형</th>
+                        <td>
+                          <div class="select">
+                            <select title="발송 유형">
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                        <th scope="row">발송 제목</th>
+                        <td>
+                          <div class="input">
+                            <input type="text" id="" placeholder="입력값을 입력해주세요." title="발송 제목" />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">총 20개</h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn"><span>신규 등록</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        앱 푸시 발송 관리 목록 - No, 발송 유형, 발송 제목, 발송 시작시간, 발송 완료시간, 발송 상태
+                      </caption>
+                      <colgroup>
+                        <col style="width: 62px" />
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col style="width: 148px" />
+                        <col style="width: 148px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">발송 유형</th>
+                          <th scope="col">발송 제목</th>
+                          <th scope="col">발송 시작시간</th>
+                          <th scope="col">발송 완료시간</th>
+                          <th scope="col">발송 상태</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>20</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td></td>
+                          <td>큐 대기</td>
+                        </tr>
+                        <tr>
+                          <td>19</td>
+                          <td>광고</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[광고 Push] 특가 판매</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td></td>
+                          <td>발송중</td>
+                        </tr>
+                        <tr>
+                          <td>18</td>
+                          <td>일반</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[일반 Push] 만족도조사</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td></td>
+                          <td>발송 대기</td>
+                        </tr>
+                        <tr>
+                          <td>17</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>16</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>15</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>14</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>13</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>12</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                        <tr>
+                          <td>11</td>
+                          <td>공지/혜택</td>
+                          <td><a href="javascript:void(0);" class="linkPrimary">[공지 Push] 앱 업데이트 안내 앱 업데이트 안내 앱 업데이트 안내 앱 업데이트 안내</a></td>
+                          <td>2022-07-07 09:00</td>
+                          <td>2022-07-05 23:00</td>
+                          <td>발송완료</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <!-- <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button> -->
+                    <button type="button" class="nextPageBtn" title="다음" disabled></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

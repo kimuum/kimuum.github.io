@@ -1,0 +1,102 @@
+<div class="subTitleTop">
+  @@if(userType == 'logout') {
+  <div class="labelText">알뜰폰 간편 정보 제공 서비스</div>
+  <div class="strongText"><strong>KT 마이알뜰폰</strong> 입니다.</div>
+  }
+  <!-- prettier-ignore -->
+  @@if(userType == 'normal' || userType == 'user') {
+  <a href="javascript:void(0);" class="strongText iconBgLink" title="내 계정정보 수정(조회)"> <strong>유*정</strong>님 반갑습니다 </a>
+  <div class="profileLabel">
+    <span class="memberLevel">@@if(userType == 'normal'){일반회원}@@if(userType == 'user'){정회원}</span>
+    <div class="labelArea">
+      <span>사용중인 알뜰폰 회선</span>
+      <span class="bold">2개</span>
+    </div>
+  </div>
+  }
+</div>
+
+<div class="subTitleBottom">
+  @@if(userType == 'logout') {
+  <div class="subTitleBottomArea">
+    <a href="javascript:void(0);" class="iconBgLink"
+      ><span class="underline"><strong>로그인</strong>하고 내 알뜰폰 정보, 쉽게 확인해보세요.</span></a
+    >
+  </div>
+  }
+  <!-- prettier-ignore -->
+  @@if(userType == 'normal'){
+  <div class="subTitleBottomArea">
+    <div class="titleLinks">
+      <p class="subText"><a href="javascript:void(0);" class="underline">알뜰폰 가입</a> 하고 우측 설정을 선택하여 <br />회선을 추가해보세요.</p>
+      <a href="javascript:void(0);" class="iconBgSetting"><span>설정하기</span></a>
+    </div>
+    <div class="bottomButtons">
+      <!-- [운영] KMVNO-3987 회선 쿠폰 아이콘 추가 -->
+      @@include('../component/my_coupon.html')
+      <!-- //[운영] KMVNO-3987 회선 쿠폰 아이콘 추가 -->
+      <a href="javascript:void(0);" class="hideInfoBtn">가려진(*) 정보보기</a>
+    </div>
+  </div>
+  } @@if(userType == 'user'){
+  <div class="subTitleBottomArea">
+    <div class="dropdownArea dropdownLine">
+      <div class="dropdownTitle">
+        <div class="titleLabel">
+          <span class="colorLabel">대표번호</span>
+          <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>
+          <span class="labelGroup">
+            <span class="product">데이터 맘껏 15GB+/100분(Pay 쿠폰 5000p)데이터 맘껏 15GB+/100분(Pay 쿠폰 5000p)</span>
+            <strong class="phone">010-00**-*00</strong>
+          </span>
+        </div>
+        <button type="button" class="dropdownBtn" aria-expanded="false"><span>회선 변경</span></button>
+      </div>
+      <ul class="dropdownList" aria-label="회선">
+        <li>
+          <button type="button" class="phoneLine" title="선택 됨">
+            <span class="colorLabel">대표번호</span
+            ><!-- 선택 된 값에 '대표번호' 추가 그 외 삭제 -->
+            <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></span>
+            <span class="labelGroup">
+              <span class="product">데이터 맘껏 15GB+/100분(Pay 쿠폰 5000p)데이터 맘껏 15GB+/100분(Pay 쿠폰 5000p)</span>
+              <strong class="phone">010-00**-*00</strong>
+            </span>
+          </button>
+        </li>
+        <li>
+          <button type="button" class="phoneLine disabled" aria-disabled="true">
+            <!-- [운영] 20230110 disabled 추가 -->
+            <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="KT-모바일" /></span>
+            <span class="labelGroup">
+              <span class="product">모두다 맘껏 7.0GB+</span>
+              <strong class="phone">011-00**-*00</strong>
+            </span>
+            <!-- [운영] 20230110 영역 추가 -->
+            <span class="labelBottom">
+              <span class="colorRed">사용불가 회선(회선 관리에서 삭제 가능합니다.</span>
+            </span>
+            <!-- //[운영] 20230110 영역 추가 -->
+          </button>
+        </li>
+        <li>
+          <button type="button" class="phoneLine">
+            <span class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_eyagi.png" alt="이야기" /></span>
+            <span class="labelGroup">
+              <span class="product">모두다 맘껏 8.0GB+</span>
+              <strong class="phone">012-00**-*00</strong>
+            </span>
+          </button>
+        </li>
+      </ul>
+      <button type="button" class="dropSetting" title="나의 알뜰폰 번호 설정하기"></button>
+    </div>
+    <div class="bottomButtons">
+      <!-- [운영] KMVNO-3987 회선 쿠폰 아이콘 추가 -->
+      @@include('../component/my_coupon.html')
+      <!-- //[운영] KMVNO-3987 회선 쿠폰 아이콘 추가 -->
+      <a href="javascript:void(0);" class="hideInfoBtn">가려진(*) 정보보기</a>
+    </div>
+  </div>
+  }
+</div>

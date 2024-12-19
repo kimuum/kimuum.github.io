@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "유심 변경 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 클래스 : accountUsimChange -->
+    <div class="wrap accountUsimChange">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-5' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>유심 변경</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심 변경</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner phoneNoLine">
+                  <div class="dataTitleArea noneLine">
+                    <div class="dataText">유심 변경할 회선을 선택해주세요.</div>
+                  </div>
+
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">핸드폰 변경으로 유심 크기가 달라지거나 단말 분실로 유심 변경이 필요한 경우 다른 유심으로 변경할 수 있는 서비스입니다.</li>
+                      <li class="fieldValue">유심 셀프변경 시 음성, 문자 등 휴대폰 사용이 중단됩니다. 신속히 새로운 유심을 단말기에 장착하여 1~3회 전원을 껐다 켜면 사용 가능합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">신규 유심 정보 등록</strong>
+                  </div>
+                  <!-- 유심 -->
+                  <div class="fieldUsimInput">
+                    <div class="field">
+                      <div class="fieldLabel">유심카드번호</div>
+                      <div class="fieldForm">
+                        <div class="inputRow" id="inputAutoMoveWrap">
+                          <!-- [VOS2차] 결함 ID 1122042 1122178 타이틀 수정 -->
+                          <div class="row">
+                            <input type="text" title="유심카드번호 첫번째 네자리" id="inputAutoMove01" />
+                          </div>
+                          <div class="row">
+                            <input type="text" title="유심카드번호 두번째 네자리" id="inputAutoMove02" />
+                          </div>
+                          <div class="row">
+                            <input type="text" title="유심카드번호 세번째 네자리" id="inputAutoMove03" />
+                          </div>
+                          <div class="row">
+                            <input type="text" title="유심카드번호 네번째 네자리" id="inputAutoMove04" />
+                          </div>
+                          <!-- //[VOS2차] 결함 ID 1122042 1122178 타이틀 수정 -->
+                        </div>
+                        <div class="buttonArea">
+                          <button type="button" class="btn btnSizeMiddle"><span>유효성 체크</span></button>
+                        </div>
+                      </div>
+                      <div class="addExplain">유심 번호를 입력해주세요.</div>
+                      <!-- <div class="addExplain">유효성 검증에 성공하였습니다.</div> -->
+                    </div>
+
+                    <!-- [2차] 20221014 유심 바코드 스캔 삭제
+                    <div class="infoBoxArea">
+                      <div class="infoAreaBottom alignRight">
+                        <button type="button" class="linkUnderline colorPrimary" disabled>유심 바코드 스캔</button>
+                      </div>
+                    </div> -->
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">유심변경 본인인증 동의</strong>
+                  </div>
+
+                  <div class="field typeAgreementCheck">
+                    <div class="field fieldCheckbox">
+                      <div class="fieldForm">
+                        <div class="checkbox">
+                          <input type="checkbox" id="agreeCheck0" />
+                          <span class="checkboxLabel">
+                            <span class="checkIcon"></span>
+                          </span>
+                        </div>
+                      </div>
+                      <label for="agreeCheck0" class="fieldLabel">본인인증 절차 동의</label>
+                    </div>
+                  </div>
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea">
+                      <li class="fieldValue">명의자 본인 확인을 위해서 본인인증이 필요합니다. 안전한 서비스 이용 및 고객님의 개인정보 보호를 위해 본인인증을 받으신 고객분만 이용이 가능합니다. 유심변경 이용을 위해 본인확인 절차를 진행해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner typeCertification">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">본인인증</strong>
+                  </div>
+                  <!-- 본인 인증 : 기본값 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass",
+                      "buttonBlank": true,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": true,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 기본값 -->
+                  <!-- 본인 인증 : 인증 완료 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnCertifyPass active",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증 완료",
+                    },
+                    {
+                      "buttonClass": "btnCertifyCard",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 인증 완료 -->
+                  <!-- 본인 인증 : 서비스 점검 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "PASS 인증",
+                    },
+                    {
+                      "buttonClass": "btnNotService",
+                      "buttonBlank": false,
+                      "buttonContent": "신용카드 인증",
+                    },
+                  ])
+                  </div>
+                  <!-- //본인 인증 : 서비스 점검 -->
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea">
+                      <li class="fieldValue">본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                    </ul>
+                  </div>
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary" disabled><span>유심 변경</span></button>
+                  </div>
+                </div>
+                <!-- //본인인증 -->
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <div class="dataText">알려드립니다</div>
+                  </div>
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">유심 셀프변경 시 음성, 문자 등 휴대폰 사용이 중단됩니다. 신속히 새로운 유심을 단말기에 장착하여 1~3회 전원을 껐다 켜면 사용 가능합니다.</li>
+                      <li class="fieldValue">홈페이지 또는 편의점 등에서 바로유심을 구매하신 고객님께서 이용 가능하며, 유심변경 취소는 불가능합니다.</li>
+                      <li class="fieldValue">유심변경 시 기존 유심에 저장된 개인정보(연락처, 사진 등)는 자동으로 전송되지 않습니다. 미리 휴대폰으로 저장하셔야 합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

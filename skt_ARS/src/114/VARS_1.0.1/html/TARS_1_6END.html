@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="bankCode" iweb-data="in" />
+    <!-- <input type="hidden" id="bankAccout" iweb-data="in" value="" iweb-plain-value="" iweb-encrypt-type="VPKEYPAD_NUM_" iweb-encrypt-value=""> -->
+    <input type="hidden" id="bankNameText" iweb-data="in" value="" />
+    <!-- 은행리스트 -->
+    <input type="hidden" id="dt_cur_bankList" iweb-data="out" />
+    <input type="hidden" id="money" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '환급계좌등록',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-unrefunded">
+                <p class="info-title">고객님의 미환급액은 <br /><span class="highlight" id="s_money">0원</span> 입니다.</p>
+                <p class="info-title-desc">환급을 신청하실 은행과 계좌번호를 입력해 주세요. (본인명의 계좌로만 신청하실 수 있습니다.)</p>
+              </div>
+              <div class="form-bank-select">
+                <div class="field field-select">
+                  <div class="field-label">은행선택</div>
+                  <div class="field-form">
+                    <div class="field-area" id="bank_T">
+                      <select id="bank_list_T" onchange="chageBank()"></select>
+                    </div>
+                    <div class="field-area" id="bank_C">
+                      <div class="dropdown-area">
+                        <a id="selectBank" href="#" class="btn-open">
+                          <span>선택</span>
+                        </a>
+                        <ul id="bank_list_C" class="dropdown-list"></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field field-input">
+                  <div class="field-label">계좌번호</div>
+                  <!-- <div class="field-area">
+                    <input id="bankAcc" name="bankAcc" type="tel" maxlength="30" style="width:100%" placeholder="계좌번호를 입력해 주세요" onclick="showKeypad('num', this, 30, '계좌번호')" readonly="readonly"  iweb-plain-value="" iweb-encrypt-type="VPKEYPAD_NUM_" iweb-encrypt-value="">
+                  </div> -->
+                  <div class="field-area">
+                    <input
+                      id="bankAccout"
+                      name="bankAccout"
+                      type="tel"
+                      maxlength="30"
+                      placeholder="계좌번호를 입력해 주세요"
+                      readonly="readonly"
+                      iweb-plain-value=""
+                      iweb-encrypt-type="VPKEYPAD_NUM_"
+                      iweb-encrypt-value=""
+                      iweb-data="in"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');" ;>취소</button>
+            <button type="button" class="btn btn-primary" id="dt_btnTitle1" onclick="javascript:sendData($(this), '0');">환급신청</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var checkKeypad = '0';
+      var own = null; //open web nfilter keypad 객체 (2019.07.29)
+
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'bank_T',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display:none;',
+          },
+          {
+            elemName: 'bank_C',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none;',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var money = getUrlParameter('money');
+
+          /*@build-time*/ money = '10000';
+
+          document.getElementById('s_money').innerText = formatCommas(money);
+        } catch (e) {}
+
+        //현재 은행정보
+        try {
+          document.getElementById('dt_btnTitle1').innerText = '환급신청';
+        } catch (e) {}
+
+        // 은행명
+        var dt_cur_bankList = getUrlParameter('dt_cur_bankList');
+
+        /*@build-time*/ dt_cur_bankList = '005하나은행|011농협은행|020우리은행';
+
+        var dt_cur_bankList_arr = dt_cur_bankList.split('|');
+
+        if (vars_type == 'C') {
+          var bankList = document.getElementById('bank_list_C');
+          for (var j = 0; j < dt_cur_bankList_arr.length; j++) {
+            var itemData = dt_cur_bankList_arr[j];
+            var bankcode = itemData.substring(0, 3);
+            var bankname = itemData.substring(3);
+            var itemBox = document.createElement('li');
+            itemBox.setAttribute('class', 'list');
+
+            var itemLink = document.createElement('a');
+            itemLink.setAttribute('href', "javascript:selectBank('" + bankcode + "', '" + bankname + "')");
+            itemLink.innerText = bankname;
+
+            itemBox.appendChild(itemLink);
+            bankList.appendChild(itemBox);
+          }
+
+          //셀렉트 콤보박스
+          $.fn.selCombo = function () {
+            var selCombo = this;
+            selCombo.each(function () {
+              var selThis = $(this);
+              var initBtn = selThis.find('.btn-open');
+              var itemBtn = selThis.find('.list a');
+              initBtn.on('click', function (e) {
+                e.preventDefault();
+                selThis.toggleClass('active');
+              });
+              itemBtn.on('click', function () {
+                var txt = $(this).text();
+                itemBtn.removeClass('selected');
+                $(this).addClass('selected');
+                initBtn.text(txt);
+                initBtn.addClass('in');
+                selThis.removeClass('active');
+              });
+              selThis.find('.background-layer').on('click', function () {
+                selThis.removeClass('active').find('.dropdown-list').hide();
+              });
+            });
+          };
+          $('.dropdown-area').selCombo();
+        } else {
+          try {
+            //은행 목록
+            var s = document.getElementById('bank_list_T');
+            s.options[s.options.length] = new Option('선택', '');
+            for (var j = 0; j < dt_cur_bankList_arr.length; j++) {
+              var bankcode = dt_cur_bankList_arr[j].substring(0, 3);
+              var bankname = dt_cur_bankList_arr[j].substring(3);
+              s.options[s.options.length] = new Option(bankname, bankcode);
+            }
+          } catch (e) {}
+        }
+
+        // 계좌번호
+        try {
+          var dt_accntNo = getUrlParameter('dt_accntNo');
+          document.getElementById('accntNo').innerHTML = dt_accntNo + ' <span>복사</span>';
+        } catch (e) {}
+
+        // 납부금액
+        try {
+          var dt_amt = getUrlParameter('dt_amt');
+          document.getElementById('amt').innerText = dt_amt == '' ? '0 원' : formatCommas(dt_amt) + ' 원';
+        } catch (e) {}
+
+        /*
+         *	2019.07.29
+         *	t-app일 때 키패드 event
+         */
+        if (vars_type == 'T') {
+          //t-app
+          var jumin1 = document.getElementById('bankAccout');
+          jumin1.addEventListener(
+            'click',
+            function () {
+              showKeypad('num', document.getElementById('bankAccout'), 30, '계좌번호');
+            },
+            true,
+          );
+        } else {
+          /*
+           *	보안키패드 셋팅
+           */
+          var jumin1 = document.getElementById('bankAccout');
+          if (vars_type == 'C') {
+            //callgate
+            own = $.noConflict();
+            var elements = [];
+            elements.push(jumin1);
+
+            initSKKeypad('/{version}/', elements);
+          }
+        }
+      });
+
+      //은행선택
+      function chageBank() {
+        var selBank = document.getElementById('bank_list_T');
+        document.getElementById('bankNameText').value = selBank.options[selBank.selectedIndex].text;
+        //**
+        //2019-08-02
+        //value값 직접 입력 추가
+        document.getElementById('bankCode').value = selBank.options[selBank.selectedIndex].value;
+      }
+
+      function selectBank(code, name) {
+        document.getElementById('bankNameText').value = name;
+        document.getElementById('bankCode').value = code;
+      }
+
+      // 보안키패드 호출
+      function showKeypad(mode, obj, len, title) {
+        if (checkKeypad == '1') {
+          return;
+        }
+
+        var fieldname = obj.id;
+
+        document.getElementById('bankAccout').value = '';
+
+        // 키패드 호출
+        showkeypadPhone(mode, fieldname, len, title, getUrlParameter('publickey'));
+      }
+
+      //은행정보 보내기
+      function sendData(obj, menu) {
+        //보안키패드 충돌 방지
+        if ($ == null) $ = own.noConflict();
+
+        checkKeypad = '1';
+
+        //t-app, callgate
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        if (vars_type == 'T') {
+          var selBank = document.getElementById('bank_list_T');
+          if (selBank.selectedIndex < 1) {
+            jAlert('<p class="popup-alert-text">은행을 선택 하세요!</p>', '');
+            checkKeypad = '0';
+            return;
+          }
+        } else {
+          if (document.getElementById('bankCode').value == '') {
+            jAlert('<p class="popup-alert-text">은행을 선택 하세요!</p>', '');
+            checkKeypad = '0';
+            return;
+          }
+        }
+
+        if (document.getElementById('bankAccout').value == '') {
+          jAlert('<p class="popup-alert-text">계좌번호를 입력 하세요!</p>', '');
+          checkKeypad = '0';
+          return;
+        }
+
+        //document.getElementById('bankCode').value = document.getElementById('bank_list').value;
+        //document.getElementById('bankAccout').value = document.getElementById('bankAccout').value;
+
+        //$("#bankAccout").attr('iweb-encrypt-value', $("#bankAcc").attr('iweb-encrypt-value'));
+
+        sendRepPageData(obj.text().trim(), menu, 'menu');
+      }
+    </script>
+    <!-- open web nfilter js 추가 (2019.07.29) -->
+    <!-- jquery 충돌을 방지하기 위해 제일 하단에 놔야 한다. -->
+    <script type="text/javascript" src="/{version}/nfilter/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/{version}/nfilter/js/open_nFilter.js"></script>
+    <script type="text/javascript" src="/{version}/nfilter/js/secretUtil.js"></script>
+  </body>
+</html>

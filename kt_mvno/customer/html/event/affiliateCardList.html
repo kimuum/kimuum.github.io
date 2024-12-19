@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "제휴카드 | 이벤트", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-3', 'thirdMenu': '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>제휴카드</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>이벤트</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>제휴카드</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_event.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [운영] KMVNO-4123 20231101 수정 -->
+        <div class="contentArea paddingTop0">
+          <section class="subVisualContent">
+            <div class="subVisualTop">
+              <h3 class="subVisualTitle"><strong class="bold">제휴 카드</strong></h3>
+              <div class="subVisualText"><span class="block">KT 마이알뜰폰 제휴 카드로</span> 실속있는 통신비 할인 혜택을 받아보세요.</div>
+            </div>
+            <div class="imgWrap">
+              <img class="pcType" src="../../assets/images/event/img_visual_affiliate_card_pc.jpg" alt="" />
+              <img class="moType" src="../../assets/images/event/img_visual_affiliate_card_mo.jpg" alt="" />
+            </div>
+          </section>
+
+          <div class="contentInner">
+            <div class="cardListContainer">
+              <div class="cardMiddle">
+                <ul class="cardList" aria-label="제휴카드 목록">
+                  <li>
+                    <!-- prettier-ignore -->
+                    @@include('../component/card_list_item.html', {
+                      'cardType': null,
+                      'labelType01': true,
+                      'labelType02': false,
+                      'itemTitle': 'KT 마이알뜰폰 우리카드',
+                      'itemText': '통신요금 매월 최대 2.3만원 할인',
+                      'textType01': '30만원 이상 최대 1.8만원 / 70만원 이상 최대 2.3만원 청구 할인',
+                      'textType02': '국내전용/해외겸용(VISA) 20,000원',
+                      'src': 'event/img_affiliate_card01.jpg'
+                    })
+                  </li>
+                  <li>
+                    <!-- prettier-ignore -->
+                    @@include('../component/card_list_item.html', {
+                      'cardType': null,
+                      'labelType01': true,
+                      'labelType02': false,
+                      'itemTitle': 'KT 마이알뜰폰 우리카드',
+                      'itemText': '통신요금 매월 최대 2.3만원 할인통신요금 매월 최대 2.3만원 할인통신요금 매월 최대 2.3만원 할인',
+                      'textType01': '30만원 이상 최대 1.8만원 / 70만원 이상 최대 2.3만원 청구 할인',
+                      'textType02': '국내전용/해외겸용(VISA) 20,000원',
+                      'src': 'event/img_affiliate_card01.jpg'
+                    })
+                  </li>
+                  <li>
+                    <!-- prettier-ignore -->
+                    @@include('../component/card_list_item.html', {
+                      'cardType': null,
+                      'labelType01': true,
+                      'labelType02': true,
+                      'itemTitle': 'KT 마이알뜰폰 우리카드',
+                      'itemText': '통신요금 매월 최대 2.3만원 할인',
+                      'textType01': '30만원 이상 최대 1.8만원 / 70만원 이상 최대 2.3만원 청구 할인',
+                      'textType02': '국내전용/해외겸용(VISA) 20,000원',
+                      'src': 'event/img_affiliate_card_nodata_vertical.jpg'
+                    })
+                  </li>
+                  <li>
+                    <!-- 가로형 카드 추가 클래스 : cardHorizontal -->
+                    <!-- prettier-ignore -->
+                    @@include('../component/card_list_item.html', {
+                      'cardType': 'cardHorizontal',
+                      'labelType01': true,
+                      'labelType02': false,
+                      'itemTitle': 'KT 마이알뜰폰 우리카드',
+                      'itemText': '통신요금 매월 최대 2.3만원 할인',
+                      'textType01': '30만원 이상 최대 1.8만원 / 70만원 이상 최대 2.3만원 청구 할인',
+                      'textType02': '국내전용/해외겸용(VISA) 20,000원',
+                      'src': 'event/img_affiliate_card_nodata_horizontal.jpg'
+                    })
+                  </li>
+                </ul>
+              </div>
+              <div class="cardBottom">
+                <div class="pagenation pcType">
+                  <button type="button" class="prevPageBtn" title="이전"></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="numPageBtn"><span>5</span></button>
+                  <button type="button" class="numPageBtn"><span>6</span></button>
+                  <button type="button" class="numPageBtn"><span>7</span></button>
+                  <button type="button" class="numPageBtn"><span>8</span></button>
+                  <button type="button" class="numPageBtn"><span>9</span></button>
+                  <button type="button" class="numPageBtn"><span>10</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+                <div class="pagenation moType">
+                  <button type="button" class="prevPageBtn" title="이전"></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- // eventList -->
+        </div>
+        <!-- //END contentArea -->
+        <!-- //[운영] KMVNO-4123 20231101 수정 -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 선호 내비 설정"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : .menu-navi 
+      -->
+      <main class="main-container menu-navi">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "align" : "between",
+            "logo" : false,
+            "title" : {
+              "show" : true,
+              "text" : "선호 내비 설정",
+            },
+            "button" : '',
+          })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="navi-container">
+              <div class="navi-area">
+                <div class="list-top-notice-box">길찾기 선택 시 지정한 내비게이션 앱이 실행됩니다.</div>
+                <ul class="navi-detail-list-box">
+                  <li class="navi-detail-list">
+                    <!-- prettier-ignore -->
+                    @@include("radioButton.html", {
+                      "class" : "align-reverse navi-t-map",
+                      "name" : "navi",
+                      "id" : "navi-t-map",
+                      "value" : "navi-t-map",
+                      "property" : "checked",
+                      "labelHide" : false,
+                      "label": "T map",
+                    })
+                  </li>
+                  <li class="navi-detail-list">
+                    <!-- prettier-ignore -->
+                    @@include("radioButton.html", {
+                      "class" : "align-reverse navi-kakao-map",
+                      "name" : "navi",
+                      "id" : "navi-kakao-map",
+                      "value" : "navi-kakao-map",
+                      "property" : "",
+                      "labelHide" : false,
+                      "label": "카카오내비",
+                    })
+                  </li>
+                  <li class="navi-detail-list">
+                    <!-- prettier-ignore -->
+                    @@include("radioButton.html", {
+                      "class" : "align-reverse navi-no",
+                      "name" : "navi",
+                      "id" : "navi-no-map",
+                      "value" : "navi-no-map",
+                      "property" : "",
+                      "labelHide" : false,
+                      "label": "선택 안함",
+                    })
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "저장"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

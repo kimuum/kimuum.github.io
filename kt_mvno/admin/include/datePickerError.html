@@ -1,0 +1,37 @@
+<div class="popup alertPopup hide" id="popup-wrong-start-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+  <div class="dim"></div>
+  <div class="popupContainer">
+    <div class="popupTop">
+      <button type="button" class="btnClose" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>Close</span></button>
+    </div>
+    <div class="popupMiddle">
+      <div class="popupContent">
+        <p>시작일은 종료일 보다 이전 날짜를 입력해야 합니다.</p>
+      </div>
+    </div>
+    <div class="popupBottom">
+      <div class="buttonArea">
+        <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-start-data', 'popup-wrong-start-date')"><span>확인</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup alertPopup hide" id="popup-wrong-end-date" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+  <div class="dim"></div>
+  <div class="popupContainer">
+    <div class="popupTop">
+      <button type="button" class="btnClose" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>Close</span></button>
+    </div>
+    <div class="popupMiddle">
+      <div class="popupContent">
+        <p>종료일은 시작일 보다 이후 날짜를 입력해야 합니다.</p>
+      </div>
+    </div>
+    <div class="popupBottom">
+      <div class="buttonArea">
+        <button type="button" class="btn btnPrimary" onclick="togglePopup('datepicker-end-data', 'popup-wrong-end-date')"><span>확인</span></button>
+      </div>
+    </div>
+  </div>
+</div>

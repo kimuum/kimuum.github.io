@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-cancel-refund'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-cancel-refund -->
+    <dialog id="modal-cancel-refund" class="modal modal-medium modal-cancel-refund">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">신청 취소 안내</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <div class="modal-content-top">
+                <div class="text-box">
+                  <p class="text">
+                    고객님의 현장실사 신청일 기준으로 현재 신청 취소 시<br />기 결제하신 <span class="alert">현장실사 비용은 일부 또는 전체 환불 받으실 수 없으며,</span> 개인정보 수집, 이용 약관에
+                    따라 신청 정보를 포함한 저장된 <strong class="strong">개인정보는 1개월 이내 삭제 처리</strong>됩니다.
+                  </p>
+                  <p class="text">지금 신청을 취소하시겠어요?</p>
+                </div>
+              </div>
+              <div class="modal-content-bottom">
+                <div class="unit-box">
+                  <div class="unit-top">
+                    <div class="title-box">
+                      <span>현장실사 신청 취소 및 환불 규정</span>
+                    </div>
+                  </div>
+                  <div class="unit-bottom">
+                    <div class="unit-content-box">
+                      <div class="unit-detail-box">
+                        <div class="table-box">
+                          <table class="table">
+                            <caption class="hidden">
+                              신청 취소 및 환불 규정
+                            </caption>
+                            <colgroup>
+                              <col width="50%" />
+                              <col width="50%" />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th class="th">
+                                  <span class="th-label">현장실사일 기준</span>
+                                </th>
+                                <th class="th">
+                                  <span class="th-label">환불 여부</span>
+                                </th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="td">
+                                  <span>7일 전</span>
+                                </td>
+                                <td class="td highlight">
+                                  <span>100% 환불 가능</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="td">
+                                  <span>5일 전</span>
+                                </td>
+                                <td class="td highlight">
+                                  <span>70% 환불 가능</span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="td">
+                                  <span>3일 전</span>
+                                </td>
+                                <td class="td highlight">
+                                  <span>30% 환불 가능</span>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "btn-cancel",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "취소",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "btn-confirm",
+                "btnColor" : "btn-primary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "신청 취소",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

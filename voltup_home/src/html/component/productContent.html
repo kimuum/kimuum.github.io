@@ -1,0 +1,18 @@
+<div class="product-content">
+  <div class="product-top">
+    <div class="product-title">@@productTitle</div>
+  </div>
+  <div class="product-middle">
+    <div class="product-thumb-box">
+      <img src="../../assets/images/sub_01/@@productImage" alt="@@productTitle" />
+    </div>
+    <div class="product-info-box">
+      <div class="product-info-item @@iconBgColor">
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < infoItem.length; i++) {
+          @@include('productInfoItem.html', `+(JSON.stringify(infoItem[i]))+`)
+        }
+      </div>
+    </div>
+  </div>
+</div>

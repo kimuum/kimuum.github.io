@@ -1,0 +1,14 @@
+<div class="tab-container">
+  <div class="tab-area">
+    <ul class="tabs">
+      <!-- prettier-ignore -->
+      @@for (var i = 0; i < tab.length; i++) {
+      <li class="tab">
+        <button type="button" class="btn-tab `+tab[i].property+`">
+          <span>`+tab[i].text+`</span>
+        </button>
+      </li>
+      }
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "로그인", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu" class="moType">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap homeLogin">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', secondMenu: '', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <!-- Start wrap -->
+      <div class="homeLoginContainer" id="contentContainer">
+        <main class="loginWrapper">
+          <div class="loginImage">
+            <img class="pcType" src="../../assets/images/home/loginimage.png" alt="" />
+            <img class="moType" src="../../assets/images/home/loginimage_mo.png" alt="" />
+          </div>
+          <div class="loginContainer">
+            <div class="fieldWrap">
+              <fieldset>
+                <legend class="fieldTitle">로그인</legend>
+                <div class="loginMiddle">
+                  <div class="field fieldInput">
+                    <label for="input-id-01" class="ir">아이디</label>
+                    <div class="fieldForm">
+                      <div class="input">
+                        <input type="text" id="input-id-01" value="" placeholder="아이디를 입력해주세요." />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field fieldInput">
+                    <label for="input-id-02" class="ir">비밀번호</label>
+                    <!-- [운영] DR-2023-29921 20230517 -->
+                    <div class="fieldForm">
+                      <!-- 비밀번호 숨겨진 상태 -->
+                      <div class="input inputPw">
+                        <input type="password" id="input-id-02" placeholder="비밀번호를 입력해주세요." value="" />
+                        <button type="button" class="btnPwOff" title="비밀번호 보이기"></button>
+                      </div>
+
+                      <!-- 비밀번호 보이는 상태 -->
+                      <!-- <div class="input inputPw">
+                        <input type="text" id="input-id-02" placeholder="비밀번호를 입력해주세요." value="000000">
+                        <button type="button" class="btnPwOn" title="비밀번호 숨기기"></button>
+                      </div> -->
+                    </div>
+                    <!-- //[운영] DR-2023-29921 20230517 -->
+                  </div>
+                  <div class="field fieldCheckbox">
+                    <div class="fieldForm">
+                      <div class="checkbox">
+                        <input type="checkbox" id="input-id-03" />
+                        <span class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                          <label for="input-id-03">아이디 저장</label>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="captchaWrap">
+                    <div class="captchaImg">
+                      <img src="../../assets/images/common/img_captcha01.jpg" alt="" />
+                    </div>
+                    <div class="captchaBtn">
+                      <input type="button" class="btn iconRefresh" value="새로고침" />
+                      <input type="button" class="btn iconVoice" value="음성으로 듣기" />
+                    </div>
+                  </div>
+                  <div class="field fieldInput">
+                    <div class="fieldForm">
+                      <div class="input">
+                        <input type="password" id="input-id-03" title="보안문자" placeholder="위 이미지를 보이는 대로 입력해주세요." />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>로그인</span></button>
+                  </div>
+                </div>
+                <div class="loginBottom">
+                  <a href="javascript:void(0);" class="linkUnderline">아이디 찾기</a>
+                  <a href="javascript:void(0);" class="linkUnderline">비밀번호 찾기</a>
+                  <a href="javascript:void(0);" class="linkUnderline">회원가입</a>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="or">
+              <div class="line"></div>
+              <span class="text">또는</span>
+            </div>
+
+            <div class="socialLoginArea">
+              <div class="itemBox">
+                <a href="#" title="새 창 열림" class="icon naver">
+                  <span class="text">네이버로 로그인</span>
+                </a>
+              </div>
+              <!-- [운영 20220816] 삭제 
+              <div class="itemBox">
+                <a href="#" title="새 창 열림" class="icon kakao">
+                  <span class="text">카카오톡으로 로그인</span>
+                </a>
+              </div>
+              <div class="itemBox">
+                <a href="#" title="새 창 열림" class="icon facebook">
+                  <span class="text">페이스북으로 로그인</span>
+                </a>
+              </div> -->
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        loginBgScroll('.homeLogin');
+        commonEvent();
+        // 배경 고정 스크롤 이벤트
+        $(window)
+          .on('load', function () {
+            setTimeout(function () {
+              loginBgScroll('.homeLogin');
+            }, 0);
+          })
+          .scroll(function () {
+            var scroll = $(window).scrollTop();
+          })
+          .resize(function () {
+            loginBgScroll('.homeLogin');
+          })
+          .resize();
+
+        // [VOS2차] 슬라이드 공통 수정 사항 - 시작 //
+        var summarySwiper = new Swiper('.summarySwiper', {
+          observer: true, // 추가
+          observeParents: true, // 추가
+          spaceBetween: 10,
+          slidesPerView: 3,
+          pagination: {
+            el: '.summaryPagination',
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + '<span>' + 0 + (index + 1) + '</span>' + '</span>';
+            },
+          },
+          breakpoints: {
+            1024: {
+              slidesPerView: 1,
+            },
+          },
+          on: {
+            slideChange: function (e) {
+              enabledShowingFocus(summarySwiper);
+            },
+            resize: function (e) {
+              enabledShowingFocus(summarySwiper);
+            },
+          },
+        });
+        enabledShowingFocus(summarySwiper);
+        // [VOS2차] 슬라이드 공통 수정 사항 - 끝 //
+
+        // ------------ 통합검색 js : 퍼블 예시 js임으로 개발파트 필요에 따라 사용하셔도 됩니다. ---------//
+        $('.headerSearchBar .btnSearchOpen').on('click', function () {
+          var $wrap = $(this).parents('.wrap');
+          $wrap.addClass('openedSearch');
+
+          // 검색어 입력창으로 초점 이동 //
+          $('.headerSearchBar').find('.searchBarArea').find('input').focus();
+
+          // 모바일에서 통합검색 창 열림 상태시 body 스크롤 없애기
+          if ($(window).width() <= 1024) {
+            if ($('.wrap').hasClass('openedSearch')) {
+              $('body').css({
+                overflow: 'hidden',
+              });
+            }
+          }
+        });
+
+        // 인풋 동작 예시
+        $('.searchBarArea input').on('focus', function () {
+          $(this).siblings('.btnRemove').removeClass('hide');
+          $(this).siblings('.btnRemove').addClass('show');
+          $(this).siblings('.btnSearch').addClass('hide');
+        });
+        $('.searchBarArea .btnRemove').on('click', function () {
+          $(this).removeClass('show');
+          $(this).addClass('hide');
+          $(this).siblings('.btnSearch').removeClass('hide');
+        });
+
+        // 통합검색 닫기 동작 예시
+        $('.headerSearchBar .btnSearchClose').on('click', function () {
+          var $wrap = $(this).parents('.wrap');
+          $('body').removeAttr('style');
+          $('.headerSearchBar .btnRemove').removeClass('show');
+          $('.headerSearchBar .btnRemove').addClass('hide');
+          $('.headerSearchBar .btnSearch').removeClass('hide');
+
+          if ($wrap.hasClass('openedSearch')) {
+            $wrap.removeClass('openedSearch');
+            $('body').removeAttr('style');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

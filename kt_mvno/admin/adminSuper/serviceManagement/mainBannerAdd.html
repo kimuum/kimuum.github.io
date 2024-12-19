@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "메인 베너 등록 | 메인 베너 관리 | 서비스 관리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>메인 베너 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>서비스 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>메인 베너 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <span class="breadcrumbTitle"><span>메인 베너 등록</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 등록 -->
+            <div class="detailContainer edit boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn"><span>등록</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">메인 베너 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        메인 베너 정보 목록 - 메인 베너명, 메인 베너 간략설명, 노출 구분, 노출 기간, 베너 썸네일(PC), 베너 썸네일(Moblie), 화면 연결 여부, 연결 링크
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            메인 베너명 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="메인 베너명을 입력해주세요." title="메인 베너명" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            메인 베너 간략설명 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="메인 베너 간략설명을 입력해주세요." title="메인 베너 간략설명" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            노출 구분 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-0201" name="radio2" checked="" aria-required="true" required="" />
+                                <label for="input-id-0201" class="radioLabel">
+                                  <span>고정</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-0202" name="radio2" aria-required="true" required="" />
+                                <label for="input-id-0202" class="radioLabel">
+                                  <span>기간</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            노출 기간 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="descriptionWrap">
+                              <div class="periodWrap maxWidth">
+                                <div class="field fieldDatepicker" id="datepicker-start-date">
+                                  <label class="ir" for="input-start-date">시작 날짜 선택 : 2022년 03월 09일</label>
+                                  <div class="fieldForm datePickerArea">
+                                    <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                  </div>
+                                </div>
+                                <div class="space"></div>
+                                <div class="field fieldDatepicker" id="datepicker-end-date">
+                                  <label class="ir" for="input-end-date">끝 날짜 선택 : 2022년 03월 16일</label>
+                                  <div class="fieldForm datePickerArea">
+                                    <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                                  </div>
+                                </div>
+                              </div>
+                              <p class="dotted colorPrimary">노출 기간이 종료 되면 미사용(탭)으로 이동합니다.</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">베너 썸네일(PC)</th>
+                          <td>
+                            <div class="descriptionWrap">
+                              <div class="fieldForm maxWidth">
+                                <div class="file">
+                                  <input type="file" id="fileUpload" title="베너 썸네일(PC) 파일찾기" />
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn"><span>업로드</span></button>
+                                </div>
+                              </div>
+                              <p class="dotted colorPrimary">1920 px X 845 px, 5MB 이하, png 파일 등록</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">베너 썸네일(Moblie)</th>
+                          <td>
+                            <div class="descriptionWrap">
+                              <div class="fieldForm maxWidth">
+                                <div class="file">
+                                  <input type="file" id="fileUpload" title="베너 썸네일(Moblie) 파일찾기" />
+                                </div>
+                                <div class="buttonArea">
+                                  <button type="button" class="btn"><span>업로드</span></button>
+                                </div>
+                              </div>
+                              <p class="dotted colorPrimary">360 px X 490 px, 3MB 이하, png 파일 등록</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            화면 연결 여부 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-0301" name="radio3" checked="" aria-required="true" required="" />
+                                <label for="input-id-0301" class="radioLabel">
+                                  <span>연결</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-0302" name="radio3" aria-required="true" required="" />
+                                <label for="input-id-0302" class="radioLabel">
+                                  <span>미연결</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            연결 링크 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="연결 링크를 입력해주세요." title="연결 링크" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

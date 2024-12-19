@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "1단계 요금제 선택 | 워치개통 신청 | 워치개통(eSIM) | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap detail usimApply">
+      <!-- 신청 페이지 클래스 : usimApply -->
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-2' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>워치개통 신청</h2>
+                <!-- [2차] 20220830 수정 -->
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>워치개통(eSIM)</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>워치개통 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <!-- [2차] 20220830 단계 추가 -->
+            <!-- [2차] 20221109 수정 -->
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>1<!-- [VOS2차] 결함ID 1122059 --></li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+                <li class="unit">4</li>
+              </ul>
+            </div>
+            <!-- //[2차] 20221109 수정 -->
+            <!-- //[2차] 20220830 단계 추가 -->
+
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">휴대폰(모회선) 정보</strong>
+                  </div>
+
+                  <!-- 아이폰 -->
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+
+                  <!-- 갤럭시 -->
+                  <div class="typePhoneLine" style="display: none">
+                    <div class="fieldArea">
+                      <div class="fieldBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                          "price": "32,980원",
+                          "phoneNumber": "010-81**-*319",
+                          "label": true
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- //휴대폰(모회선) 정보 -->
+
+                <!-- 알뜰폰 사업자 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">알뜰폰 사업자</strong>
+                  </div>
+                  <div class="centerContainer">
+                    <div class="centerArea flex">
+                      <div class="centerLeft imgWrap">
+                        <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="" />
+                      </div>
+                      <div class="centerRight">
+                        <div class="centerTop">
+                          <strong class="centerTitle">KT엠모바일</strong>
+                        </div>
+                        <div class="centerMiddle">
+                          <div class="centerInfo">
+                            <div class="text">
+                              <div class="iconBgCall02"><span>전화</span></div>
+                              <p>1899-5000</p>
+                            </div>
+                            <div class="text">
+                              <div class="iconBgTime"><span>운영시간</span></div>
+                              <p>월-금 09:00~18:00</p>
+                            </div>
+                          </div>
+                          <a href="https://www.ktmmobile.com" class="centerUrl" title="새창열림" target="_blank">https://www.ktmmobile.com</a>
+                          <!-- [VOS2차] 결함ID 1122630 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 요금제 선택 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">요금제 선택</strong>
+                    <button type="button" class="linkUnderline colorPrimary">요금제 다시 선택하기</button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+
+                  <div class="popularDataArea">
+                    <div class="summaryTitleArea">
+                      <strong class="summaryBigTitle"> <span class="titleCompany">KT엠모바일</span>LTE 스마트워치 </strong>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox">
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgData">데이터</dt>
+                          <dd class="colorPrimary">1GB</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgCall">음성통화</dt>
+                          <dd class="colorPrimary">0분(1.98원/초)</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgSMS">메세지</dt>
+                          <dd class="colorPrimary">0건(22원/건)</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <!-- <dl class="usageItem smaller">
+                      <dt>월 기본요금</dt>
+                      <dd><span class="del"></span><span>29,700</span>원</dd>
+                    </dl>
+                    <dl class="usageItem">
+                      <dt>프로모션 요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl> -->
+                    <dl class="usageItem">
+                      <dt>월 기본요금</dt>
+                      <dd><span>11,000</span>원</dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- 요금제 선택 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">요금제 선택</strong>
+                  </div>
+                  <div class="buttonArea">
+                    <button type="button" class="btn"><span>요금제 선택하기</span></button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fixedFooterContainer">
+            <div class="fixedFooterArea">
+              <!-- prettier-ignore -->
+              @@include('../component/fixed_footer_area_desc_month.html', {
+                'planPartner' : 'KT엠모바일',
+                'planTitle' : 'LTE 스마트워치',
+                'planCharge' : '11,000',
+                'planNextButton' : '다음'
+              })
+              <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>다음</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- //END fixedFooterContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

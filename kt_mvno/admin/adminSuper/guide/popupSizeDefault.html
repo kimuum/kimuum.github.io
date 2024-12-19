@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "popup" , "headProjectName": "| 통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>팝업 이름(타이틀 있는 경우)</span></button>
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault02')"><span>팝업 이름(타이틀 없는 경우)</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">팝업 제목</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          내용
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>선택</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup alertPopup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          내용
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault02')"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

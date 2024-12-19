@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "메뉴 관리" , "headProjectName": "| 메뉴 및 화면 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superSetMenuDetail">
+      <!-- 페이지 고유 클래스 : superSetMenuDetail -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>메뉴 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>메뉴 및 화면 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>메뉴 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>메뉴 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">메뉴 상세 정보</h2>
+                  </div>
+                  <div class="topRight">
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnLineGray"><span>초기화</span></button>
+                      <button type="button" class="btn"><span>저장</span></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        메뉴 상세 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">메뉴 번호</th>
+                          <td>MENU0101</td>
+                          <th scope="row">
+                            메뉴명<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="input">
+                              <input type="text" value="요금제 관리" title="메뉴명" aria-required="true" required />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            정렬순서<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="input">
+                              <input type="text" value="1" title="정렬순서" aria-required="true" required />
+                            </div>
+                          </td>
+                          <th scope="row">
+                            사용여부<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-01" name="radio" checked aria-required="true" required />
+                                <label for="input-id-01" class="radioLabel">
+                                  <span>사용</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-02" name="radio" aria-required="true" required />
+                                <label for="input-id-02" class="radioLabel">
+                                  <span>사용 안함</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            노출여부<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-03" name="radio02" checked aria-required="true" required />
+                                <label for="input-id-03" class="radioLabel">
+                                  <span>사용</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-04" name="radio02" aria-required="true" required />
+                                <label for="input-id-04" class="radioLabel">
+                                  <span>사용 안함</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">
+                            leaf 여부<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-05" name="radio03" aria-required="true" required />
+                                <label for="input-id-05" class="radioLabel">
+                                  <span>예</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-06" name="radio03" checked aria-required="true" required />
+                                <label for="input-id-06" class="radioLabel">
+                                  <span>아니오</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            상위메뉴번호<strong class="required"><span>필수 입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="input">
+                              <input type="text" value="MENU01" title="상위메뉴번호" aria-required="true" required />
+                            </div>
+                          </td>
+                          <th scope="row">화면 등록</th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="input">
+                                <input type="text" value="요금제" title="등록 화면명" />
+                              </div>
+                              <div class="buttonArea">
+                                <button type="button" class="btn"><span>조회</span></button>
+                              </div>
+                            </div>
+                            <div class="buttonArea btnLeft">
+                              <button type="button" class="btnRefresh"><span>초기화</span></button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

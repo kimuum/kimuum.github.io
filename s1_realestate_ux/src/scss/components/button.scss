@@ -1,0 +1,143 @@
+.btn {
+  display: inline-block;
+  padding: 0 1.6rem;
+  border: 1px solid;
+  border-radius: 0.4rem;
+  @include font(1.8rem, 500, $color_353, 2.4rem);
+
+  & + .btn {
+    margin-left: 0.8rem;
+  }
+
+  &:hover {
+    &:not(:disabled) {
+      &.btn-primary {
+        border-color: $primary_dark;
+        background-color: $primary_dark;
+      }
+      &.btn-secondary {
+        background-color: $color_faf;
+      }
+      &.btn-tertiary {
+        background-color: #e1edff;
+      }
+    }
+  }
+
+  &:disabled {
+    cursor: unset;
+    &.btn-primary {
+      border-color: $color_dcd;
+      background-color: $color_dcd;
+      color: $color_bfb;
+    }
+    &.btn-secondary {
+      color: $color_c4c;
+    }
+    &.btn-tertiary {
+      border-color: $color_dcd;
+      background-color: $white;
+      color: $color_c4c;
+    }
+  }
+
+  // Type
+  &.btn-primary {
+    border-color: $primary;
+    background-color: $primary;
+    color: $white;
+  }
+  &.btn-secondary {
+    border-color: $color_dcd;
+    background-color: $white;
+  }
+  &.btn-tertiary {
+    border-color: $tertiary;
+    background-color: $white;
+    color: $primary;
+  }
+
+  // Size
+  &.btn-xsmall {
+    height: 2rem;
+    padding: 0 0.6rem;
+    @include font(1rem, 500, $color_353, 2rem);
+  }
+  &.btn-small {
+    min-width: 10rem;
+    height: 3.4rem;
+    font-size: 1.4rem;
+  }
+  &.btn-medium {
+    min-width: 12rem;
+    height: 4.4rem;
+  }
+  &.btn-large {
+    min-width: 16.4rem;
+    height: 5.6rem;
+  }
+  &.btn-h50 {
+    min-width: 100%;
+    height: 5rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+  }
+}
+
+.button-box {
+  font-size: 0;
+  line-height: 0;
+}
+
+a {
+  &.btn {
+    @include flex(row, center, center);
+  }
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .app-header-container {
+        .button-box {
+          button {
+            flex: unset;
+          }
+        }
+      }
+      .btn {
+        &.btn-large {
+          min-width: auto;
+        }
+        &.btn-medium {
+          height: 4.4rem;
+        }
+        &.btn-small {
+        }
+
+        &:hover {
+          &:not(:disabled) {
+            &.btn-primary {
+              border-color: $primary;
+              background-color: $primary;
+            }
+            &.btn-secondary {
+              background-color: $white;
+            }
+            &.btn-tertiary {
+              background-color: $white;
+            }
+          }
+        }
+      }
+
+      .button-box {
+        display: flex;
+        width: 100%;
+        button {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

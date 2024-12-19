@@ -1,0 +1,19 @@
+@@include('head.html', {
+'title': 'full_player_ru'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- 영상 : landscape -->
+    @@include('common_player_qr_landscape.html', {
+      'callInline' : 'style="bottom: 204px; left: 60px;"',
+      'qrInline' : 'style="top: 280px; right: 84px;"',
+      'qrText' : 'ОТСКАНИРОВАТЬ кОД ДЛЯ ПОКУПКИ',
+      'class' : '',
+      'qrClass' : 'small-text',
+    })
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

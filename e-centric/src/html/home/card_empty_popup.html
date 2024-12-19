@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- [접근성] 팝업 열기 버튼 예시 -->
+            <button id="openPopupButton" style="padding: 20px; background-color: black; color: #fff">Open Modal Popup</button>
+          </div>
+        </section>
+
+        <dialog class="popup" id="popup-alert">
+          <div class="popup-container" tabindex="0">
+            <div class="popup-area">
+              <div class="popup-top">
+                <div id="popup-title" class="popup-title">알림</div>
+              </div>
+              <div class="popup-middle">
+                <!-- [접근성] br태그 및 공백 제거 -->
+                <div class="popup-text">충전 카드가 등록되어있지 않습니다. 충전 카드 등록 후 충전을 진행해주세요.</div>
+              </div>
+              <div class="popup-bottom">
+                <!-- prettier-ignore -->
+                @@loop("button.html",[
+                {
+                  "property": "",
+                  "iconClass": false,
+                  "btnColor" : 'btn-secondary',
+                  "btnSize" : 'medium',
+                  "class" : '',
+                  "text": "닫기"
+                },
+                {
+                  "property": "",
+                  "iconClass": false,
+                  "btnColor" : 'btn-primary',
+                  "btnSize" : 'medium',
+                  "class" : '',
+                  "text": "자세히보기"
+                },
+              ])
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <!-- [접근성] 팝업 스크립트 예시 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButton = popup.querySelector('.btn-secondary');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButton) {
+          closePopupButton.addEventListener('click', function () {
+            popup.close();
+            openPopupButton.focus();
+            openPopupButton.setAttribute('tabindex', '-1');
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

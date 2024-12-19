@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금제 선택", "titleHidden": "" })
+  <body>
+    <!-- <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>유심 카드 스캔</span></button>
+    </div> -->
+    <div class="popup popupUsimScan show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">유심 카드 스캔</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>카드 영역에 맞춰 촬영해주세요.</p>
+            <div class="scanAround">
+              <div class="scanArea">
+                <!-- 스캔 -->
+              </div>
+              <div class="round">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <button type="button" class="directInput"><span>유심번호 직접 입력</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

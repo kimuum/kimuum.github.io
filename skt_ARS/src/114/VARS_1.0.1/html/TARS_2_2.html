@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 부가서비스 신청 display 여부 hidden input -->
+    <input type="hidden" id="req_service1" iweb-data="out" />
+
+    <!-- 부가서비스 신청여부 hidden input -->
+    <input type="hidden" id="sq_yn_1" iweb-data="out" />
+    <input type="hidden" id="sq_yn_2" iweb-data="out" />
+    <input type="hidden" id="sq_yn_3" iweb-data="out" />
+    <input type="hidden" id="sq_yn_4" iweb-data="out" />
+    <input type="hidden" id="sq_yn_5" iweb-data="out" />
+    <input type="hidden" id="sq_yn_6" iweb-data="out" />
+    <input type="hidden" id="sq_yn_7" iweb-data="out" />
+    <input type="hidden" id="sq_yn_8" iweb-data="out" />
+    <input type="hidden" id="sq_yn_9" iweb-data="out" />
+    <input type="hidden" id="sq_yn_10" iweb-data="out" />
+    <input type="hidden" id="sq_yn_11" iweb-data="out" />
+    <input type="hidden" id="sq_yn_12" iweb-data="out" />
+    <input type="hidden" id="sq_yn_13" iweb-data="out" />
+    <input type="hidden" id="sq_yn_14" iweb-data="out" />
+    <input type="hidden" id="sq_yn_15" iweb-data="out" />
+    <input type="hidden" id="sq_yn_16" iweb-data="out" />
+    <input type="hidden" id="sq_yn_17" iweb-data="out" />
+    <input type="hidden" id="sq_yn_18" iweb-data="out" />
+    <input type="hidden" id="sq_yn_19" iweb-data="out" />
+    <input type="hidden" id="sq_yn_20" iweb-data="out" />
+    <input type="hidden" id="sq_yn_21" iweb-data="out" />
+    <input type="hidden" id="sq_yn_22" iweb-data="out" />
+    <input type="hidden" id="sq_yn_23" iweb-data="out" />
+
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+           "headerType" : "default",
+          "title": '부가서비스 해지',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section id="content" class="content-area">
+            <!-- 2depth 영역 -->
+            <div class="sub-menu">
+              <ol>
+                <li>
+                  <a href="javascript:sendData($(this), 'M1');">
+                    <span class="text">구독상품</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'M4');">
+                    <span class="text">인터넷/TV가입</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'M2');">
+                    <span class="text">부가서비스 신청</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">부가서비스 해지</span>
+                  </a>
+                </li>
+              </ol>
+              <!-- <ol>
+							<li><a href="javascript:sendData($(this), 'M1');">데이터 리필하기</a></li>
+							<li><a href="javascript:sendData($(this), 'M2');"><span>데이터 선물하기</span></a></li>
+							<li><a href="javascript:sendData($(this), 'M5');"><span>데이터 쿠폰구매</span></a></li>
+							<li><a href="javascript:sendData($(this), 'M6');"><span>V컬러링/FLO/Wavve</span></a></li>
+							<li id="menu_displayC"><a href="javascript:sendData($(this), 'M3');">부가서비스 신청</a></li>
+							<li><a href="#" class="on">부가서비스 해지</a></li>
+						</ol> -->
+            </div>
+            <!-- //2depth 영역 -->
+            <!-- 3depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol id="menu_reset">
+                  <li id="service23" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '23', 'menu');">
+                      <span class="text">보이스뷰</span>
+                    </a>
+                  </li>
+                  <li id="service16" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '16', 'menu');">
+                      <span class="text">V컬러링</span>
+                    </a>
+                  </li>
+                  <li id="service17" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '17', 'menu');">
+                      <span class="text">FLO 앤데이터</span>
+                    </a>
+                  </li>
+                  <li id="service18" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '18', 'menu');">
+                      <span class="text">Wavve 앤데이터</span>
+                    </a>
+                  </li>
+                  <li id="service6" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '6', 'menu');">
+                      <span class="text">T RING</span>
+                    </a>
+                  </li>
+                  <li id="service10" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '10', 'menu');">
+                      <span class="text">통화중대기</span>
+                    </a>
+                  </li>
+                  <li id="service21" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '21', 'menu');">
+                      <span class="text">콜키퍼</span>
+                    </a>
+                  </li>
+                  <li id="service1" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                      <span class="text">SKT 콜렉트콜 수신거부</span>
+                    </a>
+                  </li>
+                  <li id="service2" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                      <span class="text">잔여기본통화 안내</span>
+                    </a>
+                  </li>
+                  <li id="service9" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '9', 'menu');">
+                      <span class="text">국제전화 발신금지</span>
+                    </a>
+                  </li>
+                  <li id="service22" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '22', 'menu');">
+                      <span class="text">컬러링</span>
+                    </a>
+                  </li>
+                  <li id="service19" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '19', 'menu');">
+                      <span class="text">국제전화 수신거부</span>
+                    </a>
+                  </li>
+                  <li id="service20" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '20', 'menu');">
+                      <span class="text">060 발신 차단서비스</span>
+                    </a>
+                  </li>
+                  <li id="service12" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '12', 'menu');">
+                      <span class="text">익명호 수신거부</span>
+                    </a>
+                  </li>
+                  <li id="service3" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">발신번호 표시</span>
+                    </a>
+                  </li>
+                  <li id="service4" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">소리샘</span>
+                    </a>
+                  </li>
+                  <li id="service5" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '5', 'menu');">
+                      <span class="text">레터링</span>
+                    </a>
+                  </li>
+                  <li id="service15" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '15', 'menu');">
+                      <span class="text">퀵보이스</span>
+                    </a>
+                  </li>
+                  <li id="service7" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '7', 'menu');">
+                      <span class="text">스팸 필터링</span>
+                    </a>
+                  </li>
+                  <li id="service8" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '8', 'menu');">
+                      <span class="text">스팸 SMS차단</span>
+                    </a>
+                  </li>
+                  <li id="service11" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '11', 'menu');">
+                      <span class="text">팅무선 인터넷 차단</span>
+                    </a>
+                  </li>
+                  <li id="service13" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '13', 'menu');">
+                      <span class="text">스팸ARS차단 플러스</span>
+                    </a>
+                  </li>
+                  <li id="service14" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '14', 'menu');">
+                      <span class="text">발신금지</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //3depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          // 부가서비스 신청 display 여부
+          // 'Y'		: display
+          // 'Y' 아님	: 숨김
+          var req_service1 = getUrlParameter('req_service1');
+          // Y 일 때
+          if (req_service1 != 'Y') {
+            $('#menu_displayT').remove();
+            $('#menu_displayC').remove();
+          }
+        } catch (e) {}
+
+        try {
+          /* 부가서비스 신청여부 */
+          // Y: 신청
+          // N: 미신청
+          // 1 - skt 콜렉트콜 수신거부
+          // 2 - 잔여기본통화 안내
+          // 3 - 발신번호 표시
+          // 4 - 소리샘
+          // 15 - 퀵보이스
+          // 5 - 레터링
+          // 6 - t ring
+          // 7 - 스팸 필터링
+          // 8 - 스팸 sms 차단
+          // 9 - 국제전화 발신금지
+          // 10 - 통화중 대기
+          // 11 - 팅무선 인터넷 차단
+          // 12 - 익명호 수신거부
+          // 13 - 스팸 ars 차단 플러스
+          // 14 - 발신금지
+          var num = 1;
+          for (var i = 1; i < 24; i++) {
+            var caseYN = getUrlParameter('sq_yn_' + i);
+            // 부가서비스 미신청 일 때
+            /*@build-time*/ caseYN = 'Y';
+            if (caseYN == 'Y') {
+              document.getElementById('service' + i).style.display = 'block';
+              num++;
+            } else {
+              $('#service' + i).remove();
+            }
+          }
+
+          if (vars_type == 'C') {
+            var menu_reset = document.getElementById('menu_reset');
+
+            //var menuItem	= document.createElement("li");
+            //menuItem.setAttribute("style", "height:100px");
+            //menu_reset.appendChild(menuItem);
+          }
+
+          // var serviceElements = $('.menu-num');
+          // for (var i = 0; i < num; i++) {
+          //   serviceElements.eq(i).text(i + 1);
+          // }
+          // $('#agent_menu').find('.menu-num').text('0');
+        } catch (e) {}
+
+        try {
+          // 1: 주간, 0: 야간, 9:야간
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '1';
+          // 주간이 아닐 때
+          if (timezone_type != '1') {
+            document.getElementById('agent_menu').style.display = 'none';
+            // 상담원에 대한 class 세팅.
+            document.getElementById('menu_reset').setAttribute('class', 'night');
+          } else {
+            document.getElementById('agent_menu').style.display = 'block';
+          }
+          // 점심시간
+          if (timezone_type == '9') {
+            $('#agent_menu').css('display', 'none');
+          }
+        } catch (e) {}
+
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      // 데이터 리필하기 : dtmf =M1
+      // 데이터 선물하기 : dtmf =M2
+      // 부가서비스 신청 : dtmf =M3
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Error 404" , "headProjectName": "| 통합채널 관리자" })
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap commonErrorWrap">
+      <!-- 페이지 고유클래스 : commonErrorWrap -->
+      <header class="logoHeader" id="gnbContainer">
+        <a href="javascript:void(0);" class="logo">
+          <img src="../../assets/images/common/logo_color.svg" alt="마이알뜰폰" />
+          <strong>슈퍼 관리자</strong>
+        </a>
+      </header>
+      <main class="contentContainer" id="contentContainer">
+        <div class="errorConatiner error404">
+          <div class="errorTop">
+            <div class="imgWrap">
+              <img src="../../assets/images/common/error_img.svg" alt="error" />
+            </div>
+            <h1 class="errorTitle">고객님 이용에 불편을 <span class="block">드려 죄송합니다.</span></h1>
+          </div>
+          <div class="errorMiddle">
+            <p>
+              요청하신 페이지를 찾을 수가 없습니다. <br />
+              페이지 주소가 잘못 입력되었거나 삭제되었을 수 있습니다.
+            </p>
+          </div>
+          <div class="errorBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn"><span>이전 페이지</span></button>
+              <button type="button" class="btn"><span>마이알뜰폰 메인</span></button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footerCopyright" id="footerMenu">
+        <p>Copyright © KT Inc. All rights reserved.</p>
+      </footer>
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="../../assets/js/bundle.js"></script>
+  </body>
+</html>

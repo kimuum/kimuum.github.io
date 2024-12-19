@@ -1,0 +1,114 @@
+.charge-page-container {
+  padding-bottom: 1rem;
+  .charge-page-top {
+    .title-box {
+      @include flex(row, center, center);
+      height: 9rem;
+
+      .title {
+        @include font(1.8rem, 700, $text-02, 2.6rem);
+        text-align: center;
+        .num {
+          color: $secondary_70;
+        }
+      }
+    }
+  }
+
+  .time-remaining-box {
+    margin-top: 1.2rem;
+    text-align: center;
+    + .charge-page-bottom {
+      margin-top: 1.2rem;
+    }
+    .label {
+      @include font(1.2rem, 500, $text-04, 1.6rem);
+    }
+    .data {
+      margin-top: 0.4rem;
+      @include font(1.2rem, 700, $text-04, 1.6rem);
+    }
+  }
+
+  .charge-standby-text-box {
+    position: relative;
+    margin: 5.7rem 0;
+    @include font(1.8rem, 400, $text_03, 2.6rem);
+    text-align: center;
+    .hidden-text {
+      white-space: pre-line;
+    }
+  }
+
+  .charge-page-middle {
+    margin-top: 1.5rem;
+  }
+
+  .charge-page-bottom {
+    margin-top: 6rem;
+  }
+
+  .charge-info-box {
+    .charge-info-title-box {
+      margin-bottom: 0.4rem;
+      .charge-info-title {
+        padding: 0.6rem 0;
+        @include font(1.4rem, 700, $text-01, 2rem);
+      }
+    }
+
+    .charge-info-data-box {
+      padding: 1.2rem 1.6rem;
+      border-radius: 1rem;
+      border: 1px solid $primary-15;
+      background-color: $neutral-10;
+      .info-list {
+        @include flex(row, space-between, center);
+        min-height: 5.4rem;
+        .label-box {
+          padding: 0.8rem 1.2rem;
+          @include font(1.4rem, 400, $text-04, 2rem);
+          word-break: keep-all;
+        }
+
+        .data-box {
+          padding: 0.8rem 1.2rem;
+          text-align: right;
+          .data {
+            display: block;
+            @include font(1.4rem, 700, $text-02, 2rem);
+            word-break: keep-all;
+            white-space: pre-line;
+          }
+          .sub-data {
+            display: block;
+            margin-top: 0.2rem;
+            @include font(1.2rem, 700, $text-04, 1.6rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+.charge-info-content-box {
+  padding-top: 11.4rem;
+  .charge-info-image-box {
+    @include flex(row, center, center);
+  }
+  .charge-info-field-box {
+    width: 100%;
+    margin-top: 2rem;
+  }
+}
+
+.btn-charge {
+  @include flex(row-reverse, center, center);
+  gap: 2rem;
+  span {
+    width: auto;
+  }
+  .ic-loading-w {
+    animation: loading 1s linear infinite;
+  }
+}

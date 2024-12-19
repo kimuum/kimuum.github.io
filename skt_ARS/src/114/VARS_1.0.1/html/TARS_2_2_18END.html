@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <style>
+    .wrap .content-container .sub_cont_desc3 {
+      margin-top: 10px;
+      padding-top: 20px;
+      border-top: 1px solid #ececec;
+    }
+  </style>
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <header class="header">
+          <h1>Wavve 앤데이터</h1>
+          <a href="javascript: btn_back();" class="btn-page-prev">이전</a>
+          <a href="javascript:sendGotoHome();" class="btn-home">홈</a>
+        </header>
+        <div class="content-container">
+          <section class="content-area">
+            <h2 class="h2_tit line"><span>서비스 안내</span></h2>
+            <div class="sub_cont">
+              <div class="ico_service2 wavve">
+                <p></p>
+              </div>
+              <div class="service_cont2">
+                <p>지상파, 종편 등 80여개 채널과 22만편의 VOD를 HD급 영상으로 즐길 수 있으며, <em> 매일 Wavve 전용 데이터 1G를 제공</em>해 주는 LIVE & VOD 서비스</p>
+                <!-- <p class="mt5">"나만의 개성과 감성을 동영상으로 자유롭게 표현해 보세요"</p> -->
+              </div>
+            </div>
+            <div class="sub_cont" style="border-top: 0; padding-top: 0px">
+              <div class="service_cont3">
+                <p class="mt5"><em>이용료 : 월 9,900원 (부가세 포함)</em></p>
+                <p></p>
+                <p>＊ 가입대상 : 5G/LTE 요금제 이용고객<br />(일부 LTE 요금제는 가입 제한 될 수 있음)</p>
+              </div>
+            </div>
+
+            <div class="sub_cont_desc3">
+              <h3 class="h3_tit">가입 프로모션 안내</h3>
+              <!-- 					<div class="s1_txt">1. 가입 프로모션 안내</div> -->
+              <div class="s1_txt">○ 서비스 최초 가입 후 이용권을 발급하는 경우 가입일 포함 30일 동안 100원으로 이용 가능</div>
+              <div class="s1_txt">○ 5GX플래티넘, T플랜 맥스 요금제를 이용하는 고객 모두 무료</div>
+              <div class="s1_txt mb10">○ 5GX프라임, T플랜 스페셜 요금제를 이용하는 고객 70% 할인</div>
+              <h3 class="h3_tit">이용안내</h3>
+              <div class="s1_txt">○ 방송 월정액[방송(LIVE+VOD)+VOD 10회 다운로드] 서비스 기본 제공</div>
+              <div class="s1_txt">○ 모바일+PC에서 HD급으로 영상 시청이 가능하며, 동시 이용자수는 1명</div>
+              <div class="s1_txt mb10">○ Wavve 전용 데이터 1GB/일 제공<br />(초과시 3Mbps QoS로 데이터 지속 제공 )</div>
+              <h3 class="h3_tit">기타 유의사항</h3>
+              <div class="s1_txt">
+                ○ 5GX 프라임, T플랜 스페셜, T플랜 시니어 스페셜 요금제 이용 고객님이 2021년 4월 30일(금)까지 Wavve 또는 FLO 상품에 가입하여 무료로 이용하고 계신 경우, 2021년 5월 1일(토) 이후에
+                부가서비스, 구독 상품, 우주패스 All/Life 추가혜택으로 Wavve 또는 FLO 상품에 추가 가입하시면, 기존에 이용 중이던 Wavve 또는 FLO 상품의 할인율이 100%(무료) 에서 70%로 변경됩니다.
+                <br />단, 2021년 4월 30일(금) 까지 이용하시던 요금제를 변경하지 않은 상태에서 2021년 5월 1일(토) 이후에 가입하신 Wavve 또는 FLO 상품을 해지하시면, 2021년 4월 30일(금) 까지 가입하신
+                Wavve 또는 FLO 상품은 다시 무료로 변경됩니다.
+              </div>
+            </div>
+
+            <div class="btn_wrap line_top">
+              <button id="btn_rt" type="button" class="btn-primary" style="display: none" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">해지</button>
+              <button id="agent" type="button" class="btn-primary" style="display: none" onclick="javascript: sendRepPageData($(this).text().trim(), '0', 'menu');">상담사 연결</button>
+            </div>
+          </section>
+          <!-- 콜게이트 종료버튼 -->
+          <!-- prettier-ignore -->
+          @@include("footerBtnEnd.html")
+          <!-- //콜게이트 종료버튼 -->
+        </div>
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+        var timezone_type = getUrlParameter('timezone_type');
+
+        // 주간만 노출(중식/야간/휴일은 비노출)
+        if (timezone_type == '1') {
+          $('#agent').css('display', 'block');
+        } else {
+          $('#btn_rt').css('display', 'block');
+        }
+      });
+    </script>
+  </body>
+</html>

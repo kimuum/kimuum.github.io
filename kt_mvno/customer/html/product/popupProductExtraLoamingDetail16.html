@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "음성로밍 안심 차단 | 로밍 부가서비스 상세", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnIDLoamingDetail16, popupLoamingDetail16 -->
+      <button type="button" class="btn" id="btnIDLoamingDetail16" onclick="togglePopup('btnIDLoamingDetail16', 'popupLoamingDetail16')">
+        <span>로밍 부가서비스 상세 팝업</span>
+      </button>
+    </div>
+
+    <!-- 웹 접근성 적용 필수 아이디 : popupLoamingDetail16, popupTitleLoamingDetail16 -->
+    <div class="popup popupExtraLoamingDetail show" id="popupLoamingDetail16" role="dialog" aria-labelledby="popupTitleLoamingDetail16" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleLoamingDetail16, btnIDLoamingDetail16, popupLoamingDetail16 -->
+          <strong class="popupTitle" id="popupTitleLoamingDetail16">로밍 부가서비스 상세</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDLoamingDetail16', 'popupLoamingDetail16')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="loamingDetailContainer typeAllDay">
+              <div class="loamingDetailHead">
+                <div class="topTitle">
+                  <strong>음성로밍 안심 차단</strong>
+                  <strong class="colorRed">무료</strong>
+                </div>
+                <div class="topContent">
+                  <div class="loamingRecomand">
+                    <div class="recomandCircleData iconCallBlock">
+                      <p>음성통화,문자차단 <br />(월 55만원 초과시)</p>
+                    </div>
+                    <div class="recomandCircleData iconCountry">
+                      <p>주요 <br />45개 국가</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="loamingDetailBody">
+                <div class="loamingDetailTabContainer01">
+                  <div class="tabList" role="tablist">
+                    <button type="button" id="loamingDetailTab01" class="tabButton" aria-controls="loamingDetailCon01" role="tab" aria-selected="true">
+                      <span>상품 정보</span>
+                    </button>
+                    <button type="button" id="loamingDetailTab02" class="tabButton" aria-controls="loamingDetailCon02" role="tab" aria-selected="false">
+                      <span>필수 안내</span>
+                    </button>
+                  </div>
+                  <div class="tabContainer">
+                    <div id="loamingDetailCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingDetailTab01">
+                      <div class="loamingProductInfo">
+                        <div class="productInfoArea">
+                          <div class="productInfoTop">
+                            <div class="titleWrap">
+                              <strong>요금폭탄 걱정은 이제 끝! </strong><br />
+                              <strong>로밍 통화 요금이</strong><br />
+                              <strong class="colorRed">월 55만원 도달하면, 자/동/차/단</strong>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tableContainer productTable hideCaption country">
+                          <table>
+                            <caption>
+                              <span class="ir">대륙/적용 국가 : 아시아, 미주, 유럽, 오세아니아, 중동</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 30%" />
+                              <col />
+                            </colgroup>
+                            <thead>
+                              <tr>
+                                <th class="bgLightGray">대륙</th>
+                                <th>적용 국가</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <th scope="row">아시아</th>
+                                <td>괌, 대만, 마카오, 말레이시아, 미얀마, 베트남, 사이판, 싱가포르, 인도네시아, 일본, 중국, 캄보디아, 태국, 필리핀, 홍콩</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">미주</th>
+                                <td>미국, 미국령버진아일랜드, 생피에르미클롱, 캐나다</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">유럽</th>
+                                <td>그리스, 노르웨이, 독일, 러시아, 벨기에, 세우타, 스위스, 스페인, 아이슬란드, 아일랜드, 영국, 오스트리아, 이탈리아, 체코, 카나리제도, 터키, 포르투갈, 폴란드, 프랑스, 헝가리</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">오세아니아</th>
+                                <td>뉴질랜드, 호주</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">중동</th>
+                                <td>아랍에미리트, 카타르, 쿠웨이트</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">아프리카</th>
+                                <td>이집트</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="tableContainer productTable hideCaption info">
+                          <table>
+                            <caption>
+                              <span class="ir">혜택, 요금, 신청 방법</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 30%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">혜택</th>
+                                <td>
+                                  <p class="beforeDot">음성통화 및 문자 로밍 요금이 월 55만원(부가세 포함)을 초과하면 음성통화 및 문자로밍을 자동으로 차단해 주는 서비스</p>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">요금</th>
+                                <td>
+                                  <strong>무료</strong>
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">신청 방법</th>
+                                <td>
+                                  <p class="beforeDot">별도 가입신청 없이 기본 제공(상기 45개 국가에서 로밍 이용 시 자동 적용)</p>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <div class="tableBottom">
+                            <p class="colorPrimary">음성로밍 안심차단 서비스를 &lt;해제&gt;하고 싶으신 고객님은 사업자 고객센터를 통해 신청해주세요.</p>
+                            <p class="colorRed">*차단 해제 시, 월 55만원을 초과하더라도 제한 없이 음성통화/문자 로밍 사용이 가능합니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="loamingDetailCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingDetailTab02">
+                      <ul class="dotList marginBtmReset">
+                        <li class="beforeDot">적용국가 이외 국가에서 사용하신 음성통화/영상/문자 로밍 요금은 포함되지 않습니다.</li>
+                        <li class="beforeDot">요금 기준은 해당 월 음성통화/영상/문자 로밍 누적 사용 요금 기준입니다. (한국시간 기준)(예시: 7월31일까지 33만원(부가세 포함)을 사용하시고, 8월1일에 22만원(부가세 포함)을 사용하신 경우 음성통화/문자 로밍이 차단되지 않습니다.)</li>
+                        <li class="beforeDot">한국시간으로 매월 1일~말일까지의 기준이며, 다음 달 1일이 되면, 다시 55만원(부가세 포함)까지 음성통화/영상/문자 로밍을 사용하실 수 있습니다.</li>
+                        <li class="beforeDot">음성통화/영상/문자 로밍 요금이 월 55만원(부가세 포함)을 초과하여 음성통화/영상/문자 로밍이 차단되더라도 문자 수신 및 로밍센터/영사콜센터로의 전화는 차단되지 않습니다.</li>
+                        <li class="beforeDot">데이터로밍 이용 요금은 포함되지 않습니다.</li>
+                        <li class="beforeDot">로밍ON 음성 하루종일 이용 기간 중에는 적용되지 않습니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //popupContent -->
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <div class="wrapper sms-change">
+      <div class="content-container">
+        <section class="content-area">
+          <div class="sms-change-container" id="container" style="display: none">
+            <div class="sms-change-content-title">통화화면으로 이동해 주세요.</div>
+            <div class="sms-change-image-box">
+              <div class="sms-change-image-text">1. 화면 최상단을 내리세요.</div>
+              <img src="/{version}/images/sub/sms_change_01.png" alt="화면 최상단을 내리세요" />
+            </div>
+            <div class="sms-change-image-box">
+              <div class="sms-change-image-text">2. 통화중 상태를 클릭하세요.</div>
+              <img src="/{version}/images/sub/sms_change_02.png" alt="통화중 상태를 클릭" />
+            </div>
+          </div>
+          <div class="sms-change-container" id="container2" style="display: none">
+            <div class="sms-change-content-title">통화화면으로 이동해 주세요.</div>
+            <div class="sms-change-image-box">
+              <div class="sms-change-image-text">녹색 통화중 표시 클릭!</div>
+              <img src="/{version}/images/sub/sms_change_03.png" alt="화면 최상단을 내리세요" /><img src="/{version}/images/sub/sms_change_04.png" style="width: 100%" alt="통화중 상태를 클릭" />
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/wforcus.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var agent = navigator.userAgent;
+        agent = agent.toLowerCase();
+        if (agent.indexOf('iphone') > -1) {
+          $('#container2').css('display', 'block');
+        } else if (agent.indexOf('android') > -1) {
+          $('#container').css('display', 'block');
+        }
+
+        history.pushState(null, null, '#back');
+        $(window).on('popstate', function (e) {
+          history.go(1);
+          history.forward();
+          history.pushState(null, null, '#back');
+        });
+        $(window).bind('hashchange', function (e) {
+          e.preventDefault();
+          history.pushState(null, null, '#back');
+        });
+      });
+    </script>
+  </body>
+</html>

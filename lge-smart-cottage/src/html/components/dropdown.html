@@ -1,0 +1,22 @@
+<div class="dropdown-container @@className" data-label="@@label">
+  <div class="dropdown-area">
+    <div class="dropdown-box">
+      <button type="button" class="btn-dropdown @@property">
+        <span class="text">@@if(label) {@@label : }@@text</span>
+      </button>
+      <div class="dropdown-list-container">
+        <div class="dropdown-list-area">
+          <ul class="dropdown-list-box">
+            @@for (var i = 0; i < list.length; i++) {
+            <li class="dropdown-list `+list[i].className+`">
+              <button type="button" class="btn-dropdown-list">
+                <span class="text">`+list[i].list+`</span>
+              </button>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

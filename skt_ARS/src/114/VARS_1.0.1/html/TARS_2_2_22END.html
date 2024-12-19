@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '컬러링',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-call"></i>
+                <div class="info-box">
+                  <p class="label"><span class="highlight">통화음 대신 나만의 소리를 들려주어</span> 자신에게 전화거는 사람을 지루함 없이 즐겁게 기다리게 해줄 수 있는 부가서비스</p>
+                </div>
+              </div>
+              <div class="usage-fee-box">
+                <p class="label">이용료&nbsp;<span>월 990원</span></p>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <div class="caution-title">참고사항</div>
+                    <p class="caution-text dot">
+                      최초 부가서비스 신청 시 기본음으로 하나의 음이 무료로 제공되며, 기본음 이외에 새로운 음원으로 설정을 원하실 경우에는 아래 방법으로 변경 가능하며 변경 시 별도의 콘텐츠 이용료가
+                      부과됩니다.
+                    </p>
+                    <p class="caution-text dash">APP: T컬러링, T통화매니저</p>
+                    <p class="caution-text dash">모바일 Web: T world, T컬러링</p>
+                    <p class="caution-text dot mt-8">곡별로 콘텐츠이용료가 다르기 때문에, 이용 할 때마다 반드시 이용료를 확인하시기 바랍니다.</p>
+                    <p class="caution-text dot">컬러링 서비스에 가입하시면, 매월 990원(부가세 포함)의 정액요금이 휴대폰 이용요금과 함께 청구됩니다.</p>
+                    <p class="caution-text dot">본인 컬러링 청취하기: <span class="highlight">ARS 010-5200-8000</span>으로 설정한 컬러링을 확인할 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box" id="btn_sms">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">해지하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        var reflesh_view = getUrlParameter('reflesh_view');
+        if (reflesh_view == 'y' || reflesh_view == 'Y') {
+          $('#btn_sms').hide();
+          $('#btn_rt').show();
+        }
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "popup", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>알림 팝업</span></button>
+    </div>
+    <div class="popup alertPopup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>승인 검토 중인 계정입니다.</p>
+            <p>승인 완료 후 다시 시도해주세요.</p>
+          </div>
+        </div>
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn" onclick="togglePopup('btnID', 'popupDefault')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

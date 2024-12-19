@@ -1,0 +1,198 @@
+.chartContainer {
+  @include flex(row, center, center);
+  width: 100%;
+}
+
+.chartArea {
+  position: relative;
+  width: 100%;
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+
+  .chartInfoContainer {
+    @include flex(row, center, center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+}
+
+/* 실시간 요금 */
+.chartRealtimeRate {
+  width: 28rem;
+  height: 28rem;
+  margin-top: 4rem;
+  margin-bottom: 6rem;
+
+  .chartInfoArea {
+    margin-top: 5rem;
+    
+    .label {
+      margin-bottom: 0.3rem;
+      @include font(1.8rem, 400, $color-gray-05, 3.2rem);
+      text-align: center;
+    }
+
+    .rateBox {
+      position: relative;
+      @include font(2.4rem, 700, $black, 3.2rem);
+      margin-bottom: 3rem;
+
+      .rate {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        height:3.2rem;
+        padding: 0 0.2rem;
+        font-family: 'roboto';
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 1.5rem;
+        background-color: $accent;
+      }
+    }
+
+    .period {
+      @include font(1.3rem, 400, $color-gray-07, 3.2rem);
+      text-align: center;
+    }
+  }
+}
+
+/* 막대 그래프 */
+.stickChartArea {
+  position: relative;
+  padding: 5.7rem 0 7.4rem;
+  background-color: $bgcolor-gray-02;
+  .chartInner {
+    @include flex(row, center, flex-end);
+    position: relative;
+    padding: 0 4rem;
+  }
+  .chartArea, .itemAverage {
+    @include flex(row, center, flex-end);
+    width: auto;
+    [class*=item] {
+      position: relative;
+      margin-right: 4rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .label {
+      position: absolute;
+      left: 50%;
+      bottom: -3.3rem;
+      transform: translate(-50%, 0);
+      @include font(1.4rem, normal, $color-gray-06, 1.4);
+      white-space: nowrap;
+    }
+  }
+  .itemStick {
+    position: relative;
+    width: 2.6rem;
+    height: 15.8rem;
+    background-color: $white;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.1);
+    .colorStick {
+      overflow: hidden;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #777;
+      & > span {
+        @include ir;
+      }
+    }
+  }
+  // 평균
+  .itemAverage {
+    .itemStick {
+      position: relative;
+      .colorStick {
+        background-color: $primary;
+      }
+    }
+    .label {
+      font-weight: bold;
+      color: $primary;
+    }
+    .line {
+      position: absolute;
+      bottom: 0;
+      left: 4rem;
+      right: 4rem;
+      z-index: 1;
+      border-bottom: 1px dashed $black;
+    }
+  }
+  .labelData {
+    position: absolute;
+    top: -3.5rem;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    @include font(1.2rem, 400, $color-gray-06, 2rem);
+    white-space: nowrap;
+    text-indent: 2px;
+  }
+}
+
+
+@media (#{$mobile}) {
+  .stickChartArea {
+    .itemStick {
+      width: 2rem;
+    }
+    .chartInner {
+      padding: 0 3rem;
+    }
+    .chartArea {
+      [class*=item] {
+        width: 2rem;
+        margin-right: 2.5rem;
+      }
+    }
+    .itemAverage {
+      .line {
+        left: 3rem;
+        right: 3rem;
+      }
+    }
+  }
+  .chartRealtimeRate {
+    width: 26rem;
+    height: 26rem;
+    .chartInfoArea {
+      margin-top: 3rem;
+      .rateBox {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  
+  /* 최근 3개월 이용량 보기 팝업 */
+  .usageGraphContent {
+    .stickChartArea {
+      .itemAverage {
+        .line {
+          left: 1rem;
+          right: 1rem;
+        }
+      }
+    }
+  }
+}

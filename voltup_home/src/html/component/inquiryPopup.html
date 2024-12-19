@@ -1,0 +1,221 @@
+  <!-- show 클래스로 제어 -->
+  <div class="popup-container inquiry-popup">
+    <div class="dim"></div>
+    <div class="popup-area">
+      <div class="popup-box">
+        <div class="popup-top">
+          <div class="title-box">
+            <span>충전기 설치 신청하기</span>
+          </div>
+          <button type="button" class="btn-icon-close"></button>
+        </div>
+        <div class="popup-bottom">
+          <div class="inquiry-container">
+            <form class="gform pure-form pure-form-stacked" method="POST" action="https://script.google.com/macros/s/AKfycbwyIIA3exBkDDOixcQG4NW_41JUm1T2e2F90GRKvbzlO2At36wwdbHSBjaSP52R-Pll/exec">
+              <div class="loader" style="display: none;"></div>
+
+              <div class="form-elements">
+                <div class="field-box">
+                  <div class="inquiry-info-container">
+                    <div class="title-box">
+                      <p>
+                        전기차 충전기 설치 관련 문의 사항이 있으시다면, 아래 양식에 맞춰 문의사항을 남겨 주세요.<br/>
+                        볼트업에서 고객님께 연락 드리겠습니다.
+                      </p>
+                    </div>
+                    <div class="desc-box">
+                      <span>아래 내용 입력 후, ‘신청하기' 버튼을 눌러주세요.</span>
+                    </div>
+                  </div>
+
+                  <!-- 개인정보 수집 동의(필수) -->
+                  <div class="field-container">
+                    <!-- .active : 약관 내용 노출 -->
+                    <div class="privacy-container">
+                      <div class="privacy-label-box">
+                        <label class="field-label" for="agree">개인정보 수집 동의(필수)</label>
+                      </div>
+                      <div class="privacy-content-box">
+                        <div class="privacy-content">
+                          <p class="small desc">고객님의 문의사항에 대한 안내를 위해 다음과 같이 개인정보를 활용 합니다.</p>
+                          <p class="large">1. 개인정보 수집 및 이용</p>
+                          <div class="table">
+                            <div class="thead">
+                              <div class="tr">
+                                <div class="th">
+                                  <span>개인정보 수집 항목</span>
+                                </div>
+                                <div class="th">
+                                  <span>수집 및 이용목적</span>
+                                </div>
+                                <div class="th">
+                                  <span>보유 및 이용기간</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tbody">
+                              <div class="tr">
+                                <div class="td">
+                                  <span>
+                                    성명, 연락처,<br/>
+                                    고객문의 사항<br/>
+                                    (입력 내용이 있는 경우에 한함)                                    
+                                  </span>
+                                </div>
+                                <div class="td">
+                                  <span>설치문의에 대한 고객 안내</span>
+                                </div>
+                                <div class="td">
+                                  <span>
+                                    문의 요청 후 1개월 이내에 개인정보 처리<br/>
+                                    목적 달성 시까지 보유 및 이용 후<br/>
+                                    폐기 합니다.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="large">2. 동의 거부권 및 미동의에 대한 불이익 안내</p>
+                          <p class="small">고객님은 개인정보 동의를 거부하실 수 있으며, 동의하지 않으실 경우 서비스 이용이 제한될 수 있습니다.</p>
+                        </div>
+                      </div>
+                      <div class="field-form short require">
+                        <input type="text" maxlength="5" id="agree1" placeholder="동의합니다">
+                        <div class="notice-box">
+                          <span>* 동의 시, ‘동의합니다’라고 입력해주세요.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 개인정보 제3자 제공(필수) -->
+                  <div class="field-container">
+                    <!-- .active : 약관 내용 노출 -->
+                    <div class="privacy-container">
+                      <div class="privacy-label-box">
+                        <label class="field-label" for="agree">개인정보 제3자 제공(필수)</label>
+                      </div>
+                      <div class="privacy-content-box">
+                        <div class="privacy-content">
+                          <p class="small desc">고객님의 문의사항에 안내 드리기 위해, 다음과 같이 개인정보를 제공합니다.</p>
+                          <p class="large">1. 개인정보 제공</p>
+                          <div class="table">
+                            <div class="thead">
+                              <div class="tr">
+                                <div class="th">
+                                  <span>제공받는 자</span>
+                                </div>
+                                <div class="th">
+                                  <span>제공 목적</span>
+                                </div>
+                                <div class="th">
+                                  <span>제공 정보 항목</span>
+                                </div>
+                                <div class="th">
+                                  <span>보유기간</span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="tbody">
+                              <div class="tr">
+                                <div class="td">
+                                  <span>㈜LG 헬로비전</span>
+                                </div>
+                                <div class="td">
+                                  <span>설치문의에 대한 고객 안내</span>
+                                </div>
+                                <div class="td">
+                                  <span>
+                                    성명, 연락처, 고객문의 사항<br/>
+                                    (입력 내용이 있는 경우에 한함)
+                                  </span>
+                                </div>
+                                <div class="td">
+                                  <span>
+                                    개인정보 제공시점부터 1개월<br/>
+                                    보유기간 경과 후 즉시삭제
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <p class="large">2. 동의 거부권 및 미동의에 대한 불이익 안내</p>
+                          <p class="small">고객님의 문의사항에 안내 드리기 위해, 다음과 같이 개인정보를 제공합니다.</p>
+                        </div>
+                      </div>
+                      <div class="field-form short require">
+                        <input type="text" maxlength="5" id="agree2" placeholder="동의합니다">
+                        <div class="notice-box">
+                          <span>* 동의 시, ‘동의합니다’라고 입력해주세요.</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 신청자명 -->
+                  <div class="field-container">
+                    <label class="field-label" for="name">신청자명 (필수)</label>
+                    <div class="field-form short require">
+                      <input type="text" maxlength="5" id="name" name="신청자명" placeholder="이름을 입력해주세요.">
+                    </div>
+                  </div>
+                  <!-- 연락처 -->
+                  <div class="field-container">
+                    <label class="field-label" for="phone">연락처 (필수)</label>
+                    <div class="field-form short require">
+                      <input type="number" id="phone" name="연락처" placeholder="연락처를 입력해주세요.">
+                    </div>
+                  </div>
+                  <!-- 설치 요청 위치(주소) -->
+                  <div class="field-container">
+                    <label class="field-label" for="address">설치 요청 위치(주소)</label>
+                    <div class="field-form">
+                      <input type="text" id="address" name="설치 요청 위치(주소)" placeholder="주소를 입력해주세요.">
+                    </div>
+                  </div>
+                  <!-- 설치 요청 수량 -->
+                  <div class="field-container">
+                    <label class="field-label">설치 요청 수량</label>
+                    <div class="quantity-container">
+                      <div class="field-form mini">
+                        <span class="category">완속</span>
+                        <input type="text" id="quantity-01" name="완속" placeholder="00대">
+                      </div>
+                      <div class="field-form mini">
+                        <span class="category">급속</span>
+                        <input type="text" id="quantity-02" name="급속" placeholder="00대">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 그 외 요청 사항 -->
+                  <div class="field-container">
+                    <label class="field-label" for="request">그 외 요청 사항</label>
+                    <div class="field-form">
+                      <textarea name="그 외 요청 사항" id="request" cols="30" rows="10" placeholder="요청사항을 입력해주세요."></textarea>
+                    </div>
+                  </div>
+
+                  <fieldset class="pure-group honeypot-field" style="display: none;">
+                    <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                    <input id="honeypot" type="text" name="honeypot" value="">
+                  </fieldset>
+                </div>
+
+                <div class="inquiry-button-box">
+                  <button class="btn-submit button-success pure-button" disabled>
+                    <span>문의하기</span>
+                  </button>
+                </div>
+              </div>
+              <div class="thankyou_message" style="display: none;">
+                <div class="submit-complete-box">
+                  <p>접수 완료되었습니다!</p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Popup -->

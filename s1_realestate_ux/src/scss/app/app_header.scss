@@ -1,0 +1,41 @@
+.app-header-container {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  height: 7.2rem;
+  padding: 2.8rem 1.6rem 1.2rem 1.6rem;
+  background-color: $white;
+  .app-header-area {
+    position: relative;
+    @include flex(row, center, center);
+    height: 100%;
+  }
+  .button-box {
+    position: absolute;
+    top: 0;
+    width: 3.2rem;
+    height: 3.2rem;
+    &.back-button-box {
+      left: 0;
+    }
+    &.close-button-box {
+      right: 0;
+      width: auto;
+    }
+    .btn-back {
+      display: inline-block;
+      width: 3.2rem;
+      height: 3.2rem;
+      background: asset-image('app/ic_back.svg') no-repeat center / 3.2rem;
+    }
+    .btn-close {
+      display: inline-block;
+      width: 3.2rem;
+      height: 3.2rem;
+      background: asset-image('app/ic_close.svg') no-repeat center / 3.2rem;
+    }
+  }
+  .app-header-title-box {
+    @include font(1.8rem, 500, $black, normal);
+  }
+}

@@ -1,0 +1,95 @@
+.modal {
+  &.change-option-modal {
+    &.option-model {
+      .modal-container {
+        .modal-middle {
+          max-height: 41.4rem;
+        }
+      }
+    }
+
+    &.option-exterior {
+      .modal-container {
+        .modal-middle {
+          max-height: 39.3rem;
+        }
+      }
+    }
+
+    &.option-energy {
+      .modal-container {
+        .modal-middle {
+          max-height: 38.8rem;
+        }
+      }
+    }
+
+    .modal-container {
+      padding-right: 2.7rem;
+      .modal-top,
+      .modal-middle,
+      .modal-bottom {
+        padding-right: 2.7rem;
+      }
+
+      .modal-middle {
+        max-height: 41.4rem;
+        .modal-content-box {
+          height: inherit;
+          max-height: 100%;
+        }
+      }
+
+      .select-model-container {
+        padding: 0 1rem;
+        .select-model-top {
+          & + .select-model-bottom {
+            margin-top: 2.8rem;
+          }
+        }
+
+        .select-model-bottom {
+          margin: 0;
+        }
+
+        .tab-box {
+          margin: 0;
+        }
+      }
+
+      .option-list-radius-box {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .modal {
+    &.change-option-modal {
+      .modal-container {
+        padding: 2.4rem 0 2rem;
+        .modal-top,
+        .modal-middle,
+        .modal-bottom {
+          padding: 0 2rem;
+        }
+
+        .select-model-container {
+          padding: 0;
+          .select-model-top {
+            + .select-model-bottom {
+              margin-top: 2rem;
+            }
+          }
+        }
+
+        .select-model-bottom {
+          .tab-content-box {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

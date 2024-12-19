@@ -1,0 +1,661 @@
+.page-fuelcell {
+    .sub-header {
+        .container {
+            padding-top: 0px;
+            h1 { height: auto; }
+        }
+    }
+    .fuelcell_con1_list1 { vertical-align: middle; }
+    #contactBanner {
+        position: relative;
+        padding-top: 200px;
+        background-color: #f5f5f5;
+        margin-top: 0;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            height: 400px;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+        }
+        & > div { position: relative; z-index: 2; }
+        @include respond-to('mobile') {
+            padding-top: 70px;
+        }
+    }
+}
+
+.page-achievement {
+    .content-wrap {
+        margin-top: 0px;
+        padding-top: 150px;
+        margin-bottom: 150px;
+        
+        .content {
+            @include respond-to('desktop-over') {
+                .content-inner {
+                    padding-left: calc(100% - 935px);
+                }
+            }
+            @include respond-to('max-desktop-under') {
+                &:not(.content-head) {
+                    max-width: 935px;
+                }
+            }
+        }
+        @include respond-to('mobile') {
+            padding-top: 75px;
+            margin-bottom: 75px;
+        }
+    }
+
+    .sc-event.on {
+        .content-label {
+            .year { color: #00A0CF; }
+        }
+    }
+
+    .content {
+        &#Vehicle2 {
+            .content-img {
+                > div:nth-of-type(2) {
+                    transform: translateY(24%);
+                }
+            }
+            @include respond-to('mobile') {
+                .content-text {
+                    margin-top: 51px;
+                }
+                .content-img {
+                    > div:nth-of-type(2) {
+                        transform: translateY(12%);
+                    }
+                }
+            }
+        }
+    }
+
+    #AchievementVehicle.content-wrap {
+        overflow: visible;
+        .content-label {
+            position: sticky;
+            top: 200px;
+            transition: top 0.3s ease;
+            float: left;
+        }
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) and (max-width: 1600px) {
+            .content-label {
+                position: static;
+            }
+        }
+        //@include respond-to('desktop-under') {
+        @include respond-to('max-desktop-under') {
+            .content-label {
+                top: 154px; float: none;
+                background-color: #fff;
+                padding: 15px 0 15px;
+                z-index: 1;
+            }
+        }
+        @include respond-to('mobile') {
+            .content-label { top: 105px; }
+        }
+    }
+    /*
+    @include respond-to('desktop') {
+        #AchievementVehicle.content-wrap {
+            overflow: visible;
+            .content-label {
+                position: sticky;
+                top: 200px;
+                transition: top 0.3s ease;
+                float: left;
+            }
+        }
+    }*/
+
+    #AchievementNonVehicle {
+        position: relative;
+        background-color: #f5f5f5;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            z-index: 1;
+            height: 400px;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+        }
+        #contactBanner {
+            position: relative;
+            z-index: 2;
+			padding-top: 200px;
+			@include respond-to ('desktop-under') {
+				padding-top: 140px;
+			}
+			@include respond-to ('mobile') {
+				padding-top: 70px;
+			}
+        }
+    }
+
+    #Vehicle3 {
+        .content-text+.content-img { margin-top: 80px; }
+        .content-divide>div:nth-of-type(2) { transform: translateY(-5%); }
+        @include respond-to ('mobile') {
+            .content-text+.content-img { margin-top: 40px; }
+            .content-divide>div:nth-of-type(2) { transform: translateY(-8%); }
+        }
+    }
+    #Vehicle4 {
+        .content-divide>div:nth-of-type(2) { transform: translateY(12%); }
+        .content-img+.content-text {
+            @include respond-to ('mobile') {
+                margin-top: 48px;
+            }
+        }
+    }
+    #Vehicle6 {
+        .content-divide>div:nth-of-type(2) { transform: translateY(-8%); }
+    }
+
+    #Vehicle8 {
+        margin-bottom: 180px; 
+        @include respond-to ('desktop-under') {
+            margin-bottom: 140px;
+        }
+        @include respond-to ('mobile') {
+            margin-bottom: 90px;
+        }
+    }
+	
+	// s:231026 add (Adaptable)
+	.fuelcell_sc {
+		width: 100%;
+		position: relative;
+		padding: 170px 40px 0 40px;
+		overflow: hidden;
+		background: #fff;
+		font-weight: 500;
+		text-align: center;
+
+		.fuelcell_subtit {
+			font-size: 42px;
+			color: #767676;
+		}
+
+		.fuelcell_tit {
+			margin-top: 6px;
+			font-size: 70px;
+			line-height: 1.3;
+
+			span {
+				display: inline-block;
+			}
+		}
+
+		.fuelcell_txt {
+			width: 80%;
+			max-width: 820px;
+			margin: 1.5em auto 0;
+			font-weight: 500;
+			font-size: 24px;
+
+			span {
+				display: inline-block;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 1500px) {
+	  .fuelcell_sc {
+	  	.fuelcell_subtit {
+	  		font-size: 36px;
+	  	}
+
+	  	.fuelcell_tit {
+	  		font-size: 56px;
+	  	}
+
+	  	.fuelcell_txt {
+	  		font-size: 19.2px;
+	  	}
+	  }
+	}
+
+	@media only screen and (max-width: 767px) {
+	  .fuelcell_sc {
+		.fuelcell_subtit {
+		  font-size: 24px;
+		  margin-bottom: 6px;
+		}
+
+		.fuelcell_tit {
+		  width: 90%;
+		  margin: 0 auto;
+		  font-size: 31.25px;
+		}
+
+		.fuelcell_txt {
+		  width: 88%;
+		  font-size: 15px;
+		}
+	  }
+	}
+
+	html {
+	  &[lang="ko"] .fuelcell_sc {
+		font-family: 'Hyundai Sans Text KR', sans-serif;
+		font-style: normal;
+
+		.fuelcell_tit {
+		  font-family: 'Hyundai Sans Head KR', sans-serif;
+		}
+	  }
+
+	  &[lang="en"] .fuelcell_sc .fuelcell_txt {
+		max-width: 1003px;
+	  }
+	}
+	.fuelcell_sc {
+		.fuelcell_txt {
+			max-width: 760px;
+		}
+
+		.fuelcell_sc_list_wrap {
+			width: 90%;
+			max-width: 1520px;
+			margin: 73px auto 0;
+			font-size: 0;
+			text-align: center;
+
+			.fuelcell_sc_list {
+				display: inline-block;
+				width: calc(50% - 12px);
+				position: relative;
+				margin-top: 24px;
+				overflow: hidden;
+				text-align: left;
+
+				&:nth-child(2n) {
+					margin-left: 24px;
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					width: 100%;
+					position: relative;
+					padding-top: 84.2245989%;
+				}
+
+				.fuelcell_sc_list_bg {
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					img {
+						width: 100%;
+						height: auto;
+					}
+					video {
+						display: none;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 1;
+						width: 100%;
+						height: auto;
+						/*
+						opacity: 0;
+						transition: opacity 0.5s;
+						*/
+					}
+				}
+
+				.fuelcell_sc_list_con {
+					width: 100%;
+					position: absolute;
+					left: 0;
+					top: 0;
+					padding: 6% 0 0 6.8%;
+					box-sizing: border-box;
+
+					.fuelcell_subtit {
+						font-size: 25px;
+						color: #5D5D5D;
+					}
+				}
+			}
+		}
+	}
+
+
+	/* .fuelcell_sc_list:hover video { opacity: 1; } */
+
+
+	@media only screen and (max-width: 1500px) {
+		.fuelcell_sc_list {
+			.fuelcell_subtit {
+				font-size: 20px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 1200px) {
+		.fuelcell_sc_list {
+			.fuelcell_subtit {
+				font-size: 18px;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 767px) {
+		.fuelcell_sc_list {
+			.fuelcell_subtit {
+				font-size: 12.5px;
+			}
+		}
+	}
+	.fuelcell_sc_banner {
+		width: 90%;
+		max-width: 1520px;
+		margin: 24px auto 180px;
+		padding: 187px 128px;
+		box-sizing: border-box;
+		color: #fff;
+		text-align: left;
+		background: #000 url('../img/technology_fuelcell/sc4_banner.jpg') no-repeat center (center / cover);
+
+		.fuelcell_tit {
+			margin-bottom: 38px;
+			font-size: 42px;
+		}
+		.fuelcell_txt {
+		  width: 100%;
+		  max-width: unset;
+		  position: relative;
+		  font-weight: 400;
+		  font-size: 20px;
+		  line-height: 1.7;
+			+ .fuelcell_txt {
+			margin-top: 7px;
+		  }
+			&:before {
+			content: '';
+			display: block;
+			width: 4px;
+			height: 4px;
+			position: absolute;
+			left: -9px;
+			top: 6px;
+			border-radius: 100%;
+			background: #00A2CE;
+		  }
+			
+			
+		}
+	}
+
+
+	html[lang="en"] .fuelcell_sc_banner {
+	  padding: 148px 128px;
+	}
+
+	/* s: tablet */
+	@media only screen and (min-width: 1280px) and (max-width: 1600px) {
+//	  .fuelcell_sc {
+//		margin-top: 160px;
+//	  }
+
+	  .fuelcell_sc_banner {
+		margin-bottom: 160px;
+		padding: 140px 90px;
+	  }
+
+	  html[lang="en"] .fuelcell_sc_banner {
+		padding: 140px 90px;
+	  }
+	}
+
+	@media only screen and (min-width: 768px) and (max-width: 1279px) {
+//	  .fuelcell_sc {
+//		margin-top: 120px;
+//	  }
+
+	  .fuelcell_sc_banner {
+		margin-bottom: 120px;
+		padding: 100px 60px;
+	  }
+
+	  html[lang="en"] .fuelcell_sc_banner {
+		padding: 100px 60px;
+	  }
+	}
+
+	@media only screen and (max-width: 1500px) {}
+
+	/* e: tablet */
+	
+	/* s: mobile */
+	@media only screen and (max-width: 767px) {
+	  .fuelcell_sc {
+	  	padding: 75px 25px 0;
+	  	margin-top: 19.02777778%;
+	  	/*margin-bottom: 19.44444444%;*/
+	  	.fuelcell_sc_list_wrap {
+	  		width: 100%;
+	  		margin-top: 4.72222222%;
+
+	  		.fuelcell_sc_list {
+	  			width: 100%;
+	  			margin-top: 4.19354839%;
+
+	  			&:nth-child(2n) {
+	  				margin-left: 0;
+	  			}
+
+	  			&:before {
+	  				padding-top: 100%;
+	  			}
+
+	  			video {
+	  				display: none !important;
+	  			}
+
+	  			.fuelcell_sc_list_con {
+	  				padding: 12.5px 12.5px 0;
+	  			}
+	  		}
+	  	}
+
+	  	.fuelcell_sc_banner {
+	  		width: 100%;
+	  		margin: 4.19354839% auto 90px;
+	  		padding: 12.90322581% 0 40.32258065% 9%;
+	  		background: #000 url('../img/technology_fuelcell/sc4_banner_mo.jpg') no-repeat center (bottom / cover);
+
+	  		.fuelcell_tit {
+	  			width: 100%;
+	  			margin-bottom: 10%;
+	  			font-size: 28.125px;
+	  		}
+
+	  		.fuelcell_txt {
+	  			margin: 0;
+	  			font-size: 14.58333333px;
+
+	  			+ .fuelcell_txt {
+	  				margin-top: 0.6em;
+	  			}
+	  		}
+	  	}
+	  }
+
+	  html[lang="en"] .fuelcell_sc_banner {
+	  	padding: 12.90322581% 0 40.32258065% 9%;
+	  }
+	}
+
+	/* e: mobile */
+	/* s: mobile - landscape */
+	@media only screen and (max-width: 767px) and (orientation: landscape) {
+	  .fuelcell_sc {
+	  	margin-top: 15%;
+	  	margin-bottom: 15%;
+
+	  	.fuelcell_sc_list_wrap {
+	  		margin-top: 2%;
+
+	  		.fuelcell_sc_list {
+	  			width: 48%;
+
+	  			&:nth-child(2n) {
+	  				margin-left: 4%;
+	  			}
+	  		}
+	  	}
+
+	  	.fuelcell_sc_banner {
+	  		padding: 8% 36% 8% 7%;
+	  		background: #000 url('../img/technology_fuelcell/sc4_banner.jpg') no-repeat center (center / cover);
+	  	}
+	  }
+	}
+	/* e: mobile - landscape */
+	// e:231026 add (Adaptable)
+	
+	// s:231026 add (Hydroville)
+	#hydroville {
+		width: 100%;
+		max-width: initial;
+		padding: 0 40px;
+		background:#fff;
+		.container{
+			width:90%;
+			max-width: 1520px;
+			padding: 0 0 200px 0;
+			@include respond-to ('desktop-under') {
+				padding: 0 0 140px 0;
+			}
+			.content-inner{
+				padding-left: calc(100% - 940px);
+				@include respond-to ('max-desktop-under') {
+					padding-left:0;
+				}
+			}
+		}
+		.content-banner {
+			margin-bottom: 0;
+			.banner-content {
+				@include justify-content(flex-start);
+				top: 64px;
+			}
+			.banner-title { font-size: 28px; }
+		}
+		.content-img { margin-top: 24px; }
+	}
+	@include respond-to('mobile') {
+		#hydroville {
+			padding: 0 25px;
+			.container{
+				width:100%;
+				padding: 0 0 70px 0;
+				.content-inner{
+					padding-left:0;
+				}
+			}
+			.content-label {
+				margin-bottom: 43px;
+				@include flex-direction(column);
+				@include align-items(flex-start);
+				.btn { margin-top: 14px; }
+			}
+			.content-banner {
+				margin-bottom: 12px;
+				.banner-content {
+					top: 36px;
+				}
+				.banner-title { font-size: 20px; }
+			}
+			.content-img { margin-top: 12px; }
+		}
+	}
+	// e:231026 add (Hydroville)
+	
+    .content-wrap .content-text p.bold {
+        font-size: 38px; line-height: 1.36;
+        @include respond-to ('desktop-under') {
+            font-size: 32px; 
+        }
+        @include respond-to ('mobile') {
+            font-size: 24px; 
+        }
+
+    }
+	
+	/**/
+    
+}
+
+.header-hide {
+    .header {
+        transform: translateY(-100%);
+    }
+    .tab {
+        top: 0 !important;
+    }
+
+    .page-achievement {
+        #AchievementVehicle.content-wrap {
+            .content-label {
+                top: 130px;
+                @include respond-to('max-desktop-under') { top: 84px; }
+                @include respond-to('mobile') { top: 50px; }
+            }
+        }
+    }
+    /*
+    @include respond-to('desktop') {
+        .page-achievement {
+            #AchievementVehicle.content-wrap {
+                .content-label {
+                    top: 130px;
+                }
+            }
+        }
+    }
+    */
+}
+
+
+html[lang="en"] {
+    .page-achievement .content-wrap .content-text p {
+        max-width: 100%;
+    }
+    @include respond-to('desktop-over') {
+        .page-achievement {
+            #Vehicle5 .content-label { width: 37%; }
+        }
+    }
+}
+
+html[lang="zh"] {
+    .page-achievement {
+        #Vehicle2 {
+            @include respond-to('notmobile') {
+                .content-divide>div:nth-of-type(2) { transform: translateY(18%); }
+            }
+        }
+        #Vehicle4 {
+            .content-divide>div:nth-of-type(2) { transform: translateY(12%); }
+        }
+        #Vehicle5 .content-text p { max-width: 870px; }
+        #Vehicle6 .content-text p { max-width: 840px; }
+        #Vehicle7 .content-text p { max-width: 893px; }
+        #Vehicle8 .content-text p { max-width: 920px; }
+    }
+}

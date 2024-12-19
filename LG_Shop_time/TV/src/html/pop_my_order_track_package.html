@@ -1,0 +1,144 @@
+@@include('head.html', {
+'title': 'TRACK PACKAGE'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main"></main>
+    <!-- // Main -->
+
+    <!-- popup start 활성화 클래스 : show -->
+    <div class="popup-container show">
+      <div class="pop-center-area">
+        <div class="pop-header">
+          <div class="pop-title">TRACK PACKAGE</div>
+        </div>
+        <div class="pop-body">
+          <div class="order-detail-container">
+            <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+            <!-- 디자인 스크롤바 컨테이너 : scroll-ui-container -->
+            <div class="order-detail-body scroll-ui-container">
+              <!-- 디자인 스크롤바 -->
+              <div class="scroll-control-area">
+                <!-- 사용 불가 클래스 : disabled -->
+                <button type="button" class="scroll-btn-up disabled" title="Up"></button>
+                <div class="scroll-ui-area">
+                  <div class="scroll-bar" style="top: 0; height: 70%;"></div>
+                </div>
+                <!-- 활성화 클래스 : focused hover -->
+                <button type="button" class="scroll-btn-down focused" title="Down"></button>
+              </div>
+              <!-- //디자인 스크롤바 -->
+              <div class="scroll-box-area" style="transform: translateY(0px);"><!-- 스크롤 동작 : translateY -->
+                <div class="order-detail-inner">
+                  <!-- 주문 일자 -->
+                  <div class="order-detail-area">
+                    <div class="order-detail-top">
+                      Order placed on January 5, 2023
+                    </div>
+                  </div>
+                  <!-- //주문 일자 -->
+
+                  <!-- 주문 번호 -->
+                  <div class="order-detail-area">
+                    <div class="order-detail-top">
+                      Order # 111-1721950-401433
+                    </div>
+                    <div class="order-detail-middle">
+                      <div class="order-steps-box">
+                        <!-- 
+                            단계 상태 클래스
+                            완료 : state-complete
+                            진행중 : state-ongoing
+                            예정 : 기본 클래스 step
+                          -->
+                        <div class="step state-complete">
+                          <div class="step-state">ORDERED</div>
+                          <div class="step-date">January 5, 2023</div>
+                        </div>
+                        <div class="step state-ongoing">
+                          <div class="step-state">SHIPPED</div>
+                          <div class="step-date">January 5, 2023</div>
+                        </div>
+                        <div class="step state-ongoing">
+                          <div class="step-state">OUT FOR DELIVERY</div>
+                          <div class="step-date">January 5, 2023</div>
+                        </div>
+                        <div class="step">
+                          <div class="step-state">DELIVERED</div>
+                          <div class="step-date">-</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //주문 번호 -->
+
+                  <!-- 20230724 수정 -->
+                  <!-- Invoice Number -->
+                  <div class="order-detail-area">
+                    <div class="order-detail-top">
+                      Invoice Number
+                    </div>
+                    <div class="order-detail-middle">
+                      <div class="detail-record-box">
+                        <div class="record-box-content">
+                          Tracking ID: 1337489116677
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Invoice Number -->
+
+                  <!-- 주문 요약 -->
+                  <div class="order-detail-area">
+                    <div class="order-detail-top">
+                      SHIPMENT DETAILS
+                    </div>
+                    <div class="order-detail-middle">
+                      <div class="detail-record-box">
+                        <div class="record-box-title">
+                          January 6, 2023
+                        </div>
+                        <div class="record-box-content">
+                          <span class="record-time">9:49 AM</span>
+                          <span>
+                            Out for delivery San Leandro, US
+                          </span>
+                        </div>
+                      </div>
+                      <div class="detail-record-box">
+                        <div class="record-box-title">
+                          January 5, 2023
+                        </div>
+                        <div class="record-box-content">
+                          <span class="record-time">8:38 AM</span>
+                          <span>
+                            Shipped San Leandro, US
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //주문 요약 -->
+                  <!-- //20230724 수정 -->
+                </div>
+              </div>
+            </div>
+            <!-- //[SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+          </div>
+        </div>
+        <div class="pop-footer">
+          <div class="button-box child-flex-none">
+            <button type="button" class="btn-solid-gray"><span>CLOSE</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dim"></div>
+    </div>
+    <!-- //popup end -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

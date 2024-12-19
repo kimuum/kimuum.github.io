@@ -1,0 +1,77 @@
+@@include('head.html', {
+'title': 'Enter PIN CODE'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- TV 빌링 Pin code -->
+    <div class="popup-container show">
+
+      <div class="pin-code-container pin-code-popup">
+        <div class="pin-code-box">
+          <div class="pin-code-header">
+            <strong class="title">Enter PIN CODE</strong>
+          </div>
+          <div class="pin-code-body">
+            <div class="code-input-box">
+              <div class="pin-input complete">
+                <span class="complete-dim" aria-hidden="true"></span>
+                <input type="text">
+              </div>
+              <div class="pin-input active">
+                <span class="complete-dim" aria-hidden="true"></span>
+                <input type="text">
+              </div>
+              <div class="pin-input">
+                <span class="complete-dim" aria-hidden="true"></span>
+                <input type="text">
+              </div>
+              <div class="pin-input">
+                <span class="complete-dim" aria-hidden="true"></span>
+                <input type="text">
+              </div>
+            </div>
+            <div class="code-error-box">
+              <!-- 
+                  code-error-box 높이를 차지하고 있어야 하기 때문에 
+                  p에만 에러 문구 출력/미출력 처리
+                -->
+              <!-- <p>Please enter a PIN CODE.</p> -->
+              <!-- <p>Invalid Pin Code. Please try again.</p> -->
+              <p>Your payment couldn't be processed. <br>Please check your payment information again.</p>
+            </div>
+            <div class="code-button-box">
+              <button type="button" class="btn-code-number"><span>1</span></button>
+              <button type="button" class="btn-code-number"><span>2</span></button>
+              <button type="button" class="btn-code-number"><span>3</span></button>
+              <button type="button" class="btn-code-number"><span>4</span></button>
+              <button type="button" class="btn-code-number"><span>5</span></button>
+              <button type="button" class="btn-code-number"><span>6</span></button>
+              <button type="button" class="btn-code-number"><span>7</span></button>
+              <button type="button" class="btn-code-number"><span>8</span></button>
+              <button type="button" class="btn-code-number"><span>9</span></button>
+              <button type="button" class="btn-code-number"><span>0</span></button>
+              <!-- 20231019 수정 : 핀코드 아이콘 bg로 수정 -->
+              <button type="button" class="btn-code-delete focused" title="삭제"></button>
+            </div>
+          </div>
+          <div class="pin-code-footer">
+            <button type="button" class="btn-pin-cancel focused"><span>Cancel</span></button>
+            <button type="button" class="btn-pin-ok"><span>OK</span></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- //TV 빌링 Pin code -->
+
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

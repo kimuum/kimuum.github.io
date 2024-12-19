@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "서비스 점검 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnPopupCommonServiceNotice" onclick="togglePopup('btnPopupCommonServiceNotice', 'popupCommonServiceNotice')"><span>서비스 점검 안내</span></button>
+    </div>
+    <!-- [운영] KMVNO-4396 20240216 클래스 추가 -->
+    <div class="popup popupSystemNoticeWrap" id="popupCommonServiceNotice" role="dialog" aria-labelledby="popupTitleCommonServiceNotice" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleCommonServiceNotice">서비스 점검 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnPopupCommonServiceNotice', 'popupCommonServiceNotice')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <!-- [운영] KMVNO-4396 20240216 이전 안내문구 숨김 -->
+            <!-- <p class="smallText">
+              서비스 점검중입니다. <br />
+              점검 시간 동안은 서비스 이용이 불가능하오니 <br />
+              양해 부탁드립니다.
+              <br /><br />
+              점검 시간 : 4월 14일(목) 19시 ~ 4월 15일(금) 10시
+            </p> -->
+            <!-- //[운영] KMVNO-4396 20240216 이전 안내문구 숨김 -->
+
+            <!-- [운영] KMVNO-4396 20240216 기능 중단 안내 추가 -->
+            <div class="noticePieceContainer">
+              <div class="noticeHead">
+                <strong class="noticeTitle">시스템 점검으로 인한 일부 기능 중단 안내</strong>
+              </div>
+              <div class="noticeBody">
+                <p class="textBox">
+                  회원가입 시 본인인증 후 고객님께서 이용 중인 알뜰폰 회선을 자동으로 등록하는 기능이 잠시 중단됩니다. <br />
+                  회원가입은 가능하며, 회선 등록은 점검 시간 이후 부탁드립니다. <br />
+                  이용에 불편을 드려 죄송합니다.
+                </p>
+                <div class="importBgBox flex">
+                  <span class="title">시스템 점검 시간</span>
+                  <strong class="colorRed">2024년 00월 00일 00시 ~ 00월 00일 00시</strong>
+                </div>
+              </div>
+            </div>
+            <!-- //[운영] KMVNO-4396 20240216 기능 중단 안내 추가 -->
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnPopupCommonServiceNotice', 'popupCommonServiceNotice')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+  </body>
+</html>

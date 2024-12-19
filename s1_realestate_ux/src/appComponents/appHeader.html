@@ -1,0 +1,19 @@
+<header class="app-header-container">
+  <div class="app-header-area">
+    @@if(back) {
+      <div class="button-box back-button-box">
+        <button type="button" class="btn-back"></button>
+      </div>
+    }
+    @@if(title) {
+      <div class="app-header-title-box">
+        <span class="app-header-title">@@title</span>
+      </div>
+    }
+    @@if(close) {
+      <div class="button-box close-button-box">
+        <button type="button" class="btn-close"></button>
+      </div>
+    }
+  </div>
+</header>

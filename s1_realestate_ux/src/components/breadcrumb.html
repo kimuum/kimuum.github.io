@@ -1,0 +1,28 @@
+<div class="breadcrumb-container">
+  <div class="breadcrumb-area">
+    <div class="breadcrumb-left">
+      <div class="page-title-box">
+        <span>@@currentPage</span>
+      </div>
+    </div>
+    <div class="breadcrumb-right">
+      <div class="backbutton-box">
+        <button type="button" class="btn-back" title="뒤로가기"></button>
+      </div>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-list">
+          <a href="../home/home.html">Home</a>
+        </li>
+        <!-- prettier-ignore -->
+        @@for (var i = 0; i < depth.length; i++) {
+        <li class="breadcrumb-list">
+          <a href="`+depth[i].link+`">`+depth[i].page+`</a>
+        </li>
+        }
+        <li class="breadcrumb-list">
+          <span>@@currentPage</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

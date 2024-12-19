@@ -1,0 +1,21 @@
+<!-- chart bar (horizontal) -->
+<div class="chart-bar-hor">
+  <!-- prettier-ignore -->
+  <!-- [접근성] 구조 변경 -->
+  @@for(var i = 0; i < data.length; i++) {
+  <div class="chart-bar-hor-list" aria-hidden="`+data[i].ariaHidden+`">
+    <input type="radio" class="chart-select" id="`+data[i].id+`" name="visite-num" `+data[i].property+` />
+    <label class="label-box" for="`+data[i].id+`">
+      <span class="label">`+data[i].label+`</span>
+
+      <span class="data-box">
+        <span class="graph-box">
+          <span class="graph" style="width: ` + data[i].data + `%">
+            <span class="text-box" aria-hidden="`+data[i].ariaTextHidden+`">`+data[i].text+`</span>
+          </span>
+        </span>
+      </span>
+    </label>
+  </div>
+  }
+</div>

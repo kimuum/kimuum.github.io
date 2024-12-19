@@ -1,0 +1,42 @@
+.product-contact-us-container {
+  display: block;
+  position: relative;
+  height: 45rem;
+  background: image('products/hyundai-ecv-contact-us-banner-pc.jpg') no-repeat left center / cover;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    transform: rotate(-180deg);
+  }
+  &.who {
+    background: image('products/hyundai-who-we-are-contact-us-banner-pc.jpg') no-repeat left center / cover;
+  }
+  &.network {
+    background: image('products/hyundai-ecv-our-network-contact-us-pc.jpg') no-repeat left center / cover;
+  }
+  &.business {
+    background: image('products/hyundai-ecv-our-business-contact-us-pc.jpg') no-repeat left center / cover;
+  }
+}
+
+@media #{$mobile_large} {
+  .product-contact-us-container {
+    height: 40rem;
+    background: image('products/hyundai-ecv-contact-us-banner-mo.jpg') no-repeat top left / cover;
+    &.who {
+      background: image('products/hyundai-who-we-are-contact-us-banner-mo.jpg') no-repeat top left / cover;
+    }
+    &.network {
+      background: image('products/hyundai-ecv-our-network-contact-us-mo.jpg') no-repeat left center / cover;
+    }
+    &.business {
+      background: image('products/hyundai-ecv-our-business-contact-us-mo.jpg') no-repeat left center / cover;
+    }
+  }
+}

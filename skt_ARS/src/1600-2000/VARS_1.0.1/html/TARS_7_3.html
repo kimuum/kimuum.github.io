@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="unpaid_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '해지 문의',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <!-- 1depth 영역 -->
+          <section class="content-area">
+            <nav class="sub-menu">
+              <ol>
+                <li id="unpaid" style="display: none">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                    <span class="text">미납요금 문의</span>
+                  </a>
+                </li>
+                <li class="timeL">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                    <span class="text">이사/요금 및 <br />부가서비스 변경</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">해지 문의</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                    <span class="text">고장신고/장애접수</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '5', 'menu');">
+                    <span class="text">인터넷/TV <br />가입문의</span>
+                  </a>
+                </li>
+                <li class="timeL">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), '6', 'menu');">
+                    <span class="text">휴대폰 문의</span>
+                  </a>
+                </li>
+              </ol>
+            </nav>
+            <!--// 주간 -->
+            <!-- //1depth 영역 -->
+
+            <!-- 2depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'S1', 'menu');">
+                      <span class="text">B tv 해지신청</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'S2', 'menu');">
+                      <span class="text">부가서비스 해지</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'S0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+              <!--// 주간 -->
+            </div>
+            <!-- //2depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          //unpaid_type    : '0'(디폴트), '1'(미납)
+          var unpaid_type = getUrlParameter('unpaid_type');
+
+          //미납요금 대상자 여부
+          if (unpaid_type != '1') {
+            document.getElementById('unpaid').style.display = 'none';
+          } else {
+            document.getElementById('unpaid').style.display = 'block';
+          }
+        } catch (e) {}
+
+        try {
+          // timezone_type  : '0'(디폴트), '1'(야간), '9'(중식시간)
+          var timezone_type = getUrlParameter('timezone_type');
+
+          if (timezone_type == '9') {
+            // 점심시간
+            $('.timeL').css('display', 'none');
+          }
+        } catch (e) {}
+
+        common.refreshScroll();
+        // 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+    </script>
+  </body>
+</html>

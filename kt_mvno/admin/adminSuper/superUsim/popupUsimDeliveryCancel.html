@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "주문 취소 처리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>주문 취소 처리</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">주문 취소 처리</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="fieldWrap">
+            <!-- [2차BO] 20220826 클래스 변경 -->
+            <div class="field fieldTextarea">
+              <div class="fieldLabel">
+                취소 사유 <strong class="required"><span>필수입력</span></strong>
+              </div>
+              <div class="fieldForm">
+                <div class="textarea">
+                  <textarea name="" id="input-id-01" cols="30" rows="10" title="취소 사유 입력" placeholder="취소 사유를 입력해주세요."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>등록</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

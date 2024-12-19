@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '음성 리필',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-refill"></i>
+                <div class="info-box">
+                  <p class="label">SK텔레콤 이동전화 서비스 가입 기간이 2년 이상 고객님께 <span class="highlight">데이터 100% 또는 음성 20%를 리필</span>할 수 있는 서비스입니다.</p>
+                </div>
+              </div>
+
+              <div class="bg-line">
+                <div class="caution-guide-box bg-none">
+                  <div class="caution-list">
+                    <div class="caution-title">이용안내</div>
+                    <p class="caution-text dot">데이터 리필 시 사용중인 요금제의 월 기본제공 <span class="highlight">음성통화의 20% 추가 제공</span></p>
+                  </div>
+                  <div class="caution-list">
+                    <div class="caution-title">참고사항</div>
+                    <p class="caution-text dot">리필한 데이터/음성은 당월에 한해 사용 가능합니다.</p>
+                    <p class="caution-text dot">리필하기 신청 후 요금제 변경 시 리필한 데이터 (음성)은 이용이 불가합니다.</p>
+                    <p class="caution-text dot">리필하기는 월 1회 사용이 가능합니다.</p>
+                    <p class="caution-text dot">리필 쿠폰 유효기간은 1년이며, 미사용 쿠폰은 자동 소멸됩니다.</p>
+                    <p class="caution-text dot">리필하기 이용 신청 후 취소는 불가합니다.</p>
+                    <p class="caution-text dot">리필한 데이터는 “T끼리 데이터 선물하기” 서비스 이용이 불가합니다.</p>
+                    <p class="caution-text dot">프로모션 리필쿠폰은 가입기간과 상관없이 제공될 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box" id="dv_timezone_1">
+            <button type="button" class="btn btn-primary" id="agent_menu" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">리필하기</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">상담사 연결</button>
+          </div>
+          <div class="button-box" id="dv_timezone_0">
+            <button type="button" class="btn btn-primary" id="agent_menu" onclick="javascript: sendRepPageData($(this).text().trim(), 'RT', 'menu');">리필하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 1: 주간, 0: 야간, 9:점심시간
+        var timezone_type = getUrlParameter('timezone_type');
+        /*@build-time*/ timezone_type = '1';
+        // 주간
+        if (timezone_type == '1') {
+          document.getElementById('dv_timezone_1').style.display = 'flex';
+          document.getElementById('dv_timezone_0').style.display = 'none';
+        } else {
+          //야간
+          document.getElementById('dv_timezone_1').style.display = 'none';
+          document.getElementById('dv_timezone_0').style.display = 'flex';
+        }
+        // 점심시간
+        if (timezone_type == '9') {
+          document.getElementById('dv_timezone_1').style.display = 'none';
+          document.getElementById('dv_timezone_0').style.display = 'flex';
+        }
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

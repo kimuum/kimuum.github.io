@@ -1,0 +1,7 @@
+<div class="indicator-box">
+  <!-- prettier-ignore -->
+  <!-- [접근성] 구조 변경, 속성 추가 -->
+  @@for(var i = 0; i < data.length; i++) {
+  <button type="button" class="indicator `+data[i].property+`" aria-selected="`+data[i].aria+`" title="`+data[i].title+`"></button>
+  }
+</div>

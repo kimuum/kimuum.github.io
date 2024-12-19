@@ -1,0 +1,19 @@
+<div class="field field-checkbox-token @@class">
+  <div class="field-form">
+    <input type="checkbox" name="@@id" id="@@id" value="@@value" class="input-checkbox" @@property />
+    <div class="checkbox-box">
+      <label for="@@id" class="field-label">
+        <!-- prettier-ignore -->
+        @@if(!icon) {
+          @@label
+        }
+        <!-- prettier-ignore -->
+        @@if(icon) {
+          @@label
+        <!-- [240503] 이용 내역 필터 토큰 내 아이콘 추가 -->
+        <i class="ic ic-dummy-fill" aria-hidden="true"></i>
+        }
+      </label>
+    </div>
+  </div>
+</div>

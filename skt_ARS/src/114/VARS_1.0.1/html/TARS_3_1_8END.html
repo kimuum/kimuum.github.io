@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '0플랜히어로 요금제 \n혜택 안내',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="soldier-plan-form-container">
+              <div class="form-soldier-plan" onchange="javascript:chk_option()">
+                <div class="field field-radio">
+                  <div class="field-area">
+                    <input type="radio" id="planHero" name="selectSoldierPlan" checked />
+                    <label for="planHero" class="radio-label">0플랜 히어로</label>
+                  </div>
+                  <div class="field-area">
+                    <input type="radio" id="planSuperHero" name="selectSoldierPlan" />
+                    <label for="planSuperHero" class="radio-label">0플랜 슈퍼히어로</label>
+                  </div>
+                </div>
+              </div>
+              <div class="caution-guide-container" id="soldierCautionCont">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <div class="caution-title">0플랜 히어로 요금제 안내</div>
+                    <p class="caution-text dot">월정액: 33,000원(부가세 포함)</p>
+                    <p class="caution-text dot">기본제공 데이터: 6GB <br />(다 쓰면 최대 1Mbps 속도로 계속 사용)</p>
+                    <p class="caution-text dot">추가 제공 혜택: 평일 18~22시 및 주말/공휴일 데이터 무제한 사용 가능 <br />(일 2GB 제공, 다 쓰면 최대 3Mbps 속도로 계속 사용)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="javascript: sendData($(this), 'RT');">확인</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+
+      function chk_option() {
+        var check = $('#planHero').is(':checked');
+        var check2 = $('#planSuperHero').is(':checked');
+
+        $('#soldierCautionCont *').remove();
+
+        var data = '';
+
+        if (check) {
+          data = '<div class="caution-guide-box">';
+          data += '<div class="caution-list">';
+          data += '<div class="caution-title">0플랜 히어로 요금제 안내</div>';
+          data += '<p class="caution-text dot">월정액: 33,000원(부가세 포함)</p>';
+          data += '<p class="caution-text dot">기본제공 데이터: 6GB <br />(다 쓰면 최대 1Mbps 속도로 계속 사용)</p>';
+          data += '<p class="caution-text dot">추가 제공 혜택: 평일 18~22시 및 공휴일 데이터 무제한 사용 가능 <br />(일 2GB 제공, 다 쓰면 최대 3Mbps 속도로 계속 사용)</p>';
+          data += '</div>';
+          data += '</div>';
+        } else if (check2) {
+          data = '<div class="caution-guide-box">';
+          data += '<div class="caution-list">';
+          data += '<div class="caution-title">0플랜 슈퍼히어로 요금제 안내</div>';
+          data += '<p class="caution-text dot">월정액: 55,000원(부가세 포함)</p>';
+          data += '<p class="caution-text dot">기본제공 데이터: 100GB <br />(다 쓰면 최대 1Mbps 속도로 계속 사용)</p>';
+          data += '<p class="caution-text dot">추가 제공 혜택: T멤버십 VIP / FLO 앤 데이터 / Wavve 앤 데이터 중 1개 선택</p>';
+          data += '</div>';
+          data += '</div>';
+        }
+
+        document.getElementById('soldierCautionCont').innerHTML = data;
+      }
+
+      function sendData(obj, dtmf) {
+        // report page data 요청
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

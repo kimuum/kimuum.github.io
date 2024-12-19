@@ -1,0 +1,101 @@
+.tars-3 {
+  .highlight {
+    &.text-large {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+.t-data-coupon {
+  .notice-b-box {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 2rem;
+  }
+  .caution-guide-box {
+    .caution-text {
+      opacity: 0.7;
+    }
+  }
+}
+
+// TARS_D_1_3END
+// 쿠폰 상세 현황
+.refill-coupon-container {
+  margin-bottom: 2.4rem;
+}
+.coupon-list-box {
+  .coupon-list {
+    @include font(1.4rem, 400, rgba($black, 0.7), 2.1rem);
+    letter-spacing: -0.07rem;
+    & + .coupon-list {
+      margin-top: 1.6rem;
+    }
+    &.coupon-empty {
+      text-align: center;
+    }
+  }
+  .coupon-link {
+    @include flex(row, flex-start, center);
+  }
+  .coupon-left {
+    flex-shrink: 0;
+    @include flex(row, center, center);
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    background-color: $primary;
+    border-radius: 50%;
+    .coupon-order {
+      @include font(1.2rem, 500, $white, normal);
+      letter-spacing: -0.06rem;
+    }
+  }
+  .coupon-right {
+    > div {
+      @include flex(row, flex-start, center);
+    }
+    .coupon-num {
+      @include font(1.6rem, 400, $black, normal);
+      letter-spacing: -0.032rem;
+      .num {
+        font-weight: 500;
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin: 0 1rem;
+          background-color: rgba($black, 0.3);
+        }
+      }
+    }
+    .coupon-period {
+      margin-top: 0.4rem;
+      @include font(1.4rem, 400, rgba($black, 0.7), normal);
+      letter-spacing: -0.07rem;
+      .period {
+        margin-left: 0.8rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+@media #{$mobile_320} {
+  .coupon-list-box {
+    .coupon-left {
+      margin-right: 0.5rem;
+    }
+    .coupon-right {
+      .coupon-num {
+        letter-spacing: -0.035rem;
+        .num {
+          &::before {
+            margin: 0 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

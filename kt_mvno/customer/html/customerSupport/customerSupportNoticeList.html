@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "공지사항 | 고객지원", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : customerSupportNoticeList -->
+    <div class="wrap customerSupportNoticeList">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>공지사항</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>고객지원</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>공지사항</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_support.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="searchContainer">
+          <form>
+            <fieldset>
+              <legend>공지사항 검색</legend>
+              <div class="searchBar">
+                <div class="searchInput">
+                  <label for="searchInputID" class="ir">검색어 입력</label>
+                  <div class="input">
+                    <input type="text" id="searchInputID" value="" placeholder="검색어를 입력해주세요" />
+                  </div>
+                  <button type="button" class="btnRemove show"><span>검색어 지우기</span></button>
+                  <button type="button" class="btnSearch show"><span>검색하기</span></button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <!-- //END searchContainer -->
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="boardContainer typeList">
+              <div class="character05"></div>
+              <div class="boardHead">
+                <div class="boardTitleWrap">
+                  <p class="counter">총 172건</p>
+                </div>
+              </div>
+              <div class="boardBody">
+                <div class="tableContainer typeBoard">
+                  <table>
+                    <caption>
+                      공지사항 - 번호, 제목, 등록일
+                    </caption>
+                    <colgroup>
+                      <col style="width: 10%" />
+                      <col />
+                      <col style="width: 10%" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">번호</th>
+                        <th scope="col">제목</th>
+                        <th scope="col">등록일</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="number"><span class="colorLabel">공지</span></td>
+                        <td class="moFull"><a href="javascript:void(0);">5G 서비스 이용 가능 지역 확대를 위한 통신망 공동 사용 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number"><span class="colorLabel">공지</span></td>
+                        <td class="moFull"><a href="javascript:void(0);">[사전안내] PASS+계좌인증 비대면 이동통신 임시허가 승인에 따른 서비스 개시</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number"><span class="colorLabel">공지</span></td>
+                        <td class="moFull"><a href="javascript:void(0);">데이득 프로모션 운영 종료 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number"><span class="colorLabel">공지</span></td>
+                        <td class="moFull"><a href="javascript:void(0);">KT마이알뜰폰 이용약관 변경</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">172</td>
+                        <td class="moFull"><a href="javascript:void(0);">설연휴 영상통화 무료제공(1/29 ~ 2/2) 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">171</td>
+                        <td class="moFull"><a href="javascript:void(0);">[정상화] 폭설로 인한 바로배송 불가 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">170</td>
+                        <td class="moFull"><a href="javascript:void(0);">[정상화] 폭설로 인한 바로배송 불가 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">169</td>
+                        <td class="moFull"><a href="javascript:void(0);">시스템 점검에 따른 서비스 이용안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">168</td>
+                        <td class="moFull"><a href="javascript:void(0);">DB 휴대폰안심보험 이용약관</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                      <tr>
+                        <td class="number">167</td>
+                        <td class="moFull"><a href="javascript:void(0);">데이특 혜택 만료 도래 고객 대상 혜택 연장 관련 안내</a></td>
+                        <td class="date">2022.02.10</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- nodata -->
+                <div class="nodataContainer" style="display: none">
+                  <p>검색결과가 없습니다.</p>
+                </div>
+              </div>
+              <div class="boardFoot">
+                <div class="pagenation pcType">
+                  <button type="button" class="prevPageBtn" title="이전"></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="numPageBtn"><span>5</span></button>
+                  <button type="button" class="numPageBtn"><span>6</span></button>
+                  <button type="button" class="numPageBtn"><span>7</span></button>
+                  <button type="button" class="numPageBtn"><span>8</span></button>
+                  <button type="button" class="numPageBtn"><span>9</span></button>
+                  <button type="button" class="numPageBtn"><span>10</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+                <div class="pagenation moType">
+                  <button type="button" class="prevPageBtn" title="이전"></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

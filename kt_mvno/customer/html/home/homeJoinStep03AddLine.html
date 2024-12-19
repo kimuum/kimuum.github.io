@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "가입완료 | 회원가입", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : homeJoinStep03 -->
+    <div class="wrap detail homeJoinStep03">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', secondMenu: '', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <!--
+        다음 페이지로 이동하는 버튼영역 :
+        1024px 사이즈에서 활성화 됩니다.
+      -->
+      <div class="homeJoinTopContainer">
+        <div class="homeJoinArea">
+          <div class="topBtnLeft">
+            <a href="javascript:void(0);" class="btnPrev" title="이전으로"></a>
+            <strong aria-hidden="false">회원가입 3/3</strong>
+          </div>
+        </div>
+      </div>
+      <!-- // END homeJoinTopContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="joinTitleArea">
+              <h2 class="joinTitle">회원가입</h2>
+              <ul class="steps">
+                <li class="stepOne">1<span>단계</span></li>
+                <li class="stepTwo">2<span>단계</span></li>
+                <li class="stepThree"><span>현재</span>3<span>단계</span></li>
+              </ul>
+            </div>
+            <div class="joinCompleteArea">
+              <div class="imgWrap"><img src="../../assets/images/home/img_homejoin.svg" alt="" /></div>
+              <p class="textWrap">
+                축하합니다 <span class="moBlock"><strong class="name">kohyu**</strong>님 <span class="pcBlock">회원가입이 완료되었습니다.</span></span>
+              </p>
+
+              <p class="textWrap">
+                알뜰폰 고객이시군요! <br />
+                사용하고 계신 회선을 바로 추가하실 수 있습니다.
+              </p>
+            </div>
+            <div class="dataInner">
+              <div class="field fieldData typePhoneLine">
+                <div class="dataTitleArea">
+                  <strong class="dataTitle">알뜰폰 회선 정보</strong>
+                </div>
+                <!-- prettier-ignore -->
+                @@include('../component/phone_line_info_area.html', {
+                  "image": false,
+                  "infoBox" : [
+                    {
+                      "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                      "price": "32,980원",
+                      "phoneNumber": "010-81**-*319",
+                      "label": null
+                    },
+                  ],
+                })
+              </div>
+            </div>
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary"><span>나중에 하기</span></button>
+              <button type="button" class="btn btnPrimary"><span>회선 추가하기</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

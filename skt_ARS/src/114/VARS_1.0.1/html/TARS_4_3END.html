@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+
+    <input type="hidden" id="timezone_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '로밍 주의사항',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="caution-guide-container">
+                <div class="caution-guide-box bg-none">
+                  <div class="caution-list">
+                    <p class="caution-text dot">
+                      해외 로밍 중에는 국내 요금제와 관계없이 <span class="highlight">별도의 로밍 요금이 부과</span>됩니다. 따라서 국내에서 고객님이 이용중인 요금제의 데이터, 음성 기본 혜택은 적용되지
+                      않고, 국내 이동전화의 기본요금은 부과됩니다.
+                    </p>
+                    <p class="caution-text dot">
+                      로밍을 처음 이용하시는 고객께서는 출국하시는 공항이나 항만에 위치한 <span class="highlight">T로밍센터</span>를 방문하여 서비스 이용 안내를 받으시면 더욱 편리하게 이용하실 수
+                      있습니다.
+                    </p>
+                    <p class="caution-text dot">
+                      사용하시는 휴대폰 기종과 출국 지역에 따라 로밍 서비스 종류가 달라질 수 있으니 <span class="highlight">T로밍 고객센터</span>로 문의하신 후 출국하시기 바랍니다.
+                    </p>
+                    <p class="caution-text dot">국제전화발신금지 서비스에 가입되어 있는 고객은 국제전화 발신금지 서비스를 해지해야 자동로밍 서비스를 이용할 수 있습니다.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div id="btn_wrap" class="button-box">
+            <button id="btn_type1" type="button" class="btn btn-primary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');">상담사 연결</button>
+          </div>
+        </div>
+
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'T';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+      });
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

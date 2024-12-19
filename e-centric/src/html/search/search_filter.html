@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전소 검색 필터 상세"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : page-filter
+      -->
+      <main class="main-container page-filter">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "검색 필터",
+          },
+          "button" : null
+        })
+        <!-- content -->
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="filter-token-container">
+              <div class="filter-token-area">
+                <!-- prettier-ignore -->
+                @@loop("filterTokenList.html", [
+                  {
+                    "tokenTitle" : "충전상태",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "status-01",
+                        "value" : "status-01",
+                        "property" : "",
+                        "label" : "충전 가능",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "status-02",
+                        "value" : "status-02",
+                        "property" : "disabled",
+                        "label" : "충전 불가",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                  {
+                    "tokenTitle" : "충전 타입",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "type-01",
+                        "value" : "type-01",
+                        "property" : "",
+                        "label" : "AC 단상",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "type-02",
+                        "value" : "type-02",
+                        "property" : "",
+                        "label" : "AC상",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "type-03",
+                        "value" : "type-03",
+                        "property" : "",
+                        "label" : "DC콤보",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "type-04",
+                        "value" : "type-04",
+                        "property" : "",
+                        "label" : "DC차데모",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "type-05",
+                        "value" : "type-05",
+                        "property" : "disabled",
+                        "label" : "NACS",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                  {
+                    "tokenTitle" : "충전소 개방 여부",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "open-01",
+                        "value" : "open-01",
+                        "property" : "",
+                        "label" : "개방",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "open-02",
+                        "value" : "open-02",
+                        "property" : "disabled",
+                        "label" : "비개방",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                  {
+                    "tokenTitle" : "충전소 위치",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "location-01",
+                        "value" : "location-01",
+                        "property" : "",
+                        "label" : "실내",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "location-02",
+                        "value" : "location-02",
+                        "property" : "disabled",
+                        "label" : "실외",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                  {
+                    "tokenTitle" : "주차 요금",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "fee-01",
+                        "value" : "fee-01",
+                        "property" : "",
+                        "label" : "무료",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "fee-02",
+                        "value" : "fee-02",
+                        "property" : "disabled",
+                        "label" : "유료",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                  {
+                    "tokenTitle" : "충전 기관",
+                    "token" : [
+                      {
+                        "class" : "",
+                        "id" : "org-01",
+                        "value" : "org-01",
+                        "property" : "",
+                        "label" : "LG",
+                        "icon" : null,
+                      },
+                      {
+                        "class" : "",
+                        "id" : "org-02",
+                        "value" : "org-02",
+                        "property" : "disabled",
+                        "label" : "환경부",
+                        "icon" : null,
+                      },
+                    ]
+                  },
+                ])
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@loop("button.html", [
+            {
+              "property": "",
+              "iconClass": false,
+              "btnColor" : "btn-secondary",
+              "btnSize" : "large",
+              "class" : "",
+              "text": "초기화"
+            },
+            {
+              "property": "",
+              "iconClass": false,
+              "btnColor" : "btn-primary",
+              "btnSize" : "large",
+              "class" : "",
+              "text": "적용하기"
+            }])
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

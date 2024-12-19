@@ -1,0 +1,158 @@
+@@include("head.html",{
+"title" : "SELECT A COUPON"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "OFFERS & PROMOTION",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="list-area">
+          <div class="list-header">
+            <div class="list-header">
+              <div class="list-title">
+                <div class="title-left">coupon</div>
+                <!-- v1.80 규격서 반영 맥시멈 체크 삭제 -->
+              </div>
+              <div class="list-title">
+                <div class="title-left">item coupon</div>
+              </div>
+            </div>
+          </div>
+          <div class="list-body">
+            <div class="product-item-area">
+              <div class="product-item-box">
+                <div class="product-middle">
+                  <div class="thumbnail-area">
+                    <div class="img-area">
+                      <img src="../../assets/images/dummy/img_coupon_01.jpg" alt="Caracilia Women's Long Sleeve 1/4 Zipper Collar Oversized Sweater Slouchy Knit">
+                    </div>
+                  </div>
+                  <div class="info-area">
+                    <div class="brand-area">
+                      <span class="brand-image">
+                        <img src="../../assets/images/icon_brand_hsn.jpg" alt="">
+                      </span>
+                      <span class="brand-id">ID: DOC-V354</span><!-- v1.81 기획/디자인 동기화 : 아이디 이동 -->
+                    </div>
+                    <div class="product-title">Caracilia Women's Long Sleeve 1/4 Zipper Collar Oversized Sweater Slouchy Knit</div>
+                    <!-- v1.81 기획/디자인 동기화 : 아이디 삭제 -->
+                    <!-- v1.81 기획/디자인 동기화 : 가격 이동 -->
+                    <div class="product-price">
+                      <span class="total-price">$38.09</span>
+                    </div>
+                    <!-- //v1.81 기획/디자인 동기화 : 가격 이동 -->
+                    <!-- v1.81 기획/디자인 동기화 : 드롭다운 삭제 -->
+                    <!-- v1.81 기획/디자인 동기화 : 가격 삭제 -->
+                  </div>
+                </div>
+                <!-- v1.81 기획/디자인 동기화 : 드롭다운 이동 -->
+                <div class="product-bottom">
+                  @@include('optionDropdown.html', {
+                  'optionTitle': 'Apply 5$ Discount Coupon',
+                  'option': [
+                  {'title': 'title="selected"', 'value': 'Apply 5$ Discount Coupon'},
+                  {'title': '', 'value': 'Apply 10$ Discount Coupon'},
+                  {'title': '', 'value': 'Apply 15$ Discount Coupon'},
+                  ]
+                  })
+                </div>
+                <!-- //v1.81 기획/디자인 동기화 : 드롭다운 이동 -->
+              </div>
+              <div class="product-item-box">
+                <div class="product-middle">
+                  <div class="thumbnail-area">
+                    <div class="img-area">
+                      <img src="../../assets/images/dummy/img_coupon_02.jpg" alt="Isaac Mizrahi Live! Sport Bezel Watch">
+                    </div>
+                  </div>
+                  <div class="info-area">
+                    <div class="brand-area">
+                      <span class="brand-image">
+                        <img src="../../assets/images/icon_brand_qvc.jpg" alt="">
+                      </span>
+                      <span class="brand-id">ID: DOC-V354</span>
+                    </div>
+                    <div class="product-title">Isaac Mizrahi Live! Sport Bezel Watch</div>
+                    <div class="product-price">
+                      <span class="total-price">$38.09</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-bottom">
+                  @@include('optionDropdown.html', {
+                  'optionTitle': 'Apply 5$ Discount Coupon',
+                  'option': [
+                  {'title': 'title="selected"', 'value': 'Apply 5$ Discount Coupon'},
+                  {'title': '', 'value': 'option02'},
+                  {'title': '', 'value': 'option03'},
+                  {'title': '', 'value': 'option04'}
+                  ]
+                  })
+                </div>
+              </div>
+              <div class="product-item-box">
+                <div class="product-middle">
+                  <div class="thumbnail-area">
+                    <div class="img-area">
+                      <img src="../../assets/images/dummy/img_coupon_03.jpg" alt="Diamonique Solitaire Ring Sterling Silver">
+                    </div>
+                  </div>
+                  <div class="info-area">
+                    <div class="brand-area">
+                      <span class="brand-image">
+                        <img src="../../assets/images/icon_brand_qvc.jpg" alt="">
+                      </span>
+                      <span class="brand-id">ID: DOC-V354</span>
+                    </div>
+                    <div class="product-title">Diamonique Solitaire Ring Sterling Silver</div>
+                    <div class="product-price">
+                      <span class="total-price">$38.09</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="product-bottom">
+                  @@include('optionDropdown.html', {
+                  'optionTitle': 'No Discount',
+                  'option': [
+                  {'title': 'title="selected"', 'value': ''}
+
+                  ]
+                  })
+                </div>
+              </div>
+            </div>
+            <!-- v1.80 규격서 반영 문구 추가 -->
+            <div class="messages-box-wrap">
+              <div class="massage-box icon-warning-gray type-notice">
+                Purchased products will be paid at the final price.
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>USE THIS COUPON</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

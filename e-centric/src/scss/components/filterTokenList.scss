@@ -1,0 +1,27 @@
+.filter-token-list {
+  margin-bottom: 3.2rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .filter-token-top {
+    padding: 0.2rem 0;
+  }
+  .filter-token-bottom {
+    margin-top: 0.8rem;
+  }
+  .filter-token-title {
+    @include flex(row, space-between, center);
+    .title {
+      @include font(1.4rem, 700, $text_01, 1.96rem);
+    }
+    .btn-text {
+      text-decoration-line: underline;
+      text-underline-position: under;
+    }
+  }
+  .filter-token-box {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+}

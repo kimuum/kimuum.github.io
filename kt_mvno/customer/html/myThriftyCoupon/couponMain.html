@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "쿠폰함 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-3', 'thirdMenu': '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>쿠폰함</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>쿠폰함</span></span>
+                  <!-- [운영] KMVNO-3987 20231124 추가 -->
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                  <!-- //[운영] KMVNO-3987 20231124 추가 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="contentTabContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchorCoupon01" class="tabButton" aria-controls="tabConCoupon01" role="tab" aria-selected="true"><span>보유 쿠폰</span></button>
+                <button type="button" id="tabAnchorCoupon02" class="tabButton" aria-controls="tabConCoupon02" role="tab" aria-selected="false"><span>사용내역</span></button>
+              </div>
+              <div class="tabContainer">
+                <div id="tabConCoupon01" class="tabContent" role="tabpanel" aria-labelledby="tabAnchorCoupon01">
+                  <!-- 보유 쿠폰 -->
+                  <div class="cardAccordionContainer">
+                    <div class="cardAccordionBox active">
+                      <div class="cardTitleArea">
+                        <div class="titleBox">
+                          <h3 class="title">마이알뜰폰 쿠폰</h3>
+                          <span>(4)</span>
+                        </div>
+                        <button type="button" class="cardOpenBtn" aria-expanded="true"><span>정보 닫기</span></button>
+                      </div>
+                      <div class="cardContentArea">
+                        <div class="couponContainer">
+                          <div class="couponTopArea">
+                            <strong class="title">사용 가능 쿠폰<span>(3장)</span></strong>
+                          </div>
+                          <div class="couponMiddleArea">
+                            <div class="couponRowContainer">
+                              <!-- prettier-ignore -->
+                              @@include('../component/coupon_box.html', {
+                                'type': null,
+                                'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                                'availableAddText': '등록가능기간 : 2023.07.27~2023.10.27',
+                                'availableDateText': '',
+                                'availableText': '',
+                                'addClass': ''
+                              })
+                              <!-- prettier-ignore -->
+                              @@include('../component/coupon_box.html', {
+                                'type': null,
+                                'title': '웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월)',
+                                'availableAddText': '등록가능기간 : 2023.07.27~2023.10.27',
+                                'availableDateText': '',
+                                'availableText': '',
+                                'addClass': ''
+                              })
+                              <!-- prettier-ignore -->
+                              @@include('../component/coupon_box.html', {
+                                'type': null,
+                                'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                                'availableAddText': '등록가능기간 : 2023.07.27~2023.10.27',
+                                'availableDateText': '',
+                                'availableText': '',
+                                'addClass': ''
+                              })
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="couponContainer">
+                          <div class="couponTopArea">
+                            <strong class="title">만료 쿠폰<span></span></strong>
+                          </div>
+                          <div class="couponMiddleArea">
+                            <div class="couponRowContainer">
+                              <!-- prettier-ignore -->
+                              @@include('../component/coupon_box.html', {
+                                'type': null,
+                                'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                                'availableAddText': '등록가능기간 : 2023.07.27~2023.10.27',
+                                'availableDateText': '',
+                                'availableText': '',
+                                'addClass': 'disabled'
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 
+                      쿠폰이 0개인 경우 클래스 : disabled
+                    -->
+                    <div class="cardAccordionBox disabled">
+                      <div class="cardTitleArea">
+                        <div class="titleBox">
+                          <h3 class="title">마이알뜰폰 쿠폰</h3>
+                          <span>(0)</span>
+                        </div>
+                        <!-- 
+                          쿠폰이 0개인 경우 펼침 기능 사용 불가 
+                          cardOpenBtn 제거
+                          aria-expanded="false" 추가
+                          aria-disabled="true" 추가
+                        -->
+                        <button type="button" class="openArrow" aria-expanded="false" aria-disabled="true"><span>쿠폰 없음</span></button>
+                      </div>
+                    </div>
+                    <!-- //마이알뜰폰 쿠폰 -->
+
+                    <div class="cardAccordionBox">
+                      <div class="cardTitleArea">
+                        <div class="titleBox">
+                          <h3 class="title">제휴 쿠폰</h3>
+                          <span>(1)</span>
+                        </div>
+                        <button type="button" class="cardOpenBtn" aria-expanded="false"><span>정보 열기</span></button>
+                      </div>
+                      <div class="cardContentArea">
+                        <div class="couponContainer">
+                          <div class="couponTopArea">
+                            <strong class="title">사용 가능 쿠폰<span>(1장)</span></strong>
+                          </div>
+                          <div class="couponMiddleArea">
+                            <div class="couponRowContainer">
+                              <!-- prettier-ignore -->
+                              @@include('../component/coupon_box.html', {
+                                'type': null,
+                                'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                                'availableAddText': '등록가능기간 : 2023.07.27~2023.10.27',
+                                'availableDateText': '',
+                                'availableText': '',
+                                'addClass': ''
+                              })
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 
+                      쿠폰이 0개인 경우 클래스 : disabled
+                    -->
+                    <div class="cardAccordionBox disabled">
+                      <div class="cardTitleArea">
+                        <div class="titleBox">
+                          <h3 class="title">제휴 쿠폰</h3>
+                          <span>(0)</span>
+                        </div>
+                        <!-- 
+                          쿠폰이 0개인 경우 펼침 기능 사용 불가 
+                          cardOpenBtn 제거
+                          aria-expanded="false" 추가
+                          aria-disabled="true" 추가
+                        -->
+                        <button type="button" class="openArrow" aria-expanded="false" aria-disabled="true"><span>쿠폰 없음</span></button>
+                      </div>
+                    </div>
+                    <!-- //마이알뜰폰 쿠폰 -->
+                    <!-- //제휴 쿠폰 -->
+
+                    <div class="cardAccordionBox">
+                      <div class="cardTitleArea">
+                        <div class="titleBox">
+                          <h3 class="title">쿠폰 직접 등록</h3>
+                        </div>
+                        <button type="button" class="cardOpenBtn" aria-expanded="false"><span>정보 열기</span></button>
+                      </div>
+                      <div class="cardContentArea">
+                        <div class="couponSelfBox">
+                          <div class="field">
+                            <div class="fieldForm">
+                              <div class="input">
+                                <input type="text" title="쿠폰 코드" placeholder="쿠폰 코드를 입력해주세요." />
+                              </div>
+                              <div class="buttonArea">
+                                <button type="button" class="btn btnPrimary"><span>쿠폰 등록</span></button>
+                              </div>
+                            </div>
+                            <!-- <div class="addExplain"></div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //쿠폰 직접 등록 -->
+                  </div>
+                  <!-- //보유 쿠폰 -->
+                </div>
+
+                <div id="tabConCoupon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchorCoupon02">
+                  <!-- 사용내역 -->
+                  <div class="cardIslandContainer">
+                    <div class="cardMiddleArea">
+                      <div class="couponRowContainer">
+                        <!-- prettier-ignore -->
+                        @@include('../component/coupon_box.html', {
+                          'type': '마이알뜰폰 쿠폰',
+                          'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                          'availableAddText': '',
+                          'availableDateText': '',
+                          'availableText': '등록일 : 2023.07.27 ~ 2023.10.27 ',
+                          'addClass': 'used'
+                        })
+                        <!-- prettier-ignore -->
+                        @@include('../component/coupon_box.html', {
+                          'type': '제휴 쿠폰',
+                          'title': '밀리의 서재 1개월',
+                          'availableAddText': '',
+                          'availableDateText': '',
+                          'availableText': '등록일 : 2023.07.27 ~ 2023.10.27 ',
+                          'addClass': 'used'
+                        })
+                        <!-- prettier-ignore -->
+                        @@include('../component/coupon_box.html', {
+                          'type': '마이알뜰폰 쿠폰',
+                          'title': '웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월) 웰컴 데이터 쿠폰 10GB(3개월)',
+                          'availableAddText': '',
+                          'availableDateText': '',
+                          'availableText': '등록일 : 2023.07.27 ~ 2023.10.27 ',
+                          'addClass': 'used'
+                        })
+                        <!-- prettier-ignore -->
+                        @@include('../component/coupon_box.html', {
+                          'type': '마이알뜰폰 쿠폰',
+                          'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                          'availableAddText': '',
+                          'availableDateText': '',
+                          'availableText': '등록일 : 2023.07.27 ~ 2023.10.27 ',
+                          'addClass': 'used'
+                        })
+                        <!-- prettier-ignore -->
+                        @@include('../component/coupon_box.html', {
+                          'type': '마이알뜰폰 쿠폰',
+                          'title': '웰컴 데이터 쿠폰 10GB(3개월)',
+                          'availableAddText': '',
+                          'availableDateText': '',
+                          'availableText': '등록일 : 2023.07.27 ~ 2023.10.27 ',
+                          'addClass': 'used'
+                        })
+                      </div>
+                    </div>
+                    <div class="cardBottomArea">
+                      <p class="beforeDot">최근 3개월 쿠폰 사용 내역입니다.</p>
+                    </div>
+                  </div>
+                  <!-- //사용내역 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        commonEvent();
+
+        accordionControl('.cardAccordionBox .cardOpenBtn', '.cardAccordionBox .cardContentArea', '.cardAccordionBox', '정보 열기', '정보 닫기');
+      });
+    </script>
+  </body>
+</html>

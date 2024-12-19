@@ -1,0 +1,62 @@
+@@include("head.html",{
+"title" : "SELECT A COUPON"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "SELECT A COUPON",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="list-area">
+          <div class="list-header">
+            <div class="list-title">
+              <div class="title-left">coupon</div>
+              <!-- v1.80 규격서 반영 맥시멈 체크 삭제 -->
+            </div>
+            <div class="list-title">
+              <div class="title-left">item coupon</div>
+            </div>
+          </div>
+          <div class="list-body">
+            <div class="notice-box">
+              <span class="icon-notice">There are no registered coupons.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="detail-inner">
+        <div class="list-area">
+          <div class="list-header">
+            <div class="list-title">
+              <div class="title-left">purchase coupon</div>
+            </div>
+          </div>
+          <div class="list-body">
+            <div class="notice-box">
+              <span class="icon-notice">There are no registered coupons.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>USE THIS COUPON</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

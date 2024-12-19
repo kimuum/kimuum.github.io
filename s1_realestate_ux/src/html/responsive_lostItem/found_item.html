@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 습득물 등록"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "분실물 관리",
+          },
+        ],
+        "currentPage" : "습득물 등록",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container lost-item">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">물건을 습득하셨나요?<br />습득하신 물품 정보를 입력해 주세요.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <form class="form-container">
+                  <div class="required-text-box">
+                    <span class="required-text">
+                      <span class="strong">*</span>&nbsp;표기된 항목은
+                      <span class="red">필수 입력</span>&nbsp;사항입니다.
+                    </span>
+                  </div>
+                  <fieldset class="fieldset-container">
+                    <legend class="hidden">문의 상세</legend>
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_input.html", {
+                      "size" : "large",
+                      "required" : "required",
+                      "error" : "",
+                      "valid" : "",
+                      "class" : "field-product-name",
+                      "label" : "물품명",
+                      "tooltip" : "",
+                      "id" : "text-input-01",
+                      "value" : "",
+                      "placeholder" : "상세한 물품명 입력 ex&#41; 삼성 갤럭시 S23",
+                      "property" : "",
+                      "errorText" : "",
+                      "validText" : "",
+                      "button" : "",
+                      "fieldDesc" : "",
+                    })
+                    <div class="field field-dropdown required">
+                      <div class="field-label">
+                        <span class="text">카테고리</span>
+                      </div>
+                      <div class="field-form">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/dropdown.html",{
+                          "title" : "카테고리",
+                          "size" : "large",
+                          "value" : "",
+                          "placeholder" : "선택",
+                          "option" : [
+                            {
+                              "text" : "가방",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "지갑",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "귀금속(악세서리, 시계포함)",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "휴대전화",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "전자기기(태블릿, 워치 등)",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "현금",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "카드",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "신분증",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "도서",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "서류",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "의류",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "기타",
+                              "property" : "",
+                            },
+                          ],
+                          "disabled" : false,
+                        })
+                      </div>
+                    </div>
+                    <div class="field field-time field-large required">
+                      <div class="field-label">
+                        <span class="text">습득 일시</span>
+                      </div>
+                      <div class="field-form">
+                        <div class="date-time-container">
+                          <div class="date-time-area">
+                            <div class="date-time-box">
+                              <div class="date-time">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/datepicker.html",{
+                                  "size" : "large",
+                                  "id"   : "datepicker-id-01",
+                                  "placeholder" : "0000.00.00",
+                                  "property" : "",
+                                })
+
+                                <!-- prettier-ignore -->
+                                @@include("../../components/timePicker.html",{
+                                  "size" : "large",
+                                  "id"   : "timepicker-01",
+                                  "placeholder" : "00:00",
+                                  "property" : "",
+                                })
+
+                                <!-- prettier-ignore -->
+                                @@include("../../components/mTimePicker.html")
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field field-input field-large required">
+                      <div class="field-label">
+                        <span class="text">습득 위치</span>
+                      </div>
+                      <div class="field-form">
+                        <div class="input-box">
+                          <div class="input">
+                            <input
+                              type="text"
+                              name="text-input-02"
+                              id="text-input-02"
+                              value=""
+                              placeholder="습득 위치를 선택해 주세요."
+                              autocomplete="off"
+                              class="input-field"
+                              onfocus="this.blur();"
+                            />
+                          </div>
+                          <div class="button-box">
+                            <button
+                              type="button"
+                              class="btn btn-tertiary btn-large btn-popup"
+                              data-popup="popup-location-change"
+                            >
+                              <span>위치 선택</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_file.html", {
+                      "number" : "1",
+                      "required" : "",
+                      "class" : "",
+                      "label" : "물품 사진",
+                      "tooltip" : "",
+                      "placeholder" : "이미지를 등록해 주세요.",
+                      "id" : "input-file",
+                      "btnText" : "찾아보기",
+                      "multiUpload" : true,
+                      "fieldDesc" : [
+                        {
+                          "class" : "",
+                          "text" : "사진은 최대 50MB 이하의 JPG, PNG 파일 5장까지 첨부 가능합니다."
+                        },
+                      ],
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_textarea.html", {
+                      "required" : "required",
+                      "class" : "",
+                      "label" : "특이사항",
+                      "tooltip" : "",
+                      "id" : "textarea-01",
+                      "maxlength" : "500",
+                      "placeholder" : "특이사항을 입력해 주세요.",
+                      "disabled" : "",
+                      "fieldDesc" : "",
+                    })
+                  </fieldset>
+                </form>
+                <div class="inquiry-table-container">
+                  <div class="inquiry-table-area">
+                    <div class="filter-box">
+                      <div class="title">
+                        <span class="text">습득물 신청자 정보</span>
+                      </div>
+                      <div class="filter">
+                        <div class="filter-row half">
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>이름</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">최에스</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="filter-list">
+                            <div class="filter-label">
+                              <span>휴대전화번호</span>
+                            </div>
+                            <div class="filter-info">
+                              <div class="info-box">
+                                <span class="text">010-1234-1234</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="desc-box">
+                        <p>
+                          습득물 신청자 정보는 습득물 수거를 위해 연락을 하는 용도 외 다른 용도로 사용하지 않습니다.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="notice-container">
+                  <div class="notice-area">
+                    <div class="notice-top">
+                      <div class="notice-title-box">
+                        <i class="ic ic-caution-red"></i>
+                        <span class="notice-title">꼭! 확인해 주세요.</span>
+                      </div>
+                    </div>
+                    <div class="notice-bottom">
+                      <ul class="notice-list-box">
+                        <li class="notice-list">
+                          <span class="text">습득물 등록 시, 분실물 보관 담당자가 수거예정 입니다.</span>
+                        </li>
+                        <li class="notice-list">
+                          <span class="text"
+                            >습득물 정보를 입력하지 않고 바로 위탁하시려면 안내데스크로 연락해 주세요.</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter-desc">
+                  <div class="desc">안내데스크&nbsp;&nbsp;<span class="strong">02-0000-0000</span></div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-cancel",
+                    "type" : "secondary",
+                    "size" : "large",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "취소",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-next",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "다음",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-next",
+        "title" : "",
+        "text" : "필수 항목을 입력해 주세요.",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "primary",
+            "text" : "확인",
+          },
+        ],
+      })
+
+      <!-- prettier-ignore -->
+      @@include("../../components/popup.html", {
+        "id" : "popup-cancel",
+        "title" : "",
+        "text" : "문의 항목을 변경할까요?\n입력한 내용이 모두 삭제됩니다.",
+        "property" : "",
+        "button" : [
+          {
+            "type" : "secondary",
+            "text" : "취소",
+          },
+          {
+            "type" : "primary",
+            "text" : "확인",
+          },
+        ],
+      })
+
+      <div id="popup-location-change" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">위치 선택</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+
+            <div class="popup-middle">
+              <div class="desc-box">
+                <p>위치(층)를 선택해 주세요.</p>
+              </div>
+              <div class="select-box">
+                <!-- prettier-ignore -->
+                @@include("../../components/field_radio.html", {
+                  "required" : "",
+                  "label" : "",
+                  "tooltip" : "",
+                  "radio" : [
+                    {
+                      "name" : "select-location",
+                      "label" : "1F",
+                      "disabled" : "",
+                    },
+                    {
+                      "name" : "select-location",
+                      "label" : "2F",
+                      "disabled" : "",
+                    },
+                    {
+                      "name" : "select-location",
+                      "label" : "3F",
+                      "disabled" : "",
+                    },
+                    {
+                      "name" : "select-location",
+                      "label" : "4F",
+                      "disabled" : "",
+                    },
+                    {
+                      "name" : "select-location",
+                      "label" : "5F",
+                      "disabled" : "",
+                    },
+                    {
+                      "name" : "select-location",
+                      "label" : "6F",
+                      "disabled" : "",
+                    },
+                  ],
+                })
+              </div>
+            </div>
+
+            <div class="popup-bottom">
+              <!-- prettier-ignore -->
+              <div class="button-box ">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>확인</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+  <script>
+    const elem_01 = document.querySelector('input[name="datepicker-id-01"]');
+    const datepicker_01 = new Datepicker(elem_01, {
+      language: 'ko',
+      todayHighlight: false,
+      clearButton: true,
+    });
+  </script>
+</html>

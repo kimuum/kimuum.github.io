@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 분실물 조회"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "tenant",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "분실물 관리",
+          },
+        ],
+        "currentPage" : "분실물 조회",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container lost-item-main">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">분실물 조회</span>
+                  </div>
+                  <div class="sub-page-page-desc-box">
+                    <p>최근 한 달 분실물 정보만 확인 가능합니다.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <div class="filter-table-container filter-field">
+                  <div class="filter-table-area">
+                    <div class="filter-table-top">
+                      <div class="filter-box">
+                        <div class="filter">
+                          <div class="filter-row">
+                            <div class="filter-list filter-list-category">
+                              <div class="filter-label">
+                                <span>카테고리</span>
+                              </div>
+                              <div class="filter-field">
+                                <div class="field field-dropdown">
+                                  <div class="field-form">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/dropdown.html",{
+                                      "title" : "카테고리",
+                                      "size" : "small",
+                                      "value" : "전체",
+                                      "placeholder" : "",
+                                      "option" : [ 
+                                        {
+                                          "text" : "전체",
+                                          "property" : "active",
+                                        },
+                                        {
+                                          "text" : "가방",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "지갑",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "귀금속(악세서리, 시계포함)",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "휴대전화",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "전자기기(태블릿, 워치 등)",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "현금",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "카드",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "신분증",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "도서",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "서류",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "의류",
+                                          "property" : "",
+                                        },
+                                        {
+                                          "text" : "기타",
+                                          "property" : "",
+                                        },
+                                      ],
+                                      "disabled" : false,
+                                    })
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- 
+                            Comment : PC 용 구조
+                                    : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                          -->
+                          <div class="filter-row use-pc">
+                            <div class="filter-list filter-list-product-name">
+                              <div class="filter-label">
+                                <span>물품명</span>
+                              </div>
+                              <div class="filter-field">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/field_search.html", {
+                                  "size" : "small",
+                                  "class" : "",
+                                  "id" : "search-01",
+                                  "placeholder" : "분실하신 물품명이나 장소를 입력해 주세요.",
+                                  "disabled" : "",
+                                })
+                              </div>
+                            </div>
+                            <!-- 
+                              Comment : PC 용 구조
+                                      : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                            -->
+                            <div class="button-box use-pc">
+                              <!-- prettier-ignore -->
+                              @@include("../../components/button.html", {
+                                "dataValue" : "",
+                                "type" : "secondary",
+                                "size" : "small",
+                                "class" : "",
+                                "disabled" : "",
+                                "text" : "초기화",
+                              })
+                              <!-- prettier-ignore -->
+                              @@include("../../components/button.html", {
+                                "dataValue" : "",
+                                "type" : "primary",
+                                "size" : "small",
+                                "class" : "",
+                                "disabled" : "",
+                                "text" : "검색",
+                              })
+                            </div>
+                          </div>
+                        </div>
+                        <div class="filter-desc">
+                          <div class="desc">
+                            안내데스크&nbsp;&nbsp;<span class="strong">02-0000-0000</span>
+                            <div class="tooltip-container">
+                              <div class="tooltip-area">
+                                <div class="tooltip-icon-box">
+                                  <button type="button" class="btn-tooltip"><i class="ic ic-tooltip"></i></button>
+                                </div>
+                                <div class="tooltip-box">
+                                  <ul>
+                                    <li class="tooltip-text">
+                                      <span>분실물 수령을 원할 경우 연락해 주세요.</span>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 
+                      Comment : PC 용 구조
+                              : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                    -->
+                    <div class="filter-table-middle use-pc">
+                      <!-- prettier-ignore -->
+                      @@include("../../components/filterView.html",{
+                        "button" : [
+                          {
+                            "dataValue" : "",
+                            "type" : "primary",
+                            "size" : "medium",
+                            "class" : "",
+                            "disabled" : "",
+                            "text" : "습득물 등록",
+                          },
+                        ],
+                        
+                        "table" : [
+                          {
+                            "title" : "테이블 명",
+
+                            "checkbox" : false,
+                            
+                            "thead" : [ "번호", "카테고리", "물품명", "습득 위치", "습득 일시" ],
+                            
+                            "tbody" : [
+                              [
+                                {
+                                  "type" : "text",
+                                  "text" : "5",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "해바라기 카드 지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "6F",
+                                  "button" : null,
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "2021.03.03 12:30",
+                                  "property": null,
+                                },
+                              ],
+                              
+                              [
+                                {
+                                  "type" : "text",
+                                  "text" : "4",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "귀금속",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "해바라기 카드 지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "6F",
+                                  "button" : null,
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "2021.03.03 12:30",
+                                  "property": null,
+                                },
+                              ],
+                              [
+                                {
+                                  "type" : "text",
+                                  "text" : "3",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "휴대전화",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "해바라기 카드 지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "6F",
+                                  "button" : null,
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "2021.03.03 12:30",
+                                  "property": null,
+                                },
+                              ],
+                              [
+                                {
+                                  "type" : "text",
+                                  "text" : "2",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "전자기기",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "해바라기 카드 지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "6F",
+                                  "button" : null,
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "2021.03.03 12:30",
+                                  "property": null,
+                                },
+                              ],
+                              [
+                                {
+                                  "type" : "text",
+                                  "text" : "1",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "신분증",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "해바라기 카드 지갑",
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "6F",
+                                  "button" : null,
+                                  "property": null,
+                                },
+                                {
+                                  "type" : "text",
+                                  "text" : "2021.03.03 12:30",
+                                  "property": null,
+                                },
+                              ],
+
+                            ],
+                          }
+                        ],
+                        "accordion" : null,
+                        "empty" : null,
+                      })
+                    </div>
+
+                    <!-- 
+                      Comment : App 용 구조
+                              : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                    -->
+                    <div class="filter-table-middle use-mobile">
+                      <!-- prettier-ignore -->
+                      @@include("../../components/mFilterView.html",{
+                        "head" : {
+                          "total" : "3",
+                          "tooltip" : null,
+                          "button" : [
+                            {
+                              "dataValue" : "",
+                              "type" : "primary",
+                              "size" : "medium",
+                              "class" : "",
+                              "disabled" : "",
+                              "text" : "습득물 등록",
+                            }
+                          ]
+                        },
+
+                        "list" : [
+                          {
+                            "category" : {
+                              "type" : "category",
+                              "text" : "지갑",
+                              "property" : null,
+                            },
+                            "file" : false,
+                            "q" : null,
+                            "title" : "해바라기 카드 지갑",
+                            "text" : "6F",
+                            "button" : null,
+                            "subText" : {
+                              "label" : null,
+                              "data"  : "2023.02.23"
+                            },
+                            "rate" : null
+                          },
+                          {
+                            "category" : {
+                              "type" : "category",
+                              "text" : "지갑",
+                              "property" : null,
+                            },
+                            "file" : false,
+                            "q" : null,
+                            "title" : "해바라기 카드 지갑",
+                            "text" : "6F",
+                            "button" : null,
+                            "subText" : {
+                              "label" : null,
+                              "data"  : "2023.02.23"
+                            },
+                            "rate" : null
+                          },
+                          {
+                            "category" : {
+                              "type" : "category",
+                              "text" : "지갑",
+                              "property" : null,
+                            },
+                            "file" : false,
+                            "q" : null,
+                            "title" : "해바라기 카드 지갑",
+                            "text" : "6F",
+                            "button" : null,
+                            "subText" : {
+                              "label" : null,
+                              "data"  : "2023.02.23"
+                            },
+                            "rate" : null
+                          },
+                        ]
+                      })
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

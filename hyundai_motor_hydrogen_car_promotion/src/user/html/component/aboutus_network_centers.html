@@ -1,0 +1,13 @@
+<div class="aboutus-centers-container">
+  @@for(var i=0; i < centers.length; i++) {
+  <div class="aboutus-centers-area">
+    <div class="image-box">
+      <img width="450px" height="450px" class="lazy" data-src="../../assets/images/`+centers[i].src+`" alt="`+centers[i].alt+`" />
+    </div>
+    <div class="centers-text-box">
+      <h3 class="sub-title-level-4">`+centers[i].title+`</h3>
+      <p class="sub-text-level-2">`+centers[i].text+`</p>
+    </div>
+  </div>
+  }
+</div>

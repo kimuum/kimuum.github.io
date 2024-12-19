@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="cardAccout_C" iweb-data="in" />
+    <input type="hidden" id="year" iweb-data="in" />
+    <input type="hidden" id="month" iweb-data="in" />
+    <!-- 20240415 신규요건 : 자동납부 당월인출 여부 -->
+    <input type="hidden" id="drw_poss_yn" iweb-data="out" />
+    <input type="hidden" id="tmth_drw_yn" iweb-data="in" />
+
+    <div class="wrapper sub-page tars-1">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '카드자동납부 신청/변경',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-auto-payment-card">
+                <p class="info-title-desc">신청하실 카드가 가입 고객님 본인 명의가 아닐 경우에는 상담사 연결을 통해 문의하시기 바랍니다.</p>
+              </div>
+              <div class="form-card-apply">
+                <div class="field field-input">
+                  <div class="field-label">카드번호</div>
+                  <div class="field-area">
+                    <input
+                      id="cardAccout_T"
+                      name="cardAccout_T"
+                      type="tel"
+                      maxlength="30"
+                      style="display: none"
+                      placeholder="카드번호를 입력해 주세요"
+                      readonly="readonly"
+                      iweb-plain-value=""
+                      iweb-encrypt-type="VPKEYPAD_NUM_"
+                      iweb-encrypt-value=""
+                      iweb-data="in"
+                    />
+                    <input id="Accout_C" name="Accout_C" type="tel" maxlength="30" placeholder="카드번호를 입력해 주세요" iweb-data="in" />
+                  </div>
+                </div>
+                <div class="field field-input">
+                  <div class="field-label">유효기간</div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="tel" maxlength="4" placeholder="YYYY" id="year_tmp" onkeyup="javascript:checkNext(this, 4, 'month_tmp');" iweb-data="in" />
+                      <span class="unit">년</span>
+                    </div>
+                    <div class="field-area">
+                      <input type="tel" maxlength="2" placeholder="MM" id="month_tmp" onkeyup="javascript:checkNext(this, 2, 'dt_btnTitle1');" iweb-data="in" />
+                      <span class="unit">월</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 20240415 신규요건 : 자동납부 당월인출 여부 -->
+                <div class="field field-radio">
+                  <div class="field-label">자동납부 변경</div>
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="radio" name="drw_poss_yn" id="drw_poss_yn_this" onclick="javascript:selectWithdraw('Y');" />
+                      <label for="drw_poss_yn_this" class="radio-label">이번 달부터 적용</label>
+                    </div>
+                    <div class="field-area">
+                      <input type="radio" name="drw_poss_yn" id="drw_poss_yn_next" onclick="javascript:selectWithdraw('N');" />
+                      <label for="drw_poss_yn_next" class="radio-label">다음 달부터 적용</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="alert-text-box">
+                <p class="alert-text">고객센터 및 티월드 등 추가로 변경하시는 경우 인출예정일은 변경될 수 있으니 변경 시점에 반드시 확인해주시기 바랍니다.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), 'C', 'menu');">취소</button>
+            <button type="button" class="btn btn-primary" id="dt_btnTitle1" onclick="javascript:setData($(this), 'RT');">신청/변경</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var checkKeypad = '0';
+      var own = null; //open web nfilter keypad 객체 (2019.07.29)
+
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'bank_T',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display:none;',
+          },
+          {
+            elemName: 'bank_C',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none;',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+          {
+            elemName: 'cardAccout_T',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:block;',
+          },
+          {
+            elemName: 'Accout_C',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display:block;',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+        /*
+         *	2019.07.29
+         *	t-app일 때 키패드 event
+         */
+        if (vars_type == 'T') {
+          //t-app
+          var jumin1 = document.getElementById('cardAccout_T');
+          jumin1.addEventListener(
+            'click',
+            function () {
+              showKeypad('num', document.getElementById('cardAccout_T'), 30, '카드번호');
+            },
+            true,
+          );
+        }
+      });
+
+      function checkNext(obj, num, objID) {
+        var curValue = obj.value;
+        var nLength = curValue.length;
+        if (nLength >= num) {
+          var elem = document.getElementById(objID);
+          elem.focus();
+        }
+      }
+
+      // 보안키패드 호출
+      function showKeypad(mode, obj, len, title) {
+        if (checkKeypad == '1') {
+          return;
+        }
+
+        var fieldname = obj.id;
+
+        if (fieldname == 'cardAccout_T') {
+          document.getElementById('cardAccout_T').value = '';
+        }
+
+        // 키패드 호출
+        showkeypadPhone(mode, fieldname, len, title, getUrlParameter('publickey'));
+      }
+
+      // $('#cardAccout_T').focusin(function () {
+      //   // input 창안에 focus가 들어올때  event
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(5).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      //   //	window.scrollTo(200, 300);
+      // });
+
+      // $('#Accout_C').focusin(function () {
+      //   // input 창안에 focus가 들어올때  event
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(5).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      //   //	window.scrollTo(200, 300);
+      // });
+
+      // $('#year_tmp').focusin(function () {
+      //   // input 창안에 focus가 들어올때  event
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(5).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      //   //	window.scrollTo(200, 300);
+      // });
+      // $('#month_tmp').focusin(function () {
+      //   // input 창안에 focus가 들어올때  event
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(5).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      //   //	window.scrollTo(200, 300);
+      // });
+
+      // $('#cardAccout_T').focusout(function () {
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(0).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      // });
+
+      // $('#Accout_C').focusout(function () {
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(0).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      // });
+
+      // $('#year_tmp').focusout(function () {
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(0).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      // });
+      // $('#month_tmp').focusout(function () {
+      //   var menuHeight = document.getElementsByTagName('section').item(0).clientHeight;
+      //   //	var location = document.getElementsByTagName("article").item(0).clientHeight;
+      //   var location = document.getElementsByTagName('div').item(0).clientHeight;
+      //   window.scrollTo({ top: menuHeight - location, behavior: 'auto' });
+      // });
+      // 20240415 신규요건 : 자동납부 당월인출 여부
+      try {
+        var drw_poss_yn = getUrlParameter('drw_poss_yn');
+
+        //Y : 이번달만 가능
+        //N : 다음달만 가능
+        //0 : 이번달/다음달 둘 다 가능
+        /*@build-time*/ drw_poss_yn = 'Y';
+
+        if (drw_poss_yn == 'Y') {
+          // 이번달만 가능 활성화
+          document.getElementById('drw_poss_yn_this').checked = true;
+          // 다음달만 가능 비활성화
+          document.getElementById('drw_poss_yn_next').disabled = true;
+          document.getElementById('tmth_drw_yn').value = 'Y';
+        } else if (drw_poss_yn == 'N') {
+          // 다음달만 가능 활성화
+          document.getElementById('drw_poss_yn_next').checked = true;
+          // 이번달만 가능 비활성화
+          document.getElementById('drw_poss_yn_this').disabled = true;
+          document.getElementById('tmth_drw_yn').value = 'N';
+        } else if (drw_poss_yn == '0') {
+        }
+      } catch (e) {}
+
+      // 20240415 신규요건 : 자동납부 당월인출 여부
+      //자동납부 인출 타입 선택시 값 설정
+      function selectWithdraw(selValue) {
+        //자동납부 인출 리턴 선택값 설정
+        document.getElementById('tmth_drw_yn').value = selValue;
+      }
+
+      function setData(obj, menu) {
+        var year_tmp = $('#year_tmp').val();
+        var month_tmp = $('#month_tmp').val();
+        document.getElementById('year').value = year_tmp;
+        document.getElementById('month').value = month_tmp;
+
+        /* document.getElementById('cardAccout_T').value = $("#Accout_T").val(); */
+        document.getElementById('cardAccout_C').value = $('#Accout_C').val();
+
+        var vars_type = getUrlParameter('cur_vars_type');
+
+        //보안키패드 충돌 방지
+        if ($ == null) $ = own.noConflict();
+
+        checkKeypad = '1';
+
+        if (vars_type == 'C') {
+          if (document.getElementById('Accout_C').value == '') {
+            jAlert('<p class="popup-alert-text">카드번호를 입력 하세요</p>', '');
+            checkKeypad = '0';
+            return;
+          }
+        } else {
+          if (document.getElementById('cardAccout_T').value == '') {
+            jAlert('<p class="popup-alert-text">카드번호를 입력 하세요</p>', '');
+            checkKeypad = '0';
+            return;
+          }
+        }
+        //  년도, 월 유효성 체크
+        var year = document.getElementById('year').value;
+        var month = document.getElementById('month').value;
+        if (year == null || month == null || year == '' || month == '') {
+          jAlert('<p class="popup-alert-text">유효기간을 입력하세요.</p>', '');
+          return;
+        }
+        if (parseInt(year) < 1) {
+          jAlert('<p class="popup-alert-text">입력하신 유효기간 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          document.getElementById('year').value = '';
+          return;
+        }
+        if (parseInt(month) < 1 || parseInt(month) > 12) {
+          jAlert('<p class="popup-alert-text">입력하신 유효기간 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          document.getElementById('month').value = '';
+          return;
+        }
+        // 20240415 신규요건 : 자동납부 당월인출 여부
+        if (document.getElementById('tmth_drw_yn').value == '') {
+          jAlert('<p class="popup-alert-text">자동납부 변경 적용 시점을 선택해 주세요.</p>', '');
+          checkKeypad = '0';
+          return;
+        }
+        // 자리수 체크 후 '0' 추가
+        var year_len = year.length;
+        var month_len = month.length;
+        var year_add_zero = '';
+        var month_add_zero = '';
+
+        // 년도
+        for (var i = year_len; i < 4; i++) {
+          year_add_zero += '0';
+        }
+        document.getElementById('year').value = year_add_zero + year;
+
+        // 월
+        for (var j = month_len; j < 2; j++) {
+          month_add_zero += '0';
+        }
+        document.getElementById('month').value = month_add_zero + month;
+
+        sendRepPageData(obj.text().trim(), menu, 'menu');
+      }
+    </script>
+  </body>
+</html>

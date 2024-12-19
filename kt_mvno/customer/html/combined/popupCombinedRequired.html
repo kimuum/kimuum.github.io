@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "결합서비스 팝업", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnCombinedRequired, popupCombinedRequired -->
+      <button type="button" class="btn" id="btnCombinedRequired" onclick="togglePopup('btnCombinedRequired', 'popupCombinedRequired')"><span>신청 전 필수 확인 사항</span></button>
+
+      <!-- 웹 접근성 적용 필수 아이디 : btnInfoOfferAgree, popupInfoOfferAgree -->
+      <button type="button" class="btn" id="btnInfoOfferAgree" onclick="togglePopup('btnInfoOfferAgree', 'popupInfoOfferAgree')"><span>정보제공동의 안내</span></button>
+    </div>
+
+    <!-- 신청 전 필수 확인 사항 -->
+    <!-- 웹 접근성 적용 필수 아이디 : popupCombinedRequired, popupTitleCombinedRequired -->
+    <div class="popup" id="popupCombinedRequired" role="dialog" aria-labelledby="popupTitleCombinedRequired" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleCombinedRequired, btnCombinedRequired, popupCombinedRequired -->
+          <strong class="popupTitle" id="popupTitleCombinedRequired">신청 전 필수 확인 사항</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnCombinedRequired', 'popupCombinedRequired')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="applyCaseContainer">
+              <div class="applyInfoArea">
+                <div class="infoContent">
+                  <ul class="dotList marginBtmReset">
+                    <li class="liImage">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/combined/img_combined_apply.jpg" alt="가입일 기준 익월 말 이내 결합 신청 가능(3월 1일 ~ 4월 30일, 이후 결합 신청불가)" />
+                      </div>
+                    </li>
+                    <li class="beforeDot">KT인터넷은 신규 가입고객만 알뜰폰 회선과 결합이 가능하여, KT인터넷 가입일 기준 익월 말 이내에 신청을 하셔야 KT인터넷에 요금할인이 적용됩니다. (ex. 3월 1일에 KT상품을 가입한 고객은 4월 30일까지 결합 신청을 해야 함)</li>
+                    <li class="liImage">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/combined/img_combined_internet_pw.jpg" alt="인터넷 ID: z!64153127***" />
+                      </div>
+                    </li>
+                    <li class="beforeDot">KT인터넷과 알뜰폰 회선 결합 시, KT인터넷 서비스 ID 정보가 필요하므로 마이케이티APP 및 KT고객센터를 통해서 『인터넷서비스ID』확인 바랍니다.</li>
+                    <li class="beforeDot">KT모바일은 신규,기존 고객 모두 알뜰폰 회선과 결합이 가능하나, KT모바일 가입일 기준 익월 말 이내에 신청을 하셔야 KT모바일에 요금할인이 적용됩니다.</li>
+                    <li class="beforeDot">KT인터넷 또는 KT모바일과 알뜰폰 회선과 결합 시, 『MVNO정보제공동의』를 위한 본인인증이 필요합니다.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="applyInfoBottom">
+                <div class="checkbox">
+                  <input type="checkbox" id="chekRequiredAgree" />
+                  <span class="checkboxLabel">
+                    <span class="checkIcon"></span>
+                    <label for="chekRequiredAgree" class="fieldLabel">신청 전 필수 확인 사항을 확인했습니다.(필수)</label>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" disabled><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- [운영] KMVNO-3792 20231016 추가 -->
+    <!-- 정보제공동의 안내 -->
+    <!-- 웹 접근성 적용 필수 아이디 : popupInfoOfferAgree, popupTitleInfoOfferAgree -->
+    <div class="popup" id="popupInfoOfferAgree" role="dialog" aria-labelledby="popupTitleInfoOfferAgree" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleInfoOfferAgree, btnInfoOfferAgree, popupInfoOfferAgree -->
+          <strong class="popupTitle" id="popupTitleInfoOfferAgree">정보제공동의 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnInfoOfferAgree', 'popupInfoOfferAgree')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            정보제공동의가 완료되지 않았습니다. <br />
+            KT 고객센터 (100번)를 통해 정보제공동의를 <br />진행해주세요.
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[운영] KMVNO-3792 20231016 추가 -->
+  </body>
+</html>

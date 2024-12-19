@@ -1,0 +1,405 @@
+.history-container {
+  .history-head {
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    background-color: #fff;
+    &.active {
+      z-index: 9998;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-top: 0;
+    }
+  }
+
+  .select-year-box {
+    @include flex(row, space-between, center);
+    width: 100%;
+    max-width: 144rem;
+    height: 8rem;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    .select-year-box-left {
+      margin-right: 16.5rem;
+    }
+
+    .select-year-box-right {
+      position: relative;
+      width: calc(100% - 22.7rem);
+      padding: 0 9rem;
+    }
+
+    .label-box {
+      @include fontfamhead;
+      @include font(2.8rem, 500, #000, normal);
+    }
+
+    .year-list-swiper-controller {
+      .swiper-button {
+        width: 1rem;
+        height: 1.7rem;
+        margin: 0;
+        transform: translateY(-50%);
+        &::after {
+          display: none;
+        }
+        &.swiper-button-prev {
+          background: image('common/ic_arrow_l_b_n.svg') no-repeat center / 1rem 1.7rem;
+        }
+        &.swiper-button-next {
+          background: image('common/ic_arrow_r_b_n.svg') no-repeat center / 1rem 1.7rem;
+        }
+      }
+    }
+  }
+
+  .year-list-box {
+    .year-lists {
+      .year-list {
+        cursor: pointer;
+        width: fit-content;
+        height: 8rem;
+        margin-left: 16.5%;
+        @include fontfamhead;
+        @include font(1.8rem, 500, #888, 8rem);
+        text-align: center;
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &.active {
+          position: relative;
+          color: #00AAD2;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 0.2rem;
+            background-color: #00AAD2;
+          }
+        }
+        
+        &:hover {
+          font-weight: 400;
+          color: #00AAD2;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  
+  .mo-year-list-box {
+    overflow-x: auto;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera*/
+    }
+    .mo-year-lists {
+      @include flex(row, flex-start, center);
+      &::after {
+        content: '';
+        display: block;
+        min-width: 2rem;
+        height: 1px;
+      }
+      .mo-year-list {
+        cursor: pointer;
+        height: 5rem;
+        margin-left: 4rem;
+        @include fontfamhead;
+        @include font(1.8rem, 400, #000, 5rem);
+        text-align: center;
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &.active {
+          position: relative;
+          font-weight: 500;
+          color: #00AAD2;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 0.2rem;
+            background-color: #00AAD2;
+          }
+        }
+      }
+    }
+  }
+
+  .history-body {
+    margin-top: 10rem;
+  }
+
+  .history-content-box {
+    .history-content-lists {
+      display: block;
+      width: 100%;
+      max-width: 144rem;
+      margin: 0 auto;
+      padding: 0 2rem;
+      box-sizing: border-box;
+      .history-content-list {
+        @include flex(row, space-between, flex-start);
+        height: 53.4rem;
+        margin-top: 0.4rem;
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          height: auto;
+          .divide-bar {
+            .line-box {
+              display: none;
+            }
+          }
+        }
+
+        &.active {
+          .history-content-list-left {
+            .image-box {
+              transform: translateX(0);
+            }
+          }
+
+          .history-content-list-right {
+            .content-box {
+              .year-box {
+                transform: translateX(0);
+              }
+              .info-box {
+                transform: translateX(0);
+              }
+            }
+          }
+        }
+
+        .history-content-list-left {
+          width: 69rem;
+          overflow: hidden;
+          .image-box {
+            @include flex(row, space-between, center);
+            width: 100%;
+            transform: translateX(100%);
+            transition: all 0.6s cubic-bezier(0, 0, 0.2, 1);
+            .image {
+              flex: 1;
+              width: auto;
+              &:nth-child(2),
+              &:nth-child(3) {
+                flex: none;
+                width: 30.43%;
+                margin-left: 4.348%;
+              }
+            }
+          }
+        }
+
+        .history-content-list-right {
+          flex: 1;
+
+          .content-box {
+            overflow: hidden;
+            .year-box {
+              @include fontfamhead;
+              @include font(7rem, 500, #000, normal);
+              transform: translateX(-100%);
+              transition: all 0.3s;
+            }
+
+            .info-box {
+              transform: translateX(-100%);
+              transition: all 0.3s;
+              margin-top: 8rem;
+
+              .info-list {
+                + .info-list {
+                  margin-top: 5.3rem;
+                }
+                .name-box {
+                  @include flex(row, flex-start, center);
+                  @include fontfamhead;
+                  @include font(2.8rem, 500, #000, normal);
+                  .link {
+                    display: block;
+                    width: 2.2rem;
+                    height: 2.2rem;
+                    margin-left: 1rem;
+                    background: image('common/ico_link_default.svg') no-repeat center / 2.2rem;
+                    &:hover {
+                      background: image('common/ico_link_hover.svg') no-repeat center / 2.2rem;
+                    }
+                  }
+                }
+                
+                .desc-box {
+                  @include fontfamhead;
+                  @include font(1.8rem, 500, #00AAD2, 2.8rem);
+                }
+              }
+            }
+          }
+        }
+
+        .divide-bar {
+          @include flex(column, flex-start, center);
+          width: 1.4rem;
+          height: 100%;
+          margin: 0 3rem;
+
+          .dot-box {
+            width: 1.4rem;
+            height: 1.4rem;
+            background: image('common/ic_history_dot.svg') no-repeat center / 1.4rem;
+          }
+
+          .line-box {
+            flex: 1;
+            margin-top: 0.4rem;
+            width: 1px;
+            background-color: #CACACA;
+          }
+        }
+      }
+    }
+  }
+
+  .mo-history-content-box {
+    .mo-history-content-lists {
+      .mo-history-content-list {
+        display: block;
+        &:first-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          .divide-bar {
+            .line-box {
+              display: none;
+            }
+          }
+        }
+
+        .mo-history-content-list-left {
+          width: 100%;
+          .year-box {
+            margin-bottom: 2rem;
+            @include fontfamhead;
+            @include font(2.8rem, 500, #000, normal);
+          }
+          
+          .image-box {
+            @include flex(row, space-between, center);
+            width: 100%;
+            overflow: hidden;
+            .image {
+              flex: 1;
+              width: auto;
+              &:nth-child(2),
+              &:nth-child(3) {
+                flex: none;
+                width: 31.045%;
+                margin-left: 3.43%;
+              }
+            }
+          }
+        }
+
+        .mo-history-content-list-right {
+          width: 100%;
+
+          .content-box {
+            overflow: hidden;
+            .info-box {
+              margin-top: 2rem;
+
+              .info-list {
+                + .info-list {
+                  margin-top: 2rem;
+                }
+                .name-box {
+                  @include flex(row, flex-start, center);
+                  @include fontfamhead;
+                  @include font(2rem, 500, #000, normal);
+                  .link {
+                    display: block;
+                    position: relative;
+                    top: -0.1rem;
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    margin-left: 0.8rem;
+                    background: image('common/ico_link_default.svg') no-repeat center / 1.8rem;
+                  }
+                }
+                
+                .desc-box {
+                  margin-top: 0.4rem;
+                  @include fontfamhead;
+                  @include font(1.4rem, 500, #00AAD2, 1.6rem);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$pc_middle} {
+  .history-container {
+    .history-content-box {
+      .history-content-lists {
+        .history-content-list {
+          .history-content-list-left {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .history-container {
+    .select-year-box {
+      height: 5rem;
+      padding-right: 0;
+      .select-year-box-left {
+        width: 9rem;
+        margin-right: 0;
+      }
+
+      .label-box {
+        font-size: 1.8rem;
+      }
+
+      .select-year-box-right {
+        width: calc(100% - 9rem);
+        padding: 0;
+      }
+
+      .year-list-swiper-controller {
+        display: none;
+      }
+    }
+
+    .history-body {
+      margin-top: 4rem;
+      padding: 0 2rem;
+    }
+  }
+}

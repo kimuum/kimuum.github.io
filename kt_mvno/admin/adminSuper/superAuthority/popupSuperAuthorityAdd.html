@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "권한 그룹 등록" , "headProjectName": "| 권한 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>권한 그룹 등록</span></button>
+    </div>
+    <div class="popup popupSuperAuthorityAdd hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">권한 그룹 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="fieldWrap">
+            <form>
+              <fieldset>
+                <legend>권한 그룹 등록</legend>
+                <div class="field fieldInput">
+                  <label for="input-id-01" class="fieldLabel"
+                    >권한 그룹명<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="input-id-01" value="" placeholder="권한 그룹명을 입력해주세요." aria-required="true" required />
+                    </div>
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="input-id-02" class="fieldLabel"
+                    >그룹 설명<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="input-id-02" value="" placeholder="그룹 설명을 입력해주세요." aria-required="true" required />
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>저장</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- Start Script -->
+  </body>
+</html>

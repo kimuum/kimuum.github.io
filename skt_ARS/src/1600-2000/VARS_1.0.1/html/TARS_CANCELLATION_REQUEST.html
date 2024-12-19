@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '이용정지 해제 신청',
+          "isBtn" : true
+        })
+
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-unsuspended">
+                <p class="info-title">이용정지 해제를 요청하셨습니다. <br /><span class="highlight">개통 시까지 약 30분 정도 소요됩니다.</span></p>
+                <p class="info-title-desc center">일시적인 장애나 지역에 따라 개통 지연 및 제한이 될 수 있음을 양해바라며, 내일까지 요금납부 확인이 되지 않으면 다시 이용정지 됩니다.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" id="agent_n" onclick="javascript:sendRepPageData($(this).text().trim(), 'OK', 'menu');">확인</button>
+          </div>
+        </div>
+
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        initUIComponents(true); // 초기화 function
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+        });
+
+        var non_payment = getUrlParameter('non_payment');
+        var parseIntPayment = formatCommas(parseInt(non_payment));
+        $('#non_payment_txt').html(parseIntPayment + '원 미납');
+      });
+    </script>
+  </body>
+</html>

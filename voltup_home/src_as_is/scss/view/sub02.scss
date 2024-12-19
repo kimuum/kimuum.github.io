@@ -1,0 +1,330 @@
+// Sub page (02)
+.menu-02 {
+  background-color: #1E1D2A;
+  .main {
+    .main-title-container {
+      .desc {
+        color: $white;
+        word-break: keep-all;
+      }
+    }
+  }
+  .app-service-container {
+    position: relative;
+    width: 137.1rem;
+    margin: 0 auto;
+    padding: 14.2rem 0 15.8rem;
+    .app-service {
+      position: relative;
+      // @include flex(row, center, center);
+      display: flex;
+      justify-content: center;
+      .image-container {
+        width: 26%;
+        min-width: 26rem;
+        margin: 0;
+        .image-area {
+          width: 100%;
+        }
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      .info-container {
+        position: relative;
+        flex: 1;
+        max-width: 56rem;
+        margin: 0 0 0 10.6rem;
+        .info-list {
+          @include flex(column, center, flex-start);
+        }
+        .title-box {
+          @include font(3.2rem, 700, $white, 4.6rem);
+        }
+        .desc-box {
+          margin-top: 1.2rem;
+          @include font(2.2rem, 500, #CAC9D9, 3.2rem);
+          word-break: keep-all;
+        }
+        .detail-box {
+          margin-top: 4rem;
+          @include font(1.6rem, 700, #9393BC, 2.3rem);
+          word-break: keep-all;
+        }
+      }
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 9.6rem;
+      height: 9.6rem;
+      background: url("../images/ic_arrow_right_96.svg") no-repeat 100% center;
+      &::after {
+        display: none;
+      }
+      &.swiper-button-disabled {
+        opacity: 0.3;
+      }
+    }
+    .swiper-button-prev {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+    .swiper-button-next {
+      right: 0;
+    }
+    .swiper-custom-controller {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 10;
+      width: 100%;
+      .swiper-pagination {
+        position: static;
+        text-align: left;
+        .swiper-pagination-bullet {
+          width: 0.8rem;
+          height: 0.8rem;
+          margin: 0 0.6rem 0 0;
+          background-color: rgba($white, 0.2);
+          opacity: 1;
+          &:not(:first-of-type) {
+            margin: 0 0.6rem;
+          }
+        }
+        .swiper-pagination-bullet-active {
+          background-color: $point-pink;
+        }
+      }
+    }
+  }
+  .app-download-container {
+    height: 50vw;
+    background:#000000 url("../images/img_down_bg.png") no-repeat right bottom / 100% auto;
+    .app-download-area {
+      height: 100%;
+    }
+    .info-box {
+      @include flex(column, center, flex-start);
+      width: 137.1rem;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 0 0 11.6rem;
+    }
+    .top-container {
+      @include flex(column, flex-start, flex-start);
+      .title-box {
+        @include font(2.6rem, 500, $white, 3.8rem);
+      }
+      .logo-box {
+        width: 36.7rem;
+        height: auto;
+        margin-top: 0.4rem;
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      .desc-box {
+        margin-top: 2.4rem;
+        @include font(2rem, 500, #CAC9D9, 2.9rem);
+      }
+    }
+    .bottom-container {
+      margin-top: 6rem;
+      .app-link-box {
+        @include flex(row, flex-start, center);
+        .app-link {
+          @include flex(row, center, center);
+          width: 21.2rem;
+          height: 6rem;
+          border: 2px solid #8C8B9A;
+          border-radius: 2rem;
+          transition: 0.15s all;
+          background-color: #000;
+          & + .app-link {
+            margin-left: 2rem;
+          }
+          @media (hover: hover) {
+            &:hover {
+              border-color: $white;
+              background-color: $white;
+              .white {
+                display: none;
+              }
+              .black {
+                display: block;
+              }
+            }
+          }
+          .white {
+            display: block;
+          }
+          .black {
+            display: none;
+          }
+          .google-play {
+            width: 16.6rem;
+          }
+          .app-store {
+            width: 14.2rem;
+        }
+          .google-play,
+          .app-store {
+            img {
+              display: block;
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 태블릿
+@media #{$tablet} {
+  .menu-02 {
+    .app-service-container {
+      width: 100%;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      .app-service {
+        .info-container {
+          flex: unset;
+          width: calc(100% - 26rem - 5.3rem - 9.6rem - 9.6rem);
+          margin-left: 5.3rem;
+        }
+      }
+    }
+    
+    .app-download-container {
+      .info-box {
+        width: 100%;
+        padding-right: 2rem;
+      }
+    }
+  }
+}
+
+// 모바일
+@media #{$mobile} {
+  .menu-02 {
+    .app-service-container {
+      padding: 2rem 0 6rem;
+      .app-service {
+        display: block;
+        .image-container {
+          width: auto;
+          min-width: unset;
+          margin: 0 auto;
+          .image-list {
+            width: 55.56%;
+            margin-left: 2rem;
+            &:first-child {
+              margin-left: 0;
+            }
+            &:not(.swiper-slide-active) {
+              opacity: 0.2;
+            }
+          }
+        }
+
+        .info-container {
+          width: calc(100% - 4rem);
+          max-width: none;
+          margin: 4rem auto 0;
+          .info-list {
+            .title-box {
+              font-size: 1.8rem;
+              line-height: 2.6rem;
+            }
+            .desc-box {
+              margin-top: 1.2rem;
+              font-size: 1.4rem;
+              line-height: 2.2rem;
+            }
+            .detail-box {
+              margin-top: 2rem;
+              font-size: 1.2rem;
+              line-height: 1.7rem;
+            }
+          }
+        }
+      }
+
+      .swiper-custom-controller {
+        position: static;
+        margin-top: 3rem;
+        .swiper-pagination {
+          text-align: center;
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        display: none;
+      }
+    }
+    .app-download-container {
+      height: calc(100vh - 4.8rem);
+      min-height: 68rem;
+      // background:#000000 url("../images/m_img_down_bg.svg") no-repeat center bottom / contain;
+      .info-box {
+        @include flex(column, flex-start, center);
+        padding: 6rem 2rem 0;
+      }
+      .top-container {
+        align-items: center;
+        .title-box {
+          font-size: 1.8rem;
+          line-height: 2.6rem;
+          text-align: center;
+        }
+        .logo-box {
+          width: 23.3rem;
+          margin-top: 2.1rem;
+        }
+        .desc-box {
+          margin-top: 1.2rem;
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+      .bottom-container {
+        margin-top: 3rem;
+        .app-link-box {
+          .app-link {
+            width: 12.3rem;
+            height: 3.6rem;
+            border: 1px solid #8C8B9A;
+            border-radius: 1.2rem;
+            & + .app-link {
+              margin-left: 1rem;
+            }
+            .google-play {
+              width: 9.1rem;
+            }
+            .app-store {
+              width: 7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 
+@media screen and (min-aspect-ratio: 1/3) and (orientation: portrait) {
+  .menu-02 {
+    .app-download-container {
+      background:#000000 url("../images/m_img_down_bg.png") no-repeat center bottom / 100%;
+    }
+  }
+}

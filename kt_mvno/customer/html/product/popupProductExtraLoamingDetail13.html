@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터로밍 300MB | 로밍 부가서비스 상세", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- 웹 접근성 적용 필수 아이디 : btnIDLoamingDetail13, popupLoamingDetail13 -->
+      <button type="button" class="btn" id="btnIDLoamingDetail13" onclick="togglePopup('btnIDLoamingDetail13', 'popupLoamingDetail13')">
+        <span>데이터로밍 300MB 상세보기</span>
+      </button>
+    </div>
+
+    <!-- 웹 접근성 적용 필수 아이디 : popupLoamingDetail13, popupTitleLoamingDetail13 -->
+    <!-- [운영] 20230308 부가서비스 개선 : 클래스 추가 -->
+    <div class="popup popupExtraLoamingDetail show" id="popupLoamingDetail13" role="dialog" aria-labelledby="popupTitleLoamingDetail13" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <!-- 웹 접근성 적용 필수 아이디 : popupTitleLoamingDetail13, btnIDLoamingDetail13, popupLoamingDetail13 -->
+          <strong class="popupTitle" id="popupTitleLoamingDetail13">로밍 부가서비스 상세</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDLoamingDetail13', 'popupLoamingDetail13')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="loamingDetailContainer typeAllDay">
+              <div class="loamingDetailHead">
+                <div class="topTitle">
+                  <strong>데이터로밍 300MB</strong>
+                  <strong><span class="colorRed">55,000원</span>원 / 15일</strong>
+                  <span class="tax">(부가세 포함)</span>
+                </div>
+                <div class="topContent">
+                  <div class="loamingRecomand">
+                    <div class="recomandCircleData iconCalender">
+                      <p>사용기간 설정</p>
+                    </div>
+                    <div class="recomandCircleData iconCountry">
+                      <p>181개 국가</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="loamingDetailBody">
+                <div class="loamingDetailTabContainer01">
+                  <div class="tabList" role="tablist">
+                    <button type="button" id="loamingDetailTab01" class="tabButton" aria-controls="loamingDetailCon01" role="tab" aria-selected="true">
+                      <span>상품 정보</span>
+                    </button>
+                    <button type="button" id="loamingDetailTab02" class="tabButton" aria-controls="loamingDetailCon02" role="tab" aria-selected="false">
+                      <span>필수 안내</span>
+                    </button>
+                  </div>
+                  <div class="tabContainer">
+                    <div id="loamingDetailCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingDetailTab01">
+                      <div class="loamingProductInfo">
+                        <div class="tableContainer productTable hideCaption info">
+                          <table>
+                            <caption>
+                              <span class="ir">혜택, 요금, 지원 국가, 신청 방법</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 27%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">혜택</th>
+                                <td>해외(전 세계 181개 국가)의 지정된 제휴사업자 망에서 15일간 300MB를 이용 가능한 부가서비스</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">요금</th>
+                                <td>
+                                  <strong><span class="colorRed">55,000</span>원</strong>/ 15일 (부가세 포함)
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">지원 국가</th>
+                                <td>전 세계 181개 국가</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">신청 방법</th>
+                                <td>데이터를 이용할 시작일시를 지정하여 가입</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <div class="tableContainer productTable country">
+                          <table>
+                            <caption>
+                              181개 국가에서 이용 가능
+                              <span class="ir">아시아, 미주/남미, 유럽, 중동, 아프리카, 오세아니아</span>
+                            </caption>
+                            <colgroup>
+                              <col style="width: 27%" />
+                              <col />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <th scope="row">아시아</th>
+                                <td>괌, 네팔, 대만, 동티모르, 라오스, 마카오, 말레이시아, 몽골, 방글라데시, 베트남, 브루나이, 사이판, 스리랑카, 싱가포르, 우즈베키스탄, 인도, 인도네시아, 일본, 중국, 카자흐스탄, 캄보디아, 키르키즈스탄, 타지키스탄, 태국, 파키스탄, 필리핀, 홍콩</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">미주/남미</th>
+                                <td>
+                                  가이아나, 과달루페, 과테말라, 그레나다, 그린란드, 니카라과, 데시라데, 도미니카, 도미니카 공화국, 마르티니크, 마리갈란테, 멕시코, 몬체러트, 미국, 미국령버진아일랜드, 바베이도스, 버뮤다, 보네르, 볼리비아, 브라질, 생피에르미클롱, 세링트루시아, 세인트 마틴, 세인트빈센트, 세인트키츠네비스, 셍박뗄레미, 수리남, 아루바, 아르헨티나, 아이티, 앤티가바부다, 앵궐라, 에콰도르,
+                                  엘살바도르, 영국령버진아일랜드, 온두라스, 우루과이, 자메이카, 칠레, 캐나다, 케이만군도, 코스타리카, 콜롬비아, 쿠라소, 터크스앤카이코스군도, 트리니다드토바고, 파나마, 파라과이, 페루, 푸에르토리코, 프랑스령기아나
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">유럽</th>
+                                <td>
+                                  건지섬, 그리스, 네덜란드, 노르웨이, 덴마크, 독일, 라트비아, 러시아, 루마니아, 룩셈부르크, 리투아니아, 리히텐슈타인, 마케도니아, 맨섬, 몬테네그로, 몰도바, 몰타, 바티칸시국, 벨기에, 벨라루스, 보스니아, 불가리아, 산마리노, 세르비아, 세우타, 스발바르, 스웨덴, 스위스, 스페인, 슬로바키아, 슬로베니아, 아르메니아, 아이슬란드, 아일랜드, 알바니아, 에스토니아, 영국,
+                                  오스트리아, 올란드제도, 우크라이나, 이탈리아, 저지섬, 조지아, 지브랄타, 체코, 카나리제도, 코소보, 크로아티아, 키프로스, 터키_튀르키예, 파로제도, 포르투갈, 폴란드, 프랑스, 핀란드, 헝가리
+                                </td>
+                              </tr>
+                              <tr>
+                                <th scope="row">중동</th>
+                                <td>바레인, 사우디아라비아, 아랍에메리트, 아제르바이잔, 아프가니스탄, 오만, 요르단, 이라크, 이란, 이스라엘, 카타르, 쿠웨이트, 팔레스타인</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">아프리카</th>
+                                <td>가나, 나이지리아, 남아프리카공화국, 라이베리아, 르완다, 모로코, 모리셔스, 모리타니, 모잠비크, 보츠와나, 부르키나파소, 세이셸, 수단, 알제리, 우간다, 이집트, 짐바브웨, 카메룬, 케냐, 콩고민주공화국, 탄자니아, 튀니지</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">오세아니아</th>
+                                <td>나우루, 뉴질랜드, 바누아투, 사모아, 솔로몬 제도, 크리스마스섬, 타히티_프랑스령 폴리네시아, 통가, 파푸아뉴기니, 피지, 호주</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="loamingDetailCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingDetailTab02">
+                      <div class="loamingDetailTabContainer02">
+                        <div class="tabList roundTab" role="tablist">
+                          <button type="button" id="loamingOptionTab01" class="tabButton" aria-controls="loamingOptionCon01" role="tab" aria-selected="true">
+                            <span>가입</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab02" class="tabButton" aria-controls="loamingOptionCon02" role="tab" aria-selected="false">
+                            <span>이용</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab03" class="tabButton" aria-controls="loamingOptionCon03" role="tab" aria-selected="false">
+                            <span>요금 부과</span>
+                          </button>
+                          <button type="button" id="loamingOptionTab04" class="tabButton" aria-controls="loamingOptionCon04" role="tab" aria-selected="false">
+                            <span>종료(해지)</span>
+                          </button>
+                        </div>
+                        <div class="tabContainer">
+                          <div id="loamingOptionCon01" class="tabContent show" role="tabpanel" aria-labelledby="loamingOptionTab01">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot">사업자에 따라 해당 상품 제공 여부 상이할 수 있습니다.</li>
+                                    <li class="beforeDot">매일 소량의 데이터만 필요한 고객에게 적합한 서비스입니다.</li>
+                                    <li class="beforeDot">어르신용 안심 / 청소년 / 선불 / 데이터쉐어링 요금제 이용고객은 가입 불가합니다.</li>
+                                    <li class="beforeDot">신청/가입은 고객센터 및 로밍센터를 통해서만 가능합니다.</li>
+                                    <li class="beforeDot">데이터로밍 완전차단 부가서비스에 가입되어 있는 경우 가입이 불가하여 서비스 해지 후 가입해야 합니다.</li>
+                                    <li class="beforeDot">제휴하고 있는 해외국가 및 통신사 사정으로 갑자기 서비스 제공이 중단되는 경우가 있사오니, ‘<span class="colorRed">지원국가</span>’ 확인 후 가입하시기 바랍니다.</li>
+                                    <li class="beforeDot">청소년 요금제 이용 고객님은 ‘청소년 로밍 허용’ 또는 ‘청소년 로밍 일시 허용’을 먼저 가입하셔야 합니다. 미 가입된 고객님은 보호자(법정대리인)의 동의 하에 ‘청소년 로밍 허용’이 동시 가입됩니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon02" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab02">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot">현지 사업자 및 네트워크 사정에 의해 LTE이용이 불가한 경우 3G로 연결되며, 일시적인 끊김/속도저하가 발생할 수 있습니다.</li>
+                                    <li class="beforeDot">가입시점부터 (한국시간 기준, 가입시간 관계없이 가입일자의 0시부터 적용) 15일 동안 제공 데이터를 이용가능합니다.</li>
+                                    <li class="beforeDot">제공데이터 모두 소진 또는 지정된 이용기간 종료 시 데이터가 자동으로 차단되며, 국내 귀국 후에 차단은 해제됩니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon03" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab03">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot colorRed">서비스 적용기간 중 데이터를 1회라도 사용하면 요금은 전액 부과됩니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div id="loamingOptionCon04" class="tabContent" role="tabpanel" aria-labelledby="loamingOptionTab04">
+                            <div class="customerContainer">
+                              <div class="customerType">
+                                <div class="typeBody">
+                                  <ul class="marginBtmReset">
+                                    <li class="beforeDot">서비스 사전 가입 후 일정변경 등으로 취소 시 사업자 고객센터로 연락하여 취소하여야 합니다.</li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- [운영] 20230308 부가서비스 개선 : 추가 -->
+            <div class="poroductCommandBottom">
+              <div class="productfixedArea">
+                <div class="productfixedTop">
+                  <div class="topLeft">
+                    <strong class="productName">데이터로밍 300MB</strong>
+                  </div>
+                  <div class="topRight">
+                    <p class="productPrice"><span class="price">55,000</span>원</p>
+                  </div>
+                </div>
+                <div class="productfixedBottom">
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>신청하기</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //[운영] 20230308 부가서비스 개선 : 추가 -->
+          </div>
+          <!-- //popupContent -->
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "모바일 쿠폰 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyListCoupon -->
+    <div class="wrap myThriftyListCoupon">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-11', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>모바일 쿠폰</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>모바일 쿠폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea summary01">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">모바일 쿠폰</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="noticeArea">
+                      <div class="codeInputBox">
+                        <div class="input">
+                          <input type="text" id="input-id-01" placeholder="쿠폰 코드를 입력해주세요." title="쿠폰코드 입력" />
+                        </div>
+                        <button type="button" class="btn btnSizeXXSmall btnBlack"><span>쿠폰등록</span></button>
+                      </div>
+                      <p>사용가능한 모바일 쿠폰이 없습니다.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //모바일 쿠폰 -->
+              <div class="summaryArea summary02 half">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">쿠폰 사용 내역 (2)</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="couponArea">
+                      <div class="couponWrap coupon01">
+                        <div class="couponLeft">
+                          <strong class="couponTitle">데이터 2GB_LTE&3G</strong>
+                          <p class="couponDesc">쿠폰번호 : PCKG10167856155</p>
+                          <p class="couponDesc">등록일 : 2022.05.12</p>
+                        </div>
+                        <div class="couponRight">
+                          <p class="availableDate">서비스 상태<span class="moBlock">: 사용 완료</span></p>
+                        </div>
+                      </div>
+                      <div class="couponWrap coupon02">
+                        <div class="couponLeft">
+                          <strong class="couponTitle">데이터 2GB_LTE&3G</strong>
+                          <p class="couponDesc">쿠폰번호 : PCKG10167856155</p>
+                          <p class="couponDesc">등록일 : 2022.05.12</p>
+                        </div>
+                        <div class="couponRight">
+                          <p class="availableDate">서비스 상태<span class="moBlock">: 사용 완료</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //쿠폰 보유 목록 (2) -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+
+        /*
+      비동기 데이터 수신 및 출력이 완료됐을 때 실행되는 콜백 함수에서 아래 함수 실행
+      reloadMasonry('.summaryContent', '.summaryArea');
+      */
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper certification">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- navigation 제어여부 -->
+        <input type="hidden" id="navi_yn" value="" iweb-data="out" />
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "error",
+          "title": '비밀번호 확인',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <!-- 경고창 문구처리 -->
+              <input type="hidden" id="alert_text" value="" iweb-data="out" />
+              <input type="hidden" id="alert_text_s" value="" iweb-data="out" />
+              <div class="column-title-icon-box">
+                <div class="circle-icon-box">
+                  <span class="ic-certification"></span>
+                </div>
+                <p class="info-title">비밀번호 확인</p>
+                <p class="info-sub-title">고객님께서 설정하신 <br /><span class="highlight">비밀번호 6자리</span>를 입력해 주세요.</p>
+              </div>
+              <div class="form-certification-box">
+                <div id="" class="field field-input">
+                  <label for="certi01" class="field-label">비밀번호</label>
+                  <div class="field-area">
+                    <input
+                      id="pass1"
+                      type="password"
+                      maxlength="6"
+                      placeholder="6자리"
+                      readonly="readonly"
+                      iweb-data="in"
+                      iweb-plain-value=""
+                      iweb-encrypt-type="VPKEYPAD_NUM_"
+                      iweb-encrypt-value=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      var checkKeypad = '0';
+      var own = null; //open web nfilter keypad 객체 (2019.07.29)
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        var osType_check = getUrlParameter('osType_check');
+        if (osType_check == '2') {
+          history.pushState(null, null, '');
+          $(window).on('popstate', function (e) {
+            //history.go(1);
+            //history.forward();
+            history.pushState(null, null, '');
+          });
+          $(window).bind('hashchange', function (e) {
+            e.preventDefault();
+            history.pushState(null, null, '');
+          });
+        }
+
+        try {
+          /* 알림 메세지 처리 */
+          var alert_text = getUrlParameter('alert_text'); /* 알림 1*/
+          var alert_text_s = getUrlParameter('alert_text_s'); /* 알림 2 */
+
+          if (alert_text != '') {
+            $('.popup-top').css('display', 'none');
+            jAlert(
+              '<div id="alert_tex" class="alert-icon-box">' +
+                '<i class="ic-error"></i>' +
+                '<div class="popup-text-large">' +
+                alert_text +
+                '</div>' +
+                '<div class="alert-text-box">' +
+                '<p class="alert-text">' +
+                alert_text_s +
+                '</p>' +
+                '</div>',
+              '',
+            );
+          }
+        } catch (e) {}
+
+        //setInterval(checkData(),10);
+        if (vars_type != 'C') {
+          //보안키패드 충돌 방지
+          if ($ == null) $ = own.noConflict();
+
+          var pass1 = document.getElementById('pass1');
+          setInterval(checkData(pass1), 10);
+        }
+
+        /*
+         *	2019.07.29
+         *	t-app일 때 키패드 event
+         */
+        if (vars_type == 'T') {
+          //t-app
+          var pass1 = document.getElementById('pass1');
+          pass1.addEventListener(
+            'click',
+            function () {
+              showKeypad('num', document.getElementById('pass1'), 6, '비밀번호 6자리');
+            },
+            true,
+          );
+        } else {
+          /*
+           *	보안키패드 셋팅
+           */
+          var pass1 = document.getElementById('pass1');
+          if (vars_type == 'C') {
+            //callgate
+            own = $.noConflict();
+            var elements = [];
+            elements.push(pass1);
+
+            initSKKeypad('/{version}/', elements);
+          }
+        }
+      });
+
+      function checkData(element) {
+        //보안키패드 충돌 방지
+        if ($ == null) $ = own.noConflict();
+
+        if (element == null) element = document.getElementById('pass1');
+        var data = element.value;
+        if (data == '') {
+          setTimeout('checkData()', 10);
+        } else {
+          sendData(element, 'RT');
+        }
+      }
+
+      // 보안키패드 호출
+      function showKeypad(mode, obj, len, title) {
+        if (checkKeypad == '1') {
+          return;
+        }
+
+        var fieldname = obj.id;
+
+        if (fieldname == 'pass1') {
+          document.getElementById('pass1').value = '';
+        }
+
+        // 키패드 호출
+        showkeypadPhone(mode, fieldname, len, title, getUrlParameter('publickey'));
+      }
+
+      // 전송처리
+      function sendData(element, menu) {
+        //보안키패드 충돌 방지
+        if ($ == null) $ = own.noConflict();
+
+        checkKeypad = '1';
+
+        if ($(element).val() == null || $(element).val() == '') {
+          jAlert('<p class="popup-alert-text">고객 비밀번호를 입력하세요.</p>', '');
+          $(element).val('');
+          $(element).focus();
+          setTimeout('checkData()', 10);
+          checkKeypad = '0';
+          return;
+        }
+
+        if ($('#pass1').val().length < 6) {
+          jAlert('<p class="popup-alert-text">고객 비밀번호를 6자리를 입력하세요.</p>', '');
+          $(element).val('');
+          $(element).focus();
+          setTimeout('checkData()', 10);
+          checkKeypad = '0';
+          return;
+        }
+
+        // report page data 호출
+        sendRepPageData($(element).text().trim(), menu, 'menu');
+      }
+
+      // 이전메뉴 처리 시 체크
+      function beforeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br/>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        btn_back();
+      }
+
+      // 홈메뉴 처리 시 체크
+      function homeProc() {
+        // 네비게이션 기능 체크 ('N' : 네비진행불가)
+        var navi_yn = getUrlParameter('navi_yn');
+        if (navi_yn == 'N') {
+          $.alerts.okButton = '확인';
+          jAlert('<p class="popup-alert-text">타인 휴대폰으로 분실정지 처리 시<br/>ARS 서비스가 제한됩니다.</p>', '');
+
+          return;
+        }
+
+        sendGotoHome();
+      }
+    </script>
+    <!-- open web nfilter js 추가 (2019.07.29) -->
+    <!-- jquery 충돌을 방지하기 위해 제일 하단에 놔야 한다. -->
+    <script type="text/javascript" src="/{version}/nfilter/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="/{version}/nfilter/js/open_nFilter.js"></script>
+    <script type="text/javascript" src="/{version}/nfilter/js/secretUtil.js"></script>
+  </body>
+</html>

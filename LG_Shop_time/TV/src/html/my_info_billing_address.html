@@ -1,0 +1,131 @@
+@@include('head.html', {
+'title': 'MY INFO'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+
+      <div class="content-container" style="transform: translateY(0px);"><!-- 본문 스크롤 이동 시 translateY값으로 조절 -->
+        <div class="sub-title-container">
+          <div class="sub-main-title">MY INFO</div>
+        </div>
+        <div class="sub-content-container none-flex">
+          <!-- my page contents -->
+          <div class="sub-content-area">
+            <div class="my-page-summary-area">
+              <div class="my-page-summary-left">
+                <div class="my-summary-title-box">
+                  <div class="my-summary-thumb">
+                    <img src="./images/ic_profile.png" alt="">
+                  </div>
+                  <div class="my-summary-nickname">Hi, Olivia</div>
+                </div>
+                <div class="my-summary-item-box">
+                  <div class="summary-item">
+                    <span class="item-label">Email</span>
+                    <span>Oliva12134@abcdefghi.com</span>
+                  </div>
+                  <!-- SHOPTIME-1668 cell phone 삭제 -->
+                </div>
+              </div>
+              <div class="my-page-summary-right">
+                <div class="button-box flex-column">
+                  <!-- 
+                      기본값 클래스(normal) : btn-solid-gray
+                      활성화 클래스 : focused
+                      비활성화 클래스 : disabled
+                    -->
+                  <!-- 기획서 v1.13 동기화 : 버튼 삭제 -->
+                  <button type="button" class="btn-solid-gray"><span>LOG OUT</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="my-page-content-container">
+              <div class="my-page-content-middle">
+                <div class="tab-container">
+                  <div class="tab-button-area">
+                    <div class="tab-button-left">
+                      <!-- 
+                          현재 선택 된 탭 클래스 : selected
+                          현재 위치 포커스 클래스 : focused
+                          현재 위치 마우스 오버 클래스 : hover
+                        -->
+                      <button type="button" class="btn-tab selected"><span>payment</span></button>
+                      <button type="button" class="btn-tab focused"><span>billing address</span></button>
+                      <button type="button" class="btn-tab"><span>shipping address</span></button>
+                      <button type="button" class="btn-tab"><span>coupon</span></button>
+                    </div>
+                    <div class="tab-button-right">
+                      <button type="button" class="btn-solid-dark btn-small"><span>ADD/EDIT</span></button>
+                    </div>
+                  </div>
+                  <div class="tab-content-container">
+                    <div class="tab-content-area">
+                      <!-- 주소 목록 -->
+                      <div class="my-page-item-box" style="transform: translateX(0px);"><!-- 상품 썸네일 이동 시 translateX값으로 조절 -->
+                        <!-- 현재 위치 표시 클래스 : focused -->
+                        <div class="my-page-item">
+                          <div class="my-page-item-top">
+                            <div class="my-adress-box focused">
+                              <div class="adress-header">
+                                <div class="adress-title">Olivia Chang</div>
+                              </div>
+                              <div class="adress-body">
+                                <div class="adress-content">
+                                  432 E AYRE ST, <br />
+                                  GSI - LAZADA - FORGOOD, <br />
+                                  WILMINGTON, DE, 12345-1234, <br />
+                                  United State
+                                </div>
+                              </div>
+                              <div class="adress-footer">
+                                <div class="call-number">
+                                  <span>123-345-567</span>
+                                </div>
+                                <!-- v0.98 수정 20230518 : Email추가 -->
+                                <div class="email-address">
+                                  <span>honggildong00@gmail.com</span>
+                                </div>
+                                <!-- // v0.98 수정 20230518 : Email추가 -->
+                              </div>
+                            </div>
+                          </div>
+                          <div class="my-page-item-bottom">
+                            <div class="button-box">
+                              <button type="button" class="btn-solid-dark btn-small"><span>delete</span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- v1.12 카드,청구지 정보 1개만 등록으로 수정 : 다른 청구지 삭제 -->
+                      </div>
+                      <!-- //주소 목록 -->
+
+                      <!-- 주소가 없는 경우 -->
+                      <div class="notice-container icon-billing">
+                        <div class="text-notice-area">
+                          <div class="text-large-box">
+                            No addresses added.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //주소가 없는 경우 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //my page contents -->
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

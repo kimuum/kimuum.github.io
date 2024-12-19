@@ -1,0 +1,31 @@
+/* STEP04 */ 
+.wrap_step_04 {
+  &_01 {
+    .content_left {
+      width: calc(100% - 200px);
+    }
+    .content_right {
+      width: 200px;
+    }
+    // Grid
+    .content_grid {
+      grid-template-columns: auto 200px; 
+      .content_left {
+        width: auto;
+      }
+    }
+  }
+  &_02 {
+    .content_box {
+      width: 50%;
+    }
+    // Grid
+    .content_grid {
+      grid-template-columns: 1fr 1fr; 
+      .content_box {
+        width: auto;
+      }
+    }
+  }
+}
+

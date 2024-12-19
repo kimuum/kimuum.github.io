@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 건물 인증 해제"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/appHeader.html", {
+        "back" : false,
+        "title" : "건물 재인증",
+        "close" : true,
+      })
+
+      <!-- Content -->
+      <main class="app-content-container">
+        <div class="app-content-area">
+          <div class="content-container">
+            <div class="content-area">
+              <div class="content-middle">
+                <div class="full-confrim-content">
+                  <i class="icon icon-sad"></i>
+                  <div class="title">건물 인증이 해제되었어요</div>
+                  <div class="text">
+                    정확한 서비스 제공을 위해<br />
+                    건물 인증을 다시 진행해 주세요.
+                  </div>
+                </div>
+              </div>
+              <div class="content-bottom">
+                <div class="bottom-button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "h50",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "건물 인증",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

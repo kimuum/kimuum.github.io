@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "내 프로필" , "headProjectName": "| 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유 클래스 : .MyProfileDetail -->
+    <div class="wrap MyProfileDetail">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>내 프로필</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>내 프로필</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <div class="myProfileContainer">
+              <div class="profileLeft">
+                <div class="myInfoWrap">
+                  <strong class="name">임*일 <span>님</span></strong>
+                  <div class="company">
+                    <strong>(주) 케이티엠모바일</strong>
+                    <strong>KT엠모바일</strong>
+                    <span class="position">총괄</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //END myProfileContainer -->
+
+            <div class="detailContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">회원 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        회원 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">아이디(사번)</th>
+                          <td>
+                            <div class="confirmWrap">
+                              <span>kohyun4</span>
+                              <div class="confirmColorLabel">
+                                <span class="date">2022-01-27</span>
+                                <span class="colorLabel">계정승인</span>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">권한 그룹</th>
+                          <td>사업자(총괄)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">휴대폰 번호</th>
+                          <td>010-6319-8159</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이메일</th>
+                          <td>limtae1@email.com</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="buttonArea btnRight">
+                    <button type="button" class="btnUnderLine"><span>로그아웃</span></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | Onboarding"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : onboarding
+      -->
+      <main class="main-container onboarding">
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="onboarding-box">
+              <div class="onboarding-box-top">
+                <div class="text-box">
+                  <h1>서비스 메인 컨셉 문구</h1>
+                </div>
+                <div class="sub-text-box">
+                  <p>(서비스 기조 문구)</p>
+                </div>
+              </div>
+
+              <div class="onboarding-box-middle">
+                <!-- [접근성] 구조 변경 -->
+                <div class="slide">
+                  <!-- [접근성] 구조 슬라이드 시 x축 값 변경 [.slide-list 의 width 값 만큼 ex. transform: translate3d(-335px, 0px, 0px)] -->
+                  <div class="slide-wrapper" style="transform: translate3d(0px, 0px, 0px)">
+                    <div class="slide-list image-box" aria-hidden="false">
+                      <img src="../../assets/images/dummy/img.svg" alt="dummy" />
+                    </div>
+                    <div class="slide-list image-box" aria-hidden="true">
+                      <img src="../../assets/images/dummy/img.svg" alt="dummy" />
+                    </div>
+                    <div class="slide-list image-box" aria-hidden="true">
+                      <img src="../../assets/images/dummy/img.svg" alt="dummy" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="onboarding-box-bottom">
+                <!-- prettier-ignore -->
+                @@include("indicator.html", {
+                  "data" : [
+                    {
+                      "title" : "첫번째 항목",
+                      "property" : "",
+                      "aria" : false,
+                    },
+                    {
+                      "title" : "두번째 항목",
+                      "property" : "",
+                      "aria" : false,
+                    },
+                    {
+                      "title" : "세번째 항목",
+                      "property" : "active",
+                      "aria" : true,
+                    }
+                  ]
+                })
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "시작하기"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

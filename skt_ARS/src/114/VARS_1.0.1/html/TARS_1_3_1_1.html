@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="bank_list" iweb-data="out" />
+    <input type="hidden" id="bank_select" iweb-data="in" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+           "headerType" : "default",
+          "title": '입금전용계좌 안내',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <!-- t 앱 section -->
+          <section id="content" class="content-area">
+            <!-- 미납여부 -->
+            <input type="hidden" id="disp_yn" value="" iweb-data="out" />
+            <!-- 2depth 영역 -->
+            <div class="sub-menu">
+              <ol>
+                <li>
+                  <a href="#" class="on">
+                    <span class="text">입금전용계좌 안내</span>
+                  </a>
+                </li>
+                <li id="dt_disp_yn" style="display: none">
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M2', 'menu');">
+                    <span class="text">카드결제</span>
+                  </a>
+                </li>
+              </ol>
+            </div>
+            <!-- //2depth 영역 -->
+            <!-- 3depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol id="menu_reset">
+                  <!-- // 배포시 주석처리 start -->
+                  <!-- <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '1', 'menu');">
+                      <span class="text">농협</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '2', 'menu');">
+                      <span class="text">국민</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">우체국</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">하나</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '5', 'menu');">
+                      <span class="text">신한</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '6', 'menu');">
+                      <span class="text">기업</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '7', 'menu');">
+                      <span class="text">우리</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '8', 'menu');">
+                      <span class="text">대구</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '9', 'menu');">
+                      <span class="text">부산</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '10', 'menu');">
+                      <span class="text">광주</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '11', 'menu');">
+                      <span class="text">외환</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '12', 'menu');">
+                      <span class="text">경남</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '13', 'menu');">
+                      <span class="text">SC</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '14', 'menu');">
+                      <span class="text">시티</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li> -->
+                  <!-- // 배포시 주석처리 end -->
+                </ol>
+              </nav>
+            </div>
+            <!-- //3depth 영역 -->
+          </section>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          /* 미납여부, 카드결제 메뉴제어 - 'Y' 면 카드결제 메뉴 동적생성 */
+          var disp_yn = getUrlParameter('disp_yn');
+          if (disp_yn != null && disp_yn == 'Y') document.getElementById('dt_disp_yn').style.display = 'block';
+          var bank_list = getUrlParameter('bank_list');
+
+          /*@build-time*/ bank_list = '농협|1^국민|2^우체국|3^하나|4^신한|5^기업|6^우리|7^대구|8^부산|9^광주|10^외환|11^경남|12^SC|13^시티|14';
+
+          var bank_list_arr = bank_list.split('^');
+
+          var bank_list_html = '';
+
+          var num = 1;
+          for (var i = 0; i < bank_list_arr.length; i++) {
+            var bank_arr = bank_list_arr[i].split('|');
+            if (bank_list_arr[i] == '') {
+              bank_list_html += '';
+            } else {
+              var str = bank_arr[1];
+              bank_list_html += '<li><a href="javascript:sendData($(this).text().trim(),\'' + str + "','menu', '" + bank_arr[0] + '\');"><span class="text">' + bank_arr[0] + '</span></a></li>';
+              num++;
+            }
+          }
+
+          bank_list_html += '<li id="agent_menu" style="display:none;"><a href="javascript:sendRepPageData($(this).text().trim(), \'0\', \'menu\');"><span class="text">상담사 연결</span></a></li>';
+          $('#menu_reset').html(bank_list_html);
+        } catch (e) {}
+
+        try {
+          // 1: 주간, 0: 야간	, 9:점심
+          var timezone_type = getUrlParameter('timezone_type');
+
+          /*@build-time*/ timezone_type = '1';
+
+          // 주간이 아닐 때
+          if (timezone_type != '1') {
+            document.getElementById('agent_menu').style.display = 'none';
+            // 상담원에 대한 class 세팅.
+            document.getElementById('menu_reset').setAttribute('class', 'night');
+          } else {
+            document.getElementById('agent_menu').style.display = 'block';
+          }
+
+          // 점심시간
+          if (timezone_type == '9') {
+            $('#agent_menu').css('display', 'none');
+          } else {
+          }
+        } catch (e) {}
+
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      function sendData(obj, dtmf, menu, bank) {
+        $('#bank_select').val(bank);
+        sendRepPageData(obj, dtmf, menu);
+      }
+    </script>
+  </body>
+</html>

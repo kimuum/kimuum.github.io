@@ -1,0 +1,551 @@
+.unit-box {
+  + .unit-box {
+    margin-top: 7rem;
+  }
+  .unit-top {
+    margin-bottom: 2rem;
+    .title-box {
+      @include font(h4);
+    }
+  }
+  .unit-content-box {
+    border-radius: 2rem;
+    + .unit-content-box {
+      margin-top: 2rem;
+    }
+    &.white {
+      padding: 4rem;
+      background-color: $white;
+      box-shadow: 0 0.2rem 1.2rem 0 rgba($black, 0.04);
+      .unit-detail-box {
+        .detail-list-box {
+          border-color: $gray-50;
+        }
+      }
+    }
+    &.gray {
+      padding: 2.6rem 4rem;
+      background-color: rgba($tan-400, 0.4);
+      .desc-box {
+        @include font(bs, $gray-600);
+      }
+    }
+    .strong {
+      color: $gray-900;
+    }
+    .schedule-box {
+      .time-box {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+    .desc-box {
+      display: flex;
+      @include font(lm, $gray-500);
+      & + .desc-box {
+        margin-top: 1rem;
+      }
+      p {
+        word-break: keep-all;
+      }
+      .ic {
+        min-width: 2rem;
+        height: 2.4rem;
+        margin-right: 0.6rem;
+        background-size: 2rem;
+      }
+      strong {
+        font-weight: 700;
+        color: $black;
+      }
+    }
+    .data-box {
+      @include flex(row, space-between, center);
+      width: 100%;
+      @include font(ll);
+      .label {
+        @include flex(row, flex-start, center);
+        gap: 0.8rem;
+        color: $gray-500;
+      }
+    }
+    .field-title-box {
+      margin-bottom: 2rem;
+      @include font(bs, $gray-800);
+    }
+    .unit-content-title {
+      @include flex(row, space-between, center);
+      padding: 2.4rem 0;
+      border-bottom: 0.1rem solid $black;
+      .title {
+        @include font(ll);
+      }
+      .btn-delete {
+        padding: 0.5rem 1.4rem;
+        border-radius: 1rem;
+        border: 0.1rem solid transparent;
+        @include font(lm, $white);
+      }
+    }
+    .unit-content-top {
+      word-break: keep-all;
+      .title-box {
+        margin: auto;
+        @include font(ll);
+        text-align: center;
+      }
+      .description-box {
+        @include flex(column, center, center);
+        margin-top: 1.2rem;
+        @include font(lm, $gray-600);
+        .strong {
+          color: inherit;
+        }
+      }
+    }
+    .unit-content-bottom {
+      margin-top: 3.2rem;
+      padding-bottom: 2rem;
+    }
+    .unit-button-box {
+      @include flex(row, center, center);
+      gap: 2rem;
+      padding-top: 2rem;
+      .btn {
+        position: relative;
+        + .btn {
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            transform: translateY(-50%);
+            width: 0.1rem;
+            height: 1.2rem;
+            background-color: $gray-400;
+          }
+        }
+      }
+    }
+  }
+  .unit-detail-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    .data-box {
+      .label {
+        @include font(bs, $gray-600);
+      }
+      .data {
+        @include font(bl);
+      }
+    }
+    .detail-list-box {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 0.1rem solid $gray-100;
+      padding-top: 1.8rem;
+      .detail-list {
+        display: flex;
+        @include font(lm, $gray-500);
+        &::before {
+          content: '';
+          display: inline-block;
+          position: relative;
+          top: 0.9rem;
+          min-width: 0.4rem;
+          width: 0.4rem;
+          height: 0.4rem;
+          margin-right: 1rem;
+          border-radius: 50%;
+          background-color: $gray-500;
+        }
+        &.highlight {
+          font-weight: 700;
+          color: $accent;
+          &::before {
+            background-color: $accent;
+          }
+        }
+        .btn-download {
+          font-size: inherit;
+          font-weight: inherit;
+          color: inherit;
+          line-height: inherit;
+          text-decoration-line: underline;
+          text-underline-position: under;
+        }
+      }
+    }
+  }
+  .table-box {
+    overflow: hidden;
+    margin: 0 1.5rem;
+    border-radius: 1rem;
+    border: 0.1rem solid rgba($black, 0.05);
+    & + .detail-list-box {
+      padding: 0;
+      border: none;
+    }
+    table {
+      table-layout: fixed;
+      width: 100%;
+      text-align: center;
+      @include font(lm);
+      thead {
+        tr {
+          background-color: $gray-50;
+          color: $gray-500;
+        }
+        th {
+          padding: 1rem;
+          border-left: 0.1rem solid rgba($black, 0.05);
+          &:first-of-type {
+            border: none;
+          }
+        }
+      }
+      tbody {
+        tr {
+          border-top: 0.1rem solid rgba($black, 0.05);
+        }
+        td {
+          padding: 1rem;
+          font-weight: 500;
+          border-left: 0.1rem solid rgba($black, 0.05);
+          &:first-of-type {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+  .unit-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.4rem 0;
+    border-top: 0.1rem solid $gray-50;
+    &:first-of-type {
+      border: none;
+    }
+    &.size-l {
+      .unit-content {
+        .label-box {
+          width: auto;
+          flex: 1;
+        }
+        .data-box {
+          @include font(bl);
+          .data {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+  .unit-content {
+    @include flex(row, flex-start, center);
+    gap: 3rem;
+    position: relative;
+    .label-box {
+      @include flex(row, flex-start, center);
+      gap: 1rem;
+      flex: 0 0 10rem;
+      min-height: 3.6rem;
+      @include font(bs, $gray-400);
+      .badge {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        border-radius: 0.6rem;
+        background-color: rgba($black, 0.1);
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $black;
+        line-height: 2rem;
+      }
+    }
+    .data-box {
+      flex: 1;
+      @include font(bs);
+    }
+    .button-box {
+      flex: 0 0 5.6rem;
+      .btn-edit {
+        width: 100%;
+        height: 3.6rem;
+        padding: 0;
+        border-radius: 1rem;
+        border: 0.1rem solid rgba($black, 0.2);
+        @include font(lm, $gray-500);
+        line-height: normal;
+        &:hover:not(:disabled) {
+          background-color: rgba($gray-900, 0.1);
+        }
+        &:disabled {
+          color: rgba($gray-500, 0.3);
+          background-color: unset;
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .unit-box {
+    & + .unit-box {
+      margin-top: 4rem;
+    }
+
+    .unit-top {
+      margin-bottom: 1.4rem;
+      .title-box {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    .unit-content-box {
+      border: 1.6rem;
+      &.gray {
+        padding: 2rem 1.4rem;
+        border-radius: 1.6rem;
+        + .unit-content-box {
+          margin-top: 1.4rem;
+        }
+
+        .desc-box {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
+        .data-box {
+          display: block;
+        }
+      }
+
+      &.white {
+        padding: 2.4rem 1.6rem;
+
+        .title-box {
+          margin-bottom: 2rem;
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: $black;
+          line-height: 2.2rem;
+        }
+      }
+
+      .unit-content-title {
+        padding: 2.4rem 0 1.2rem;
+        .title {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+        .btn-delete {
+          width: 2rem;
+          height: 2rem;
+          padding: 0;
+          font-size: 0;
+          line-height: 0;
+          border-radius: unset;
+          border: none;
+          background: asset-image('icon/ic_mo_co_close.svg') no-repeat center / cover;
+        }
+      }
+
+      .desc-box {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        .ic {
+          min-width: 1.6rem;
+          width: 1.6rem;
+          height: 2rem;
+          margin-right: 0.4rem;
+          background-size: 1.6rem;
+        }
+      }
+
+      .field-title-box {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+      }
+
+      .unit-content-top {
+        @include flex(column, center, center);
+        min-height: 11.6rem;
+        .title-box {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+
+        .description-box {
+          display: block;
+          margin-top: 0.6rem;
+          font-size: 1.3rem;
+          line-height: 2rem;
+          text-align: center;
+          .desc {
+            display: block;
+            margin-top: 0.6rem;
+          }
+        }
+      }
+
+      .unit-content-bottom {
+        margin-top: 3.2rem;
+        padding: 0 1.6rem 1rem;
+      }
+
+      .unit-button-box {
+        .btn {
+          font-size: 1.2rem;
+          line-height: 2rem;
+          + .btn {
+            &::before {
+              height: 1.1rem;
+            }
+          }
+        }
+      }
+
+      .data-box {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        .label {
+          gap: 0.4rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+          .ic {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+        }
+
+        .data {
+          display: block;
+          margin-top: 0.4rem;
+        }
+      }
+    }
+
+    .unit-contents {
+      gap: 1.4rem;
+      &.size-l {
+        .unit-content {
+          justify-content: space-between;
+          gap: 1rem;
+          .data-box {
+            flex: unset;
+            width: auto;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            .data {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .unit-content {
+      flex-wrap: wrap;
+      gap: 0;
+      .label-box {
+        flex: unset;
+        width: 100%;
+        min-height: unset;
+        font-size: 1.4rem;
+        line-height: 2rem;
+      }
+
+      .data-box {
+        width: 100%;
+        font-size: 1.4rem;
+        line-height: 2rem;
+        .data {
+          &:first-child {
+            display: block;
+            width: 100%;
+            @include ellipsis;
+          }
+        }
+      }
+
+      .button-box {
+        flex: unset;
+        position: absolute;
+        top: 0;
+        right: 0;
+        .btn-edit {
+          height: auto;
+          padding: 0;
+          border: none;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          text-decoration-line: underline;
+          text-underline-position: under;
+          &:hover:not(:disabled) {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+
+    .table-box {
+      margin: -0.6rem 1rem;
+      border-radius: 0.8rem;
+      table {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        thead {
+          th {
+            padding: 0.6rem;
+          }
+        }
+        tbody {
+          td {
+            padding: 0.6rem;
+          }
+        }
+      }
+    }
+
+    .unit-detail-box {
+      gap: 2rem;
+      .data-box {
+        .label {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+        .data {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+
+      .detail-list-box {
+        padding-top: 1.6rem;
+        .detail-list {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_middle} {
+  .unit-box {
+    .unit-content-box {
+      .unit-content-top {
+        .title-box {
+          max-width: 21rem;
+        }
+      }
+    }
+  }
+}

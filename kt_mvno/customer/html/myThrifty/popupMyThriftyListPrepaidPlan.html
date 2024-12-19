@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사용 불가 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>사용 불가 안내</span></button>
+      <button type="button" class="btn" id="btnIDNoService" onclick="togglePopup('btnIDNoService', 'popupNoService')"><span>미성년자 사용 불가 안내</span></button>
+    </div>
+
+    <!-- [2차] 20220906 기획 추가 -->
+    <div class="popup" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">사용 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>선불 요금제는 지원하지 않는 기능입니다.</p>
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[2차] 20220906 기획 추가 -->
+
+    <!-- [2차] 20221019 미성년자 사용 불가 안내 추가 -->
+    <div class="popup" id="popupNoService" role="dialog" aria-labelledby="popupTitleNoService" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleNoService">사용 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDNoService', 'popupNoService')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p>미성년자 회원은 지원하지 않는 기능입니다.</p>
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnIDNoService', 'popupNoService')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[2차] 20221019 미성년자 사용 불가 안내 추가 -->
+
+    <!-- Start Script -->
+  </body>
+</html>

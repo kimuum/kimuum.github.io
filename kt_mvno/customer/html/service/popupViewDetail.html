@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "상세정보", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>기본 팝업</span></button>
+    </div>
+    <!-- 페이지 고유클래스 : popupViewDetail -->
+    <div class="popup hide popupViewDetail" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">상세정보</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="detailArea">
+              <div class="imgBox">
+                <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="KT M Mobile" />
+              </div>
+              <div class="detailBox">
+                <div class="name">KT엠모바일</div>
+                <div class="infoBox">
+                  <div class="tel">
+                    <span class="icon"></span>
+                    <a href="tel:1899-5000">전화 : 1899-5000</a>
+                  </div>
+                  <div class="tel">
+                    <span class="icon"></span>
+                    <a href="tel:1899-5000">FAX : 1899-5000</a>
+                  </div>
+                  <div class="time">
+                    <span class="icon"><span class="hiddenText">운영시간</span></span>
+                    <!-- [VOS2차] 결함ID 1122030 1122084 시간아이콘 수정 -->
+                    <span class="text">평일 : 09:00~18:00</span>
+                  </div>
+                  <div class="time">
+                    <span class="icon"><span class="hiddenText">운영시간</span></span>
+                    <!-- [VOS2차] 결함ID 1122030 1122084 시간아이콘 수정 -->
+                    <span class="text">주말 : 09:00~18:00</span>
+                  </div>
+                  <div class="time">
+                    <span class="icon"><span class="hiddenText">운영시간</span></span>
+                    <!-- [VOS2차] 결함ID 1122030 1122084 시간아이콘 수정 -->
+                    <span class="text">공휴일 : 09:00~18:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="buttonArea">
+            <button type="button" class="btn btnNor"><span>홈페이지 바로가기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

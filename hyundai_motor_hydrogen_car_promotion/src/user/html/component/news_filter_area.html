@@ -1,0 +1,187 @@
+<div class="news-filter-container">
+  <div class="news-filter-area">
+    <div class="filter-box-left">
+      <strong class="filter-title">Topic</strong>
+    </div>
+    <div class="filter-box-right">
+      <ul class="filter-item-list">
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-all',
+            'label': 'All',
+            'checked': 'checked',
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-01',
+            'label': 'Tractor',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-02',
+            'label': 'Truck',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-03',
+            'label': 'Bus',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-04',
+            'label': 'FC System',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-05',
+            'label': 'Event',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'topic-06',
+            'label': 'Others',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- // Topic -->
+  <div class="news-filter-area filter-date-area">
+    <div class="filter-box-left">
+      <strong class="filter-title">Date</strong>
+      <button type="button" class="btn-open-month" title="select months"></button>
+    </div>
+    <div class="filter-box-right">
+      <ul class="filter-item-list">
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-all',
+            'label': 'All',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-02',
+            'label': '2023',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-03',
+            'label': '2022',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-04',
+            'label': '2021',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-05',
+            'label': '2020',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-06',
+            'label': '2019',
+            'checked': null,
+            'disabled': null,
+          })
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- // Date : 연도 선택 -->
+  <!-- 달력 오픈 시 클래스 : opend-calender -->
+  <div class="news-filter-area filter-date-area opend-calender">
+    <div class="filter-box-left">
+      <strong class="filter-title">Date</strong>
+      <button type="button" class="btn-open-month" title="select months"></button>
+    </div>
+    <div class="filter-box-right">
+      <ul class="filter-item-list">
+        <li class="item-list">
+          <!-- prettier-ignore -->
+          @@include("checkbox.html", {
+            'type' : 'normal',
+            'id': 'year-all',
+            'label': 'All',
+            'checked': 'checked',
+            'disabled': null,
+          })
+        </li>
+      </ul>
+      <!-- 달력 -->
+      <div class="filter-calendar-container">
+        <div class="datepicker-container" id="datepicker-range">
+          <div class="date-input-box" id="datepicker-start">
+            <input type="text" class="start-date-input" placeholder="From date" />
+          </div>
+          <span class="space"></span>
+          <div class="date-input-box" id="datepicker-end">
+            <input type="text" class="end-date-input" placeholder="To date" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Date : 월 선택 -->
+</div>

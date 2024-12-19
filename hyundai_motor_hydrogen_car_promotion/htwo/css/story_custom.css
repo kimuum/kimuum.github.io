@@ -1,0 +1,45 @@
+@CHARSET "UTF-8";
+/* 개발자 추가 영역 */
+.layout-show{display: block;}
+.layout-hide{display: none;}
+.cursor-pointer{cursor: pointer;}
+.component-col2 .s-col-box .tooltip-platbox__text { color: #01428b; border-bottom: 1px dashed #01428b; }
+.component-content .s-cont__txt {color: #111; line-height: 1.88; letter-spacing: -0.21px; word-break: keep-all; }
+.component-content .s-cont__txt ul{padding-left:20px;}
+.component-content .s-cont__txt ul li{list-style:disc;}
+.component-content .s-cont__txt ol{padding-left:20px;}
+.component-content .s-cont__txt ol li{list-style:decimal;}
+.component-content .s-cont__txt em {font-style: italic;}
+.component-content ul { margin-bottom: 0.8em; }
+.component-col2 .s-cont__txt ul{padding-left:20px;}
+.component-col2 .s-cont__txt ul li{list-style:disc;}
+.component-col2 .s-cont__txt ol{padding-left:20px;}
+.component-col2 .s-cont__txt ol li{list-style:decimal;}
+.full-ly-close{z-index: 300;}
+
+.component-col2 .s-cont__txt { color: #111; line-height: 1.88; letter-spacing: -0.21px; word-break: keep-all; }
+.component-col2 .s-cont__txt .tooltip-platbox { z-index: 1; }
+.component-col2 .s-cont__txt .tooltip-platbox__text { color: #01428b; border-bottom: 1px dashed #01428b; }
+.component-col2 .s-cont__txt .tooltip-platbox__text:focus + .tooltip-wrap, .component-content .s-cont__txt .tooltip-platbox__text:hover + .tooltip-wrap { display: inline-block; }
+.parallax-mirror { z-index: 111 !important; }
+
+.custom-900-ws { display: block; }
+.custom-900-ms { display: none; }
+
+@media all and (min-width: 720px) {
+    .pedia-box__image img { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); min-width: 100%; height: 100%; -webkit-transition: all 0.3s linear; transition: all 0.3s linear; -webkit-transform-origin: left; transform-origin: left; }
+}
+@media all and (max-width: 719px) {
+    .pedia-box__image img { width: 100%; height: auto; }
+}
+
+@media all and (max-width: 505px) {
+    .component-key-visual .s-main-poster__img-ws { display: none; }
+    .component-key-visual .s-main-poster__img-ms { display: block; }
+}
+
+@media all and (max-width: 899px) {
+    .component-col2 .s-cont__txt { font-size: 16px; line-height: 1.75; letter-spacing: -0.02px; }
+    .custom-900-ws { display: none; }
+    .custom-900-ms { display: block; }
+}

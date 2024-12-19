@@ -1,0 +1,184 @@
+.lnb-container {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 21rem;
+  background-color: $white;
+
+  & + .main-container {
+    padding-left: 21rem;
+    background-color: #f6f6f6;
+  }
+
+  .lnb-area {
+    height: 100%;
+    .lnb-top {
+      padding: 4rem 2.5rem;
+    }
+  }
+
+  .user-box {
+    @include flex(column, center, center);
+    width: 17.8rem;
+    height: 13.2rem;
+    margin: 9.8rem auto 0;
+    border-radius: 1.6rem;
+    background: admin-image('img_admin_gnb_bg.svg') no-repeat center / contain;
+
+    .user-name {
+      @include font(1.6rem, 600, $white, 2.4rem);
+    }
+    .user-id {
+      margin-top: 0.4rem;
+      @include font(1.2rem, 500, $gray-50, 1.8rem);
+    }
+
+    .btn-logout {
+      padding: 0.6rem 1.6rem;
+      border-radius: 0.8rem;
+      margin-top: 2rem;
+      background-color: $white;
+      @include font(1.2rem, 600, $black, 1.8rem);
+    }
+  }
+}
+
+.lnb-list-box {
+  .lnb-list {
+    margin-top: 0;
+    + .lnb-list {
+      margin-top: 1rem;
+    }
+    &.active {
+      &.home {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_home_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      &.search {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_check_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      &.customer {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_costomer_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      &.homepage {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_homepage_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      &.statistics {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_stats_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      &.admin {
+        .lnb-link {
+          &::before {
+            background: admin-image('ic_admin_lnb_manager_act.svg') no-repeat center / contain;
+          }
+        }
+      }
+
+      .lnb-link {
+        font-weight: 700;
+        color: $accent;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          width: 0.4rem;
+          height: 3rem;
+          border-radius: 2.5rem;
+          background-color: $accent;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    &.home {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_check_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    &.search {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_check_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    &.customer {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_costomer_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    &.homepage {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_homepage_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    &.statistics {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_stats_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    &.admin {
+      .lnb-link {
+        &::before {
+          background: admin-image('ic_admin_lnb_manager_nor.svg') no-repeat center / contain;
+        }
+      }
+    }
+
+    .lnb-link {
+      @include flex(row, flex-start, center);
+      position: relative;
+      padding: 1rem 1.8rem;
+      @include font(1.8rem, 500, $gray-300, normal);
+      &::before {
+        content: '';
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 1.2rem;
+      }
+    }
+  }
+}

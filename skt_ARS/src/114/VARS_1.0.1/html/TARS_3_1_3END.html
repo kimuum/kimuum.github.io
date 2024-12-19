@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="use_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '예약 신청',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-for-army-fause">
+                <p class="info-title">군 복귀 시점에 맞추어 장기 일시정지가 자동으로 처리될 수 있도록 일시정지 예약을 신청 할 수 있습니다.</p>
+              </div>
+              <div class="form-reserve-setting" onchange="javascript:checkEmptyValue()">
+                <div class="field field-input">
+                  <div class="field-form">
+                    <div class="field-area">
+                      <input type="tel" maxlength="4" placeholder="" id="year" iweb-data="in" />
+                      <span class="unit">년</span>
+                    </div>
+                    <div class="field-area">
+                      <input type="tel" maxlength="2" placeholder="" id="month" iweb-data="in" />
+                      <span class="unit">월</span>
+                    </div>
+                    <div class="field-area">
+                      <input type="tel" maxlength="2" placeholder="" id="day" iweb-data="in" />
+                      <span class="unit">일</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="alert-text-box">
+                <p class="alert-text">군 복귀 시점에 맞추어 장기 일시정지가 자동으로 처리 될 수 있도록 일시정지 예약을 신청 할 수 있습니다.</p>
+                <p class="alert-text" id="s_case" style="display: none">
+                  정지 기간은 &lt;T끼리 온가족할인&gt; 또는 &lt;T+인터넷(패밀리형)&gt;의 할인율 계산에 필요한 ‘가족 합산 가입 연수’에서 제외됩니다. 또한 휴대폰 이용 정지가 10일 이상 계속될 경우, 해당
+                  회선의 전체 가입 기간이 ‘가족 합산 가입 연수’에서 제외됩니다. <br />
+                  단, 휴대폰 이용 정지를 해제하면 전체 가입 기간이 다시 ‘가족 합산 가입 연수’에 포함됩니다.
+                </p>
+                <p class="alert-text">정지 예약 설정일 00시에 자동 정지 처리 됩니다.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" onclick="sendData($(this), 'RT')">예약 신청</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'T';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        // 발행년월 이전달로 세팅.
+        var today = getCurYYYYMMDD();
+        var year = today.substr(0, 4); // 년도
+        var month = today.substr(4, 2); // 월
+        var day = today.substr(6, 2); // 일
+
+        document.getElementById('year').value = year;
+        document.getElementById('month').value = month;
+        document.getElementById('day').value = day;
+
+        // <T끼리 온가족 할인>, <t+인터넷 패밀리형> 요금제 사용 고객 문구 처리
+        try {
+          var use_type = getUrlParameter('use_type');
+          /*@build-time*/ use_type = 'Y';
+          if (use_type == 'y' || use_type == 'Y') {
+            $('#s_case').show();
+          }
+        } catch (e) {}
+      });
+
+      // 인풋 빈값 일 경우 신청하기 버튼 비활성화
+      function checkEmptyValue() {
+        var year = document.getElementById('year').value;
+        var month = document.getElementById('month').value;
+        var day = document.getElementById('day').value;
+
+        if (year == null || month == null || day == null || year == '' || month == '' || day == '') {
+          document.querySelector('.btn-primary').disabled = true;
+        } else {
+          document.querySelector('.btn-primary').disabled = false;
+        }
+      }
+
+      function sendData(obj, dtmf) {
+        //  예약신청 날짜 유효성 체크
+        var year = document.getElementById('year').value;
+        var month = document.getElementById('month').value;
+        var day = document.getElementById('day').value;
+
+        // 자리수 체크 후 '0' 추가
+        var year_len = year.length;
+        var month_len = month.length;
+        var day_len = day.length;
+        var year_add_zero = '';
+        var month_add_zero = '';
+        var day_add_zero = '';
+
+        if (year == null || month == null || day == null || year == '' || month == '' || day == '') {
+          jAlert('<p class="popup-alert-text">날짜를 입력하세요.</p>', '');
+          return;
+        }
+        if (parseInt(year) < 1 || parseInt(year) > 2099) {
+          jAlert('<p class="popup-alert-text">입력하신 날짜 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          document.getElementById('year').value = '';
+          return;
+        }
+        // 년도
+        for (var i = year_len; i < 4; i++) {
+          year_add_zero += '0';
+        }
+        document.getElementById('year').value = year_add_zero + year;
+
+        if (parseInt(month) < 1 || parseInt(month) > 12) {
+          jAlert('<p class="popup-alert-text">입력하신 날짜 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          document.getElementById('month').value = '';
+          return;
+        }
+        // 월
+        for (var j = month_len; j < 2; j++) {
+          month_add_zero += '0';
+        }
+        document.getElementById('month').value = month_add_zero + month;
+
+        var lastDay = '';
+        lastDay = getLastDay(document.getElementById('year').value + document.getElementById('month').value, '').substr(6, 2);
+        if (parseInt(day) < 1 || parseInt(day) > lastDay) {
+          jAlert('<p class="popup-alert-text">입력하신 날짜 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          document.getElementById('day').value = '';
+          return;
+        }
+        // 일
+        for (var k = day_len; k < 2; k++) {
+          day_add_zero += '0';
+        }
+        document.getElementById('day').value = day_add_zero + day;
+
+        // 현재날짜 보다 이전날짜 체크.
+        var checkDay = document.getElementById('year').value + document.getElementById('month').value + document.getElementById('day').value;
+        var currDay = getCurYYYYMMDD();
+        if (checkDay < currDay) {
+          jAlert('<p class="popup-alert-text">입력하신 날짜 정보가 잘못되었습니다. <br/>확인 후 다시 입력해주세요.</p>', '');
+          return;
+        }
+
+        // report page data 요청
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+    </script>
+  </body>
+</html>

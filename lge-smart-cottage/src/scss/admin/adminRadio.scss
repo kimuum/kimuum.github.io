@@ -1,0 +1,39 @@
+.field-radio {
+  .field-form {
+    position: relative;
+    .input-radio {
+      appearance: none;
+      z-index: 11;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      &:checked {
+        + .radio-box {
+          border-color: $accent;
+          .radio-icon {
+            background: admin-image('ic_admin_co_radio_sel.svg') no-repeat center / 2rem;
+          }
+        }
+      }
+    }
+
+    .radio-box {
+      @include flex(row, flex-start, center);
+      padding: 1.2rem;
+      border-radius: 0.8rem;
+      border: 1px solid rgba($black, 0.1);
+      .radio-icon {
+        width: 2rem;
+        height: 2rem;
+        background: admin-image('ic_admin_co_radio_nor.svg') no-repeat center / 2rem;
+      }
+      .field-label {
+        margin-left: 1rem;
+        @include font(1.6rem, 500, $black, 2.4rem);
+      }
+    }
+  }
+}

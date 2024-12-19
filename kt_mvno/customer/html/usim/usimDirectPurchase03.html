@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "3단계 주문 정보 확인 | 바로배송유심 주문 | 유심/eSIM", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 신청 페이지 클래스 : usimApply -->
+    <div class="wrap detail usimApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': 'active-1' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>바로배송유심 구매</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>바로배송유심 주문</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <ul class="steps">
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>3</li>
+              </ul>
+            </div>
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">주문 정보 확인</strong>
+                  </div>
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">결제 전 주문 정보를 한번 더 확인해주세요.</li>
+                    </ul>
+                  </div>
+                  <div class="orderContainer usimDirectContainer">
+                    <div class="orderItem noneBorder">
+                      <div class="itemMiddle">
+                        <div class="orderBorderWrap">
+                          <div class="orderContent">
+                            <strong class="stateTitleBold">주문 정보</strong>
+                            <div class="dlContainer">
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>상품명</strong>
+                                </div>
+                                <!-- [운영] KMVNO-4336 20240131 NFC 예시 문구 추가 -->
+                                <div class="dlTextBox">
+                                  <!-- <p>일반유심(NFC 미지원/LTE)</p> -->
+                                  <p>NFC 유심(LTE/5G)</p>
+                                </div>
+                                <!-- //[운영] KMVNO-4336 20240131 NFC 예시 문구 추가 -->
+                              </div>
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>금액</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>8,800원</p>
+                                </div>
+                              </div>
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>주문자명</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>임태일</p>
+                                </div>
+                              </div>
+
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>연락처</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>01012345678</p>
+                                </div>
+                              </div>
+
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>이메일</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>lim@ktmyr.com</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="orderContent">
+                            <strong class="stateTitleBold">배송 정보</strong>
+                            <div class="dlContainer">
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>배송 주소</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>서울특별시 강남구 도산대로 222(논현동) 5층</p>
+                                </div>
+                              </div>
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>받는분</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>임태일</p>
+                                </div>
+                              </div>
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>연락처</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>01012345678</p>
+                                </div>
+                              </div>
+                              <div class="dlFlexArea">
+                                <div class="dlTitleBox">
+                                  <strong>배송시 요구사항</strong>
+                                </div>
+                                <div class="dlTextBox">
+                                  <p>문 앞에 부착해주세요.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary"><span>주문하기</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

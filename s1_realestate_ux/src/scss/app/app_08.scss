@@ -1,0 +1,58 @@
+//입주사 관리
+.app-content-container {
+  &.tenant-invite-container {
+    .content-middle {
+      padding: 2rem 0 3.2rem;
+    }
+  }
+}
+
+.tenant-management-container {
+  margin-top: 4rem;
+  .tenant-lists {
+    margin: -2rem;
+    border-top: 1px solid $color_ebe;
+    li {
+      border-bottom: 1px solid $color_ebe;
+      padding: 1.8rem 2rem;
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    .title-box {
+      position: relative;
+      @include flex(row, space-between, center);
+      .title {
+        @include font(1.6rem, 500, $black, 1.2);
+      }
+      .link-go-text {
+        position: absolute;
+        top: 50%;
+        right: -1rem;
+        transform: translateY(-50%);
+      }
+    }
+    .info-box {
+      margin-top: 2.5rem;
+      .label {
+        @include font(1.6rem, 400, $color_353);
+      }
+      .info {
+        margin-top: 1.1rem;
+        p {
+          @include font(1.4rem, 400, $color_7f7);
+          @include flex(row, space-between, flex-start);
+          margin-bottom: 1.1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .no-box {
+      @include flex(row, center, center);
+      height: 7.4rem;
+      @include font(1.4rem, 400, $color_7f7);
+    }
+  }
+}

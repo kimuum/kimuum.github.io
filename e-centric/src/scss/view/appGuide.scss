@@ -1,0 +1,51 @@
+.app-guide {
+  .header-container {
+    background-color: $neutral_10;
+  }
+  .content-container {
+    padding: 0 2.4rem;
+    background-color: $neutral_10;
+    .content-area {
+      height: 100%;
+    }
+  }
+}
+
+.app-guide-container {
+  height: 100%;
+  .app-guide-area {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+  }
+  .app-guide-top {
+    padding-top: 3rem;
+  }
+  .app-guide-content-box {
+    margin-top: 3rem;
+    &:first-of-type {
+      margin: 0;
+    }
+  }
+  .app-guide-title-box {
+    @include font(1.4rem, 700, $text_01, 2rem);
+    margin-bottom: 1.8rem;
+  }
+  .app-guide-bottom {
+    @include flex(row, flex-start, flex-end);
+    flex: 1;
+    margin-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .app-guide-desc-list-box {
+    @include flex(column, flex-start, flex-start);
+    gap: 1.3rem;
+    .app-guide-desc-list {
+      @include flex(row, flex-start, flex-start);
+      @include font(1.2rem, 500, $text_04, 1.6rem);
+      .ic {
+        min-width: 2rem;
+        margin-right: 0.8rem;
+      }
+    }
+  }
+}

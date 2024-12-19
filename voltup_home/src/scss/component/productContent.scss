@@ -1,0 +1,208 @@
+// 안전한 볼트업
+.product-area {
+  padding-top: 6rem;
+  .product-logo {
+    height: 4.8rem;
+    img {
+      display: block;
+      width: auto;
+      height: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+.product-content {
+  overflow: hidden;
+  margin-top: 4rem;
+  background-color: $white;
+  border-radius: 2rem;
+  .product-top {
+    @include flex(row, center, center);
+    height: 8rem;
+    padding: 2rem 0;
+    background-color: $black;
+    .product-title {
+      @include font(2.8rem, 700, $white, 1.3);
+    }
+  }
+  .product-middle {
+    @include flex(row, flex-start, center);
+    &.none-flex {
+      display: block;
+      padding: 8rem 4rem;
+    }
+    .product-thumb-box {
+      flex-shrink: 0;
+      width: 48rem;
+      height: 58rem;
+    }
+  }
+  .product-thumb-box {
+    img {
+      @include imgbox;
+    }
+  }
+  .product-info-box {
+    flex: 1;
+    padding: 0 4rem;
+  }
+  .product-info-item {
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    margin: -2rem;
+    &.icon-bg-blue {
+      .info-icon {
+        background-color: #88b8e8;
+      }
+    }
+    .info-icon {
+      overflow: hidden;
+      flex-shrink: 0;
+      width: 6rem;
+      height: 6rem;
+      margin-top: 0.6rem;
+      margin-right: 2rem;
+      border-radius: 0.8rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 3.2rem auto;
+      background-color: #eaaad2;
+      &.icon-battery {
+        background-image: image('sub_01/ic_battery.svg');
+      }
+      &.icon-volt {
+        background-image: image('sub_01/ic_volt.svg');
+      }
+      &.icon-charging {
+        background-image: image('sub_01/ic_charging.svg');
+        background-position: center bottom;
+      }
+      &.icon-stand {
+        background-image: image('sub_01/ic_stand.svg');
+      }
+      &.icon-water {
+        background-image: image('sub_01/ic_water.svg');
+      }
+      &.icon-wall {
+        background-image: image('sub_01/ic_wall.svg');
+        background-position: center bottom;
+      }
+      &.icon-safe {
+        background-image: image('sub_01/ic_safe.svg');
+      }
+      &.icon-touch {
+        background-image: image('sub_01/ic_touch.svg');
+      }
+      &.icon-ceiling {
+        background-image: image('sub_01/ic_ceiling.svg');
+        background-position: center top;
+        background-size: 4.4rem auto;
+      }
+    }
+  }
+  .info-item {
+    @include flex(row, flex-start, flex-start);
+    min-width: calc(50% - 4rem);
+    margin: 2rem;
+
+    .info-item-desc {
+      @include font(2.8rem, 500, $black, 1.45);
+      letter-spacing: -0.05rem;
+    }
+    .item-title {
+      color: $color-gray-01;
+    }
+    .item-desc {
+      white-space: pre-line;
+    }
+    .item-title,
+    .item-desc-sub {
+      font-weight: 400;
+      font-size: 1.8rem;
+    }
+  }
+}
+
+/* response */
+@media #{$pc_1440} {
+  .product-content {
+    .product-middle:not(.none-flex) {
+      .product-info-box {
+        padding: 6rem 3rem;
+      }
+    }
+    .info-item {
+      width: 100%;
+    }
+  }
+}
+@media #{$tablet_1024} {
+  .product-area {
+    padding-top: 4rem;
+    .product-logo {
+      height: 2.6rem;
+    }
+  }
+  .product-content {
+    margin-top: 2rem;
+
+    .product-top {
+      height: 5.2rem;
+      .product-title {
+        font-size: 1.6rem;
+      }
+    }
+    .product-middle:not(.none-flex) {
+      .product-info-box {
+        padding: 0 2rem 4rem;
+      }
+    }
+    .product-middle {
+      flex-direction: column;
+      &.none-flex {
+        padding: 2rem 2rem 4rem;
+        .product-info-box {
+          padding: 2rem 0 0;
+        }
+      }
+      .product-thumb-box {
+        width: auto;
+        height: 38.7rem;
+      }
+    }
+    .product-info-item {
+      margin: 0;
+      .info-icon {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-top: 0.4rem;
+        margin-right: 1rem;
+        background-size: 50% auto;
+        &.icon-ceiling {
+          background-size: 80% auto;
+        }
+      }
+    }
+    .info-item {
+      width: 100%;
+      margin: 2rem 0 0;
+
+      .info-item-desc {
+        font-size: 1.6rem;
+      }
+      .item-title,
+      .item-desc-sub {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+@media #{$tablet_768} {
+  .product-content {
+    .info-item {
+      .item-desc {
+        white-space: initial;
+      }
+    }
+  }
+}

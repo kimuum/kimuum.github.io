@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="gift_data" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="giftable_data" iweb-data="out" />
+    <input type="hidden" id="t_group" iweb-data="out" />
+    <input type="hidden" id="family" iweb-data="out" />
+    <input type="hidden" id="family_combination" iweb-data="out" />
+    <input type="hidden" id="recently_gift" iweb-data="out" />
+    <input type="hidden" id="gift_name" iweb-data="out" />
+    <input type="hidden" id="phone_number" iweb-data="in" />
+    <input type="hidden" id="inquiry_number" iweb-data="out" />
+    <input type="hidden" id="chiting_case" iweb-data="out" />
+    <input type="hidden" id="start_date" iweb-data="out" />
+    <input type="hidden" id="end_date" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper data-gift">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '데이터 선물하기',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="data-gift-container">
+              <div class="data-gift-form-area">
+                <div class="data-gift-form-box">
+                  <div class="field field-input">
+                    <div class="field-label">
+                      <span>선물 받는 분 번호</span>
+                      <button type="button" class="btn-view-recently" onclick="togglePopup('popRecentlyHistory')"><span>최근 이력 보기</span></button>
+                    </div>
+                    <div class="field-area">
+                      <input type="tel" id="phone_number_in" maxlength="11" placeholder="휴대폰번호를 입력하세요" onkeyup="javascritp:checkSend();" />
+                      <button type="button" class="btn-input-delete" title="입력 내용 삭제"></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="data-gift-form-box">
+                  <div class="data-gift-select-area">
+                    <div class="data-gift-select-title-box">
+                      <div class="field-label">선물할 데이터량</div>
+                      <div class="field-label-desc">데이터를 발송하고 나면 취소할 수 없습니다.</div>
+                    </div>
+                    <div class="data-gift-select-content-box">
+                      <div class="select-content-top">
+                        <dl>
+                          <dt>선물할 수 있는 데이터</dt>
+                          <dd class="data"></dd>
+                        </dl>
+                        <dl>
+                          <dt>선물하기 남은 횟수</dt>
+                          <dd class="type">
+                            <span class="type-txt" id="T_check">T끼리 <span id="Tgroup"></span>회</span>
+                            <span class="type-txt" id="family_check">온가족 <span id="all_family"></span>회</span>
+                            <span class="type-txt" id="family_combination_check">T가족결합 <span id="family_combo"></span></span>
+                          </dd>
+                        </dl>
+                      </div>
+                      <div class="select-content-middle">
+                        <div class="data-select-button-box">
+                          <button type="button" class="btn-data-select" id="select" data-default="true"><span>1 GB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>900 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>800 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>700 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>600 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select" data-default="true"><span>500 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>400 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select" data-default="true"><span>300 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select"><span>200 MB</span></button>
+                          <button type="button" class="btn-data-select" id="select" data-default="true"><span>100 MB</span></button>
+                        </div>
+                      </div>
+                      <div class="select-content-bottom">
+                        <button type="button" class="btn-more"><span>데이터량 더보기</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-primary" id="send-data">선물하기</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+      <!-- 데이터 선물하기 팝업 유형들 -->
+      <!-- 최근 선물한 이력 -->
+      <div class="popup" id="popRecentlyHistory">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">최근 선물한 이력</div>
+            </div>
+            <div class="popup-middle">
+              <ul class="phone-select-list-box">
+                <li class="select-list"><a href="javascript:select_number($('#first').val(),$('#first').text(),1)" id="first"></a></li>
+                <li class="select-list"><a href="javascript:select_number($('#second').val(),$('#second').text(),2)" id="second"></a></li>
+                <li class="select-list"><a href="javascript:select_number($('#third').val(),$('#third').text(),3)" id="third"></a></li>
+              </ul>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popRecentlyHistory')"><span>닫기</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 최근 선물한 이력 -->
+
+      <!-- 선물 대상 확인 팝업 -->
+      <div class="popup" id="popGiftTarget">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">선물하기</div>
+            </div>
+            <div class="popup-middle">
+              <p class="popup-text">
+                <span id="forwading_name"></span>
+                (<span id="forwarding_phone"></span>)님께 <span id="forwarding_data"></span>를 선물하시겠습니까?
+              </p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-secondary" onclick="togglePopup('popGiftTarget')"><span>취소</span></button>
+                <button type="button" class="btn btn-primary"><span>확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 선물 대상 확인 팝업 -->
+
+      <!-- 이용제한 케이스 1 -->
+      <div class="popup" id="popUseLimit01">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">데이터 선물하기 이용제한 안내</div>
+              <button type="button" class="btn-close" onclick="togglePopup('popUseLimit01')"></button>
+            </div>
+            <div class="popup-middle">
+              <div class="caution-guide-box">
+                <p class="caution-text">
+                  지금 데이터를 선물하시면 같은 달에 <span class="highlight"> 데이터 선물하기는 1회</span> 이상, <span class="highlight"> 요금제 변경은 2회</span> 이상 하시는 것입니다.
+                </p>
+                <p class="caution-text">요금제 변경은 SK텔레콤 이용약관에 따라 월 1회만 하실 수 있습니다.</p>
+                <p class="caution-text">
+                  같은 달에 데이터 선물하기와 요금제 변경을 반복하여 데이터 선물하기를 비정상적으로 이용할 경우, 이용약관에 따라 앞으로 <span class="highlight"> 데이터 선물 하기 이용이 제한</span>될
+                  수 있습니다.
+                </p>
+              </div>
+              <p class="popup-text">그래도 진행하시겠습니까?</p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-secondary" onclick="togglePopup('popUseLimit01')">중단하기</button>
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popUseLimit01'), send_data();">계속하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 이용제한 케이스 2 -->
+      <div class="popup" id="popUseLimit02">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">데이터 선물하기 이용제한 안내</div>
+              <button type="button" class="btn-close" onclick="togglePopup('popUseLimit02')"></button>
+            </div>
+            <div class="popup-middle">
+              <div class="caution-guide-box">
+                <p class="caution-text">
+                  지금 데이터를 선물하시면 같은 달에 <span class="highlight"> 데이터 선물하기는 1회</span> 이상, <span class="highlight"> 요금제 변경은 2회</span> 이상 하시는 것입니다.
+                </p>
+                <p class="caution-text">고객님께서는 최근 3개월 중 2개월 이상 같은 달에 데이터 선물하기와 요금제 변경을 반복 하셨습니다.</p>
+                <p class="caution-text">이 경우 데이터 선물하기를 비정상적으로 이용 하고 계신 것으로 판단하여, 앞으로 <span class="highlight">6개월간 데이터 선물하기를 이용하실 수 없습니다.</span></p>
+                <p class="caution-text">
+                  <span class="highlight">※ 이용할 수 없는 기간 : <span id="start"></span> ~ <span id="end"></span></span>
+                </p>
+              </div>
+              <p class="popup-text">그래도 진행하시겠습니까?</p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-secondary" onclick="togglePopup('popUseLimit02')">중단하기</button>
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popUseLimit02'), send_data();">계속하기</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 이용불가 안내 -->
+      <div class="popup" id="popUseLimit03">
+        <div class="dim"></div>
+        <div class="popup-container">
+          <div class="popup-area">
+            <div class="popup-top">
+              <div class="popup-title">데이터 선물 이용 불가</div>
+              <button type="button" class="btn-close" onclick="togglePopup('popUseLimit03')"></button>
+            </div>
+            <div class="popup-middle">
+              <div class="caution-guide-box">
+                <div class="caution-text">데이터 선물하기를 <span class="highlight">비정상적으로 이용하신 기록이 확인</span>되어, 현재 데이터를 선물하실 수 없습니다.</div>
+                <div class="caution-text">
+                  <span class="highlight">※ 이용할 수 없는 기간 : <span id="start2"></span> ~ <span id="end2"></span></span>
+                </div>
+              </div>
+              <p class="popup-text">그래도 진행하시겠습니까?</p>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary" onclick="togglePopup('popUseLimit03')"><span>확인</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        try {
+          var inquiry_number = getUrlParameter('inquiry_number');
+          var unquiry = getUrlParameter('inquiry_number');
+          var gift_name = getUrlParameter('gift_name');
+
+          /*@build-time*/ inquiry_number = '01023456789';
+          /*@build-time*/ unquiry = '01023456789';
+          /*@build-time*/ gift_name = '홍길동';
+
+          if (inquiry_number != '') {
+            var vale = inquiry_number.length < 11 ? inquiry_number.match(/\d{10}/gi) : inquiry_number.match(/\d{11}/gi);
+            inquiry_number = inquiry_number.toString().replace(vale, vale.toString().replace(/(\d{5})(\d{4})(\d{2})/gi, '$1**'));
+            $('#forwading_name').text(gift_name);
+            document.getElementById('phone_number_in').value = inquiry_number + unquiry.substr(7, 2) + '**';
+            document.getElementById('phone_number_in').innerHTML = inquiry_number + unquiry.substr(7, 2) + '**';
+            $('#phone_number').val(unquiry);
+          }
+
+          var giftable_data = getUrlParameter('giftable_data');
+          /*@build-time*/ giftable_data = '300';
+
+          if (giftable_data != '' && giftable_data != null) {
+            $('.data').text(giftable_data.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'MB');
+          }
+
+          var t_group = getUrlParameter('t_group');
+
+          if (t_group == '0' || t_group == '') {
+            $('span').remove('#T_check');
+          } else {
+            $('#Tgroup').text(t_group);
+          }
+
+          var family = getUrlParameter('family');
+
+          if (family == '0' || family == '') {
+            $('span').remove('#family_check');
+          } else {
+            $('#all_family').text(family);
+          }
+
+          var family_combo = getUrlParameter('family_combination');
+          /*@build-time*/ family_combo = '10';
+
+          if (family_combo == '0' || family_combo == '') {
+            $('span').remove('#family_combination_check');
+          } else if (family_combo == '10') {
+            $('#family_combo').text('무제한');
+          } else {
+            $('#family_combo').text(family_combo);
+          }
+
+          var recently_gift = getUrlParameter('recently_gift');
+          /*@build-time*/ recently_gift = '01012344567|01056567878|010178789090';
+          var arr = recently_gift.split('|');
+          var arr2 = recently_gift.split('|');
+          var maskingStr;
+          for (var i = 0; i < arr.length; i++) {
+            var a = arr[i].length < 11 ? arr[i].match(/\d{10}/gi) : arr[i].match(/\d{11}/gi);
+            arr[i] = arr[i].toString().replace(a, a.toString().replace(/(\d{5})(\d{4})(\d{2})/gi, '$1**')) + arr[i].substr(7, 2) + '**';
+          }
+
+          var start_date = getUrlParameter('start_date');
+          var end_date = getUrlParameter('end_date');
+
+          /*@build-time*/ start_date = '2024.04.08';
+          /*@build-time*/ end_date = '2024.04.08';
+
+          var st_date = common.date.format(common.date.parseDate(start_date), 'yyyy.MM.dd');
+          var en_date = common.date.format(common.date.parseDate(end_date), 'yyyy.MM.dd');
+
+          $('#start').text(st_date);
+          $('#end').text(en_date);
+
+          $('#start2').text(st_date);
+          $('#end2').text(en_date);
+
+          $('#first').val(arr2[0]);
+          $('#second').val(arr2[1]);
+          $('#third').val(arr2[2]);
+          $('#first').text(arr[0]);
+          $('#second').text(arr[1]);
+          $('#third').text(arr[2]);
+
+          var chiting_case = getUrlParameter('chiting_case');
+          if (chiting_case == '3') {
+            $('#send-data').prop('disabled', true);
+          }
+        } catch (e) {}
+      });
+
+      // 데이터량 더보기
+      $('.btn-more').on('click', function () {
+        var $dataGiftContentBox = $(this).closest('.data-gift-select-content-box');
+        var $btnDataSelect = $dataGiftContentBox.find('.btn-data-select');
+
+        if (!$dataGiftContentBox.hasClass('active')) {
+          $dataGiftContentBox.addClass('active');
+          $btnDataSelect.addClass('show');
+          $(this).find('span').text('데이터량 접기');
+        } else {
+          $dataGiftContentBox.removeClass('active');
+          $btnDataSelect.removeClass('show');
+          $(this).find('span').text('데이터량 더보기');
+        }
+      });
+
+      // 선물하기 확인 팝업
+      $('#send-data').on('click', function () {
+        send_data();
+      });
+
+      // 보낼 데이터 체크 및 셋팅
+      function send_data() {
+        var phone_check = $('#phone_number').val();
+        var data_check = $('#gift_data').val();
+
+        var phone = $('#phone_number').val();
+        var vale = phone.length < 11 ? phone.match(/\d{10}/gi) : phone.match(/\d{11}/gi);
+
+        if (phone_check == '' || phone_check.length < 11) {
+          jAlert('<p class="popup-alert-text">선물 받는 분 번호를 다시 확인해 주세요.</p>', '');
+        }
+
+        if (data_check == '') {
+          jAlert('<p class="popup-alert-text">선물할 데이터를 선택해 주세요.</p>', '');
+        }
+        phone = phone.toString().replace(vale, vale.toString().replace(/(\d{5})(\d{4})(\d{2})/gi, '$1**'));
+
+        document.getElementById('forwarding_data').innerHTML = data_check;
+        document.getElementById('forwarding_phone').innerHTML = phone + phone_check.substr(7, 2) + '**';
+
+        $('#popGiftTarget').addClass('show');
+      }
+
+      $('.btn-data-select').on('click', function (e) {
+        var chiting_case = getUrlParameter('chiting_case');
+        /*@build-time*/ chiting_case = '3';
+
+        if (chiting_case == '1') {
+          $('#popUseLimit01').addClass('show');
+        } else if (chiting_case == '2') {
+          $('#popUseLimit02').addClass('show');
+        } else if (chiting_case == '3') {
+          $('#popUseLimit03').addClass('show');
+        }
+
+        e.preventDefault();
+        $('.btn-data-select').removeClass('active');
+        $(this).addClass('active');
+        $('#gift_data').val($(this).text().replace(/(\s*)/g, ''));
+      });
+
+      // 선물 받는 분 번호 입력 인풋
+      $('#phone_number_in').on('keyup', function () {
+        if ($(this).val().length > 0) {
+          $(this).siblings('.btn-input-delete').addClass('show');
+        } else {
+          $(this).siblings('.btn-input-delete').removeClass('show');
+        }
+      });
+
+      $('.btn-input-delete').on('click', function () {
+        $(this).prev().val('');
+        $(this).removeClass('show');
+      });
+
+      $('#popGiftTarget .btn-primary').on('click', function (e) {
+        e.preventDefault();
+        $('#popGiftTarget').removeClass('show');
+
+        var phone_number = $('#phone_number').val();
+        var index_data = parseInt($('#gift_data').val());
+
+        if (index_data == 1) {
+          $('#gift_data').val('1000');
+        } else {
+          $('#gift_data').val(index_data);
+        }
+        $('#phone_number').val(phone_number);
+        sendRepPageData('선물하기', 'RT', 'menu');
+      });
+
+      function checkSend() {
+        var num = $('#phone_number_in').val();
+
+        if (num.length > 10) {
+          $('#phone_number').val(num);
+          sendRepPageData('조회', 'SE', 'menu');
+        } else {
+          $('#phone_number').val(num);
+        }
+      }
+
+      function select_number(phone, phone_text, check_name) {
+        var phone_number = phone;
+        var name = check_name;
+        var gift_name = getUrlParameter('gift_name');
+        var inquiry = getUrlParameter('inquiry');
+        var arr = gift_name.split('|');
+
+        if (name == 1) {
+          $('#forwading_name').text(arr[0]);
+        } else if (name == 2) {
+          $('#forwading_name').text(arr[1]);
+        } else if (name == 3) {
+          $('#forwading_name').text(arr[2]);
+        }
+
+        $('#phone_number_in').val(phone_text);
+        $('#phone_number').val(phone_number);
+        sendRepPageData('조회', 'SE', 'menu');
+      }
+    </script>
+  </body>
+</html>

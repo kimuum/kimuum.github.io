@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "사업자 약관 관리 | 서비스 관리 | " , "headProjectName": "통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <span>사업자 약관 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>서비스 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>사업자 약관 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      사업자, 필수여부, 약관명 검색
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">사업자</th>
+                        <td>
+                          <div class="btnFilterBiz">
+                            <div class="input">
+                              <input type="text" value="전체" title="사업자 필터에서 선택 할 수 있습니다." readonly />
+                            </div>
+                            <button type="button" class="btn" title="새창열림"><span>사업자 필터</span></button>
+                          </div>
+                        </td>
+                        <th scope="row">필수여부</th>
+                        <td>
+                          <div class="select">
+                            <select title="필수여부">
+                              <option value="">전체</option>
+                              <option value="">전체</option>
+                              <option value="">전체</option>
+                              <option value="">전체</option>
+                            </select>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">약관명</th>
+                        <td colspan="3">
+                          <div class="input">
+                            <input type="text" value="" title="약관명 입력" placeholder="약관명을 입력해주세요." />
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <div class="resultContainer">
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">
+                      <span class="bar">총 123개 </span>
+                    </h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer alignCenter">
+                    <table>
+                      <caption>
+                        약관 목록 - No, 사업자 브랜드명, 약관명, 필수여부, 개정일, 노출일, 최근 등록일, 등록자
+                      </caption>
+                      <!-- [2차BO] 20220908 사용여부 삭제 -->
+                      <colgroup>
+                        <col style="width: 62px" />
+                        <col style="width: 150px" />
+                        <col style="width: 250px" />
+                        <col style="width: 100px" />
+                        <col style="width: 140px" />
+                        <col style="width: 140px" />
+                        <!-- [2차BO] 20220908 사용여부 삭제 -->
+                        <col style="width: 140px" />
+                        <col style="width: 140px" />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">사업자 브랜드명</th>
+                          <th scope="col">약관명</th>
+                          <th scope="col">필수여부</th>
+                          <th scope="col">개정일</th>
+                          <th scope="col">노출일</th>
+                          <!-- [2차BO] 20220908 사용여부 삭제 -->
+                          <th scope="col">최근 등록일</th>
+                          <th scope="col">등록자</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>114</td>
+                          <td>KT 엠모바일</td>
+                          <td>
+                            <a href="#" class="linkPrimary">서비스 이용약관</a>
+                          </td>
+                          <td>필수</td>
+                          <td>2022-01-01</td>
+                          <td>2022-01-01</td>
+                          <!-- [2차BO] 20220908 사용여부 삭제 -->
+                          <td>2022-08-08</td>
+                          <td>임태*(12345***)</td>
+                        </tr>
+                        <tr>
+                          <td>113</td>
+                          <td>KT 엠모바일</td>
+                          <td>
+                            <a href="#" class="linkPrimary">번호이동 시 이전 통신사의 잔여요금 및 환급금 납부방법 동의</a>
+                          </td>
+                          <td>필수</td>
+                          <td>2022-01-01</td>
+                          <td>2022-01-01</td>
+                          <td>2022-08-08</td>
+                          <td>임태*(12345***)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="contentBottom">
+                  <div class="pagenation">
+                    <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                    <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                    <button type="button" class="numPageBtn"><span>2</span></button>
+                    <button type="button" class="numPageBtn"><span>3</span></button>
+                    <button type="button" class="numPageBtn"><span>4</span></button>
+                    <button type="button" class="nextPageBtn" title="다음"></button>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

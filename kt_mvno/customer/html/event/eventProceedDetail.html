@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "이벤트 상세 | 진행중 이벤트 | 이벤트", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : eventProceedDetail -->
+    <div class="wrap detail eventProceedDetail">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>이벤트 상세</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>이벤트</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>진행중 이벤트</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_event.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>이벤트 상세</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner">
+            <div class="boardContainer typeDetail">
+              <div class="boardHead">
+                <div class="boardTitleWrap">
+                  <h3 class="fieldTitle01">[2월] 바로배송유심</h3>
+                  <div class="shareContainer">
+                    <div class="shareTitle">
+                      <button type="button" class="shareBtn" aria-expanded="false"><span>공유 목록</span></button>
+                    </div>
+                    <ul class="shareContent">
+                      <li>
+                        <button type="button" class="btnShare" title="새 창 열림"><span>URL 복사</span></button>
+                      </li>
+                      <li>
+                        <button type="button" class="btnShare" title="새 창 열림"><span>카카오톡으로 공유</span></button>
+                      </li>
+                      <li>
+                        <button type="button" class="btnShare" title="새 창 열림"><span>페이스북으로 공유</span></button>
+                      </li>
+                      <li>
+                        <button type="button" class="btnShare" title="새 창 열림"><span>트위터로 공유</span></button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="boardInfoWrap">
+                  <div class="date">2022.02.11 ~ 2022.02.28</div>
+                  <span class="view"
+                    ><span class="iconBgView"><span class="ir">조회수</span></span
+                    >624,348</span
+                  >
+                </div>
+              </div>
+              <div class="boardBody">
+                <!-- imgDetailWrap 영역은 디자인이 반영된 참고 이미지 입니다. -->
+                <div class="imgDetailWrap">
+                  <img class="pcType" src="../../assets/images/event/img_event_detail_thumbnail.png" alt="" />
+                  <img class="moType" src="../../assets/images/event/img_event_detail_thumbnail_mo.png" alt="" />
+                </div>
+              </div>
+              <div class="boardFoot">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSizeMiddle"><span>목록으로</span></button>
+                </div>
+              </div>
+              <div class="character03"></div>
+            </div>
+          </section>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

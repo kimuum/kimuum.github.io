@@ -1,0 +1,1246 @@
+// ------- 고객지원 ------- //
+[class*=customerSupport] {
+  .contentArea {
+    padding-bottom: 18.2rem;
+  }
+}
+.boardContainer {
+  position: relative;
+  @include whiteBorderBox(7rem);
+  box-shadow: 0px 2px 6px rgba($black, 0.04), 0px 0px 1px rgba($black, 0.04);
+  word-break: break-word;
+  word-wrap: break-word;
+  // title
+  .boardTitleWrap {
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    margin-bottom: 1.6rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .fieldTitle01 {
+      font-size: 2.8rem;
+    }
+  }
+  .boardInfoWrap {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+  }
+  .date {
+    @include flex(row, flex-start, center);
+    @include font(1.6rem, normal, $color-gray-05, 2);
+    &:before {
+      content: '';
+      display: block;
+      width: 0.1rem;
+      height: 1.1rem;
+      margin: 0 1.1rem;
+      background-color: $bgcolor-gray-08;
+    }
+    &:first-child, &:only-of-type {
+      &:before {
+        display: none;
+      }
+    }
+    .dateTitle {
+      display: block;
+      margin-right: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  .view {
+    @include flex(row, flex-start, center);
+    @include font(1.4rem, normal, $color-gray-05, 2);
+    &:before {
+      content: '';
+      display: block;
+      width: 0.1rem;
+      height: 1.1rem;
+      margin: 0 0.8rem 0 1.1rem;
+      background-color: $bgcolor-gray-08;
+    }
+    .iconBgView {
+      display: block;
+      width: 2.4rem;
+      height: 2.4rem;
+      margin-right: 0.4rem;
+    }
+  }
+  // list counter
+  .counter {
+    @include font(1.4rem, normal, $color-gray-04, 1.4);
+  }
+  // table
+  .tableContainer {
+    .date {
+      justify-content: center;
+      &:before {
+        display: none;
+      }
+    }
+  }
+  // board body
+  .boardBody {
+    margin-bottom: 5rem;
+  }
+  // board foot
+  .boardFoot {
+    .moType {
+      display: none;
+    }
+    .buttonArea {
+      @include flex(row, flex-end, center);
+    }
+    .btn {
+      flex: 0;
+      &.btnSizeMiddle {
+        min-width: 13.6rem;
+        height: 4.4rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  /* 아코디언 - FAQ , 상담 문의 내역 */
+  .supportContainer {
+    .supportTop {
+      @include flex(row, flex-start, center);
+      padding-bottom: 3.5rem;
+      border-bottom: 2px solid $black;
+      @include font(2.4rem, bold, $black, 1.4);
+      &.spaceBetween {
+        justify-content: space-between;
+      }
+    }
+    .supportMiddle {
+      border-top: 1px solid $bgcolor-gray-08;
+    }
+    
+    .supportBottom {
+      margin-top: 4rem;
+    }
+    .supportTitle {
+      @include flex(row, space-between, center);
+      position: relative;
+      min-height: 7.5rem;
+      padding: 2.6rem 5rem 2.6rem 2rem;
+      background: image('common/arrow_line_down.svg') no-repeat right 2rem center;
+      border-bottom: 1px solid $bgcolor-gray-08;
+      .supportBtn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: all .5s;
+        &[aria-expanded="true"] {
+          color: $primary;
+        }
+        & > span {
+          @include ir;
+        }
+      }
+      .title {
+        @include flex(row, flex-start, flex-start);
+        width: 100%;
+        flex-wrap: wrap;
+        @include font(1.6rem, normal, $color-gray-06, 1.4);
+      }
+      .titleHead {
+        @include flex(row, flex-start, flex-start);
+      }
+      .titleBody {
+        max-width: 73rem;
+        word-break: break-word;
+        word-wrap: break-word;
+      }
+      .titleFoot {
+        @include flex(row, flex-start, center);
+        margin-left: auto;
+        @include font(1.6rem, normal, $color-gray-04, 1.4);
+        .date {
+          margin-left: 2rem;
+        }
+      }
+      .state {
+        @include flex(row, center, center);
+        height: 2.3rem;
+        padding: 0 0.5rem;
+        margin-left: 2rem;
+        border: 1px solid $color-gray-04;
+        border-radius: 0.3rem;
+        @include font(1.4rem, bold, $color-gray-04);
+        white-space: nowrap;
+        &.complate {
+          border-color: $primary;
+          color: $primary;
+        }
+      }
+      .bigTitle { // Q
+        display: block;
+        margin-right: 0.5rem;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 0.8;
+      }
+      .tabName, .type {
+        margin-right: 2rem;
+        font-weight: bold;
+      }
+      .tabName {
+        min-width: 4.6rem;
+        color: $primary;
+      }
+      .type {
+        min-width: 11rem;
+        color: $black;
+      }
+    }
+    .supportContent {
+      display: none;
+      min-height: 8.1rem;
+      padding: 2.6rem 2rem;
+      background-color: $bgcolor-gray-05;
+      .textWrap {
+        @include flex(row, flex-start, flex-start);
+        margin-bottom: 1.6rem;
+        @include font(1.6rem, normal, $color-gray-06, 1.4);
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .faqArrow {
+        display: block;
+        position: relative;
+        top: -0.5rem;
+        min-width: 5.6rem;
+        height: 2rem;
+        margin-left: 1rem;
+        background: image('common/arrow_dashed_orange.svg') no-repeat left center;
+      }
+      .faqArrow, .textHead {
+        margin-right: 2rem;
+        font-weight: bold;
+      }
+      .textHead {
+        min-width: 10.4rem;
+        @include font(2rem, bold, $color-gray-04);
+      }
+      .textBody {
+        flex: 1;
+        max-width: calc(100% - 10.4rem);
+        word-break: break-word;
+        word-wrap: break-word;
+      }
+    }
+    .supportArea {
+      &:first-child {
+        border-top: 0;
+      }
+      &.active {
+        .supportTitle {
+          background-image: image('common/arrow_line_up.svg');
+          background-color: $bgcolor-gray-03;
+        }
+        .supportContent {
+          display: block;
+        }
+      }
+    }
+  }
+  
+  //목록
+  &.typeList {
+    // board head
+    .boardHead {
+      padding-bottom: 1.6rem;
+      border-bottom: 2px solid $black;
+    }
+  }
+  //상세
+  &.typeDetail {
+    margin-top: 7rem;//캐릭터 상단 여백
+    // board head
+    .boardHead {
+      margin-bottom: 2.8rem;
+    }
+    // board body
+    .boardBody {
+      padding: 4rem 3rem;
+      border-top: 2px solid $border-color-02;
+      @include font(1.6rem, normal, $black, 1.4);
+      
+      //참고이미지
+      .imgDetailWrap {
+        > img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .moType {
+          display: none;
+        }
+      }
+    }
+    // board foot
+    .boardFoot {
+      padding-top: 1.2rem;
+      margin-bottom: 1rem;
+      border-top: 2px solid $border-color-02;
+    }
+  }
+}
+/* 고객상담 */
+.customerSupportService {
+  .boardContainer {
+    .supportContainer {
+      .supportTitle {
+        .title {
+          align-items: center;
+        }
+      }
+      .supportContent {
+        .textHead {
+          min-width: 6.4rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+/* 검색바 */
+.searchContainer {
+  legend {
+    @include ir;
+  }
+  .searchBar {
+    position: relative;
+    z-index: 0;
+    padding: 5.4rem 0 6.7rem;
+    margin: 0 auto;
+    background-color: $white;
+    box-sizing: border-box;
+  }
+}
+.searchTitle {
+  display: none;
+  margin-top: 0.6rem;
+  margin-bottom: 1.3rem;
+  @include font(1.8rem, bold, $black, 1.3);
+}
+.searchInput {
+  position: relative;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  .input {
+    input {
+      height: 4.9rem;
+      padding-left: 0;
+      padding-right: 10rem;
+      border: 0;
+      border-bottom: 1px solid $border-color-02;
+      border-radius: 0;
+    }
+  }
+  .btnSearch {
+    position: absolute;
+    display: none;
+    right: -1rem;
+    top: 50%;
+    width: 4.9rem;
+    height: 4.9rem;
+    padding: 1rem;
+    transform: translateY(-50%);
+    background: image('common/icon_search_black.svg') no-repeat center;
+    &:hover {
+      background: image('common/icon_search_cyan.svg') no-repeat center;
+    }
+    &:disabled {
+      opacity: 0.5;
+      &:hover {
+        background: image('common/icon_search_black.svg') no-repeat center;
+      }
+    }
+    & > span {
+      @include ir;
+    }
+  }
+  .btnRemove {
+    position: absolute;
+    display: none;
+    right: -1rem;
+    top: 50%;
+    right: 4rem;
+    width: 4.9rem;
+    height: 4.9rem;
+    padding: 1rem;
+    transform: translateY(-50%);
+    background: image('common/icon_search_remove.svg') no-repeat center;
+    & > span {
+      @include ir;
+    }
+  }
+  .show {
+    display: block;
+  }
+}
+
+/* FAQ */
+.customerSupportFaq {
+  .contentArea {
+    padding-top: 10rem;
+  }
+}
+
+/* 문의 내역 */
+.customerSupportService {
+  .contentArea {
+    padding-top: 12.7rem;
+  }
+}
+
+/* 상담 문의하기 */
+/* 고객센터 안내 */
+.customerSupportAbout {
+  .contentArea {
+    padding-top: 0;
+  }
+}
+.centerContainer {
+  .centerList {
+    @include flex(row, space-between, flex-start);
+    align-items: stretch;
+    flex-wrap: wrap;
+    & > li {
+      width: calc(50% - 1rem);
+      margin-bottom: 2rem;
+    }
+  }
+  .centerArea {
+    @include flex(row, flex-start, flex-start);
+    min-height: 100%;
+    padding: 2.7rem 3rem;
+    background-color: $white;
+    border: 1px solid $border-color-02;
+    border-radius: 1.2rem;
+  }
+  .centerLeft {
+    margin-right: 3rem;
+  }
+  .centerRight {
+    width: calc(100% - 23.6rem);
+  }
+  .imgWrap {
+    @include flex(row, center, center);
+    overflow: hidden;
+    width: 20.6rem;
+    height: 12rem;
+  }
+  .moType {
+    display: none;
+  }
+  .centerTop {
+    min-height: 2.3rem;
+    padding-bottom: 0.7rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid $black;
+  }
+  .centerTitle {
+    @include font(1.6rem, bold, $black, 1.4);
+  }
+  .centerInfo {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    [class*=iconBg] {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.2rem;
+    }
+    .text {
+      @include flex(row, flex-start, center);
+      margin-right: 1rem;
+      margin-bottom: 0.8rem;
+      @include font(1.6rem, normal, $color-gray-06, 1.4);
+      p {
+        min-width: 9.4rem;
+      }
+    }
+  }
+  .centerUrl {
+    @include font(1.6rem, normal, $primary, 1.4);
+    text-decoration: underline;
+    word-break: break-word;
+    word-wrap: break-word;
+  }
+}
+
+/* 이용가이드 */
+.customerSupportGuide {
+  .contentArea {
+    padding-top: 0;
+    padding-bottom: 26rem;
+  }
+  .introContainer {
+    background-color: $bgcolor-gray-03;
+    .contentInner:after {
+      background-color: $bgcolor-gray-05;
+    }
+  }
+}
+.customerVisualArea {
+  height: 49rem;
+  background: image('customer/thumbnail_visual.png') no-repeat center/cover;
+  .contentInner {
+    @include flex(column, center, flex-start);
+    height: 100%;
+  }
+  .customerVisualTop {
+    margin-bottom: 1rem;
+    .visualTitle {
+      @include font(3.4rem, bold, $black, 1.7);
+    }
+  }
+  .visualText {
+    @include font(1.8rem, normal, $color-gray-04);
+  }
+}
+.introContainer {
+  position: relative;
+  padding-top: 14.5rem;
+  background-color: $bgcolor-gray-05;
+  .contentInner {
+    @include flex(column, center, center);
+    position: relative;
+    max-width: 100%;
+    padding: 0;
+    padding-bottom: 12rem;
+    // &:after {
+    //   content: '';
+    //   z-index: 0;
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    //   width: 100%;
+    //   height: 43.5%;
+    //   background-color: $bgcolor-gray-03;
+    // }
+  }
+}
+.introTitleWrap {
+  width: 100%;
+  margin-bottom: 10.2rem;
+  text-align: center;
+  word-break: keep-all;
+  .introTitle {
+    margin-bottom: 3.6rem;
+    @include font(4.8rem, 300, $black, 1.4);
+    > strong {
+      display: block;
+      font-size: 5rem;
+    }
+  }
+  .titleDesc {
+    @include font(2rem, 300, $color-gray-04, 1.5);
+  }
+}
+.introVisualWrap {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  [class*=speechBallon] {
+    position: absolute;
+    background-color: rgba(255,255,255,0.8);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      border: 20px solid rgba(255,255,255,0.8);
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      border-right-color: transparent;
+    }
+    > strong {
+      display: block;
+      margin-bottom: 1.6rem;
+      @include font(2.8rem, bold, $primary, 1.5);
+    }
+    > p {
+      @include font(1.4rem, 300, $color-gray-05, 1.5);
+    }
+  }
+  .speechBallonLeft {
+    top: 11.1rem;
+    left: 6%;
+    padding: 3.9rem 9rem 4.5rem 4.5rem;
+    border-radius: 1.2rem 1.2rem 0 1.2rem;
+    &:after {
+      right: -20px;
+      transform: rotate(135deg);
+    }
+  }
+  .speechBallonRight {
+    right: 10%;
+    bottom: 11.1rem;
+    padding: 3.9rem 4.5rem 4.5rem 9rem;
+    border-radius: 1.2rem 1.2rem 1.2rem 0;
+    &:after {
+      left: -20px;
+      transform: rotate(45deg);
+    }
+  }
+}
+.videoList {
+  line-height: 0;
+  .videoWrap {
+    padding-bottom: 14rem;
+  }
+}
+.videoWrap {
+  .accordionContainer {
+    min-height: 5.7rem;
+    .accordionMiddle {
+      position: relative;
+    }
+    &.borderType {
+      .accordionArea {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        background-color: $bgcolor-gray-03;
+        border-color: $black;
+        border-radius: 0 0 1.2rem 1.2rem;
+        &.active {
+          @include flex(column-reverse, flex-start, flex-start);
+          bottom: -33.24rem;
+          .accordionTitle {
+            border-top: 1px solid $border-color-02;
+            background-color: none;
+            .unfold {
+              display: none;
+            }
+            .fold {
+              display: block;
+            }
+            &::after {
+              background: image('common/arrow_toggle_up.svg') no-repeat center;
+            }
+          }
+        }
+      }
+      .accordionTitle {
+        justify-content: center;
+        width: 100%;
+        height: 5.5rem;
+        padding: 1.6rem;
+        background-image: none;
+        font-size: 1.6rem;
+        font-weight: bold;
+        .fold {
+          display: none;
+        }
+        &::after {
+          content: '';
+          flex-shrink: 0;
+          width: 1.1rem;
+          height: 0.7rem;
+          margin-left: 1.1rem;
+          background: image('common/arrow_toggle_down.svg') no-repeat center;
+        }
+      }
+      .accordionContent {
+        overflow-y: auto;
+        width: 100%;
+        max-height: 27.6rem;
+        padding: 3rem;
+        background-color: $white;
+        &:focus-visible {
+          outline: 2px solid $black;
+        }
+      }
+    }
+  }
+  .nodataContainer {
+    padding: 16rem 2rem;
+    @include font(2.4rem, normal, $secondary, 1.4);
+    text-align: center;
+    .character08 {
+      display: block;
+      max-width: 25.5rem;
+      margin: 0 auto 4.5rem;
+    }
+  }
+}
+.videoTitle {
+  margin-bottom: 3rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid $black;
+  @include font(2.4rem, bold, $black);
+}
+.videoArea {
+  .video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (#{$pc-middle}) {
+  /* 이용가이드 */
+  .introTitleWrap {
+    margin-bottom: 5rem;
+  }
+}
+@media (#{$pc-small}) {
+  /* 고객센터안내 */
+  .centerContainer {
+    .centerArea {
+      display: block;
+    }
+    .centerLeft {
+      margin: 0 auto;
+    }
+    .centerRight {
+      width: 100%;
+    }
+  }
+
+  /* 이용가이드 */
+  .character06 {
+    display: none;
+  }
+
+  /* 소개 */
+  .introContainer {
+    .contentInner {
+      &:after {
+        height: 44.5%;
+      }
+    }
+  }
+  .introVisualWrap {
+    padding: 10rem 0 6rem;
+    .imgWrap {
+      max-width: 70%;
+      margin-left: 2rem;
+    }
+    [class*=speechBallon] {
+      width: 100%;
+      max-width: 54rem;
+      min-height: 16rem;
+      text-align: center;
+      &:after {
+        border: 10px solid rgba(255,255,255,0.8);
+        border-left-width: 14px;
+        border-top-color: transparent;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+      }
+      & > strong {
+        margin-bottom: 0.8rem;
+        font-size: 2rem;
+      }
+      & > p {
+        font-size: 1.3rem;
+      }
+    }
+    .speechBallonLeft {
+      top: 0;
+      left: 50%;
+      padding: 2.5rem 1rem;
+      transform: translateX(-50%);
+      border-radius: 1.2rem;
+      &:after {
+        right: 46%;
+        bottom: -10px;
+        transform: rotate(90deg) translateX(50%);
+      }
+    }
+    .speechBallonRight {
+      right: 50%;
+      bottom: 0;
+      padding: 2.5rem 1rem;
+      transform: translateX(50%);
+      border-radius: 1.2rem;
+      &:after {
+        top: -34px;
+        left: 46%;
+        bottom: auto;
+        transform: rotate(-90deg) translateX(-50%);
+      }
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  /* 공통 */
+  [class*=customerSupport] {
+    .contentArea {
+      padding-top: 2rem;
+      padding-bottom: 0;
+    }
+    &.customerSupportServiceApply {
+      .contentArea {
+        padding-bottom: 7rem;
+      } 
+    }
+    &.customerSupportGuide {
+      .contentArea {
+        padding-top: 0;
+      }
+    }
+    &.customerSupportNoticeDetail {
+      .contentArea {
+        padding-top: 7rem;
+      }
+    }
+  }
+  /* Board */
+  .boardContainer {
+    // padding: 3rem 3rem 8rem;
+    margin: 0 -2rem;
+    padding: 0 0 8rem;
+    border: 0;
+    border-radius: 0;
+    .boardFoot {
+      margin-bottom: 0;
+      .pcType {
+        display: none;
+      }
+      .moType {
+        display: flex;
+      }
+    }
+    .supportContainer {
+      // margin: 0 0 -2rem;
+      .supportTop {
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 0;
+        font-size: 2rem;
+        .buttonArea {
+          // order: -1;
+          width: 100%;
+          padding: 2rem;
+          background-color: $white;
+          // border-bottom: 2rem solid $bgcolor-gray-05;
+        }
+        .title {
+          width: 100%;
+          padding: 2rem 2rem 0;
+          &:focus-visible {
+            outline: 2px solid $black;
+          }
+        }
+      }
+      .supportTitle {
+        padding: 2rem 4.9rem 2rem 4rem;
+        .title {
+          flex-wrap: wrap;
+          font-size: 1.4rem;
+        }
+        .tabName {
+          min-width: 0;
+          margin-right: 0.5rem;
+        }
+        .type {
+          margin-right: 0;
+        }
+        .bigTitle {
+          position: absolute;
+          top: 50%;
+          left: 2rem;
+          transform: translate(0, -50%);
+        }
+        .titleHead {
+          margin-bottom: 0.2rem;
+        }
+        .titleBody {
+          width: 100%;
+        }
+      }
+      .supportContent {
+        font-size: 1.4rem;
+        .faqArrow {
+          display: none;
+        }
+        .textHead {
+          min-width: 0;
+        }
+        .textWrap {
+          font-size: 1.4rem;
+        }
+        .textBody {
+          max-width: calc(100% - 3.5rem);
+        }
+      }
+    }
+    .boardTitleWrap {
+      display: block;  
+      margin-bottom: 1rem;
+      .fieldTitle01 {
+        font-size: 2.4rem;
+      }
+      .date {
+        display: block;
+      }
+    }
+    .date {
+      font-size: 1.4rem;
+    }
+
+    /* 공지사항 목록 */
+    &.typeList {
+      .boardHead {
+        padding: 2rem 2rem 1rem;
+        margin-bottom: 0;
+      }
+    }
+    &.typeDetail {
+      margin-top: 5rem;//캐릭터 상단 여백
+      padding: 2rem 2rem 5rem;
+      .boardHead {
+        margin-bottom: 2.4rem;
+      }
+      .boardBody {
+        padding: 2.4rem 0;
+        .imgDetailWrap {
+          .pcType {
+            display: none;
+          }
+          .moType {
+            display: block;
+          }
+        }
+        img {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+      }
+    }
+    .nodataContainer {
+      text-align: center;
+    }
+  }
+  /* 검색바 */
+  .searchContainer {
+    legend {
+      display: none !important;
+    }
+    .searchBar {
+      width: calc(100% - 4rem);
+      margin: 0 2rem;
+      padding: 1.8rem 0 3rem;
+    }
+  }
+  .searchInput {
+    .input {
+      input {
+        padding-right: 8rem;
+      }
+    }
+    .btnRemove {
+      right: 3rem;
+    }
+  }
+  .searchTitle {
+    display: block;
+  }
+  .searchInput {
+    .btnSearch {
+      background-size: 22px auto;
+      &:hover {
+        background-size: 22px auto;
+      }
+      &:focus,
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+  /* 문의 내역 */
+  .customerSupportService {
+    .contentArea {
+      padding-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+@media (#{$foldMax}) {
+  /* 공통 */
+  [class*=customerSupport] {
+    &.customerSupportNoticeDetail {
+      .contentArea {
+        padding-top: 3rem;
+      }
+    }
+  }
+  .boardContainer {
+    &.typeDetail {
+      margin-top: -3rem;//상단 여백
+    }
+  }
+  /* 문의 내역 */
+  .customerSupportService {
+    .boardContainer {
+      .supportContainer {
+        .supportTitle {
+          padding: 2rem 4rem 2rem 2rem;
+          background-position: right 2rem bottom 2rem;
+          .title {
+            font-size: 1.3rem;
+          }
+          .titleBody {
+            order: 2;
+          }
+          .titleFoot {
+            font-size: 1.3rem;
+            .date {
+              margin-left: 1rem;
+            }
+            .state {
+              margin-left: 1rem;
+              font-size: 1.3rem;
+            }
+          }
+        }
+        .supportContent {
+          padding: 2.4rem 2rem;
+        }
+      }
+    }
+  }
+  
+  /* 고객센터안내 */
+  .centerContainer {
+    .pcType {
+      display: none;
+    }
+    .moType {
+      display: block;
+    }
+    .centerList {
+      & > li {
+        width: 100%;
+      }
+    }
+    .centerArea {
+      padding: 1.6rem 2rem 3rem;
+    }
+    .imgWrap {
+      width: 18rem;
+      height: 10.4rem;
+    }
+    .centerTop {
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+    .centerTitle {
+      font-size: 1.4rem;
+    }
+    .centerInfo {
+      margin-bottom: 1.1rem;
+      .text {
+        font-size: 1.4rem;
+      }
+      [class*=iconBg] {
+        width: 1.8rem;
+        height: 1.8rem;
+        background-size: cover;
+      }
+    }
+    .centerUrl {
+      font-size: 1.4rem;
+    }
+  }
+  /* 이용가이드 */
+  .customerSupportGuide {
+    .contentArea {
+      padding-top: 0;
+      padding-bottom: 5.5rem;
+    }
+  }
+  .customerVisualArea {
+    height: 20rem;
+    background: image('customer/thumbnail_visual_mo.png') no-repeat center/cover;
+    .customerVisualTop {
+      .visualTitle {
+        font-size: 2.2rem;
+        line-height: 1.3;
+      }
+    }
+    .visualText {
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+    .moBlock {
+      display: block;
+    }
+  }
+  /* 소개 */
+  .introVisualWrap {
+    [class*=speechBallon] {
+      min-height: 14rem;
+    }
+    .speechBallonLeft,
+    .speechBallonRight {
+      padding: 2rem 1rem 1rem;
+    }
+  }
+  .introContainer {
+    padding-top: 4rem;
+    .contentInner {
+      padding: 0 2rem 8rem;
+    }
+  }
+  .introTitleWrap {
+    .introTitle {
+      margin-bottom: 2.4rem;
+      font-size: 2.8rem;
+      > strong {
+        font-size: 3rem;
+      }
+    }
+    .titleDesc {
+      font-size: 1.6rem;
+    }
+  }
+  .videoList {
+   .videoWrap {
+      padding-bottom: 7rem;
+   } 
+  }
+  .videoWrap {
+    .accordionContainer {
+      &.borderType {
+        .accordionTitle {
+          padding: 1.25rem;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .nodataContainer {
+      padding: 3.2rem 2rem;
+      font-size: 1.4rem;
+      .character08 {
+        max-width: 7.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  .videoTitle {
+    margin-bottom: 1.4rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+  }
+}
+
+@media (#{$mobile}) {
+  /* 당첨자 발표 상세 */
+  .eventWinDetail {
+    .boardContainer {
+      .boardInfoWrap {
+        display: block;
+      }
+      .date {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* 고객상담 */
+  .customerSupportService {
+    .boardContainer {
+      .supportContainer {
+        .supportTitle {
+          .type {
+            min-width: 0;
+          }
+        }
+        .supportContent {
+          .textHead {
+            min-width: 0;
+          }
+          .textBody {
+            max-width: calc(100% - 6rem);
+          }
+        }
+      }
+    }
+  }
+
+  /* 소개 */
+  .introContainer {
+    .contentInner {
+      &:after {
+        height: 41.5%;
+      }
+    }
+  }
+  .introVisualWrap {
+    padding: 12rem 0 10rem;
+    .imgWrap {
+      max-width: 20rem;
+      margin-left: 0;
+    }
+    [class*=speechBallon] {
+      & > strong {
+        word-break: keep-all;
+      }
+      & > p {
+        br {
+          display: none;
+        }
+      }
+    }
+    .speechBallonLeft {
+      top: 0;
+    }
+  }
+}
+
+@media (#{$mobile-small}) {
+  /* 아코디언 - FAQ , 상담 문의 내역 */
+  .customerSupportService {
+    .boardContainer {
+      .supportContainer {
+        .supportTitle {
+          display: block;
+          background-position: right 2rem center;
+          .title {
+            display: block;
+          }
+          .titleFoot {
+            display: block;
+            .date {
+              margin-left: 0;
+              &::before {
+                display: none;
+              }
+            }
+            .state {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* 소개 */
+  .introContainer {
+    .contentInner {
+      &:after {
+        height: 39.5%;
+      }
+    }
+  }
+}

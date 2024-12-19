@@ -1,0 +1,43 @@
+.banner {
+    display: block; position: relative;
+    .banner-content {
+        position: absolute;
+        left: 8%; right: 8%; top: 0; bottom: 0;
+        @include flexbox;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(flex-start);
+        .banner-name, .banner-title, .banner-desc { color: #fff; }
+        .banner-name { font-size: 20px; font-weight: 700; }
+        .banner-title { font-size: 42px; font-weight: 500; margin-top: 12px; }
+        .banner-desc { font-size: 18px; line-height: 1.77; margin-top: 10px; }
+        .banner-bg {
+            video { width: 100%; }
+        }
+        .btn { margin-top: 56px; }
+    }
+    .banner-bg {
+        video { width: 100%; }
+    }
+    &.banner-center {
+        .banner-content {
+            @include align-items(center);
+            text-align: center;
+        }
+    }
+    @include respond-to('mobile') {
+        &.banner-contact {
+            .banner-content {
+                left: 30px; top: 40px; bottom: auto;
+                @include justify-content(flex-start);
+                .banner-title { font-size: 24px; line-height: 1.4; }
+            }
+        }
+        .banner-content {
+            .banner-name { font-size: 14px; }
+            .banner-title { font-size: 27px; margin-top: 7px; }
+            .banner-desc { font-size: 12px; margin-top: 7px; }
+            .btn { margin-top: 36px; }
+        }
+    }
+}

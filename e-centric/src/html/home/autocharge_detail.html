@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | Autocharge"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .auto-charge : Autocharge 페이지 class
+      -->
+      <main class="main-container auto-charge">
+        <!-- [240503] 뒤로 가기 버튼만 노출 -->
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : false,
+            "text" : "Autocharge",
+          },
+          "button" : null,
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="auto-charge-container">
+              <div class="auto-charge-area">
+                <div class="auto-charge-top">
+                  <div class="title-box">
+                    <h2 class="title">
+                      충전기 연결만으로<br />
+                      간편한 충전을 시작해보세요.
+                    </h2>
+                  </div>
+                </div>
+
+                <div class="auto-charge-middle">
+                  <div class="auto-charge-deco-image-box">
+                    <!-- [접근성] img 태그 내 width/height 속성에 px 단위 제거 -->
+                    <img src="../../assets/images/home/img_autocharge_start.svg" alt="충전기 연결만으로 간편한 충전을 시작해보세요." width="210" height="210" />
+                  </div>
+                </div>
+
+                <div class="auto-charge-bottom">
+                  <div class="auto-charge-description-box">
+                    <ul class="desc-list-box">
+                      <li class="desc-list">
+                        <span>충전 설정 없는 간편한 충전</span>
+                      </li>
+                      <li class="desc-list">
+                        <span>별도 결제 없이 자동 결제</span>
+                      </li>
+                      <li class="desc-list">
+                        <span>앱내 충전량 확인</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box column">
+          <div class="text-button-box">
+            <!-- prettier-ignore -->
+            @@include("button.html", {
+              "property": "",
+              "iconClass": false,
+              "btnColor" : '',
+              "btnSize" : 'medium',
+              "class" : 'btn-link',
+              "text": "렌트카를 이용중이신가요?"
+            })
+          </div>
+
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "Autocharge 활성화"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

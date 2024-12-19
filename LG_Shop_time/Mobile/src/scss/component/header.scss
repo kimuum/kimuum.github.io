@@ -1,0 +1,43 @@
+.header-container {
+  @include flex(column, center, center);
+  min-height: 54px;
+  background-color: $color-white;
+  border-bottom: 1px solid $color-gray-d8d8d8;
+  .header-area {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    padding: 14px 10px 13px;
+    > * {
+      flex: 1;
+    }
+  }
+  [class^="btn-icon-"] {
+    width: 24px;
+    height: 24px;
+  }
+  .title {
+    @include font($font18, 600, $color-gray-141414);
+    text-align: center;
+    white-space: nowrap;
+    text-transform: uppercase;
+  }
+  .menu-list-box {
+    @include flex(row, flex-end, center);
+    max-width: 82px;
+    margin-left: auto;
+    .list {
+      display: inline-flex;
+    }
+  }
+  .count {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    min-width: 14px;
+    padding: 3px;
+    background-color: $color-ce1c5e;
+    border-radius: 7px;
+    @include font($fontIos09, 600, $color-white);
+    text-align: center;
+  }
+}

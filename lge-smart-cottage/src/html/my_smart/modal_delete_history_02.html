@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 신청 내역 삭제 팝업"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-01'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-delete-history -->
+    <dialog id="modal-01" class="modal modal-medium modal-delete-history">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">신청 내역 삭제</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <div class="modal-content-top">
+                <div class="text-box">
+                  <p class="text">
+                    개인정보 수집, 이용 약관에 따라 신청 내역 삭제를 진행하시면 고객님의 신청 정보를 포함하여 저장된 <strong class="strong">개인정보는 1개월 이내 삭제 처리</strong> 됩니다.
+                  </p>
+                  <p class="sub-text">삭제 처리 후 마이페이지 접근이 불가능하며, 서비스 이용에 불이익이 있을 수 있으며, 한번 삭제된 신청 내역은 복원이 어렵기 때문에 신중하게 선택해주세요.</p>
+                </div>
+                <div class="text-box">
+                  <p class="text">
+                    <strong class="strong">신청 내역 삭제는 홈페이지와 관리자에 저장된 개인정보가 삭제되는 것이므로, 본 계약 취소를 희망하신다면 스마트코티지 담당자에게 문의해주세요.</strong>
+                  </p>
+                </div>
+              </div>
+              <div class="modal-content-bottom">
+                <!-- prettier-ignore -->
+                @@include("button.html", {
+                  "className" : "btn-underline",
+                  "btnColor" : "",
+                  "btnSize" : "",
+                  "property" : "",
+                  "btnText" : "개인정보 수집, 이용 동의 내용 보기",
+                  "iconClass" : "",
+                  "iconLeft" : "",
+                })
+                <!-- prettier-ignore -->
+                @@include("checkbox.html", {
+                  "className" : "",
+                  "checkboxName" : "checkbox",
+                  "checkboxId" : "checkbox-1",
+                  "property" : "",
+                  "required" : "",
+                  "label" : "개인정보 삭제에 동의합니다.",
+                })
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "취소",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-primary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "신청 내역 삭제",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

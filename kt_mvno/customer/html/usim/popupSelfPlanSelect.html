@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금제 선택", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>요금제 선택</span></button>
+    </div>
+    <div class="popup popupBottomFixed show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">요금제 선택</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <!-- 요금제 노출수 10개 -->
+          <div class="popupPlanContent">
+            <div class="resultContainer">
+              <div class="resultTop">
+                <div class="topLeft">
+                  <h3 class="topTitle"><strong>총 51개</strong> 요금제</h3>
+                </div>
+                <div class="topRight">
+                  <div class="typeSearchSelect">
+                    <div class="dropdownArea">
+                      <div class="dropdownTitle">
+                        <button type="button" class="titleLabel dropdownBtn" aria-expanded="false" title="요금제 정렬">
+                          <!-- [VOS2차] 1122237 타이틀 변경 -->
+                          <span>데이터 많은 순</span>
+                        </button>
+                      </div>
+                      <ul class="dropdownList" aria-label="정렬">
+                        <li><button type="button" title="선택됨">데이터 많은 순</button></li>
+                        <li><button type="button">데이터 많은 순</button></li>
+                        <li><button type="button">데이터 많은 순</button></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="resultMiddle">
+                <div class="checkBoxItem">
+                  <div class="checkbox">
+                    <input type="radio" id="chkId01" name="checkGroup" />
+                    <div class="checkboxLabel">
+                      <span class="checkIcon"></span>
+                    </div>
+                  </div>
+                  <div class="popularDataArea bgColorGray">
+                    <!-- [VOS2차] 1122234 div로 변경 -->
+                    <div class="summaryTitleArea">
+                      <label class="summaryBigTitle" for="chkId01"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB The 착한 데이터 유심 11GB</label>
+                      <!-- [VOS2차] 1122234 label로 변경, for 추가 -->
+                      <p>
+                        데이터 무제한에<br />
+                        네이버페이 5000P 제공!네이버페이 5000P 제공!
+                      </p>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox noneBorder">
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgData">데이터</dt>
+                          <dd class="colorPrimary">15GB + 3Mbps + 3Mbps</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgCall">음성통화</dt>
+                          <dd class="colorPrimary">300분</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgSMS">메세지</dt>
+                          <dd class="colorPrimary">300건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <dl class="usageItem">
+                      <dt>월 기본 요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="checkBoxItem">
+                  <div class="checkbox">
+                    <input type="radio" id="chkId02" name="checkGroup" />
+                    <div class="checkboxLabel">
+                      <span class="checkIcon"></span>
+                    </div>
+                  </div>
+                  <div class="popularDataArea bgColorGray">
+                    <div class="summaryTitleArea">
+                      <label class="summaryBigTitle" for="chkId02"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                      <p>
+                        데이터 무제한에<br />
+                        네이버페이 5000P 제공!
+                      </p>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox noneBorder">
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgData">데이터</dt>
+                          <dd class="colorPrimary">15GB + 3Mbps</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgCall">음성통화</dt>
+                          <dd class="colorPrimary">300분</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgSMS">메세지</dt>
+                          <dd class="colorPrimary">300건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <dl class="usageItem smaller">
+                      <dt>월 기본요금</dt>
+                      <dd>
+                        <span class="del"></span><span><em class="ir">정상가</em>29,700</span>원
+                      </dd>
+                    </dl>
+                    <dl class="usageItem">
+                      <dt>프로모션 요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="checkBoxItem">
+                  <div class="checkbox">
+                    <input type="radio" id="chkId03" name="checkGroup" />
+                    <div class="checkboxLabel">
+                      <span class="checkIcon"></span>
+                    </div>
+                  </div>
+                  <div class="popularDataArea bgColorGray">
+                    <div class="summaryTitleArea">
+                      <label class="summaryBigTitle" for="chkId03"><span class="titleCompany">KT엠모바일</span>The 착한 데이터 유심 11GB</label>
+                      <p>
+                        데이터 무제한에<br />
+                        네이버페이 5000P 제공!
+                      </p>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlWhiteBox noneBorder">
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgData">데이터</dt>
+                          <dd class="colorPrimary">15GB + 3Mbps</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgCall">음성통화</dt>
+                          <dd class="colorPrimary">300분</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgSMS">메세지</dt>
+                          <dd class="colorPrimary">300건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <dl class="usageItem">
+                      <dt>월 기본 요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="resultBottom">
+                <div class="pagenation">
+                  <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button>
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

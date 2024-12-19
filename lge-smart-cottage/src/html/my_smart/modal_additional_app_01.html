@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-additional-app'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-additional-app -->
+    <dialog id="modal-additional-app" class="modal modal-small modal-additional-app">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <p class="text"><strong class="strong">스마트코티지를</strong> 추가 신청하시겠어요?</p>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "취소",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-primary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "추가 신청",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<div class="filter-token-list">
+  <div class="filter-token-top">
+    <div class="filter-token-title">
+      <h2 class="title">@@tokenTitle</h2>
+      <!-- prettier-ignore -->
+      @@include("button.html", {
+        "property": "",
+        "iconClass": false,
+        "btnColor" : '',
+        "btnSize" : 'small',
+        "class" : 'btn-text',
+        "text": "전체선택"
+      })
+    </div>
+  </div>
+  <div class="filter-token-bottom">
+    <div class="filter-token-box">
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < token.length; i++) {  
+        @@include("checkboxToken.html",  `+(JSON.stringify(token[i]))+`)
+      }
+    </div>
+  </div>
+</div>

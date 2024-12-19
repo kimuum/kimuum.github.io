@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "바로배송유심 안내", "titleHidden": "" })
+  <body>
+    <div class="popup popupUsimDirectInfo show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">바로배송유심 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="cautionArea colorGray">
+              <!-- [운영] KMVNO-4336 20240131 클래스 추가 -->
+              <ul class="cautionWrap marginBtmReset">
+                <li>바로배송 유심구매 시 신분증 확인과 본인인증이 진행됩니다.</li>
+                <li>바로배송유심은 배송비가 무료입니다.</li>
+                <li>지역에 따라 바로배송이 불가할 수 있으며, 이 경우 가까운 편의점/마트에서 구매 가능합니다.</li>
+                <li>바로배송유심은 선결제 방식으로 진행되며, 결제 후 라이더가 배정되면 결제 취소 및 환불이 불가합니다.</li>
+                <li>결제 후 배송접수 실패 시 결제하신 내역은 영업일 기준 7일이내 자동 환불 처리됩니다.</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="checkbox">
+              <input type="checkbox" id="input-id-01" />
+              <label for="input-id-01" class="checkboxLabel">
+                <span class="checkIcon"></span>
+                <span>구매 안내 사항을 확인하였습니다. (필수)</span>
+              </label>
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnDim" onclick="togglePopup('btnID', 'popupDefault')"><span>구매하기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+  </body>
+</html>

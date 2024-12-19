@@ -1,0 +1,106 @@
+.start-essential-info-guide-container {
+  position: relative;
+  height: 100vh;
+  background-color: $tan-100;
+  .start-essential-info-guide-area {
+    .image-box {
+      width: 100vw;
+      height: 100vh;
+    }
+    .guide-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      .title-box {
+        @include font(h1);
+        letter-spacing: -0.12rem;
+      }
+
+      .desc-box {
+        @include font(bl, $gray-500);
+        margin: 1.6rem 0 4rem;
+      }
+
+      .button-box {
+        @include flex(row, center, center);
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .essential-info-guide {
+    .header-container {
+      .header-left-box {
+        .logo-box {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .start-essential-info-guide-container {
+    width: 100%;
+    height: 100%;
+    .start-essential-info-guide-area {
+      height: 100%;
+      .start-essential-info-guide-middle {
+        @include flex(column, flex-start, flex-start);
+        height: 100%;
+      }
+      .image-box {
+        overflow: hidden;
+        width: 100%;
+        height: 58.45%;
+        img {
+          position: relative;
+          left: 50%;
+          transform: translateX(-50%);
+          width: auto;
+          object-fit: unset;
+        }
+      }
+
+      .guide-box {
+        flex: 1;
+        overflow-y: auto;
+        position: static;
+        width: 100%;
+        padding: 4rem 2rem 9.6rem;
+        transform: none;
+        text-align: left;
+        .title-box {
+          font-size: 2.6rem;
+          line-height: 3.4rem;
+          letter-spacing: -0.104rem;
+        }
+
+        .desc-box {
+          margin: 1.6rem 0 0;
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+        }
+
+        .button-box {
+          position: absolute;
+          bottom: 2rem;
+          left: 2rem;
+          right: 2rem;
+          .btn {
+            width: 100%;
+            padding: 1.6rem 1rem;
+            border-radius: 1.2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            .ic {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

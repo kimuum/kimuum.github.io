@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "Report | Newsroom",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "type" : "link",
+        "pageTitle" : "",
+        "depth2" : [
+          {
+            "text" : "All",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Insights",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Press Releases",
+            "link" : "",
+            "property" : ""
+          },
+          {
+            "text" : "Media Gallery",
+            "link" : "",
+            "property" : "active"
+          },
+        ]
+      })
+
+      <!-- main -->
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("sub_visual_type_A.html", {
+          "front" : {
+            "mainTitle" : "Newsroom",
+          },
+          "link" : {
+            "url" : null,
+          },
+          "spec" : {
+            "icon01" : null,
+          },
+          "imageSubBgSrcPC" : "newsroom/hyundai-ecv-newsroom-header-pc.webp",
+          "imageSubBgSrcMO" : "newsroom/hyundai-ecv-newsroom-header-mo.webp"
+        })
+        <div class="content-container">
+          <!-- NewsRoom content top -->
+          <section class="content-top">
+            <!-- [수정20230824] -->
+            <div class="top-breadcrumb-container">
+              <!-- prettier-ignore -->
+              @@include("sub_top_breadcrumb.html", {
+                "breadArr": [
+                  {
+                    "bread": "Newsroom"
+                  },
+                  {
+                    "bread": "report"
+                  },
+                ]
+              })
+              <!-- prettier-ignore -->
+              @@include("sub_top_search.html")
+            </div>
+          
+          </section>
+          <!-- //content top -->
+          <section class="content-middle">
+            <div class="newsroom-container">
+              <div class="page-title-container">
+                <div class="page-title-box">
+                  <div class="page-title-left">
+                    <h2 class="title-box">
+                      <span>Media Gallery</span>
+                    </h2>
+                  </div>
+    
+                  <div class="page-title-right">
+                    <div class="filter-btn-box">
+                      <button type="button" class="btn-filter">
+                        <span>Filters</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="newsroom-top">
+                <div class="news-top-inner">
+                  <!-- prettier-ignore -->
+                  @@include('news_filter_area.html')
+                </div>
+              </div>
+              <div class="newsroom-middle">
+                <div class="newsroom-result-area">
+                  <div class="newsroom-result-body">
+                    <div class="result-list-container">
+                      <div class="result-list-top">
+                        <div class="result-tag-container">
+                          <p>
+                            <span class="mo-block">
+                              <strong class="num">10</strong>
+                              report(s) with
+                            </span>
+                            <span>#Technology, </span>
+                            <span>#Tractor, </span>
+                            <span>#Americas, </span>
+                            <span>#2023</span>
+                          </p>
+                        </div>
+                        <!-- //tags -->
+                      </div>
+                      <div class="result-list-middle">
+                        <ul class="result-list-area">
+                          <!-- [수정20230824] .list-top 마크업 추가-->
+                          <!-- prettier-ignore -->
+                          @@loop('result_list.html', [
+                            {
+                              "newsThumbSrc" : "img_newsroom_result_thumb_01.jpg",
+                              "isBadge":false,
+                              "newsDate" : "Jun 23, 2023",
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            },{
+                          
+                              "newsThumbSrc" : "img_newsroom_result_thumb_02.jpg",
+                              "isBadge":false,
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsDate" : "Jun 23, 2023",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            },
+                            {
+                              "newsThumbSrc" : "img_newsroom_result_thumb_03.jpg",
+                              "isBadge":false,
+                              "newsDate" : "Jun 23, 2023",
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            },
+                            {
+                              "newsThumbSrc" : "img_newsroom_result_thumb_04.jpg",
+                              "isBadge":false,
+                              "newsDate" : "Jun 23, 2023",
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            },
+                            {
+                              "newsThumbSrc" : "img_newsroom_result_thumb_03.jpg",
+                              "isBadge":false,
+                              "newsDate" : "Jun 23, 2023",
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            },
+                            {
+                              "newsThumbSrc" : "img_newsroom_result_thumb_04.jpg",
+                              "isBadge":false,
+                              "newsDate" : "Jun 23, 2023",
+                              "newTitle" : "Hyundai Motor Premieres Commercialized Model of Its XCIENT Fuel Cell Tractor and Vision for Hydrogen",
+                              "newsInfoText" : "Hyundai Motor debuts the commercialized model of its class 8 fuel cell electric tractor and shares its vision for a hydrogen mobility value chain in the U.S •At its press conference, Hyundai Motor in Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ac risus euismod, ultrices mauris eu Hyundai Motor in...Lorem ipsum dolor sit..."
+                            }
+                          ])
+    
+                        </ul>
+                      </div>
+                      <div class="result-list-bottom">
+                        <!-- pagenation -->
+                        <div class="pagenation-container">
+                          <div class="pagenation-middle">
+                            <button type="button" class="btn-pager-prev" title="prev pages" disabled></button>
+                            <div class="pager-box">
+                              <a href="javascript:void(0);" class="page" title="page">1</a>
+                              <a href="javascript:void(0);" class="page" title="page">2</a>
+                              <a href="javascript:void(0);" class="page current" title="current page">3</a>
+                              <a href="javascript:void(0);" class="page" title="page">4</a>
+                              <a href="javascript:void(0);" class="page" title="page">5</a>
+                              <span href="javascript:void(0);" class="ellipsis">...</span>
+                              <a href="javascript:void(0);" class="page" title="last page">25</a>
+                            </div>
+                            <button type="button" class="btn-pager-next" title="next pages"></button>
+                          </div>
+                        </div>
+                        <!-- //pagenation -->
+                      </div>
+                    </div>
+                    <!-- //result list -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //content middle -->
+
+          <section class="content-bottom">
+            <!-- prettier-ignore -->
+            @@include("bottom_sub_subscript.html")
+            <!-- //newsroom Subscribe -->
+          </section>
+          <!-- //content bottom -->
+          <!-- [수정220831] 추가 -->
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : true,
+      "masonry" : false,
+      "parallax" : true
+    })
+    <script>
+      $(document).ready(function () {
+        // Large datepicker
+        const datepickerEle = document.getElementById('datepicker-range');
+        const datepicker_04 = new DateRangePicker(datepickerEle, {
+          language: 'en',
+          format: 'MM. yyyy',
+          todayHighlight: false,
+          maxView: 1,
+          pickLevel: 1,
+          datesDisabled: datesDisabled,
+        });
+
+        // filters
+        const btnFilter = $('.btn-filter');
+        const newsroomTop = $('.newsroom-top');
+        const parent = $('.page-title-container');
+        btnFilter.on('click', function(){
+          const $this = $(this);
+
+          if($this.hasClass('active')) {
+            $this.removeClass('active');
+            newsroomTop.removeClass('active');
+            parent.removeClass('active');
+          } else {
+            $this.addClass('active');
+            newsroomTop.addClass('active');
+            parent.addClass('active');
+          }
+        });
+
+        // .sub-links-box가 .top-navigation-container보다 클 경우 왼쪽으로 가로 스크롤
+        const naviCont = $('.top-navigation-container');
+        const naviContWidth = naviCont.outerWidth();
+        const subLinkWidth = $('.sub-links-box').outerWidth();
+        const pageLinkOffsetLeft = naviCont.find('.page-link.active').offset().left;
+        const pageLinkWidth = naviCont.find('.page-link.active').outerWidth();
+        const total = Math.round(pageLinkOffsetLeft + pageLinkWidth);
+        
+        if(subLinkWidth > naviContWidth && total > naviContWidth) {
+          naviCont.scrollLeft(total - naviContWidth + 27); // 오른쪽 흰색 그림자 영역 사이즈 추가 ( 가로 27px )
+        }
+      });
+
+      function datesDisabled(date, viewId, rangeEnd) {
+        const currentDate = new Date();
+        const year = date.getFullYear();
+        const thisYear = currentDate.getFullYear();
+
+        const month = date.getMonth();
+        const thisMonth = currentDate.getMonth();
+        
+        if ( viewId < 2 && year === thisYear && month > (thisMonth) % 12 ) {
+          return true;
+        }
+        else if ( viewId < 2 && year > thisYear ) {
+          return true;
+        }
+
+        return false;
+      }
+
+      // -- 인터랙션 시작
+      ScrollTrigger.matchMedia({
+        // all
+        all: function () {
+          let chk_gasp_loaded = setInterval(function () {
+            if (window.gsap && window.ScrollTrigger) {
+              gsap.registerPlugin(ScrollTrigger);
+
+              clearInterval(chk_gasp_loaded);
+            }
+          }, 0);
+        },
+      });
+      
+      // 인터렉션 //
+      window.onload = function(){
+        const resultContainer = document.querySelector('.result-list-container');
+        const resultList = resultContainer.querySelectorAll('.result-list');
+  
+        slideUp(resultList);
+      };
+    </script>
+  </body>
+</html>

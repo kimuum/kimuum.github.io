@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "추가 회선 확인 | 회선 추가 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyMultilineAdd -->
+    <div class="wrap detail myThriftyMultilineAdd">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-6', 'thirdMenu': 'active-2' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>회선 추가</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>회선 추가</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="applySteps">
+              <strong class="title">추가 회선 확인</strong>
+              <ul class="steps">
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>3</li>
+              </ul>
+            </div>
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="field fieldData typePhoneLine">
+                    <div class="dataTitleArea">
+                      <strong class="dataTitle">추가 회선 정보</strong>
+                    </div>
+
+                    <!-- prettier-ignore -->
+                    @@include('../component/phone_line_info_area.html', {
+                      "image": false,
+                      "infoBox" : [
+                        {
+                          "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                          "price": "32,980원",
+                          "phoneNumber": "010-81**-*319",
+                          "label": false
+                        },
+                      ],
+                    })
+                    <!-- [운영] KMVNO-4222 20231208 추가 -->
+                    <div class="fieldArea stopped">
+                      <div class="fieldBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "[KT엠모바일] 모두다 맘껏 11GB+",
+                          "price": "32,980원",
+                          "phoneNumber": "010-81**-*319",
+                          "label": null
+                        })
+                        <div class="lineBlocked">
+                          <span class="colorRed">[정지 회선]</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[운영] KMVNO-4222 20231208 추가 -->
+                  </div>
+                  <div class="typeCaution">
+                    <!-- [운영] KMVNO-4222 20231208 수정 -->
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">대표 회선은 ‘회선 관리’ 화면에서 설정 가능합니다.</li>
+                      <li class="fieldValue">현재 등록된 회선이 없는 경우 추가 하는 회선 중 최근 개통한 회선이 대표 회선으로 설정됩니다.</li>
+                      <li class="fieldValue">분실, 일시정지 회선은 추가 후 ‘분실/일시정지' 화면에서 해제가 가능합니다.</li>
+                      <li class="fieldValue">정지 해제 가능/불가 케이스 안내 문구 추가 예정</li>
+                    </ul>
+                    <!-- //[운영] KMVNO-4222 20231208 수정 -->
+                  </div>
+                </div>
+
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary"><span>회선 추가하기</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

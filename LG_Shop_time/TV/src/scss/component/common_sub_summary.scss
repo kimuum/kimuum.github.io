@@ -1,0 +1,145 @@
+// summary
+.sub-summary-area {
+  @include flex(column, flex-start, flex-start);
+  flex-shrink: 0;
+  width: 600px;
+  height: auto;
+  min-height: 984px;
+  padding: 60px 60px 0;
+  background-color: $color-2c343f;
+  color: $color-gray-cccccc;
+  & > * {
+    width: 100%;
+  }
+  .summary-list-bottom {
+    margin-top: auto;
+    margin-bottom: 72px;
+  }
+  .agreement-check-wrap {
+    .agreement-item {
+      margin-bottom: 20px;
+
+      &.focused {
+        .check-icon {
+          .text {
+            background-color: #c70850;
+            color: #fff;
+          }
+        }
+      }
+
+      .check-icon {
+        .text {
+          padding: 0;
+          color: #009cff;
+          text-decoration: underline;
+          font-size: 24px;
+
+          &:before {
+            background: none;
+            border: 0;
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+  .list-title-box {
+    @include flex(row, space-between, center);
+    @include font(30px, bold, $color-white);
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba($color-white, 0.1);
+    .counter {
+      @include font(24px, bold, $color-e50459);
+    }
+  }
+  .list-items-box {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+    padding-right: 5px;
+    .row-item {
+      @include flex(row, space-between, center);
+      @include font(24px, normal, $color-gray-cccccc, 1.25);
+      margin-bottom: 18px;
+    }
+  }
+  .list-total-box {
+    @include flex(column, center, flex-start);
+    height: 84px;
+    padding: 0 60px;
+    margin: 24px -60px 0;
+    background-color: rgba($color-white, 0.1);
+    .total-title-box {
+      @include flex(column, center, flex-start);
+    }
+    .row-total {
+      @include flex(row, space-between, center);
+      width: 100%;
+      @include font(24px, bold, $color-white, 1);
+    }
+    .total-price {
+      font-size: 42px;
+    }
+    .total-label {
+      display: inline-block;
+      margin-top: 6px;
+      @include font(24px, normal, $color-gray-cccccc, 1);
+    }
+  }
+  .list-info-box {
+    @include flex(row, flex-start, flex-start);
+    margin-bottom: 32px;
+  }
+  .btn-solid-gray {
+    border-radius: 6px;
+  }
+  .info-qr-code-box {
+    margin-left: auto;
+  }
+  .list-notice-box {
+    padding: 30px;
+    background-color: rgba($color-black, 0.2);
+    @include font(24px, normal, $color-gray-8290a0, 1.33);
+    text-align: center;
+  }
+  .bullet-list {
+    &:only-child {
+      br {
+        display: none;
+      }
+    }
+  }
+}
+
+// bullet list
+.bullet-list {
+  & > li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      top: 9px;
+      left: 0;
+      width: 2px;
+      height: 2px;
+      border-radius: 2px;
+      background-color: $color-gray-cccccc;
+    }
+    @include font(18px, normal, $color-gray-cccccc, 21px);
+  }
+}
+
+// link text
+.underline-blue {
+  @include font(inherit, normal, $color-5ac4ff, inherit);
+  text-decoration: underline;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "소액결제 상세정보 | 소액결제 내역 | 요금 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : microPayment -->
+    <div class="wrap detail microPayment">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>소액결제 상세정보</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 내역</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 상세정보</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="tableContainer normalBgTable captionShow">
+                    <!-- [VOS2차] 결함ID 1122769 클래스 추가 captionShow -->
+                    <table>
+                      <!-- [VOS2차] 결함ID 1122769 수정 -->
+                      <caption>
+                        상세정보
+                        <span class="ir">- 이용업체명, 이용서비스(결제유형), 구매상품, 이용서비스 고객센터, 결제대행사, 결제대행사 고객센터, 결제유형, 자동결제 상태, 결제금액, 부분취소금액, 할인금액, 결제 일시, 상태</span>
+                      </caption>
+                      <!-- //[VOS2차] 결함ID 1122769 수정 -->
+                      <colgroup>
+                        <col style="width: 30%" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">이용업체명</th>
+                          <td>주식회사 카카오</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이용서비스(결제유형)</th>
+                          <td>카카오(일반)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">구매상품</th>
+                          <td>이모티콘샵</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">이용서비스 고객센터</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">결제대행사</th>
+                          <td>다날</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">결제대행사 고객센터</th>
+                          <td>1566-3355</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">결제유형</th>
+                          <td>일반</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">자동결제 상태</th>
+                          <td>자동결제 차단상태 <br />(2022-12-01 12:08:13)</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">결제금액</th>
+                          <td>2,000원</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">부분취소금액</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">할인금액</th>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">결제 일시</th>
+                          <td>2022-09-01-16:24:52</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">상태</th>
+                          <td>결제</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- //회선 정보 -->
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary"><span>확인</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

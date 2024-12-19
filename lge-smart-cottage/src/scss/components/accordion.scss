@@ -1,0 +1,129 @@
+.accordion-container {
+  width: 102rem;
+  padding-top: 16rem;
+  .accordion-list {
+    cursor: pointer;
+    padding: 3.8rem 0;
+    border-top: 0.1rem solid $gray-100;
+    &.active {
+      .accordion-list-top {
+        &::after {
+          background: asset-image('icon/ic_pc_faq_close.svg') no-repeat center / contain;
+        }
+      }
+      .accordion-list-bottom {
+        grid-template-rows: 1fr;
+      }
+    }
+    .accordion-list-top {
+      @include flex(row, space-between, center);
+      &::after {
+        content: '';
+        display: block;
+        min-width: 4rem;
+        width: 4rem;
+        height: 4rem;
+        background: asset-image('icon/ic_pc_faq_open.svg') no-repeat center / contain;
+      }
+      .accordion-title-box {
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 2.8rem;
+      }
+    }
+    .accordion-list-bottom {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: 0.25s grid-template-rows ease-out;
+      padding-right: 10rem;
+      .accordion-content-box {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        .accordion-content {
+          @include font(bs, $gray-400);
+          &:first-of-type {
+            margin-top: 1.8rem;
+          }
+        }
+        .download-box {
+          @include flex(row, flex-start, center);
+          gap: 1rem;
+          .text {
+            @include flex(row, flex-start, center);
+            gap: 0.3rem;
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 2rem;
+              height: 2rem;
+              background: asset-image('icon/ic_pc_faq_file.svg') no-repeat center / contain;
+            }
+          }
+          .download-link {
+            color: $black;
+            text-decoration-line: underline;
+            text-underline-position: under;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .accordion-container {
+    width: 100%;
+    padding: 0;
+
+    .accordion-list {
+      padding: 2rem;
+      border-top: 0;
+      border-bottom: 1px solid $gray-100;
+
+      &.active {
+        .accordion-list-top {
+          margin-bottom: 1.2rem;
+        }
+      }
+      .accordion-list-top {
+        &::after {
+          width: 2.4rem;
+          min-width: 2.4rem;
+          height: 2.4rem;
+        }
+        .accordion-title-box {
+          font-size: 1.6rem;
+          line-height: 2.2rem;
+        }
+      }
+
+      .accordion-list-bottom {
+        padding: 0;
+        .accordion-content-box {
+          gap: 1.2rem;
+          .accordion-content {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            word-break: keep-all;
+            &:first-of-type {
+              margin-top: 0;
+            }
+          }
+
+          .download-box {
+            gap: 0.6rem;
+            .text {
+              gap: 0.2rem;
+              &::before {
+                width: 1.4rem;
+                height: 1.4rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

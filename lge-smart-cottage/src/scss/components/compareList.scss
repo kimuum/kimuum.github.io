@@ -1,0 +1,218 @@
+.compare-list-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 4.2rem;
+}
+.compare-list {
+  padding-right: 2rem;
+
+  .compare-top {
+    padding-bottom: 3rem;
+
+    .img-box {
+      width: 36rem;
+    }
+    .desc-box {
+      @include flex(column, center, flex-start);
+      margin-top: 2.4rem;
+
+      .floor {
+        display: inline-block;
+        @include font(bs, $accent);
+        font-weight: 700;
+      }
+      .title {
+        @include font(h3);
+      }
+      .desc {
+        display: inline-block;
+        margin-top: 1.6rem;
+        @include font(bm);
+      }
+    }
+  }
+
+  .compare-middle {
+    padding: 3rem 0;
+    border-top: 1px solid $gray-100;
+
+    .colors {
+      .sub-desc-box {
+        @include flex(row, flex-start, center);
+        gap: 2rem;
+      }
+      .sub-desc {
+        display: inline-flex;
+        align-items: center;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1.6rem;
+          height: 1.6rem;
+          margin-right: 0.6rem;
+        }
+
+        &.brown {
+          &::before {
+            background: asset-image('ic_pc_model_color_wpc_brown_m.png') no-repeat center / contain;
+          }
+        }
+
+        &.black {
+          &::before {
+            background: asset-image('ic_pc_model_color_wpc_black_m.png') no-repeat center / contain;
+          }
+        }
+        &.zionbeige {
+          &::before {
+            background: asset-image('ic_pc_model_color_steel_sandbeige_m.png') no-repeat center / contain;
+          }
+        }
+
+        &.darkbrown {
+          &::before {
+            background: asset-image('ic_pc_model_color_steel_darkbrown_m.png') no-repeat center / contain;
+          }
+        }
+      }
+    }
+  }
+  .compare-bottom {
+    padding: 3rem 0 5rem;
+    border-top: 1px solid $gray-100;
+
+    .img-box {
+      width: 10rem;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .con-list-box {
+    .con-list {
+      & + * {
+        margin-top: 3rem;
+      }
+
+      &:nth-of-type(5) {
+        .sub-desc-box {
+          min-height: 8.4rem;
+        }
+      }
+    }
+
+    .sub-title {
+      @include font(lm, $gray-400);
+      font-weight: 700;
+    }
+    .sub-desc-box {
+      @include flex(column, flex-start, flex-start);
+      margin-top: 0.4rem;
+    }
+    .sub-desc {
+      @include font(bs);
+
+      &.bold {
+        @include font(h4);
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .compare-list-box {
+    margin-top: 2rem;
+  }
+
+  .compare-list {
+    // min-width: 15.6rem;
+    // max-width: 44rem;
+    // width: clamp(15.6rem, 30%, 44rem) !important;
+    width: 15.6rem;
+    //--- width : swiper slidesPerView auto 오류 대체
+    padding-right: 0.6rem;
+
+    .compare-top {
+      padding-bottom: 1.6rem;
+
+      .img-box {
+        width: 12.5rem;
+      }
+      .desc-box {
+        margin-top: 1.6rem;
+
+        .floor {
+          font-size: 1.3rem;
+          font-weight: 500;
+          line-height: 2rem;
+        }
+        .title {
+          font-size: 2rem;
+          font-weight: 700;
+          line-height: 2.6rem;
+        }
+        .desc {
+          margin-top: 0.8rem;
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 2.2rem;
+        }
+      }
+    }
+
+    .compare-middle {
+      padding: 1.6rem 0;
+
+      .colors {
+        .sub-desc-box {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.2rem;
+        }
+      }
+    }
+
+    .compare-bottom {
+      padding: 3rem 0 0;
+
+      .img-box {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    .con-list-box {
+      .con-list {
+        & + * {
+          margin-top: 1.4rem;
+        }
+
+        &:nth-of-type(5) {
+          .sub-desc-box {
+            min-height: 8rem;
+          }
+        }
+
+        &:nth-of-type(7) {
+          .sub-desc-box {
+            min-height: 4rem;
+          }
+        }
+      }
+
+      .sub-title {
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+
+      .sub-desc {
+        font-size: 1.4rem;
+        line-height: 2rem;
+
+        &.bold {
+          font-size: 2rem;
+          line-height: 2.6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.pagination-box {
+  position: relative;
+  margin-top: 2.6rem;
+  .button-box {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    .btn {
+      min-width: 14.8rem;
+    }
+  }
+  .pagination {
+    @include flex(row, center, center);
+  }
+  .pagination-lists {
+    @include flex(row, flex-start, center);
+    overflow: hidden;
+    max-width: 24rem;
+    margin: 0 1rem;
+  }
+  .pagination-list {
+    &.active {
+      .btn-pagination {
+        background-color: rgba($gray-900, 0.1);
+      }
+    }
+  }
+  .btn-pagination {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.4rem;
+    @include font(1.2rem, 500, $black, 1.6rem);
+  }
+  .btn-first,
+  .btn-prev,
+  .btn-next,
+  .btn-last {
+    width: 2.4rem;
+    height: 2.4rem;
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+  .btn-first {
+    transform: rotate(180deg);
+    background: admin-image('ic_admin_arrow_next_end_nor.svg') no-repeat center / contain;
+  }
+  .btn-prev {
+    transform: rotate(180deg);
+    background: admin-image('ic_admin_arrow_next_nor.svg') no-repeat center / contain;
+  }
+  .btn-next {
+    background: admin-image('ic_admin_arrow_next_nor.svg') no-repeat center / contain;
+  }
+  .btn-last {
+    background: admin-image('ic_admin_arrow_next_end_nor.svg') no-repeat center / contain;
+  }
+}

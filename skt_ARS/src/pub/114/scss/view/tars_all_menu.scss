@@ -1,0 +1,170 @@
+.all-menu-main {
+  .content-container {
+    padding: 0;
+  }
+}
+.all-menu-header {
+  @include flex(row, space-between, flex-start);
+  min-height: $header;
+  padding: 1rem 2rem;
+  background-color: $primary;
+  .all-menu-title {
+    @include flex(row, flex-start, flex-start);
+    // &::before {
+    //   content: '';
+    //   flex: none;
+    //   display: block;
+    //   margin-right: 1.2rem;
+    //   width: 2.4rem;
+    //   height: 2.4rem;
+    // }
+    &.ico-welcome {
+      &::before {
+        background: image('icon/btn_top_user_w_nor.png') no-repeat center / contain;
+      }
+    }
+    &.ico-birthday {
+      &::before {
+      }
+    }
+    &.ico-end-cs {
+      &::before {
+      }
+    }
+    .text {
+      @include font(1.8rem, 500, $white, 2.3rem);
+      letter-spacing: -0.09rem;
+    }
+  }
+  .btn-page-prev {
+  }
+  a {
+    flex: none;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-left: 1.6rem;
+    text-indent: -9999rem;
+  }
+  .btn-home {
+    padding: 0.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 1.2rem;
+    background: transparent image('icon/btn_top_home_w_nor.png') no-repeat center / 2.4rem;
+    border-radius: 1rem;
+    &:active {
+      &:not(:disabled) {
+        background: rgba($white, 0.12) image('icon/btn_top_home_w_nor.png') no-repeat center / 2.4rem;
+      }
+    }
+  }
+}
+.all-menu-container {
+  .all-menu {
+    ul {
+      counter-reset: menuNum;
+    }
+    li {
+      position: relative;
+      &:last-child {
+        &::after {
+          display: none;
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 2rem;
+        width: calc(100% - 4rem);
+        height: 0.05rem;
+        background-color: rgba($black, 0.1);
+      }
+      a {
+        @include flex(row, space-between, center);
+        padding: 1.4rem 2rem;
+        width: 100%;
+        // 상담사 연결
+        &.code28 {
+          &::after {
+            content: '0';
+          }
+        }
+        &::after {
+          counter-increment: menuNum;
+          content: counter(menuNum);
+          @include flex(row, center, center);
+          flex-shrink: 0;
+          margin-left: 1rem;
+          padding-top: 0.1rem;
+          width: 3rem;
+          height: 3rem;
+          @include font(1.8rem, 700, $primary, normal);
+          background-color: rgba($primary, 0.1);
+          border-radius: 0.4rem;
+          text-align: center;
+          box-sizing: border-box;
+        }
+        &:active {
+          background-color: #f9f9f9;
+        }
+        .text {
+          display: inline-block;
+          vertical-align: middle;
+          @include font(1.6rem, 400, $black, normal);
+          &::before {
+            content: '';
+            display: inline-block;
+            margin-right: 1rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+$allMenus: (
+  '21': (
+    url: 'icon/ic_billing.png',
+  ),
+  '22': (
+    url: 'icon/ic_rate_plan.png',
+  ),
+  '23': (
+    url: 'icon/ic_gift.png',
+  ),
+  '24': (
+    url: 'icon/ic_subscribe.png',
+  ),
+  '25': (
+    url: 'icon/ic_pay.png',
+  ),
+  '26': (
+    url: 'icon/ic_reset.png',
+  ),
+  '27': (
+    url: 'icon/ic_roaming.png',
+  ),
+  '28': (
+    url: 'icon/ic_counselor.png',
+  ),
+);
+@each $map, $value in $allMenus {
+  .all-menu-container {
+    .all-menu {
+      li {
+        a {
+          &.code#{$map} {
+            .text {
+              &::before {
+                background: image(map-get($value, url)) no-repeat center / contain;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

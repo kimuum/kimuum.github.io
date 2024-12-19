@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "Contact Us | About Us",
+    "og" : {
+      "desc" : null,
+      "image" : null,
+      "url" : null,
+    }
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("header.html", { "type" : "depth01", "pageTitle" : "" } )
+      <!-- main -->
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("sub_visual_type_A.html", {
+          "front" : {
+            "mainTitle" : "Contact Us",
+            "normalText" : "",
+          },
+          "link" : {
+            "url" : null,
+          },
+          "spec" : {
+            "icon01" : null,
+          },
+          "imageSubBgSrcPC" : "contactus/hyundai-ecv-contact-us-header-pc.webp",
+          "imageSubBgSrcMO" : "contactus/hyundai-ecv-contact-us-header-mo.webp"
+        })
+        <div class="content-container">
+          <section class="content-top">
+            <!-- [수정20230824] -->
+            <div class="top-breadcrumb-container">
+                <!-- prettier-ignore -->
+                @@include("sub_top_breadcrumb.html", {
+                  "breadClass": null,
+                  "breadArr": [
+                    {
+                      "bread": "Contact Us"
+                    },
+                  ]
+                })
+            </div>
+            
+          </section>
+          <!-- //content top -->
+
+          <section class="content-middle">
+            <div class="contactus-container">
+              <div class="contactus-body">
+                <div class="ui-table-container">
+                  <div class="table-tr">
+                    <!-- 공통 : tr-inner div 추가 -->
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="name-input" class="field-label">Name<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="input">
+                            <input type="text" placeholder="Enter your name" required id="name-input" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 입력 오류 클래스 : error-box -->
+                  <div class="table-tr error-box">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="name-input" class="field-label">Name<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="input">
+                            <input type="text" placeholder="Enter your name" required id="name-input" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 오류문구 -->
+                    <div class="field-error">Please enter your name.</div>
+                  </div>
+                  <!-- //Name -->
+
+                  <div class="table-tr">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="email-input" class="field-label">Email<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="input">
+                            <input type="text" placeholder="Enter your email address" required id="email-input" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 입력 오류 클래스 : error-box -->
+                  <div class="table-tr error-box">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="email-input" class="field-label">Email<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="input">
+                            <input type="text" placeholder="Enter your email address" required id="email-input" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 오류문구 -->
+                    <div class="field-error">Please enter your email address.</div>
+                    <!-- <div class="field-error">Please enter your email address in a valid format</div> -->
+                  </div>
+                  <!-- //Email -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label class="field-label">Region</label>
+                      </div>
+                      <div class="tr-td">
+                        <!-- [수정230830] 단일 선택으로 변경 -->
+                        <div class="radio-group">
+                          <!-- prettier-ignore -->
+                          @@include("radio.html", {
+                            'type' : 'button',
+                            'id': 'radio-region',
+                            "radio" : [
+                              {
+                                'label': 'North America',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Europe',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Oceania',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'MENA',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': 'has-tooltip tooltip-top',
+                                  'tooltiptext': 'Middle East and North Africa',
+                                }
+                              },
+                              {
+                                'label': 'Others',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              }
+                            ]
+                        })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Region -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label class="field-label">Product Interest</label>
+                      </div>
+                      <div class="tr-td">
+                        <!-- [수정230830] 단일 선택으로 변경 -->
+                        <div class="radio-group">
+                          <!-- prettier-ignore -->
+                          @@include("radio.html", {
+                            'type' : 'button',
+                            'id': 'product-interest',
+                            "radio" : [
+                              {
+                                'label': 'Tractor',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Truck',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Bus',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Fuel Cell System',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                            ]
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Product Interest -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label class="field-label">Business Type</label>
+                      </div>
+                      <div class="tr-td">
+                        <!-- [수정230830] 단일 선택으로 변경 -->
+                        <div class="radio-group">
+                          <!-- prettier-ignore -->
+                          @@include("radio.html", {
+                            'type' : 'button',
+                            'id': 'chek-business',
+                            "radio" : [
+                              {
+                                'label': 'Logistics',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Retail',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'OEM',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Press',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Others',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                            ]
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Business Type -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="chek-fleet-01" class="field-label">Fleet Size</label>
+                      </div>
+                      <div class="tr-td">
+                        <!-- [수정230830] 단일 선택으로 변경 -->
+                        <div class="radio-group">
+                          <!-- prettier-ignore -->
+                          @@include("radio.html", {
+                            'type' : 'button',
+                            'id': 'chek-fleet',
+                            "radio" : [
+                              {
+                                'label': '1-5',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': '5-20',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': '50-100',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': '100-500',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Others',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                            ]
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Fleet Size -->
+
+                  <!-- 입력 오류 클래스 : error-box -->
+                  <div class="table-tr mo-block error-box">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                          <!-- [수정230830] 필수값 제거 -->
+                        <label class="field-label">Inquiry Type</label>
+                      </div>
+                      <div class="tr-td">
+                        <!-- [수정230830] 단일 선택으로 변경 -->
+                        <div class="radio-group">
+                          <!-- prettier-ignore -->
+                          @@include("radio.html", {
+                            'type' : 'button',
+                            'id': 'chek-inquiry',
+                            "radio" : [
+                              {
+                                'label': 'Purchase',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Product',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Press',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Investment',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Partnership',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Service',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                              {
+                                'label': 'Others',
+                                'checked': '',
+                                'disabled': '',
+                                'tooltip' : {
+                                  'position': '',
+                                  'tooltiptext': '',
+                                }
+                              },
+                            ]
+                          })
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 오류문구 -->
+                    <div class="field-error">Please select your inquire type.</div>
+                  </div>
+                  <!-- //Inquiry Type -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th align-top">
+                        <label for="" class="field-label">Your Inquiry<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="textarea">
+                          <textarea name="" id="" cols="30" rows="10" placeholder="Enter your inquiry"></textarea>
+                          <span class="counter"><span>0</span> / 1500 Characters Maximum</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 
+                    입력 오류 클래스 : error-box
+                    오류 아래 마진값 없애는 클래스 : none-err-btm
+                  -->
+                  <div class="table-tr mo-block error-box none-err-btm">
+                    <div class="tr-inner">
+                      <div class="tr-th align-top">
+                        <label for="" class="field-label">Your Inquiry<span class="required">*</span></label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="textarea">
+                          <!-- 오류문구 -->
+                          <div class="field-error">Please enter your Inquiry.</div>
+                          <textarea name="" id="" cols="30" rows="10" placeholder="Enter your inquiry"></textarea>
+                          <!-- 오류문구 icon -->
+                          <span class="counter icon-error"><span>1500</span> / 1500 Characters Maximum</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //Your inquiry -->
+
+                  <div class="table-tr mo-block">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="" class="field-label">Attach Files</label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="file-box">
+                            <div class="file-input">
+                              <div class="placeholder">Upload is limited to 10M per file</div>
+                              <!-- 파일 첨부 후 출력 : added-file-box -->
+                              <div class="added-file-box" style="display: none">
+                                <p class="file-name">Lorem_ipsum_2023.jpg</p>
+                                <span class="file-size">145kb</span>
+                                <button type="button" class="btn-delete" title="delete"></button>
+                              </div>
+                            </div>
+                            <div class="file-button">
+                              <input type="file" title="Upload is limited to 10M per file" />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 입력 오류 클래스 : error-box -->
+                  <div class="table-tr mo-block error-box">
+                    <div class="tr-inner">
+                      <div class="tr-th">
+                        <label for="" class="field-label">Attach Files</label>
+                      </div>
+                      <div class="tr-td">
+                        <div class="field-form">
+                          <div class="file-box">
+                            <div class="file-input">
+                              <!-- 첨부 파일 -->
+                              <div class="added-file-box">
+                                <p class="file-name">Lorem_ipsum_2023.jpg</p>
+                                <span class="file-size">145kb</span>
+                                <button type="button" class="btn-delete" title="delete"></button>
+                              </div>
+                            </div>
+                            <!-- [수정230830] 비활성화 상태일 떄 disabled 클래스 추가 -->
+                            <div class="file-button disabled">
+                              <input type="file" title="Upload is limited to 10M per file" disabled />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- 오류문구 -->
+                    <div class="field-error">Please upload files under 10Mb.</div>
+                  </div>
+                  <!-- //Attach Files -->
+                </div>
+                <div class="terms-agreement-box">
+                  <div class="terms-agreement-middle">
+                    <div class="checkbox">
+                      <input type="checkbox" name="check-agree-1" id="check-agree-1" required />
+                      <label for="check-agree-1" class="label">
+                        <span class="check-icon"></span>
+                        <span>Terms Agreement <span class="required">*</span></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="terms-agreement-bottom">
+                    <p class="terms-text-normal">
+                      By submitting this inquiry, you consent to saving your data and receiving an email or phone call from Hyundai Motor Company, our distributors, and/or affiliates about your inquiry and information relevant to you. To continue, read and agree to the
+                      <button type="button" class="btn-underline" title="open popup">Privacy Policy.</button>
+                    </p>
+                    <!-- 오류문구 -->
+                    <div class="field-error">Please agree to the terms.</div>
+                  </div>
+                </div>
+                <div class="terms-agreement-box">
+                  <div class="terms-agreement-middle">
+                    <div class="checkbox">
+                      <input type="checkbox" name="check-agree-2" id="check-agree-2" />
+                      <label for="check-agree-2" class="label">
+                        <span class="check-icon"></span>
+                        <span>I want to subscribe to Hyundai Electrified Commercial Vehicles Newsletter.</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- //약관동의 -->
+              </div>
+              <div class="contactus-footer">
+                <div class="buttons-box">
+                  <button type="button" class="btn-line-wh"><span>Submit</span></button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- //content middle -->
+          <!-- [수정220831] 추가 -->
+          <!-- top -->
+          <div class="go-to-top-box">
+            <button type="button" class="btn-top">TOP</button>
+          </div>
+        </div>
+      </main>
+      <!-- //main -->
+      <!-- prettier-ignore -->
+      @@include("footer.html")
+    </div>
+    <!-- prettier-ignore -->
+    @@include("link_js.html", {
+      "datepicker" : false,
+      "masonry" : false,
+      "parallax" : true
+    })
+    <script>
+      $(document).ready(function () {
+        // tooltip
+        tootipControl('.tooltip-open');
+
+        // [수정230901]
+        var beforeChecked = -1;
+        $('.radio input').click(function() {
+          const $this = $(this);
+          let index = $this.closest('.radio').index();
+          if(beforeChecked == index) {
+            beforeChecked = -1;
+            $this.prop("checked", false);
+          } else{
+            beforeChecked = index;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "바로배송유심 주문취소 안내, 바로배송유심 주문취소 불가 안내", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>바로배송유심 주문취소 안내</span></button>
+      <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>바로배송유심 주문취소 불가 안내</span></button>
+    </div>
+
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">바로배송유심 주문취소 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            바로배송유심 주문을 취소하시겠습니까? <br />
+            결제 취소는 영업일 기준 7일이내 처리됩니다. <br />
+            주문 취소 처리 중 라이더가 배정되는 경우 주문 취소가 안됩니다.
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">바로배송유심 주문취소 불가 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">주문 취소 신청 전 라이더가 배정되어 주문취소가 불가합니다.</div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID02', 'popupDefault02')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02', 'popupDefault02')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+  </body>
+</html>

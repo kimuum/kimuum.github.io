@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="tphoneVersion" iweb-data="out" />
+    <input type="hidden" id="version_num" iweb-data="in" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '채티와 상담하기',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="sub-title-icon-box">
+                <i class="ic-chattey"></i>
+                <div class="info-box">
+                  <p class="label-large">SK텔레콤 채티는?</p>
+                  <p class="label">
+                    24시간 언제나 SK텔레콤 서비스에 대한<br />
+                    상담이 가능한 상담 챗봇
+                  </p>
+                </div>
+              </div>
+              <div class="notice-b-box">
+                <p>‘채티와 상담하기’로 이동하면 보이는 ARS는 종료되며, 상담사 연결 등 다른 업무는 114로 다시 전화 연결이 필요합니다.</p>
+              </div>
+              <div class="caution-guide-container">
+                <div class="caution-guide-box">
+                  <div class="caution-list">
+                    <p class="caution-text dot">
+                      현재 채티는 <br />
+                      <span class="highlight"
+                        >① 요금 조회 ② 미납 문의 ③ 데이터 선물 <br />
+                        ④ 리필 쿠폰 ⑤ 약정 조회 ⑥ 요금제 조회 <br />
+                        ⑦ 잔여량 조회 ⑧ 로밍 문의 ⑨ 구독 서비스 </span
+                      >등<br />
+                      각종 서비스에 대한 문의에 답변이 가능합니다.
+                    </p>
+                    <p class="caution-text dot">114 전화 연결 없이 ‘T전화 앱 > 설정 > SK텔레콤 채티와 상담하기’에서도 바로 상담할 수 있어요.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <a href="javascript:chatbotConn();" class="btn btn-primary">채티와 상담하기</a>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'T';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+            else: 'display:block',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            //console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            btn_back();
+          },
+        });
+      });
+
+      // t 전화 기본화면 처리
+      function sendCall(type, txt) {
+        // 자동 상담사 연결 timer 중지 (wforcus.js)
+        clearInterval(errInterval);
+
+        // report page data 요청.
+        sendRepPageData('agent', type, txt);
+
+        setTimeout(function () {
+          changeoverPhone(false);
+        }, 1000);
+      }
+
+      function chatbotConn() {
+        var version = getUrlParameter('tphoneVersion');
+        var type = getUrlParameter('cur_vars_type');
+
+        if (type == 'T') {
+          $('#version_num').val(version);
+          if (parseInt(version) >= 100300) {
+            try {
+              var decode = decodeURIComponent(
+                '8mT1MLEMB0uAV6OFF1vfoA.adtouch.adbrix.io/api/v1/click/xyeiLZSjj0mqLERqXJh2cw?deeplink_custom_path=tphone-api%3A%2F%2Finternal%2Fmessenger%3Fplatform%3Dchatbot%26playServiceId%3Dnugu.builtin.chatbot.sktcs&adv_placement=114ARS',
+              );
+              location.href = 'tphone-api://internal/messenger?platform=chatbot&playServiceId=nugu.builtin.chatbot.sktcs&adv_placement=114ARS';
+              //alert(decode);
+              //document.location = "intent://" + decode +"#Intent;scheme=https;end;";
+              /* //"intent://8mT1MLEMB0uAV6OFF1vfoA.adtouch.adbrix.io/api/v1/click/xyeiLZSjj0mqLERqXJh2cw?deeplink_custom_path=tphone-api%3A%2F%2Finternal%2Fmessenger%3Fplatform%3Dchatbot%26playServiceId%3Dnugu.builtin.chatbot.sktcs&adv_placement=114ARS#Intent;scheme=http;end"; */
+
+              //주석 풀고 보내기
+              otherARS('채팅', 'O1', 'menu');
+            } catch (e) {}
+          } else {
+            otherARS('채팅', 'O1', 'menu');
+          }
+        } else {
+          otherARS('채팅', 'O1', 'menu');
+        }
+      }
+
+      // 다른 ARS 전환 처리.
+      function otherARS(obj, dtmf, text) {
+        sendRepPageData('agent', dtmf, text);
+
+        setTimeout(function () {
+          changeoverPhone(false);
+        }, 500);
+      }
+
+      //-------------------------------------------------------------------------------------------------------------------
+      // 화면저장 CALLBACK 함수 - callbackTPhone
+      //-------------------------------------------------------------------------------------------------------------------
+      // ret - boolean(성공/ 실패)
+      //-------------------------------------------------------------------------------------------------------------------
+      function callbackTPhone(ret) {
+        common.closeCapture();
+      }
+    </script>
+  </body>
+</html>

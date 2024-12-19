@@ -1,0 +1,209 @@
+.swiper {
+  .mTable-list-container {
+    margin: 0;
+  }
+}
+
+.mTable-list-container {
+  position: relative;
+  // width: 100%;
+  overflow: hidden;
+  margin: 0 -2rem;
+  .mTable-lists {
+    .mTable-list {
+      &.type-notice {
+        flex-wrap: unset;
+        padding-right: 5.7rem;
+        .list-data-top {
+          @include flex(row, flex-start, center);
+        }
+        .mTable-list-left {
+          margin-right: 0.8rem;
+          & + .mTable-list-right {
+            width: calc(100% - 2.6rem);
+          }
+        }
+
+        .list-data-box {
+          &.file {
+            .list-title-box {
+              max-width: calc(100% - 2.2rem);
+            }
+            .list-data-top {
+              @include flex(row, flex-start, center);
+            }
+          }
+          .list-title-box {
+            @include ellipsis;
+          }
+          .file-box {
+            height: fit-content;
+            margin-left: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-page-move {
+    position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 100%;
+    background: asset-image('ic_arrow_right.svg') no-repeat center / 2.4rem;
+  }
+}
+
+.mTable-lists {
+  .mTable-list {
+    position: relative;
+    @include flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    padding: 2rem 3.6rem 2rem 2rem;
+    border-bottom: 1px solid $color_ebe;
+
+    .question-box {
+      width: 100%;
+      margin-bottom: 1.2rem;
+      @include font(1.4rem, 700, $color_7f7, normal);
+      .icon {
+        margin-right: 0.4rem;
+        font-size: 1.6rem;
+      }
+    }
+
+    .mTable-list-left {
+      margin-right: 1.2rem;
+    }
+
+    .mTable-list-right {
+      flex: 1;
+      width: 100%;
+    }
+
+    .category-box {
+      width: 6rem;
+      height: 2rem;
+      border-radius: 1rem;
+      background-color: #b6b6b6;
+      @include font(1.2rem, 700, $white, 2rem);
+      text-align: center;
+    }
+
+    .notice-box {
+      .ic {
+        width: 1.8rem;
+        height: 1.8rem;
+        background-size: 1.8rem;
+      }
+    }
+
+    .list-data-box {
+      .list-sub-title-box {
+        margin-bottom: 0.8rem;
+        @include font(1.4rem, 400, $color_7f7, normal);
+      }
+
+      .button-title-box {
+        .button-title {
+          max-width: 100%;
+          @include font(1.6rem, 700, $black, 2.1rem);
+          word-break: keep-all;
+        }
+      }
+
+      .list-title-box {
+        max-width: 100%;
+        @include font(1.6rem, 700, $black, 2.1rem);
+        word-break: keep-all;
+      }
+
+      .list-data-middle {
+        margin-top: 0.8rem;
+      }
+
+      .list-text-box {
+        @include flex(row, flex-start, center);
+        @include font(1.4rem, 400, $color_bfb, 1.8rem);
+        word-break: keep-all;
+        .label {
+          @include flex(row, flex-start, center);
+          &::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 1.2rem;
+            margin: 0 0.8rem;
+            background-color: $color_bfb;
+          }
+        }
+        .bold {
+          margin-left: 0.4rem;
+          color: $color_7f7;
+        }
+      }
+
+      .list-data-bottom {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        margin-top: -0.8rem;
+        padding-top: 0.8rem;
+        > * {
+          margin: 0.8rem 0 0;
+        }
+      }
+
+      .list-sub-text-box {
+        @include flex(row, flex-start, center);
+        @include font(1.4rem, 400, $color_bfb, normal);
+        white-space: nowrap;
+        .label {
+          @include flex(row, flex-start, center);
+          margin-right: 1.3rem;
+        }
+        .data-sub-text {
+          @include flex(row, flex-start, center);
+          &::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 1.2rem;
+            margin: 0 0.8rem;
+            background-color: $color_bfb;
+          }
+        }
+      }
+
+      .evaluation-box {
+        @include flex(row, flex-start, center);
+        @include font(1.4rem, 400, $primary, normal);
+        &:before {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 1.2rem;
+          margin: 0 1.6rem;
+          background-color: $color_bfb;
+        }
+        .rate-box {
+          @include flex(row, center, center);
+          &::before {
+            content: '';
+            display: block;
+            width: 1.6rem;
+            height: 1.6rem;
+            margin-right: 0.7rem;
+            background: asset-image('ic_star.svg') no-repeat center / 1.6rem;
+          }
+        }
+
+        .btn-evaluation {
+          @include font(1.2rem, 500, $primary, normal);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

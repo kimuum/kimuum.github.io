@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전 카드"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="header-container"></div>
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- [접근성] 참고용 바텀시트 열기 버튼 -->
+            <button id="openPopupButton" aria-controls="payment-method-management" aria-haspopup="dialog" aria-expanded="false" style="padding: 20px; background-color: black; color: #fff">
+              Open Bottom Sheet
+            </button>
+          </div>
+        </section>
+
+        <!-- .bottom-sheet-popup start -->
+        <!-- .show: 바텀시트팝업 활성화 제어클래스 -->
+        <!-- aria-hidden="true" : 바텀시트팝업 활성화 제어 속성 -->
+        <!-- [접근성] 접근성을 위한 속성 추가 -->
+        <dialog class="bottom-sheet-popup" id="payment-method-management" aria-label="결제 수단 관리">
+          <div class="bottom-sheet-popup-container" tabindex="0">
+            <div class="bottom-sheet-popup-area">
+              <div class="bottom-sheet-popup-top">
+                <!-- [접근성] 접근성을 위한 속성 추가 -->
+                <div id="bottomSheetTitle" class="bottom-sheet-popup-title ir" aria-hidden="true">결제 수단 관리</div>
+              </div>
+              <div class="bottom-sheet-popup-middle">
+                <ul class="edit-method-list-box">
+                  <li class="edit-method-list">
+                    <button type="button" class="btn-edit-method">
+                      <span class="text">대표 결제 수단 설정</span>
+                    </button>
+                  </li>
+                  <li class="edit-method-list">
+                    <button type="button" class="btn-edit-method">
+                      <span class="text">결제 수단 삭제</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <!-- [접근성] 참고용 바텀시트 열기 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButton = popup.querySelector('.btn-secondary');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButton) {
+          closePopupButton.addEventListener('click', function () {
+            popup.close();
+            openPopupButton.focus();
+            openPopupButton.setAttribute('tabindex', '-1');
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

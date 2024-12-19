@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "업무 알림 수신 등록" , "headProjectName": "| 통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>업무 알림 수신 등록</span></button>
+    </div>
+    <div class="popup popupSizeMedium show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">업무 알림 수신 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="fieldWrap">
+            <div class="field fieldInput">
+              <label for="workInput01" class="fieldLabel"
+                >사번 <strong class="required"><span>필수입력</span></strong></label
+              >
+              <div class="fieldForm">
+                <div class="input">
+                  <input type="password" id="workInput01" placeholder="사번을 입력해주세요." required aria-required="true" />
+                </div>
+              </div>
+            </div>
+            <div class="field fieldInput">
+              <label for="workInput02" class="fieldLabel">소속부서</label>
+              <div class="fieldForm">
+                <div class="input">
+                  <input type="password" id="workInput02" placeholder="소속부서를 입력해주세요." />
+                </div>
+              </div>
+            </div>
+            <div class="field fieldInput">
+              <label for="workInput03" class="fieldLabel"
+                >이름 <strong class="required"><span>필수입력</span></strong></label
+              >
+              <div class="fieldForm">
+                <div class="input">
+                  <input type="password" id="workInput03" placeholder="이름을 입력해주세요." required aria-required="true" />
+                </div>
+              </div>
+            </div>
+            <div class="field fieldInput">
+              <label for="workInput04" class="fieldLabel"
+                >휴대폰번호 <strong class="required"><span>필수입력</span></strong></label
+              >
+              <div class="fieldForm">
+                <div class="input">
+                  <input type="password" id="workInput04" placeholder="휴대폰번호를 입력해주세요." required aria-required="true" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary"><span>저장</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

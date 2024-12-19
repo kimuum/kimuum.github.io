@@ -1,0 +1,24 @@
+<!-- prettier-ignore -->
+@@if(headerType == 'default'){
+<header class="header">
+  @@if(isBtn){
+  <a href="javascript:btn_back();" class="btn-page-prev">이전</a>
+  <h1><span>@@title</span></h1>
+  <a href="javascript:sendGotoHome();" class="btn-home">홈</a>
+  } @@if(!isBtn) {
+  <h1><span>@@title</span></h1>
+  }
+</header>
+}
+<!-- prettier-ignore -->
+@@if(headerType == 'error'){
+<header class="header">
+  @@if(isBtn){
+  <a href="javascript:beforeProc();" class="btn-page-prev">이전</a>
+  <h1><span>@@title</span></h1>
+  <a href="javascript:homeProc();" class="btn-home">홈</a>
+  } @@if(!isBtn) {
+  <h1><span>@@title</span></h1>
+  }
+</header>
+}

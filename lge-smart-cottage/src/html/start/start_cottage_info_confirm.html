@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 스마트코티지 정보 확인"
+  })
+
+  <body>
+    <!-- set unique class : cottage-info-confirm -->
+    <div class="wrapper cottage-info-confirm">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : false,
+        "list" : null,
+        "className" : ""
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <section class="section-container">
+          <div class="section-area">
+            <div class="confirm-container">
+              <div class="confirm-area">
+                <div class="confirm-middle">
+                  <div class="step-box use-pc">
+                    <div class="step-number-box">02.</div>
+                    <div class="step-title-box">스마트코티지 정보 확인</div>
+                  </div>
+                  <div class="step-box use-tablet">
+                    <div class="step-box-top">
+                      <div class="progress-box">
+                        <div class="progress active"></div>
+                        <div class="progress active"></div>
+                        <div class="progress"></div>
+                        <div class="progress"></div>
+                        <div class="progress"></div>
+                      </div>
+                    </div>
+                    <div class="step-box-bottom">
+                      <div class="step-title-box">2. 스마트코티지 정보 확인</div>
+                    </div>
+                  </div>
+                  <div class="layout-box">
+                    <div class="layout-top-box">
+                      <div class="back-button-box">
+                        <button type="button" class="btn btn-back" title="뒤로가기"></button>
+                      </div>
+                    </div>
+                    <div class="layout-middle-box">
+                      <div class="layout-content-box">
+                        <div class="layout-content-top">
+                          <div class="title-box">
+                            <h2 class="title">
+                              <span class="bold">스마트코티지의 모델 및 옵션을 <br class="use-tablet" />최종 확인해주세요.</span>
+                              <p>변경 버튼을 눌러 <br class="use-tablet" />선택 옵션을 변경할 수 있습니다.</p>
+                            </h2>
+                          </div>
+                        </div>
+                        <div class="layout-content-bottom">
+                          <div class="unit-box">
+                            <div class="unit-top">
+                              <div class="title-box">
+                                <span>선택 옵션</span>
+                              </div>
+                            </div>
+                            <div class="unit-bottom">
+                              <div class="unit-content-box">
+                                <ul class="result-options">
+                                  <!-- prettier-ignore -->
+                                  @@loop("resultOption.html", [
+                                    {
+                                      "category" : "모델",
+                                      "button" : "",
+                                      "image" : {
+                                        "path" : "ic_pc_start_model_confirm_mono_plus.png",
+                                        "alt" : "모델",
+                                      },
+                                      "title" : "MONO+",
+                                      "num" : "+ ₩25,000,000",
+                                    },
+                                    {
+                                      "category" : "외장재",
+                                      "button" : "",
+                                      "image" : {
+                                        "path" : "ic_pc_start_color_confirm_wpc_brown.png",
+                                        "alt" : "외장재",
+                                      },
+                                      "title" : "WPC 내추럴 오크",
+                                      "num" : "+ ₩0",
+                                    },
+                                    {
+                                      "category" : "에너지",
+                                      "button" : "disabled",
+                                      "image" : {
+                                        "path" : "ic_pc_start_model_confirm_bipv.png",
+                                        "alt" : "에너지",
+                                      },
+                                      "title" : "BIPV 태양광 패널",
+                                      "num" : "+ ₩20,000,000",
+                                    },
+                                    {
+                                      "category" : "인테리어",
+                                      "button" : "",
+                                      "image" : {
+                                        "path" : "ic_pc_start_color_confirm_interior_white.png",
+                                        "alt" : "인테리어",
+                                      },
+                                      "title" : "화이트 인테리어",
+                                      "num" : "+ ₩0",
+                                    },
+                                  ])
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="unit-box">
+                            <div class="unit-bottom">
+                              <div class="unit-content-box">
+                                <div class="result-sum-box">
+                                  <div class="result-sum-image-box">
+                                    <img src="../../assets/images/render/monoplus_steelbeige_bipv_01.png" alt="" />
+                                  </div>
+                                  <div class="result-sum-info-box">
+                                    <div class="result-sum-info-top">
+                                      <div class="result-sum-title-box">
+                                        <span class="title">고객님의 MONO+</span>
+                                      </div>
+                                      <ul class="result-sum-option-box">
+                                        <li class="result-sum-option">
+                                          <span>WPC 화이트오크</span>
+                                        </li>
+                                        <li class="result-sum-option">
+                                          <span>BIPV 태양광 패널</span>
+                                        </li>
+                                        <li class="result-sum-option">
+                                          <span>우드 인테리어</span>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    <div class="result-sum-info-bottom">
+                                      <div class="result-sum-cost-box">
+                                        <div class="title-box">
+                                          <span class="title">총 예상 가격</span>
+                                        </div>
+                                        <div class="result-sum-cost">
+                                          <span class="num">₩270,000,000</span>
+                                          <span class="badge">부가세 포함</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="layout-bottom-box">
+                      <div class="button-box">
+                        <!-- prettier-ignore -->
+                        @@include("button.html", {
+                          "className" : "btn-next",
+                          "btnColor" : "btn-primary",
+                          "btnSize" : "large",
+                          "property" : "",
+                          "btnText" : "다음",
+                          "iconClass" : "",
+                          "iconLeft" : "",
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+
+    <script></script>
+  </body>
+</html>

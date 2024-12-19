@@ -1,0 +1,49 @@
+<div class="gallery-block @@type">
+  <div class="full-image-box">
+    <div class="full-image">
+      <img width="1170px" height="574px" class="lazy" data-src="../../assets/images/@@fullImage" alt="@@fullImageAlt" />
+
+      <div class="dot-box">
+        @@for(var k = 0; k < detailImage.length; k++) {
+        <button type="button" class="dot dot-`+[k+1]+`" data-group="`+detailImage[k].property+`" title="detail `+[k+1]+`"></button>
+        }
+      </div>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay-area">
+        <div class="dim"></div>
+        <div class="overloay-middle">
+          <!-- prettier-ignore -->
+          @@for(var i = 0; i < overlay.length; i++) {  
+            @@include("../block/galleryOverlayBlock.html",  `+(JSON.stringify(overlay[i]))+`)
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-content-container use-mo">
+    <!-- prettier-ignore -->
+    @@for(var i = 0; i < overlay.length; i++) {  
+      @@include("../block/galleryOverlayContentBlock.html",  `+(JSON.stringify(overlay[i]))+`)
+    }
+  </div>
+
+  <div class="detail-image">
+    <div class="detail-image-controller">
+      <button type="button" class="btn-detail-image-prev btn-detail-image-prev-@@type" title="previous"></button>
+      <button type="button" class="btn-detail-image-next btn-detail-image-next-@@type" title="next"></button>
+    </div>
+    <div class="detail-image-container swiper">
+      <div class="detail-image-area swiper-wrapper">
+        <!-- prettier-ignore -->
+        @@for(var j = 0; j < detailImage.length; j++) {
+        <div class="detail-image-list swiper-slide" data-group="`+detailImage[j].property+`">
+          <img width="288px" height="174px" class="lazy" data-src="../../assets/images/`+detailImage[j].path+`" alt="`+detailImage[j].text+`" />
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,768 @@
+/*=== common === */
+html,
+body {
+  font-size: 10px;
+}
+body {
+  background-color: $bgcolor-gray-05;
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+a {
+  color: inherit;
+}
+.hidden {
+  display: none !important;
+}
+.bold {
+  font-weight: bold !important;
+}
+.imgWrap {
+  display: inline-block;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// color 
+.colorPrimary {
+  color: $primary !important;
+}
+.colorRed {
+  color: $color-red-01 !important;
+}
+.colorYellow {
+  color: $color-yellow-01 !important;
+}
+.colorSecondary {
+  color: $secondary !important;
+}
+
+// ::-webkit-scrollbar {
+// 	width: 4px;
+// 	height: 4px;
+// }
+
+// ::-webkit-scrollbar-track {
+// 	background-color: #fff;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 5px;
+// 	background-color: #919191;
+// }
+
+.ir {
+  position: absolute;
+  text-indent: -9999px;
+}
+
+// links
+.linkUnderline, 
+.linkPrimary, 
+.btnUnderLine {
+  border-bottom: 1px solid $primary;
+  color: $primary;
+}
+.linkSecondary {
+  border-bottom: 1px solid $secondary;
+  color: $secondary;
+}
+.linkBlack {
+  border-bottom: 1px solid $black;
+  color: $black;
+}
+
+.skip {
+  a {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 2rem;
+    background-color: $black;
+    @include font(1.6rem, bold, $white, 2rem);
+    text-align: center;
+    &:focus {
+      top: 0;
+    }
+  }
+}
+
+/* icons */
+[class*=iconBg] {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  // hide
+  & > span {
+    @include ir;
+  }
+}
+.iconBgHome {
+  background: image('common/icon_home.svg') no-repeat left center;
+}
+.btnAdd {
+  background: image('common/icon_add.svg') no-repeat center;
+}
+.btnDelete {
+  background: image('common/icon_delete.svg') no-repeat center;
+}
+
+// ------- layout ------- //
+.wrap {
+  position: relative;
+  min-width: 147.6rem;
+}
+.contentArea {
+  position: relative;
+  @include font(1.6rem, normal, $black, 1.4);
+}
+
+// ------- header ------- //
+.headerContainer {
+  @include flex(row, center, center);
+  background-color: $white;
+  border-bottom: 1px solid $color-gray-02;
+}
+.header {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  // max-width: 149.6rem;
+  height: 8.1rem;
+  margin: 0 auto;
+  padding: 0 5rem 0 5.4rem;
+}
+.logo {
+  @include flex(row, flex-start, center);
+  @include font(2.3rem, normal, $black);
+  strong {
+    margin-left: 0.8rem;
+  }
+
+  &>a {
+    display: inline-block;
+    width: 8.9rem;
+    height: 3.1rem;
+  }
+}
+/* header 즐겨찾기 */
+.headerGnbContainer {
+    @include flex(row, flex-start, center);
+    margin-left: 8rem;
+    margin-right: 2rem;
+  .headerGnbArea {
+    @include flex(row, flex-start, center);
+  }
+  .topMenuContainer {
+    @include flex(row, flex-start, flex-start);
+  }
+  .headerGnbTitle {
+    margin-right: 2rem;
+    white-space: nowrap;
+    @include font(1.6rem, bold, $black, 1);
+  }
+  .btn-menu {
+    @include flex(row, center, center);
+    max-width: 12rem;
+    height: 4.8rem;
+    padding: 0.5rem 1.1rem;
+    margin-right: 1rem;
+    background-color: $white;
+    border: 1px solid  rgba($black, 0.2);
+    border-radius: 4px;
+    @include font(1.3rem, normal, $black, 1.3);
+    word-break: keep-all;
+    text-align: center;
+    letter-spacing: -1px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  .linkUnderline {
+    margin-left: 1.6rem;
+    white-space: nowrap;
+  }
+}
+/* left navigation bar */
+.lnbContainer {
+  padding: 1.7rem 3rem 4rem;
+  background-color: $white;
+  border: 1px solid $border-color-02;
+  border-radius: 0.8rem;
+}
+.navList {
+  & > li {
+    border-bottom: 1px solid $bgcolor-gray-06;
+    &.active {
+      border-bottom: none;
+    }
+  }
+  .active {
+    .depth01 {
+      color: $primary;
+      font-weight: bold;
+      background-image: image('common/lnb_arrow_opend.svg');
+      &:before {
+        display: block;
+      }
+    }
+    .subMenu {
+      display: block;
+      // padding: 1.6rem 0;
+      border-top: 1px solid $bgcolor-gray-06;
+      background-color: $bgcolor-gray-02;
+    }
+  }
+  .depth01 {
+    position: relative;
+    @include flex(row, flex-start, center);
+    height: 6.4rem;
+    @include font(1.6rem, normal, $black);
+    background: image('common/lnb_arrow_closed.svg') no-repeat right 1.4rem center;
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   display: none;
+    //   top: 50%;
+    //   left: 2rem;
+    //   width: 0.4rem;
+    //   height: 2.4rem;
+    //   margin-top: -1.2rem;
+    //   background-color: $primary;
+    // }
+    &:hover, &:focus {
+      color: $primary;
+      font-weight: bold;
+      &:before {
+        display: block;
+      }
+    }
+  }
+  .depth02 {
+    @include flex(row, flex-start, center);
+    @include font(1.4rem, normal, $secondary);
+    &:hover, &:focus-visible, &.active {
+      color: $color-gray-01;
+      font-weight: bold;
+    }
+  }
+  .subMenu {
+    display: none;
+    & > li {
+      @include flex(row, flex-start, center);
+      height: 3.8rem;
+      padding-left: 2.4rem;
+    }
+  }
+}
+// 전체메뉴 펼치기/닫기 버튼
+.navTopArea {
+  padding: 2rem 0;
+  border-bottom: 1px solid $bgcolor-gray-06;
+  .btnMenuAll {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    padding-right: 1.5rem;
+    @include font(1.6rem, bold, $black, 1.3);
+    &.active {
+      &:after {
+        background-image: image('common/icon_menu_close.svg');
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      margin-left: auto;
+      background-image: image('common/lnb_arrow_closed.svg');
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+/* 사업자 adminHeader */ 
+// .adminHeader {}
+/* 슈퍼 관리자 header */
+// .superAdminHeader {}
+.userMenuContainer {
+  @include flex(row, center, center);
+  margin-left: auto;
+  @include font(1.3rem, normal, $black, 1.3);
+  [class*=btn] {
+    @include flex(row, flex-start, center);
+    &:before {
+      content: '';
+      display: block;
+    }
+  }
+  .btnUser {
+    white-space: nowrap;
+    &:before {
+      width: 1.6rem;
+      height: 1.8rem;
+      margin-right: 0.8rem;
+      background: image('common/icon_user.svg') no-repeat center;
+    }
+    .companyName {
+      display: block;
+      padding-right: 0.8rem;
+      font-weight: bold;
+    }
+  }
+  .btnLogout {
+    font-weight: bold;
+    color: $primary;
+    white-space: nowrap;
+    text-decoration: none;
+    &:before {
+      width: 1px;
+      height: 1.8rem;
+      margin: 0 1rem;
+      background-color: $border-color-01;
+    }
+  }
+  .btnNotice,
+  .btnSystemNotice {
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: -0.5rem;
+    &:before {
+      width: 3rem;
+      height: 3rem;
+    }
+    & > span {
+      @include ir;
+    }
+    //새로운 알림
+    &.new {
+      .iconBgNew {
+        display: block;
+      }
+    }
+  }
+  .btnNotice {
+    &:before {
+      background: image('common/icon_bell.svg') no-repeat center;
+    }
+  }
+  .btnSystemNotice {
+    &:before {
+      background: image('common/icon_system_notice.svg') no-repeat center;
+    }
+  }
+  .iconBgNew {
+    display: none;
+    top: 0.4rem;
+    right: 0.8rem;
+  }
+  .loginManualBox {
+    @include flex(row, flex-start, center);
+    margin-right: 2rem;
+  }
+  .btnManual {
+    @include flex(row, center, center);
+    min-width: 14rem;
+    height: 4.8rem;
+    margin: 0 0.5rem;
+    padding: 0 0.8rem;
+    border: 1px solid $primary;
+    background-color: $white;
+    @include font(1.4rem, bold, $primary, 1.4);
+    border-radius: 0.4rem;
+    &::before {
+      content: '';
+      display: inline-block;
+      flex-shrink: 0;
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0.6rem;
+      background: image('common/ic_manual.svg') no-repeat center/cover;
+    }
+    span {
+      display: block;
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: $secondary;
+    }
+    // ic_manual
+  }
+}
+.iconBgNew {
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #FF5758;
+}
+
+// ------- contents ------- //
+// content wrapper
+.contentContainer {
+  @include flex(row, space-between, flex-start);
+  width: 143.6rem;
+  // height: 100vh;
+  margin: 0 auto;
+  padding: 3rem 0 7rem;
+  .lnbWrapper {
+    width: 32.6rem;
+  }
+  .contentWrapper {
+    width: 100%;
+    max-width: 109.8rem;
+    &:only-child {
+      margin: 0 auto;
+    }
+  }
+}
+// sub title
+.pageTitleContainer {
+  padding: 0 3.2rem 0 2.8rem;
+  margin-bottom: 1.2rem;
+  background-color: $color-cyan-05;
+  border-radius: 0.8rem;
+  .pageTitleContent {
+    @include flex(row, space-between, center);
+    width: 100%;
+    height: 6.4rem;
+    margin: 0 auto;
+  }
+  .title {
+    @include flex(row, flex-start, center);
+    padding: 1rem 0;
+    & > * {
+      @include font(1.8rem, bold, $white, 1.3);
+      letter-spacing: 0.5px;
+    }
+  }
+  .titleArrow {
+    width: 2.4rem;
+    height: 4rem;
+    margin-right: 0.6rem;
+    background: image('common/icon_navi_prev.svg') no-repeat left center;
+  }
+  .breadcrumbContainer {
+    @include flex(row, flex-end, center);
+    .breadcrumb {
+      position: relative;
+      @include flex(row, flex-start, center);
+      margin-right: 3rem;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: -1.8rem;
+        width: 0.7rem;
+        height: 1rem;
+        margin-top: -0.5rem;
+        background: image('common/icon_navi_next.svg') no-repeat center;
+        pointer-events: none;
+      }
+      &.iconBgHome {
+        overflow: initial;
+        display: block;
+        width: 2rem;
+        height: 2rem;
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      .breadcrumbTitle {
+        @include font(1.4rem, normal, $white, 1.4);
+      }
+    }
+  }
+
+  // navi 하위 메뉴
+  .breadcrumbDrop {
+    &.active {
+      .breadcrumbDropList {
+        display: block;
+      }
+    }
+    .breadcrumbBtn {
+      width: 1.6rem;
+      height: 1.6rem;
+      margin-left: 0.6rem;
+      background: image('common/btn_navi_down.svg') no-repeat center;
+      & > span {
+        @include ir;
+      }
+    }
+    .breadcrumbDropList {
+      position: absolute;
+      display: none;
+      top: 2.5rem;
+      left: 0;
+      z-index: 10;
+      min-width: 14.5rem;
+      padding: 1.4rem 0;
+      border: 2px solid $black;
+      background-color: $white;
+      border-radius: 12px;
+      box-shadow: 3px 3px 5px 0px #00000026;
+      white-space: nowrap;
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 0 1.4rem;
+        @include font(1.4rem, normal, $black, 3.4rem);
+        &:hover, &:focus {
+          outline: 0;
+          background-color: rgba(0, 0, 0, 0.04);
+        }
+        &:active {
+          position: relative;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -2px;
+            right: -2px;
+            bottom: 0;
+            z-index: 1;
+            border: 2px solid $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* 목록, 상세 공통 */
+.contents {
+  &:last-child {
+    margin-bottom: 4rem;
+  }
+  
+}
+.contentTop {
+  @include flex(row, space-between, center);
+  position: relative;
+  margin-bottom: 1.2rem;
+  @include font(1.3rem, normal, $color-gray-04, 1.4);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .topLeft {
+    @include flex(row, flex-start, center);
+    & > * {
+      margin-right: 0.8rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &:only-child {
+      width: 100%;
+    }
+    &.allAlignLeft {
+      & > * {
+        &:last-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .topRight {
+    @include flex(row, flex-start, center);
+    margin-left: auto;
+    @include font(1.3rem, normal, $color-gray-04, 1.4);
+    .topLabel {
+      display: block;
+      margin-right: 1rem;
+    }
+    .buttonArea {
+      margin-left: 1.5rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      .btn {
+        min-width: 7rem;
+        &:last-child {
+          min-width: 12rem;
+        }
+        &:nth-child(3n) {
+          margin-left: 1.5rem;
+        }
+      }
+    }
+  }
+  .topTitle {
+    @include flex(row, flex-start, center);
+    @include font(1.8rem, bold, $black, 1.4);
+    & + .bar {
+      margin-left: 0;
+    }
+  }
+  .bar {
+    // align-self: flex-end;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    color: $color-gray-04;
+    // &:before {
+    //   content: '';
+    //   display: block;
+    //   width: 1px;
+    //   height: 1.8rem;
+    //   margin: 0 1.8rem;
+    //   background-color: $border-color-01;
+    // }
+  }
+  .buttonArea {
+    margin-left: auto;
+    .btn {
+      height: 4rem;
+      &:only-child {
+        min-width: 12rem;
+      }
+    }
+  }
+  .checkbox {
+    margin-left: 0.4rem;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  .addExplain {
+    margin-top: 0;
+  }
+}
+.contentTopSearch {
+  @include flex(column, flex-start, flex-start);
+  margin-bottom: 3rem;
+  .searchInput {
+    min-width: 35.5rem;
+    margin-bottom: 3.2rem;
+  }
+  .topTitle {
+    @include font(1.4rem, 400, $color-gray-01, 1);
+  }
+}
+.contentMiddle {
+  .radioLabel {
+    @include font(1.4rem, 400, $color-gray-01, 1.9rem);
+  }
+  &:only-child {
+    margin-top: 8.6rem;
+  }
+}
+.contentBottom {
+  padding-top: 5rem;
+}
+.contentInputMiddle {
+  margin-bottom: 1.2rem;
+}
+
+/* 계정 승인 날짜 영역 */
+.confirmWrap {
+  @include flex(row, space-between, center);
+}
+.confirmColorLabel {
+  color: $primary;
+  .colorLabel {
+    display: inline-block;
+    width: 6.2rem;
+    height: 2.3rem;
+    margin-left: 1.6rem;
+    padding: 0 0.7rem;
+    @include font(1.3rem, normal, $white, 2.3rem);
+    background-color: $primary;
+    border-radius: 3px;
+  }
+}
+
+//contentInner
+.dashBoardContainer,//대시보드
+.workBoardContainer,//업무알림
+.contentInner, 
+.filterContainer,//검색
+.resultContainer,//결과
+.detailContainer,//상세
+.myProfileContainer {
+  margin-bottom: 1.2rem;
+  padding: 3rem;
+  background-color: $white;
+  border: 1px solid $border-color-02;
+  border-radius: 0.8rem;
+  box-shadow: 0px 0px 1px 0px rgba($black, 0.04), 0px 4px 4px 0px rgba($black, 0.04);
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .tabList {
+    margin: -3rem -3rem 0;
+  }
+}
+
+.detailContainer {
+  .contentTop {
+    // margin-bottom: 2rem;
+    .topTitle {
+      @include font (1.6rem, 700, $color-gray-01, 2.2rem);
+    }
+    .topRight {
+      .select {
+        width: 11.4rem;
+      }
+    }
+  }
+}
+
+/* 설명 요약 */
+.shortening {
+  @include ellipsis;
+}
+
+/* 답변 내용 하단 정보 */
+.answerArea {
+  @include flex(row, flex-start, flex-start);
+  dl {
+    @include flex(row, flex-start, center);
+    margin-right: 3rem;
+    @include font(1.2rem, bold, $secondary, 1.3);
+    &:last-child {
+      margin-right: 0;
+    }
+    dd {
+      margin-left: 0.8rem;
+      font-weight: normal;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px)  {
+  .headerGnbContainer {
+    margin-left: 3rem;
+    .headerGnbTitle {
+      font-size: 1.4rem;
+    }
+    .btn-menu {
+      padding: 0.3rem;
+      span {
+        @include multi-text-hidden('true',2);
+      }
+    }
+  }
+  .userMenuContainer {
+    .loginManualBox {
+      // margin-left: 3rem;
+      margin-right: 1rem;
+    }
+    .btnUser {
+      .companyName {
+        max-width: 4rem;
+        @include ellipsis;
+      }
+    } 
+  }
+}

@@ -1,0 +1,6 @@
+<div class="switch">
+  <input type="checkbox" id="@@listId" @@property>
+  <label for="@@listId" class="switch-content-box" aria-hidden="true">
+    <span class="slider" role="checkbox" @@if(property === 'checked') {aria-checked="true"} @@if(property !== 'checked') {aria-checked="false"} tabindex="0"></span>
+  </label>
+</div>

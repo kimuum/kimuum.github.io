@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | autocharge 설정"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : .menu-autocharge 
+      -->
+      <main class="main-container menu-autocharge">
+        <!-- [240207] Header 타이틀 텍스트 변경 -->
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "align" : "between",
+            "logo" : false,
+            "title" : {
+              "show" : true,
+              "text" : "Autocharge 설정",
+            },
+            "button" : '',
+          })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="autocharge-container">
+              <div class="autocharge-area">
+                <div class="autocharge-detail-list-box">
+                  <ul class="autocharge-list-box switch-list-box">
+                    <!-- prettier-ignore -->
+                    @@loop("switchList.html", [
+                      {
+                        "listLabel": "Autocharge",
+                        "desc" : null,
+                        "listId" : "switch-01",
+                        "property" : ""
+                      },
+                    ])
+                    <!-- [접근성] 안 닫힌 ul 태그 수정 -->
+
+                    <!-- [240207] 공통 클래스 부여 -->
+                    <!-- Autocharge 비 활성화시 .disabled 클래스 부여 -->
+                    <li class="autocharge-list progress-bar-handler-list">
+                      <div class="progress-bar-handler-title">
+                        <!-- [접근성] - 태그 변경 -->
+                        <label for="slider-range" class="label">충전량 설정</label>
+                        <div class="description">Autocharge시 설정된 충전량만큼 자동으로 충전됩니다.</div>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("progressBar.html", {
+                        "data" : "80",
+                        "property" : ""
+                      })
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

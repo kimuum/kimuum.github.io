@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "메뉴 등록" , "headProjectName": "| 메뉴 및 화면 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>메뉴 등록</span></button>
+    </div>
+    <div class="popup popupSuperSetMenuAdd hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">메뉴 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="fieldWrap">
+            <form>
+              <fieldset>
+                <legend>메뉴 등록</legend>
+                <div class="field fieldInput">
+                  <label for="input-id-01" class="fieldLabel"
+                    >메뉴명<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="input">
+                    <input type="text" id="input-id-01" value="" placeholder="메뉴명를 입력해주세요." aria-required="true" required />
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="input-id-02" class="fieldLabel"
+                    >정렬 순서<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="input">
+                    <input type="text" id="input-id-02" value="1" aria-required="true" required />
+                  </div>
+                </div>
+                <div class="field fieldRadio">
+                  <div class="fieldLabel">
+                    사용 여부<strong class="required"><span>필수입력</span></strong>
+                  </div>
+                  <div class="fieldForm">
+                    <div class="radio">
+                      <input type="radio" id="input-radio-01" name="radio" checked aria-required="true" required />
+                      <label for="input-radio-01" class="radioLabel"><span>일반</span></label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="input-radio-02" name="radio" aria-required="true" required />
+                      <label for="input-radio-02" class="radioLabel"><span>팝업</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="field fieldRadio">
+                  <div class="fieldLabel">
+                    노출 여부<strong class="required"><span>필수입력</span></strong>
+                  </div>
+                  <div class="fieldForm">
+                    <div class="radio">
+                      <input type="radio" id="input-radio-03" name="radio02" checked aria-required="true" required />
+                      <label for="input-radio-03" class="radioLabel"><span>노출</span></label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="input-radio-04" name="radio02" aria-required="true" required />
+                      <label for="input-radio-04" class="radioLabel"><span>미노출</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="field fieldRadio">
+                  <div class="fieldLabel">
+                    Leaf 여부<strong class="required"><span>필수입력</span></strong>
+                  </div>
+                  <div class="fieldForm">
+                    <div class="radio">
+                      <input type="radio" id="input-radio-05" name="radio03" checked aria-required="true" required />
+                      <label for="input-radio-05" class="radioLabel"><span>예</span></label>
+                    </div>
+                    <div class="radio">
+                      <input type="radio" id="input-radio-06" name="radio03" aria-required="true" required />
+                      <label for="input-radio-06" class="radioLabel"><span>아니오</span></label>
+                    </div>
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="input-id-03" class="fieldLabel"
+                    >상위 메뉴번호<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="input">
+                    <input type="text" id="input-id-03" value="MENU01" aria-required="true" required />
+                  </div>
+                </div>
+                <div class="field fieldInput">
+                  <label for="input-id-04" class="fieldLabel"
+                    >화면명<strong class="required"><span>필수입력</span></strong></label
+                  >
+                  <div class="fieldForm">
+                    <div class="input">
+                      <input type="text" id="input-id-04" placeholder="-" aria-required="true" required />
+                    </div>
+                    <button type="button" class="btn"><span>조회</span></button>
+                  </div>
+                  <div class="buttonArea btnLeft">
+                    <button type="button" class="btnRefresh"><span>초기화</span></button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>저장</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- Start Script -->
+  </body>
+</html>

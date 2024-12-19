@@ -1,0 +1,221 @@
+@@include('head.html', {
+'title': 'MY ORDERS CANCELLED'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+
+      <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 화면 전체 스크롤 -->
+      <div class="content-container" style="transform: translateY(0px);">
+        <div class="sub-title-container">
+          <div class="sub-main-title">MY ORDERS</div>
+        </div>
+        <div class="sub-content-container none-flex">
+          <!-- my page contents -->
+          <div class="sub-content-area">
+            <div class="my-page-content-container">
+              <div class="my-page-content-middle">
+                <div class="tab-container">
+                  <div class="tab-button-area">
+                    <div class="tab-button-left">
+                      <!-- 
+                        현재 선택 된 탭 클래스 : selected
+                        현재 위치 포커스 클래스 : focused
+                        현재 위치 마우스 오버 클래스 : hover
+                      -->
+                      <button type="button" class="btn-tab focused"><span>orders</span></button>
+                      <button type="button" class="btn-tab selected"><span>cancelled orders</span></button>
+                    </div>
+                    <!-- 기획서 v1.07 동기화 : 20230920 콤보박스 추가 -->
+                    <div class="tab-button-right">
+                      <div class="dropdown-container">
+                        <!-- 활성화 클래스 : active -->
+                        <div class="dropdown-area">
+
+                          <!-- 포커스클래스 : focused -->
+                          <button type="button" class="btn-open">
+                            <span>Past 3 months</span>
+                          </button>
+                          <ul class="dropdown-list">
+                            <li class="list focused">
+                              <button type="button" class="option"><span>Past 3 months</span></button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //기획서 v1.07 동기화 : 20230920 콤보박스 추가 -->
+                  </div>
+                  <div class="tab-content-container">
+                    <div class="tab-content-area">
+                      <!-- 주문 취소 목록 -->
+                      <!-- 230907-V1.05 수정 -->
+                      <div class="order-info-box">
+                        <div class="info-header-wrap">
+
+                          <!-- 20231024 전체취소 버튼 추가로 인한 수정 -->
+                          <p class="header-title">ORDER NUMBER : <span class="order-number">AA12349575h6</span></p>
+                        </div>
+                        <div class="info-body-wrap">
+                          <div class="info-list-box">
+                            <div class="info-list">
+                              <div class="info-label">PAYMENT METHOD</div>
+                              <div class="info-value">Mastercard / ****-1199</div>
+                            </div>
+                            <div class="info-list">
+                              <div class="info-label">CANCELLED DATE</div>
+                              <div class="info-value">January 5, 2023</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //230907-V1.05 수정 -->
+                      <div class="order-product-item-box">
+                        <div class="product-item-area">
+                          <!-- 230907-V1.05 수정 -->
+                          <!-- 기획서 v1.07 동기화 : 20230920 상태 정의 추가 -->
+                          <!-- 
+                            상품 상태 클래스 목록
+                            배송/반품/교환 준비중 : .status-prepare
+                            배송/반품/교환 진행중 : .status-ing
+                            배송/반품/교환 완료 : .status-completed
+                            취소/취소처리중/취소완료 : .status-cancelled
+                          -->
+                          <!-- //기획서 v1.07 동기화 : 20230920 상태 정의 수정 -->
+                          <div class="product-box-container status-cancelled">
+                            <div class="product-item-top">
+                              <!-- 기획서 v1.12 동기화 : 문구 케이스 변경 -->
+                              <div class="product-status">
+                                <span class="status-label">Cancel order</span>
+                                <!-- <span class="status-label">Cancellation processing</span>
+                                <span class="status-label">Cancelled</span> -->
+                              </div>
+                              <!-- //기획서 v1.12 동기화 : 문구 케이스 변경 -->
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>VIEW CANCELLATION DETAILS</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <!-- 230907-V1.05 수정 -->
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">OPTION : $5.50</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit focused">
+                                  <span>buy it again</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="product-box-container status-cancelled">
+                            <div class="product-item-top">
+                              <div class="product-status">
+                                <span class="status-label">Cancellation completed</span>
+                              </div>
+                              <div class="button-box">
+                                <button type="button" class="btn-solid-dark btn-small">
+                                  <span>VIEW CANCELLATION DETAILS</span>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="product-item-middle">
+                              <div class="item-info-box">
+                                <div class="info-item-header">
+                                  <div class="item-brand-box">
+                                    <span class="icon-partners"><img src="./images/ic_partners_hsn.png" alt="qvc"></span>
+                                    <!-- 230907-V1.05 수정 -->
+                                    <div class="product-name">
+                                      IHWIP XL Everyday Essentials Crossbody with 2 Straps
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="info-item-body">
+                                  <div class="thumb-box">
+                                    <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                  </div>
+                                  <div class="desc-box">
+                                    <div class="product-text">
+                                      <span class="product-id">ID : A565145</span>
+                                      <span>Qty : 1</span>
+                                      <span>Sliver Metallic / XL</span>
+                                    </div>
+                                    <div class="product-desc">
+                                      <span class="product-price">$38.09</span>
+                                      <span class="product-bar">OPTION : $5.50</span>
+                                      <span class="product-bar">S&H: $3.50</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="item-control-box">
+                                <button type="button" class="btn-order-submit">
+                                  <span>buy it again</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+                      <!-- //주문 취소 목록 -->
+
+                      <!-- 기획서 v1.07 동기화 : 20230920 위치 수정 -->
+                      <!-- 주문 취소 목록 없는 경우 -->
+                      <div class="notice-container icon-billing">
+                        <div class="text-notice-area">
+                          <div class="text-large-box">
+                            THERE IS NO ORDER HISTORY
+                          </div>
+                          <div class="text-middle-box">
+                            Use search above to find past orders.
+                          </div>
+                        </div>
+                      </div>
+                      <!-- //주문 취소 목록 없는 경우 -->
+                      <!-- //기획서 v1.07 동기화 : 20230920 위치 수정 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //my page contents -->
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

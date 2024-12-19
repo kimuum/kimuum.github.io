@@ -1,0 +1,28 @@
+.token {
+  @include flex(row, center, center);
+  height: 2.8rem;
+  padding: 0.6rem 0.8rem;
+  @include font(1.2rem, 700, $text_03, 1.6rem);
+  border: 1px solid $primary_20;
+  border-radius: 0.4rem;
+  background-color: $neutral_10;
+  white-space: nowrap;
+  &:not(:disabled) {
+    &:active,
+    &:focus {
+      background-color: $neutral-15;
+      outline: none;
+    }
+  }
+  &:disabled {
+    opacity: 0.4;
+  }
+  &.active {
+    border-color: $primary_80;
+    background: $primary_80;
+    color: $text_07;
+    &:focus {
+      background: $primary_80;
+    }
+  }
+}

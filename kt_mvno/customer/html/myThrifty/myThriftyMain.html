@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "마이알뜰폰 홈 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyMain -->
+    <div class="wrap myThriftyMain">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>마이알뜰폰</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰 홈</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldTop flex">
+              <h3 class="fieldTitle01">즐겨찾는 메뉴</h3>
+              <button type="button" class="iconBgSetting" title="메뉴 편집"><img src="../../assets/images/common/icon_settings.svg" alt="" /></button>
+              <!-- [K-WAX] 20221117 수정 -->
+              <div class="fieldText">
+                <!-- [VOS2차] 결함 ID 1122408 구조 수정 -->
+                <div class="favoritButtons">
+                  <button type="button" class="btn btnWhite"><span>가입정보</span></button>
+                  <button type="button" class="btn btnWhite"><span>사용량 조회</span></button>
+                  <button type="button" class="btn btnWhite"><span>명세서 조회</span></button>
+                  <button type="button" class="btn btnWhite"><span>요금 납부</span></button>
+                </div>
+                <!-- //[VOS2차] 결함 ID 1122408 구조 수정 -->
+              </div>
+            </div>
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea summary01">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">사용량</a></h3>
+                  </div>
+                  <div class="fieldMiddle bgColorGray">
+                    <!-- 달력 -->
+                    <div class="field fieldDatepicker hideInput large" id="datepicker-select-period-large01">
+                      <div class="fieldLabel">사용량 조회 월 선택</div>
+                      <div class="fieldForm datePickerArea">
+                        <input type="text" id="input-select-date-large01" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                        <button type="button" id="btn-open-period01" class="btn btnOpen btnOpenPeriod" onclick="togglePopup('btn-open-period01', 'period-container01')" aria-expanded="false" title="사용량 조회 월 선택">2021.11 ~ 2022.01</button>
+
+                        <div id="period-container01" class="periodContainer">
+                          <div class="periodArea">
+                            <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth3" month="3">3개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth6" month="6">6개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth12" month="12">12개월</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="summaryDataWrap">
+                      <div class="summaryTitleArea">
+                        <div class="imgWrap">
+                          <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                        </div>
+                        <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                      </div>
+                      <div class="dlColorBoxArea">
+                        <div class="dlGrayBox dataGraphBar">
+                          <div class="graphArea">
+                            <dl class="dlItemFlex">
+                              <dt>데이터</dt>
+                              <dd class="barContent">
+                                <p class="colorRed">총 <span>3.2GB</span></p>
+                              </dd>
+                            </dl>
+                            <div class="bar bgRed">
+                              <div class="barGage" style="width: 90%"></div>
+                            </div>
+                            <div class="infoDetail">
+                              <p>잔여 3.21 GB</p>
+                              <p>사용 11.84 GB</p>
+                            </div>
+                          </div>
+                          <!-- //데이터 -->
+                          <div class="graphArea">
+                            <dl class="dlItemFlex">
+                              <dt>음성</dt>
+                              <dd class="barContent">
+                                <p class="colorYellow">총 <span>300분</span></p>
+                              </dd>
+                            </dl>
+                            <div class="bar bgYellow">
+                              <div class="barGage" style="width: 50%"></div>
+                            </div>
+                            <div class="infoDetail">
+                              <p>잔여 161분</p>
+                              <p>사용 139분</p>
+                            </div>
+                          </div>
+                          <!-- //음성 -->
+                          <div class="graphArea">
+                            <dl class="dlItemFlex">
+                              <dt>영상</dt>
+                              <dd class="barContent">
+                                <p class="colorPurple02">총 <span>50분</span></p>
+                              </dd>
+                            </dl>
+                            <div class="bar bgPurple02">
+                              <div class="barGage" style="width: 100%"></div>
+                            </div>
+                            <div class="infoDetail">
+                              <p>잔여 50분</p>
+                              <p>사용 0분</p>
+                            </div>
+                          </div>
+                          <!-- //영상 -->
+                          <div class="graphArea">
+                            <dl class="dlItemFlex">
+                              <dt>문자</dt>
+                              <dd class="barContent">
+                                <p class="colorPrimary">기본제공</p>
+                              </dd>
+                            </dl>
+                            <div class="bar">
+                              <div class="barGage" style="width: 80%"></div>
+                            </div>
+                            <div class="infoDetail">
+                              <p>기본제공</p>
+                              <p>사용 1건</p>
+                            </div>
+                          </div>
+                          <!-- //문자 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //사용량 -->
+
+              <div class="summaryArea summary02">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">요금 조회</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="chartContainer">
+                      <div class="chartArea chartRealtimeRate">
+                        <!-- Print Chart Area -->
+                        <canvas id="realtimeRate" width="280" height="280"></canvas>
+
+                        <!-- Chart Information -->
+                        <div class="chartInfoContainer">
+                          <div class="chartInfoArea">
+                            <div class="label">실시간 요금</div>
+                            <div class="rateBox">
+                              <span class="rate">1,122,990원</span>
+                            </div>
+                            <div class="period">
+                              <span class="startDate">10월 1일</span>
+                              <span class="separator">~</span>
+                              <span class="endDate">31일</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field fieldDatepicker hideInput large" id="datepicker-select-period-large02">
+                      <div class="fieldLabel">납부 조회 기간 선택</div>
+                      <div class="fieldForm datePickerArea">
+                        <input type="text" id="input-select-date-large02" class="singleDatePicker" value="" autocomplete="off" aria-hidden="true" tabindex="-1" />
+                        <button type="button" id="btn-open-period02" class="btn btnOpen btnOpenPeriod" onclick="togglePopup('btn-open-period02', 'period-container02')" aria-expanded="false" title="납부 조회 기간 선택">2021.11 ~ 2022.01</button>
+
+                        <div id="period-container02" class="periodContainer">
+                          <div class="periodArea">
+                            <button type="button" class="btn btnPeriod btnMonth1" month="1" title="선택됨">1개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth3" month="3">3개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth6" month="6">6개월</button>
+                            <button type="button" class="btn btnPeriod btnMonth12" month="12">12개월</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tableContainer bgColorTable">
+                      <div class="tableArea">
+                        <table>
+                          <caption>
+                            요금 조회 - 납부일, 납부금액
+                          </caption>
+                          <colgroup>
+                            <col style="width: 35%" />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">납부일</th>
+                              <th scope="col">납부금액</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>2022.01.12</td>
+                              <td>(납부 완료) 29,700원</td>
+                            </tr>
+                            <tr>
+                              <td>2022.01.12</td>
+                              <td>(납부 완료) 29,700원</td>
+                            </tr>
+                            <tr>
+                              <td>2022.01.12</td>
+                              <td>(납부 완료) 29,700원</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //요금 조회 -->
+
+              <div class="summaryArea summary03">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">요금제 및 부가서비스</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="summaryDataWrap">
+                      <div class="summaryTitleArea">
+                        <div class="imgWrap">
+                          <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                        </div>
+                        <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                        <p>데이터 무제한에 네이버페이 5000P 제공!</p>
+                      </div>
+                      <div class="dlColorBoxArea">
+                        <div class="dlGrayBox">
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgData">데이터</dt>
+                            <dd class="colorPrimary">15GB + 3Mbps</dd>
+                          </dl>
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgCall">음성통화</dt>
+                            <dd class="colorPrimary">300분</dd>
+                          </dl>
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgSMS">메세지</dt>
+                            <dd class="colorPrimary">300건</dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <!-- <dl class="usageItem">
+                      <dt>월 기본요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl> -->
+                      <div class="nodataContainer" style="display: none">
+                        사용중이신 요금제는 마이알뜰폰에서 <br />상세 정보를 제공할 수 없습니다. <br /><br />
+                        자세한 내용은 사업자 고객센터로 <br />문의 바랍니다.
+                      </div>
+                      <dl class="usageItem borderBox">
+                        <dt>사용중인 부가서비스 2개</dt>
+                        <dd>0원</dd>
+                      </dl>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //요금제 및 부가서비스 -->
+
+              <div class="summaryArea summary04">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">분실신고 및 정지</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="noticeArea">
+                      <p><span class="moBlock">휴대폰을 분실하신 경우</span> <span class="moBlock">휴대폰 분실신고를 접수하세요.</span></p>
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnPrimary"><span>분실신고 접수하기</span></button>
+                      </div>
+                    </div>
+                    <div class="noticeArea">
+                      <p><span class="moBlock">회선 정지를 원하시는 경우</span> <span class="moBlock">정지를 신청해주세요.</span></p>
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnPrimary"><span>정지 신청하기</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //분실신고 및 정지 -->
+
+              <!-- [운영] KMVNO-3987 쿠폰함 변경 -->
+              <div class="summaryArea summary05">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">쿠폰함</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="couponStateContainer">
+                      <div class="couponStateMessageArea">
+                        <!-- [운영] KMVNO-3987 20231124 클래스 오타 수정 -->
+                        <p class="couponMassageBox">사용 가능한 쿠폰이 <strong class="colorPrimary">6</strong>장 있습니다.</p>
+                      </div>
+                      <div class="couponStateSummaryArea">
+                        <div class="couponTicketArea">
+                          <!-- [운영] KMVNO-3987 20231124 탕 -->
+                          <!-- 
+                          쿠폰 구분 아이콘:
+                          데이터 iconCouponData
+                          통화 iconCouponCall
+                          이용권 iconCouponTicket
+                        -->
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '웰컴 데이터 쿠폰 10GB'
+                        })
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '무료통화 100분'
+                        })
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '밀리의 서재 3개월'
+                        })
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '웰컴 데이터 쿠폰웰컴 데이터 쿠폰웰컴 데이터 쿠폰웰컴 데이터 쿠폰 10GB'
+                        })
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '무료통화',
+                          'text': '100분'
+                        })
+                          <!-- prettier-ignore -->
+                          @@include('../component/coupon_ticket_icon_box.html', {
+                          'iconClass': 'iconCouponTicket',
+                          'title': '무료통화 100분'
+                        })
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- 사용 가능한 쿠폰이 0장 일 경우  -->
+                    <div class="couponStateContainer" style="display: none">
+                      <div class="couponStateMessageArea">
+                        <!-- [운영] KMVNO-3987 20231124 클래스 오타 수정 -->
+                        <p class="couponMassageBox">사용 가능한 쿠폰이 <strong class="colorBlack">0</strong>장 있습니다.</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //쿠폰함 -->
+              <!-- [운영] KMVNO-3987 쿠폰함 변경 -->
+
+              <!-- 2차 : 구조추가 -->
+              <div class="summaryArea summary06">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">데이터 쉐어링</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <!-- [2차] 대고객 20221018 다회선 유형 추가 -->
+                    <div class="infoBoxArea grayBox">
+                      <div class="infoAreaTop">
+                        <strong class="title">결합 회선 010-43**-*526</strong>
+                      </div>
+                      <div class="infoAreaMiddle">
+                        <p class="colorGray">결합일 2022.05.30</p>
+                      </div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 쉐어링 결합 해지하기</a>
+                      </div>
+                    </div>
+                    <!-- //[2차] 대고객 20221018 다회선 유형 추가 -->
+
+                    <div class="infoBoxArea grayBox">
+                      <div class="infoAreaTop">
+                        <strong class="title">결합 회선 010-43**-*526</strong>
+                      </div>
+                      <div class="infoAreaMiddle">
+                        <p class="colorGray">결합일 2022.05.30</p>
+                      </div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 쉐어링 결합 해지하기</a>
+                      </div>
+                    </div>
+
+                    <!--  데이터 쉐어링 결합 상품 없는 경우 -->
+                    <div class="infoBoxArea middleMargin">
+                      <div class="infoAreaTop alignCenter">가입된 데이터 쉐어링 상품이 없습니다.</div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 쉐어링 결합하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!--// 데이터 쉐어링  -->
+
+              <div class="summaryArea summary07">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">데이터 주고받기</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="infoBoxArea grayBox">
+                      <div class="infoAreaTop">LTE 결합서비스 <strong class="bold">데이터받기</strong> 상품을 사용중입니다.</div>
+                      <div class="infoAreaMiddle">
+                        <p class="text">가입일: 2022-05-24</p>
+                        <p class="text">결합 회선: 010-34**-*807</p>
+                      </div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 받기 해지하기</a>
+                      </div>
+                    </div>
+                    <div class="infoBoxArea grayBox">
+                      <div class="infoAreaTop">LTE 결합서비스 <strong class="bold">데이터받기</strong> 상품을 사용중입니다.</div>
+                      <div class="infoAreaMiddle">
+                        <p class="text">가입일: 2022-04-15</p>
+                        <p class="text">결합 회선: 010-66**-*295</p>
+                      </div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 받기 해지하기</a>
+                      </div>
+                    </div>
+                    <div class="infoBoxArea">
+                      <div class="infoAreaTop alignCenter">받기 결합 한도가 <strong class="bold">2</strong>회선 남았습니다.</div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 주고받기 가입하기</a>
+                      </div>
+                    </div>
+                    <div class="infoBoxArea">
+                      <div class="infoAreaTop alignCenter">가입된 LTE 데이터 주고받기 상품이 없습니다.</div>
+                      <div class="infoAreaBottom alignRight">
+                        <a href="javascript:void(0);" class="linkUnderline colorPrimary">데이터 주고 받기 가입하기</a>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!--// 데이터 주고받기  -->
+
+              <!-- [운영] 카드형 서비스 점검 유형 추가 -->
+              <div class="summaryArea">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01"><a href="javascript:void(0);" class="iconBgLink">메뉴명(서비스 점검 유형 예시)</a></h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="errorCardWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/common/img_inspection.svg" alt="" />
+                      </div>
+                      <div class="errorMiddle">
+                        <div class="title">
+                          <strong>서비스 점검 중입니다.</strong>
+                        </div>
+                        <p>
+                          점검 시간 동안은 서비스 이용이 불가능하오니 <br />
+                          양해 부탁드립니다.
+                        </p>
+                      </div>
+                      <div class="errorBottom">
+                        <div class="errorBgBox gray">
+                          <dl class="noticeDl">
+                            <dt>점검 시간</dt>
+                            <dd>4월 14일(목) 19시 ~ 4월 15일(금) 10시</dd>
+                          </dl>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //[운영] 카드형 서비스 점검 유형 추가 -->
+              <!-- //2차 : 구조추가 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript" src="../../assets/js/chart.js-2.9.4.min.js"></script>
+    <!-- chart JS -->
+    <script>
+      $(document).ready(function () {
+        // [VOS2차] 결함 ID 1122788 수정 - 시작 //
+        const $favoritButtons = $('.favoritContainer').find('.favoritButtons');
+        let favoriteLeft = $favoritButtons.offset().left;
+        let favoriteWidth = $favoritButtons.outerWidth();
+        let favoriteScrollLeft = $favoritButtons.scrollLeft();
+
+        $(window)
+          .on('load', function () {
+            favoriteWidth = $favoritButtons.outerWidth();
+            let $favoriteBtn = $favoritButtons.find('.btn');
+
+            $favoriteBtn.on('focus', function () {
+              favoriteScrollLeft = $favoritButtons.scrollLeft();
+
+              let $this = $(this);
+              let myPositionX = $this.offset().left - favoriteLeft;
+              let myWidth = $this.outerWidth() + 5;
+
+              if (myPositionX + myWidth > favoriteWidth) {
+                let outWidth = myPositionX + myWidth - favoriteWidth;
+                /*
+            컨테이너의 left 좌표 + ((버튼의 left 좌표 + 버튼의 width) - 컨테이너의 width)
+            (myPositionX + myWidth) - favoriteWidth = 버튼이 컨테이너 오른쪽 영역을 벗어난 길이
+            */
+                $favoritButtons.scrollLeft(favoriteScrollLeft + outWidth);
+              } else if (myPositionX < 0) {
+                $favoritButtons.scrollLeft(favoriteScrollLeft + myPositionX);
+              }
+            });
+          })
+          .resize(function () {
+            favoriteWidth = $favoritButtons.outerWidth();
+            favoriteScrollLeft = $favoritButtons.scrollLeft();
+          });
+
+        // [VOS2차] 결함 ID 1122788 수정 - 끝 //
+        commonEvent();
+
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+
+        if ($('#datepicker-select-period-large01').length > 0) {
+          /*
+        [VOS2차] 결함 ID 1122631 수정 : 기본 조회 기간 설정 파라미터 추가
+        파라미터 (id, type, customize, defaultPeriod)
+        */
+          getDatepicker('#datepicker-select-period-large01', 'period', false, 2); // 2번 째 버튼(3개월 선택)
+        }
+
+        if ($('#datepicker-select-period-large02').length > 0) {
+          /*
+        [VOS2차] 결함 ID 1122631 수정 : 기본 조회 기간 설정 파라미터 추가
+        파라미터 (id, type, customize, defaultPeriod)
+        */
+          getDatepicker('#datepicker-select-period-large02', 'period', false, 2); // 2번 째 버튼(3개월 선택)
+        }
+      });
+    </script>
+    <script>
+      //---------- 실시간 요금 차트 ----------//
+
+      var ctx = document.getElementById('realtimeRate').getContext('2d');
+      var gradient = ctx.createLinearGradient(90, 90, 220, 220);
+      gradient.addColorStop(0.0, '#33D3C2');
+      gradient.addColorStop(1.0, '#1DAC9D');
+
+      const data = {
+        datasets: [
+          {
+            label: '실시간 요금',
+            data: [70, 30], // 비율 : [컬러,회색]
+            backgroundColor: [gradient, '#D0D5DF'],
+            hoverOffset: 0,
+          },
+        ],
+      };
+
+      const config = {
+        type: 'doughnut',
+        data: data, // 상단에 있는 데이터
+        options: {
+          responsive: true, // 반응형 웹 대응
+          borderWidth: 0, // 도넛을 구성하는 값과 값 사이의 외곽선 (현재는 외곽선을 뺌)
+          cutoutPercentage: 75, // 도넛의 중심을 기준으로 하얀색 원을 몇 % 만큼 채울 것인지 입력 (0% 면 Pie 차트가 되고, 100% 면 차트가 안 보임)
+        },
+      };
+
+      const myChart = new Chart(document.getElementById('realtimeRate'), config);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,231 @@
+/* popup */
+.popup {
+  @include flex(column, center, center);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  &.show {
+    display: flex;
+  }
+  .dim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($black, 0.6);
+  }
+}
+
+.popup-container {
+  overflow: hidden;
+  @include flex(row, center, center);
+  position: relative;
+  z-index: 1;
+  width: 93.8rem;
+  min-height: 64.8rem;
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 1rem;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.08), 0px 15px 35px -5px rgba(17, 24, 38, 0.15),
+    0px 0px 0px 1px rgba(152, 161, 178, 0.1);
+  .popup-area {
+    @include flex(column, space-between, stretch);
+    width: 100%;
+    height: 100%;
+  }
+  .popup-top {
+    overflow: hidden;
+    @include flex(row, space-between, center);
+    position: relative;
+    height: 7.2rem;
+    margin: 0 4rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid $color-gray-03;
+    @include font(2rem, 700, $color-gray-01, 1.25);
+    .btn-pop-close {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-left: 2.4rem;
+      background: image('icon/ic_close.png') no-repeat center/ 3.2rem;
+    }
+  }
+  .popup-middle {
+    flex: 1;
+    padding: 2.2rem 4rem 2rem;
+    .popup-text {
+      @include font(1.6rem, 400, $color-gray-01, 1.25);
+    }
+  }
+  .popup-bottom {
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+  table {
+    th,
+    td {
+      height: 5.2rem;
+      padding: 0.7rem 1.4rem;
+    }
+  }
+  .file label {
+    width: 8.7rem;
+    height: 3.6rem;
+    padding: 0 1rem;
+  }
+}
+
+// 뉴스레터 등록 팝업
+.register-area {
+  margin-right: -4rem;
+}
+.register-top {
+  overflow: hidden;
+  max-width: 85.8rem;
+  margin-bottom: 2rem;
+  .button-box {
+    overflow-x: auto;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  .btn-years {
+    flex-shrink: 0;
+    @include flex(row, center, center);
+    height: 3.2rem;
+    margin: 0 0.4rem;
+    padding: 0 1.2rem;
+    background-color: #f6f6f6;
+    @include font(1.4rem, 500, $color-gray-02, 1.25);
+    border-radius: 1.6rem;
+    &:not(:disabled, .disabled) {
+      &:hover {
+        background: #e7e7e7;
+      }
+      &:active {
+        background: #d8d8d8;
+      }
+    }
+    &.selected {
+      background-color: $color-secondary;
+      color: $white;
+      &:hover {
+        background: #100135;
+      }
+      &:active {
+        background: #0f0131;
+      }
+    }
+  }
+  .btn-years-add {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: image('icon/ic_add.png') no-repeat center/1.6rem;
+    }
+  }
+}
+
+// 주소록
+.address-select-container {
+  padding-top: 1rem;
+  .address-desc-box {
+    margin-top: 1.1rem;
+    @include font(1.5rem, 400, $color-888888, normal);
+  }
+}
+.address-select-content {
+  @include flex(row, flex-start, center);
+  width: 100%;
+  height: 40.2rem;
+  .select-content-box {
+    overflow: hidden;
+    width: 36rem;
+    height: 40.1rem;
+    border: 1px solid $color-gray-03;
+    border-radius: 0.4rem;
+  }
+}
+.select-content-head {
+  height: 4.8rem;
+  padding: 1.3rem 1.6rem;
+  border-bottom: 1px solid $color-gray-03;
+  > div {
+    @include flex(row, flex-start, center);
+  }
+  .select-input-box {
+    position: relative;
+    input {
+      height: auto;
+      padding: 0;
+      border: none;
+      &:focus:not(:read-only) {
+        border-color: initial;
+      }
+    }
+    .btn-search {
+      flex-shrink: 0;
+      margin-left: 1.6rem;
+      background: image('icon/ic_search_bk.png') no-repeat center/2.4rem;
+    }
+  }
+  .select-result-box {
+    @include font(1.6rem, 500, $color-gray-01, 1.35);
+    .result {
+      @include flex(row, flex-start, center);
+      margin-left: 0.5rem;
+      color: $color-primary;
+    }
+  }
+}
+.select-content-body {
+  overflow-y: auto;
+  max-height: calc(35.4rem - 1.6rem);
+  margin-top: 0.8rem;
+  padding-left: 0.7rem;
+  .select-button-box {
+    .btn-select {
+      width: 100%;
+      margin-bottom: 0.2rem;
+      padding: 0.4rem 0.8rem;
+      @include font(1.6rem, 400, $color-gray-01, 1.45);
+      text-align: left;
+      &.selected {
+        background-color: #f7f3fe;
+        border-radius: 0.4rem;
+      }
+      &.active {
+        color: $color-primary;
+      }
+    }
+  }
+}
+.select-content-center {
+  @include flex(row, flex-start, flex-start);
+  height: 100%;
+  .select-control-box {
+    @include flex(column, flex-end, center);
+    height: 100%;
+    margin: 0 2.4rem;
+    button {
+      width: 9rem;
+      min-width: auto;
+      height: 3.6rem;
+      margin: 0.6rem 0;
+      &:last-child {
+        margin-top: 9.9rem;
+      }
+    }
+  }
+}
+.select-content-right {
+  .select-content-head {
+    background-color: $color-F2F3F4;
+  }
+}

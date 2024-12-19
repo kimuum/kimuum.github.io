@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "3단계 신분증 확인 | 데이터 쉐어링 결합 | 마이알뜰폰", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : sharingApply -->
+    <div class="wrap detail sharingApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-8', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>데이터 쉐어링 결합 신청</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 쉐어링</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>데이터 쉐어링 결합 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>3<!-- [VOS2차] 결함ID 1122059 --></li>
+                <li class="unit">4</li>
+              </ul>
+            </div>
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">신분증 확인</strong>
+                  </div>
+                  <div class="field fieldCheckbox">
+                    <div class="fieldForm">
+                      <div class="checkbox">
+                        <input type="checkbox" id="agreeCheck0" />
+                        <label for="agreeCheck0" class="checkboxLabel">
+                          <span class="checkIcon"></span>
+                          <span>본인 조회에 동의합니다.</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="checkboxLineFlex">
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType01" name="checkType" checked />
+                      <label for="checkType01" class="checkboxLabel">
+                        <span>주민등록증</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType02" name="checkType" />
+                      <label for="checkType02" class="checkboxLabel">
+                        <span>운전면허증</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType03" name="checkType" />
+                      <label for="checkType03" class="checkboxLabel">
+                        <span>장애인 등록증</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType04" name="checkType" />
+                      <label for="checkType04" class="checkboxLabel">
+                        <span>국가 유공자증</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="idCardType01">
+                    <div class="idCardWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_idcard01.png" alt="주민등록증 발급일자 예시 이미지, 예시 2021.01.01" />
+                        <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">주민등록증의 발급일자를 정확히 입력해주세요.</li>
+                      </ul>
+                    </div>
+                    <!-- [2차] 20221026 달력 삭제 -->
+                    <div class="field fieldInput">
+                      <label for="input-date-01" class="fieldLabel">발급 일자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-date-01" placeholder="입력해주세요.(예 20210101)" />
+                          <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[2차] 20221026 달력 삭제 -->
+                  </div>
+                  <!-- //주민등록증 -->
+
+                  <div class="idCardType02" style="display: none">
+                    <div class="idCardWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_idcard02.png" alt="운전면허증 발급일자 예시 이미지, 예시 01-01-123456-01" />
+                        <!-- [VOS2차] 결함 ID 1122377 문구수정 -->
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">운전면허증의 발급일자를 정확히 입력해 주세요.</li>
+                        <li class="fieldValue">지역포함 2자리(선택)-2자리-6자리-2자리를 입력해주세요.</li>
+                      </ul>
+                    </div>
+
+                    <!-- [2차] 20221026 달력 삭제 -->
+                    <div class="field fieldInput">
+                      <label for="input-date-02" class="fieldLabel">발급 일자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-date-02" placeholder="입력해주세요.(예 20210101)" />
+                          <!-- [VOS2차] 결함 ID 1122377 문구수정 -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[2차] 20221026 달력 삭제 -->
+
+                    <div class="field fieldSelectInput">
+                      <div class="fieldLabel">면허번호</div>
+                      <div class="fieldForm">
+                        <div class="dropdownArea">
+                          <div class="dropdownTitle">
+                            <div class="titleLabel">
+                              <span>선택</span>
+                            </div>
+                            <button type="button" class="dropdownBtn" aria-expanded="false" title="면허 발급 지역"><span>면허 발급 지역 선택</span></button>
+                            <!-- [VOS2차] 결함 ID 1122375 수정 -->
+                          </div>
+                          <ul class="dropdownList" aria-label="면허 발급 지역">
+                            <li><button type="button" title="선택됨">서울(11)</button></li>
+                            <li><button type="button">부산(12)</button></li>
+                            <li><button type="button">경기(13)</button></li>
+                            <li><button type="button">강원(14)</button></li>
+                            <li><button type="button">충북(15)</button></li>
+                            <li><button type="button">충남(16)</button></li>
+                            <li><button type="button">전북(17)</button></li>
+                            <li><button type="button">전남(18)</button></li>
+                            <li><button type="button">경북(19)</button></li>
+                            <li><button type="button">경남(20)</button></li>
+                            <li><button type="button">제주(21)</button></li>
+                            <li><button type="button">대구(22)</button></li>
+                            <li><button type="button">인천(23)</button></li>
+                            <li><button type="button">광주(24)</button></li>
+                            <li><button type="button">대전(25)</button></li>
+                            <li><button type="button">울산(26)</button></li>
+                            <li><button type="button">경기북부(28)</button></li>
+                          </ul>
+                        </div>
+                        <div class="input">
+                          <input type="text" id="input-id-01" title="면허번호" placeholder="발급 번호 입력해주세요.(예 01-01-123456-01)" />
+                          <!-- [VOS2차] 결함 ID 1122375 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //운전면허증 -->
+
+                  <div class="idCardType03" style="display: none">
+                    <div class="idCardWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_idcard03.png" alt="장애인등록증 발급일자 예시 이미지, 예시 2021.01.01" />
+                        <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">장애인등록증의 발급일자를 정확히 입력해주세요.</li>
+                      </ul>
+                    </div>
+
+                    <!-- [2차] 20221026 달력 삭제 -->
+                    <div class="field fieldInput">
+                      <label for="input-date-03" class="fieldLabel">발급 일자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-date-03" placeholder="입력해주세요.(예 20210101)" />
+                          <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[2차] 20221026 달력 삭제 -->
+                  </div>
+                  <!-- //장애인등록증 -->
+
+                  <div class="idCardType04" style="display: none">
+                    <div class="idCardWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_idcard04.png" alt="국가유공자증 발급일자,번호 예시 이미지, 예시 보훈번호 01-123456, 발행일자 2021년 01월 01일" />
+                        <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                      </div>
+                    </div>
+
+                    <!-- [2차] 20221026 달력 삭제 -->
+                    <div class="field fieldInput">
+                      <label for="input-date-04" class="fieldLabel">발급 일자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-date-04" placeholder="입력해주세요.(예 20210101)" />
+                          <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //[2차] 20221026 달력 삭제 -->
+
+                    <div class="field">
+                      <label for="input-date-05" class="fieldLabel">발급 번호</label>
+                      <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-date-05" placeholder="입력해주세요.(예 01-123456)" />
+                          <!-- [VOS2차] 결함 ID 1122377 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //국가 유공자증 -->
+                </div>
+                <!-- //신분증 확인 -->
+
+                <div class="buttonArea">
+                  <!-- 팝업 컨트롤 btnID, popupDefault는 팝업 컨트롤 예시 아이디 입니다. 개발시 변경 바랍니다. -->
+                  <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')" disabled><span>다음</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+        // [2차] 20221026 달력 삭제
+      });
+    </script>
+  </body>
+</html>

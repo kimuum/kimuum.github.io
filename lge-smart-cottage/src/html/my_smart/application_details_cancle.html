@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "나의 스마트코티지 | 신청내역 취소"
+  })
+
+  <body>
+    <!-- set unique class : my-smart -->
+    <div class="wrapper my-smart">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : true,
+        "list" : [
+          {
+            "text"     : "스마트코티지는",
+            "property" : "active",
+          },
+          {
+            "text"     : "어떻게 진행되나요?",
+            "property" : "",
+          },
+          {
+            "text"     : "궁금증 해결하고",
+            "property" : "",
+          },
+          {
+            "text"     : "시작하기",
+            "property" : "",
+          },
+        ],
+        "className" : ""
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <section class="section-container">
+          <div class="section-area">
+            <div class="application-detail-container">
+              <div class="application-detail-area">
+                <div class="application-detail-top">
+                  <div class="title-box">
+                    <div class="text-box">
+                      <div class="desc">
+                        <span class="address">충북 진천군 이월면 진광 928-27</span>의<br />
+                        스마트코티지
+                      </div>
+                      <div class="title">
+                        <span>신청 취소가 정상적으로 접수되었습니다</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="step-container">
+                    <!-- 활성 클래스 : active -->
+                    <div class="bar-area cancle">
+                      <span class="label">1. 신청 취소 완료</span>
+                      <div class="bar"></div>
+                    </div>
+                    <div class="bar-area">
+                      <span class="label">2. 현장실사 완료</span>
+                      <div class="bar"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="application-detail-middle">
+                  <div class="unit-box">
+                    <div class="unit-bottom">
+                      <div class="unit-content-box gray">
+                        <div class="desc-box">
+                          <i class="ic ic-alert"></i>
+                          <p>스마트코티지 담당자가 고객님의 취소 신청 내역을 확인하고, 현장실사 비용 환불 안내를 위해 고객님께 별도로 연락드리겠습니다.</p>
+                        </div>
+                        <div class="desc-box">
+                          <i class="ic ic-alert"></i>
+                          <p>서비스 이용약관, 개인정보 처리방침에 따라 신청 취소 시 신청 정보를 포함하여 저장된 개인정보는 1개월 이내 삭제 처리 됩니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 오픈 라이선스"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : .menu-license
+      -->
+      <main class="main-container menu-license">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "center",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "오픈 라이선스",
+          },
+          "button" : [
+            {
+              "icon" : "ic-close",
+              "className" : "btn-close",
+              "title" : "닫기",
+            },
+          ]
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="license-container">
+              <div class="license-area">
+                <!-- 아웃링크 연결 -->
+                <a href="javascript:void(0)"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

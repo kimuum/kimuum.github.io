@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 사업자 정보"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        class : .menu-vehicle 
+      -->
+      <main class="main-container menu-vehicle">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+            "align" : "between",
+            "logo" : false,
+            "title" : {
+              "show" : true,
+              "text" : "사업자 정보",
+            },
+            "button" : '',
+          })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="vehicle-container">
+              <div class="vehicle-area">
+                <div class="vehicle-detail-list-box">
+                  <ul class="list-a-box">
+                    <!-- prettier-ignore -->
+                    @@loop("listTypeA.html", [
+                      {
+                        "link": false,
+                        "label": "사업자명",
+                        "rightText" : "업체명",
+                        "property" : "",
+                        "dataClass" : "type2",
+                        "dataType": "rightText"
+                      },
+                      {
+                        "link": false,
+                        "label": "주소",
+                        "rightText" : "업제 주소 정보",
+                        "property" : "",
+                        "dataClass" : "type2",
+                        "dataType": "rightText"
+                      },
+                      {
+                        "link": false,
+                        "label": "전화번호",
+                        "rightText" : "02 - NNNN - NNNN",
+                        "property" : "",
+                        "dataClass" : "type2",
+                        "dataType": "rightText"
+                      },
+                      {
+                        "link": false,
+                        "label": "사업자번호",
+                        "rightText" : "NNN - NN - NNNNN",
+                        "property" : "",
+                        "dataClass" : "type2",
+                        "dataType": "rightText"
+                      },
+                      {
+                        "link": false,
+                        "label": "등록번호",
+                        "rightText" : "등록 번호 노출",
+                        "property" : "",
+                        "dataClass" : "type2",
+                        "dataType": "rightText"
+                      },
+                    ])
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

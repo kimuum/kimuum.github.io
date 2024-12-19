@@ -1,0 +1,8 @@
+<!-- [접근성] 접근성을 위한 속성(role, aria-*, id, hidden) 추가 -->
+<div class="accordion-box" role="region" aria-labelledby="@@titleId">
+  <!-- .active : 아코디언 펼침 제어 클래스 -->
+  <button id="@@titleId" aria-controls="@@contentId" aria-expanded="false" type="button" class="accordion-title @@class">
+    <span>@@accordionTitle</span>
+  </button>
+  <div id="@@contentId" class="accordion-content" aria-labelledby="@@titleId" hidden>@@accordionContent</div>
+</div>

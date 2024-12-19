@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 나의 문의 내역"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "문의하기",
+          },
+        ],
+        "currentPage" : "나의 문의 내역",
+      })
+
+      <!-- App Gnb -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/gnb.html",{
+        "type" : "tenant",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container voc">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">나의 문의 내역</span>
+                  </div>
+                  <div class="sub-page-page-desc-box">
+                    <p>최근 1년 문의 내역만 확인 가능합니다.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <!-- prettier-ignore -->
+                @@include("../../components/tab.html",{
+                  "tab" : [
+                    {
+                      "text" : "서비스 문의",
+                      "property" : "active"
+                    },
+                    {
+                      "text" : "업무 문의",
+                      "property" : ""
+                    },
+                  ]
+                })
+
+                <div class="tab-content-box">
+                  <div class="filter-table-container filter-field">
+                    <div class="filter-table-area">
+                      <div class="filter-table-top">
+                        <!-- 
+                          Comment : PC 용 구조
+                                  : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                        -->
+                        <div class="filter-box use-pc">
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>문의 항목</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "문의 항목",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "고장/수리/불편신고",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "청소/소모품 교체",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "온도 조절",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "냉난방/조명 연장 신청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "상품문의",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>조치 현황</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "조치 현황",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "접수",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치중",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치완료",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>조회 기간</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="radio-tab-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/field_radio.html", {
+                                      "required" : "",
+                                      "label" : "",
+                                      "tooltip" : "",
+                                      "radio" : [
+                                        {
+                                          "name" : "radio-01",
+                                          "label" : "3개월",
+                                          "disabled" : "",
+                                        },
+                                        {
+                                          "name" : "radio-01",
+                                          "label" : "6개월",
+                                          "disabled" : "",
+                                        },
+                                        {
+                                          "name" : "radio-01",
+                                          "label" : "12개월",
+                                          "disabled" : "",
+                                        },
+                                      ],
+                                    })
+                                  </div>
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/datepickerRange.html",{
+                                    "pickerId" : "inquiry-period",
+                                    "size" : "large",
+                                    "start" : "id-range-start-01",
+                                    "end" : "id-range-end-01",
+                                    "placeholder" : "0000.00.00",
+                                    "property" : "",
+                                  })
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>문의 내용</span>
+                                </div>
+                                <div class="filter-field">
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/field_search.html", {
+                                    "size" : "small",
+                                    "class" : "",
+                                    "id" : "search-01",
+                                    "placeholder" : "검색어를 입력해 주세요.",
+                                    "disabled" : "",
+                                  })
+                                </div>
+                              </div>
+                              <div class="button-box">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/button.html", {
+                                  "dataValue" : "",
+                                  "type" : "secondary",
+                                  "size" : "small",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "초기화",
+                                })
+                                <!-- prettier-ignore -->
+                                @@include("../../components/button.html", {
+                                  "dataValue" : "",
+                                  "type" : "primary",
+                                  "size" : "small",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "검색",
+                                })
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 
+                          Comment : App 용 구조
+                                  : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                        -->
+                        <div class="filter-box use-mobile">
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>문의 항목</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "문의 항목",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "고장/수리/불편신고",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "청소/소모품 교체",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "온도 조절",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "냉난방/조명 연장 신청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "상품문의",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="filter-table-middle">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/filterView.html",{
+                            "button" : null,
+                            "table" : null,
+                            "accordion" : null,
+                            "empty" : {
+                              "text" : "문의 내역이 없습니다.",
+                              "button" : [
+                                {
+                                  "type" : "primary",
+                                  "size" : "medium",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "문의하기",
+                                }
+                              ]
+                            }
+                          })
+                      </div>
+                    </div>
+                  </div>
+                  <div class="filter-table-container filter-field" style="display: none">
+                    <div class="filter-table-area">
+                      <div class="filter-table-top">
+                        <!-- 
+                          Comment : PC 용 구조
+                                  : App 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                        -->
+                        <div class="filter-box use-pc">
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>요청 항목</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "요청 항목",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "자료 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "점검 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "기타",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>조치 현황</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "조치 현황",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "접수",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치중",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치완료",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>조회 기간</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="radio-tab-box">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/field_radio.html", {
+                                      "required" : "",
+                                      "label" : "",
+                                      "tooltip" : "",
+                                      "radio" : [
+                                        {
+                                          "name" : "radio-02",
+                                          "label" : "3개월",
+                                          "disabled" : "",
+                                        },
+                                        {
+                                          "name" : "radio-02",
+                                          "label" : "6개월",
+                                          "disabled" : "",
+                                        },
+                                        {
+                                          "name" : "radio-02",
+                                          "label" : "12개월",
+                                          "disabled" : "",
+                                        },
+                                      ],
+                                    })
+                                  </div>
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/datepickerRange.html",{
+                                    "pickerId" : "inquiry-period-2",
+                                    "size" : "large",
+                                    "start" : "id-range-start-02",
+                                    "end" : "id-range-end-02",
+                                    "placeholder" : "0000.00.00",
+                                    "property" : "",
+                                  })
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="filter-row">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>요청 내용</span>
+                                </div>
+                                <div class="filter-field">
+                                  <!-- prettier-ignore -->
+                                  @@include("../../components/field_search.html", {
+                                    "size" : "small",
+                                    "class" : "",
+                                    "id" : "search-02",
+                                    "placeholder" : "검색어를 입력해 주세요.",
+                                    "disabled" : "",
+                                  })
+                                </div>
+                              </div>
+                              <div class="button-box">
+                                <!-- prettier-ignore -->
+                                @@include("../../components/button.html", {
+                                  "dataValue" : "",
+                                  "type" : "secondary",
+                                  "size" : "small",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "초기화",
+                                })
+                                <!-- prettier-ignore -->
+                                @@include("../../components/button.html", {
+                                  "dataValue" : "",
+                                  "type" : "primary",
+                                  "size" : "small",
+                                  "class" : "",
+                                  "disabled" : "",
+                                  "text" : "검색",
+                                })
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 
+                          Comment : App 용 구조
+                                  : PC 화면과 다른 형태로 구조를 구분 하였습니다. 개발에 참고 부탁드립니다.
+                        -->
+                        <div class="filter-box use-mobile">
+                          <div class="filter">
+                            <div class="filter-row half">
+                              <div class="filter-list">
+                                <div class="filter-label">
+                                  <span>요청 유형</span>
+                                </div>
+                                <div class="filter-field">
+                                  <div class="field field-dropdown">
+                                    <div class="field-form">
+                                      <!-- prettier-ignore -->
+                                      @@include("../../components/dropdown.html",{
+                                        "title" : "요청 유형",
+                                        "size" : "small",
+                                        "value" : "전체",
+                                        "placeholder" : "",
+                                        "option" : [ 
+                                          {
+                                            "text" : "전체",
+                                            "property" : "active",
+                                          },
+                                          {
+                                            "text" : "자료 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "점검 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "조치 요청",
+                                            "property" : "",
+                                          },
+                                          {
+                                            "text" : "기타",
+                                            "property" : "",
+                                          },
+                                        ],
+                                        "disabled" : false,
+                                      })
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="filter-table-middle">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/filterView.html",{
+                            "button" : null,
+                            "table" : null,
+                            "accordion" : null,
+                            "empty" : {
+                              "text" : "문의 내역이 없습니다.",
+                              "button" : ""
+                            }
+                          })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+  <script>
+    const elem_01 = document.getElementById('inquiry-period');
+    const datepicker_01 = new DateRangePicker(elem_01, {
+      language: 'ko',
+      todayHighlight: false,
+    });
+    const elem_02 = document.getElementById('inquiry-period-2');
+    const datepicker_02 = new DateRangePicker(elem_02, {
+      language: 'ko',
+      todayHighlight: false,
+    });
+  </script>
+</html>

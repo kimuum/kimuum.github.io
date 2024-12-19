@@ -1,0 +1,41 @@
+<div class="safety-block-container align-@@align">
+  <div class="safety-block-area">
+    <div class="safety-block-middle">
+      <div class="safety-block-box-left">
+        @@if(imageDeco) {
+          <div class="image-deco"></div>
+        }
+        <div class="swiper-box">
+          <div class="safety-block-image-box-wrapper">
+            @@for(var i = 0; i < accordian.length; i++) {
+              <div class="safety-block-image-box `+accordian[i].property+`">
+                <img width="708px" height="425px" class="safety-block-image" src="../../assets/images/`+accordian[i].image+`" alt="`+accordian[i].alt+`" />
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <div class="safety-block-box-right">
+        <div class="safety-block-info-sub-title">
+          <h3>@@title</h3>
+        </div>
+
+        <div class="safety-block-info-box-wrapper">
+          @@for(var i = 0; i < accordian.length; i++) {
+            <div class="safety-block-info-box `+accordian[i].property+`">    
+              <div class="safety-block-info-title">
+                <span>`+accordian[i].title+`</span>
+              </div>
+    
+              <div class="safety-block-info-desc-box">
+                <div class="safety-block-info-desc">
+                  <p>`+accordian[i].desc+`</p>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,232 @@
+@import './customer/c/scss/abstracts/functions';
+@import './customer/src/scss/abstracts/mixins';
+@import './customer/src/scss/abstracts/variables';
+// test
+
+html,
+body {
+  font-size: 10px;
+}
+li {
+  list-style: none;
+}
+
+#header {
+  padding: 20px 25px;
+  background: white;
+  border-bottom: 4px solid #33D3C2;
+  h1 {
+    display: inline-block;
+    @include font(2.2rem, 700, black, normal);
+    text-transform: uppercase;
+  }
+}
+
+
+.content-container {
+  padding:30px 20px;
+}
+
+#tab {
+  .tab {
+    overflow-y: hidden;
+    overflow-x:auto;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;    
+    @include flex(row, flex-start, flex-start);
+    max-width: 100%;
+    margin: 0 auto;
+    padding:0;
+    ::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Opera*/
+    }
+
+    .list {
+      // flex: 1;
+      min-width: 80px;
+      padding: 0 30px;
+      height: 50px;
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
+      background-color: rgba(51, 51, 51, 0.3);
+      @include font(18px, 700, #fff, 50px);
+      text-align: center;
+      cursor: pointer;
+
+      &.on {
+        background-color: black;
+      }
+    }
+  }
+}
+.table-container {
+  .content {
+    display: none;
+    &.on {
+      display: block;
+    }
+  }
+}
+.coding-list {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  text-align: center;
+  table-layout:fixed;
+  thead {
+    tr {
+      th {
+        height: 50px;
+        border-bottom: 1px solid #ddd;
+        background: #f6f6f6;
+        @include font(1.4rem, 700, #333, normal);
+        vertical-align: middle;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: #fff;
+      &.even {
+        background-color: #eee;
+      }
+      td {
+        height: 40px;
+        padding:0 10px;
+        border-left: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        @include font(1.4rem, 400, #333, normal);
+        vertical-align: middle;
+        text-align: left;
+        &::first-child {
+          border-left: 0;
+        }
+        &:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+  [rowspan] {
+    text-align: center;
+  }
+}
+
+td {
+  &.tbd {
+    position: relative;
+    background-color: #ddd;
+    &:before {
+      content:'';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: transparent;
+    }
+  }
+  a {
+    word-break: break-all;
+  }
+}
+
+.ok {
+  background-color: #499690 !important;
+  color: #fff !important;
+  &::before {
+    content: '완료';
+  }
+}
+
+.ing {
+  background-color: #636161 !important;
+  color: #fff !important;
+  &::before {
+    content: '진행중';
+  }
+}
+
+.top_btn {
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: fixed;
+  right: 28px;
+  bottom: 10px;
+  width: 50px;
+  height: 50px;
+  color: white;
+  border: none;
+  background: black;
+  cursor: pointer;
+  &.active {
+    opacity: 1;
+  }
+}
+
+.rowCounter {
+  padding: 8px 0;
+  // text-align: right;
+  border-top: 1px solid #555555;
+  font-size: 16px;
+  .counter {
+    font-weight: bold;
+    color: #097581;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  #header {
+    h1 {
+      font-size:1.8rem;
+    }
+  }
+
+  #tab {
+    .tab {
+      .list {
+        max-width: 80px;
+        height: 40px;
+        font-size:1.4rem;
+        line-height: 40px;
+        border-top-left-radius: 1.5rem;
+        border-top-right-radius: 1.5rem;
+      }
+    }
+  }
+
+  .coding-list {
+    tbody {
+      tr {
+        td {
+          font-size: 1.2rem;
+          &:last-child {
+            padding: 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .number,
+  .category {
+    display: none !important;
+  }
+
+  .name {
+    width: 40% !important;
+  }
+  
+  .status {
+    width: 60px !important;
+  }
+}

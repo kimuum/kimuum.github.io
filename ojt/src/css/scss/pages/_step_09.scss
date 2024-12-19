@@ -1,0 +1,28 @@
+/* STEP08 */
+.wrap_step_09 {
+  height: 200vh;
+  .logo_area {
+    height: $headerHeight;
+    background-color: rgb(170, 194, 206);
+    .logo {
+      @include font-style(50, 700);
+      color: #000;
+    }
+  }
+}
+.gnb_container {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: $headerHeight;
+  background-color: rgb(202, 161, 197);
+}
+.gnb_list_box {
+  .gnb_list {
+    a {
+      @include font-style(50, 700);
+      color: #000;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "5단계 번호이동 사전동의 | 셀프개통 신청 | 셀프개통 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 신청 페이지 클래스 : usimApply -->
+    <div class="wrap detail usimApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-1' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>셀프개통 신청</h2>
+                <!-- [2차] 20220830 수정 -->
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통(USIM/eSIM)</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <!-- [2차] 20220830 단계 추가 -->
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+                <li class="unit">4</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>5<!-- [VOS2차] 결함ID 1122059 --></li>
+                <li class="unit">6</li>
+              </ul>
+            </div>
+            <!-- //[2차] 20220830 단계 추가 -->
+            <div class="formContainer">
+              <div class="formItemArea">
+                <!-- 번호이동 사전 동의 안내 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">번호이동 사전 동의 안내</strong>
+                  </div>
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">현재 사용하고 계시는 통신사의 상황에 따라, 사전동의 SMS 수신 및 인증이 원활하지 않을 수 있으며, 이 경우 ARS로 사전동의 진행을 부탁드립니다.</li>
+                      <li class="fieldValue">현재 이용중이신 번호 혹은 통신사가 잘못 되어 있는 경우에는 인증이 불가능합니다.</li>
+                      <li class="fieldValue">ARS의 경우 현재 사용 중이신 통신사에 따라 10분 이상 소요될 수 있습니다.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 문자를 받았어요! -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">문자를 받았어요!</strong>
+                  </div>
+
+                  <div class="confirmBoard">
+                    <div class="boardText">사전동의 문자 수령 시, 수신 된 문자의 URL을 통하여 인증을 완료 후 확인 버튼을 눌러주세요.</div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>사전체크 확인</span></button>
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                      <!-- [운영] 20230315 번호이동 관련 수정 -->
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 문자를 못받았어요! -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">문자를 못받았어요!</strong>
+                  </div>
+
+                  <div class="confirmBoard">
+                    <div class="boardText">
+                      현재 사용하고 계시는 통신사 ARS로 전화하여 안내에 따라 번호이동동의 후 ‘사전체크 확인’ 버튼을 눌러 <br />
+                      다음 단계로 이동해주세요.
+                    </div>
+                    <div class="buttonArea">
+                      <button type="button" class="btn btnPrimary"><span>ARS 번호 확인</span></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

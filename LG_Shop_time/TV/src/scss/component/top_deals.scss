@@ -1,0 +1,242 @@
+// top deals style
+.top-deals {
+  .section-container {
+    overflow: hidden;
+    width: 100%;
+    .section-list-box {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: -7.5px;
+      &:after {
+        display: none;
+      }
+    }
+    .section-list {
+      margin: 7.5px;
+    }
+  }
+  .product-area {
+    .icon-partners {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+    }
+  }
+}
+.top-deals-area {
+  position: relative;
+  height: 762px;
+  margin-bottom: 20px;
+  padding: 60px 0;
+  background: asset-image("img_topdeals_bg.jpg") no-repeat right bottom/cover;
+  .section-video-box {
+    @include flex(row, flex-start, flex-start);
+    position: relative;
+    margin: 0;
+  }
+  .video-preview-box {
+    .video-container {
+      &:after {
+        top: 0;
+        left: 0;
+        bottom: auto;
+        background-image: linear-gradient(
+          to top,
+          rgba($color-black, 0),
+          rgba($color-black, 0.5),
+          rgba($color-black, 0.85)
+        );
+      }
+    }
+  }
+  .video-list-box {
+    position: static;
+    &:after {
+      left: auto;
+      right: 0;
+      width: 612px;
+      height: 279px;
+      background: asset-image("img_topdeals_list_masking.jpg") no-repeat right bottom/cover;
+    }
+    .section-list-box {
+      width: 612px;
+      padding-bottom: 222px; //그림자
+      max-height: 700px;
+      overflow-y: auto;
+    }
+  }
+  //badge-ranking
+  .badge-ranking {
+    left: auto;
+    right: 18px;
+    &.rank-crown {
+      padding: 6px 0 18px;
+      border: 3px solid $color-white;
+      &::before {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        background: asset-image("ic_crown_badge.png") no-repeat center/36px;
+      }
+      .num {
+        margin-top: 0;
+      }
+    }
+  }
+  // 영상 안내 문구
+  .notice-box-video {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    align-items: center;
+    padding: 6px 18px 18px;
+    background-color: $color-black;
+    border-radius: 0;
+    @include font(21px, normal, $color-gray-767676, 1.3);
+  }
+  .section-title-box {
+    margin-bottom: 0;
+  }
+  .info-middle {
+    position: relative;
+    min-height: 66px;
+    @include flex(column, flex-start, flex-start);
+    margin-top: 0;
+    padding-right: 85px;
+    margin-bottom: auto;
+    .icon-partners {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      margin-right: 0;
+    }
+    .info-sub-text {
+      display: inline-block;
+      margin-top: 6px;
+      color: $color-white;
+    }
+  }
+}
+// top deals slide
+.top-deals-slide-wrapper {
+  overflow: hidden;
+  position: relative;
+  @include flex(row, center, center);
+  .slide-item {
+    flex-shrink: 0;
+    width: 1613px;
+  }
+  .video-list-box {
+    margin-top: -15px;
+  }
+  .section-list {
+    &:first-child {
+      padding-top: 15px;
+    }
+  }
+}
+.top-deals-slide-container {
+  overflow: hidden;
+  width: 1613px;
+  margin-right: -18px; //그림자
+
+  .video-preview-box {
+    .call-order-area {
+      width: 150px;
+      height: 64px;
+
+      .call-label {
+        width: 74px;
+        height: 18px;
+        margin-right: auto;
+        padding: 3px;
+        @include font(12px, 600, $color-white, 1.1);
+      }
+
+      .call-to-order {
+        width: 126px;
+        height: 42px;
+        margin-bottom: 12px;
+        background: asset-image("tag_calltoorder.png") no-repeat center/cover;
+      }
+
+      .call-number {
+        @include flex(row, flex-start, center);
+        margin-top: 6px;
+        @include font(18px, 700, $color-white);
+
+        &::before {
+          content: "";
+          flex-shrink: 0;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 4px;
+          background: asset-image("ic_wh_call.png") no-repeat center/20px;
+        }
+      }
+    }
+  }
+}
+.top-deals-slide-inner {
+  @include flex(row, flex-start, center);
+  padding-top: 40px;
+  .slide-item {
+    .call-order-wrap {
+      left: 70px;
+      bottom: 110px;
+    }
+  }
+}
+.top-deals-slide-pagenation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  z-index: 1;
+  transform: translateY(-50%);
+  @include flex(row, center, center);
+  height: 84px;
+  margin: 0 auto;
+  [class^="btn-"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 84px;
+    height: 84px;
+    border-radius: 84px;
+    &.focused,
+    &.hover {
+      @extend .onlyShadow;
+    }
+  }
+  .btn-prev {
+    left: 60px;
+    background: asset-image("btn_left_84_nor.png") no-repeat center/84px;
+    &.focused,
+    &.hover {
+      background: asset-image("btn_left_84_foc.png") no-repeat center/84px;
+    }
+    &:disabled,
+    &.disabled {
+      opacity: 1;
+      background: asset-image("btn_left_84_nor.dim") no-repeat center/84px;
+    }
+  }
+  .btn-next {
+    right: 60px;
+    background: asset-image("btn_right_84_nor.png") no-repeat center/84px;
+    &.focused,
+    &.hover {
+      background: asset-image("btn_right_84_foc.png") no-repeat center/84px;
+    }
+    &:disabled,
+    &.disabled {
+      opacity: 1;
+      background: asset-image("btn_right_84_nor.dim") no-repeat center/84px;
+    }
+  }
+}

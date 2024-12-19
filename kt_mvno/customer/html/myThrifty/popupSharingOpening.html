@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "데이터쉐어링 개통 처리", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <!-- [2차] 20221118 기획 삭제
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>데이터쉐어링 개통 처리</span></button> -->
+      <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>데이터쉐어링 결합 실패 안내</span></button>
+      <button type="button" class="btn" id="btnID03" onclick="togglePopup('btnID03', 'popupDefault03')"><span>셀프개통 실패 안내</span></button>
+      <button type="button" class="btn" id="btnIDsharingEnd" onclick="togglePopup('btnIDsharingEnd', 'popupDefaultsharingEnd')"><span>데이터쉐어링 개통 신청완료</span></button>
+      <!-- [2차] 20221118 추가 -->
+    </div>
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">데이터쉐어링 개통 처리</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">
+              데이터 쉐어링 개통 처리중입니다.<br />
+              데이터 쉐어링 개통 완료 처리가 안된 경우 셀프 개통 재요청 버튼을 눌러주세요.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID01', 'popupDefault01')"><span>개통 재요청</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">데이터쉐어링 결합 실패 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">
+              데이터쉐어링 결합 신청이 실패하였습니다. <br />
+              해당 회선 사업자 고객센터로 연락해주세요.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID02', 'popupDefault02')"><span>고객센터 안내 바로가기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <div class="popup hide" id="popupDefault03" role="dialog" aria-labelledby="popupTitle-03" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-03">셀프개통 실패 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID03', 'popupDefault03')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">
+              데이터쉐어링 대상(자회선) 셀프개통이 실패하였습니다. <br />
+              다시 개통 요청을 시도해주세요.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID03', 'popupDefault03')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- [2차] 20221118 추가 -->
+    <div class="popup hide" id="popupDefaultsharingEnd" role="dialog" aria-labelledby="popupTitle-sharingEnd" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-sharingEnd">데이터쉐어링 개통 신청완료</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDsharingEnd', 'popupDefaultsharingEnd')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <p class="smallText">
+              데이터 쉐어링 개통 신청이 완료되었습니다.<br />
+              개통 처리 완료까지는 1~2분 정도 소요됩니다.
+            </p>
+            <p class="smallText">
+              개통 진행 상태는 ‘개통신청조회' 화면에서 확인해주세요.<br />
+              개통 완료 후 ‘데이터쉐어링 결합하기'를 진행해주셔야 사용이 가능합니다.
+            </p>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnIDsharingEnd', 'popupDefaultsharingEnd')"><span>개통신청조회 바로가기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+    <!-- //[2차] 20221118 추가 -->
+
+    <!-- Start Script -->
+  </body>
+</html>

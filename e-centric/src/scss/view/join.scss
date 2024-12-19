@@ -1,0 +1,161 @@
+.join-container {
+  padding: 0 0.4rem;
+  .join-top {
+    margin-top: 4.8rem;
+  }
+  .join-heading-box {
+    position: relative;
+    .hidden-text {
+      @include font(2.4rem, 500, $text_02, 3.6rem);
+      white-space: pre-line;
+    }
+    .join-heading-text {
+      @include font(1.8rem, 500, $text_02, 2.6rem);
+      &.align-center {
+        @include flex(column, center, center);
+        text-align: center;
+        white-space: pre-line;
+        .desc {
+          max-width: 26rem;
+          margin-top: 2rem;
+          @include font(1.6rem, 500, $text_03, 2.2rem);
+          word-break: keep-all;
+          white-space: pre-line;
+        }
+      }
+    }
+    .join-desc-text {
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+      transform: translateY(100%);
+      @include font(1.2rem, 500, $text_03, 1.6rem);
+    }
+  }
+  .join-middle {
+    margin-top: 5.6rem;
+  }
+
+  .join-field-container {
+    .join-field-top {
+      .join-field-label-box {
+        margin-bottom: 0.4rem;
+        @include font(1.2rem, 400, $text-03, 1.7rem);
+      }
+    }
+  }
+
+  .agree-check-top {
+    border-bottom: 1px solid rgba($primary_100, 0.1);
+    padding-bottom: 3rem;
+  }
+  .agree-check-bottom {
+    padding-top: 3rem;
+  }
+  .agree-check-list-box {
+    @include flex(column, flex-start, flex-start);
+    gap: 3.8rem;
+    .agree-check-list {
+      @include flex(row, space-between, center);
+      width: 100%;
+    }
+    .agree-check-text-box {
+      @include font(1.4rem, 400, $text_03, 2rem);
+    }
+    .agree-check-link-box {
+      margin-left: 0.8rem;
+    }
+    .agree-check-link {
+      @include font(1.2rem, 500, $text_02, 1.6rem);
+      text-decoration-line: underline;
+      white-space: nowrap;
+    }
+  }
+  .agree-check-all-box {
+    .field-checkbox {
+      .checkbox-box {
+        .field-label {
+          &:not(.ir) {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+  .join-complete-box {
+    @include flex(column, center, center);
+    height: 100%;
+    padding-bottom: 4.5%;
+    img {
+      width: 16rem;
+    }
+    .join-heading-box {
+      margin-top: 4.5rem;
+    }
+  }
+}
+
+.find-address {
+  .content-container {
+    padding: 0;
+    .content-area {
+      height: 100%;
+    }
+  }
+}
+.find-address-container {
+  height: 100%;
+  padding-top: 2.4rem;
+  .find-address-area {
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+  }
+  .find-address-top {
+    width: 100%;
+    padding: 0 2.4rem;
+  }
+  .find-address-middle {
+    width: 100%;
+    margin-top: 4rem;
+    padding: 0 2.4rem 0.4rem;
+  }
+  .find-address-bottom {
+    overflow-y: auto;
+    flex: 1;
+    width: 100%;
+  }
+  .search-result-container {
+    padding: 0 2.4rem;
+  }
+  .search-result-num-box {
+    @include flex(row, flex-start, center);
+    @include font(1.2rem, 500, $text_03, 1.6rem);
+    .num {
+      margin-left: 0.4rem;
+      font-weight: 700;
+      color: $text_04;
+    }
+  }
+}
+.bottom-content-box {
+  .agree-check-list-box {
+    padding: 2rem 2.4rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.join-complete {
+  .content-area {
+    height: 100%;
+  }
+  .join-container {
+    height: 100%;
+    .join-area {
+      height: 100%;
+    }
+    .join-top {
+      height: 100%;
+      margin: 0;
+    }
+  }
+}

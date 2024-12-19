@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 알림 팝업"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <!-- [접근성] 팝업 열기 버튼 예시 -->
+            <button id="openPopupButton" style="padding: 20px; background-color: black; color: #fff">Open Modal Popup</button>
+          </div>
+        </section>
+
+        <dialog class="popup" id="popup-alert">
+          <div class="popup-container" tabindex="0">
+            <div class="popup-area">
+              <div class="popup-top">
+                <!-- [접근성] 접근성을 위한 속성 추가 -->
+                <div id="popup-title" class="popup-title">알림</div>
+              </div>
+              <div class="popup-middle">
+                <div class="popup-text">알림을 모두 삭제하시겠습니까?</div>
+              </div>
+              <div class="popup-bottom">
+                <!-- prettier-ignore -->
+                @@loop("button.html",[
+                {
+                  "property": "",
+                  "iconClass": false,
+                  "btnColor" : 'btn-secondary',
+                  "btnSize" : 'medium',
+                  "class" : '',
+                  "text": "취소"
+                },
+                {
+                  "property": "",
+                  "iconClass": false,
+                  "btnColor" : 'btn-primary',
+                  "btnSize" : 'medium',
+                  "class" : '',
+                  "text": "모두 삭제"
+                },
+              ])
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </main>
+    </div>
+
+    <!-- [접근성] 팝업 스크립트 예시 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const openPopupButton = document.getElementById('openPopupButton');
+        const popup = document.querySelector('dialog');
+        const closePopupButton = popup.querySelector('.btn-secondary');
+        openPopupButton.addEventListener('click', function () {
+          popup.showModal();
+          popup.focus();
+          openPopupButton.removeAttribute('tabindex');
+        });
+        if (closePopupButton) {
+          closePopupButton.addEventListener('click', function () {
+            popup.close();
+            openPopupButton.focus();
+            openPopupButton.setAttribute('tabindex', '-1');
+          });
+        }
+        popup.addEventListener('click', (event) => {
+          if (event.target.nodeName === 'DIALOG') {
+            popup.close();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

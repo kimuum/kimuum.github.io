@@ -1,0 +1,75 @@
+.onboarding {
+  background-color: $text_06;
+  .header-container {
+    + .content-container {
+      .onboarding-box {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .content-area {
+    height: 100%;
+  }
+
+  .bottom-button-box {
+    background-color: $text_06;
+  }
+}
+
+.onboarding-box {
+  @include flex(column, flex-start, center);
+  height: 100%;
+  padding-top: 5.3rem;
+  .onboarding-box-top {
+    padding: 4rem 0.4rem;
+    text-align: center;
+    .text-box {
+      @include font(2.4rem, 700, $text-02, 3.6rem);
+    }
+
+    .sub-text-box {
+      margin-top: 2rem;
+      @include font(1.8rem, 500, $text-02, 2.6rem);
+    }
+  }
+
+  .onboarding-box-middle {
+    flex: 1;
+    width: 100%;
+    max-height: calc(100% - 16.2rem - 4.8rem);
+    padding-top: 4.7rem;
+
+    .slide {
+      overflow: hidden;
+      height: 100%;
+      .slide-wrapper {
+        @include flex(row, flex-start, center);
+        height: 100%;
+        transition: transform 0.3s linear;
+        .slide-list {
+          @include flex(row, center, flex-start);
+          flex: 0 0 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .image-box {
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .onboarding-box {
+    .onboarding-box-middle {
+      @include flex(column, center, center);
+      margin-top: 0;
+    }
+  }
+}

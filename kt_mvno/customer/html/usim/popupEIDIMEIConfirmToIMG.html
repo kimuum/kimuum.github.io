@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "EID, IMEI 확인 및 이미지 등록 방법", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>EID, IMEI 확인 및 이미지 등록 방법</span></button>
+    </div>
+    <div class="popup show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">EID, IMEI 확인 및 이미지 등록 방법</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="eidimeiContainer">
+            <div class="aboutWrap stepTop">
+              <div class="aboutTitle">
+                <strong>‘기기정보 바코드 이미지’ 화면을 캡처하여 업로드하여야 합니다!</strong>
+                <!-- [VOS2차] 결함 ID 1122216 1122307 안내 문구 수정 -->
+              </div>
+              <div class="aboutContent">
+                <div class="imgWrap">
+                  <img src="../../assets/images/usim/img_eidimei01.jpg" alt="EID,IMEI 등의 바코드가 있는 기기정보의 화면 예시" />
+                  <!-- [VOS2차] 결함 ID 1122217 대체텍스트 추가 -->
+                </div>
+              </div>
+            </div>
+
+            <!-- 20221219 수정 -->
+            <div class="aboutWrap step01">
+              <div class="aboutStep">
+                <span class="step">STEP 1.</span>
+                <p>등록할 휴대폰으로 *#06#을 전화 화면에 입력하거나, 하단에 ‘바로 확인하기' 버튼을 눌러주세요.</p>
+              </div>
+              <div class="aboutContent">
+                <div class="imgWrap">
+                  <img src="../../assets/images/usim/img_eidimei02.jpg" alt="STEP 1. EID,IMEI 바코드 전화등록방법 예시" />
+                  <!-- 20221202 대체텍스트 추가 -->
+                </div>
+                <div class="buttonArea block">
+                  <button type="button" class="btn btnPrimary"><span>EID, IMEI 바로 확인하기</span></button>
+                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                </div>
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">안드로이드 기종은 해당 기능 사용이 어렵습니다.</li>
+                  <li class="beforeDot">안드로이드 기종에서는 통화 화면으로 이동하여 *#06#을 직접 입력해주세요.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="aboutWrap step02">
+              <div class="aboutStep">
+                <span class="step">STEP 2.</span>
+                <p>캡처한 이미지를 업로드 해주세요.</p>
+              </div>
+              <div class="aboutContent">
+                <div class="buttonArea block">
+                  <button type="button" class="btn btnPrimary"><span>이미지 업로드 하기</span></button>
+                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                </div>
+              </div>
+            </div>
+            <!-- //20221219 수정 -->
+          </div>
+        </div>
+        <!-- //popupMiddle -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

@@ -1,0 +1,31 @@
+@@include('head.html', {
+'title': '팝업 - 로그인 화면 이동'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main"></main>
+    <!-- // Main -->
+
+    <!-- popup start 활성화 클래스 : show -->
+    <div class="popup-container show">
+      <div class="pop-center-area">
+        <div class="pop-body">
+          <p class="pop-text">Would you like to sign in?</p>
+        </div>
+        <div class="pop-footer">
+          <div class="button-box child-flex-none">
+            <button type="button" class="btn-solid-gray"><span>CANCEL</span></button>
+            <button type="button" class="btn-solid-gray focused"><span>OK</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dim"></div>
+    </div>
+    <!-- //popup end -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

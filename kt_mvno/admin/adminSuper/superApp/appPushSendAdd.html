@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "신규 등록 | 앱 푸시 발송 관리" , "headProjectName": " | 앱 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>신규 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 푸시 발송 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <span class="breadcrumbTitle"><span>신규 등록</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 신규 등록 -->
+            <div class="detailContainer edit boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>취소</span></button>
+                  <button type="button" class="btn"><span>테스트 발송</span></button>
+                  <button type="button" class="btn"><span>확정</span></button>
+                </div>
+              </div>
+
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">테스트 발송 대상</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        테스트 발송 대상 목록 - 모바일 번호
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">모바일 번호</th>
+                          <td>
+                            <div class="fieldAdded">
+                              <div class="input">
+                                <input type="text" placeholder="모바일 번호를 입력해주세요." title="모바일 번호" />
+                              </div>
+                              <div class="buttonArea">
+                                <button type="button" class="btnAdd" title="번호 추가"></button>
+                                <button type="button" class="btnDelete" title="번호 삭제"></button>
+                              </div>
+                            </div>
+                            <div class="fieldAdded">
+                              <div class="input">
+                                <input type="text" placeholder="모바일 번호를 입력해주세요." title="모바일 번호" />
+                              </div>
+                              <div class="buttonArea">
+                                <button type="button" class="btnAdd" title="번호 추가"></button>
+                                <button type="button" class="btnDelete" title="번호 삭제"></button>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 테스트 발송 대상 -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">푸시 발송 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        푸시 발송 정보 목록 - 제목, 내용, 링크 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            제목 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="제목을 입력해주세요." title="제목" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            내용 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <textarea name="" cols="30" rows="10" placeholder="내용을 입력해주세요." title="내용"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">링크 정보</th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="링크 정보를 입력해주세요." title="링크 정보" />
+                              </div>
+                            </div>
+                            <p class="addExplain">
+                              <strong class="required"><span>참고</span></strong
+                              >URL 정보 미 입력 시 APP 메인화면 이동
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- //푸시 발송 정보 -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

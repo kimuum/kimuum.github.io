@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "쿠폰 등록", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>쿠폰 등록</span></button>
+    </div>
+    <div class="popup hide" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">쿠폰 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="couponAddWrap">
+              <div class="tableContainer captionShow">
+                <div class="tableArea">
+                  <table>
+                    <caption>
+                      쿠폰 정보
+                    </caption>
+                    <colgroup>
+                      <col style="width: 40%" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="colorGray">쿠폰</th>
+                        <td class="alignRight">LTE&3G 데이터 2GB</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="colorGray">등록 후 사용기간</th>
+                        <td class="alignRight">신청 즉시 ~ 2022.06.30B</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="colorGray">회선 번호</th>
+                        <td class="alignRight">010-34**-*807</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="cautionArea colorGray">
+                <ul class="cautionWrap">
+                  <li>쿠폰을 통해 충전된 데이터/통화/알은 기본 및 무료 제공량보다 우선 차감됩니다.</li>
+                  <li>쿠폰 등록 후 취소/재등록/변경 불가합니다.</li>
+                  <li>
+                    보유 쿠폰 매수에 따른 중복 등록이 가능합니다.<br />
+                    중복등록을 원치 않으실 경우 기존 등록 내역을 꼭 확인하시기 바랍니다.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>쿠폰 등록</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

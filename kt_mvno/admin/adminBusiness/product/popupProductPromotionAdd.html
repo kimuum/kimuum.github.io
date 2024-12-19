@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "프로모션 등록" , "headProjectName": "| 상품 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>프로모션 등록</span></button>
+    </div>
+    <div class="popup popupSizeMedium" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <!-- [2차BO] 20221011 클래스 변경 -->
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">프로모션 등록</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <!-- [2차BO] 20221011 수정 -->
+          <div class="promoteTableWrap">
+            <div class="tableContainer promoteTop">
+              <table>
+                <caption>
+                  프로모션 적용 대상 선택 표
+                </caption>
+                <colgroup>
+                  <col style="width: 148px" />
+                  <col />
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <th scope="row">
+                      프로모션 적용 대상 <strong class="required"><span>필수 선택</span></strong>
+                    </th>
+                    <td>
+                      <div class="fieldForm">
+                        <div class="checkbox">
+                          <input type="checkbox" id="input-promote-0" checked />
+                          <label for="input-promote-0" class="checkboxLabel">
+                            <span class="checkIcon"></span>
+                            <span>신규 가입</span>
+                          </label>
+                        </div>
+                        <div class="checkbox">
+                          <input type="checkbox" id="input-promote-1" />
+                          <label for="input-promote-1" class="checkboxLabel">
+                            <span class="checkIcon"></span>
+                            <span>요금제 변경</span>
+                          </label>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="tableContainer alignCenter promoteMiddle">
+              <table>
+                <caption>
+                  프로모션 등록 표 - 프로모션명, 기간, 기간없음
+                </caption>
+                <colgroup>
+                  <col />
+                  <col style="width: 50%" />
+                  <col style="width: 70px" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col">프로모션명</th>
+                    <th scope="col">기간</th>
+                    <th scope="col">기간없음</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--  기간없음 미체크 상태 -->
+                  <tr>
+                    <td>
+                      <div class="input">
+                        <input type="text" value="10월 가입 프로모션" title="프로모션명" />
+                      </div>
+                    </td>
+                    <td>
+                      <div class="periodWrap">
+                        <div class="field fieldDatepicker" id="datepicker-start-date">
+                          <label class="ir" for="input-start-date">시작 날짜 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-start-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                          </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="field fieldDatepicker" id="datepicker-end-date">
+                          <label class="ir" for="input-end-date">끝 날짜 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-end-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="alignCenter">
+                      <div class="checkbox">
+                        <input type="checkbox" id="input-id-chk" />
+                        <label for="input-id-chk" class="checkboxLabel">
+                          <span class="ir">기간없음 선택</span>
+                          <span class="checkIcon"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!--  기간없음 체크 상태 -->
+                  <tr>
+                    <td>
+                      <div class="input">
+                        <input type="text" value="10월 가입 프로모션" title="프로모션명" />
+                      </div>
+                    </td>
+                    <td>
+                      <div class="periodWrap">
+                        <div class="field fieldDatepicker" id="datepicker-start-date2">
+                          <label class="ir" for="input-start-date2">시작 날짜 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-start-date2" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" disabled />
+                          </div>
+                        </div>
+                        <div class="space"></div>
+                        <div class="field fieldDatepicker" id="datepicker-end-date2">
+                          <label class="ir" for="input-end-date2">끝 날짜 선택</label>
+                          <div class="fieldForm datePickerArea">
+                            <input type="text" id="input-end-date2" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" disabled />
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="alignCenter">
+                      <div class="checkbox">
+                        <input type="checkbox" id="input-id-chk" checked />
+                        <label for="input-id-chk" class="checkboxLabel">
+                          <span class="ir">기간없음 선택</span>
+                          <span class="checkIcon"></span>
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- //[2차BO] 20221011 수정 -->
+          <div class="popupBottom">
+            <div class="buttonArea">
+              <button type="button" class="btn btnSecondary" onclick="togglePopup('btnID', 'popupDefault')"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary" onclick="togglePopup('btnID', 'popupDefault')"><span>등록</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        if ($('#datepicker-start-date').length > 0 && $('#datepicker-end-date').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date', '#datepicker-end-date', 'yyyy-mm-dd');
+        }
+        if ($('#datepicker-start-date2').length > 0 && $('#datepicker-end-date2').length > 0) {
+          getMultiDatePicker('start', '#datepicker-start-date2', '#datepicker-end-date2', 'yyyy-mm-dd');
+          getMultiDatePicker('end', '#datepicker-start-date2', '#datepicker-end-date2', 'yyyy-mm-dd');
+        }
+      });
+    </script>
+  </body>
+</html>

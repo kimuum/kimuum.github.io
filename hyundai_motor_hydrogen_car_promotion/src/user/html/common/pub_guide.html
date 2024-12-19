@@ -1,0 +1,3016 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>퍼블리싱 가이드</title>
+    <link rel="stylesheet" type="text/css" href="../../assets/css/lib/reset.css" />
+  </head>
+  <style>
+    :root {
+      --comm-font-family: 'Pretendard';
+      --primary-color:#1D6CEB;
+      --primary-dark-color:#0051A3;
+      --sec-color:#FF4555;
+      --sec-dark-color:#CC3744;
+      --font-dark-color:#353535  ;
+      --font-dgray-color:#7F7F7F;
+      --bg-disabled-color:#F2F2F2;
+      --bg-disabled-text:#BFBFBF;
+      --bg-border-color:#DCDCDC;
+      --bg-border-color2:#EBEBEB;
+    }
+
+  @media screen and (min-width: 1024px) {
+    .wrapper {
+        max-width: 1024px;
+        margin: 0 auto;
+    }
+  }
+
+  caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .syntaxhighlighter,
+  .syntaxhighlighter table td.code .container {
+    position: relative !important
+  }
+
+  .syntaxhighlighter .toolbar a,
+  .syntaxhighlighter.printing a {
+    text-decoration: none !important
+  }
+
+  .syntaxhighlighter a,
+  .syntaxhighlighter code,
+  .syntaxhighlighter div,
+  .syntaxhighlighter table,
+  .syntaxhighlighter table caption,
+  .syntaxhighlighter table tbody,
+  .syntaxhighlighter table td,
+  .syntaxhighlighter table thead,
+  .syntaxhighlighter table tr,
+  .syntaxhighlighter textarea {
+    -moz-border-radius: 0 !important;
+    -webkit-border-radius: 0 0 0 0 !important;
+    background: 0 0 !important;
+    border: 0 !important;
+    bottom: auto !important;
+    float: none !important;
+    height: auto !important;
+    left: auto !important;
+    line-height: 1.1em !important;
+    margin: 0 !important;
+    outline: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    position: static !important;
+    right: auto !important;
+    text-align: left !important;
+    top: auto !important;
+    vertical-align: baseline !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+    font-family: Consolas, "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    font-size: 1em !important;
+    min-height: auto !important
+  }
+
+  .syntaxhighlighter {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: auto !important;
+    font-size: 12px !important;
+    background-color: #fff !important
+  }
+
+  .syntaxhighlighter.source {
+    overflow: hidden !important
+  }
+
+  .syntaxhighlighter .bold,
+  .syntaxhighlighter.printing .script {
+    font-weight: 700 !important
+  }
+
+  .syntaxhighlighter .italic {
+    font-style: italic !important
+  }
+
+  .syntaxhighlighter .line {
+    white-space: pre !important
+  }
+
+  .syntaxhighlighter table,
+  .syntaxhighlighter table td.code {
+    width: 100% !important
+  }
+
+  .syntaxhighlighter table caption {
+    text-align: left !important;
+    padding: .5em 0 .5em 1em !important
+  }
+
+  .syntaxhighlighter table td.code .container textarea {
+    box-sizing: border-box !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: #fff !important;
+    padding-left: 1em !important;
+    overflow: hidden !important;
+    white-space: pre !important
+  }
+
+  .syntaxhighlighter table td.gutter .line {
+    text-align: right !important;
+    padding: .3em .5em .3em 1em !important
+  }
+
+  .syntaxhighlighter table td.code .line {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: .3em 1em !important
+  }
+
+  .syntaxhighlighter.nogutter td.code .container textarea,
+  .syntaxhighlighter.nogutter td.code .line {
+    padding-left: 0 !important
+  }
+
+  .syntaxhighlighter.show {
+    display: block !important
+  }
+
+  .syntaxhighlighter .toolbar a.expandSource,
+  .syntaxhighlighter.collapsed table,
+  .syntaxhighlighter.printing .toolbar {
+    display: none !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar span {
+    display: inline !important;
+    margin-right: 1em !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar span a {
+    padding: 0 !important;
+    display: none !important
+  }
+
+  .syntaxhighlighter .toolbar span.title,
+  .syntaxhighlighter.collapsed .toolbar span a.expandSource {
+    display: inline !important
+  }
+
+  .syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important
+  }
+
+  .syntaxhighlighter .toolbar a {
+    display: block !important;
+    text-align: center !important;
+    padding-top: 1px !important;
+    color: #fff !important
+  }
+
+  .syntaxhighlighter.ie {
+    font-size: .9em !important;
+    padding: 1em !important
+  }
+
+  .syntaxhighlighter.ie .toolbar {
+    line-height: 8px !important
+  }
+
+  .syntaxhighlighter.ie .toolbar a {
+    padding-top: 0 !important
+  }
+
+  .syntaxhighlighter.printing .line.alt1 .content,
+  .syntaxhighlighter.printing .line.alt2 .content,
+  .syntaxhighlighter.printing .line.highlighted .number,
+  .syntaxhighlighter.printing .line.highlighted.alt1 .content,
+  .syntaxhighlighter.printing .line.highlighted.alt2 .content {
+    background: 0 0 !important
+  }
+
+  .syntaxhighlighter.printing .line .number {
+    color: #bbb !important
+  }
+
+  .syntaxhighlighter.printing .line .content {
+    color: #000 !important;
+    border: none !important
+  }
+
+  .syntaxhighlighter .line.highlighted.number,
+  .syntaxhighlighter .plain,
+  .syntaxhighlighter .plain a,
+  .syntaxhighlighter .toolbar a:hover,
+  .syntaxhighlighter table caption,
+  .syntaxhighlighter.printing .break,
+  .syntaxhighlighter.printing .break a,
+  .syntaxhighlighter.printing .plain,
+  .syntaxhighlighter.printing .plain a {
+    color: #000 !important
+  }
+
+  .syntaxhighlighter .comments,
+  .syntaxhighlighter .comments a,
+  .syntaxhighlighter.printing .comments,
+  .syntaxhighlighter.printing .comments a {
+    color: #008200 !important
+  }
+
+  .syntaxhighlighter .string,
+  .syntaxhighlighter .string a,
+  .syntaxhighlighter.collapsed .toolbar a,
+  .syntaxhighlighter.printing .string,
+  .syntaxhighlighter.printing .string a {
+    color: #00f !important
+  }
+
+  .syntaxhighlighter .keyword,
+  .syntaxhighlighter.printing .keyword {
+    color: #069 !important;
+    font-weight: 700 !important
+  }
+
+  .syntaxhighlighter .color1,
+  .syntaxhighlighter .color1 a,
+  .syntaxhighlighter .preprocessor,
+  .syntaxhighlighter.printing .color1,
+  .syntaxhighlighter.printing .color1 a,
+  .syntaxhighlighter.printing .preprocessor {
+    color: gray !important
+  }
+
+  .syntaxhighlighter .variable,
+  .syntaxhighlighter.printing .variable {
+    color: #a70 !important
+  }
+
+  .syntaxhighlighter .value,
+  .syntaxhighlighter.printing .value {
+    color: #090 !important
+  }
+
+  .syntaxhighlighter .color2,
+  .syntaxhighlighter .color2 a,
+  .syntaxhighlighter .functions,
+  .syntaxhighlighter.printing .color2,
+  .syntaxhighlighter.printing .color2 a,
+  .syntaxhighlighter.printing .functions {
+    color: #ff1493 !important
+  }
+
+  .syntaxhighlighter .constants,
+  .syntaxhighlighter.printing .constants {
+    color: #06c !important
+  }
+
+  .syntaxhighlighter .color3,
+  .syntaxhighlighter .color3 a,
+  .syntaxhighlighter.collapsed .toolbar a:hover,
+  .syntaxhighlighter.printing .color3,
+  .syntaxhighlighter.printing .color3 a {
+    color: red !important
+  }
+
+  .syntaxhighlighter .line.alt1 {
+    background-color: #f8f8f8 !important
+  }
+
+  .syntaxhighlighter .line.alt2 {
+    background-color: #fff !important
+  }
+
+  .syntaxhighlighter .line.highlighted.alt1,
+  .syntaxhighlighter .line.highlighted.alt2 {
+    background-color: #e0e0e0 !important
+  }
+
+  .syntaxhighlighter .gutter {
+    color: #afafaf !important
+  }
+
+  .syntaxhighlighter .gutter .line {
+    border-right: 3px solid #6ce26c !important
+  }
+
+  .syntaxhighlighter .gutter .line.highlighted {
+    background-color: #6ce26c !important;
+    color: #fff !important
+  }
+
+  .syntaxhighlighter.collapsed {
+    overflow: visible !important
+  }
+
+  .syntaxhighlighter.collapsed .toolbar {
+    padding: .1em .8em 0 !important;
+    font-size: 1em !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    color: #00f !important;
+    background: #fff !important;
+    border: 1px solid #6ce26c !important
+  }
+
+  .syntaxhighlighter .toolbar {
+    color: #fff !important;
+    background: #6ce26c !important;
+    border: none !important
+  }
+
+  .syntaxhighlighter .script {
+    font-weight: 700 !important;
+    color: #069 !important;
+    background-color: none !important
+  }
+
+  .box_tab_menu {
+    margin: 10px 0 30px
+  }
+
+  .g-code .syntaxhighlighter .gutter,
+  .syntaxhighlighter .gutter {
+    display: none !important;
+  }
+
+  .g-code .syntaxhighlighter .line.alt1 {
+    background-color: #fafafa !important;
+  }
+
+  /* 목차 */
+  .g-h1 {
+    padding: 30px 0;
+    font-size: 30px;
+    font-weight: normal
+  }
+
+  .g-h2 {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+    border-bottom: 1px solid #eee
+  }
+
+  .g-h2:before {
+    display: block;
+    width: 20px;
+    height: 1px;
+    margin-bottom: 5px;
+    background-color: #222
+  }
+
+  .g-h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: normal
+  }
+
+  .g-h3:first-child {
+    margin-top: 0
+  }
+
+  .g-h4 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 16px
+  }
+
+  .g-h3+.g-h4 {
+    margin-top: 10px
+  }
+
+  .g-h4:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 3px;
+    height: 13px;
+    margin-right: 5px;
+    background-color: #333;
+    vertical-align: middle
+  }
+
+  .g-explain-h1 {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #aaa;
+    font-family: 'NST'
+  }
+
+  .g-code {
+    border: 1px solid #ccc;
+    margin: 10px 0
+  }
+
+  .g-section~.g-section {
+    padding-top: 50px
+  }
+
+  .g-content-body {
+    padding-bottom: 50px
+  }
+
+  /* 설명 */
+  ul.g-desc {
+    margin: 5px 0
+  }
+
+  ul.g-desc:last-child {
+    margin-bottom: 0
+  }
+
+  p.g-desc,
+  ul.g-desc>li {
+    position: relative;
+    padding: 0 0 0 10px;
+    font-size: 14px;
+    line-height: 1.6
+  }
+
+  p.g-desc:before,
+  ul.g-desc>li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: block;
+    width: 2px;
+    height: 2px;
+    background: #555;
+    border-radius: 50%
+  }
+
+  ul.g-desc.g-gutter>li+li {
+    margin-top: 15px
+  }
+
+  .g-desc-guide {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666
+  }
+
+  .g-desc-guide a {
+    color: #666;
+    border-bottom: 1px solid #666
+  }
+
+  .g-desc-guide a:hover,
+  .g-desc-guide a:focus {
+    color: #333
+  }
+
+  .g-desc-guide+.g-desc-guide {
+    margin-top: 5px
+  }
+
+  .g-code {
+    border: 1px solid #ccc;
+    margin: 10px 0
+  }
+
+  .g-section-body p.g-tit {
+    font-size: 14px;
+    text-indent: -10px;
+    padding-left: 10px
+  }
+
+  .g-section-body p.g-tit:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 3px;
+    height: 13px;
+    margin-right: 5px;
+    background-color: #d3002e;
+    vertical-align: middle
+  }
+
+  .g-section-body p.g-tit>strong {
+    font-weight: bold
+  }
+
+  .g-section-body .g-conts {
+    font-size: 14px;
+    padding-left: 10px
+  }
+
+  /* 표 type1 - 일반컨텐츠 */
+  .g-tbl-type1 {
+    overflow: hidden;
+    border: 1px solid #333;
+    border-width: 1px 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+  }
+
+  .g-tbl-type1 table {
+    width: calc(100% + 2px);
+    table-layout: fixed;
+    margin: 0 -1px -1px
+  }
+
+  .g-tbl-type1 table th,
+  .g-tbl-type1 table td {
+    height: 30px;
+    vertical-align: middle;
+    text-align: left;
+    line-height: 13px;
+    font-size: 12px;
+    background: #fff;
+    line-height: 1.5
+  }
+
+  .g-tbl-type1 table th {
+    padding: 3px 15px;
+    border-bottom: 1px solid #666;
+    background-color: #f8f8f8;
+    text-align: center;
+    font-family: 'NSR';
+    word-break: keep-all
+  }
+
+  .g-tbl-type1 table td {
+    padding: 3px 15px;
+    border: 1px solid #eee;
+    border-bottom: 0
+  }
+
+  .g-tbl-type1 table tbody tr:first-child td {
+    border-top: 0
+  }
+
+  .g-tbl-type1 table tbody+tbody tr:first-child td {
+    border-top: 1px solid #666
+  }
+
+  .g-tbl-type1 table tbody th {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee
+  }
+
+  .col>.g-tbl-type1 {
+    margin-top: 0
+  }
+
+  @media only screen and (max-width: 959px) {
+
+    .g-content-header,
+    .g-content-body {
+      padding: 30px 30px;
+    }
+
+    .g-content-header {
+      padding-top: 30px;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .g-content-body {
+      padding-bottom: 40px;
+    }
+
+    .g-section+.g-section {
+      margin-top: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 480px) {
+    .tab_container {
+      padding-top: 0
+    }
+
+    .box_tab_menu {
+      margin: 0px 0 10px
+    }
+
+    .g-h1 {
+      padding: 0
+    }
+
+    .g-h2 {
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+      font-size: 18px
+    }
+
+    .g-h3 {
+      font-size: 16px
+    }
+
+    .g-h4 {
+      font-size: 14px
+    }
+
+    .g-content-header,
+    .g-content-body {
+      padding: 10px
+    }
+
+    .g-section+.g-section {
+      margin-top: 0
+    }
+  }
+  </style>
+  <body>
+    <div class="wrapper">
+      <div class="g-content-header">
+        <div class="g-in-sec">
+          <h1 class="g-h1">퍼블리싱 가이드</h1>
+        </div>
+      </div>
+      <div class="tab_container">
+        <div id="tabmenu1" class="tab_cont on" role="tabpanel" tabindex="0" aria-selected="true">
+          <div class="g-content-body">
+            <!-- section1 -->
+            <section id="section1" class="g-section g-in-sec">
+              <div class="g-section-header">
+                <h2 class="g-h2">프로젝트 환경</h2>
+              </div>
+              <div class="g-section-body">
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>환경정의</caption>
+                    <colgroup>
+                      <col style="width:20%">
+                      <col>
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="align-l">문서 및 버전</th>
+                        <td>HTML5, CSS3</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">인코딩</th>
+                        <td>UTF-8</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">웹 유형</th>
+                        <td>WEB / Mobile WEB</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">PC 웹 호환성</th>
+                        <td>
+                          <div class="g-browser-icons"> Edge, Chrome, Safari </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">Mobile 웹 호환성</th>
+                        <td>
+                          <div class="g-browser-icons">
+                            <ul>
+                              <li>- Android 4.4 이상</li>
+                              <li>- iOS 7 이상</li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">웹 접근성</th>
+                        <td>-</td>
+                      </tr>
+                      <tr>
+                        <th scope="row" class="align-l">해상도 기준 (가로) :<br/>WEB / Mobile WEB</th>
+                        <td>1920px / 375px</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <!-- //section1 -->
+            <!-- section2 -->
+            <section id="section2" class="g-section g-in-sec">
+              <div class="g-section-header">
+                <h2 class="g-h2">파일/폴더 구조</h2>
+              </div>
+              <div class="g-section-body">
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>파일구조</caption>
+                    <colgroup>
+                      <col style="width:20%">
+                      <col style="width:20%">
+                      <col style="width:30%">
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>분류 폴더</th>
+                        <th>서브 폴더</th>
+                        <th>파일 이름</th>
+                        <th>파일 설명</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td rowspan="3">fonts</td>
+                        <td>TTF</td>
+                        <td rowspan="3">
+                          HyundaiSansTextKRRegular<br/>
+                          HyundaiSansTextKRMedium<br/>
+                          HyundaiSansTextKRBold<br/>
+                          HyundaiSansHeadKRLight<br/>
+                          HyundaiSansHeadKRRegular<br/>
+                          HyundaiSansHeadKRMedium<br/>
+                          HyundaiSansHeadKRBold
+                        </td>
+                        <td rowspan="3">
+                          Regular<br/>
+                          Medium<br/>
+                          Bold<br/>
+                          Light<br/>
+                          Regular<br/>
+                          Medium<br/>
+                          Bold<br/>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>WOFF</td>
+                      </tr>
+                      <tr>
+                        <td>WOFF2</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">css</td>
+                        <td>lib</td>
+                        <td>
+                          (공통)<br>
+                          reset.css<br>
+                          swiper-bundle.min.css
+                        </td>
+                        <td>
+                          스타일 - reset.css<br>
+                          스타일 - swiper.js 용 css<br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td>
+                          style.css
+                        </td>
+                        <td>
+                          스타일 - 각 페이지 css
+                        </td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">js</td>
+                        <td></td>
+                        <td>bundle.js</td>
+                        <td>스크립트 - 공통 UI</td>
+                      </tr>
+                      <tr>
+                        <td>lib<br>
+                        </td>
+                        <td>
+                          jquery.min.js<br>
+                          masonry.pkgd.min.js<br/>
+                          parallax.min.js<br/>
+                          swiper-bundle.min.js<br/>
+                          vanillajs-datepicker.js<br/>
+                        </td>
+                        <td>
+                          스크립트 - Jquery Core <br>
+                          스크립트 - masonry library Core <br>
+                          스크립트 - parallax library Core <br>
+                          스크립트 - swiper library Core <br>
+                          스크립트 - datepicker library Core <br>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>images</td>
+                        <td>
+                          common<br/>
+                          aboutus<br/>
+                          contactus<br/>
+                          email<br/>
+                          main<br/>
+                          newsroom<br/>
+                          products
+                        </td>
+                        <td></td>
+                        <td>
+                          이미지 - 공통<br/>
+                          이미지 - About Us 페이지 용<br/>
+                          이미지 - Contact Us 페이지 용<br/>
+                          이미지 - Email 템플릿 용<br/>
+                          이미지 - Main 페이지 용<br/>
+                          이미지 - Newsroom 페이지 용<br/>
+                          이미지 - Products 페이지 용
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>html</td>
+                        <td>
+                          common<br/>
+                          aboutus<br/>
+                          contactus<br/>
+                          home<br/>
+                          newsroom<br/>
+                          products<br/>
+                          search<br/>
+                          utility
+                        </td>
+                        <td>
+                          aboutus_*.html<br/>
+                          guide.html, pub_guide.html<br/>
+                          contact_us.html, popup_*.html<br/>
+                          main_*.html<br/>
+                          newsroom_*.html, popup_*.html<br/>
+                          products_*.html<br/>
+                          search_*.html<br/>
+                          utility_*.html
+                        </td>
+                        <td>
+                          HTML - 공통 가이드<br/>
+                          HTML - About Us 페이지<br/>
+                          HTML - Contact Us 페이지<br/>
+                          HTML - Main 페이지<br/>
+                          HTML - Newsroom 페이지<br/>
+                          HTML - Products 페이지<br/>
+                          HTML - Search 페이지<br/>
+                          HTML - Utility 페이지
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+            <!-- //section2 -->
+          </div>
+        </div>
+        <div id="tabmenu2" class="tab_cont" role="tabpanel">
+          <div class="g-content-body">
+            <!-- section3 -->
+            <section id="section3" class="g-section g-in-sec">
+              <div class="g-section-header">
+                <h2 class="g-h2">코드 규칙</h2>
+              </div>
+              <div class="g-section-body">
+                <h3 class="g-h3">들여쓰기</h3>
+                <ul class="g-desc">
+                  <li>1탭 들여쓰기 하며, 1탭의 크기는 공백 2칸으로 설정한다.</li>
+                </ul>
+
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_934690" class="syntaxhighlighter html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;TEXT&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">빈줄</h3>
+                <ul class="g-desc">
+                  <li>가독성을 고려하여 빈 줄을 추가한다. 단, 1줄을 초과하지 않는다.</li>
+                </ul>
+
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_934690" class="syntaxhighlighter html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number2 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;TEXT&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number3 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number4 index5 alt1">&nbsp;</div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number5 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;TEXT&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number6 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">class 입력</h3>
+                <ul class="g-desc">
+                  <li>케밥 케이스(word-word) 로 입력한다.</li>
+                  <li>클래스 네이밍은 넓은 범위부터 세부 범위 순서로 작성한다.</li>
+                </ul>
+
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_934690" class="syntaxhighlighter html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">div</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">class=</code>
+                                  <code class="html string">"btn btn-large btn-primary btn-[유니크 클래스 이름]"</code>
+                                  <code class="html plain">&gt;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">기본 구조 wrapping</h3>
+                <ul class="g-desc">
+                  <li>element의 최상단은 "-container" 로 선언한다.</li>
+                </ul>
+
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_934690" class="syntaxhighlighter html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">div</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">class=</code>
+                                  <code class="html string">"content-container"</code>
+                                  <code class="html plain">&gt;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/div</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">주석</h3>
+                <ul class="g-desc">
+                  <li>끝의 표시는 // 로 구분한다.</li>
+                  <li>수정 주석은 html에만 적용한다.</li>
+                </ul>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_934690" class="syntaxhighlighter html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                              <div class="line number4 index3 alt1">4</div>
+                              <div class="line number5 index4 alt2">5</div>
+                              <div class="line number6 index5 alt1">6</div>
+                              <div class="line number7 index6 alt2">7</div>
+                              <div class="line number8 index7 alt1">8</div>
+                              <div class="line number9 index8 alt2">9</div>
+                              <div class="line number10 index9 alt1">10</div>
+                              <div class="line number11 index10 alt2">11</div>
+                              <div class="line number12 index11 alt1">12</div>
+                              <div class="line number13 index12 alt2">13</div>
+                              <div class="line number14 index13 alt1">14</div>
+                              <div class="line number15 index14 alt2">15</div>
+                              <div class="line number16 index15 alt1">16</div>
+                              <div class="line number17 index16 alt2">17</div>
+                              <div class="line number18 index17 alt1">18</div>
+                              <div class="line number19 index18 alt2">19</div>
+                              <div class="line number20 index19 alt1">20</div>
+                              <div class="line number21 index20 alt2">21</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="html comments">&lt;!-- header --&gt;</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">header</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;영역주석 : 시작과 끝이 있고, 마크업의 영역을 표시한다.&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number4 index3 alt1">
+                                  <code class="html plain">&lt;/</code>
+                                  <code class="html keyword">header</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number5 index4 alt2">
+                                  <code class="html comments">&lt;!-- // header --&gt;</code>
+                                </div>
+                                <div class="line number6 index5 alt1">&nbsp;</div>
+                                <div class="line number14 index13 alt1">
+                                  <code class="html comments">&lt;!-- 수정될 경우 주석 양식 --&gt;</code>
+                                </div>
+                                <div class="line number15 index14 alt2">
+                                  <code class="html comments">&lt;!-- [수정230904] 설명 수정 --&gt;</code>
+                                </div>
+                                <div class="line number16 index15 alt1">
+                                  <code class="html comments">&lt;!-- [수정230905] 설명 추가 --&gt;</code>
+                                </div>
+                                <div class="line number17 index16 alt2">
+                                  <code class="html comments">&lt;!-- [수정230906] 설명 삭제 --&gt;</code>
+                                </div>
+                                <div class="line number18 index17 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;수정주석 : 년도 + 해당월일 + 순차적인 번호의 조합으로 작성한다. 예시) 2023-09-04 move클래스 추가/ 2023-09-05 마크업 제거&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number19 index18 alt2">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;수정주석 : 수정된 마크업의 시작점에 주석 처리를 한다.&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number20 index19 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;수정주석 : 주 단위나 일 단위로 수정되더라도 이미 개발에 전달된 후 시점에서는 날짜 뒷 번호는 +1해 작성한다. 예시) 2023-02-18 list_box 마크업 추가&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number21 index20 alt2">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;수정수석 : 컨텐츠가 사라져 마크업이 제거될 경우 끝 주석 표시를 하고 내용은 제거한다./ 추후 사용 가능성이 있는 컨텐츠는 주석처리만 추가하고 내용은 제거하지 않는다.&lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number22 index21 alt1">
+                                  <code class="html comments">&lt;!-- //수정될 경우 주석 양식 --&gt;</code>
+                                </div>
+                                <div class="line number23 index22 alt2">&nbsp;</div>
+                                <div class="line number24 index23 alt1">
+                                  <code class="html comments">&lt;!-- element 상태</code>
+                                </div>
+                                <div class="line number25 index24 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html comments">- 기본: .container</code>
+                                </div>
+                                <div class="line number26 index25 alt1">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html comments">- 기본 활성화: .container.active</code>
+                                </div>
+                                <div class="line number27 index26 alt2">
+                                  <code class="html comments">--&gt;</code>
+                                </div>
+                                <div class="line number28 index27 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;전달할 내용이 많은 경우 여러줄로 설명한다. &lt;/</code>
+                                  <code class="html keyword">p</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="g-h3">속성 선언순서</h3>
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>HTML 속성선언순서</caption>
+                    <colgroup>
+                      <col style="width:20%; ">
+                      <col>
+                      <col style="width:20%; ">
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>구분</th>
+                        <th>속성</th>
+                        <th>속성 값</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1. 기능</td>
+                        <td>
+                          <p>href, src, type</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>2. 이름</td>
+                        <td>
+                          <p>name, id</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>3. 정보</td>
+                        <td>
+                          <p>value, title, alt</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>4. 옵션</td>
+                        <td>
+                          <p>target, tabindex</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>5. 꾸미기</td>
+                        <td>
+                          <p>class</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>6. 역할</td>
+                        <td>
+                          <p>role</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>7. 속성</td>
+                        <td>
+                          <p>aria-controls, aria-describedby, aria-labelledby, aria-popup, aria-modal 등</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>8. 상태</td>
+                        <td>
+                          <p>checked, disabled, selected, required, aria-selected, aria-current, aria-hidden 등</p>
+                        </td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h4 class="g-h4">엘리먼트 예시</h4>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_234851" class="syntaxhighlighter  html">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                              <div class="line number4 index3 alt1">4</div>
+                              <div class="line number5 index4 alt2">5</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">a</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">href</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"#none"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">title</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"새창열기"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">target</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">class</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&gt;열기&lt;/</code>
+                                  <code class="html keyword">a</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+
+                                <div class="line number6 index5 alt1">&nbsp;</div>
+
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">iframe</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">src</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"about:blank"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">title</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"빈프레임"</code>
+                                  <code class="html plain">&gt;&lt;/</code>
+                                  <code class="html keyword">iframe</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+
+                                <div class="line number6 index5 alt1">&nbsp;</div>
+
+                                <div class="line number3 index2 alt2">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">img</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">src</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"img.gif"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">alt</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"대체텍스트"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html plain">/&gt;</code>
+                                </div>
+
+                                <div class="line number6 index5 alt1">&nbsp;</div>
+
+                                <div class="line number4 index3 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">input</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">type</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">"text"</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">name</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">id</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">value</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">title</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">class</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html color1">style</code>
+                                  <code class="html plain">=</code>
+                                  <code class="html string">""</code>
+                                  <code class="html plain">&nbsp;</code>
+                                  <code class="html plain">disabled /&gt;</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <h3 class="g-h3">CSS 기본 규칙</h3>
+                <h4 class="g-h4">작업정보</h4>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_320918" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                              <div class="line number4 index3 alt1">4</div>
+                              <div class="line number5 index4 alt2">5</div>
+                              <div class="line number6 index5 alt1">6</div>
+                              <div class="line number7 index6 alt2">7</div>
+                              <div class="line number8 index7 alt1">8</div>
+                              <div class="line number9 index8 alt2">9</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">@charset</code>
+                                  <code class="css string">"utf-8"</code>
+                                  <code class="css plain">;</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="css comments">/*-----------------------------------------------------------------------------------</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="css spaces">&nbsp; &nbsp;</code>
+                                  <code class="css comments">파일정의 : 파일명 또는 파일설명</code>
+                                </div>
+                                <div class="line number4 index3 alt1">
+                                  <code class="css spaces">&nbsp; &nbsp;</code>
+                                  <code class="css comments">작성날짜 : 2019-01-01 홍길동</code>
+                                </div>
+                                <div class="line number5 index4 alt2">
+                                  <code class="css spaces">&nbsp; &nbsp;</code>
+                                  <code class="css comments">주의사항 : 주석표기는 페이지 접근방법을 알수 있도록 표시 (실제 파일에서는 미사용)</code>
+                                </div>
+                                <div class="line number6 index5 alt1">
+                                  <code class="css spaces">&nbsp; &nbsp;</code>
+                                  <code class="css comments">분류순서 : 분류1 &gt; 분류2 &gt; 분류3 (실제 파일에서는 미사용)</code>
+                                </div>
+                                <div class="line number7 index6 alt2">
+                                  <code class="css spaces">&nbsp; &nbsp;</code>
+                                  <code class="css comments">속성순서 : 표시 &gt; 위치 &gt; 넘침/흐름 &gt; 크기/간격 &gt; 박스모양 &gt; 폰트/정렬 &gt; 기타 (실제 파일에서는 미사용)</code>
+                                </div>
+                                <div class="line number8 index7 alt1">
+                                  <code class="css comments">-----------------------------------------------------------------------------------*/</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                <ul class="g-desc-guide">
+                  <li>* 파일에 따라서 불필요한 항목은 삭제 할 수 있다. (예 : animate.css)</li>
+                </ul>
+
+                <h4 class="g-h4">CSS 작성 규칙</h4>
+                <p class="g-desc">ID, Class 명을 작성 하고 띄어쓰기 후 스타일을 작성한다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_725049" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">#id {</code>
+                                  <code class="css keyword">width: </code>
+                                  <code class="css string">"100%";</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">.class-name {</code>
+                                  <code class="css keyword">width: </code>
+                                  <code class="css string">"100%";</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="g-h4">콜론(:)</h4>
+                <p class="g-desc">콜론과 속성값 사이에 공백을 넣는다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_560113" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">.class-name {</code>
+                                  <code class="css keyword">margin-left</code>
+                                  <code class="css plain">:&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">; </code>
+                                  <code class="css keyword">padding-left</code>
+                                  <code class="css plain">:&nbsp;</code>
+                                  <code class="css value">10px;</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="g-h4">세미콜론(;)</h4>
+                <p class="g-desc">선언 된 모든 속성에 세미콜론(;)을 사용한다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_560113" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">.class-name {</code>
+                                  <code class="css keyword">margin-left</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">; </code>
+                                  <code class="css keyword">padding-left</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">10px</code>
+                                  <code class="css plain">;</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="g-h4">가상선택자 등록 방법</h4>
+                <p class="g-desc">content에 작은 따옴표('')를 사용한다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_725049" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">.class-name:after {</code>
+                                  <code class="css keyword">content</code>
+                                  <code class="css plain">: </code>
+                                  <code class="css string">"";</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h4">주석 / 빈줄</h3>
+                <ul class="g-desc">
+                  <li>주석이 필요한 경우 작성한다.</li>
+                  <li>종료 주석은 작성하지 않는다.</li>
+                  <li>코드 그룹 간 1줄의 빈 줄을 허용한다. 단, 1줄을 초과하지 않는다.</li>
+                </ul>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_457230" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                              <div class="line number4 index3 alt1">4</div>
+                              <div class="line number5 index4 alt2">5</div>
+                              <div class="line number6 index5 alt1">6</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css comments">/* title */</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="css plain">.title-type</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css plain">{</code>
+                                  <code class="css keyword">margin</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">30px</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">10px</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                                <div class="line number3 index2 alt2">&nbsp; </div>
+                                <div class="line number4 index3 alt1">
+                                  <code class="css comments">/* description */</code>
+                                </div>
+                                <div class="line number5 index4 alt2">
+                                  <code class="css plain">.desc</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css plain">{</code>
+                                  <code class="css keyword">padding</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">2px</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">15px</code>
+                                  <code class="css plain">; </code>
+                                  <code class="css keyword">font-size</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">16px</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h4 class="g-h4">공통 선택자</h4>
+                <p class="g-desc">'*' 공통 선택자는 웹 페이지의 성능을 저하를 가져오기 때문에 가급적 사용하지 않는다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_347784" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                              <div class="line number3 index2 alt2">3</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css comments">/* 잘못된 예 */</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="css plain">* {</code>
+                                  <code class="css keyword">margin</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0</code>
+                                  <code class="css plain">; </code>
+                                  <code class="css keyword">padding</code>
+                                  <code class="css plain">:</code>
+                                  <code class="css plain">&nbsp;</code>
+                                  <code class="css value">0;</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 class="g-h3">속성 선언순서</h3>
+                <div class="g-tbl-type1">
+                  <table>
+                    <caption>CSS 속성선언순서</caption>
+                    <colgroup>
+                      <col style="width:20%; ">
+                      <col style="width:20%; ">
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th>구분</th>
+                        <th>속성</th>
+                        <th>속성 값</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td rowspan="2">1. 표시</td>
+                        <td>display</td>
+                        <td>none, block, inline, inline-block, inline-table, list-item, table, table-caption, table-cell, table-column, table-column-group, table-footer-group, table-header-group, table-row, table-row-group</td>
+                      </tr>
+                      <tr>
+                        <td>visibility</td>
+                        <td>visible, hidden, collapse</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="3">2. 위치</td>
+                        <td>position</td>
+                        <td>absolute, fixed, relative, static</td>
+                      </tr>
+                      <tr>
+                        <td>top, right, bottom, left</td>
+                        <td>length(px, rem), %</td>
+                      </tr>
+                      <tr>
+                        <td>z-index</td>
+                        <td>number</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">3. 넘침/흐름</td>
+                        <td>overflow</td>
+                        <td>visible, hidden, scroll, auto</td>
+                      </tr>
+                      <tr>
+                        <td>float</td>
+                        <td>left, right, none</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="4">4. 크기/간격</td>
+                        <td>width, max-width, min-width</td>
+                        <td>auto, length(px, rem), %</td>
+                      </tr>
+                      <tr>
+                        <td>height, max-height, min-height</td>
+                        <td>auto, length(px, rem), %</td>
+                      </tr>
+                      <tr>
+                        <td>margin</td>
+                        <td>auto, length(px, rem), %</td>
+                      </tr>
+                      <tr>
+                        <td>padding</td>
+                        <td>auto, length(px, rem), %</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">5. 박스모양</td>
+                        <td>border</td>
+                        <td>border-width, border-style, border-color</td>
+                      </tr>
+                      <tr>
+                        <td>background</td>
+                        <td>background-color, background-image, background-repeat, background-attachment, background-position</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="4">6. 폰트/정렬</td>
+                        <td>font</td>
+                        <td>font-style, font-variant, font-weigth, font-size/line-height, font-family</td>
+                      </tr>
+                      <tr>
+                        <td>color</td>
+                        <td>hex_number, hex_number</td>
+                      </tr>
+                      <tr>
+                        <td>text-align</td>
+                        <td>left, right, center, justify</td>
+                      </tr>
+                      <tr>
+                        <td>vertical-align</td>
+                        <td>top, middle, bottom, baseline</td>
+                      </tr>
+                      <tr>
+                        <td>7. 기타</td>
+                        <td></td>
+                        <td>언급되지 않은 속성들은 후순위로 적용한다.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <h4 class="g-h4">rem 단위</h4>
+                <p class="g-desc">rem 단위 사용시 기준 폰트 사이즈는 10px로 한다.</p>
+                <div class="g-code">
+                  <div>
+                    <div id="highlighter_560113" class="syntaxhighlighter  css">
+
+                      <table border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                          <tr>
+                            <td class="gutter">
+                              <div class="line number1 index0 alt2">1</div>
+                              <div class="line number2 index1 alt1">2</div>
+                            </td>
+                            <td class="code">
+                              <div class="container">
+                                <div class="line number1 index0 alt2">
+                                  <code class="css plain">html, body {</code>
+                                  <code class="css keyword">font-size</code>
+                                  <code class="css plain">:&nbsp;</code>
+                                  <code class="css value">10px</code>
+                                  <code class="css plain">;</code>
+                                  <code class="css plain">}</code>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //section3 -->
+          </div>
+        </div>
+        <div id="tabmenu3" class="tab_cont" role="tabpanel">
+          <article id="g-content" class="">
+            <div class="g-content-body">
+              <!-- section4 -->
+              <section id="section4" class="g-section g-in-sec">
+                <div class="g-section-header">
+                  <h2 class="g-h2">표준규칙</h2>
+                </div>
+                <div class="g-section-body">
+                  <h3 class="g-h3">기본문서</h3>
+                  <h4 class="g-h4">코드레이아웃</h4>
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_612376" class="syntaxhighlighter  html">
+
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="gutter">
+                                <div class="line number1 index0 alt2">1</div>
+                                <div class="line number2 index1 alt1">2</div>
+                                <div class="line number3 index2 alt2">3</div>
+                                <div class="line number4 index3 alt1">4</div>
+                                <div class="line number5 index4 alt2">5</div>
+                                <div class="line number6 index5 alt1">6</div>
+                                <div class="line number7 index6 alt2">7</div>
+                                <div class="line number8 index7 alt1">8</div>
+                                <div class="line number9 index8 alt2">9</div>
+                                <div class="line number10 index9 alt1">10</div>
+                                <div class="line number11 index10 alt2">11</div>
+                                <div class="line number12 index11 alt1">12</div>
+                                <div class="line number13 index12 alt2">13</div>
+                              </td>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html plain">&lt;!DOCTYPE html&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">head</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">charset</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"utf-8"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number4 index3 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">http-equiv</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"X-UA-Compatible" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"IE=edge"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number5 index4 alt2">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">name</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"viewport" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number4 index3 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">http-equiv</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"Cache-Control" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"no-cache"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">property</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"og:title" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"페이지 명 | Hyundai"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">name</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"Keywords" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">""</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">property</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"og:description" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">""</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">property</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"og:type" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"website"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">meta </code>
+                                    <code class="html color1">property</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">"og:url" </code>
+                                    <code class="html color1">content</code>
+                                    <code class="html plain">=</code>
+                                    <code class="html string">""</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number8 index7 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">title</code>
+                                    <code class="html plain">&gt;페이지 명 | Hyundai&lt;/</code>
+                                    <code class="html keyword">title</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number9 index8 alt2">
+                                    <code class="html plain">&lt;/</code>
+                                    <code class="html keyword">head</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number10 index9 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">body</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number11 index10 alt2">
+                                    <code class="html plain">&lt;/</code>
+                                    <code class="html keyword">body</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number12 index11 alt1">
+                                    <code class="html plain">&lt;/</code>
+                                    <code class="html keyword">html</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 class="g-h3">특수기호 Entity name</h3>
+                  <ul class="g-desc">
+                    <li>특수기호는 Entity name을 사용하여 entity 코드로 변환한다. Entity 코드는 ISO-8859-1을 기준으로 한다.</li>
+                  </ul>
+                  <div class="g-tbl-type1">
+                    <table>
+                      <caption>주의 해야할 특수기호</caption>
+                      <tbody>
+                        <tr>
+                          <th>Character</th>
+                          <td>₩</td>
+                          <td>"</td>
+                          <td>&amp;</td>
+                          <td>&lt;</td>
+                          <td>&gt;</td>
+                          <td>&nbsp;</td>
+                          <td>·</td>
+                        </tr>
+                        <tr>
+                          <th>Entity Name</th>
+                          <td>&amp;#8361;</td>
+                          <td>&amp;quot;</td>
+                          <td>&amp;amp;</td>
+                          <td>&amp;lt;</td>
+                          <td>&amp;gt;</td>
+                          <td>&amp;nbsp;</td>
+                          <td>&amp;middot;</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="g-desc-guide">* 참고 : <a href="http://www.w3schools.com/html/html_entities.asp" target="_blank" title="새창">HTML Entities</a>
+                  </p>
+                  <h3 class="g-h3">Semantic Markup</h3>
+                  <div class="g-tbl-type1">
+                    <table>
+                      <caption>Semantics Markup</caption>
+                      <colgroup>
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:20%">
+                        <col style="width:auto">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">종류</th>
+                          <th scope="col">구분</th>
+                          <th scope="col">태그</th>
+                          <th scope="col">설명</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td rowspan="2">그룹</td>
+                          <td>블록타입</td>
+                          <td>div</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>인라인타입</td>
+                          <td>span</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="5">랜드마크</td>
+                          <td>머리글</td>
+                          <td>header</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>바닥글</td>
+                          <td>footer</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>연속적인 컨텐츠그룹</td>
+                          <td>section</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>독립적인 컨텐츠그룹</td>
+                          <td>article</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>보조적인 컨텐츠그룹</td>
+                          <td>aside</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="6">목차</td>
+                          <td>목차 1레벨</td>
+                          <td>h1</td>
+                          <td>페이지 제목 최상위 레벨(문서 필수 요소)</td>
+                        </tr>
+                        <tr>
+                          <td>목차 2레벨</td>
+                          <td>h2</td>
+                          <td>페이지 제목 수준</td>
+                        </tr>
+                        <tr>
+                          <td>목차 3레벨</td>
+                          <td>h3</td>
+                          <td>컨텐츠 핵심 제목 수준</td>
+                        </tr>
+                        <tr>
+                          <td>목차 4레벨</td>
+                          <td>h4</td>
+                          <td>컨텐츠 부 제목 수준</td>
+                        </tr>
+                        <tr>
+                          <td>목차 5레벨</td>
+                          <td>h5</td>
+                          <td>컨텐츠 상세 제목 수준</td>
+                        </tr>
+                        <tr>
+                          <td>목차 6레벨</td>
+                          <td>h6</td>
+                          <td>컨텐츠 상세 제목 수준</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="8">컨텐츠 <br>(Block Type) </td>
+                          <td>순서 없는 리스트</td>
+                          <td>ul, li</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>순서 있는 리스트</td>
+                          <td>ol, li</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>정의 리스트</td>
+                          <td>dl, dt, dd</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>단락</td>
+                          <td>p</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>주소</td>
+                          <td>address</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>사진의 내용 표시</td>
+                          <td>figure</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>사진의 제목 표시</td>
+                          <td>figcaption</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>대화상자</td>
+                          <td>dialog</td>
+                          <td>호환성 IE Not Supported (role="dialog" 대체사용)</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="8">컨텐츠 <br>(Inline Type) </td>
+                          <td>링크</td>
+                          <td>a</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>중요한</td>
+                          <td>strong</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>일반강조</td>
+                          <td>em</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>의미없는 마크업</td>
+                          <td>i</td>
+                          <td>실제 용도에 의미를 두지는 않으며 아이콘 등에 사용한다.</td>
+                        </tr>
+                        <tr>
+                          <td>정의</td>
+                          <td>dfn</td>
+                          <td>title속성을 사용하여 용어를 정의한다.</td>
+                        </tr>
+                        <tr>
+                          <td>작은 텍스트</td>
+                          <td>small</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>취소</td>
+                          <td>s</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>삭제</td>
+                          <td>del</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="5">서식 <br>
+                          </td>
+                          <td>서식 그룹</td>
+                          <td>fieldset</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>서식 제목</td>
+                          <td>legend</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>라벨</td>
+                          <td>label</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>입력, 선택 컨트롤</td>
+                          <td>input, textarea, select</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>버튼</td>
+                          <td>button</td>
+                          <td>일반 버튼타입과 전송타입의 버튼을 구분한다.</td>
+                        </tr>
+                      </tbody>
+                      <tbody>
+                        <tr>
+                          <td rowspan="10">표 <br>
+                          </td>
+                          <td>표</td>
+                          <td>table</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 제목</td>
+                          <td>caption</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 열 그룹</td>
+                          <td>colgroup</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 열</td>
+                          <td>col</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 헤더</td>
+                          <td>thead</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 본문</td>
+                          <td>tbody</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 푸터</td>
+                          <td>tfoot</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 행</td>
+                          <td>tr</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 제목셀</td>
+                          <td>th</td>
+                          <td></td>
+                        </tr>
+                        <tr>
+                          <td>표 내용셀</td>
+                          <td>td</td>
+                          <td></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+              <!-- //section4 -->
+            </div>
+          </article>
+        </div>
+
+        <div id="tabmenu4" class="tab_cont" role="tabpanel">
+          <article id="g-content">
+            <div class="g-content-body">
+              <section id="section5" class="g-section g-in-sec">
+                <div class="g-section-header">
+                  <h2 class="g-h2">인터렉션</h2>
+                </div>
+                <div class="g-section-body">
+                  <h3 class="g-h3">나타나기</h3>
+                  <ul class="g-desc">
+                    <li>기본 scroll-ani 클래스를 부여한다.</li>
+                    <li>슬라이드가 나타나는 방향에 대한 클래스를 부여한다.</li>
+                    <li>ani-top : 위에서 아래로 나타나는 효과</li>
+                    <li>ani-bottom : 아래에서 위로 나타나는 효과</li>
+                    <li>ani-left : 왼쪽에서 오른쪽으로 나타나는 효과</li>
+                    <li>ani-right : 오른쪽에서 왼쪽으로 나타나는 효과</li>
+                  </ul>
+  
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_934690" class="syntaxhighlighter html">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- HTML : ani-top --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"scroll-ani ani-top"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"text"</code>
+                                    <code class="html plain">&gt;TEXT&lt;/</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number4 index5 alt1">&nbsp;</div>
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- HTML : ani-bottom --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"scroll-ani ani-bottom"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"text"</code>
+                                    <code class="html plain">&gt;TEXT&lt;/</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number4 index5 alt1">&nbsp;</div>
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- HTML : ani-left --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"scroll-ani ani-left"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"text"</code>
+                                    <code class="html plain">&gt;TEXT&lt;/</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number4 index5 alt1">&nbsp;</div>
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- HTML : ani-right --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"scroll-ani ani-right"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"text"</code>
+                                    <code class="html plain">&gt;TEXT&lt;/</code>
+                                    <code class="html keyword">h2</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <h3 class="g-h3">GSAP</h3>
+                  <ul class="g-desc">
+                    <li>나타나기, 숫자 카운팅 사용</li>
+                  </ul>
+
+                  <p class="g-desc-guide">
+                    <a href="https://gsap.com/docs/v3/">GSAP Document 확인하기</a>
+                  </p>
+
+                  <h4 class="g-h4">나타나기</h4>
+                  <ul class="g-desc">
+                    <li>slideUp : 위에서 아래로 나타나는 효과</li>
+                    <li>slideDown : 아래에서 위로 나타나는 효과</li>
+                    <li>slideLeft : 왼쪽에서 오른쪽으로 나타나는 효과</li>
+                    <li>slideRight : 오른쪽에서 왼쪽으로 나타나는 효과</li>
+                    <li>단일 선택자, 복수 선택자 사용 가능</li>
+                  </ul>
+                  
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_934690" class="syntaxhighlighter html">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script : slideUp --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">const</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">=</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">document.querySelectorAll</code>
+                                    <code class="html plain">('</code>
+                                    <code class="html string">.content</code>
+                                    <code class="html plain">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">slideUp</code>
+                                    <code class="html plain">(</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html plain">)</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                  </div>
+                                </div>
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script : slideDown --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">const</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">=</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">document.querySelectorAll</code>
+                                    <code class="html plain">('</code>
+                                    <code class="html string">.content</code>
+                                    <code class="html plain">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">slideDown</code>
+                                    <code class="html plain">(</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html plain">)</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                  </div>
+                                </div>
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script : slideLeft --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">const</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">=</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">document.querySelectorAll</code>
+                                    <code class="html plain">('</code>
+                                    <code class="html string">.content</code>
+                                    <code class="html plain">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">slideLeft</code>
+                                    <code class="html plain">(</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html plain">)</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                  </div>
+                                </div>
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script : slideRight --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">const</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">=</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">document.querySelectorAll</code>
+                                    <code class="html plain">('</code>
+                                    <code class="html string">.content</code>
+                                    <code class="html plain">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">slideRight</code>
+                                    <code class="html plain">(</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html plain">)</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h4 class="g-h4">숫자 카운팅</h4>
+                  <ul class="g-desc">
+                    <li>counterMotion : 숫자정보를 넣을 경우 카운팅 효과</li>
+                    <li>단일 선택자, 복수 선택자 사용 가능</li>
+                  </ul>
+
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_934690" class="syntaxhighlighter html">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">const</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">=</code>
+                                    <code class="html spaces">&nbsp;</code>
+                                    <code class="html color1">document.querySelectorAll</code>
+                                    <code class="html plain">('</code>
+                                    <code class="html string">.number</code>
+                                    <code class="html plain">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">counterMotion</code>
+                                    <code class="html plain">(</code>
+                                    <code class="html color1">target</code>
+                                    <code class="html plain">)</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 class="g-h3">Parallax</h3>
+                  <ul class="g-desc">
+                    <li>꽉잔 배너 이미지에 Parallax scrolling 효과</li>
+                  </ul>
+
+                  <p class="g-desc-guide">
+                    <a href="https://pixelcog.github.io/parallax.js/">Parallax Document 확인하기</a>
+                  </p>
+
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_934690" class="syntaxhighlighter html">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Html --&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"image-box"</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"image"</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">data-parallax=</code>
+                                    <code class="html string">"scroll"</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">data-src=</code>
+                                    <code class="html string">"@@yourImagePath"</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">data-alt=</code>
+                                    <code class="html string">"@@yourImageAlt"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number6 index5 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+
+                                  <div class="line">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                  </div>
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- Script --&gt;</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html string">$</code>
+                                    <code class="html color1">('</code>
+                                    <code class="html string">.image</code>
+                                    <code class="html color1">')</code>
+                                    <code class="html string">.parallax</code>
+                                    <code class="html color1">({</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">bleed</code>
+                                    <code class="html plain">: 0,</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">imageSrc</code>
+                                    <code class="html plain">: </code>
+                                    <code class="html string">$</code>
+                                    <code class="html color1">('</code>
+                                    <code class="html string">.image</code>
+                                    <code class="html color1">')</code>
+                                    <code class="html string">.attr</code>
+                                    <code class="html color1">('</code>
+                                    <code class="html string">data-image-src</code>
+                                    <code class="html color1">'),</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">alt</code>
+                                    <code class="html plain">: </code>
+                                    <code class="html string">$</code>
+                                    <code class="html color1">('</code>
+                                    <code class="html string">.image</code>
+                                    <code class="html color1">')</code>
+                                    <code class="html string">.attr</code>
+                                    <code class="html color1">('</code>
+                                    <code class="html string">data-alt</code>
+                                    <code class="html color1">')</code>
+                                  </div>
+                                  <div class="line number3 index2 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html color1">});</code>
+                                  </div>
+                                  <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/script</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <h3 class="g-h3">Swiper Slide</h3>
+                  <ul class="g-desc">
+                    <li>아래와 같은 구조로 사용한다.</li>
+                    <li>swiper-slide 안에 원하는 슬라이드 내용을 삽입한다.</li>
+                  </ul>
+
+                  <p class="g-desc-guide">
+                    <a href="https://swiperjs.com/get-started">Swiper Document 확인하기</a>
+                  </p>
+  
+                  <div class="g-code">
+                    <div>
+                      <div id="highlighter_934690" class="syntaxhighlighter html">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td class="code">
+                                <div class="container">
+                                  <div class="line number1 index0 alt2">
+                                    <code class="html comments">&lt;!-- HTML --&gt;</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper"</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number4 index3 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-wrapper"</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number6 index5 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-slide"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">Slide 1</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number7 index6 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-slide"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">Slide 2</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number8 index7 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-slide"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">Slide 3</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number9 index8 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number10 index9 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html comments">&lt;!-- 페이지네이션 --&gt;</code>
+                                </div>
+                                <div class="line number11 index10 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-pagination"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number12 index11 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html comments">&lt;!-- 이전/다음 버튼 --&gt;</code>
+                                </div>
+                                <div class="line number13 index12 alt2">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-button-prev"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number14 index13 alt1">
+                                    <code class="html spaces">&nbsp; &nbsp;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&nbsp;</code>
+                                    <code class="html color1">class=</code>
+                                    <code class="html string">"swiper-button-next"</code>
+                                    <code class="html plain">&gt;</code>
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">/div</code>
+                                    <code class="html plain">&gt;</code>
+                                  </div>
+                                  <div class="line number16 index15 alt1">
+                                    <code class="html plain">&lt;</code>
+                                    <code class="html keyword">div</code>
+                                    <code class="html plain">&gt;</code>
+                                </div>
+                                </div>
+
+                                <div class="line">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                </div>
+                                <div class="line number1 index0 alt2">
+                                  <code class="html comments">&lt;!-- Script --&gt;</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">script</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html string">$</code>
+                                  <code class="html color1">('</code>
+                                  <code class="html string">.swiper</code>
+                                  <code class="html color1">')</code>
+                                  <code class="html keyword">.new </code>
+                                  <code class="html string">Swiper</code>
+                                  <code class="html color1">({</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp; &nbsp; &nbsp;</code>
+                                  <code class="html comments">// Swiper 옵션</code>
+                                </div>
+                                <div class="line number3 index2 alt2">
+                                  <code class="html spaces">&nbsp; &nbsp;</code>
+                                  <code class="html color1">});</code>
+                                </div>
+                                <div class="line number2 index1 alt1">
+                                  <code class="html plain">&lt;</code>
+                                  <code class="html keyword">/script</code>
+                                  <code class="html plain">&gt;</code>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- script add -->
+
+</html>

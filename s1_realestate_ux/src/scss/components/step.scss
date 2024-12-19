@@ -1,0 +1,60 @@
+.step-container {
+  padding-top: 2.2rem; // text height
+  .step-area {
+    @include flex(row, flex-start, center);
+  }
+  .step-box {
+    position: relative;
+    @include font(1.4rem, 500, $color_bfb, normal, 0);
+    &.complete {
+      color: $primary;
+      & + .line {
+        background-color: $primary;
+      }
+      .circle {
+        border-color: $primary;
+        &:before {
+          content: '';
+          width: 1.4rem;
+          height: 1rem;
+          margin-top: 0.1rem;
+          background: asset-image('ic_step_check.svg') no-repeat center / 1.4rem 1rem;
+        }
+        .num {
+          display: none;
+        }
+      }
+    }
+    &.current {
+      font-weight: 700;
+      color: $primary;
+      .circle {
+        border-color: $primary;
+        background-color: $primary;
+        color: $white;
+      }
+    }
+    .step-text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 0.6rem));
+      margin-bottom: 0.6rem;
+      white-space: nowrap;
+    }
+    .circle {
+      @include flex(row, center, center);
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 50%;
+      border: 2px solid $color_bfb;
+      box-sizing: border-box;
+      @include font(1.4rem, 700, $color_bfb, normal, 0);
+    }
+  }
+  .line {
+    width: 4.4rem;
+    height: 0.2rem;
+    background-color: $color_dcd;
+  }
+}

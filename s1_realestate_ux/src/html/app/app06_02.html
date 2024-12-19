@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 임직원 관리"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../appComponents/appHeader.html", {
+        "back" : true,
+        "title" : "임직원 관리",
+        "close" : false,
+      })
+
+      <!-- Content -->
+      <main class="app-content-container">
+        <div class="app-content-area">
+          <div class="content-container">
+            <div class="content-area">
+              <div class="content-middle">
+                <div class="commpany-address-box">
+                  <!-- <a href="#" class="link-go-text"><span>재인증</span></a> -->
+                  <p class="name">삼성전자</p>
+                  <p class="address">서울특별시 서초구 서초대로74길 11 삼성전자빌딩 6F~20F</p>
+                </div>
+                <button type="button" class="link-go-text btn-popup" data-popup="popup-invite">
+                  <span>임직원 초대</span>
+                </button>
+
+                <div class="management-filter-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/field_search.html", {
+                    "size" : "medium",
+                    "class" : "management-search",
+                    "id" : "search-01",
+                    "placeholder" : "임직원 이름을 검색해 주세요",
+                    "disabled" : "",
+                  })
+                  <div class="filter-sort-button">
+                    <button class="btn-sort btn-popup" data-popup="popup-total-floor">
+                      <span>전체 층</span>
+                    </button>
+                    <button class="btn-sort btn-popup" data-popup="popup-total-state">
+                      <span>전체 상태</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- 임직원 관리 목록 -->
+                <div class="management-container">
+                  <div class="management-all-check checkbox">
+                    <input type="checkbox" name="check" id="check-all" />
+                    <label for="check-all">총<span>10</span>명</label>
+                  </div>
+                  <ul class="management-lists">
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="" id="list-01" class="" />
+                        <label for="list-01">
+                          <div class="name-box">
+                            <span class="name">[1F] 홍*동</span>
+                            <span class="text">총무</span>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="state-box">
+                        <span class="state">정상</span>
+                        <span class="date">2022.12.07</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="" id="list-02" class="" />
+                        <label for="list-02">
+                          <div class="name-box">
+                            <span class="name">[1F] 홍*동</span>
+                            <span class="text">총무</span>
+                          </div>
+                        </label>
+                      </div>
+                      <div class="state-box">
+                        <span class="state error">미인증</span>
+                        <a href="#" class="text-link">문자 재발송</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="checkbox">
+                        <input type="checkbox" name="" id="list-03" class="" />
+                        <label for="list-03">
+                          <div class="name-box">
+                            <span class="name">홍*동</span>
+                            <!-- <span class="text">총무</span> -->
+                          </div>
+                        </label>
+                      </div>
+                      <div class="state-box">
+                        <span class="state error">미인증</span>
+                        <a href="#" class="text-link">문자 재발송</a>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="content-bottom">
+                <div class="bottom-button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "popup-delete-corfrim",
+                    "type" : "secondary",
+                    "size" : "h50",
+                    "class" : "btn-popup",
+                    "disabled" : "",
+                    "text" : "삭제",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                      "dataValue" : "popup-ok-corfrim",
+                      "type" : "primary",
+                      "size" : "h50",
+                      "class" : "btn-popup",
+                      "disabled" : "",
+                      "text" : "담당자 지정",
+                    })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- 초대 대상 유령 팝업 -->
+      <div id="popup-invite" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">초대 대상 유형</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <ul class="modal-total-list">
+                <li>입주사 담당자</li>
+                <li>입주사 임직원</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 층 팝업-->
+      <div id="popup-total-floor" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">층</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <ul class="modal-total-list">
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="floor" id="all" class="all" />
+                    <label for="all">전체 층</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="floor" id="1f" class="" />
+                    <label for="1f">1F</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="floor" id="2f" class="" />
+                    <label for="2f">2F</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="floor" id="3f" class="" />
+                    <label for="3f">3F</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>적용</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 인증 팝업-->
+      <div id="popup-total-state" class="popup-container">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="popup-title-box">
+                <h3 class="title">인증 상태</h3>
+              </div>
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <ul class="modal-total-list">
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="state" id="all-01" class="all" />
+                    <label for="all-01">전체 층</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="state" id="state-01" class="" />
+                    <label for="state-01">미인증</label>
+                  </div>
+                </li>
+                <li>
+                  <div class="checkbox">
+                    <input type="checkbox" name="state" id="state-02" class="" />
+                    <label for="state-02">정상</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="popup-bottom">
+              <div class="button-box">
+                <button type="button" class="btn btn-primary btn-medium">
+                  <span>적용</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 삭제 알림 팝업 -->
+      <div id="popup-delete-corfrim" class="popup-container popup-alert">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="corfrim-box">
+                <p class="text">홍*동님에게 삭제(인증 해제) 알림톡이 전송됩니다.</p>
+              </div>
+              <div class="popup-bottom">
+                <div class="button-box">
+                  <button type="button" class="btn btn-secondary btn-medium">
+                    <span>취소</span>
+                  </button>
+                  <button type="button" class="btn btn-primary btn-medium">
+                    <span>확인</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 담당자 지정 알림 팝업 -->
+      <div id="popup-ok-corfrim" class="popup-container popup-alert">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="corfrim-box">
+                <p class="text">홍*동님에게 담당자 지정 알림톡이 전송됩니다.</p>
+              </div>
+              <div class="popup-bottom">
+                <div class="button-box">
+                  <button type="button" class="btn btn-secondary btn-medium">
+                    <span>취소</span>
+                  </button>
+                  <button type="button" class="btn btn-primary btn-medium">
+                    <span>확인</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 담당자 해제 알림 팝업 -->
+      <div id="popup-no-corfrim" class="popup-container popup-alert">
+        <div class="popup-area">
+          <div class="dim"></div>
+          <div class="popup-wrap">
+            <div class="popup-top">
+              <div class="close-button-box">
+                <button type="button" class="btn-popup-close" title="닫기"></button>
+              </div>
+            </div>
+            <div class="popup-middle">
+              <div class="corfrim-box">
+                <p class="text">홍*동님에게 담당자 해제 알림톡이 전송됩니다.</p>
+              </div>
+              <div class="popup-bottom">
+                <div class="button-box">
+                  <button type="button" class="btn btn-secondary btn-medium">
+                    <span>취소</span>
+                  </button>
+                  <button type="button" class="btn btn-primary btn-medium">
+                    <span>확인</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

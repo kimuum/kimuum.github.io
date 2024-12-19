@@ -1,0 +1,79 @@
+.find-id-list-box {
+  @include flex(column, flex-start, flex-start);
+  gap: 1.6rem;
+  .find-id-list {
+    width: 100%;
+    border-radius: 0.8rem;
+    background-color: $neutral_10;
+    box-shadow: $elevation_00;
+
+    .find-id-link {
+      width: 100%;
+      @include flex(row, space-between, center);
+      padding: 1.8rem 2rem;
+      @include font(1.8rem, 500, $text_02, 2.6rem);
+      .ic {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
+
+.find-id-desc-box {
+  height: 9.6rem;
+  .find-id-desc {
+    @include font(1.2rem, 500, $text_04, 1.6rem);
+    white-space: pre-line;
+    text-align: center;
+    .highlight {
+      color: $error_50;
+    }
+  }
+}
+
+.find-id-container {
+  .find-id-info-box {
+    padding: 1.8rem 2rem;
+    border-radius: 0.8rem;
+    background-color: $neutral_10;
+    box-shadow: $elevation_00;
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    .id-info {
+      @include font(1.8rem, 500, $text_02, 2.6rem);
+      word-break: break-all;
+    }
+  }
+  .find-id-top {
+    padding-top: 6.4rem;
+  }
+  .find-id-bottom {
+    margin-top: 3.8rem;
+    padding-bottom: 2rem;
+  }
+  .re-mail-box {
+    @include flex(row, center, center);
+    .re-mail-text {
+      margin-right: 0.8rem;
+      @include font(1.2rem, 500, $text_02, 1.6rem);
+    }
+  }
+}
+
+.find-pw-button-box {
+  margin-bottom: 1.2rem;
+  .btn {
+    margin: auto;
+  }
+}
+
+@media screen and (max-height: 680px) {
+  .find-id-container {
+    .find-id-top {
+      margin-top: -4rem;
+      padding: 0;
+    }
+  }
+}

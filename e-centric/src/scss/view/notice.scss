@@ -1,0 +1,58 @@
+.page-notice {
+  background-color: $neutral-10;
+
+  .notice-box {
+    padding-top: 1rem;
+    .notice-list-box {
+      .notice-list {
+        @include flex(row, space-between, center);
+        padding: 1.5rem 0;
+        + .notice-list {
+          border-top: 1px solid rgba($primary_100, 0.1);
+        }
+      }
+
+      .notice-list-left {
+        max-width: calc(100% - 3.6rem);
+      }
+
+      .notice-list-right {
+        margin-left: 1.2rem;
+        .view-more {
+          width: 2rem;
+          height: 2rem;
+          .ic {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+      .notice-title-box {
+        @include flex(row, flex-start, center);
+        .badge-circle {
+          flex: 0 0 2rem;
+          margin-right: 0.8rem;
+          background-color: $secondary_70;
+          border-radius: 10rem;
+        }
+        .notice-title {
+          max-width: calc(100% - 2.6rem);
+          .title {
+            display: block;
+            @include font(1.4rem, 500, $text-02, 2rem);
+            @include ellipsis;
+            .category {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+
+      .date-box {
+        margin-top: 0.5rem;
+        @include font(1.2rem, 400, $text-04, 1.6rem);
+      }
+    }
+  }
+}

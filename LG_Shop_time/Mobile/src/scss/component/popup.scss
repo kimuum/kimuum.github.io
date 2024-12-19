@@ -1,0 +1,150 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  &.show {
+    .dim {
+      display: block;
+    }
+    .popup-container {
+      display: block;
+    }
+  }
+  .dim {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color-black, 0.6);
+  }
+  &.popup-toast {
+    top: auto;
+    left: 10px;
+    right: 10px;
+    bottom: 66px;
+    min-height: 40px;
+    &.place-bottom {
+      bottom: 10px;
+    }
+    .popup-container {
+      position: static;
+      width: 100%;
+      background-color: rgba($color-gray-141414, 0.9);
+      border-radius: 4px;
+      transform: unset;
+      .popup-middle {
+        min-height: auto;
+        padding: 8px 10px;
+      }
+      .massage-box {
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        @include font($font14, 400, $color-white, 1.14);
+        text-align: left;
+        &[class*="icon-"] {
+          &:before {
+            content: "";
+            display: block;
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            margin: 0 8px 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popup-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  width: 340px;
+  // min-height: 277px;
+  background-color: $color-white;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  &.popup-full {
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transform: unset;
+    .btn-icon-close {
+      left: 0;
+      right: auto;
+    }
+    .popup-middle {
+      justify-content: flex-start;
+      padding: 0;
+      margin-right: 4px;
+      text-align: left;
+    }
+    .text-box {
+      height: 280px;
+      padding: 15px;
+      @include fontSize($font14);
+      font-weight: 300;
+    }
+  }
+  .popup-top {
+    @include flex(row, center, center);
+    position: relative;
+    height: 46px;
+    padding: 10px 46px;
+    .title-box {
+      margin: 0;
+      @include font($font18, 700, $color-gray-141414, 1);
+    }
+    .quantity {
+      color: $color-ce1c5e;
+    }
+  }
+
+  .popup-middle {
+    overflow-y: auto;
+    @include flex(column, center, flex-start);
+    min-height: 175px;
+    padding: 39px 10px 83px;
+    > * {
+      width: 100%;
+    }
+    .text-box {
+      @include font($font16, 400, $color-gray-141414, 1.12);
+    }
+    .list-box {
+      > li {
+        padding: 14px 0;
+      }
+    }
+
+    .option-list-box {
+      max-height: 280px;
+      overflow-y: auto;
+    }
+  }
+  .notice-box {
+    margin-bottom: 7px;
+    padding: 0;
+    @include font($font27, 700, $color-gray-141414);
+    text-align: center;
+    .icon-notice {
+      &::before {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .list-area {
+    max-height: 282px;
+    .list-body {
+      padding-bottom: 50px;
+    }
+  }
+}

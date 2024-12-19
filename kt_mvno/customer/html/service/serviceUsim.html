@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "바로유심 | 서비스", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : serviceUsim -->
+    <div class="wrap serviceUsim">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>바로유심(편의점)</h2>
+                <!-- [2차] 20221123 공통 메뉴명 수정 -->
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>바로유심</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_service.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <section class="usimVisualContent">
+            <div class="usimVisualTop">
+              <h3 class="usimTitle">지금 바로, <strong class="bold">바로유심</strong></h3>
+              <div class="usimText">KT 알뜰폰 공용유심, <span class="block">바로유심으로 바로 개통!</span></div>
+            </div>
+            <div class="imgWrap">
+              <img class="pcType" src="../../assets/images/service/img_usimvisual.png" alt="" />
+              <img class="moType" src="../../assets/images/service/img_usimvisual_mo.png" alt="" />
+            </div>
+          </section>
+          <section class="usimGuideContent">
+            <div class="contentInner">
+              <div class="usimEventArea">
+                <!-- [운영] DR-2023-46262 20230731 -->
+                <div class="eventTitle">
+                  <span class="block pcBlock">‘바로유심’ 개통하고</span>
+                  <span class="block">3대 마트 상품권 3만원 </span>
+                  <span class="block">혜택도 받으세요!</span>
+                </div>
+                <!-- //[운영] DR-2023-46262 20230731 -->
+                <a href="https://ktmyr.com/fe/service/event/promo/eventPromoView.do?evNo=84" target="_blank" class="eventLink"><span>이벤트 자세히 보기</span></a>
+                <!-- [운영] 20230214 링크추가 -->
+                <img src="../../assets/images/service/img_usimevent.png" class="pcType" alt="" />
+                <img src="../../assets/images/service/img_usimevent_mo.png" class="moType" alt="" />
+              </div>
+
+              <div class="usimGuideTop">
+                <h4 class="guideTitle">‘바로유심’이란?</h4>
+                <div class="guideText">
+                  <p>KT 알뜰폰 요금상품 가입 가능한 모든 곳에서 개통할 수 있는 공용유심입니다.</p>
+                  <p class="dot">교통카드/결제기능 지원 NFC유심</p>
+                </div>
+              </div>
+              <!-- [운영] KMVNO-4410 20240229 영상 추가 -->
+              <div class="usimGuideBottom">
+                <div class="guideInfo bgImg01">
+                  <div class="infoConBox stepBox">
+                    <strong class="infoTitle">‘바로유심’으로 알뜰폰 셀프개통(가입) 하기</strong>
+                    <!-- [운영] DR-2023-43085 20230714 -->
+                    <ul class="infoList">
+                      <li>Step 1. 바로유심 구매처 편의점에서 ‘바로유심’구매</li>
+                      <li>Step 2. 하단 KT알뜰폰 프렌즈 선택(홈페이지 이동)</li>
+                      <li>Step 3. KT알뜰폰 요금상품 선택</li>
+                      <li>Step 4. 본인인증/유심정보 입력 후 개통(가입)</li>
+                      <li class="dot">셀프개통이 지원되지 않는 알뜰폰 프렌즈는 해당 <br />고객센터를 통해 개통(가입) 가능 합니다</li>
+                    </ul>
+                  </div>
+                  <div class="infoConBox martBox">
+                    <strong class="infoTitle">바로유심 구매처</strong>
+                    <!-- [운영] DR-2023-46262 20230731 -->
+                    <div class="infoLinkWrap">
+                      <div class="mart-area-cu">
+                        <div class="imgBox">
+                          <img src="../../assets/images/service/img_cu.png" alt="" />
+                        </div>
+                        <a href="https://cu.bgfretail.com/store/list.do?category=store" class="linkUnderline colorPrimary" target="_blank" title="새 창 열림">매장찾기</a>
+                      </div>
+                      <div class="mart-area-emart">
+                        <div class="imgBox">
+                          <img src="../../assets/images/service/img_emart.png" alt="" />
+                        </div>
+                        <a href="https://emart24.co.kr/introduce2/findBranch.asp" class="linkUnderline colorPrimary" target="_blank" title="새 창 열림">매장찾기</a>
+                        <!-- [VOS2차] 결함ID 1122860 타이틀추가 -->
+                      </div>
+                    </div>
+                    <!-- //[운영] DR-2023-46262 20230731 -->
+                  </div>
+                </div>
+                <div class="guideInfo bgImg02">
+                  <div class="infoConBox">
+                    <strong class="infoTitle">바로유심 구매부터 셀프개통까지!</strong>
+                    <div class="guideVideoContainer">
+                      <div class="videoBox">
+                        <iframe src="https://www.youtube.com/embed/Gumss2GkTRM" title="바로유심 구매부터 셀프개통까지! > 2024년 첫 플렉스 내돈내산 아이폰 15 프로 언박싱" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                      </div>
+                      <div class="videoTextBox">
+                        <div class="textBox">
+                          <strong class="timeline bold">04:18~05:02</strong>
+                          <p>바로유심 편의점 구매</p>
+                        </div>
+                        <div class="textBox">
+                          <strong class="timeline bold">07:27~10:22</strong>
+                          <p>바로유심, 바로배송유심 안내 및 셀프개통</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- //[운영] KMVNO-4410 20240229 영상 추가 -->
+            </div>
+          </section>
+
+          <!-- [VOS2차] 결함ID 1122862 1122918 수정 -->
+          <!-- [운영] KMVNO-4241 20231220 수정 -->
+          <!-- [운영] KMVNO-4410 20240223 수정 -->
+          <section class="usimFriendsContent contentInner">
+            <h4 class="guideTitle02"><strong class="bold">KT알뜰폰 프렌즈</strong></h4>
+            <div class="selfGuideIconsArea">
+              <div class="selfGuideIconBox">
+                <span class="selfIconMyR"></span>
+                <p class="selfGuideText">마이알뜰폰 셀프개통 가능</p>
+              </div>
+              <div class="selfGuideIconBox">
+                <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span></span>
+                <p class="selfGuideText">사업자 사이트 셀프개통 가능</p>
+              </div>
+            </div>
+            <ul class="friendsList">
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">미니게이트</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_m2.png" alt="미니게이트로고" />
+                  </div>
+                  <a href="https://m2mobile.co.kr/M2Mobile/view/main.jsp" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">엠모바일</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="kt m mobile" />
+                  </div>
+                  <a href="https://www.ktmmobile.com/event/eventDetail.do?ntcartSeq=1216&sbstCtg=E&pageNo=1" class="underline pcType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <a href="https://www.ktmmobile.com/m/event/eventDetail.do?ntcartSeq=1216&sbstCtg=E&pageNo=1" class="underline moType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">스카이라이프</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_skylife.png" alt="skylife 모바일" />
+                  </div>
+                  <a href="https://shop.skylife.co.kr/event/emart24.do" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">위너스텔</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_well.png" alt="알뜰모바일Well" />
+                  </div>
+                  <a href="https://www.idowell.co.kr/home/contents.php?sn1=3&sn2=3&spn=view&no=121&st=&search=sn1%3D3%26sn2%3D3" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">포인트파크</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_pointpark.png" alt="Pointplus mobile" />
+                  </div>
+                  <a href="https://www.pointplus-m.co.kr/Event/EventUsim_23_12.html" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] DR-2023-43085 20230714 -->
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">이지모바일</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_eg.png" alt="eg mobile" />
+                  </div>
+                  <a href="https://egmobile.co.kr/event/view/617" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <!-- [운영] 20230315 DR-2023-16322 사업자 추가 -->
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">고고모바일</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_gogomobile.png" alt="고고모바일" />
+                  </div>
+                  <a href="https://gogomobile.co.kr/main/baro_usim" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <!-- //[운영] 20230315 DR-2023-16322 사업자 추가 -->
+              <!-- [운영] KMVNO-4084 20231017 사업자 추가 -->
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconMyR"><span class="irText">마이알뜰폰 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">에르엘</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_erelmobile.png" alt="EREL Mobile" />
+                  </div>
+                  <a href="https://www.erel.co.kr/" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <!-- //[운영] KMVNO-4084 20231017 사업자 추가 -->
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">프리텔레콤</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" />
+                  </div>
+                  <a href="https://www.freet.co.kr/event/ongoing/detail?seq=101019620" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">스테이지파이브</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_pindirect.png" alt="pindirect" />
+                  </div>
+                  <a href="https://www.pindirectshop.com/info/barousim?utm_campaign=organic&utm_source=barousim&utm_medium=leaflet" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">한국케이블</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_tplus.png" alt="tplus" />
+                  </div>
+                  <a href="https://www.tplusdirectmall.com/view/self/selfOpeningReg.do?clickSimType=USIM&clickExistUsim=Y&clickTelecomId=KT" class="underline pcType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <a href="https://m.tplusdirectmall.com/view/self/selfOpeningJoinUsim.do?clickSimType=USIM&clickExistUsim=Y&clickTelecomId=KT" class="underline moType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">유니컴즈</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_mobing.png" alt="mobing" />
+                  </div>
+                  <a href="https://www.mobing.co.kr/event/view?eventSeq=2752&type=1" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">에스원</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_s1.png" alt="에스원 안심모바일" />
+                  </div>
+                  <a href="http://www.s1mobile.co.kr/index.do" class="underline pcType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [VOS2차] 결함ID 1121429 수정 -->
+                  <a href="https://m.s1mobile.co.kr:8448/mall/index.do" class="underline moType" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [VOS2차] 결함ID 1121429 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="selfOpenBox">
+                  <span class="selfIconBiz"><span class="hiddenText" aria-hidden="true">셀프개통</span><span class="irText">사업자 사이트 셀프개통 가능</span></span>
+                </div>
+                <div class="listBox">
+                  <div class="name">스마텔</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_smartel.png" alt="smartel" />
+                  </div>
+                  <!-- 20220727 링크 변경 -->
+                  <a href="https://smartelmall.com/sub/event/event_new_view.asp?idx=15198" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">에넥스</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_Amobile.png" alt="Amobile" />
+                  </div>
+                  <!-- [운영] 20230104 링크 변경 -->
+                  <a href="https://www.amobile.co.kr/event/364" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                  <!-- //[운영] 20230104 링크 변경 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">세종</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_snowman.png" alt="snowman" />
+                  </div>
+                  <a href="https://www.snowman.co.kr/portal/evBnfit/ev/dtl/10400" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">아이즈비전</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_eyesmobile.png" alt="아이즈모바일" />
+                  </div>
+                  <a href="https://eyes.co.kr/event/event" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [VOS2차] 결함ID 1121429 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">한국피엠오</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_wmvno.png" alt="Value Comm" />
+                  </div>
+                  <a href="https://www.valuecomm.co.kr/bbs/board.php?bo_table=event" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">와이엘랜드</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_yeoyou.png" alt="여유 알뜰모바일" />
+                  </div>
+                  <a href="https://www.yytelecom.co.kr/TeleEventCtrls/EventView/idx:1013" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">큰사람</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_eyagi.png" alt="이야기모바일" />
+                  </div>
+                  <!-- 20220727 링크 변경 -->
+                  <a href="https://www.eyagi.co.kr/shop/display/event_view.php?no=81584412" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">에이프러스</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_asisa.png" alt="adiamobile" />
+                  </div>
+                  <a href="http://asiamobile.kr/" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                  <!-- [운영] KMVNO-4241 20231211 수정 -->
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">드림라인</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_dreamline.png" alt="드림라인 모바일" />
+                  </div>
+                  <a href="https://www.dreammobile.kr/view/eventpage/eventlist.aspx##" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <!-- [운영] KMVNO-4241 20231211 변경 -->
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">토스모바일</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_tossmobile.png" alt="토스모바일" />
+                  </div>
+                  <a href="https://tossmobile.co.kr" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <!-- //[운영] KMVNO-4241 20231211 변경 -->
+              <!-- [운영] DR-2023-43085 20230714 -->
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">더피엔엘</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_firstmobile.png" alt="퍼스트 모바일" />
+                  </div>
+                  <a href="https://www.firstmobile.co.kr/" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <li class="list">
+                <div class="listBox">
+                  <div class="name">씨엔커뮤니케이션</div>
+                  <div class="imgBox">
+                    <img src="../../assets/images/bizlogo/thumbnail_wmvnodoubleyou.png" alt="WMVNO DOUBLEYOU" />
+                  </div>
+                  <a href="http://wmvno.co.kr/index.asp" class="underline" target="_blank" title="새 창 열림">상세정보 보기</a>
+                </div>
+              </li>
+              <!-- //[운영] DR-2023-43085 20230714 -->
+            </ul>
+          </section>
+          <!-- //[운영] KMVNO-4410 20240223 수정 -->
+          <!-- //[운영] KMVNO-4241 20231220 수정 -->
+          <!-- //[VOS2차] 결함ID 1122862 1122918 수정 -->
+
+          <section class="contentInner">
+            <div class="boardContainer typeList">
+              <div class="supportContainer">
+                <div class="supportTop">
+                  <h3 class="title">FAQ</h3>
+                </div>
+                <div class="supportMiddle">
+                  <div class="supportArea">
+                    <div class="supportTitle">
+                      <div class="title">
+                        <div class="titleHead">
+                          <span class="bigTitle">Q1.</span>
+                        </div>
+                        <div class="titleBody">'바로유심'이 무엇인가요?</div>
+                      </div>
+                    </div>
+                    <div class="supportContent">
+                      <div class="textWrap">
+                        <span class="faqArrow"></span>
+                        <div class="textHead">A1.</div>
+                        <div class="textBody">'바로유심'은 KT알뜰폰 요금상품 가입 가능한 모든 곳에서 개통 가능한 공용유심 이름입니다.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="supportArea">
+                    <div class="supportTitle">
+                      <div class="title">
+                        <div class="titleHead">
+                          <span class="bigTitle">Q2.</span>
+                        </div>
+                        <div class="titleBody">'바로유심'은 어디에서 구매 할 수 있나요?</div>
+                      </div>
+                    </div>
+                    <div class="supportContent">
+                      <div class="textWrap">
+                        <span class="faqArrow"></span>
+                        <div class="textHead">A2.</div>
+                        <!-- [운영] DR-2023-43085 20230714 20230728 -->
+                        <div class="textBody">전국 CU, 이마트24 편의점에서 구매 할 수 있습니다. ('23.7월 기준)</div>
+                        <!-- //[운영] DR-2023-43085 20230714 20230728 -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="supportArea">
+                    <div class="supportTitle">
+                      <div class="title">
+                        <div class="titleHead">
+                          <span class="bigTitle">Q3.</span>
+                        </div>
+                        <div class="titleBody">구매한 유심이 불량인 경우 어떻게 하나요?</div>
+                      </div>
+                    </div>
+                    <div class="supportContent">
+                      <div class="textWrap">
+                        <span class="faqArrow"></span>
+                        <div class="textHead">A3.</div>
+                        <div class="textBody">'바로유심'을 구매한 곳에서 교환할 수 있습니다. 단. 고객 과실에 의한 파손인 경우 교환 불가 합니다.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="supportArea">
+                    <div class="supportTitle">
+                      <div class="title">
+                        <div class="titleHead">
+                          <span class="bigTitle">Q4.</span>
+                        </div>
+                        <div class="titleBody">개통(가입)은 어떻게 하나요?</div>
+                      </div>
+                    </div>
+                    <div class="supportContent">
+                      <div class="textWrap">
+                        <span class="faqArrow"></span>
+                        <div class="textHead">A4.</div>
+                        <div class="textBody">'마이알뜰폰(www.ktmyr.com)'홈페이지에 소개된 KT알뜰폰 프렌즈 선택, 홈페이지를 통해 셀프개통 또는 고객센터를 통해 개통(가입) 가능 합니다.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

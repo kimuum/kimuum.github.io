@@ -1,0 +1,164 @@
+@@include('head.html', {
+  'title': '체크박스'
+  })
+    
+  <body>
+    <div class="wrapper">
+      <!--
+      ///////////////
+      ///  인라인으로 작성된 style=""은 가이드를 보여주기 위한 목적으로 
+      ///  실제 개발에서는 사용되지 않도록 유의하세요. 
+      ///////////////
+      -->
+      <!-- Main -->
+      <main class="main" style="padding-left: 30px;">
+        <div class="">
+          <br><br>
+          <p>체크 비활성화</p><br>
+          <div class="checkbox">
+            <input type="checkbox" name="chk-test01" id="chk-test01">
+            <label for="chk-test01" class="check-icon">normal</label>
+          </div>
+          <div class="checkbox focused">
+            <input type="checkbox" name="chk-test06" id="chk-test06">
+            <label for="chk-test06" class="check-icon">focused/hover</label>
+          </div>
+          <div class="checkbox disabled">
+            <input type="checkbox" name="chk-test02" id="chk-test02" disabled>
+            <label for="chk-test02" class="check-icon">disabled</label>
+          </div>
+          <div class="checkbox disabled focused">
+            <input type="checkbox" name="chk-test02" id="chk-test02" disabled>
+            <label for="chk-test02" class="check-icon">disabled + focused</label>
+          </div>
+        </div>
+        <div class="">
+          <br><br>
+          <p>체크 활성화</p><br>
+          <div class="checkbox">
+            <input type="checkbox" name="chk-test03" id="chk-test03" checked>
+            <label for="chk-test03" class="check-icon">checked</label>
+          </div>
+          <div class="checkbox focused">
+            <input type="checkbox" name="chk-test04" id="chk-test04" checked>
+            <label for="chk-test04" class="check-icon">checked focused/hover</label>
+          </div>
+          <div class="checkbox disabled">
+            <input type="checkbox" name="chk-test05" id="chk-test05" checked disabled>
+            <label for="chk-test05" class="check-icon">checked disabled</label>
+          </div>
+          <div class="checkbox disabled focused">
+            <input type="checkbox" name="chk-test08" id="chk-test08" checked disabled>
+            <label for="chk-test08" class="check-icon">checked disabled + focused</label>
+          </div>
+        </div>
+
+        <div class="">
+          <br><br>
+          <p>카트 체크 비활성화</p><br>
+          <div class="checkout-item" style="margin: 0; border: 0;">
+            <div class="my-page-item-box" style="padding: 0;">
+              <div class="my-page-item">
+                <div class="my-adress-box">
+                  <div class="adress-header">
+                    <div class="adress-title">normal</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-01" id="shipping-01">
+                      <label for="shipping-01" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box focused">
+                  <div class="adress-header">
+                    <div class="adress-title">focused/hover</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-02" id="shipping-02">
+                      <label for="shipping-02" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box disabled">
+                  <div class="adress-header">
+                    <div class="adress-title">disabled</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-03" id="shipping-03" disabled>
+                      <label for="shipping-03" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box disabled focused">
+                  <div class="adress-header">
+                    <div class="adress-title">disabled + focused</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-03-01" id="shipping-03-01" disabled>
+                      <label for="shipping-03-01" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <br>
+          <p>카트 체크 활성화</p><br>
+          <div class="checkout-item" style="margin: 0; border: 0;">
+            <div class="my-page-item-box" style="padding: 0;">
+              <div class="my-page-item">
+                <div class="my-adress-box">
+                  <div class="adress-header">
+                    <div class="adress-title">checked</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-0201" id="shipping-0201" checked>
+                      <label for="shipping-0201" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box focused">
+                  <div class="adress-header">
+                    <div class="adress-title">focused/hover</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-0202" id="shipping-0202" checked>
+                      <label for="shipping-0202" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box disabled">
+                  <div class="adress-header">
+                    <div class="adress-title">disabled</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-0203" id="shipping-0203" disabled checked>
+                      <label for="shipping-0203" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="my-page-item">
+                <div class="my-adress-box disabled focused">
+                  <div class="adress-header">
+                    <div class="adress-title">disabled + focused</div>
+                    <div class="checkbox">
+                      <input type="checkbox" name="shipping-0203-01" id="shipping-0203-01" disabled checked>
+                      <label for="shipping-0203-01" class="check-icon"></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  
+  </html>

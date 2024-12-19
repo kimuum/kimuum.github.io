@@ -1,0 +1,9 @@
+<div class="gallery-collect-box">
+  @@for(var i = 0; i < data.length; i++) {
+  <div class="gallery-collect-item `+data[i].property+`">
+    <div class="img-box">
+      <img width="`+data[i].width+`" height="`+data[i].height+`" src="../../assets/images/`+data[i].path+`" alt="`+data[i].text+`" />
+    </div>
+  </div>
+  }
+</div>

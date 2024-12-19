@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '시스템 작업 중',
+          "isBtn" : false
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-customer-center">
+                <p class="info-title"><span class="highlight">죄송합니다.</span></p>
+                <p class="info-title-desc">지금 시스템 업그레이드 작업으로 인해 서비스 제공을 못하고 있습니다. <br />상담사를 연결해 드리겠습니다.</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box none-flex">
+            <button type="button" class="btn btn-primary" onclick="javascript:sendData($(this), '2');">통화품질 상담</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendData($(this), '3');">휴대폰 정지 / 분실 상담</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendData($(this), '4');">T 로밍 상담</button>
+            <button type="button" id="agent_menu" class="btn btn-secondary" onclick="javascript:sendData($(this), '1');">사용요금 및 일반상담</button>
+          </div>
+        </div>
+
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+        });
+
+        try {
+          // 1: 주간, 0: 야간, 9:점심시간
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '1';
+          // 점심시간
+          if (timezone_type == '9') {
+            $('#agent_menu').css('display', 'none');
+          }
+        } catch (e) {}
+      });
+
+      // report page data 호출
+      function sendData(obj, dtmf, text) {
+        sendRepPageData('agent', dtmf, text);
+      }
+    </script>
+  </body>
+</html>

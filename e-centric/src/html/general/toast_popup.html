@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/bundle.js"></script>
+    <title>Toast Popup</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-wrapper">
+        <div class="general-container">
+          <div class="general-area">
+            <div class="general-top">
+              <div class="general-label">Component</div>
+              <div class="general-title">Toast Popup</div>
+            </div>
+            <div class="general-middle">
+              <div class="general-content">
+                <div class="content-box">
+                  <!--toast popup start -->
+                  <!-- prettier-ignore -->
+                  @@include("toastPopup.html", {
+                    "id" : "toast-popup-1",
+                    "align" : "top",
+                    "toastContent" : {
+                      "id" : "mesage-id-01",
+                      "text" : "Toast popup message Toast popup message"
+                    }
+                  })
+                  <!--toast popup start -->
+                  <!-- prettier-ignore -->
+                  @@include("toastPopup.html", {
+                    "id" : "toast-popup-2",
+                    "align" : "bottom",
+                    "toastContent" : {
+                      "id" : "mesage-id-02",
+                      "text" : "Toast popup message Toast popup message"
+                    }
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

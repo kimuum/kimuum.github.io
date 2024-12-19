@@ -1,0 +1,310 @@
+<%-include('./include/head.ejs',{"title": "OJT 과제 : KPGA - 선수 위치 찾기 서비스", "listTitle": "KPGA : KPGA"})%>
+<body data-pagestatus="new : 24.12.18">
+  <div class="wrap wrap_kpga">
+    <!-- Header -->
+    <header class="header_container">
+      <div class="header_area">
+        <div class="header_left">
+          <h1 class="header_title">
+            <a href="javascript:void(0)" class="logo_box">
+              <img src="" alt="KPGA STATS">
+            </a>
+            <strong class="page_title">선수 위치 찾기 서비스</strong>
+          </h1>
+        </div>
+        <div class="header_right">
+          <div class="score_link_box">
+            <a href="javascript:void(0)" target="_blank" title="새창열림">LIVE SCORE</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- // Header -->
+    <!-- Contents -->
+    <main class="main">
+      <div class="content_container">
+        <div class="content_area">
+          <!-- 선수 랭킹 영역 -->
+          <section class="ranker_container">
+            <div class="content_inner">
+              <div class="title_area">
+                <h2 class="title">20조</h2>
+                <p class="start_time_info">출발 시간<span>#1, AM 11:08</span></p>
+              </div>
+              <!--
+                [D] 테이블 내 색상 표시 클래스 목록 :
+                .num_rank : 주황
+                .num_plus : 파랑
+                .num_minus : 빨강
+              -->
+              <div class="table_container">
+                <div class="table_area">
+                  <table class="table">
+                    <caption class="blind">현재 조 선수 현황표 : 선수, 순위, 오늘 스코어, 누적 스코어, 제네시스 포인트, 제네시스 상금 순위, 평균 타수</caption>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">선수</th>
+                        <th scope="col">순위</th>
+                        <th scope="col">오늘 스코어</th>
+                        <th scope="col">누적 스코어</th>
+                        <th scope="col">제네시스 포인트</th>
+                        <th scope="col">제네시스 상금 순위</th>
+                        <th scope="col">평균 타수</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="player_box">
+                          <div class="player_thumb">
+                            <img src="" alt="김병준 선수">
+                          </div>
+                          <strong class="player_name">김병준</strong>
+                        </td>
+                        <td class="num_rank">2</td>
+                        <td>E</td>
+                        <td>-9</td>
+                        <td>89th<span class="num_bottom">3,142 points</span></td>
+                        <td>36th<span class="num_bottom">￦113,600,000</span></td>
+                        <td>70.25</td>
+                      </tr>
+                      <tr>
+                        <td class="player_box">
+                          <div class="player_thumb">
+                            <img src="" alt="이승택 선수">
+                          </div>
+                          <strong class="player_name">이승택</strong>
+                        </td>
+                        <td class="num_rank">4</td>
+                        <td class="num_plus">+1</td>
+                        <td>-9</td>
+                        <td>89th<span class="num_bottom">3,142 points</span></td>
+                        <td>36th<span class="num_bottom">￦113,600,000</span></td>
+                        <td>70.25</td>
+                      </tr>
+                      <tr>
+                        <td class="player_box">
+                          <div class="player_thumb">
+                            <img src="" alt="김태우 선수">
+                          </div>
+                          <strong class="player_name">김태우</strong>
+                        </td>
+                        <td class="num_rank">3</td>
+                        <td class="num_minus">-1</td>
+                        <td>-9</td>
+                        <td>89th<span class="num_bottom">3,142 points</span></td>
+                        <td>36th<span class="num_bottom">￦113,600,000</span></td>
+                        <td>70.25</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- // 선수 랭킹 영역 -->
+          <!-- 홀바이홀 영역 -->
+          <section class="hole_container">
+            <div class="content_inner">
+              <div class="sub_title_area">
+                <strong class="sub_title">홀 바이 홀</strong>
+                <div class="hole_info">
+                  <strong class="">11 Hole</strong>
+                  <span>Par 4,431yds</span>
+                </div>
+              </div>
+              <!--
+                [D] 테이블 내 색상 표시 클래스 목록 :
+                ** thead **
+                .bg_in_out : 중간회색(ebebeb)
+                .bg_total : 진한회색(d6d6d6)   
+                .bg_hole : 주황
+
+                ** tbody **
+                파 : default 흰색 배경
+                .color_white : 흰색 텍스트
+                .bg_light_gray :연한회색(fcfcfc)
+                .bg_red : 알바트로스
+                .bg_orange : 이글
+                .bg_yellow : 버디
+                .bg_light_blue : 보기
+                .bg_blue : 더블보기
+              -->
+              <div class="table_container">
+                <div class="table_area">
+                  <table class="table">
+                    <caption class="blind">선수별 홀 현황표 : HOLE, PAR, 김병준, 이승택, 김태우</caption>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="colgroup">HOLE</th>
+                        <th scope="col">1</th>
+                        <th scope="col">2</th>
+                        <th scope="col">3</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5/th>
+                        <th scope="col">6</th>
+                        <th scope="col">7</th>
+                        <th scope="col">8</th>
+                        <th scope="col">9</th>
+                        <th scope="col" class="bg_in_out">OUT</th>
+                        <th scope="col">10</th>
+                        <th scope="col" class="bg_hole">11</th>
+                        <th scope="col">12</th>
+                        <th scope="col">13</th>
+                        <th scope="col">14</th>
+                        <th scope="col">15</th>
+                        <th scope="col">16</th>
+                        <th scope="col">17</th>
+                        <th scope="col">18</th>
+                        <th scope="col" class="bg_in_out">IN</th>
+                        <th scope="col" class="bg_total">TOTAL</th>
+                      </tr>
+                      <tr>
+                        <th scope="colgroup">PAR</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5</th>
+                        <th scope="col">4</th>
+                        <th scope="col">3</th>
+                        <th scope="col">4</th>
+                        <th scope="col">5</th>
+                        <th scope="col">3</th>
+                        <th scope="col">5</th>
+                        <th scope="col" class="bg_in_out">43</th>
+                        <th scope="col">3</th>
+                        <th scope="col" class="bg_hole">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col">4</th>
+                        <th scope="col" class="bg_in_out">43</th>
+                        <th scope="col" class="bg_total">72</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="rowgroup">김병준</th>
+                        <td class="bg_blue color_white">7</td>
+                        <td class="bg_blue color_white">7</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td class="bg_light_blue color_white">5</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td class="bg_light_gray">38</td>
+                        <td class="bg_yellow color_white">3</td>
+                        <td class="bg_hole">3</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td class="bg_blue color_white">6</td>
+                        <td class="bg_light_gray">38</td>
+                        <td class="bg_light_gray">38</td>
+                      </tr>
+                      <tr>
+                        <th scope="rowgroup">이승택</th>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td class="bg_yellow color_white">3</td>
+                        <td class="bg_light_blue color_white">6</td>
+                        <td class="bg_light_gray">32</td>
+                        <td class="bg_yellow color_white">2</td>
+                        <td class="bg_hole">2</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td class="bg_orange color_white">2</td>
+                        <td>5</td>
+                        <td class="bg_light_gray">32</td>
+                        <td class="bg_light_gray">76</td>
+                      </tr>
+                      <tr>
+                        <th scope="rowgroup">김태우</th>
+                        <td>5</td>
+                        <td class="bg_blue color_white">6</td>
+                        <td>6</td>
+                        <td class="bg_blue color_white">6</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>5</td>
+                        <td class="bg_light_gray">31</td>
+                        <td>3</td>
+                        <td class="bg_yellow color_white"></td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                        <td class="bg_light_gray">31</td>
+                        <td class="bg_light_gray">73</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- // 홀바이홀 영역 -->
+          <!-- 샷트랙커 영역 -->
+          <section class="tracker_container"></section>
+          <!-- // 샷트랙커 영역 -->
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "Case2. 음악 장르 선택 (오토링, 핵심팩, 링투유 오토체인지)", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>부가서비스 가입 신청</span></button>
+    </div>
+    <div class="popup popupBottomFixed show" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">부가서비스 가입 신청</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoTitle">신청 회선</div>
+              <div class="infoContent">
+                <div class="typePhoneLine">
+                  <div class="innerLogo">
+                    <div class="fieldBox">
+                      <div class="imgWrap"><img src="../../assets/images/bizlogo/thumbnail_freet.png" alt="프리티" /></div>
+                      <div class="lineBox">
+                        <!-- prettier-ignore -->
+                        @@include('../component/phone_line_info_box.html', {
+                          "product": "모두다 맘껏 11GB+",
+                          "price": null,
+                          "phoneNumber": "010-81**-*319",
+                          "label": true
+                        })
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 회선 -->
+
+            <div class="applyInfoArea">
+              <!-- [VOS2차] 결함ID 1122978 클래스 infoTitle 클래스/태그 한줄 삭제 -->
+              <div class="infoContent">
+                <div class="tableContainer normalBgTable captionShow">
+                  <!-- [VOS2차] 결함ID 1122978 클래스 추가 captionShow -->
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        신청 부가서비스
+                        <span class="ir">- 부가서비스 명, 이용요금(VAT)포함</span>
+                        <!-- [VOS2차] 결함ID 1122978 ir로 수정 -->
+                      </caption>
+                      <!-- [VOS2차] 결함ID 1123039 일괄 수정 -->
+                      <colgroup>
+                        <col />
+                        <col />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col" class="alignCenter">부가서비스 명</th>
+                          <th scope="col" class="alignCenter">이용요금(VAT)포함</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="alignCenter">오토링</td>
+                          <td class="alignCenter">1,650원</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="beforeDot">링투유 오토체인지에 사용할 장르를 설정합니다.</p>
+                </div>
+              </div>
+            </div>
+            <!-- //신청 부가서비스 -->
+
+            <div class="applyInfoArea">
+              <div class="infoTitle">음악 장르 선택</div>
+              <div class="infoContent">
+                <div class="tableContainer layoutBorder">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        음악 장르
+                      </caption>
+                      <colgroup>
+                        <col />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType01" />
+                              <label for="musicType01" class="radioLabel"><span>기본값</span></label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType02" checked />
+                              <label for="musicType02" class="radioLabel">추천</label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType03" />
+                              <label for="musicType03" class="radioLabel"><span>최신가요</span></label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType04" checked />
+                              <label for="musicType04" class="radioLabel">CF/OST</label>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType05" />
+                              <label for="musicType05" class="radioLabel"><span>ROCK</span></label>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="radio">
+                              <input type="radio" name="musicType" id="musicType06" checked />
+                              <label for="musicType06" class="radioLabel">댄스/힙합</label>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- //음악 장르 선택 -->
+          </div>
+          <!-- //applyCaseContainer -->
+        </div>
+        <!-- //popupMiddle -->
+        <div class="popupBottom">
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>가입 신청하기</span></button>
+          </div>
+        </div>
+        <!-- //popupBottom -->
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

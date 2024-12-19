@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 충전 카드"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <!--
+        .menu-payment : 메뉴 > 결제 수단 관리, 충전카드 설정 페이지
+      -->
+      <main class="main-container menu-payment">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "충전 카드",
+          },
+          "button" : null
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="payment-method-container">
+              <div class="payment-method-area">
+                <div class="payment-method-top">
+                  <div class="payment-list-container">
+                    <div class="payment-list-area">
+                      <div class="payment-list-top">
+                        <div class="payment-list-title-box">
+                          <h2 class="title">회원 카드</h2>
+                        </div>
+                      </div>
+                      <div class="payment-list-bottom">
+                        <div class="list-d-list-box">
+                          <!-- prettier-ignore -->
+                          @@include("listTypeD.html", {
+                            "className" : "disabled",
+                            "image" : true,
+                            "category" : "로밍사명",
+                            "title" : "카드명",
+                            "badgeText" : "",
+                            "desc" : "1234-5678-1234-5678",
+                            "type" : "more",
+                            "modalId" : "",
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="payment-method-bottom">
+                  <div class="payment-list-container">
+                    <div class="payment-list-area">
+                      <div class="payment-list-top">
+                        <div class="payment-list-title-box">
+                          <h2 class="title">타사 로밍 카드</h2>
+                        </div>
+                        <!-- [240325] 추가 -->
+                        <div class="payment-list-button-box">
+                          <!-- prettier-ignore -->
+                          @@include("linkButton.html", {
+                            "iconClass": false,
+                            "btnColor" : '',
+                            "btnSize" : 'small',
+                            "class" : 'btn-link',
+                            "text": "편집 완료"
+                          })
+                        </div>
+                      </div>
+                      <div class="payment-list-bottom">
+                        <div class="list-d-list-box">
+                          <!-- prettier-ignore -->
+                          @@include("listTypeD.html", {
+                            "className" : "",
+                            "image" : "others",
+                            "category" : "로밍사명",
+                            "title" : "카드명",
+                            "badgeText" : "",
+                            "desc" : "1234-5678-1234-5678",
+                            "type" : "down",
+                            "modalId" : "",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("listTypeD.html", {
+                            "className" : "",
+                            "image" : "others",
+                            "category" : "로밍사명",
+                            "title" : "카드명",
+                            "badgeText" : "",
+                            "desc" : "1234-5678-1234-5678",
+                            "type" : "updown",
+                            "modalId" : "",
+                          })
+                          <!-- prettier-ignore -->
+                          @@include("listTypeD.html", {
+                            "className" : "",
+                            "image" : "others",
+                            "category" : "로밍사명",
+                            "title" : "카드명",
+                            "badgeText" : "",
+                            "desc" : "1234-5678-1234-5678",
+                            "type" : "up",
+                            "modalId" : "",
+                          })
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "저장"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

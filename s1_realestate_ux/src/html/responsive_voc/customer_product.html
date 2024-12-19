@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("../../components/head.html",{
+    "title" : "에스원 | 문의 등록"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <!-- prettier-ignore -->
+      @@include("../../components/header.html", {
+        "type" : "owner",
+        "property" : "",
+      })
+
+      <!-- prettier-ignore -->
+      @@include("../../components/breadcrumb.html", {
+        "depth" : [
+          {
+            "link" : "/",
+            "page" : "문의하기",
+          },
+        ],
+        "currentPage" : "문의 등록",
+      })
+
+      <!-- content -->
+      <main class="content-container">
+        <div class="content-area">
+          <div class="sub-page-container voc">
+            <div class="sub-page-area">
+              <div class="sub-page-top">
+                <div class="sub-page-title-box">
+                  <div class="sub-page-title">
+                    <span class="title">무엇을 도와드릴까요?<br />원하시는 문의 항목을 선택해 주세요.</span>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-middle">
+                <form class="form-container">
+                  <div class="required-text-box">
+                    <span class="required-text">
+                      <span class="strong">*</span>&nbsp;표기된 항목은
+                      <span class="red">필수 입력</span>&nbsp;사항입니다.
+                    </span>
+                  </div>
+                  <fieldset class="fieldset-container">
+                    <legend class="hidden">문의 개요</legend>
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_radio.html", {
+                      "required" : "required",
+                      "label" : "문의 유형",
+                      "tooltip" : [
+                        {
+                          "text" : [
+                            "서비스 문의 : 건물 사용 시 고장 및 서비스 요청이 필요할 때 선택해 주세요.",
+                            "업무 문의 : 순찰 현황 및 에너지 사용 등 건물 주요 데이터 요청이나 점검/조치 요청을 할때 선택해 주세요.",
+                          ],
+                        },
+                      ],
+                      "radio" : [
+                        {
+                          "name" : "radio-01",
+                          "label" : "서비스 문의",
+                          "disabled" : "checked",
+                        },
+                        {
+                          "name" : "radio-01",
+                          "label" : "업무 문의",
+                          "disabled" : "",
+                        },
+                      ],
+                    })
+                    <div class="field field-dropdown required">
+                      <div class="field-label">
+                        <span class="text">문의 항목</span>
+                      </div>
+                      <div class="field-form">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/dropdown.html",{
+                          "title" : "문의 항목",
+                          "size" : "large",
+                          "value" : "상품문의",
+                          "placeholder" : "",
+                          "option" : [ 
+                            {
+                              "text" : "고장/수리/불편신고",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "청소/소모품 교체",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "온도 조절",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "냉난방/조명 연장 신청",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "상품문의",
+                              "property" : "active",
+                            },
+                          ],
+                          "disabled" : false,
+                        })
+                        <div class="field-desc">
+                          <p><i class="ic ic-combobox-b-arrow-18"></i>를 선택하여 문의 항목을 변경하실 수 있습니다.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="fieldset-container">
+                    <legend class="hidden">문의 상세</legend>
+                    <div class="field field-dropdown required">
+                      <div class="field-label">
+                        <span class="text">상세 유형</span>
+                      </div>
+                      <div class="field-form">
+                        <!-- prettier-ignore -->
+                        @@include("../../components/dropdown.html",{
+                          "title" : "상세 유형",
+                          "size" : "large",
+                          "value" : "보안(경비 및 출입관리 등)",
+                          "placeholder" : "",
+                          "option" : [ 
+                            {
+                              "text" : "보안(경비 및 출입관리 등)",
+                              "property" : "active",
+                            },
+                            {
+                              "text" : "시설관리(FM)",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "임대/임차",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "인테리어",
+                              "property" : "",
+                            },
+                            {
+                              "text" : "기타",
+                              "property" : "",
+                            },
+                          ],
+                          "disabled" : false,
+                        })
+                      </div>
+                    </div>
+
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_textarea.html", {
+                      "required" : "required",
+                      "class" : "",
+                      "label" : "문의 내용",
+                      "tooltip" : "",
+                      "id" : "textarea-01",
+                      "maxlength" : "500",
+                      "placeholder" : "문의 내용을 입력해 주세요.",
+                      "disabled" : "",
+                      "fieldDesc" : "",
+                    })
+
+                    <!-- prettier-ignore -->
+                    @@include("../../components/field_file.html", {
+                      "number" : "1",
+                      "required" : "",
+                      "class" : "",
+                      "label" : "파일 등록",
+                      "tooltip" : "",
+                      "placeholder" : "이미지나 파일 등록",
+                      "id" : "input-file",
+                      "btnText" : "찾아보기",
+                      "multiUpload" : true,
+                      "fieldDesc" : [
+                        {
+                          "class" : "",
+                          "text" : "파일은 1개당 최대 50MB 이하의 워드, 엑셀, PDF 파일 5개까지 첨부 가능합니다."
+                        },
+                      ],
+                    })
+                  </fieldset>
+                </form>
+                <!-- 이용약관 -->
+                <div class="term-container">
+                  <div class="term-area">
+                    <div class="term-top">
+                      <div class="title-box">
+                        <span class="title">이용약관</span>
+                      </div>
+                    </div>
+                    <div class="term-bottom">
+                      <div class="accordion-container normal">
+                        <div class="accordion-area">
+                          <ul class="accordion-list">
+                            <li class="accordion-item">
+                              <div class="accordion-content">
+                                <div class="content-top">
+                                  <button type="button" class="btn-collapse" title="접기/펼치기"></button>
+
+                                  <div class="content-top-left">
+                                    <!-- prettier-ignore -->
+                                    @@include("../../components/field_checkbox.html", {
+                                      "required" : "",
+                                      "label" : "",
+                                      "tooltip" : "",
+                                      "checkbox" : [
+                                        {
+                                          "name" : "checkbox-01",
+                                          "label" : "개인정보 수집 및 이용동의",
+                                          "disabled" : "",
+                                        },
+                                      ],
+                                    })
+                                    <div class="detail-view-box">
+                                      <span class="detail-view">[필수]</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="content-bottom">
+                                  <div class="answer-box">
+                                    <!-- prettier-ignore -->
+                                    <p class="answer">
+                                      <strong>개인정보 수집 및 이용동의 (필수)</strong>
+                                      <br/>
+                                      <br/>
+                                      1. 개인정보 수집항목<br/>
+                                      - 필수사항 : 신청인 정보(이름, 휴대전화번호), 입주사명, 주소<br/>
+                                      <br/>
+                                      2. 개인정보의 수집 및 이용목적<br/>
+                                      - 상품 문의 내용 안내<br/>
+                                      <br/>
+                                      3.개인정보의 보유 및 이용기간<br/>
+                                      수집일로부터 3개월<br/>
+                                      <br/>
+                                      ※ 동의 거부 가능 (단, 거부 시 상품문의 안내 불가)
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sub-page-bottom">
+                <div class="button-box">
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "secondary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "취소",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../../components/button.html", {
+                    "dataValue" : "",
+                    "type" : "primary",
+                    "size" : "large",
+                    "class" : "",
+                    "disabled" : "",
+                    "text" : "다음",
+                  })
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <!-- prettier-ignore -->
+      @@include("../../components/footer.html")
+    </div>
+  </body>
+</html>

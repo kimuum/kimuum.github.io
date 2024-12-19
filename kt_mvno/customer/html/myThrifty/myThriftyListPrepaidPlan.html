@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "요금제/부가서비스 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap myThriftyListPlan">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-5', 'thirdMenu': 'active-1' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>요금제/부가서비스</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>요금제/부가서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="subTitleContainer">
+          <!-- prettier-ignore -->
+          @@include('../component/myThrifty_sub_title.html', {
+            'userType': 'user'
+          })
+        </div>
+        <!-- //END subTitleContainer -->
+
+        <div class="contentArea">
+          <section class="contentInner favoritContainer">
+            <div class="fieldMiddle">
+              <p><strong class="bold">010-81**-*319</strong> 번호(회선)의 정보로 업데이트 되었습니다.</p>
+            </div>
+          </section>
+          <div class="contentInner">
+            <div class="summaryContent">
+              <div class="summaryArea summary01">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">요금제</h3>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="summaryDataWrap">
+                      <div class="summaryTitleArea">
+                        <div class="imgWrap">
+                          <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="이용 통신사 kt M mobile" />
+                        </div>
+                        <strong class="summaryBigTitle">데이터 맘껏 15GB+ / 300분</strong>
+                        <p>10GB 다 써도 1Mbps로 무제한!</p>
+                      </div>
+                      <div class="dlColorBoxArea">
+                        <div class="dlGrayBox">
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgData">데이터</dt>
+                            <dd class="colorPrimary">15GB + 일3MB + 3Mbps</dd>
+                          </dl>
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgCall">음성통화</dt>
+                            <dd class="colorPrimary">300분</dd>
+                          </dl>
+                          <dl class="dlItemFlex borderType">
+                            <dt class="iconBgSMS">메세지</dt>
+                            <dd class="colorPrimary">300건</dd>
+                          </dl>
+                        </div>
+                      </div>
+                      <div class="dlColorBoxArea">
+                        <div class="dlWhiteBox">
+                          <dl class="dlItemFlex">
+                            <dt>개통일자</dt>
+                            <dd>2021-10-23</dd>
+                          </dl>
+                        </div>
+                        <div class="colorBoxBottom">
+                          <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                          <!-- [2차] 20220906 기획 추가 - 선불요금제 '요금제 변경하기'버튼 클릭시 팝업이 출력되며 -->
+                          <a href="javascript:void(0);" class="linkUnderline colorPrimary">요금제 변경하기</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //사용량 -->
+              <div class="summaryArea summary04">
+                <section class="summaryInner">
+                  <div class="fieldTop">
+                    <h3 class="fieldTitle01">부가서비스</h3>
+                  </div>
+                  <div class="fieldMiddle bgColorGray">
+                    <div class="dlColorBoxArea">
+                      <dl class="usageItem borderBox">
+                        <dt>사용중인 부가서비스 17개</dt>
+                        <dd>8,250원</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="fieldBottom">
+                    <div class="extraItemList">
+                      <dl class="listItem">
+                        <dt>유료 부가서비스</dt>
+                        <dd>
+                          <a href="javascript:void(0);" class="linkUnderline colorPrimary"><span class="count">3</span>건</a>
+                        </dd>
+                      </dl>
+                      <dl class="listItem">
+                        <dt>무료 부가서비스</dt>
+                        <dd>
+                          <a href="javascript:void(0);" class="linkUnderline colorPrimary"><span class="count">14</span>건</a>
+                        </dd>
+                      </dl>
+                    </div>
+                    <div class="buttonArea">
+                      <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                      <!-- [2차] 20220906 기획 추가 - 선불요금제 '부가서비스 신청/해지하기'버튼 클릭시 팝업이 출력 -->
+                      <button type="button" class="btn btnPrimary"><span>부가서비스 신청/해지하기</span></button>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <!-- //현재 이용중인 부가서비스 -->
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+        //masonry
+        $('.summaryContent').masonry({
+          itemSelector: '.summaryArea',
+          columnWidth: '.summaryArea',
+          percentPosition: true,
+        });
+
+        // [VOS2차] 결함 ID 1121820 불필요 소스 삭제 - 추천요금제 슬라이드 호출문
+      });
+    </script>
+  </body>
+</html>

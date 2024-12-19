@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "약정 정보 현황", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID" onclick="togglePopup('btnID', 'popupDefault')"><span>기본 팝업</span></button>
+    </div>
+    <div class="popup hide popupAgreement" id="popupDefault" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <!-- 페이지 고유클래스 : popupAgreement -->
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">약정 정보 현황</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID', 'popupDefault')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="agreementInfoArea">
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>기본 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>스폰서 유형명</dt>
+                  <dd>LTE 스폰서 3</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금제명</dt>
+                  <dd>LTE 데이터 선택 65.8</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>가입일</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>만료예정일(종료일)</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>경과기간</dt>
+                  <dd>265일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금 할인 적용 여부</dt>
+                  <dd>적용</dd>
+                </dl>
+              </div>
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>상세 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>잔여약정 기간(정지포함)</dt>
+                  <dd>11일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>최초 지원금</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>공시 지원금</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>추가 지원금</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>(해지 시)예상 위약금</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>위약금(공시지원금)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>위약금(추가지원금)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>위약금대상(공시지원금)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>위약금대상(추가지원금)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>반환금(요금할인)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금할인(월)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>
+                    현재까지 받은 금액
+                    <span class="block">(2022년 3월 07일 기준)</span>
+                  </dt>
+                  <dd>0원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //베이직 코스 -->
+            <div class="agreementInfoArea" style="display: none">
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>기본 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>스폰서 유형명</dt>
+                  <dd>LTE 스폰서 3</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금제명</dt>
+                  <dd>LTE 데이터 선택 65.8</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>가입일</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>만료예정일(종료일)</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>경과기간</dt>
+                  <dd>265일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금 할인 적용 여부</dt>
+                  <dd>적용</dd>
+                </dl>
+              </div>
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>상세 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>잔여약정 기간(정지포함)</dt>
+                  <dd>11일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>반환금액(요금할인)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금할인(월)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금할인(지원금)(월)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금할인(지원금)(반환금)</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>
+                    현재까지 받은 금액
+                    <span class="block">(2022년 3월 07일 기준)</span>
+                  </dt>
+                  <dd>0원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //요금할인(지원금) -->
+            <div class="agreementInfoArea" style="display: none">
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>기본 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>스폰서 유형명</dt>
+                  <dd>LTE 스폰서 3</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금제명</dt>
+                  <dd>LTE 데이터 선택 65.8</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>가입일</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>만료예정일(종료일)</dt>
+                  <dd>2021.06.21</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>경과기간</dt>
+                  <dd>265일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>요금 할인 적용 여부</dt>
+                  <dd>적용</dd>
+                </dl>
+              </div>
+              <div class="dlInfoWrap">
+                <div class="dlInfoLabel"><span>상세 정보</span></div>
+                <dl class="dlInfoItem">
+                  <dt>월기본할인금액</dt>
+                  <dd>0일</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>핸드폰할인금액</dt>
+                  <dd>0원</dd>
+                </dl>
+                <dl class="dlInfoItem">
+                  <dt>핸드폰 위약금</dt>
+                  <dd><span class="colorPrimary">123,750</span>원</dd>
+                </dl>
+              </div>
+            </div>
+            <!-- //요금할인(지원금) -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

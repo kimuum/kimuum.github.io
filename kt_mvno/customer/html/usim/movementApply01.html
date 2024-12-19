@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "1단계 신청 요금제·유형 선택 | 셀프개통 신청 | 셀프개통 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 신청 페이지 클래스 : usimApply -->
+    <div class="wrap detail usimApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-1' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>셀프개통 신청</h2>
+                <!-- [2차] 20220830 수정 -->
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통(USIM/eSIM)</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <!-- [2차] 20220830 단계 추가 -->
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>1<!-- [VOS2차] 결함ID 1122059 --></li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+                <li class="unit">4</li>
+                <li class="unit">5</li>
+                <li class="unit">6</li>
+              </ul>
+            </div>
+            <!-- //[2차] 20220830 단계 추가 -->
+            <div class="formContainer">
+              <div class="formItemArea">
+                <!-- 유심유형 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">셀프개통 절차 안내</strong>
+                  </div>
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">유심을 보유하고 있다면 셀프개통이 가능합니다.</li>
+                      <li class="fieldValue">유심이 없으신 고객님은 바로배송유심을 이용하시거나, 바로유심을 편의점에서 구매 후 셀프개통을 진행해주세요.</li>
+                      <li class="fieldValue">기존에 사용하시던 유심은 대리점에서 초기화 하셔야 셀프개통이 가능합니다.</li>
+                      <li class="fieldValue">셀프개통은 19세 이상 내국인만 신청 가능합니다.</li>
+                    </ul>
+                  </div>
+                  <div class="infoBoxArea">
+                    <div class="infoAreaBottom alignRight">
+                      유심이 필요하신가요?
+                      <a href="javascript:void(0);" class="linkUnderline colorPrimary">바로배송유심 바로가기</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 알뜰폰 사업자 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">알뜰폰 사업자</strong>
+                    <button type="button" class="linkUnderline colorPrimary">사업자 다시 선택하기</button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                  <div class="centerContainer">
+                    <div class="centerArea flex">
+                      <div class="centerLeft imgWrap">
+                        <img src="../../assets/images/bizlogo/thumbnail_KT-Mobile.png" alt="" />
+                      </div>
+                      <div class="centerRight">
+                        <div class="centerTop">
+                          <strong class="centerTitle">KT엠모바일</strong>
+                        </div>
+                        <div class="centerMiddle">
+                          <div class="centerInfo">
+                            <div class="text">
+                              <div class="iconBgCall02"><span>전화</span></div>
+                              <p>1899-5000</p>
+                            </div>
+                            <div class="text">
+                              <div class="iconBgTime"><span>운영시간</span></div>
+                              <p>월-금 09:00~18:00</p>
+                            </div>
+                          </div>
+                          <a href="https://www.ktmmobile.com" class="centerUrl" title="새창열림" target="_blank">https://www.ktmmobile.com</a>
+                          <!-- [VOS2차] 결함ID 1122630 수정 -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- 알뜰폰 사업자 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">알뜰폰 사업자</strong>
+                  </div>
+
+                  <div class="buttonArea">
+                    <button type="button" class="btn"><span>알뜰폰 사업자 선택하기</span></button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                </div>
+
+                <!-- 요금제 선택 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">요금제 선택</strong>
+                    <button type="button" class="linkUnderline colorPrimary">요금제 다시 선택하기</button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+
+                  <div class="popularDataArea">
+                    <div class="summaryTitleArea">
+                      <strong class="summaryBigTitle"> <span class="titleCompany">KT엠모바일</span>데이터 맘껏 15GB+ /300분 </strong>
+                      <p>
+                        데이터 무제한에 <br />
+                        네이버페이 5000P 제공!
+                      </p>
+                    </div>
+                    <div class="dlColorBoxArea">
+                      <div class="dlGrayBox">
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgData">데이터</dt>
+                          <dd class="colorPrimary">15GB + 3Mbps</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgCall">음성통화</dt>
+                          <dd class="colorPrimary">300분</dd>
+                        </dl>
+                        <dl class="dlItemFlex borderType">
+                          <dt class="iconBgSMS">메세지</dt>
+                          <dd class="colorPrimary">300건</dd>
+                        </dl>
+                      </div>
+                    </div>
+                    <!-- <dl class="usageItem smaller">
+                      <dt>월 기본요금</dt>
+                      <dd><span class="del"></span><span>29,700</span>원</dd>
+                    </dl>
+                    <dl class="usageItem">
+                      <dt>프로모션 요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl> -->
+                    <dl class="usageItem">
+                      <dt>월 기본요금</dt>
+                      <dd><span>29,700</span>원</dd>
+                    </dl>
+                  </div>
+                </div>
+                <!-- 요금제 선택 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">요금제 선택</strong>
+                  </div>
+
+                  <div class="buttonArea">
+                    <button type="button" class="btn"><span>요금제 선택하기</span></button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                </div>
+
+                <!-- 가입 유형 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">가입 유형</strong>
+                  </div>
+                  <div class="checkboxLineFlex">
+                    <div class="checkboxLine">
+                      <input type="radio" id="joinType01" name="joinType" checked />
+                      <label for="joinType01" class="checkboxLabel">
+                        <span>번호이동</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="joinType02" name="joinType" />
+                      <label for="joinType02" class="checkboxLabel">
+                        <span>신규가입</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <!-- 번호이동 안내문구 -->
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">기존 번호로 개통합니다.(이후 통신사 인증 필수)</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- 개통 심(SIM) 유형 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">개통 심(SIM) 유형</strong>
+                  </div>
+                  <div class="field fieldRadio">
+                    <div class="fieldForm">
+                      <div class="radio">
+                        <input type="radio" id="inputSIM-1" name="inputSIM" checked="" />
+                        <label for="inputSIM-1" class="radioLabel"><span>유심(USIM)</span></label>
+                      </div>
+                      <div class="radio">
+                        <input type="radio" id="inputSIM-2" name="inputSIM" />
+                        <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                        <label for="inputSIM-2" class="radioLabel"><span>eSIM</span></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field fieldUsimInput">
+                    <label for="usimNumber01" class="fieldLabel">유심카드번호</label>
+                    <div class="fieldForm">
+                      <div class="inputRow" id="inputAutoMoveWrap">
+                        <!-- [VOS2차] 결함 ID 1122042 1122178 타이틀 수정 -->
+                        <div class="row">
+                          <input type="text" title="유심카드번호 첫번째 네자리" id="inputAutoMove01" />
+                        </div>
+                        <div class="row">
+                          <input type="text" title="유심카드번호 두번째 네자리" id="inputAutoMove02" />
+                        </div>
+                        <div class="row">
+                          <input type="text" title="유심카드번호 세번째 네자리" id="inputAutoMove03" />
+                        </div>
+                        <div class="row">
+                          <input type="text" title="유심카드번호 네번째 네자리" id="inputAutoMove04" />
+                        </div>
+                        <!-- //[VOS2차] 결함 ID 1122042 1122178 타이틀 수정 -->
+                      </div>
+                      <div class="buttonArea">
+                        <button type="button" class="btn btnSizeMiddle"><span>유효성 체크</span></button>
+                      </div>
+                    </div>
+                    <div class="addExplain">유심 카드를 미리 구매하신 고객님께서는 유심번호 19자리를 입력해주세요.</div>
+                  </div>
+
+                  <!-- [2차] 20221014 유심 바코드 스캔 삭제
+                <div class="infoBoxArea">
+                  <div class="infoAreaBottom alignRight">
+                    <button type="button" class="linkUnderline colorPrimary" disabled>유심 바코드 스캔</button>
+                  </div>
+                </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fixedFooterContainer">
+            <div class="fixedFooterArea">
+              <!-- prettier-ignore -->
+              @@include('../component/fixed_footer_area_desc_month.html', {
+                'planPartner' : 'KT엠모바일',
+                'planTitle' : '데이터 맘껏 15GB+ / 300분 데이터 맘껏 15GB+',
+                'planCharge' : '29,700'
+              })
+              <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>다음</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- //END fixedFooterContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

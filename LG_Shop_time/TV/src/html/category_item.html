@@ -1,0 +1,416 @@
+@@include('head.html', {
+'title': 'CATEGORY ITEM LIST'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      @@include('lnbDefault.html')
+
+      <div class="content-container category" style="transform: translateY(0px);"><!-- 본문 스크롤 이동 시 translateY값으로 조절 -->
+        <div class="sub-title-container">
+          <div class="sub-main-title">CATEGORY</div>
+        </div>
+
+        <div class="sub-content-container none-flex">
+          <!-- category content -->
+          <div class="sub-content-area">
+            <div class="category-content-container">
+              <div class="category-content-top">
+                <div class="category-title">
+                  <span>Kitchen & Food <span>(34)</span></span>
+                </div>
+              </div>
+
+              <div class="category-content-middle">
+                <div class="tab-container">
+                  <div class="tab-button-area">
+                    <div class="tab-button-left">
+                      <!-- 
+                          현재 선택 된 탭 클래스 : selected
+                          현재 위치 포커스 클래스 : focused
+                          현재 위치 마우스 오버 클래스 : hover
+                        -->
+                      <button type="button" class="btn-tab"><span>SHOWS</span></button>
+                      <button type="button" class="btn-tab selected"><span>ITEMS</span></button>
+                    </div>
+                    <div class="tab-button-right">
+                      <div class="dropdown-container">
+                        <!-- 활성화 클래스 : active -->
+                        <div class="dropdown-area active">
+                          <button type="button" class="btn-open">
+                            <span>Most Popular</span>
+                          </button>
+                          <ul class="dropdown-list">
+                            <li class="list focused">
+                              <button type="button" class="option"><span>Most Popular</span></button>
+                            </li>
+                            <li class="list selected">
+                              <button type="button" class="option"><span>New</span></button>
+                            </li>
+                            <li class="list">
+                              <button type="button" class="option"><span>New</span></button>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-content-container">
+                    <div class="tab-content-area">
+                      <div class="section-container">
+                        <div class="section-area">
+                          <div class="section-list-container">
+                            <div class="section-list-box">
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product
+                                      </div>
+                                      <div class="product-desc">
+                                        <!-- [SHOPTIME-980][SHOPTIME-1060][SHOPTIME-1086] offer info 타입 추가 -->
+                                        <span class="product-offer">60% Off! + FREE Shipping</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="badge-sale"><span>88%</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="sold-out"><span>Sold Out</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product
+                                      </div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="badge-sale"><span>88%</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="sold-out"><span>Sold Out</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product
+                                      </div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="badge-sale"><span>88%</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="sold-out"><span>Sold Out</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product
+                                      </div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="badge-sale"><span>88%</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="sold-out"><span>Sold Out</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product
+                                      </div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="badge-sale"><span>88%</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="section-list">
+                                <div class="product-area">
+                                  <div class="list-flex-col">
+                                    <div class="thumb-box">
+                                      <!-- 
+                                          제품 썸네일 타입 목록 :
+                                          badge-ranking : 랭킹 뱃지
+                                          badge-sale : 세일 뱃지
+                                          sold-out : 품절
+                                        -->
+                                      <div class="sold-out"><span>Sold Out</span></div>
+                                      <!-- [v1.01 업데이트] 20230807 파트너 삭제 -->
+                                      <img src="./images/thumbnail/test_img_pro_01.jpg" alt="">
+                                    </div>
+                                    <div class="desc-box">
+                                      <div class="product-name">Product Name Product Name Product Product Name Product Name Product</div>
+                                      <div class="product-desc">
+                                        <span class="product-price">$120.99</span>
+                                        <span class="product-discount">$999.99</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- 20230626 위치 이동 -->
+                      <div class="top-button-box">
+                        <button type="button" class="btn-top"></button>
+                      </div>
+                      <!-- //20230626 위치 이동 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- //category content -->
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

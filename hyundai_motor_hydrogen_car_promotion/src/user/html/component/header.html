@@ -1,0 +1,180 @@
+<!-- header -->
+<!-- 
+  메뉴 열림 클래스 : gnb-opened
+-->
+<header class="header-container @@if(type === 'depth02' || type === 'link') {depth_02}">
+  <div class="mo-gnb-dim"></div>
+  <div class="header-center-inner depth_01">
+    <div class="header-center-inner-box">
+      <div class="header-logo">
+        <a href="javascript:void(0);"><img src="../../assets/images/common/hyundai-logo-pc.webp" alt="Hyundai Electrified Commercial Vehicle" /></a>
+      </div>
+
+      <!-- [수정20230823] header-search-button-area 구조 추가 -->
+      <div class="header-search-button-area">
+        <button type="button" class="btn-search-open" title="search open"></button>
+        <button type="button" class="btn-search-close" title="search close"></button>
+      </div>
+
+      <!-- [수정20230823] header-search-container 구조 추가 -->
+      <div class="header-search-container">
+        <div class="header-search-area">
+          <!-- 키워드 활성화 클래스 : active -->
+          <div class="search-keywrod-area">
+            <!-- prettier-ignore -->
+            @@include("sub_top_search.html")
+            <!-- prettier-ignore -->
+            @@include("sub_top_search_keyword.html")
+          </div>
+        </div>
+      </div>
+
+      <div class="header-button-area">
+        <button type="button" class="btn-gnb-open" title="menu open"></button>
+        <button type="button" class="btn-gnb-close" title="menu close"></button>
+      </div>
+
+      <div class="header-gnb">
+        <nav class="gnb-container">
+          <div class="gnb-search-area">
+            <!-- 모바일용 구조 -->
+            
+            <!-- //모바일용 구조 -->
+          </div>
+          <ul class="gnb-menu-area">
+            <li class="main-menu-wrap has-sub-menu">
+              <button type="button" class="depth01">About Us</button>
+              <ul class="sub-menu-wrap">
+                <li>
+                  <!-- .active : 메뉴 활성화 제어클래스 -->
+                  <a href="javascript:void(0);" class="depth02 active">Who we are</a>
+                </li>
+                <li><a href="javascript:void(0);" class="depth02">Our Network</a></li>
+                <li><a href="javascript:void(0);" class="depth02">Our business</a></li>
+              </ul>
+            </li>
+            <li class="main-menu-wrap has-sub-menu">
+              <button type="button" class="depth01">Newsroom</button>
+              <ul class="sub-menu-wrap">
+                <li><a href="javascript:void(0);" class="depth02">All</a></li>
+                <li><a href="javascript:void(0);" class="depth02">Insights</a></li>
+                <li><a href="javascript:void(0);" class="depth02">Press Releases</a></li>
+                <li><a href="javascript:void(0);" class="depth02">Media Gallery</a></li>
+              </ul>
+            </li>
+            <li class="main-menu-wrap has-sub-menu">
+              <button type="button" class="depth01">Products</button>
+              <ul class="sub-menu-wrap">
+                <li><a href="javascript:void(0);" class="depth02">XCIENT Fuel Cell Tractor</a></li>
+                <li><a href="javascript:void(0);" class="depth02">XCIENT Fuel Cell Truck</a></li>
+                <li><a href="javascript:void(0);" class="depth02">ELEC CITY Fuel Cell</a></li>
+                <li><a href="javascript:void(0);" class="depth02">ELEC CITY</a></li>
+                <li><a href="javascript:void(0);" class="depth02">UNIVERSE Fuel Cell</a></li>
+                <li><a href="javascript:void(0);" class="depth02">Fuel Cell System</a></li>
+              </ul>
+            </li>
+            <li class="main-menu-wrap has-sub-menu">
+              <button type="button" class="depth01">Contact Us</button>
+              <ul class="sub-menu-wrap">
+                <li><a href="javascript:void(0);" class="depth02">Contact Us</a></li>
+                <li><a href="javascript:void(0);" class="depth02">FAQs</a></li>
+              </ul>
+            </li>
+            <li class="main-menu-wrap htwo-menu">
+              <a href="https://www.htwo.hyundai.com/" class="depth01 btn-menu-htwo" target="_blank">HTWO</a>
+            </li>
+          </ul>
+  
+        </nav>
+        <div class="tnb-container">
+          <!-- PC 검색바 -->
+          <a href="https://www.htwo.hyundai.com/" class="btn-tnb-htwo" target="_blank"><span>HTWO</span></a>
+          <div class="search-box">
+            <a href="javascript:void(0);" class="btn-tnb-search"><span>Search</span></a>
+            <div class="search-input-box">
+              <input type="text" class="search-input" />
+              <button type="button" class="search-btn"></button>
+            </div>
+          </div>
+          <!-- pc 언어선택 -->
+          <div class="language-container">
+            <div class="language-button">
+              <span class="selected-lang">EN</span>
+              <button class="btn-open-lang" type="button" title="language change"></button>
+            </div>
+            <div class="language-content">
+              <a href="https://www.hyundai.com/kr/ko" target="_blank" class="btn-select-lang"><span>KR</span></a>
+              <button type="button" class="btn-select-lang selected"><span>EN</span></button>
+            </div>
+          </div>
+          <!-- 모바일 언어선택 -->
+          <div class="language-toggle-container">
+            <div class="language-button">
+              <a href="https://www.hyundai.com/kr/ko" target="_blank" class="change-lang">
+                <span class="selected-lang">KR</span>
+                <span class="icon"></span>
+              </a>
+              <!-- <button class="change-lang" type="button" title="language change">
+                <span class="selected-lang">KR</span>
+                <span class="icon"></span>
+              </button> -->
+            </div>
+          </div>
+          <!-- [수정20230804] 블루링크 삭제 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- [수정20230823] depth_02 구조 추가 -->
+  <!-- prettier-ignore -->
+  @@if(type === 'depth02') {
+  <div class="header-center-inner depth_02">
+    <div class="header-center-inner-box">
+      <div class="sub-page-title-box">
+        <div class="sub-page-title">@@pageTitle</div>
+      </div>
+
+      <div class="top-navigation-container">
+        <div class="top-navigation-inner">
+          <div class="page-linkgroup-area">
+            <div class="sub-links-box">
+              <!-- prettier-ignore -->
+              @@for(var i = 0; i < depth2.length; i++) {
+                <button type="button" class="page-link `+depth2[i].property+`" title="`+depth2[i].text+`">
+                  <span>`+depth2[i].text+`</span>
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+
+  <!-- [수정20230824] 링크 구조 추가 -->
+  <!-- prettier-ignore -->
+  @@if(type === 'link') {
+  <div class="header-center-inner link">
+    <div class="header-center-inner-box">
+      <div class="top-navigation-container">
+        <div class="top-navigation-inner">
+          <div class="page-linkgroup-area">
+            <div class="sub-links-box">
+              <!-- prettier-ignore -->
+              @@for(var i = 0; i < depth2.length; i++) {
+                <a href="`+depth2[i].link+`" class="page-link `+depth2[i].property+`" title="`+depth2[i].text+`">
+                  <span>`+depth2[i].text+`</span>
+                </a>
+              }
+              <div class="active-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  }
+</header>
+<!-- //header -->

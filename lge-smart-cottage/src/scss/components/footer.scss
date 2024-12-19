@@ -1,0 +1,124 @@
+.footer-container {
+  margin-top: 16rem;
+  padding: 0 0 5.4rem;
+
+  .footer-banner-area {
+    margin-bottom: 4rem;
+
+    .img-box {
+      width: 100%;
+    }
+  }
+
+  .footer-area {
+    max-width: 146.4rem;
+    width: 100%;
+    margin: auto;
+  }
+  .footer-top {
+    margin-bottom: 3rem;
+    .logo-box {
+      width: 17.7rem;
+    }
+  }
+  .menu-lists {
+    display: flex;
+    align-items: center;
+    .menu-list {
+      display: flex;
+      align-items: center;
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 1.4rem;
+        margin: 0 1.2rem;
+        background-color: $gray-100;
+      }
+      &:last-of-type {
+        &::after {
+          display: none;
+        }
+      }
+      button {
+        @include font(ls, $gray-500);
+      }
+    }
+  }
+  .footer-content-middle {
+    margin: 0.8rem 0 1.6rem;
+  }
+  .content-lists {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    .content-list {
+      @include font(ls, $gray-300);
+    }
+  }
+  .copyright-box {
+    display: flex;
+    align-items: center;
+    @include font(ls, $gray-300);
+  }
+
+  .footer-content-bottom {
+    .text-box {
+      @include font(ls, $gray-300);
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .footer-container {
+    margin-top: 10rem;
+    padding: 4rem 0 6rem;
+
+    .footer-banner-area {
+      .img-box {
+        height: 40rem;
+      }
+    }
+
+    .footer-area {
+      padding: 0 2rem;
+    }
+    .footer-top {
+      margin-bottom: 2rem;
+      .logo-box {
+        width: 16rem;
+      }
+    }
+    .menu-lists {
+      .menu-list {
+        &::after {
+          height: 1rem;
+          margin: 0 1rem;
+        }
+        button {
+          font-size: 1.3rem;
+          line-height: 2rem;
+        }
+      }
+    }
+    .footer-content-middle {
+      margin: 0.8rem 0 1.2rem;
+    }
+    .content-lists {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+      .content-list {
+        font-size: 1.3rem;
+        line-height: 2rem;
+      }
+    }
+    .copyright-box {
+      flex-direction: column;
+      align-items: flex-start;
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
+}

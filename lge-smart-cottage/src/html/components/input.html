@@ -1,0 +1,28 @@
+<div class="field-container @@className">
+  <div class="field-area">
+    <div class="field-box">
+      <div class="field-input-box">
+        <label for="@@id" class="field-label" hidden>@@label</label>
+        <!-- prettier-ignore -->
+        @@if(icon) {
+        <i class="ic @@icon"></i>
+        }
+        <input type="text" name="@@id" id="@@id" class="input-text" placeholder="@@placeholder" value="@@value" autocomplete="off" @@property />
+        <button type="button" class="btn-delete" title="삭제"></button>
+      </div>
+      @@if(button) {
+      <div class="field-button-box">
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < button.length; i++) {
+          @@include("button.html", `+(JSON.stringify(button[i]))+`)
+        }
+      </div>
+      }
+    </div>
+    @@if(desc) {
+    <div class="field-desc-box">
+      <p class="desc">@@desc</p>
+    </div>
+    }
+  </div>
+</div>

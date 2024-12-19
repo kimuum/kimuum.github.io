@@ -1,0 +1,1502 @@
+@keyframes dotScaleUp {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+
+  50% {
+    width: 2.8rem;
+    height: 2.8rem;
+    opacity: .2;
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.about-business-container,
+.about-network-container {
+  margin-top: 14.5rem;
+}
+
+.about-activities-container {
+  @extend .max-width-1416;
+  margin: 24rem auto;
+}
+
+/* about us - 공통 */
+.sub-title-label {
+  @include font(4rem, 500, #747474, normal);
+  @include fontfamhead;
+}
+.sub-title-level-1 {
+  margin-top: 1rem;
+  @include font(5.2rem, 500, $black, normal);
+  @include fontfamhead;
+}
+.sub-title-level-4 {
+  @include fontfamhead; 
+  @include font(2.8rem, 500, $black, normal);
+}
+.sub-title-level-5 {
+  @include fontfamhead;
+  @include font(2.4rem, 500, $black, 3.6rem);
+  white-space: pre-line;
+
+  .icon-explain {
+    position: relative;
+    top: -0.8rem;
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin: 0 0.8rem 0 0.4rem;
+    background: image('common/icon_explain.svg') no-repeat center / 1.1rem;
+    & + br {
+      display: none;
+    }
+  }
+}
+.sub-strong-label {
+  @include fontfamhead;
+  @include font(1.8rem, 500, $color-00AAD2, normal);
+}
+.sub-text-level-2 {
+  @include font(1.6rem, 400, #444, 2.4rem);
+}
+.sub-text-desc {
+  //임시
+  @include font(1.6rem, 400, $color-A4A4A4, 2rem);
+  &.icon-explain {
+    position: relative;
+    padding-left: 2.8rem;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: image('common/icon_explain.svg') no-repeat center / 1.8rem;
+    }
+  }
+}
+.color-primary {
+  color: $color-00AAD2;
+}
+.link-to-video {
+  @include flex(row, flex-start, center);
+  @include font(1.8rem, 400, $black, normal);
+  &:after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 1.8rem;
+    height: 1.2rem;
+    margin-left: 0.8rem;
+    background: image('common/icon_link_to_video.svg') no-repeat center / cover;
+  }
+}
+
+.sub-section-head {
+  @include flex(column, center, center);
+  text-align: center;
+  .sub-text-label {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.sub-section-body {
+  margin-top: 6rem;
+}
+
+/* About Us > Map */
+.country-container {
+  display: none;
+  margin-bottom: 24rem;
+  $bgImageTypes: (america, europe, asia, middleEastAfrica, oceania, business01, business02, business03);
+  @each $bgImageType in $bgImageTypes {
+    &.country-#{$bgImageType} {
+      background: image('aboutus/bg_business_country_#{$bgImageType}.jpg') no-repeat 20% 0 / 100% auto;
+    }
+  }
+  &.active {
+    display: block;
+  }
+  .country-inner {
+    @extend .max-width-1416;
+  }
+}
+
+
+.section-map {
+  margin-bottom: 24rem;
+  .sub-section-body {
+    margin-top: 0;
+  }
+}
+
+.worldmap-container {
+  overflow: hidden;
+  overflow-x: auto;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+
+  .worldmap-area {
+    position: relative;
+    width: 117rem;
+    margin: 0 auto;
+  }
+  .map-list-area {
+    position: absolute;
+    @include flex(row, flex-start, flex-start);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .basic-image-area {
+    width: 100%;
+    height: auto;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      opacity: 0;
+    }
+  }
+  // active
+  $maplists: (america, europe, asia, middleEastAfrica, oceania);
+  .active- {
+    @each $maplist in $maplists {
+      &#{$maplist} {
+        background: image('aboutus/bg_map_#{$maplist}.svg') no-repeat top left / cover;
+        transition: background-image 0.5s;
+      }
+    }
+  }
+  //dots
+  .dots-box {
+    span {
+      position: relative;
+      display: block;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $color-888888;
+      border-radius: 8px;
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 100%;
+        background-color: $white;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: -2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+        background-color: $white;
+      }
+    }
+  }
+  // 대륙 위치
+  .map-area {
+    z-index: 11;
+    position: absolute;
+    @include flex(column, flex-start, flex-start);
+    &.active {
+      z-index: 12;
+      &.map-europe {
+        .dots-box {
+          span {
+            &:nth-child(1) {
+              left: 2.5rem;
+            }
+          }
+        }
+      }
+      
+      .map-title {
+        color: $black;
+      }
+      .dots-box {
+        span {
+          width: 1.2rem;
+          height: 1.2rem;
+          background-color: $color-00AAD2;
+          border: 0;
+          border-radius: 100%;
+          &::before {
+            width: 1.6rem;
+            height: 1.6rem;
+          }
+          &::after {
+            width: 0;
+            height: 0;
+            background-color: $color-00AAD2;
+            animation: dotScaleUp ease 1.2s infinite;
+          }
+        }
+      }
+      .country-image {
+        .image-area {
+          width: 15rem;
+          height: 16.8rem;
+          background-image: image('common/bg_map_active.svg');
+        }
+        .image-box {
+          width: 14rem;
+          height: 14rem;
+        }
+      }
+    }
+  }
+
+  .map-america {
+    bottom: 50%;
+    left: 11%;
+    .map-top {
+      .dots-box {
+        top: 0;
+        left: 49%;
+        transform: translateX(-50%);
+      }
+      .map-title {
+        padding-top: 3rem;
+      }
+    }
+  }
+
+  .map-europe {
+    bottom: 56.6%;
+    left: 46.1%;
+    .map-top {
+      .dots-box {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .map-title {
+        padding-top: 4.2rem;
+      }
+    }
+
+    .dots-box {
+      span {
+        position: relative;
+        &:nth-child(1) {
+          top: 0.4rem;
+          left: 2rem;
+        }
+
+        &:nth-child(2) {
+          top: 1.8rem;
+          left: 0;
+        }
+
+        &:nth-child(3) {
+          top: 1.8rem;
+          left: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .map-middleEastAfrica {
+    bottom: 53.3%;
+    left: 57.5%;
+    .map-top {
+      .dots-box {
+        bottom: 0;
+        left: 0;
+      }
+
+      .map-title {
+        padding-left: 2.1rem;
+        padding-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .map-asia {
+    bottom: 49%;
+    right: 15%;
+    .map-top {
+      .dots-box {
+        top: 0;
+        left: 48%;
+        transform: translate(-50%);
+      }
+      .map-title {
+        padding-top: 3rem;
+      }
+    }
+
+    .dots-box {
+      span {
+        &:nth-child(1) {
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  
+  .map-oceania {
+    bottom: 13.7%;
+    right: 3.2%;
+    .map-top {
+      .dots-box {
+        bottom: 0;
+        right: 0;
+      }
+      .map-title {
+        position: relative;
+        left: 1rem;
+        padding-bottom: 1.7rem;
+      }
+    }
+  }
+  // 대륙 명칭
+  .map-title {
+    display: block;
+    @include font(2rem, 700, $color-888888, normal);
+    white-space: nowrap;
+  }
+
+  .map-top {
+    z-index: 2;
+    position: relative;
+    @include flex(row, flex-start, flex-start);
+    cursor: pointer;
+    .dots-box {
+      position: absolute;
+      @include flex(row, flex-start, flex-start);
+    }
+  }
+  
+  .map-middle {
+    z-index: 1;
+    position: relative;
+    top: 0.2rem;
+    @include flex(row, flex-start, flex-start);
+  }
+
+  //문구&이미지
+  .map-box {
+    overflow: hidden;
+    @include flex(row, center, flex-start);
+    @include font(1.4rem, 600, $white, 1);
+  }
+  .map-country {
+    @include flex(column, flex-start, center);
+    cursor: pointer;
+  }
+  .country-name {
+    margin-bottom: 0.7rem;
+    @include font(1.4rem, 500, $color-888888, 1);
+    @include fontfamhead;
+    white-space: nowrap;
+  }
+  .country-image {
+    @include flex(column, center, center);
+    .line {
+      display: block;
+      width: 0.1rem;
+      height: 4.3rem;
+      border-right: 0.1rem dashed $color-888888;
+    }
+    .image-area {
+      position: relative;
+      width: 9.2rem;
+      height: 10.4rem;
+      padding: 0.5rem;
+      background: image('common/bg_map_normal.svg') no-repeat top center / 100% auto;
+    }
+    .image-box {
+      display: block;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      width: 8rem; //active 172px
+      height: 8rem;
+      border-radius: 50%;
+    }
+  }
+  // Type
+  &.has-images {
+    margin-top: 0;
+    padding: 17.8rem 2rem 0;
+    // active
+    .active {
+      .country-name {
+        margin-bottom: 1rem;
+        color: $color-00AAD2;
+      }
+      .line {
+        border-color: $color-00AAD2 !important;
+      }
+
+      .bg-china {
+        bottom: -3.5rem;
+      }
+      .bg-japan {
+        bottom: -1.5rem;
+        left: calc(50% + 16rem);
+      }
+    }
+    .map-area {
+      @include flex(column, center, center);
+      .map-top {
+        display: block;
+      }
+    }
+    // 각 나라 위치
+    .map-america {
+      bottom: 50%;
+      left: 10%;
+    }
+    .map-europe {
+      bottom: 57.8%;
+      left: 45.5%;
+    }
+    .map-asia {
+      bottom: 50.6%;
+      right: 15.7%;
+      .dots-box {
+        span {
+          &:nth-child(1) {
+            left: -5rem;
+            bottom: -3rem;
+          }
+          &:nth-child(2) {
+            left: 0;
+            bottom: -1.5rem;
+          }
+          &:nth-child(3) {
+            bottom: -1rem;
+            left: 3rem;
+          }
+        }
+      }
+    }
+    .map-middle {
+      order: -1;
+    }
+    .map-country {
+      position: absolute;
+      transform: translateX(-50%);
+    }
+    .bg-america {
+      left: calc(50% - 1px);
+      bottom: 0;
+    }
+    .bg-switzerland {
+      left: calc(50% - 8rem);
+      bottom: -2.1rem;
+      .line {
+        position: relative;
+        right: -3.9rem;
+        width: 8rem;
+        height: 0.1rem;
+        border-bottom: 0.1rem dashed #888888;
+        border-right: none;
+      }
+    }
+    .bg-germany {
+      left: calc(50% + 7rem);
+      bottom: -0.6rem;
+      .country-name {
+        position: relative;
+        left: -0.85rem;
+      }
+      .image-area {
+        left: -0.85rem;
+      }
+      .line {
+        position: relative;
+        left: -2.8rem;
+        width: 3.9rem;
+        height: 7.2rem;
+        border-bottom: 0.1rem dashed #888888;
+      }
+    }
+
+    .bg-china {
+      bottom: -3.3rem;
+      left: calc(50% - 14rem);
+      .line {
+        right: 50%;
+        transform: translateX(50%);
+        width: 7.6rem;
+        height: 13.4rem;
+        border-bottom: 0.1rem dashed #888888;
+        border-right: none;
+        border-left: 0.1rem dashed #888888;
+      }
+    }
+    .bg-korea {
+      left: calc(50% - 1px);
+      bottom: -1rem;
+      .line {
+        height: 1.2rem;
+      }
+    }
+    .bg-japan {
+      bottom: -1.3rem;
+      left: calc(50% + 15rem);
+      .line {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 11.1rem;
+        height: 11.1rem;
+        border-bottom: 0.1rem dashed #888888;
+      }
+    }
+  }
+}
+
+/* About Us > Business, Networks - Intro images */
+.aboutus-intro-top {
+  margin-bottom: 18rem;
+  .image-box {
+    margin-bottom: 6rem;
+    height: 55.6rem;
+  }
+  .intro-text-area {
+    max-width: 75rem;
+    margin: 0 auto;
+    text-align: center;
+    .about-network-container & {
+      max-width: 68rem;
+    }
+  }
+}
+
+// .aboutus-intro-middle {}
+.about-intro-container {
+  @include flex(row, flex-start, flex-start);
+  margin-bottom: 18rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .intro-right {
+    margin-left: auto;
+  }
+  .intro-left {
+    margin-right: 3rem;
+  }
+  .intro-image-area {
+    max-width: 76.6rem;
+  }
+  .intro-text-area {
+    max-width: 45rem;
+    .sub-strong-label {
+      display: block;
+      margin-bottom: 2rem;
+    }
+    .sub-title-level-3 {
+      margin-bottom: 1.5rem;
+    }
+    .sub-text-level-2 {
+      margin-top: 2rem;
+      white-space: pre-line;
+    }
+    .sub-text-desc {
+      margin-top: 2rem;
+    }
+    .link-to-video {
+      margin-top: 2rem;
+    }
+  }
+  &:nth-child(even) {
+    .intro-left {
+      margin-right: initial;
+      margin-left: 3rem;
+    }
+    .intro-right {
+      order: -1;
+      margin-left: initial;
+      margin-right: auto;
+    }
+  }
+}
+
+/* About Us > Business - video */
+.business-swiper-box {
+  position: relative;
+  max-width: 117rem;
+  margin: auto;
+  .swiper-button-next {
+    right: -6rem;
+    background: image('common/icon_aboutus_arrow_next.svg') no-repeat center / 4.4rem;
+  }
+  .swiper-button-prev {
+    left: -6rem;
+    background: image('common/icon_aboutus_arrow_prev.svg') no-repeat center / 4.4rem;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    z-index: 1001;
+    top: 30.8rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    margin-top: 0;
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.business-swiper {
+  .swiper-wrapper {
+    align-content: stretch;
+    .swiper-slide {
+      @include flex(row, center, center);
+      opacity: 0;
+      height: auto;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+      }
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+    }
+
+    .business-video-container {
+      width: 100%;
+      .video-box {
+        .video {
+          position: relative;
+          width: 100%;
+          padding-bottom: 56.325%;
+          iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .swiper-pagination {
+    position: static;
+    margin-top: 6rem;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 1.2rem;
+      height: 1.2rem;
+      margin: 0 6px;
+      background-color: $color-CDCDCD;
+      border-radius: 1.2rem;
+    }
+    .swiper-pagination-bullet-active {
+      background-color: $color-00AAD2;
+    }
+  }
+}
+.business-video-container {
+  .video-box {
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* About Us > Our Network */
+.aboutus-centers-container {
+  @include flex(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  margin: 0 -1.5rem;
+  .aboutus-centers-area {
+    flex-shrink: 0;
+    width: calc(33.33% - 3rem);
+    margin: 0 1.5rem;
+    &:nth-child(n+4) {
+      margin-top: 4rem;
+    }
+  }
+  .image-box {
+    margin-bottom: 4rem;
+  }
+  
+  .sub-title-level-4 {
+    // max-width: 34.5rem;
+    margin-bottom: 2rem;
+    white-space: pre-line;
+  }
+  .sub-text-level-2 {
+    line-height: 2.4rem;
+  }
+}
+
+.global-partners-container {
+  background: linear-gradient(180deg, rgba(246, 243, 242, 0.00) 0%, #F6F3F2 25.81%, #F6F3F2 73.74%, rgba(246, 243, 242, 0.00) 101.14%);
+  padding-bottom: 24rem;
+  .partner-area {
+    @extend .max-width-1416;
+    .partner-top {
+      margin-bottom: 6rem;
+      .title {
+        @include fontfamhead;
+        @include font(5.2rem, 500, $black, 6rem);
+        letter-spacing: -0.052rem;
+        text-transform: capitalize;
+        text-align: center;
+      }
+    }
+
+    .partner-bottom {
+      margin-top: 10rem;
+      .more-button-box {
+        margin-bottom: 8rem;
+        text-align: center;
+        .btn-more {
+          @include flex(row, center, center);
+          display: inline-flex;
+        }
+      }
+      .desc-box {
+        @include flex(row, flex-start, center);
+        p {
+          @include font(1.6rem, 400, #a4a4a4, normal);
+        }
+        &::before {
+          content: '';
+          position: relative;
+          top: -0.1rem;
+          display: block;
+          width: 1.8rem;
+          min-width: 1.8rem;
+          height: 1.8rem;
+          margin-right: 1rem;
+          background: image('common/icon_info.svg') no-repeat center / 1.8rem;
+        }
+      }
+    }
+
+    .partner-list-box {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      margin: -1.5rem;
+    }
+
+    .partner-box {
+      @include flex(column, center, center);
+      position: relative;
+      width: calc(16.666% - 3rem);
+      padding-bottom: calc(16.666% - 3rem);
+      margin: 1.5rem;
+      background-color: $white;
+      .box-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0 2rem;
+        @include flex(column, center, center);
+      }
+      .image-box {
+        margin: 0 auto;
+        padding-top: 1.5rem;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .name-box {
+        margin: 2rem auto 0;
+        @include font(1.4rem, 500, #000, normal);
+        text-align: center;
+        span {
+          white-space: pre-line;
+        }
+      }
+    }
+  }
+}
+
+.about-network-container {
+  .aboutus-intro-top {
+    margin-bottom: 10rem;
+  }
+}
+
+@media #{$pc_max} {
+  /* About Us > Business - video */
+  .business-swiper {
+    margin: 0;
+  }
+}
+
+@media #{$pc_middle} {
+  .business-swiper-box {
+    width: calc(100% - 12rem);
+    .swiper-button-prev,
+    .swiper-button-next {
+      top: 50%;
+      margin-top: -7.4rem;
+    }
+  }
+  /* About Us > Our Network */
+  .global-partners-container {
+    .partner-area {
+      .partner-box {
+        width: calc(25% - 3rem);
+        padding-bottom: calc(25% - 3rem);
+      }
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  @keyframes dotScaleUp {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+  
+    50% {
+      width: 1.6rem;
+      height: 1.6rem;
+      opacity: .2;
+    }
+  
+    100% {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+  }
+  
+  /* about us - 공통 */
+  .sub-section-head {
+    padding: 0 2rem;
+    .sub-title-level-1 {
+      margin-top: 1rem;
+    }
+  }
+  .sub-title-label {
+    font-size: 2rem;
+  }
+  .sub-title-level-1 {
+    font-size: 2.8rem;
+    br {
+      content: " ";
+      display: inline-block;
+      padding: 0 2px;
+    }
+  }
+  .sub-title-level-4 {
+    font-size: 2.2rem;
+  }
+  /* About Us > Map */
+  .worldmap-container {
+    margin-top: 4rem;
+    .worldmap-area {
+      width: 70.7rem;
+    }
+    
+    &.has-images {
+      margin-top: 0;
+      padding: 5.3rem 2rem 0;
+      .active {
+        .country-name {
+          margin-bottom: 0.8rem;
+          font-size: 1.6rem;
+        }
+        .bg-germany {
+          .image-area {
+            left: 1.1rem;
+          }
+          .line {
+            height: 0.1rem;
+            left: -0.2rem;
+          }
+        }
+
+        .bg-china {
+          bottom: -2.2rem;
+          left: calc(50% - 9.4rem);
+        }
+
+        .bg-japan {
+          bottom: -1.2rem;
+          left: calc(50% + 8.5rem);
+        }
+      }
+      // 대륙 위치
+      .map-area {
+        .map-top {
+          .dots-box {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      .map-america {
+        bottom: 48%;
+        left: 9%;
+      }
+
+      .bg-america {
+        left: calc(50% - 0.5px);
+      }
+
+      .map-europe {
+        bottom: 51.8%;
+        left: 44%;
+
+        .dots-box {
+          span {
+            &:nth-child(1) {
+              top: 0.3rem;
+              left: 1rem;
+            }
+            &:nth-child(2) {
+              top: 1.5rem;
+              left: 0;
+            }
+          }
+        }
+      }
+
+      .map-asia {
+        bottom: 45%;
+        right: 14.7%;
+        .dots-box {
+          span {
+            &:nth-child(1) {
+              left: -3.5rem;
+              bottom: -2rem;
+            }
+            &:nth-child(2) {
+              left: -0.4rem;
+              bottom: -1rem;
+            }
+            &:nth-child(3) {
+              bottom: -1rem;
+              left: 1.5rem;
+            }
+          }
+        }
+      }
+
+
+      .bg-china {
+        bottom: -2.2rem;
+        left: calc(50% - 9rem);
+        .line {
+          width: 5.3rem;
+          height: 4.7rem;
+        }
+      }
+
+      .bg-korea {
+        bottom: -1rem;
+        left: calc(50% - 0.48rem);
+      }
+
+      .bg-japan {
+        bottom: -1.2rem;
+        left: calc(50% + 8.5rem);
+        .line {
+          width: 6.7rem;
+          height: 2.9rem;
+        }
+      }
+
+      .bg-switzerland {
+        left: calc(50% - 7rem);
+        .image-area, 
+        .line {
+          position: relative;
+          top: -0.5rem;
+        }
+
+        .line {
+          right: -3.4rem;
+          width: 6.9rem;
+        }
+      }
+
+      .bg-germany {
+        bottom: -0.45rem;
+        left: calc(50% + 3rem);
+        .country-name {
+          left: 0.1rem;
+        }
+        .image-area {
+          left: 0.1rem;
+        }
+        .line {
+          width: 2.6rem;
+          height: 0.1rem;
+          left: -1.2rem;
+        }
+      }
+    }
+    .map-area {
+      &.active {
+        &.map-europe {
+          .dots-box {
+            span {
+              &:nth-child(1) {
+                left: 1.5rem;
+              }
+            }
+          }
+        }
+        .dots-box {
+          span {
+            width: 0.6rem;
+            height: 0.6rem;
+            &::before {
+              width: 0.8rem;
+              height: 0.8rem;
+            }
+          }
+        }
+        .country-image {
+          .image-area {
+            width: 8.8rem;
+            height: 9.9rem;
+          }
+          .image-box {
+            width: 8rem;
+            height: 8rem;
+          }
+        }
+      }
+    }
+
+    .map-america {
+      bottom: 48%;
+      left: 10%;
+
+      .map-top {
+        .map-title {
+          padding-top: 2rem;
+        }
+      }
+    }
+
+    .map-europe {
+      bottom: 51.6%;
+      left: 43.5%;
+
+      .dots-box {
+        span {
+          &:nth-child(1) {
+            top: 0.5rem;
+            left: 1.5rem;
+          }
+          &:nth-child(2) {
+            top: 1.5rem;
+          }
+          &:nth-child(3) {
+            top: 1.5rem;
+            left: 1rem;
+          }
+        }
+      }
+    }
+
+    .map-middleEastAfrica {
+      .map-top {
+        .map-title {
+          padding-left: 0.2rem;
+        }
+      }
+    }
+
+    .map-asia {
+      bottom: 45%;
+      right: 14.5%;
+      .map-top {
+        .map-title {
+          padding-top: 2.6rem;
+        }
+      }
+    }
+
+    .map-oceania {
+      .map-top {
+        .map-title {
+          left: 0;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+
+    // 영역
+    .map-top {
+
+    }
+    // dot
+    .dots-box {
+      span {
+        width: 0.6rem;
+        height: 0.6rem;
+        &::before {
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+        
+        &::after {
+          
+        }
+      }
+    }
+    // title
+    .map-title {
+      max-width: 9rem;
+      font-size: 1.6rem;
+    }
+    // image
+    .country-image {
+      .image-area {
+        width: 6.3rem;
+        height: 7.1rem;
+        padding: 0.4rem;
+        margin: 0 auto;
+      }
+      .image-box {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      .line {
+        height: 2rem;
+      }
+    }
+    .country-name {
+      margin-bottom: 0.8rem;
+      white-space: nowrap;
+    }
+  }
+  /* About Us > Business, Networks - Intro images */
+  .country-container {
+    margin-bottom: 16rem;
+    background-size: auto 100.8vw !important;
+    .country-inner {
+      margin-top: 5rem;
+    }
+  }
+
+  .sub-text-level-2 {
+    line-height: 2.2rem;
+    text-align: left;
+    white-space: unset;
+    br {
+      content: '';
+      display: inline-block;
+      padding: 0 0.1rem;
+    }
+  }
+  .about-network-container {
+    .aboutus-intro-top {
+      margin-bottom: 4rem;
+      .image-box {
+        margin-bottom: 2rem;
+        height: 33.5rem;
+      }
+      .intro-text-area {
+        max-width: 100%;
+        text-align: left;
+        br {
+          content: " ";
+          display: inline-block;
+          padding: 0 2px;
+        }
+      }
+    }
+  }
+
+  .aboutus-intro-top {
+    margin-bottom: 12rem;
+    .image-box {
+      position: relative;
+      margin-bottom: 2rem;
+      // height: 33.5rem;
+      height: auto;
+      padding-bottom: 100%;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .about-intro-container {
+    display: block;
+    margin-bottom: 12rem;
+    &:nth-child(even) {
+      .intro-left {
+        margin-left: 0;
+      }
+    }
+    .intro-left {
+      margin-bottom: 4rem;
+      margin-right: 0;
+    }
+    .intro-text-area {
+      max-width: 100%;
+
+      .sub-strong-label {
+        margin-bottom: 1rem;
+      }
+
+      .sub-text-level-2 {
+        white-space: initial;
+      }
+
+      .sub-title-level-5 {
+        font-size: 2.8rem;
+        line-height: normal;
+        white-space: initial;
+        .icon-explain {
+          + br {
+          display: block;
+          }
+        }
+      }
+
+      .sub-text-desc {
+        &.icon-explain {
+          padding-left: 2.4rem;
+          font-size: 14px;
+          line-height: normal;
+          &:before {
+            width: 1.4rem;
+            height: 1.4rem;
+            background-size: 1.4rem;
+          };
+        }
+      }
+    }
+    .intro-image-area {
+      max-width: 100%;
+      .sub-strong-label {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  /* About Us > Business - video */
+  .business-swiper-box {
+    width: calc(100% - 7.2rem);
+    padding: 0;
+    margin: 0 auto;
+    .swiper-button-next,
+    .swiper-button-prev {
+      width: 3.6rem;
+      height: 6rem;
+      margin-top: -4.1rem;
+    }
+
+    .swiper-button-prev {
+      left: -3.6rem;
+      background: image('common/icon_detail_img_arrow_prev.png') no-repeat center / 3.6rem;
+    }
+    .swiper-button-next {
+      right: -3.6rem;
+      background: image('common/icon_detail_img_arrow_next.png') no-repeat center / 3.6rem;
+    }
+
+    .swiper-pagination {
+      margin-top: 2rem;
+      .swiper-pagination-bullet {
+        width: 0.7rem;
+        height: 0.7rem;
+        margin: 0 0.4rem;
+      }
+    }
+  }
+  .business-video-container {
+    .sub-strong-label {
+      margin-bottom: 1rem;
+    }
+  }
+  /* About Us > Our Network */
+  .about-network-container {
+    .country-container {
+      margin-bottom: 0;
+    }
+  }
+  .aboutus-centers-container {
+    .aboutus-centers-area {
+      width: calc(50% - 3.2rem);
+    }
+    .image-box {
+      margin-bottom: 2rem;
+      height: 33.5rem;
+    }
+
+    .sub-title-level-4 {
+      max-width: none;
+      white-space: initial;
+    }
+  }
+
+  .global-partners-container {
+    margin-top: 16rem;
+    padding-top: 0rem;
+    padding-bottom: 16rem;
+    background: linear-gradient(180deg, rgba(246, 243, 242, 0.00) 0%, #F6F3F2 15.28%, #F6F3F2 84.28%, rgba(246, 243, 242, 0.00) 101.14%);
+    .partner-area {
+      .partner-top {
+        margin-bottom: 3rem;
+        .title {
+          font-size: 2.8rem;
+          line-height: normal;
+          letter-spacing: 0;
+        }
+      }
+
+      .partner-bottom {
+        margin-top: 4rem;
+
+      }
+    }
+  }
+  
+}
+
+@media #{$mobile_large} {
+  /* about us - 공통 */
+  .about-business-container {
+    margin-top: 8rem;
+
+    .map-arrow-box {
+      padding: 0 3.6rem;
+    }
+  }
+
+  .about-activities-container {
+    margin: 16rem auto;
+    padding: 0;
+    .sub-section-body {
+      margin-top: 2rem;
+    }
+  }
+
+  .section-map {
+    margin-bottom: 16rem;
+  }
+
+  /* About Us > Our Network */
+  .about-network-container {
+    margin-top: 8rem;
+    .map-arrow-box {
+      padding: 0 3.6rem;
+    }
+  }
+  .aboutus-centers-container {
+    display: block;
+    margin: 0;
+    .aboutus-centers-area {
+      width: 100%;
+      margin: 0 0 4rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .global-partners-container {
+    .partner-area {
+      .partner-bottom {
+        .desc-box {
+          align-items: flex-start;
+          &::before {
+            width: 1.4rem;
+            min-width: 1.4rem;
+            height: 1.4rem;
+            margin-right: 1rem;
+            background-size: 1.4rem;
+          }
+          p {
+            font-size: 1.4rem;
+          }
+        }
+      }
+      .partner-list-box {
+        margin: -1rem;
+      }
+
+      .partner-box {
+        display: none;
+        width: calc(50% - 2rem);
+        padding-bottom: calc(50% - 2rem);
+        margin: 1rem;
+
+        .image-box {
+          padding-top: 1.4rem;
+        }
+
+        .name-box {
+          margin-top: 1.2rem;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  .sub-section-body {
+    margin-top: 4.3rem;
+  }
+}
+
+@media #{$mobile_middle} {
+  /* about us - 공통 */
+  .sub-section-head {
+    br {
+      content: " ";
+      display: inline-block;
+      padding: 0 2px;
+    }
+  }
+}

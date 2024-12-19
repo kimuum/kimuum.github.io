@@ -1,0 +1,56 @@
+@@include("head.html",{
+"title" : "SELECT A BILLING ADDRESS"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+    "btnPrev": true,
+    "menuBox" : false,
+    "title" : "SELECT A BILLING ADDRESS",
+    "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="addressing-container">
+        <div class="addressing-middle">
+          <div class="drag-area">
+            <div class="drag-item-box">
+              <div class="item-area">
+                <div class="adress-title">Hong Gil Dong</div>
+                <div class="adress-text">
+                  123 E AYRE ST, GSI – LAZADA-FORGOOD WILMINGTON, DE, 12345-1234, United State
+                </div>
+                <div class="adress-sub">
+                  Phone number : 123-345-567
+                </div>
+                <!-- v1.2 수정 20230524 -->
+                <div class="adress-sub">
+                  Email : honggildong00@gmail.com
+                </div>
+
+                <!-- 240730 삭제버튼 추가 -->
+                <button type="button" class="btn-delete-sm icon-trash-sm" title="Delete" ></button>
+                <!-- // v1.2 수정 20230524 -->
+                <button type="button" class="btn-edit icon-edit" title="EDIT"></button>
+              </div>
+            </div>
+            <div class="drag-icon-box">
+              <button type="button" class="btn-delete icon-trash" title="Delete this address"></button>
+            </div>
+          </div>
+        </div>
+        <!-- v1.80 기획/디자인 동기화 : 삭제 -->
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+
+
+  <script>
+
+  </script>
+</body>
+
+</html>

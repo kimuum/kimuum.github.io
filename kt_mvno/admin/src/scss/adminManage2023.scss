@@ -1,0 +1,152 @@
+/** 운영 2023 year * 시작 **/
+.fieldLayout01 {
+  max-width: 51.8rem;
+  margin: 0 auto;
+  text-align: left;
+}
+.editGuideContainer {
+  .guideHeader {
+    margin-bottom: 5px;
+  }
+  .guideTitle {
+    @include font(13px, bold, $color-gray-01, 1.4);
+  }
+  .editGuideArea {
+    margin-bottom: 6px;
+    padding: 1.8rem 1.6rem;
+    background-color: $bgcolor-gray-03;
+    border-radius: 4px;
+    @include font(13px, normal, $color-gray-01, 1.4);
+  }
+}
+.descriptionBox {
+  margin-top: 0.8rem;
+  padding: 1.8rem 1.6rem;
+  background-color: $bgcolor-gray-01;
+  border-radius: 4px;
+  & > *:not(.addExplain) {
+    @include font(13px, normal, $color-gray-01, 1.4);
+  }
+}
+
+/* 대시보드 > 시스템 공지 */
+.systemNoticeList {
+  @include flex(column, flex-start, center);
+  .noticeitemArea {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    padding: 1.7rem 1.4rem;
+    border-bottom: 1px solid $bgcolor-gray-06;
+  }
+  .itemNumber {
+    position: relative;
+    width: 3.5rem;
+    margin-right: 2rem;
+    @include font(14px, normal, $black, 1.4);
+  }
+  .itemTitle {
+    // flex: 1;
+    max-width: calc(100% - 14.5rem);
+    margin-right: 2rem;
+    @include font(14px, normal, $black, 1.4);
+    @include ellipsis;
+  }
+  .itemDate {
+    width: 7rem;
+    margin-left: auto;
+    @include font(14px, normal, $black, 1.4);
+  }
+  .iconBgNew {
+    top: -2px;
+    right: 0;
+  }
+}
+.systemNoticeContainer {
+  .systemNoticeTop {
+    margin-bottom: 2rem;
+  }
+  .systemTextArea {
+    @include flex(column, flex-start, flex-start);
+  }
+  .systemTitle {
+    margin-bottom: 0.5rem;
+    @include font(16px, bold, $black, 1.4);
+    text-align: left;
+  }
+  .systemDate {
+    margin-left: auto;
+  }
+  .highTextArea {
+    height: 24.5rem;
+    padding: 1.6rem;
+    border: 1px solid $border-color-03;
+    border-radius: 4px;
+    text-align: initial;
+  }
+}
+
+/* 쿠폰관리 > 제휴 쿠폰 상세 */
+.searchBox {
+  @include flex(row, flex-start, center);
+  .searchRight {
+    margin-left: auto;
+  }
+  .field {
+    .input {
+      width: 35.5rem;
+    }
+  }
+  .btn {
+    min-width: 12rem;
+  }
+}
+.width360 {
+  &.select {
+    width: 36rem;
+    max-width: 36rem;
+  }
+  &.periodWrap {
+    .space {
+      margin: 0 1.6rem;
+    }
+    .field {
+      width: 16rem;
+    }
+  }
+  &.fieldInput {
+    width: 36rem;
+  }
+}
+/* 쿠폰관리 > 월별 쿠폰 발송 조회 */
+.couponMonthlySendList {
+  .contentTop {
+    .topRight {
+      .buttonArea {
+        .btn {
+          &:nth-child(3n) {
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }
+  }
+  .bar {
+    font-weight: 700;
+  }
+  .countWrap {
+    @include flex(row, flex-start, center);
+    @include font(14px, 700, $color-gray-04, 1.4);
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 1.8rem;
+      margin: 0 10px 0 2px;
+      border-left: 1px solid $border-color-01;
+    }
+    > span {
+      margin-right: 3px;
+    }
+  }
+}
+
+/** 운영 2023 year * 끝 **/

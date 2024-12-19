@@ -1,0 +1,93 @@
+.field-container {
+  width: 100%;
+  & + .field-container {
+    margin-top: 1.2rem;
+  }
+  .field-area {
+    height: 100%;
+  }
+  .field-box {
+    @include flex(row, flex-start, flex-start);
+    gap: 1rem;
+    width: 100%;
+  }
+  .field-label-box {
+    min-width: 8rem;
+    width: 8rem;
+    @include font(1.6rem, 500, $black, 2.4rem);
+    .field-label {
+      display: block;
+      padding-top: 1rem;
+    }
+  }
+  .field-input-box {
+    width: 100%;
+    .field-input {
+      position: relative;
+    }
+  }
+  input[type='text'],
+  input[type='password'],
+  input[type='tel'],
+  input[type='number'] {
+    width: 100%;
+    height: 4.4rem;
+    padding: 0 1.6rem;
+    border-radius: 1rem;
+    border: 0.1rem solid rgba($black, 0.1);
+    @include font(1.6rem, 500, $black, 2.4rem);
+    &:focus {
+      outline: none;
+      &:not(:read-only) {
+        border-color: $accent;
+      }
+    }
+    &:read-only {
+      pointer-events: none;
+      background-color: $gray-50;
+      color: $gray-300;
+    }
+    &::placeholder {
+      color: $gray-200;
+    }
+  }
+  input[type='password'] {
+    padding-right: 5rem;
+  }
+  .btn-show-pw {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 1.6rem;
+    transform: translateY(-50%);
+    width: 2.4rem;
+    height: 2.4rem;
+    background: admin-image('ic_admin_co_input_eye_on.svg') no-repeat center / contain;
+    &.active {
+      background: admin-image('ic_admin_co_input_eye_off.svg') no-repeat center / contain;
+    }
+  }
+  .field-desc {
+    @include flex(row, flex-start, flex-start);
+    gap: 0.3rem;
+    margin-top: 0.7rem;
+    @include font(1.4rem, 500, $alert, 1.8rem);
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+      background: admin-image('ic_admin_co_alert.svg') no-repeat center / contain;
+    }
+  }
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "e-Centric | 회원 정보"
+  })
+
+  <body>
+    <!-- [240425] .skip-link 제거 -->
+    <div class="wrapper">
+      <main class="main-container">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "align" : "between",
+          "logo" : false,
+          "title" : {
+            "show" : true,
+            "text" : "회원 탈퇴",
+          },
+          "button" : null
+        })
+
+        <!-- [접근성] 태그변경 -->
+        <section id="contentSection" class="content-container">
+          <div class="content-area">
+            <div class="join-container">
+              <div class="join-area">
+                <div class="join-top">
+                  <div class="find-id-desc-box">
+                    <!-- [240131] 문구 변경 -->
+                    <!-- [접근성] br 태그 제거 -->
+                    <!-- [접근성] 개행은 아래 텍스트처럼 부탁드립니다. -->
+                    <!-- prettier-ignore -->
+                    <p class="find-id-desc">회원탈퇴 시 이용 내역 및 모든 정보가 삭제됩니다.
+                      그 외 정보는 개인정보 보호 및 처리 약관에 따라 관리됩니다.
+                      <em class="highlight">탈퇴 시 미결제 내역 확인 및 결제완료 시 탈퇴가 완료됩니다.</em>
+                    </p>
+                  </div>
+                </div>
+                <!-- [240131] 기존 .join-middle 엘리먼트 삭제 -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="bottom-button-box">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "property": "",
+            "iconClass": false,
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "class" : "",
+            "text": "회원탈퇴하기"
+          })
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

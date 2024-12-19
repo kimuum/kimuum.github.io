@@ -1,0 +1,31 @@
+<div class="table-box">
+  <table class="table">
+    <caption class="hidden">
+      @@title
+    </caption>
+    <colgroup>
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < thead.length; i++) {
+      <col width="`+thead[i].widthSize+`" />
+      }
+    </colgroup>
+    <thead>
+      <tr>
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < thead.length; i++) {
+        <!-- prettier-ignore -->
+        @@include("adminTableTh.html", `+(JSON.stringify(thead[i]))+`)
+        }
+      </tr>
+    </thead>
+    <tbody>
+      <!-- prettier-ignore -->
+      @@for(var i = 0; i < tbody.length; i++) {
+      <tr>
+        <!-- prettier-ignore -->
+        @@loop("adminTableTd.html", `+(JSON.stringify(tbody[i]))+`)
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

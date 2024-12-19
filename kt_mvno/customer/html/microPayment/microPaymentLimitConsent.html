@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "소액결제 한도변경 인증번호 입력 | 소액결제 한도변경 하기 | 소액결제 내역 | 요금 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : microPayment -->
+    <div class="wrap detail microPayment">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-4', 'thirdMenu': '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>소액결제 이용한도 변경</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 내역</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>소액결제 이용한도 변경</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="formInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">변경되는 이용한도</strong>
+                  </div>
+                  <div class="totalPayArea large">
+                    <div class="flexRowBorder">
+                      <span class="title">이번달 잔여한도</span>
+                      <strong class="text">300,000원</strong>
+                    </div>
+                    <div class="flexRowBorder">
+                      <span class="title">신청 이용한도</span>
+                      <strong class="text">300,000원</strong>
+                    </div>
+                  </div>
+
+                  <!-- 약관 -->
+                  <div class="typeAgreementGroup">
+                    <div class="field fieldCheckbox fieldAllCheck">
+                      <div class="fieldForm">
+                        <div class="checkbox">
+                          <input type="checkbox" id="allCheckBox" />
+                          <label for="allCheckBox" class="checkboxLabel"><span class="checkIcon"></span><span>전체 동의</span></label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="typeAgreementCheck agreementAccordion11">
+                      <div class="field fieldCheckbox">
+                        <div class="fieldForm">
+                          <div class="checkbox">
+                            <input type="checkbox" id="agreeCheck01" />
+                            <span class="checkboxLabel">
+                              <span class="checkIcon"></span>
+                            </span>
+                          </div>
+                        </div>
+                        <label for="agreeCheck01" class="fieldLabel">KT 통신과금서비스 이용약관(필수)</label>
+                        <button type="button" class="btnOpenAgree" aria-expanded="false"><span>KT 통신과금서비스 이용약관(필수) 열기</span></button>
+                      </div>
+                      <div class="field fieldData">
+                        <div class="fieldArea" tabindex="0">약관내용</div>
+                      </div>
+                    </div>
+                    <!-- //KT 통신과금서비스 이용약관(필수) -->
+
+                    <div class="typeAgreementCheck agreementAccordion12">
+                      <div class="field fieldCheckbox">
+                        <div class="fieldForm">
+                          <div class="checkbox">
+                            <input type="checkbox" id="agreeCheck12" />
+                            <span class="checkboxLabel">
+                              <span class="checkIcon"></span>
+                            </span>
+                          </div>
+                        </div>
+                        <label for="agreeCheck12" class="fieldLabel">개인정보 수집・이용 동의(필수)</label>
+                        <button type="button" class="btnOpenAgree" aria-expanded="false"><span>개인정보 수집・이용 동의(필수) 열기</span></button>
+                      </div>
+                      <div class="field fieldData">
+                        <div class="fieldArea" tabindex="0">약관내용</div>
+                      </div>
+                    </div>
+                    <!-- //개인정보 수집・이용 동의(필수) -->
+
+                    <div class="typeAgreementCheck agreementAccordion13">
+                      <div class="field fieldCheckbox">
+                        <div class="fieldForm">
+                          <div class="checkbox">
+                            <input type="checkbox" id="agreeCheck13" />
+                            <span class="checkboxLabel">
+                              <span class="checkIcon"></span>
+                            </span>
+                          </div>
+                        </div>
+                        <label for="agreeCheck13" class="fieldLabel">개인정보 취급위탁(필수)</label>
+                        <button type="button" class="btnOpenAgree" aria-expanded="false"><span>개인정보 취급위탁(필수) 열기</span></button>
+                      </div>
+                      <div class="field fieldData">
+                        <div class="fieldArea" tabindex="0">약관내용</div>
+                      </div>
+                    </div>
+                    <!-- //개인정보 취급위탁(필수) -->
+
+                    <div class="typeAgreementCheck agreementAccordion14">
+                      <div class="field fieldCheckbox">
+                        <div class="fieldForm">
+                          <div class="checkbox">
+                            <input type="checkbox" id="agreeCheck14" />
+                            <span class="checkboxLabel">
+                              <span class="checkIcon"></span>
+                            </span>
+                          </div>
+                        </div>
+                        <label for="agreeCheck14" class="fieldLabel">개인정보 제3자 제공(필수)</label>
+                        <button type="button" class="btnOpenAgree" aria-expanded="false"><span>개인정보 제3자 제공(필수) 열기</span></button>
+                      </div>
+                      <div class="field fieldData">
+                        <div class="fieldArea" tabindex="0">약관내용</div>
+                      </div>
+                    </div>
+                    <!-- //개인정보 제3자 제공(필수) -->
+                  </div>
+                  <!-- //약관 -->
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>취소</span></button>
+                  <button type="button" class="btn btnPrimary"><span>한도 변경</span></button>
+                  <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        // KT 통신과금서비스 이용약관(필수)
+        accordionControl('.agreementAccordion11 .btnOpenAgree', '.agreementAccordion11 .fieldData', '.agreementAccordion11', 'KT 통신과금서비스 이용약관(필수) 열기', 'KT 통신과금서비스 이용약관(필수) 닫기');
+        // 개인정보 수집・이용 동의(필수)
+        accordionControl('.agreementAccordion12 .btnOpenAgree', '.agreementAccordion12 .fieldData', '.agreementAccordion12', '개인정보 수집・이용 동의(필수) 열기', '개인정보 수집・이용 동의(필수) 닫기');
+        // 개인정보 취급위탁(필수)
+        accordionControl('.agreementAccordion13 .btnOpenAgree', '.agreementAccordion13 .fieldData', '.agreementAccordion13', '개인정보 취급위탁(필수) 열기', '개인정보 취급위탁(필수) 닫기');
+        // 개인정보 제3자 제공(필수)
+        accordionControl('.agreementAccordion14 .btnOpenAgree', '.agreementAccordion14 .fieldData', '.agreementAccordion14', '개인정보 제3자 제공(필수) 열기', '개인정보 제3자 제공(필수) 닫기');
+      });
+    </script>
+  </body>
+</html>

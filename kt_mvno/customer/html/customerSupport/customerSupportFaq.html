@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "FAQ | 고객지원", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : customerSupportFaq -->
+    <div class="wrap customerSupportFaq">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>FAQ</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>고객지원</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>FAQ</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_support.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+        <div class="searchContainer">
+          <form>
+            <fieldset>
+              <legend>FAQ 검색</legend>
+              <div class="searchBar">
+                <div class="searchInput">
+                  <label for="searchInputID" class="ir">검색어 입력</label>
+                  <div class="input">
+                    <input type="text" id="searchInputID" value="" placeholder="검색어를 입력해주세요" />
+                  </div>
+                  <button type="button" class="btnRemove show"><span>검색어 지우기</span></button>
+                  <button type="button" class="btnSearch show"><span>검색하기</span></button>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        <!-- //END searchContainer -->
+        <div class="contentArea">
+          <div class="character01"></div>
+          <div class="contentInner">
+            <div class="tabList typeWhiteBox" role="tablist">
+              <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="false"><span>전체</span></button>
+              <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="true"><span>TOP10</span></button>
+              <button type="button" id="tabAnchor03" class="tabButton" aria-controls="tabCon03" role="tab" aria-selected="false"><span>유심</span></button>
+              <button type="button" id="tabAnchor04" class="tabButton" aria-controls="tabCon04" role="tab" aria-selected="false"><span>요금제</span></button>
+
+              <button type="button" id="tabAnchor05" class="tabButton" aria-controls="tabCon05" role="tab" aria-selected="false"><span>부가서비스</span></button>
+              <button type="button" id="tabAnchor06" class="tabButton" aria-controls="tabCon06" role="tab" aria-selected="false"><span>가입/변경/해지</span></button>
+              <button type="button" id="tabAnchor07" class="tabButton" aria-controls="tabCon07" role="tab" aria-selected="false"><span>셀프개통</span></button>
+              <button type="button" id="tabAnchor08" class="tabButton" aria-controls="tabCon08" role="tab" aria-selected="false"><span>요금/납부</span></button>
+
+              <!-- 마지막 줄 버튼에 바닥 보더 제거 클래스 : noneBorderB -->
+              <button type="button" id="tabAnchor09" class="tabButton noneBorderB" aria-controls="tabCon09" role="tab" aria-selected="false"><span>기타</span></button>
+            </div>
+          </div>
+          <div class="contentInner">
+            <div class="boardContainer typeList">
+              <div class="tabContainer">
+                <div id="tabCon01" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor01">
+                  <div class="supportContainer">
+                    <div class="supportTop">
+                      <h3 class="title">전체 <span class="infoLabel">(50건)</span></h3>
+                    </div>
+                    <div class="supportMiddle">
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">유심가입</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="supportBottom">
+                      <div class="pagenation pcType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="prevPageBtn" title="이전"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <!-- <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="numPageBtn"><span>5</span></button>
+                        <button type="button" class="numPageBtn"><span>6</span></button>
+                        <button type="button" class="numPageBtn"><span>7</span></button>
+                        <button type="button" class="numPageBtn"><span>8</span></button>
+                        <button type="button" class="numPageBtn"><span>9</span></button>
+                        <button type="button" class="numPageBtn"><span>10</span></button> -->
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                      <div class="pagenation moType">
+                        <button type="button" class="prevPageBtn" title="이전" disabled="disabled" aria-hidden="true"></button>
+                        <button type="button" class="prevPageBtn" title="이전"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <!-- <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button> -->
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                        <button type="button" class="nextPageBtn" title="다음" disabled="disabled" aria-hidden="true"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                  <div class="supportContainer">
+                    <div class="supportTop">
+                      <h3 class="title">TOP10 <span class="infoLabel">(10건)</span></h3>
+                    </div>
+                    <div class="supportMiddle">
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">유심가입</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">유심가입</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">기타</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">가입/변경/해지</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName">TOP10</span>
+                              <div class="type">유심가입</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName"></span>
+                              <div class="type">부가서비스</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName"></span>
+                              <div class="type">가입/변경/해지</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="supportArea">
+                        <div class="supportTitle">
+                          <div class="title">
+                            <div class="titleHead">
+                              <span class="bigTitle">Q</span>
+                              <span class="tabName"></span>
+                              <div class="type">기타</div>
+                            </div>
+                            <div class="titleBody">번호이동 사전동의를 ARS로 진행 시 다른 휴대폰으로도 가능한가요?</div>
+                          </div>
+                          <button type="button" class="supportBtn" aria-expanded="false"><span>열림</span></button>
+                        </div>
+                        <div class="supportContent">
+                          <div class="textWrap">
+                            <span class="faqArrow"></span>
+                            <div class="textHead">A</div>
+                            <div class="textBody">KT 알뜰폰은 유심 장착이 필요한 3G 이상의 단말기로만 가입이 가능합니다.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="supportBottom">
+                      <div class="pagenation pcType">
+                        <button type="button" class="prevPageBtn" title="이전"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="numPageBtn"><span>5</span></button>
+                        <button type="button" class="numPageBtn"><span>6</span></button>
+                        <button type="button" class="numPageBtn"><span>7</span></button>
+                        <button type="button" class="numPageBtn"><span>8</span></button>
+                        <button type="button" class="numPageBtn"><span>9</span></button>
+                        <button type="button" class="numPageBtn"><span>10</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                      <div class="pagenation moType">
+                        <button type="button" class="prevPageBtn" title="이전"></button>
+                        <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                        <button type="button" class="numPageBtn"><span>2</span></button>
+                        <button type="button" class="numPageBtn"><span>3</span></button>
+                        <button type="button" class="numPageBtn"><span>4</span></button>
+                        <button type="button" class="nextPageBtn" title="다음"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="tabCon03" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor03">
+                  <!-- nodata -->
+                  <div class="nodataContainer">
+                    <p>검색결과가 없습니다.</p>
+                  </div>
+                </div>
+                <!-- 
+                <div id="tabCon04" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor04">4</div>
+                <div id="tabCon05" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor05">5</div>
+                <div id="tabCon06" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor06">6</div>
+                <div id="tabCon07" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor07">7</div>
+                <div id="tabCon08" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor08">8</div>
+                <div id="tabCon09" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor09">9</div>
+                -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

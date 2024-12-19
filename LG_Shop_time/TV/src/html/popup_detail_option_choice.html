@@ -1,0 +1,99 @@
+@@include('head.html', {
+'title': 'Details item Option select'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main"></main>
+    <!-- // Main -->
+
+    <!-- popup start 활성화 클래스 : show -->
+    <div class="popup-container show">
+      <div class="pop-center-area">
+        <div class="pop-header">
+          <div class="pop-title">COLOR</div>
+        </div>
+        <div class="pop-body">
+          <!-- [SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+          <!-- 디자인 스크롤바 컨테이너 : scroll-ui-container -->
+          <div class="option-list-container scroll-ui-container">
+            <!-- 디자인 스크롤바 -->
+            <div class="scroll-ui-area">
+              <div class="scroll-bar" style="top: 0; height: 70%;"></div>
+            </div>
+            <!-- //디자인 스크롤바 -->
+            <div class="scroll-box-area" style="transform: translateY(0px);"><!-- 스크롤 동작 : translateY -->
+              <div class="option-list-area">
+                <!-- 
+                    선택 됨 클래스 : selected
+                    활성화 클래스 : focused 
+                    비활성화 클래스 : disabled
+                  -->
+                <div class="option-list-item selected">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+                <div class="option-list-item disabled">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+                <div class="option-list-item focused">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+                <div class="option-list-item">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+                <div class="option-list-item">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+                <div class="option-list-item">
+                  <div class="option-list-left">
+                    <div class="thumb-box"><img src="./images/thumbnail/test_img_pro_01.jpg" alt="Precious ($99.98)"></div>
+                  </div>
+                  <div class="option-list-right">
+                    <span class="description">Precious ($99.98)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //[SHOPTIME-1057] 기본 스크롤로 변경 : 20231010 디자인 스크롤로 롤백 -->
+        </div>
+        <div class="pop-footer">
+          <div class="button-box child-flex-none">
+            <button type="button" class="btn-solid-gray"><span>CLOSE</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="dim"></div>
+    </div>
+    <!-- //popup end -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

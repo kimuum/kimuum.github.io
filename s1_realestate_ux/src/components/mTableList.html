@@ -1,0 +1,85 @@
+<div class="mTable-list type-@@category.type">
+  @@if(q) {
+    <div class="question-box">
+      <span class="icon">Q</span>
+      <span class="text">@@q</span>
+    </div>
+  }
+  @@if(category){
+  <div class="mTable-list-left">
+    @@if(category.type === 'category') {
+      <div class="category-box">@@category.text</div>
+    }
+    @@if(category.type === 'badge') {
+      @@include("../../components/badge.html", {
+        "badge" : [
+          {
+            "text" : "@@category.text",
+            "property" : "@@category.property"
+          },
+        ]
+      })
+    }
+    @@if(category.type === 'notice') {
+      <div class="notice-box">
+        <i class="ic ic-notice"></i>
+      </div>
+    }
+  </div>
+  }
+  <div class="mTable-list-right">
+    <div class="list-data-box">
+      @@if(title) {
+      <div class="list-data-top">
+        <div class="list-title-box">
+          <span>@@title</span>
+        </div>
+      </div>
+      }
+
+      @@if(button) {
+      <div class="list-data-top">
+        <div class="button-title-box">
+          <button type="button" class="button-title btn-popup" data-popup="@@button.target">@@button.text</button>
+        </div>
+      </div>
+      }
+      
+      @@if(text) {
+      <div class="list-data-middle">
+        <div class="list-text-box">
+          <span>@@text</span>
+        </div>
+      </div>
+      }
+
+      <div class="list-data-bottom">
+        @@if(subText) {
+        <div class="list-sub-text-box">
+          @@if(subText.label) {
+            <span class="label">@@subText.label</span>
+          }
+          @@if(subText.data) {
+            <span class="data">@@subText.data</span>
+          }
+        </div>
+        }
+
+        @@if(rate) {
+        <div class="evaluation-box">
+          @@if(rate.data) {
+          <div class="rate-box">
+            <span>@@rate.data</span>
+          </div>
+          }
+
+          @@if(!rate.data) {
+          <button type="button" class="btn-evaluation">평가하기</button>
+          }
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn-page-move" title="페이지 상세보기"></button>
+</div>

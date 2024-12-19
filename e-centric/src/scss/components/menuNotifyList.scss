@@ -1,0 +1,80 @@
+.notify-list-container {
+  height: 100%;
+  padding-top: 1rem;
+  .notify-list-area {
+    height: 100%;
+  }
+}
+
+.notify-list {
+  position: relative;
+  &:last-child {
+    .notify-content-box {
+      border-bottom: 0;
+    }
+  }
+
+  &.active {
+    .notify-list-box {
+      background-color: $neutral_15;
+    }
+  }
+
+  .notify-list-box {
+    @include flex(row, flex-start, center);
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 2rem;
+      width: calc(100vw - 4rem);
+      height: 1px;
+      background-color: rgba($primary_100, 0.1);
+    }
+    .field-checkbox {
+      padding: 1.5rem 0 1.5rem 2rem;
+      .field-form {
+        position: relative;
+      }
+    }
+  }
+
+  .notify-content-box {
+    &:not(label) {
+      width: 100%;
+      padding: 1.5rem 2rem;
+    }
+  }
+
+  .notify-content-top {
+    @include font(1.4rem, 500, $text_02, 1.96rem);
+    .category {
+      display: inline;
+      font-weight: 700;
+      color: $success_80;
+      &.alert {
+        color: $error_80;
+      }
+    }
+  }
+  .notify-content-bottom {
+    position: relative;
+    margin-top: 0.4rem;
+    .time {
+      @include font(1.2rem, 400, $text_04, 1.56rem);
+    }
+    .time-ir {
+      display: inline-block;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 1.2rem;
+      letter-spacing: -0.18rem;
+    }
+  }
+}

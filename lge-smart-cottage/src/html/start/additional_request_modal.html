@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 동일한 대지에 추가신청 안내 팝업"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main class="main-container">
+        <div class="section-container">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-01'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <!-- set unique class : modal-additional-request -->
+    <dialog id="modal-01" class="modal modal-medium modal-additional-request">
+      <div class="modal-container">
+        <div class="modal-area">
+          <button type="button" class="btn-close"></button>
+          <div class="modal-top">
+            <div class="modal-title-box">
+              <span class="title">동일한 대지 주소로<br />신청하신 내역이 있습니다</span>
+            </div>
+          </div>
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <div class="modal-content-top">
+                <div class="unit-box">
+                  <div class="unit-top">
+                    <div class="data-box">
+                      <span class="label">신청일자</span>
+                      <span class="data">2024년 9월 12일</span>
+                    </div>
+                    <div class="data-box">
+                      <span class="label">대지정보</span>
+                      <span class="data">제주특별자치도 제주시 한경면 청수리 2130 돌하르방캠핑장</span>
+                    </div>
+                    <div class="data-box">
+                      <span class="label">신청현황</span>
+                      <span class="data">현장실사 신청 접수 완료</span>
+                    </div>
+                  </div>
+                  <div class="unit-bottom">
+                    <div class="text-box">
+                      <p class="text">
+                        추가 신청을 원하신다면<br />
+                        <strong class="strong">동일한 대지에 추가 신청 버튼</strong>을 눌러주세요!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-content-bottom">
+                <div class="tip-box">
+                  <span class="tip">Tip</span>
+                  <div class="desc-box">
+                    <p>
+                      현장실사 이전 동일한 대지에 추가 신청할 경우<br />
+                      <strong class="strong">추가 비용 결제 없이</strong> 기존 신청 내역에 추가가 가능해요!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-secondary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "신청 취소",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-primary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "동일한 대지에 추가 신청",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,94 @@
+.app-content-container {
+  padding: 7.2rem 2rem 0;
+  .app-title-container {
+    .app-title-box {
+      @include font(2.4rem, 700, $black, 3.1rem);
+      & + .app-desc-box {
+        margin-top: 1.8rem;
+      }
+    }
+  }
+  .app-desc-box {
+    @include font(1.4rem, 400, $color_7f7, 2rem);
+  }
+  .content-container {
+    margin-top: 2rem;
+  }
+  .content-middle {
+    padding-bottom: 9rem; //button
+  }
+  .bottom-button-box {
+    @include flex(row, center, center);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    background-color: $white;
+    .btn {
+      max-width: none;
+      min-width: unset;
+      flex: 1;
+    }
+  }
+  .btn-text {
+    @include font(1.4rem, 400, $color_7f7, 1.4rem);
+    span {
+      @include flex(row, center, center);
+      &::after {
+        content: '';
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        background: asset-image('app/ic_btn_text_arrow.svg') no-repeat center / 2.4rem;
+      }
+    }
+  }
+  .form-container {
+    .required-text-box {
+      position: unset;
+      margin-bottom: 2.4rem;
+      .required-text {
+        display: block;
+      }
+    }
+  }
+  .field-radio {
+    &.size-max {
+      .radio-box {
+        @include flex(column, flex-start, flex-start);
+        margin: 0;
+      }
+      .radio {
+        position: relative;
+        width: 100%;
+        height: 7.4rem;
+        margin: 0;
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: -2rem;
+          width: calc(100% + 4rem);
+          height: 1px;
+          background-color: $color_ebe;
+        }
+        label {
+          height: 100%;
+          .radio-label {
+            margin-left: 0.8rem;
+            @include font(1.6rem, 500, $black, 1.6rem);
+          }
+        }
+        .num-box {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          @include font(1.6rem, 400, $color_c4c, 1.6rem);
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}

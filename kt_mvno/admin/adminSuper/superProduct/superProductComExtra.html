@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "공통 부가서비스 관리" , "headProjectName": "| 상품 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap superProductComExtra">
+      <!-- 페이지 고유 클래스 : superProductComExtra -->
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <!-- <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a> -->
+                  <span>공통 부가서비스 관리</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>상품 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>공통 부가서비스 관리</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 검색 영역 -->
+            <div class="filterContainer">
+              <div class="filterMiddle">
+                <div class="tableContainer">
+                  <table>
+                    <caption>
+                      구분 표
+                    </caption>
+                    <colgroup>
+                      <col style="width: 110px" />
+                      <col />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <th scope="row">구분</th>
+                        <td>
+                          <div class="fieldForm fullInput">
+                            <div class="select">
+                              <select title="구분">
+                                <option value="">브랜드명</option>
+                                <option value="">사업자명</option>
+                                <option value="">부가서비스 설명</option>
+                              </select>
+                            </div>
+                            <div class="input">
+                              <input type="text" id="" placeholder="입력값을 입력해주세요." />
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="filterBottom">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnSecondary"><span>초기화</span></button>
+                  <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                </div>
+              </div>
+            </div>
+            <!-- //END filterContainer -->
+
+            <!-- 목록 -->
+            <div class="resultContainer">
+              <div class="tabList" role="tablist">
+                <button type="button" id="tabAnchor01" class="tabButton" aria-controls="tabCon01" role="tab" aria-selected="true"><span>판매 부가서비스 5</span></button>
+                <button type="button" id="tabAnchor02" class="tabButton" aria-controls="tabCon02" role="tab" aria-selected="false"><span>판매 중지 부가서비스 1</span></button>
+                <button type="button" id="tabAnchor03" class="tabButton" aria-controls="tabCon03" role="tab" aria-selected="false"><span>미노출 부가서비스 1</span></button>
+                <button type="button" id="tabAnchor04" class="tabButton" aria-controls="tabCon04" role="tab" aria-selected="false"><span>등록 전 부가서비스 4</span></button>
+                <!-- [2차BO] 20220916 수정 -->
+              </div>
+
+              <div class="tabContainer">
+                <div id="tabCon01" class="tabContent show" role="tabpanel" aria-labelledby="tabAnchor01">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>공통 부가서비스 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            판매 부가서비스 표 목록 - 부가서비스명, 카테고리, 부가서비스설명, 기본요금(VAT 포함)
+                          </caption>
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">부가서비스명</th>
+                              <th scope="col">카테고리</th>
+                              <th scope="col">부가서비스 설명</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">디즈니+</a>
+                              </td>
+                              <td>통화편의</td>
+                              <td>부가서비스 설명 텍스트</td>
+                              <td>9,900원</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon02" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor02">
+                  <!-- // Contents -->
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>공통 부가서비스 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            판매 중지 부가서비스 표 목록 - 부가서비스명, 카테고리, 부가서비스설명, 기본요금(VAT 포함), 판매 중지 등록일
+                          </caption>
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">부가서비스명</th>
+                              <th scope="col">카테고리</th>
+                              <th scope="col">부가서비스 설명</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                              <th scope="col">판매 중지 등록일</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">디즈니+</a>
+                              </td>
+                              <td>통화편의</td>
+                              <td>부가서비스 설명 텍스트</td>
+                              <td>9,900원</td>
+                              <td>2022-03-02</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <div id="tabCon03" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor03">
+                  <div class="contents">
+                    <div class="contentTop">
+                      <div class="topRight">
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>공통 부가서비스 등록</span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contentMiddle">
+                      <div class="tableContainer">
+                        <table>
+                          <caption>
+                            미노출 부가서비스 목록 - 부가서비스명, 카테고리, 부가서비스설명, 기본요금(VAT 포함)
+                          </caption>
+                          <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">부가서비스명</th>
+                              <th scope="col">카테고리</th>
+                              <th scope="col">부가서비스 설명</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">디즈니+</a>
+                              </td>
+                              <td>통화편의</td>
+                              <td>부가서비스 설명 텍스트</td>
+                              <td>9,900원</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+
+                <!-- [2차BO] 20220916 수정 -->
+                <div id="tabCon04" class="tabContent" role="tabpanel" aria-labelledby="tabAnchor04">
+                  <div class="contents">
+                    <div class="contentMiddle">
+                      <div class="tableContainer alignCenter">
+                        <table>
+                          <caption>
+                            등록 전 부가서비스 목록 - 부가서비스명, 카테고리, 부가서비스 설명, 기본요금(VAT 포함)
+                          </caption>
+                          <colgroup>
+                            <col />
+                            <col style="width: 155px" />
+                            <col />
+                            <col style="width: 155px" />
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th scope="col">부가서비스명</th>
+                              <th scope="col">카테고리</th>
+                              <th scope="col">부가서비스 설명</th>
+                              <th scope="col">기본요금(VAT 포함)</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <a href="#" class="linkPrimary">자동연결</a>
+                              </td>
+                              <td>-</td>
+                              <td>-</td>
+                              <td>-</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- // Contents -->
+                </div>
+                <!-- //[2차BO] 20220916 수정 -->
+              </div>
+            </div>
+            <!-- //END resultContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

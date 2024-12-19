@@ -1,0 +1,412 @@
+/* 키워드 검색바 */
+.search-keywrod-container {
+  @include flex(column, flex-start, center);
+  @extend .max-width-1416;
+  padding-top: 26rem;
+  margin-bottom: 10rem;
+}
+
+.search-keywrod-area {
+  position: relative;
+  width: 100%;
+  max-width: 58rem;
+  //활성화
+  &.active {
+    .keyword-list-container {
+      display: block;
+    }
+  }
+  .page-search-area {
+    width: 100%;
+    .input-box {
+      position: relative;
+      @include flex(row, flex-start, flex-start);
+      height: 5.6rem;
+      width: 100%;
+      padding: 0 2.4rem 0 2rem;
+      border: 1px solid $color-EDEDED;
+      input {
+        height: 100%;
+        @include font(1.8rem, 400, $color-1D1D1B, normal);
+        border: 0;
+        &::placeholder {
+          @include fontfamhead;
+          font-size: $color-888888;
+        }
+      }
+    }
+    .btn-delete {
+      margin-left: 1rem;
+      min-width: 1.6rem;
+      height: 100%;
+      background: image('common/icon_delete.svg') no-repeat center / 1.6rem;
+    }
+    .btn-search {
+      margin-left: 1.6rem;
+      min-width: 3.2rem;
+      height: 100%;
+      background: image('common/icon_search.png') no-repeat center / 2.4rem;
+    }
+  }
+  .keyword-list-container {
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    display: none;
+    top: 5.6rem;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    max-height: 42.4rem;
+    padding: 4rem 6rem;
+    background-color: $white;
+    border: 1px solid $color-A4A4A4;
+  }
+  .keyword-area {
+    & > li {
+      margin-bottom: 4rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .keyword-item {
+    @include font(2rem, 400, $black, 2.4rem);
+  }
+}
+
+/* 추천 키워드 */
+.recommend-keyword-area {
+  @include flex(row, flex-start, center);
+  flex-wrap: wrap;
+  max-width: 70.5rem;
+  @include fontfamhead;
+  margin-top: 4rem;
+  .recommend-left {
+    position: relative;
+    padding-right: 4rem;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 2rem;
+      z-index: 0;
+      width: 0.2rem;
+      height: 2rem;
+      margin-top: -1rem;
+      background-color: $color-444444;
+    }
+  }
+  .recommend-area {
+    @include flex(row, center, center);
+    margin: -0.5rem -1rem;
+    flex-wrap: wrap;
+    .recommend-link {
+      margin: 0.5rem 1rem;
+    }
+  }
+  .recommend-title {
+    @include font(2.2rem, 400, $color-00AAD2, 3rem);
+  }
+  .recommend-link {
+    display: block;
+    @include font(2.2rem, 400, $color-444444, 3rem);
+    &:hover {
+      color: $color-00AAD2;
+    }
+  }
+}
+
+/* 검색 결과 */
+.search-result-container {
+  @extend .max-width-1416;
+  margin-bottom: 24rem;
+}
+.search-result-list-container {
+  .result-list-top {
+    padding-bottom: 1rem;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid $color-EDEDED;
+  }
+  .result-list-bottom {
+    margin-top: 6rem;
+  }
+  .result-list {
+    display: flex;
+    margin-bottom: 6rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .result-info-box {
+    @include flex(column, flex-start, flex-start);
+  }
+  
+  .result-info-top {
+    > * {
+      display: block;
+    }
+    .list-top {
+      margin-bottom: 2rem;
+    }
+
+    .list-title {
+      margin-bottom: 2rem;
+      @include fontfamhead;
+      @include font(2.8rem, 500, $color-222222, normal);
+    }
+    .list-info-text {
+      @include font(1.8rem, 400, $color-444444, 2.8rem);
+      @include multi-ellipsis(true, 2);
+      .keyword-color {
+        font-weight: 500;
+      }
+    }
+    .list-sub-text {
+      margin-top: 1rem;
+      @include font(1.8rem, 400, $color-A4A4A4, normal);
+    }
+  }
+
+  .result-info-bottom {
+    margin-top: 4rem;
+  }
+
+  .keyword-color {
+    color: #00aad2;
+    font-weight: 700;
+  }
+}
+/* 검색 결과 - media gallery */
+.result-view-container {
+  margin-bottom: 18rem;
+  .result-view-top {
+    padding-bottom: 1rem;
+    margin-bottom: 6rem;
+    border-bottom: 1px solid $color-EDEDED;
+  }
+  .result-view-bottom {
+    margin-top: 6rem;
+  }
+  .btn-more {
+    font-size: 1.8rem;
+  }
+}
+
+/* 검색 결과 - nodata */
+.result-nodata-container {
+  @include flex(column, flex-start, center);
+  width: 100%;
+  padding: 4rem 0 10rem;
+  text-align: center;
+  border-bottom: 1px solid #cacaca;
+  &:before {
+    content: '';
+    display: block;
+    width: 7.4rem;
+    height: 7.4rem;
+    margin-bottom: 3.5rem;
+    background: image('common/icon_search_nodata.png') no-repeat center / cover;
+  }
+  .nodata-title-large {
+    @include font(3.2rem, 500, $black, normal);
+    @include fontfamhead;
+    br {
+      content: " ";
+      display: inline-block;
+      padding: 0 2px;
+    }
+  }
+  .nodata-title-small {
+    margin-top: 1rem;
+    @include font(1.8rem, 400, $color-767676, 2.8rem);
+  }
+}
+
+/* 추천 사이트맵 */
+.recommend-conainer {
+  background: #F6F3F2;
+  .recommend-inner {
+    padding: 10rem 2rem 18rem;
+    @extend .max-width-1416;
+  }
+  .recommend-top {
+    margin-bottom: 6rem;
+  }
+  .recommend-title-main {
+    margin-bottom: 0.8rem;
+    @include font(4.4rem, 500, $black, 5rem);
+    @include fontfamhead;
+    text-transform: capitalize;
+  }
+  .recommend-title-sub {
+    @include font(1.6rem, 400, $color-636363, 1.3);
+  }
+}
+
+  
+@media #{$mobile_large} {
+  .search-keywrod-container {
+    padding-top: 9rem;
+    margin-bottom: 4rem;
+  }
+  .search-keywrod-area {
+    max-width: 100%;
+    .page-search-area {
+      display: block;
+      .input-box {
+        height: 5rem;
+        padding-right: 2rem;
+        border: 1px solid $color-DDDDDD;
+      }
+      .btn-delete {
+        min-width: 1.4rem;
+        right: 5.2rem;
+        background-size: 1.4rem;
+      }
+      .btn-search {
+        margin-left: 0.9rem;
+        min-width: 2.3rem;
+        background-size: 2.3rem;
+      }
+    }
+    .page-search-area {
+      .input-box {
+        padding-right: 2.2rem;
+        height: 5rem;
+      }
+    }
+    .keyword-list-container {
+      top: 5rem;
+      max-height: 28.4rem;
+      padding: 2rem;
+    }
+    .keyword-area {
+      & > li {
+        margin-bottom: 2rem;
+      }
+    }
+    .keyword-item {
+      font-size: 1.8rem;
+      font-weight: 400;
+    }
+  }
+  .recommend-keyword-area {
+    display: block;
+    max-width: 100%;
+    margin-top: 2rem;
+    text-align: center;
+    .recommend-left {
+      padding-right: 0;
+      margin-bottom: 1rem;
+      &:after {
+        display: none;
+      }
+    }
+    .recommend-title {
+      font-size: 1.6rem;
+      line-height: normal;
+      letter-spacing: -0.04rem;
+    }
+    .recommend-link {
+      font-size: 1.6rem;
+      line-height: normal;
+      letter-spacing: -0.04rem;
+    }
+  }
+
+  .recommend-conainer {
+    margin-top: 5rem;
+    .recommend-title-main {
+      margin-bottom: 0;
+      font-size: 2.8rem;
+    }
+    .recommend-title-sub {
+      font-size: 1.4rem;
+    }
+    .recommend-top {
+      margin-bottom: 4rem;
+    }
+    .recommend-inner {
+      padding: 8rem 2rem 12rem;
+    }
+  }
+  .search-result-container {
+    margin-top: 0;
+    margin-bottom: 16rem;
+
+    .result-view-container {
+      margin-bottom: 12rem;
+    }
+  }
+  .search-result-list-container {
+    .result-list-top {
+      margin-bottom: 4rem;
+    }
+    .result-list-bottom {
+    }
+    .result-list {
+      margin-bottom: 4rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .result-info-top {
+
+      .list-title {
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+        letter-spacing: -0.036rem;
+      }
+      .list-info-text {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        @include multi-ellipsis(true, 3);
+      }
+      .list-sub-text {
+        margin-top: 2rem;
+        font-size: 1.6rem;
+      }
+    }
+  
+  }
+  /* 검색 결과 - media gallery */
+  .result-view-container {
+    .result-view-top {
+      padding-bottom: 1rem;
+      margin-bottom: 4rem;
+    }
+    .result-view-bottom {
+      margin-top: 4rem;
+    }
+    .btn-more {
+      font-size: 1.6rem;
+    }
+  }
+  /* 검색 결과 - nodata */
+  .result-nodata-container {
+    padding: 6rem 0 12rem; //상단값 10나오게 계산
+    &:before {
+      margin-bottom: 2rem;
+    }
+    .nodata-title-large {
+      font-size: 2.4rem;
+      br {
+        display: block;
+      }
+    }
+    .nodata-title-small {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      letter-spacing: -0.035rem;
+    }
+    .strong-block {
+      display: block;
+      font-size: 2.6rem;
+    }
+  }
+
+}

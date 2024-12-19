@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "신규 등록 | 앱 푸시 발송 관리" , "headProjectName": " | 앱 관리 | 통합채널 관리자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap">
+      <!-- prettier-ignore -->
+      @@include('headerSuper.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbSuper.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>신규 등록</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>앱 푸시 발송 관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <span class="breadcrumbTitle"><span>신규 등록</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 신규 등록 -->
+            <div class="detailContainer edit boderEditText">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>취소</span></button>
+                  <button type="button" class="btn"><span>등록</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">발송 설정 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        발송 설정 정보 목록 - 발송 유형, 발송 대상 유형, 발송일, 발송 시간
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            발송 유형 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="select">
+                              <select title="발송 유형">
+                                <option value="">전체</option>
+                              </select>
+                            </div>
+                          </td>
+                          <th scope="row">
+                            발송 대상 유형 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-01" name="radio" checked="" aria-required="true" required="" />
+                                <label for="input-id-01" class="radioLabel">
+                                  <span>전체</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-02" name="radio" aria-required="true" required="" />
+                                <label for="input-id-02" class="radioLabel">
+                                  <span>정회원</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-03" name="radio" aria-required="true" required="" />
+                                <label for="input-id-03" class="radioLabel">
+                                  <span>일반회원</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            발송일 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="field fieldDatepicker" id="datepicker-select-date">
+                              <label class="ir" for="input-select-date">날짜 선택 : 2022년 03월 09일</label>
+                              <div class="fieldForm datePickerArea">
+                                <input type="text" id="input-select-date" class="singleDatePicker" value="" autocomplete="off" tabindex="-1" required aria-required="true" />
+                              </div>
+                            </div>
+                          </td>
+                          <th scope="row">
+                            발송 시간 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="select">
+                              <select title="발송 시간">
+                                <option value="">10:00~12:00</option>
+                              </select>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            10분당 발송 건수 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td colspan="3">
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" title="10분당 발송 건수" placeholder="10분당 발송 건수를 입력하세요." title="10분당 발송 건수" />
+                              </div>
+                            </div>
+                            <p class="addExplain">
+                              <strong class="required"><span>참고</span></strong
+                              >최대 200,000
+                            </p>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 발송 설정 정보 -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">발송 대상 선택</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        발송 대상 선택 목록 - OS
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            OS <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldForm">
+                              <div class="radio">
+                                <input type="radio" id="input-id-0201" name="OS" checked="" aria-required="true" required="" />
+                                <label for="input-id-0201" class="radioLabel">
+                                  <span>ALL</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-0202" name="OS" aria-required="true" required="" />
+                                <label for="input-id-0202" class="radioLabel">
+                                  <span>IOS</span>
+                                </label>
+                              </div>
+                              <div class="radio">
+                                <input type="radio" id="input-id-0203" name="OS" aria-required="true" required="" />
+                                <label for="input-id-0203" class="radioLabel">
+                                  <span>AND</span>
+                                </label>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 발송 대상 선택 -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">푸시 발송 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        푸시 발송 정보 목록 - 제목, 내용(IOS), 링크 정보(IOS), 내용(AND), 링크 정보(AND)
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">
+                            제목 <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="제목을 입력하세요." title="제목" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            내용(IOS) <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <textarea name="" cols="30" rows="10" placeholder="내용(IOS)을 입력해주세요." title="내용(IOS)"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">링크 정보(IOS)</th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="링크 정보(IOS)를 입력하세요." title="링크 정보(IOS)" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">
+                            내용(AND) <strong class="required"><span>필수입력</span></strong>
+                          </th>
+                          <td>
+                            <textarea name="" cols="30" rows="10" placeholder="내용(AND)을 입력해주세요." title="내용(AND)"></textarea>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">링크 정보(AND)</th>
+                          <td>
+                            <div class="fieldInput">
+                              <div class="input">
+                                <input type="text" placeholder="링크 정보(AND)를 입력하세요." title="링크 정보(AND)" />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // 푸시 발송 정보 -->
+            </div>
+            <!-- //END contentArea -->
+          </div>
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+    <!-- prettier-ignore -->
+    @@include('datePickerError.html')
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

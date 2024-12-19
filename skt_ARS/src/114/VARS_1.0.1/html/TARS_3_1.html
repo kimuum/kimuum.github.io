@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="soldier_plan" value="" iweb-data="out" />
+    <input type="hidden" id="setArmy" value="" iweb-data="out" />
+    <input type="hidden" id="armyGbn" value="" iweb-data="out" />
+    <input type="hidden" id="set_stop" value="" iweb-data="out" />
+    <input type="hidden" id="plan_charge" value="" iweb-data="out" />
+    <input type="hidden" id="agent_yn" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper menu-main">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '현역장병전용',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section id="content" class="content-area">
+            <!-- 2depth 영역 -->
+            <div class="sub-menu">
+              <ol>
+                <li>
+                  <a id="dt_setArmy" href="#" class="on">
+                    <span class="text"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M3', 'menu');">
+                    <span class="text">분실정지</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                    <span class="text">기기변경</span>
+                  </a>
+                </li>
+                <!-- <li id="agent_menu1" style="display:none"><a href="javascript:sendRepPageData($(this).text().trim(), 'M7', 'menu');"><span>트래픽관리</span></a></li> -->
+              </ol>
+            </div>
+            <!-- //2depth 영역 -->
+            <!-- 3depth 영역 -->
+            <div class="sub-menu-child">
+              <nav class="child-menu">
+                <ol id="menu_reset">
+                  <li id="dt_armyGbn"></li>
+                  <li id="soldier_point">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '5', 'menu');">
+                      <span class="text">누적포인트 조회</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '3', 'menu');">
+                      <span class="text">예약신청</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '4', 'menu');">
+                      <span class="text">음성/데이터<br />무제한 상세안내</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), '0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+            </div>
+            <!-- //3depth 영역 -->
+          </section>
+          <!-- 콜게이트 종료버튼 -->
+          <!-- prettier-ignore -->
+          @@include("footerBtnEnd.html")
+          <!-- //콜게이트 종료버튼 -->
+        </div>
+      </main>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            // 이전버튼 처리 (swipe 이벤트)
+            btn_back();
+          },
+        });
+
+        /* 군입대 설정고객 대상여부 */
+        // Y: 설정
+        // N: 미설정
+        var setArmy = getUrlParameter('setArmy');
+        /*@build-time*/ setArmy = 'Y';
+        try {
+          if (setArmy == 'N') {
+            document.getElementById('dt_setArmy').innerHTML = "<span class='text'>일시정지</span>";
+          } else {
+            document.getElementById('dt_setArmy').innerHTML = "<span class='text'>군입대 장기<br/>일시정지/해제</span>";
+          }
+        } catch (e) {}
+
+        /* 군입대 설정고객 정지해제여부 */
+        // Y: 정지
+        // N: 해제
+        var armyGbn = getUrlParameter('armyGbn');
+        /*@build-time*/ armyGbn = 'Y';
+        try {
+          //armyGbn="N";
+          if (armyGbn == 'N') {
+            document.getElementById('dt_armyGbn').innerHTML = "<a href=\"javascript:sendRepPageData($(this).text().trim(), '2', 'menu');\"><span class='text'>정지해제</span></a>";
+          } else {
+            document.getElementById('dt_armyGbn').innerHTML = "<a href=\"javascript:sendRepPageData($(this).text().trim(), '1', 'menu');\"><span class='text'>일시정지</span></a>";
+          }
+        } catch (e) {}
+
+        /* 현역플랜 가입 */
+        // 1 : 정지中 + 상품 미가입, 2 :  정지中 + 상품 기 가입, 정지해제中 + 상품 기 가입   3 : 정지해제中 + 상품 미가입
+        var soldier_plan = getUrlParameter('soldier_plan');
+        /*@build-time*/ soldier_plan = '2';
+        try {
+          //soldier_plan="1";
+          if (soldier_plan != '2') {
+            document.getElementById('soldier_point').style.display = 'none';
+          } else {
+            document.getElementById('soldier_point').style.display = 'block';
+          }
+        } catch (e) {}
+
+        // 1: 주간, 0: 야간, 9: 점심
+        var timezone_type = getUrlParameter('timezone_type');
+        try {
+          //timezone_type="9";
+          // 주간이 아닐 때
+          if (timezone_type != '1') {
+            //document.getElementById("agent_menu1").style.display = "none";
+          } else {
+            //document.getElementById("agent_menu1").style.display = "block";
+          }
+        } catch (e) {}
+
+        /* 
+	2019.04.23 군정용 메뉴 개인화 개발
+	- 기존 화면 구성의 영향도를 줄이기 위해 군전용 메뉴 생성 시 별도 로직 추가
+*/
+        try {
+          if (setArmy != 'N') {
+            var menu_reset = document.getElementById('menu_reset');
+
+            while (menu_reset.hasChildNodes()) {
+              menu_reset.removeChild(menu_reset.firstChild);
+            }
+
+            /* 정지예약 여부 */
+            // Y : 예약 중, N : 예약X
+            var set_stop = getUrlParameter('set_stop');
+            /*@build-time*/ set_stop = 'N';
+
+            /* 플랜요금제 가입 여부 */
+            // 0 : 미가입, 1 : 플랜히어로 가입, 2: 플랜슈퍼히어로 가입
+            var plan_charge = getUrlParameter('plan_charge');
+            /*@build-time*/ plan_charge = '0';
+
+            /* 노출 메뉴 구성 부 -- START -- */
+            var set_menu = '';
+
+            // 일시정지 해제
+            if (set_stop == 'N' && armyGbn == 'Y') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '2', 'menu');\"><span class='text'>일시정지 해제</span></a></li>";
+            }
+            // 0플랜히어로 혜택 안내 및 신청
+            if (plan_charge == '0') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '6', 'menu');\"><span class='text'>0플랜히어로 혜택<br/>안내 및 신청</span></a></li>";
+            }
+
+            // 일시정지
+            if (set_stop == 'N' && armyGbn == 'N') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '1', 'menu');\"><span class='text'>일시정지</span></a></li>";
+            }
+
+            // 0플랜히어로요금제 옵션혜택변경
+            if (plan_charge == '2') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '7', 'menu');\"><span class='text'>0플랜히어로요금제<br/>옵션혜택변경</span></a></li>";
+            }
+
+            // 0플랜히어로요금제 혜택안내
+            if (plan_charge != '0') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '8', 'menu');\"><span class='text'>0플랜히어로요금제<br/>혜택안내</span></a></li>";
+            }
+
+            // 정지예약 신청
+            if (set_stop == 'N' && armyGbn == 'N') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '3', 'menu');\"><span class='text'>정지예약 신청</span></a></li>";
+            }
+
+            // 현역플랜 누적포인트 조회
+            if (soldier_plan == '2') {
+              set_menu += "<li><a href=\"javascript:sendRepPageData($(this).text().trim(), '5', 'menu');\"><span class='text'>현역플랜<br/>누적포인트 조회</span></a></li>";
+            }
+
+            set_menu += "<li id=\"agent_menu\"><a href=\"javascript:sendRepPageData($(this).text().trim(), '0', 'menu');\"><span class='text'>상담사 연결</span></a></li>";
+
+            document.getElementById('menu_reset').innerHTML = set_menu;
+
+            /* 노출 메뉴 구성 부 -- END -- */
+          }
+        } catch (e) {}
+
+        // 상담사 연결 메뉴 노출 여부
+        var agent_yn = getUrlParameter('agent_yn');
+        /*@build-time*/ agent_yn = 'Y';
+        try {
+          //agent_yn="Y";
+          if (agent_yn == 'Y') {
+            document.getElementById('agent_menu').style.display = 'block';
+          } else {
+            document.getElementById('agent_menu').style.display = 'none';
+          }
+        } catch (e) {}
+
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        common.removeDisplayCell();
+
+        // let rows = $('.menu-num');
+
+        // for (var i = 1; i < rows.length; i++) {
+        //   rows.eq(i - 1).text(i);
+        // }
+      });
+    </script>
+  </body>
+</html>

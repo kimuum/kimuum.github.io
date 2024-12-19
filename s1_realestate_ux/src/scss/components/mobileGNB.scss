@@ -1,0 +1,232 @@
+.mobile-gnb-container {
+  display: none;
+}
+
+@media #{$mobile} {
+  html {
+    &.mobile {
+      .mobile-gnb-container {
+        display: block;
+        z-index: 998;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-bottom: constant(safe-area-inset-bottom); // iOS 11.0 버전
+        padding-bottom: env(safe-area-inset-bottom);
+        background-color: $white;
+        .mobile-gnb-lists {
+          z-index: 1;
+          @include flex(row, flex-start, center);
+          position: relative;
+          border-top: 1px solid $color_f2f;
+          .mobile-gnb-list {
+            flex: 1;
+          }
+        }
+      }
+
+      .mobile-gnb {
+        @include flex(column, center, center);
+        width: 100%;
+        height: 6rem;
+        @include font(1.2rem, 500, $color_7f7, normal);
+        &.active {
+          color: $primary;
+          &.home {
+            .icon {
+              background: asset-image('ic_home_g_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+          &.inquiry {
+            .icon {
+              background: asset-image('ic_rna_g_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+          &.inspection {
+            .icon {
+              background: asset-image('ic_building_inspection_g_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+          &.info {
+            .icon {
+              background: asset-image('ic_list_info_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+          &.building-info {
+            .icon {
+              background: asset-image('ic_building_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+          &.all {
+            .icon {
+              background: asset-image('ic_menu_sel.svg') no-repeat center / 3.2rem;
+            }
+          }
+        }
+
+        .icon {
+          display: block;
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+
+        &.home {
+          .icon {
+            background: asset-image('ic_home_g_nor.svg') no-repeat center / 3.2rem;
+          }
+        }
+        &.info {
+          .icon {
+            background: asset-image('ic_list_info_nor.svg') no-repeat center / 3.2rem;
+          }
+        }
+        &.building-info {
+          .icon {
+            background: asset-image('ic_building_nor.svg') no-repeat center / 3.2rem;
+          }
+        }
+        &.inquiry {
+          .icon {
+            background: asset-image('ic_rna_g_nor.svg') no-repeat center / 3.2rem;
+          }
+        }
+        &.inspection {
+          .icon {
+            background: asset-image('ic_building_inspection_g_nor.svg') no-repeat center / 3.2rem;
+          }
+        }
+        &.all {
+          .icon {
+            background: asset-image('ic_menu.svg') no-repeat center / 3.2rem;
+          }
+        }
+      }
+
+      .mobile-lnb-container {
+        z-index: 9998;
+        display: none;
+        overflow: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100dvh - 6.1rem);
+        background-color: $white;
+        &.active {
+          display: block;
+        }
+        .mobile-lnb-area {
+          padding: 0 2rem;
+        }
+        .my-profile-box {
+          padding: 1.6rem 0;
+        }
+        .my-profile {
+          @include flex(row, flex-start, center);
+          width: fit-content;
+          @include font(1.8rem, 700, $black, normal);
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background: asset-image('app/ic_more_24.svg') no-repeat center / 2.4rem;
+          }
+        }
+        .setting-button-box {
+          position: absolute;
+          top: 1.2rem;
+          right: 1.6rem;
+        }
+        .btn-setting {
+          width: 3.2rem;
+          height: 3.2rem;
+        }
+        .mobile-lnb-shortcut-lists {
+          @include flex(row, flex-start, center);
+          margin: 3.2rem -0.2rem 0;
+          .mobile-lnb-shortcut-list {
+            margin: 0 0.2rem;
+          }
+          .mobile-lnb-shortcut {
+            @include flex(row, center, center);
+            height: 3rem;
+            padding: 0 1.6rem;
+            @include font(1.4rem, 500, $primary, normal);
+            border-radius: 10rem;
+            border: 1px solid $primary;
+            background-color: $white;
+          }
+        }
+        .mobile-lnb-middle {
+          margin-top: 3.2rem;
+        }
+        .mobile-lnb-list-box {
+          margin-top: 3.2rem;
+          &:first-of-type {
+            margin-top: 0;
+          }
+        }
+        .mobile-lnb-list-category {
+          @include flex(row, flex-start, center);
+          margin-bottom: 0.4rem;
+          @include font(1.4rem, 500, $primary, normal);
+          &.building-info {
+            .icon {
+              background: asset-image('app/ic_building_b.svg') no-repeat center / 2.4rem;
+            }
+          }
+          &.efficiency {
+            .icon {
+              background: asset-image('app/efficiency.svg') no-repeat center / 2.4rem;
+            }
+          }
+          &.inquiry {
+            .icon {
+              background: asset-image('app/ic_rna_g_nor.svg') no-repeat center / 2.4rem;
+            }
+          }
+          &.lost {
+            .icon {
+              background: asset-image('app/ic_object_search_b.svg') no-repeat center / 2.4rem;
+            }
+          }
+          &.help {
+            .icon {
+              background: asset-image('app/helpdesk.svg') no-repeat center / 2.4rem;
+            }
+          }
+          &.info {
+            .icon {
+              background: asset-image('app/ic_list_info_sel.svg') no-repeat center / 2.4rem;
+            }
+          }
+          .icon {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+          }
+        }
+        .mobile-lnb {
+          @include flex(row, space-between, center);
+          width: 100%;
+          padding: 1.2rem 0;
+          @include font(1.8rem, 700, $black, normal);
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            background: asset-image('app/menu_arrow_right.svg') no-repeat center / 2.4rem;
+          }
+        }
+        .mobile-lnb-bottom {
+          margin-top: 2rem;
+          padding: 2rem 0;
+          border-top: 1px solid $color_ebe;
+        }
+      }
+    }
+  }
+}

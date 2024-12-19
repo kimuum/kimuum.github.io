@@ -1,0 +1,304 @@
+@@include('head.html', {
+'title': 'Details Group'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- Main -->
+    <main class="main">
+      <!-- 20230616 Dev : Detail 화면에서 LNB 제거 요청 -->
+      <!-- @@include('lnbDefault.html') -->
+
+      <div class="content-container detail-wrapper">
+        <!-- 20230908 QA 수정 : 화면설계서 v1.05 기준 수정 -->
+        <div class="detail-title-container">
+          <button type="button" class="btn-detail-back"></button>
+          <div class="detail-title">
+            <!-- 긴 타이틀 구분 클래스 (마퀴처리): long-word -->
+            <div class="title-wrap-text">
+              Alegria Leather Adjustable Slide Alegria Leather Adjustable Slide
+              Alegria Leather Adjustable Slide Alegria Leather Adjustable Slide
+              Alegria Leather Adjustable Slide Alegria Leather Adjustable Slide
+              Alegria Leather Adjustable Slide Alegria Leather Adjustable Slide
+              Alegria Leather Adjustable Slide Alegria Leather Adjustable Slide
+            </div>
+          </div>
+        </div>
+        <div class="detail-container">
+          <div class="detail-area-preview">
+            <div class="preview-area-body">
+              <div class="preview-slide-wrapper">
+                <div class="preview-slide-container">
+                  <div class="preview-slide-inner" style="transform: translateX(-560px);">
+                    <div class="slide-item">
+                      <div class="vod-play-box">
+                        <button class="btn-vod-play"></button>
+                      </div>
+                      <div class="video-container">
+                        <img src="./images/thumbnail/img_home_banner_h_01.png" alt=""><!-- 영상 썸네일/영상 파일 위치 -->
+                      </div>
+                      <div class="notice-box-video">
+                        <span class="icon-notice"></span>
+                        <div class="notice-text">
+                          This program was pre-recorded. Offers/Pricing/Availability may have changed.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item">
+                      <img src="./images/thumbnail/img_thumb_empty_560.jpg" alt="">
+                    </div>
+                    <div class="slide-item">
+                      <div class="group-slide-wrapper">
+                        <div class="group-slide-container" style="transform: translateX(0);">
+                          <div class="slide-item">
+                            <div class="vod-play-box">
+                              <button class="btn-vod-play"></button>
+                            </div>
+                            <div class="video-container">
+                              <img src="./images/thumbnail/img_home_banner_v_01.png" alt=""><!-- 영상 썸네일/영상 파일 위치 -->
+                            </div>
+                            <div class="notice-box-video">
+                              <span class="icon-notice"></span>
+                              <div class="notice-text">
+                                This program was pre-recorded. Offers/Pricing/Availability may have changed.
+                              </div>
+                            </div>
+                          </div>
+                          <div class="slide-item">
+                            <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                          </div>
+                          <div class="slide-item">
+                            <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                          </div>
+                          <div class="slide-item">
+                            <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                          </div>
+                        </div>
+                        <div class="group-slide-controller">
+                          <!--
+                              prev 버튼  
+                              비활성화 클래스 : disabled
+                              현 위치 클래스 : focused
+                            -->
+                          <button type="button" class="btn-group-prev disabled"></button>
+                          <div class="group-slide-pagenation"><span>1</span>/10</div>
+                          <!--  
+                              next 버튼
+                              비활성화 클래스 : disabled
+                              현 위치 클래스 : focused
+                            -->
+                          <button type="button" class="btn-group-next focused"></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-item">
+                      <img src="./images/thumbnail/img_home_banner_v_03.png" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="preview-slide-controller">
+                  <!--
+                      up 버튼  
+                      비활성화 : button 속성에 disabled 추가
+                      현 위치 클래스 : focused
+                    -->
+                  <button type="button" class="btn-slide-up"></button>
+                  <div class="preview-slide-pagenation">
+                    <div class="slide-pagenation-inner" style="transform: translateY(0px);"><!-- 본문 스크롤 이동 시 translateY값으로 조절 -->
+                      <!-- 
+                          선택됨 클래스: selected
+                          현 위치 클래스 : focused
+                        -->
+                      <span class="indicate-box selected">
+                        <div class="video-container">
+                          <img src="./images/thumbnail/img_thumb_empty_144.jpg" alt=""><!-- 영상 썸네일/영상 파일 위치 -->
+                        </div>
+                      </span>
+                      <span class="indicate-box focused"><img src="./images/thumbnail/img_thumb_empty_144.jpg" alt=""></span>
+                      <span class="indicate-box"><img src="./images/thumbnail/img_thumb_empty_144.jpg" alt=""></span>
+                      <span class="indicate-box"><img src="./images/thumbnail/img_thumb_empty_144.jpg" alt=""></span>
+                    </div>
+                  </div>
+                  <!--  
+                      down 버튼
+                      비활성화 클래스 : disabled
+                      현 위치 클래스 : focused
+                    -->
+                  <button type="button" class="btn-slide-down focused"></button>
+                </div>
+              </div>
+            </div>
+            <div class="preview-area-footer">
+              <div class="call-order-area">
+                <span class="call-label">Call to Order</span>
+                <div class="call-number">
+                  <span>080-284-3100</span>
+                </div>
+              </div>
+              <div class="buy-info-area">
+                <div class="button-box flex-column">
+                  <button type="button" class="btn-solid-white"><span>SHOP BY MOBILE</span></button>
+                  <button type="button" class="btn-solid-white" disabled><span>RETURN & EXCHANGES</span></button>
+                  <button type="button" class="btn-solid-white" disabled><span>DESCRIPTION</span></button>
+                </div>
+                <!-- [SHOPTIME-1102] 20231010 수정 : QR코드 툴팁 문구 추가 -->
+                @@include('info_qr_code_box.html', {
+                "className" : " position-right",
+                "toolTip" : true
+                })
+              </div>
+            </div>
+          </div>
+          <div class="detail-area-content">
+            <div class="content-area-header">
+              <div class="brand-top-box">
+                <span class="icon-partners"><img src="./images/ic_partners_amazonlive.png" alt="amazonlive"></span>
+                <div class="brand-id-number">ID: M90221</div>
+              </div>
+              <div class="brand-middle-box">
+                <div class="brand-title">
+                  Farmer Jon`s 25ct Mini Bags of Microwave Popcorn in Flavor Choice
+                  Farmer Jon`s 25ct Mini Bags of Microwave Popcorn in Flavor Choice
+                  Farmer Jon`s 25ct Mini Bags of Microwave Popcorn in Flavor Choice
+                  Farmer Jon`s 25ct Mini Bags of Microwave Popcorn in Flavor Choice
+                </div>
+              </div>
+              <div class="brand-bottom-box">
+                <div class="star-box">
+                  <div class="start-image-box">
+                    <!-- 
+                        0점 : img_detail_star_0_0.png
+                        0.5점 : img_detail_star_0_5.png
+                        1점 : img_detail_star_1_0_.png
+                        1.5점 : img_detail_star_1_5_.png
+                        2점 : img_detail_star_2_0.png
+                        2.5점 : img_detail_star_2_5.png
+                        3점 : img_detail_star_3_0.png
+                        3.5점 : img_detail_star_3_5.png
+                        4점 : img_detail_star_4_0.png
+                        4.5점 : img_detail_star_4_5.png
+                        5점 : img_detail_star_5_0.png
+                      -->
+                    <img src="./images/img_detail_star_5_0.png" alt="star rating 5 out of 5">
+                  </div>
+                </div>
+                <!-- [SHOPTIME-1188] 20231013 뱃지 추가 -->
+                <!-- [SHOPTIME-1188] 20231016 뱃지 쿠폰 추가/텍스트로 변경 -->
+                @@include('detail_badge.html')
+                <!-- //[SHOPTIME-1188] 20231016 뱃지 쿠폰 추가/텍스트로 변경 -->
+                <!-- //[SHOPTIME-1188] 20231013 뱃지 추가 -->
+              </div>
+            </div>
+            <!-- [SHOPTIME-1058] 20231005 수정 : 20231010 디자인 스크롤로 롤백 -->
+            <div class="content-area-body">
+              <!-- 옵션 영역 -->
+              <!-- 디자인 스크롤바 컨테이너 : scroll-ui-container -->
+              <div class="product-container height-option scroll-ui-container">
+                <!-- 디자인 스크롤바 -->
+                <div class="scroll-ui-area">
+                  <div class="scroll-bar" style="top: 0; height: 70%;"></div>
+                </div>
+                <!-- //디자인 스크롤바 -->
+                <div class="scroll-box-area" style="transform: translateY(0px);"><!-- 스크롤 동작 : translateY -->
+                  <div class="option-container">
+                    <div class="option-row-area">
+                      <div class="row-label-box">COLOR</div>
+                      <div class="row-input-box">
+                        <button type="button" class="btn-solid-white btn-arrow focused"><span>Homestyle Butter</span><span class="icon-arrow-down"></span></button>
+                      </div>
+                    </div>
+                    <div class="option-row-area">
+                      <div class="row-label-box">SIZE</div>
+                      <div class="row-input-box">
+                        <button type="button" class="btn-solid-white btn-arrow"><span>SMALL</span><span class="icon-arrow-down"></span></button>
+                      </div>
+                    </div>
+                    <div class="option-row-area">
+                      <div class="row-label-box">QUANTITY</div>
+                      <div class="row-input-box">
+                        <!-- 1.07v 동기화 20230919 -->
+                        <div class="counter-btn-box">
+                          <!-- 
+                            사용불가 클래스 : disabled
+                            초점 클래스 : focused
+                          -->
+                          <button type="button" class="btn-minus disabled"><span>-</span></button>
+                          <span class="count-text">1</span>
+                          <button type="button" class="btn-plus focused"><span>+</span></button>
+                        </div>
+                        <!-- //1.07v 동기화 20230919 -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="option-container">
+                <div class="option-row-area">
+                  <div class="row-label-box">
+                    <div class="label-title-box">SHOPTIME PROMOTION</div>
+                    <div class="label-text-box">
+                      <div class="option-text">Coupon only applicable to this product!</div>
+                    </div>
+                  </div>
+                  <div class="row-input-box">
+                    <button type="button" class="btn-solid-dark btn-small"><span>COUPON</span></button>
+                  </div>
+                </div>
+                <div class="option-row-area">
+                  <div class="row-label-box">
+                    <div class="label-title-box">SPECIAL PROMOTION</div>
+                    <div class="label-text-box">
+                      <div class="option-text">Coupon only applicable to this product!</div>
+                    </div>
+                  </div>
+                  <div class="row-input-box">
+                    <button type="button" class="btn-solid-dark btn-small"><span>COUPON</span></button>
+                  </div>
+                </div>
+              </div>
+              <!-- //옵션 영역 -->
+            </div>
+            <!-- //[SHOPTIME-1058] 20231005 수정 : 20231010 디자인 스크롤로 롤백 -->
+            <div class="content-area-footer">
+              <div class="total-price-area">
+                <div class="price-row-box">
+                  <div class="label-main-title">Final Price</div>
+                  <div class="cost-text-box">
+                    <span class="price-percent-red">17%</span>
+                    <span class="price-promote">$32.98</span>
+                    <span class="price-original"><span class="before-hyphen">before</span>$150.00</span>
+                  </div>
+                </div>
+
+                <div class="price-row-box">
+                  <div class="label-sub-title">S&H</div>
+                  <div class="cost-text-box">
+                    <span>$3.50</span>
+                  </div>
+                </div>
+              </div>
+              <div class="button-box">
+                <!-- 
+                    기본값 클래스(normal) : btn-solid-gray
+                    활성화 클래스 : focused
+                    비활성화 클래스 : disabled
+                  -->
+                <button type="button" class="btn-solid-gray"><span>BUY NOW</span></button>
+                <button type="button" class="btn-solid-gray"><span>ADD TO CART</span></button>
+                <button type="button" class="btn-icon-heart"></button>
+              </div>
+              <!-- //옵션 영역 -->
+            </div>
+          </div>
+        </div>
+        @@include('detail_fixed_recommend.html', {
+        'show': '',
+        })
+      </div>
+    </main>
+    <!-- // Main -->
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

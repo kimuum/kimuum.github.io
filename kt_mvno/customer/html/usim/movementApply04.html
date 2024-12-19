@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "4단계 이동 전화번호 입력·인증 | 셀프개통 신청 | 셀프개통 | 유심/eSIM", "titleHidden": "<!-- DR-2023-34353 20230605 -->" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap detail usimApply">
+      <!-- 신청 페이지 클래스 : usimApply -->
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-2', 'thirdMenu': 'active-1' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>셀프개통 신청</h2>
+                <!-- [2차] 20220830 수정 -->
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>유심/eSIM</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통(USIM/eSIM)</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_usim.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>셀프개통 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <!-- [2차] 20220830 단계 추가 -->
+            <div class="applySteps">
+              <strong class="title">진행 단계</strong>
+              <!-- [VOS2차] 결함 ID 1122841 타이틀 추가 -->
+              <ul class="steps">
+                <!-- [VOS2차] 결함 ID 1122841 aria-label 제거 -->
+                <li class="unit">1</li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>4<!-- [VOS2차] 결함ID 1122059 --></li>
+                <li class="unit">5</li>
+                <li class="unit">6</li>
+              </ul>
+            </div>
+            <!-- //[2차] 20220830 단계 추가 -->
+            <div class="formContainer">
+              <div class="formItemArea">
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">번호이동 할 전화번호</strong>
+                    <button type="button" class="linkUnderline colorPrimary">번호이동 사전동의 안내</button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                  </div>
+                  <!-- [2차] 20221004 수정 -->
+                  <div class="fieldPhoneInfo">
+                    <button type="button" class="btn iconFindAgency"><span>이전 통신사</span></button>
+                    <!-- [VOS2차] 결함 ID 112201,1122061,1122074,1122010, 1122142 타이틀 속성 삭제 -->
+                    <div class="field fieldInput">
+                      <label for="input-id-01" class="fieldLabel">휴대폰번호</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-id-05" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //[2차] 20221004 수정 -->
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">통신사를 모르실 경우 현재 사용중인 휴대폰에서 114로 확인바랍니다.</li>
+                      <li class="fieldValue">번호이동을 위해서는 현재 사용중인 통신사에서의 인증 절차가 필요합니다.</li>
+                      <li class="fieldValue">인증유형 입력 후 “번호이동 사전 동의 요청”을 선택하여 인증(문자 또는 ARS)을 부탁드립니다.</li>
+                      <li class="fieldValue">현재 KT, LGU+망 사용 고객께서는 ARS로 전화하셔서 인증 절차 진행 부탁드립니다.</li>
+                      <li class="fieldValue">타사 신규개통/명의변경/번호이동 후 3개월 이내 고객은 셀프개통으로 번호이동이 불가합니다.</li>
+                      <li class="fieldValue">번호이동 사전동의는 일 7회로 제한합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">번호이동 인증유형</strong>
+                  </div>
+                  <div class="checkboxLineFlex">
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType01" name="checkType" checked />
+                      <label for="checkType01" class="checkboxLabel">
+                        <span>휴대폰 일련번호</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType02" name="checkType" />
+                      <label for="checkType02" class="checkboxLabel">
+                        <span>요금납부 계좌이체</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType03" name="checkType" />
+                      <label for="checkType03" class="checkboxLabel">
+                        <span>요금납부 신용카드</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="checkType04" name="checkType" />
+                      <label for="checkType04" class="checkboxLabel">
+                        <span>지로</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="imgPassType01">
+                    <div class="imgPassWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_pass01.png" alt="일련번호 확인방법" />
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">갤럭시 S8 이후 모델의 <span class="colorPrimary">‘설정>휴대폰전화정보>규제정보>일련번호’</span>에서 확인 가능합니다.</li>
+                        <!-- [운영] 20230315 번호이동 관련 수정 -->
+                        <li class="fieldValue">휴대폰의 일련번호는 제품 뒷면에 부착된 라벨 및 하단에 각인 되어 있습니다.(케이스 교체한 경우 확인 불가)</li>
+                        <li class="fieldValue"><span class="colorPrimary">애플(아이폰) 제품은 일련번호로 인증이 되지 않습니다.</span> 계좌번호나 신용카드로 선택해주세요.</li>
+                        <!-- [운영] 20230315 번호이동 관련 수정 -->
+                      </ul>
+                    </div>
+
+                    <div class="field fieldInput">
+                      <label for="input-id-05" class="fieldLabel">뒤 네자리 숫자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-id-05" placeholder="일련번호 뒤 네자리를 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //휴대폰 일련번호 -->
+
+                  <div class="imgPassType02" style="display: none">
+                    <div class="imgPassWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_pass02.png" alt="계좌 뒤 네자리 확인방법" />
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">고객님의 요금납부 방법이 통장 자동이체가 맞는지 정확히 확인 후 입력해주세요.</li>
+                        <li class="fieldValue"><span class="colorPrimary">기존 이동통신사에 납부하셨던 계좌번호 뒤 4자리</span>를 입력해주세요.</li>
+                        <!-- [운영] 20230315 번호이동 관련 수정 -->
+                      </ul>
+                    </div>
+
+                    <div class="field fieldInput">
+                      <label for="input-id-05" class="fieldLabel">뒤 네자리 숫자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-id-05" placeholder="계좌 뒤 네자리를 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //요금납부 계좌번호 -->
+
+                  <div class="imgPassType03" style="display: none">
+                    <div class="imgPassWrap">
+                      <div class="imgWrap">
+                        <img src="../../assets/images/usim/img_pass03.png" alt="요금납부 신용카드 확인방법" />
+                      </div>
+                    </div>
+
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">고객님의 요금납부 방법이 신용카드 자동이체가 맞는지 정확히 확인 후 입력해주세요.</li>
+                        <li class="fieldValue"><span class="colorPrimary">기존 이동통신사에 납부하셨던 신용카드 뒤 4자리</span>를 입력해주세요.</li>
+                        <!-- [운영] 20230315 번호이동 관련 수정 -->
+                      </ul>
+                    </div>
+
+                    <div class="field fieldInput">
+                      <label for="input-id-05" class="fieldLabel">뒤 네자리 숫자</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="input-id-05" placeholder="신용카드 뒤 네자리를 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //요금납부 신용카드 -->
+
+                  <div class="imgPassType04" style="display: none">
+                    <div class="typeCaution">
+                      <ul class="fieldArea marginBtmReset">
+                        <li class="fieldValue">지로를 선택하실 경우 필요한 입력내용이 없습니다.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- //지로 -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fixedFooterContainer">
+            <div class="fixedFooterArea">
+              <!-- prettier-ignore -->
+              @@include('../component/fixed_footer_area_desc_month.html', {
+                'planPartner' : 'KT엠모바일',
+                'planTitle' : '데이터 맘껏 15GB+ / 300분 데이터 맘껏 15GB+',
+                'planCharge' : '29,700'
+              })
+              <div class="buttonArea">
+                <button type="button" class="btn btnPrimary"><span>사전동의 요청</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- //END fixedFooterContainer -->
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

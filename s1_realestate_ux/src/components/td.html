@@ -1,0 +1,121 @@
+<!-- prettier-ignore -->
+
+<td class="td">
+  @@if(type == 'checkbox') {
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        name="@@text"
+        id="@@text"
+      />
+      <label for="@@text"></label>
+    </div>
+  }
+
+  @@if(type == 'text') {
+  <div class="text-box @@if(property) {@@property}">
+    @@if(text) {
+      <span>@@text</span>
+    }
+  </div>
+  }
+
+  @@if(type == 'input') {
+  <div class="input-box">
+    <input type="text" name="" id="" value="@@text" placeholder="@@property" autocomplete="off" class="input-field" >
+  </div>
+  }
+
+  @@if(type == 'notice') {
+  <div class="notice-box">
+    <i class="ic ic-notice"></i>
+  </div>
+  }
+
+  @@if(type == 'link') {
+  <div class="link-box">
+    @@if(text) {
+      <button type="button" class="btn-popup link" data-popup="@@property">@@text</button>
+    }
+  </div>
+  }
+
+  @@if(type == 'badge') {
+  <div class="badge-box">
+    <span class="badge @@property">@@text</span>
+  </div>
+  }
+
+  @@if(type == 'badgeText') {
+  <div class="badge-box">
+    <span class="text">@@text</span>
+    <span class="badge primary">@@property</span>
+  </div>
+  }
+
+  @@if(type == 'rate') {
+    @@if(text) {
+      <div class="rate-box">
+        <span>@@text</span>
+      </div>
+    }
+  }
+
+  @@if(type == 'button') {
+  <div class="button-box">
+    @@if(text) {
+      @@if(text === '평가하기') {
+        <button type="button" class="btn btn-@@property btn-popup" data-popup="popup-rating">
+          <span>@@text</span>
+        </button>
+      }
+      @@if(text !== '평가하기') {
+        <button type="button" class="btn btn-@@property">
+          <span>@@text</span>
+        </button>
+      }
+    }
+  </div>
+  }
+
+  @@if(type == 'file') {
+    <div class="file-box">
+      <a href="javascript:void(0)" class="download" download title="다운로드">
+        @@if(text) {
+          <span>@@text</span>
+        }
+      </a>
+    </div>
+  }
+
+  @@if(type == 'dropdown') {
+    <div class="field field-dropdown">
+      <div class="field-form">
+        <div class="dropdown-box">
+          <!-- prettier-ignore -->
+          @@include("../../components/dropdown.html",{
+            "title" : "",
+            "size" : "small",
+            "value" : "5개씩 보기",
+            "placeholder" : "",
+            "option" : [ 
+              {
+                "text" : "5개씩 보기",
+                "property" : "active",
+              },
+              {
+                "text" : "10개씩 보기",
+                "property" : "",
+              },
+              {
+                "text" : "15개씩 보기",
+                "property" : "",
+              },
+            ],
+            "disabled" : false,
+          })
+        </div>
+      </div>
+    </div>
+  }
+</td>

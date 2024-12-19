@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="" />
+    <input type="hidden" id="top_area_type" value="" iweb-data="out" />
+    <input type="hidden" id="weekend_type" iweb-data="out" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <input type="hidden" id="message" value="" iweb-data="out" />
+
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <input type="hidden" id="user_menu" iweb-data="out" />
+    <input type="hidden" id="popup_name" iweb-data="out" />
+    <input type="hidden" id="popup_content" iweb-data="out" />
+    <input type="hidden" id="flag" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main all-menu-main">
+        <header class="all-menu-header">
+          <div id="top_area_type0" class="all-menu-title" style="display: none">
+            <p class="text">환영합니다.</p>
+          </div>
+          <!-- 디폴트 멘트 -->
+          <div id="top_area_type1" class="all-menu-title" style="display: none">
+            <p class="text">
+              지금은 고장신고 및 처리 상담만<br />
+              가능합니다.
+            </p>
+          </div>
+          <!-- 야간 멘트 -->
+          <div id="top_area_type2" class="all-menu-title" style="display: none">
+            <p class="text">고객님의 생일을 진심으로 축하드립니다.</p>
+          </div>
+          <!-- 생일자 멘트 -->
+          <div id="top_area_type3" class="all-menu-title" style="display: none">
+            <p class="text">VIP 고객님, 환영합니다.</p>
+          </div>
+          <!-- VIP 고객 멘트 -->
+        </header>
+        <div class="content-container">
+          <p id="main-notice"></p>
+
+          <div class="all-menu-container">
+            <!-- 좌측 이용서비스 영역 -->
+            <nav class="all-menu">
+              <div class="quick-view-text"><span>바로가기</span></div>
+              <!-- 기본 서비스 -->
+              <ul id="hot-menu-area">
+                <li id="btv" style="display: none">
+                  <a href="javascript:sendData($(this), 'H5');" class="Hm Hm05">
+                    <span class="text">Btv 채널 <br />편성 문의</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'H1');" class="Hm Hm01">
+                    <span class="text">청구요금 확인</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'H2');" class="Hm Hm02">
+                    <span class="text">납부이력<br />팩스 수신</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'H4');" class="Hm Hm04">
+                    <span class="text">고장신고/<br />장애접수</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:sendData($(this), 'H3');" class="Hm Hm03">
+                    <span class="text">세금계산서<br />발송</span>
+                  </a>
+                </li>
+              </ul>
+              <!-- //기본 서비스 -->
+            </nav>
+            <!-- //좌측 이용서비스 영역 -->
+
+            <!-- 우측 ARS 선택 영역 -->
+            <div class="sub-menu-child">
+              <nav id="weekend_type0" class="child-menu" style="display: none">
+                <ol>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                      <span class="text">요금/납부 조회</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M2', 'menu');">
+                      <span class="text">이전설치 문의</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                      <span class="text">고장신고 및 처리</span>
+                    </a>
+                  </li>
+                  <li class="internet_tv">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M5', 'menu');">
+                      <span class="text">인터넷/TV <br />가입문의</span>
+                    </a>
+                  </li>
+                </ol>
+
+                <div class="menu-bottom-box">
+                  <p class="text">
+                    지금은 <br />
+                    <span class="highlight">고장신고 및 처리</span><br />
+                    상담만 가능합니다.
+                  </p>
+                </div>
+              </nav>
+              <!--// 야간 -->
+
+              <nav id="weekend_type1" class="child-menu" style="display: none">
+                <ol>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                      <span class="text">요금/납부 조회</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M2', 'menu');">
+                      <span class="text">이전설치 문의</span>
+                    </a>
+                  </li>
+                  <li id="time_2" style="display: none">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M3', 'menu');">
+                      <span class="text">해지 문의</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                      <span class="text">고장신고 및 처리</span>
+                    </a>
+                  </li>
+                  <li id="internet_tv">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M5', 'menu');">
+                      <span class="text">인터넷/TV 가입문의</span>
+                    </a>
+                  </li>
+                  <li id="time_3">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M6', 'menu');">
+                      <span class="text">휴대폰 관련 상담</span>
+                    </a>
+                  </li>
+                  <li id="agent_menu">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M0', 'menu');">
+                      <span class="text">상담사 연결</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+              <!--// 주간 -->
+
+              <nav id="weekend_type2" class="child-menu" style="display: none">
+                <ol>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M1', 'menu');">
+                      <span class="text">요금/납부 조회</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M2', 'menu');">
+                      <span class="text">이전설치 문의</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M4', 'menu');">
+                      <span class="text">고장신고 및 처리</span>
+                    </a>
+                  </li>
+                  <li class="internet_tv">
+                    <a href="javascript:sendRepPageData($(this).text().trim(), 'M5', 'menu');">
+                      <span class="text">인터넷/TV 가입<br />바로가기</span>
+                    </a>
+                  </li>
+                </ol>
+                <div class="menu-bottom-box">
+                  <p class="text">
+                    지금은 <br />
+                    <span class="highlight">고장신고 및 처리</span><br />
+                    상담만 가능합니다.
+                  </p>
+                </div>
+              </nav>
+              <!--// 주말 -->
+            </div>
+            <!--// 우측 ARS 선택 영역 -->
+          </div>
+        </div>
+
+        <!-- 안드로이드 t전화, 콜게이트 / 다른 ARS 선택 영역 -->
+        <!-- 기존 클래스 different_ars 변경xx -->
+        <div id="tButton" class="footer different_ars">
+          <div class="bg-dim"></div>
+          <div class="btn-other-change">
+            <a href="#" class="d-clickable bot-btn btn-other-ars"><span class="text">다른 ARS 전환</span></a>
+          </div>
+          <div class="btn-hidden-box">
+            <div class="btn-ars-item">
+              <button type="button" onclick="javascript:otherARS($(this), 'O1', 'menu');" class="bot-btn btn-ars"><span class="text">버튼식 ARS</span></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 아이폰 url sms(콜게이트) / 푸터 버튼 -->
+        <div id="cButton" class="footer">
+          <a href="javascript:otherARS($(this), 'O1', 'menu');" class="bot-btn btn-ars"><span class="text">버튼식 ARS</span></a>
+          <a id="btnCloseCallgate" class="bot-btn btn-end"><span class="text">종료</span></a>
+        </div>
+      </main>
+
+      <!-- 팝업 영역 -->
+      <div class="popup"></div>
+    </div>
+
+    <script type="text/javascript" src="/{version}/js/scroll/scroll.js"></script>
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <!-- 업데이트 1. 다른 ARS 처리시 CSS 조정 [2023.04.12] -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'display: none',
+          },
+          {
+            elemName: 'tButton',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display:none',
+          },
+          {
+            elemName: 'cButton',
+            varsType: 'T',
+            attrType: 'style',
+            value: 'display:none',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        $('.different_ars').on('click', '.d-clickable', function (e) {
+          e.preventDefault();
+          $(this).closest('.different_ars').toggleClass('on');
+        });
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+        });
+
+        //--------------------------------------------------------------------------------
+        // Flag 값에 따른 팝업 창  Start 2022-11-10 추가
+
+        var flag = getUrlParameter('flag');
+        var popup_name = getUrlParameter('popup_name');
+        var popup_content = getUrlParameter('popup_content');
+
+        // /*@build-time*/ flag = 'Y';
+        // /*@build-time*/ popup_name = '팝업 타이틀';
+        // /*@build-time*/ popup_content = '팝업 텍스트 팝업 텍스트 팝업 텍스트 팝업 텍스트';
+
+        if (flag == 'Y') {
+          var popup_html = '';
+          popup_html += '<div class="dim"></div>';
+          popup_html += '<div class="popup-container">';
+          popup_html += '<div class="popup-area">';
+          popup_html += '<div class="popup-top">';
+          popup_html += '<div class="popup-title">' + popup_name + '</div>';
+          popup_html += '<button type="button" class="btn-close" onclick="javascript:closePopup();"></button>';
+          popup_html += '</div>';
+          popup_html += '<div class="popup-middle">';
+          popup_html += '<div class="popup-text">' + popup_content + '</div>';
+          popup_html += '</div>';
+          popup_html += '<div class="popup-bottom">';
+          popup_html += '<button type="button" class="btn btn-primary" onclick="javascript:closePopup();"><span>확인</span></button>';
+          popup_html += '</div>';
+          popup_html += '</div>';
+          popup_html += '</div>';
+          // Flag 값에 따른 팝업 창 End
+          $('.popup').html(popup_html);
+          $('.popup').addClass('show');
+        } else {
+          popup_html = '';
+          $('.popup').addClass('remove');
+          $('.popup').remove();
+        }
+        //--------------------------------------------------------------------------------
+
+        //--------------------------------------------------------------------------------
+        // 화면 상단 알림 처리  Start
+        var message = getUrlParameter('message');
+        if (message != '' && message != undefined) {
+          var marquee = document.createElement('marquee');
+          var elemMsg = document.getElementById('main-notice');
+          marquee.innerText = message;
+          elemMsg.appendChild(marquee);
+        } else {
+          $('#main-notice').empty();
+          $('#main-notice').remove();
+        }
+
+        // 화면 상단 상단 알림 처리 End
+        //--------------------------------------------------------------------------------
+        try {
+          /* top area 타입 */
+          // type == 0: 기본 멘트
+          // type == 1: 야간 멘트
+          // type == 2: 생일 멘트
+          // type == 3: vip 고객 멘트
+          var top_area_type = getUrlParameter('top_area_type');
+          /*@build-time*/ top_area_type = '1';
+          /* top_area_type 값이 없을 경우 자동  */
+          if (top_area_type == '') {
+            top_area_type = '0';
+          }
+          document.getElementById('top_area_type' + top_area_type).style.display = 'flex';
+        } catch (e) {}
+
+        try {
+          /* 주야 타입 */
+          // type == 0: 야간
+          // type == 1: 주간
+          // type == 2: 주말
+
+          var weekend_type = getUrlParameter('weekend_type');
+
+          /*@build-time*/ weekend_type = '1';
+          document.getElementById('weekend_type' + weekend_type).style.display = 'block';
+
+          // 1: 주간, 0: 야간, 9:점심시간
+          var timezone_type = getUrlParameter('timezone_type');
+          /*@build-time*/ timezone_type = '9';
+
+          if (timezone_type == '1') {
+            // 주간
+            document.getElementById('time_2').style.display = 'block';
+          } else if (timezone_type == '0') {
+            // 야간
+            document.getElementById('time_2').style.display = 'block';
+            document.getElementById('weekend_type0').style.display = 'block';
+          } else if (timezone_type == '9') {
+            // 점심시간
+            var internetTv = document.getElementById('internet_tv').querySelector('span');
+            // 20240703 중식 메뉴명 수정
+            internetTv.innerHTML = '인터넷/TV <br />가입문의';
+            document.getElementById('time_2').style.display = 'none';
+            document.getElementById('time_3').style.display = 'none';
+          }
+          var btv_flag = getUrlParameter('btv_flag');
+          if (btv_flag == 'Y' || btv_flag == 'y') {
+            $('#btv').css('display', 'block');
+          }
+        } catch (e) {}
+
+        common.refreshScroll();
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        common.removeDisplayCell();
+      });
+
+      function closePopup() {
+        var non_popup_html = '';
+        $('.popup').html(non_popup_html);
+        $('.popup').removeClass('show');
+        $('.popup').remove();
+      }
+      // 다른 ARS 전환 처리.
+      function otherARS(obj, dtmf, text) {
+        sendRepPageData('agent', dtmf, text);
+        setTimeout(function () {
+          // T전화 기본화면 전환
+          changeoverPhone(true);
+        }, 1000);
+      }
+
+      // 세금계산서 재발행 fax 수신 처리.
+      function sendData(obj, dtmf) {
+        sendRepPageData(obj.text().trim(), dtmf, 'menu');
+      }
+
+      var user_menu = getUrlParameter('user_menu');
+      /*@build-time*/ user_menu = 'H1|Hm01|청구요금확인^H2|Hm02|납부이력발송^H5|Hm05|Btv 채널 편성문의^H6|Hm06|나의가입정보^H7|Hm07|납부방법확인^H8|Hm08|요금/세금 계산서 발송^H9|Hm09|Btv 서비스 안내';
+      var user_menu_arr = user_menu.split('^');
+      var user_menu_html = ''; //<li class=\"title\">바로가기</li>
+
+      for (var i = 0; i < user_menu_arr.length; i++) {
+        var user_menu_list = user_menu_arr[i].split('|');
+        if (user_menu_list == '') {
+        } else {
+          user_menu_html +=
+            '<li><a href="javascript:sendData($(this), \'' + user_menu_list[0] + '\');" class="Hm ' + user_menu_list[1] + '"><span class="text">' + user_menu_list[2] + '</span></a></li>';
+        }
+      }
+      user_menu_html += '<li></li>';
+      $('#hot-menu-area').html(user_menu_html);
+    </script>
+  </body>
+</html>

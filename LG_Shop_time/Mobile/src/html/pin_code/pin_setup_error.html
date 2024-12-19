@@ -1,0 +1,80 @@
+@@include("head.html",{
+	"title" : "SETUP THE PIN CODE" 
+})
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+      "btnPrev": true,
+      "menuBox" : false,
+      "title" : "SETUP THE PIN CODE",
+      "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="detail-inner">
+        <div class="pin-code-container">
+          <div class="pin-area">
+            <div class="pin-header">
+              <p>
+                Setup the PIN CODE to keep your Payment
+                information secure. After entering your PIN, click
+                the button below.
+              </p>
+            </div>
+            <div class="pin-body">
+              <div class="field error">
+                <label for="pin-code" class="field-label">Enter a new PIN CODE</label>
+                <div class="field-form">
+                  <div class="input">
+                    <input type="text" name="pin-code" id="pin-code" value="1" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code02" id="pin-code02" value="2" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code03" id="pin-code03" value="3" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code04" id="pin-code04" value="4" maxlength="1" minlength="1"/>
+                  </div>
+                </div>
+                <p class="error-desc">Please enter a new PIN CODE.</p>
+              </div>
+
+              <div class="field error">
+                <label for="pin-code" class="field-label">Confirm your PIN CODE</label>
+                <div class="field-form">
+                  <div class="input">
+                    <input type="text" name="pin-code" id="pin-code" value="1" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code02" id="pin-code02" value="2" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code03" id="pin-code03" value="3" maxlength="1" minlength="1"/>
+                  </div>
+                  <div class="input">
+                    <input type="text" name="pin-code04" id="pin-code04" value="4" maxlength="1" minlength="1"/>
+                  </div>
+                </div>
+                <p class="error-desc">Please enter a PIN CODE to confirm.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+    
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn"><span>CONTINUE</span></button><!-- v1.80 디자인 동기화 -->
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <!-- <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.ico" /> -->
+    <link rel="stylesheet" href="../../assets/css/admin.css" />
+    <link rel="stylesheet" href="../../assets/css/general.css" />
+    <script src="../../assets/js/adminBundle.js"></script>
+    <title>Radio</title>
+  </head>
+
+  <body>
+    <div class="general-wrapper">
+      <div class="general-container">
+        <div class="general-area">
+          <div class="general-top">
+            <div class="general-label">Component</div>
+            <div class="general-title">Radio</div>
+          </div>
+          <div class="general-middle">
+            <div class="general-content">
+              <div class="content-label">
+                <span class="label"></span>
+              </div>
+              <div class="content-box">
+                <!-- prettier-ignore -->
+                @@loop("adminRadioButton.html", [
+                {
+                  "class" : "",
+                  "radioId" : "basic-setting-1",
+                  "radioName" : "basic-setting",
+                  "property" : "checked",
+                  "label": "하루에 한 팀",
+                },
+                {
+                  "class" : "",
+                  "radioId" : "basic-setting-2",
+                  "radioName" : "basic-setting",
+                  "property" : "",
+                  "label": "하루에 두 팀",
+                },
+              ])
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

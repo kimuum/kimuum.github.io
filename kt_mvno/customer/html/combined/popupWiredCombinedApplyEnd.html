@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "알뜰폰+KT 유/무선결합 완료", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnWiredCombinedEnd" onclick="togglePopup('btnWiredCombinedEnd', 'popupWiredCombinedEnd')"><span>알뜰폰+KT 유/무선결합 완료</span></button>
+    </div>
+    <!-- hide -->
+    <div class="popup" id="popupWiredCombinedEnd" role="dialog" aria-labelledby="popupTitleWiredCombinedEnd" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitleWiredCombinedEnd">알뜰폰+KT 유/무선결합 완료</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnWiredCombinedEnd', 'popupWiredCombinedEnd')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="applyCaseContainer">
+            <div class="applyInfoArea">
+              <div class="infoTitle">결합이 완료 되었습니다.</div>
+              <div class="infoContent">
+                <ul class="dotList marginBtmReset">
+                  <li class="beforeDot">결합 완료 시 SMS가 발송됩니다. SMS를 수신하지 못하신 고객님은 해당 사업자 고객센터로 연락 바랍니다.</li>
+                  <li class="beforeDot">결합 해지는 해당 사업자 고객센터를 통해 신청 바랍니다.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="applyInfoArea">
+              <div class="infoContent">
+                <div class="tableContainer captionShow">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        내 정보
+                        <span class="ir">- 사업자, 휴대폰 번호, 요금제, 제공 혜택</span>
+                      </caption>
+                      <colgroup>
+                        <col style="width: 38%" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="alignCenter">사업자</th>
+                          <td class="alignCenter">KT M 모바일</td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="alignCenter">휴대폰 번호</th>
+                          <td class="alignCenter">010-34**-*807</td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="alignCenter">요금제</th>
+                          <td class="alignCenter">모두다 맘껏 7.0GB+</td>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="alignCenter">제공 혜택</th>
+                          <td class="alignCenter">5GB(매월)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="tableContainer captionShow">
+                  <div class="tableArea">
+                    <table>
+                      <caption>
+                        결합 회선 정보
+                        <span class="ir">- 사업자, 휴대폰 번호, 요금제</span>
+                      </caption>
+                      <colgroup>
+                        <col style="width: 38%" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row" class="alignCenter">사업자</th>
+                          <td class="alignCenter">KT</td>
+                        </tr>
+                        <!-- <tr>
+                          <th scope="row" class="alignCenter">휴대폰 번호</th>
+                          <td class="alignCenter">010-34**-*807</td>
+                        </tr> -->
+                        <tr>
+                          <th scope="row" class="alignCenter">인터넷 서비스 ID</th>
+                          <td class="alignCenter">z!120931***</td>
+                          <!-- [운영] KMVNO-3792 20231020 마스킹 처리 -->
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary"><span>확인</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

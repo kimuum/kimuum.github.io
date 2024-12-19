@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "결합내역 조회 | 결합서비스 | 상품", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : combinedList -->
+    <div class="wrap combinedList">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-5', 'thirdMenu': 'active-4' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>결합내역 조회</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>상품</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>결합서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_product.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>결합내역 조회</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea combinedDetail">
+          <section class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <!-- 조회 전/결과 없음 -->
+                <div class="dataInner phoneNoLine">
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": false,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                  </div>
+                  <!-- 조회 전 문구 -->
+                  <div class="lineCheckResultArea">
+                    <div class="checkResultTop">
+                      <div class="resultComment">
+                        <span class="resultLabel">결합 내역을 조회해주세요.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 조회 결과 없음 문구 -->
+                  <div class="lineCheckResultArea">
+                    <div class="checkResultTop">
+                      <div class="resultComment">
+                        <span class="resultLabel">결합 내역이 없습니다.</span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //조회 전 문구 -->
+                </div>
+                <!-- //조회 전 -->
+
+                <!-- 조회 결과 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <div class="dataTitle">결합중인 회선</div>
+                  </div>
+                  <!-- 결과 1 -->
+                  <div class="tableContainer normalBgTable">
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - 조회 회선, 제공 혜택, KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">조회 회선</th>
+                            <td>
+                              <p class="grayText middleSize">모두 다 맘껏 11GB+</p>
+                              <p>010-81**-*319</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">제공 혜택</th>
+                            <td>5GB(매월)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">KT M 모바일</th>
+                            <td>
+                              <p class="grayText middleSize">초알뜰 1GB/60분</p>
+                              <p>010-12**-*333</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //결과 1 -->
+
+                  <!-- 결과 2 -->
+                  <div class="tableContainer normalBgTable">
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - 조회 회선, 제공 혜택, KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">조회 회선</th>
+                            <td>
+                              <p class="grayText middleSize">모두 다 맘껏 11GB+</p>
+                              <p>010-81**-*319</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">제공 혜택</th>
+                            <td>10GB(매월)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row" rowspan="2">KT M 모바일</th>
+                            <td>
+                              <p class="grayText middleSize">초알뜰 1GB/60분</p>
+                              <p>010-12**-*333</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <p class="grayText middleSize">모두다 맘껏 3GB+</p>
+                              <p>010-12**-*333</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //결과 2 -->
+
+                  <!-- 결과 3 -->
+                  <div class="tableContainer normalBgTable">
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - 조회 회선, 제공 혜택, KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">조회 회선</th>
+                            <td>
+                              <p class="grayText middleSize">모두 다 맘껏 11GB+</p>
+                              <p>010-81**-*319</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">제공 혜택</th>
+                            <td>5GB(매월)</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="tableArea">
+                      <table>
+                        <caption>
+                          결합중인 회선 - KT M 모바일
+                        </caption>
+                        <colgroup>
+                          <col style="width: 38%" />
+                          <col />
+                        </colgroup>
+                        <tbody>
+                          <tr>
+                            <th scope="row">KT M 모바일</th>
+                            <td>
+                              <p class="grayText middleSize">초알뜰 1GB/60분</p>
+                              <p>010-12**-*333</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">KT</th>
+                            <td>
+                              <p class="grayText middleSize">베이직</p>
+                              <p>010-12**-*333</p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <!-- //결과 3 -->
+
+                  <!-- 안내 문구 -->
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">결합 해지는 해당 사업자 고객센터를 통해 신청 바랍니다.</li>
+                      <li class="fieldValue">결합된 회선의 요금제 변경 및 해지 시 해당 사업자 고객센터, KT 고객은 KT 고객센터를 통해 가능합니다.</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- //조회 결과 -->
+              </div>
+            </div>
+          </section>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript"></script>
+  </body>
+</html>

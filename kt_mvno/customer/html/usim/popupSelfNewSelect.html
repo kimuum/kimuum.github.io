@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "신규 번호 선택, 전화 번호 선택", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnID01" onclick="togglePopup('btnID01', 'popupDefault01')"><span>신규 번호 선택</span></button>
+      <button type="button" class="btn" id="btnID02" onclick="togglePopup('btnID02', 'popupDefault02')"><span>전화 번호 선택</span></button>
+    </div>
+
+    <!-- 신규 번호 선택 -->
+    <div class="popup hide" id="popupDefault01" role="dialog" aria-labelledby="popupTitle-01" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">신규 번호 선택</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID01', 'popupDefault01')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <ul class="checkList" aria-label="신규 번호">
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio01" name="newNumGroup" checked="" />
+                  <label for="neNumRadio01" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio02" name="newNumGroup" />
+                  <label for="neNumRadio02" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio03" name="newNumGroup" />
+                  <label for="neNumRadio03" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio04" name="newNumGroup" />
+                  <label for="neNumRadio04" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio05" name="newNumGroup" />
+                  <label for="neNumRadio05" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio06" name="newNumGroup" />
+                  <label for="neNumRadio06" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio07" name="newNumGroup" />
+                  <label for="neNumRadio07" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio08" name="newNumGroup" />
+                  <label for="neNumRadio08" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio09" name="newNumGroup" />
+                  <label for="neNumRadio09" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+            </ul>
+            <div class="buttonArea">
+              <button type="button" class="btn"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- 전화 번호 선택 -->
+    <div class="popup hide" id="popupDefault02" role="dialog" aria-labelledby="popupTitle-02" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-02">전화 번호 선택</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnID02', 'popupDefault02')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <ul class="checkList" aria-label="전화 번호">
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio01" name="newNumGroup" checked="" />
+                  <label for="neNumRadio01" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio02" name="newNumGroup" />
+                  <label for="neNumRadio02" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio03" name="newNumGroup" />
+                  <label for="neNumRadio03" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio04" name="newNumGroup" />
+                  <label for="neNumRadio04" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio05" name="newNumGroup" />
+                  <label for="neNumRadio05" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio06" name="newNumGroup" />
+                  <label for="neNumRadio06" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio07" name="newNumGroup" />
+                  <label for="neNumRadio07" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio08" name="newNumGroup" />
+                  <label for="neNumRadio08" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+              <li>
+                <div class="radio">
+                  <input type="radio" id="neNumRadio09" name="newNumGroup" />
+                  <label for="neNumRadio09" class="radioLabel"><span>010-2623-3807</span></label>
+                </div>
+              </li>
+            </ul>
+            <div class="buttonArea">
+              <button type="button" class="btn"><span>취소</span></button>
+              <button type="button" class="btn btnPrimary"><span>확인</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

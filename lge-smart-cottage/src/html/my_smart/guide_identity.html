@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html",{
+    "title" : "LGE 스마트코티지 | 시작하기"
+  })
+
+  <body>
+    <!-- set unique class : guide_identity -->
+    <div class="wrapper identity-guide">
+      <!-- prettier-ignore -->
+      @@include("header.html", {
+        "title" : "Header",
+        "myPage" : true,
+        "list" : [
+          {
+            "text"     : "스마트코티지는",
+            "property" : "active",
+          },
+          {
+            "text"     : "어떻게 진행되나요?",
+            "property" : "",
+          },
+          {
+            "text"     : "궁금증 해결하고",
+            "property" : "",
+          },
+          {
+            "text"     : "시작하기",
+            "property" : "",
+          },
+        ],
+        "className" : ""
+      })
+      <main class="main-container">
+        <!-- section-container -->
+        <section class="section-container">
+          <div class="section-area">
+            <!-- guide-container -->
+            <div class="guide-container">
+              <div class="guide-area">
+                <div class="guide-top">
+                  <h2 class="title">고객 확인을 위해 <br />본인 인증을 진행해주세요!</h2>
+                  <p class="sub-text">
+                    현장실사 신청 시 사용하신 <br />
+                    휴대 전화번호를 입력하고 인증해주세요.
+                  </p>
+                </div>
+                <div class="guide-bottom">
+                  <div class="button-box">
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "",
+                      "btnColor" : "btn-primary",
+                      "btnSize" : "large",
+                      "property" : "",
+                      "btnText" : "본인 인증하기",
+                      "iconClass" : "",
+                      "iconLeft" : "",
+                    })
+                    <!-- prettier-ignore -->
+                    @@include("button.html", {
+                      "className" : "btn-underline",
+                      "btnColor" : "",
+                      "btnSize" : "",
+                      "property" : "",
+                      "btnText" : "전화번호가 바뀌셨나요?",
+                      "iconClass" : "",
+                      "iconLeft" : "",
+                    })
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- // guide-container -->
+          </div>
+        </section>
+        <!-- // section-container -->
+      </main>
+    </div>
+  </body>
+</html>

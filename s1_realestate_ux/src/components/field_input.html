@@ -1,0 +1,49 @@
+<div class="field field-input field-@@size @@required @@error @@valid @@class">
+  <!-- prettier-ignore -->
+  @@if(label) {
+  <div class="field-label">
+    <span class="text">@@label</span>
+    @@if(tooltip) { @@for(var i = 0; i < tooltip.length; i++) { @@include("../../components/tooltip.html",
+    `+(JSON.stringify(tooltip[i]))+`) } }
+  </div>
+  }
+  <div class="field-form">
+    <div class="input-box">
+      <div class="input">
+        <input
+          type="text"
+          name="@@id"
+          id="@@id"
+          value="@@value"
+          placeholder="@@placeholder"
+          autocomplete="off"
+          class="input-field"
+          @@property
+        />
+        <!-- prettier-ignore -->
+        @@if(error) {
+        <p class="alert-text">@@errorText</p>
+        }
+        <!-- prettier-ignore -->
+        @@if(valid) {
+        <p class="alert-text">@@validText</p>
+        }
+      </div>
+      <!-- prettier-ignore -->
+      @@if(button) {
+      <div class="button-box">
+        @@for(var i = 0; i < button.length; i++) { @@include("../../components/button.html",
+        `+(JSON.stringify(button[i]))+`) }
+      </div>
+      }
+    </div>
+    <!-- prettier-ignore -->
+    @@if(fieldDesc) {
+    <div class="field-desc">
+      @@for(var i = 0; i < fieldDesc.length; i++) {
+      <p class="`+fieldDesc[i].class+`">`+fieldDesc[i].text+`</p>
+      }
+    </div>
+    }
+  </div>
+</div>

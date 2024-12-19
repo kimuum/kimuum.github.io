@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "모델명 선택", "titleHidden": "" })
+  <body>
+    <div class="buttonArea">
+      <button type="button" class="btn" id="btnIDModelDevice" onclick="togglePopup('btnIDModelDevice', 'popupModelDevice')"><span>모델명 선택</span></button>
+    </div>
+    <div class="popup show" id="popupModelDevice" role="dialog" aria-labelledby="popupTitle-ModelDevice" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-ModelDevice">모델명 선택</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('btnIDModelDevice', 'popupModelDevice')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            <div class="modelDeviceContainer">
+              <div class="deviceContent">
+                <ul class="checkList" aria-label="모델명">
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName01" name="modelNameGroup" checked="" />
+                      <label for="modelName01" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName02" name="modelNameGroup" />
+                      <label for="modelName02" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName03" name="modelNameGroup" />
+                      <label for="modelName03" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName04" name="modelNameGroup" />
+                      <label for="modelName04" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName05" name="modelNameGroup" />
+                      <label for="modelName05" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName06" name="modelNameGroup" />
+                      <label for="modelName06" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName07" name="modelNameGroup" />
+                      <label for="modelName07" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName08" name="modelNameGroup" />
+                      <label for="modelName08" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName09" name="modelNameGroup" />
+                      <label for="modelName09" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="radio">
+                      <input type="radio" id="modelName10" name="modelNameGroup" />
+                      <label for="modelName10" class="radioLabel"><span>NLPF3KH/A</span></label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="deviceBottom">
+                <div class="pagenation">
+                  <button type="button" class="prevPageBtn" title="이전" disabled></button>
+                  <button type="button" class="numPageBtn current" title="현재 선택 페이지"><span>1</span></button>
+                  <!-- <button type="button" class="numPageBtn"><span>2</span></button>
+                  <button type="button" class="numPageBtn"><span>3</span></button>
+                  <button type="button" class="numPageBtn"><span>4</span></button> -->
+                  <button type="button" class="nextPageBtn" title="다음"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn" onclick="togglePopup('btnIDModelDevice', 'popupModelDevice')"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary" onclick="togglePopup('btnIDModelDevice', 'popupModelDevice')"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+
+    <!-- Start Script -->
+  </body>
+</html>

@@ -1,0 +1,131 @@
+.lnb-container {
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  padding: 12rem 8rem 0;
+  &.fixed {
+    position: fixed;
+    top: 9rem;
+    left: 0;
+    & + .section-container {
+      padding-left: 54rem;
+    }
+  }
+  .lnb-area {
+    display: flex;
+    flex-direction: column;
+    gap: 6.7rem;
+    width: 38rem;
+  }
+  .title-box {
+    @include font(h1);
+  }
+  .lnb-list {
+    &.active {
+      .lnb-link {
+        background: $tan-200;
+      }
+    }
+    &:hover:not(.active) {
+      .lnb-link {
+        background: $gray-50;
+      }
+    }
+    .lnb-link {
+      display: block;
+      padding: 1.8rem 2.4rem;
+      border-radius: 1.6rem;
+      @include font(bm);
+      transition: background 0.15s;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .lnb-container {
+    z-index: 998;
+    position: fixed;
+    align-items: flex-start;
+    width: 100%;
+    top: 5.2rem;
+    background-color: $white;
+    border-bottom: 1px solid $gray-100;
+    padding: 0;
+    &.fixed {
+      top: 5.2rem;
+      + .section-container {
+        padding: 0;
+      }
+    }
+    + .section-container {
+      padding: 0;
+    }
+
+    .lnb-area {
+      width: 100%;
+      gap: 0;
+    }
+
+    .lnb-top {
+      padding: 2.2rem 2rem 4rem;
+    }
+
+    .title-box {
+      font-size: 2.6rem;
+      line-height: 3.4rem;
+      letter-spacing: -0.104rem;
+    }
+
+    .lnb-bottom {
+      display: flex;
+      overflow: auto;
+      width: 100%;
+      padding: 0 0 2rem;
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      &::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera*/
+      }
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        flex: 0 0 2rem;
+        height: 1px;
+      }
+    }
+
+    .lnb-lists {
+      display: flex;
+      gap: 1.2rem;
+      .lnb-list {
+        &.active {
+          .lnb-link {
+            color: $black;
+          }
+        }
+        .lnb-link {
+          padding: 0;
+          border-radius: 0;
+          background-color: transparent;
+          font-size: 1.8rem;
+          color: $gray-200;
+          line-height: 2.4rem;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_device} {
+  .lnb-container {
+    .lnb-list {
+      &:hover:not(.active) {
+        .lnb-link {
+          background: transparent;
+        }
+      }
+    }
+  }
+}

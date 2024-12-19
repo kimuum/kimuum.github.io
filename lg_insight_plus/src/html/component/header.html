@@ -1,0 +1,88 @@
+<header class="header-container">
+  <div class="header-area">
+    <h1 class="header-logo">
+      <a href="javascript:void(0)">
+        <img src="../../assets/images/Logo.svg" alt="insight plus" />
+      </a>
+    </h1>
+    <div class="header-gnb">
+      <nav class="gnb-container">
+        <div class="gnb-area-left">
+          <ul class="gnb-list-box">
+            <li class="gnb-list @@if(gnbDepth01 === 'insightFind') {selected}">
+              <a href="javascript:void(0)" class="depth01"><span>인사이트 자료찾기</span></a>
+              <div class="sub-depth-area">
+                <ul class="sub-list-box">
+                  <li class="sub-list">
+                    <a href="javascript:void(0)" class="depth02"><span>뉴스레터</span></a>
+                  </li>
+                  <li class="sub-list">
+                    <!-- 20231215 수정 -->
+                    <a href="javascript:void(0)" class="depth02"><span>보고서/자료</span></a>
+                  </li>
+                  <li class="sub-list">
+                    <a href="javascript:void(0)" class="depth02"><span>CXI 대시보드</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-list @@if(gnbDepth01 === 'insightDerive') {selected}">
+              <a href="javascript:void(0)" class="depth01"><span>인사이트 도출하기</span></a>
+              <div class="sub-depth-area">
+                <ul class="sub-list-box">
+                  <li class="sub-list">
+                    <a href="javascript:void(0)" class="depth02"><span>고객조사 학습</span></a>
+                  </li>
+                  <li class="sub-list">
+                    <a href="javascript:void(0)" class="depth02 has-external-link"><span>고객조사 의뢰</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="gnb-list @@if(gnbDepth01 === 'archiveLSR') {selected}">
+              <a href="javascript:void(0)" class="depth01"><span>LSR 아카이브</span></a>
+            </li>
+          </ul>
+        </div>
+        <div class="gnb-area-right">
+          <ul class="gnb-list-box">
+            <li class="gnb-list @@if(gnbDepth01 === 'aboutLSR') {selected}">
+              <!-- 20231031 디자인 개편 수정 : 메뉴명 변경 -->
+              <!-- 20240123 수정 -->
+              <a href="javascript:void(0)" class="depth01"><span>LSR 소개</span></a>
+            </li>
+            <li class="gnb-list @@if(gnbDepth01 === 'Board') {selected}">
+              <a href="javascript:void(0)" class="depth01"><span>공지사항</span></a>
+              <div class="sub-depth-area">
+                <ul class="sub-list-box">
+                  <li class="sub-list">
+                    <a href="javascript:void(0)" class="depth02"><span>공지사항</span></a>
+                  </li>
+                  <li class="sub-list">
+                    <!-- 20231215 수정 -->
+                    <a href="javascript:void(0)" class="depth02"><span>FAQ/Q&A</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="header-search">
+      <button type="button" class="btn-search" title="통합 검색창 열기"></button>
+      <div class="header-search-inner">
+        <!-- prettier-ignore -->
+        @@include("totalSearchContainer.html", {
+          "detail" : "",
+          "normal" : true,
+          "tag" : true
+        })
+        <!-- 20231031 디자인 개편 수정 : 위치 이동 -->
+        <button type="button" class="btn-close" title="통합 검색창 닫기"></button>
+      </div>
+      <div class="dim"></div>
+    </div>
+  </div>
+  <div class="bg"></div>
+</header>

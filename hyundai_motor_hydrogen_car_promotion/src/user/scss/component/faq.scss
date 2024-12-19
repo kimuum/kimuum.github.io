@@ -1,0 +1,310 @@
+.faq-container {
+  padding-bottom: 24rem;
+}
+.faq-tab-content-container {
+  @extend .max-width-1416;
+}
+
+
+.faq-tab-button-box {
+  padding: 0 2rem;
+  margin: 14.5rem 0 10rem;
+  ul {
+    @include flex(row, center, center);
+    li {
+      @include flex(column, center, center);
+      width: 26rem;
+      height: 13rem;
+      margin-right: 3rem;
+      cursor: pointer;
+      &:hover {
+        span,
+        h2 {
+          color: #000;
+        }
+      }
+      &.active {
+        span,
+        h2 {
+          color: #000;
+          &::after {
+            display: block;
+          }
+        }
+      }
+      &:before {
+        content: '';
+        display: block;
+        margin-bottom: 3.5rem;
+      }
+      span,
+      h2 {
+        position: relative;
+        @include fontfamhead;
+        @include font(1.8rem, 500, #888, normal);
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          left: 0;
+          bottom: -1rem;
+          width: 100%;
+          height: 0.2rem;
+          background-color: $color-00AAD2;
+        }
+      }
+      
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    
+
+  }
+  .faq-01 {
+    &::before {
+      width: 6.6rem;
+      height: 6.6rem;
+      background: image('faq/hyundai-ecv-faqs-category-fuel-cell-system-pc.svg') no-repeat center / 6.6rem;
+    }
+  }
+  .faq-02 {
+    &::before {
+      width: 5.8rem;
+      height: 6.5rem;
+      background: image('faq/hyundai-ecv-faqs-category-hydrogen-technology-pc.svg') no-repeat center / 5.8rem 6.5rem;
+    }
+  }
+
+  .faq-03 {
+    &::before {
+      width: 5.1rem;
+      height: 6rem;
+      background: image('faq/hyundai-ecv-faqs-category-renewable-energy-pc.svg') no-repeat center / 5.1rem 6rem;
+    }
+  }
+}
+
+.faq-accordion-list {
+  &.active {
+    .faq-accordion-title {
+      .faq-accordion-plus {
+        background: image('faq/faq_minus.svg') no-repeat center;
+      }
+    }
+    .faq-accordion-content {
+      display: block;
+    }
+  }
+}
+.faq-accordion-title {
+  position: relative;
+  @include flex(row, flex-start, center);
+  padding: 2.3rem 0;
+  width: 100%;
+  border-bottom: 0.1rem solid #ddd;
+  text-align: left;
+
+  .num, span, h3 {
+    @include font(2.2rem, 500, $color-444444, 2.4rem);
+    letter-spacing: -0.022rem;
+  }
+  .num {
+    margin-right: 1rem;
+    color: $color-00AAD2;
+  }
+  .faq-accordion-plus {
+    position: absolute;
+    right: 0;
+    top: 2.3rem;
+    background: image('faq/faq_plus.svg') no-repeat center;
+    width: 2.4rem;
+    height: 2.4rem;
+    transition: all 0.2s;
+  }
+}
+.faq-accordion-content {
+  display: none;
+  .faq-content-box {
+    padding: 2.5rem;
+    background-color: $color-F6F3F2;
+    .text-box {
+      p {
+        @include font(1.6rem, 400, $color-444444, 2.4rem);
+        strong {
+          font-weight: 700;
+        }
+      }
+      .num-text-box {
+        position: relative;
+        span {
+          @include font(1.6rem, 400, $color-444444, 2.4rem);
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        p {
+          padding-left: 2rem;
+        }
+      }
+      & +.text-box {
+        margin-top: 2rem;
+      }
+    }
+    .image-box {
+      width: 48rem;
+      height: 27rem;
+      img { 
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .divide-box {
+      margin-top: 4rem;
+      @include flex(row, flex-start, flex-start);
+      &:only-child {
+        margin-top: 0;
+      }
+    }
+    .faq-link {
+      text-decoration-line: underline;
+      &.bold {
+        text-decoration: none;
+        font-weight: 700;
+      }
+      &:hover {
+        color: #00AAD2;
+      }
+    }
+    .right-box {
+      margin-left: 2rem;
+    }
+
+  }
+}
+
+@media #{$tablet} {}
+
+@media #{$mobile_large} {
+  .faq-container {
+    padding-bottom: 16rem;
+  }
+  .faq-tab-button-box {
+    margin: 8rem 0 6rem;
+    ul {
+      li {
+        justify-content: flex-start;
+        flex: 1;
+        width: 11rem;
+        height: auto;
+        margin-right: 0.3rem;
+        &::before {
+          width: 5.6rem !important;
+          height: 5.6rem !important;
+          margin-bottom: 1rem;
+        }
+        span,
+        h2 {
+          max-width: 7.8rem;
+          font-size: 1.4rem;
+          text-align: center;
+          &::after {
+            bottom: -0.6rem;
+          }
+        }
+      }
+    }
+    .faq-01 {
+      &::before {
+        background-size: 4.2rem;
+      }
+    }
+    .faq-02 {
+      &::before {
+        background-size: 3.8rem 4.2rem;
+      }
+    }
+    .faq-03 {
+      &::before {
+        background-size: 3.4rem 4rem;
+      }
+    }
+  }
+  .faq-accordion-list {
+    &.active {
+      .faq-accordion-title {
+        .faq-accordion-plus {
+          background: image('faq/faq_minus_mo.svg') no-repeat center;
+        }
+      }
+    }
+  }
+
+  .faq-accordion-title {
+    padding: 2rem 0;
+    align-items: flex-start;
+
+    .num,
+    span,
+    h3 {
+      font-size: 1.8rem;
+      line-height: normal;
+    }
+    span,
+    h3 {
+      width: calc(100% - 4.8rem);
+      max-width: 27rem;
+    }
+    .faq-accordion-plus {
+      top: 2rem;
+      right: 1.7rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      background: image('faq/faq_plus_mo.svg') no-repeat center;
+    }
+  }
+  .faq-accordion-content {
+    .faq-content-box {
+      padding: 2rem 1.5rem;
+      .text-box {
+        p {
+          br:not(.use-all) {
+            display: none;
+          }
+        }
+        .num-text-box {
+          p {
+            padding-left: 2rem;
+          }
+        }
+        & +.text-box {
+          margin-top: 1rem;
+        }
+      }
+      .left-box {
+        width: 100%;
+      }
+      .image-box {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-bottom: 56.25%;
+        img { 
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include imgbox;
+        }
+      }
+      .divide-box {
+        margin-top: 2rem;
+        flex-direction: column
+      }
+      .right-box {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
+  
+    }
+  }
+}

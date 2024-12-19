@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("head.html")
+
+  <body>
+    <!-- hidden input -->
+    <input type="hidden" id="menu" iweb-data="in" />
+    <input type="hidden" id="back_btn_type" value="#" />
+    <input type="hidden" id="dt_cardNm" iweb-data="out" />
+    <input type="hidden" id="dt_accntNo" iweb-data="out" />
+    <input type="hidden" id="timezone_type" value="" iweb-data="out" />
+    <!-- 보이는 ARS / callgate iweb-data 값 세팅 정리 (2019.07.09) start -->
+    <input type="hidden" id="vars_type" iweb-data="in" />
+    <input type="hidden" id="run_time" iweb-data="out" />
+    <input type="hidden" id="cur_vars_type" iweb-data="out" />
+    <!-- 보이는 ARS / callgate  값 세팅 정리 (2019.07.09) end -->
+
+    <div class="wrapper sub-page">
+      <!-- 콜게이트 상단  -->
+      <!-- prettier-ignore -->
+      @@include("timeNoticeSub.html")
+      <main class="main">
+        <!-- prettier-ignore -->
+        @@include("header.html", {
+          "headerType" : "default",
+          "title": '카드자동납부 신청/변경',
+          "isBtn" : true
+        })
+        <div class="content-container">
+          <section class="content-area">
+            <div class="sub-content-container">
+              <div class="column-title-icon-box ic-auto-payment-card">
+                <p class="info-title">
+                  <span id="cardNm"></span><br />
+                  <span id="accntNo" class="highlight"></span>
+                </p>
+                <p class="info-title-desc">
+                  신청하신 카드는 기존에 다른 휴대폰 번호에 제휴할인이 제공되고 있습니다.<br />
+                  제휴할인을 기존대로 유지하시려면 ‘유지’, 지금 신청하시는 휴대폰 번호로 변경하시려면 ‘변경’ 버튼을 눌러주세요.<br />
+                  다른 카드로 자동납부 신청을 하시려면 이전 화면으로 가서 다른 카드 번호를 입력해 주세요.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="service-button-box">
+          <div class="button-box">
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), 'RT', 'menu');">유지</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:sendRepPageData($(this).text().trim(), 'C', 'menu');">변경</button>
+          </div>
+        </div>
+        <!-- 콜게이트 종료버튼 -->
+        <!-- prettier-ignore -->
+        @@include("footerBtnEnd.html")
+        <!-- //콜게이트 종료버튼 -->
+      </main>
+    </div>
+
+    <!-- prettier-ignore -->
+    @@include("commonJs.html")
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        'use strict';
+
+        var vars_type = getUrlParameter('cur_vars_type'); //vars t-app callgate 분기 변수
+        if (vars_type == '' || vars_type == undefined) vars_type = 'C';
+
+        //setCss('/{version}/', vars_type);
+        //**
+        //callgate일 때 와 t-app일 때의 html화면 처리
+        var attrList = [
+          {
+            elemName: 'typeTitle',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove', //attribute가 아닌 아예 제거
+          },
+          {
+            elemName: 'footer',
+            varsType: 'C',
+            attrType: 'style',
+            value: 'display: block',
+            else: 'remove',
+          },
+        ];
+        setAttribute(vars_type, attrList);
+
+        initUIComponents(true); // 초기화 function
+
+        var ui = common.ui;
+
+        //좌/우측 swipe이벤트
+        common.PubSub.on({
+          'swipe.left': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+          },
+          'swipe.right': function (e, data) {
+            console.log(data.direction, data.startX, data.distanceX);
+            btn_back();
+          },
+        });
+
+        // 자동납부 신청결과 처리
+        try {
+          // 은행명
+          var dt_cardNm = getUrlParameter('dt_cardNm');
+
+          /*@build-time*/ dt_cardNm = '신한카드';
+
+          document.getElementById('cardNm').innerText = dt_cardNm;
+
+          // 계좌번호
+          var dt_accntNo = getUrlParameter('dt_accntNo');
+
+          /*@build-time*/ dt_accntNo = '912-321-3141-1551';
+
+          document.getElementById('accntNo').innerText = dt_accntNo; // dt_accntNo.replace(/(?<=.{4})./gi, "*");
+
+          /* 	            var dt_result = ""; // 문구				
+				var success_yn = getUrlParameter("success_yn"); // 등록 성공 여부
+				var success_date = getUrlParameter("success_date"); // 자동납부인출(승인)예정일
+				var fail_str = getUrlParameter("fail_str");
+				// 성공/실패에 따른 문구 및 버튼 처리
+	    	    if(success_yn == 'y' || success_yn == 'Y'){
+	    			dt_result = "신청하신 카드는 기존에 다른 이동전화 번호에 제휴 할인이 제공되고 있습니다. 지금 신청하시는 이동전화 번호로 제휴할인을 변경하시려면 확인 버튼을 눌러주세요. 다른 카드로 변경하시려면 취소 버튼을 누르신 후 다른 카드번호를 입력해주세요.";	
+	    	  	}else{
+	    	  		dt_result = "<font color=\"red\">" + fail_str + "</font>";
+	    	  	} */
+
+          //	    	    document.getElementById('result').innerHTML = dt_result;
+
+          // 1: 주간, 0: 야간, 9:점심시간
+          /*                 var timezone_type = getUrlParameter("timezone_type");
+				// 점심시간 
+				if (timezone_type == "1" && !(success_yn == 'y' || success_yn == 'Y')){
+					$("#btn_type2").show();
+					$("#agent_menu").css("display","none");
+				
+				}else{
+					$("#btn_type1").show();
+				}
+	 */
+        } catch (e) {}
+
+        // 주야간 상담원 처리 전 숫자값 재정렬
+        //  common.removeDisplayCell();
+      });
+    </script>
+  </body>
+</html>

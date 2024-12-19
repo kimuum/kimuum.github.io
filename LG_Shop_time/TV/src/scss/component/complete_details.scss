@@ -1,0 +1,79 @@
+// complete details
+.details-area {
+  @include flex(column, flex-start, center);
+  margin-bottom: 66px;
+  .details-top {
+    @include flex(column, flex-start, center);
+    margin-top: 24px;
+    margin-bottom: 37px;
+  }
+  .details-middle {
+    position: relative;
+    width: 1032px;
+    padding: 40px 60px 78px;
+    margin-bottom: 47px;
+    background-color: $color-white;
+    border-radius: 12px;
+    border: solid 1px $color-gray-dadada;
+    &.bg-img01 {
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        right: 0;
+        bottom: 0;
+        width: 360px;
+        height: 120px;
+        background: asset-image('img_checkout_complete.png') no-repeat right bottom;
+      }
+    }
+  }
+  .main-title-box {
+    @include font(48px, bold, $color-gray-222222, 1.17);
+    text-align: center;
+  }
+  .child-flex-none {
+    button {
+      width: 324px;
+      font-size: 24px;
+    }
+  }
+}
+
+//table
+.fake-table-box {
+  position: relative;
+  z-index: 2;
+  .fake-tr {
+    @include flex(row, flex-start, flex-start);
+    padding: 15px 0;
+  }
+  .fake-th {
+    flex-shrink: 0;
+    flex-basis: 300px;
+    @include font(24px, normal, $color-gray-808080, 1.33);
+    text-transform: uppercase;
+  }
+  .fake-td {
+    @include font(24px, normal, $color-gray-555555, 1.33);
+  }
+  .fake-footer {
+    padding-top: 15px;
+    margin-top: 15px;
+    border-top: dashed 1px $color-gray-dadada;
+    .fake-th {
+      @include font(30px, normal, $color-gray-222222, 23px);
+    }
+    .fake-td {
+      width: 100%;
+      @include font(24px, normal, $color-gray-222222, 23px);
+    }
+  }
+  .total-price {
+    @include font(36px, bold, $color-c70850, 33px);
+  }
+  .notice-box-product {
+    padding: 10px 12px;
+    margin-top: -9px;
+  }
+}

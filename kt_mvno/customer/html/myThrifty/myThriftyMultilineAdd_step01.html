@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "본인인증 | 회선 추가 | 마이알뜰폰", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : myThriftyMultilineAdd -->
+    <div class="wrap detail myThriftyMultilineAdd">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-6', 'thirdMenu': 'active-2' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>회선 추가</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>회선 추가</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_myThrifty.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <div class="contentInner">
+            <div class="applySteps">
+              <strong class="title">본인인증</strong>
+              <ul class="steps">
+                <li class="unit current" aria-current="step"><span class="message">현재 단계</span>1</li>
+                <li class="unit">2</li>
+                <li class="unit">3</li>
+              </ul>
+            </div>
+            <div class="formContainer">
+              <form action="#" method="post">
+                <fieldset class="formInner">
+                  <legend class="formTitleArea">
+                    <strong class="formTitle">알뜰폰 회선을 추가(인증)합니다.</strong>
+                  </legend>
+                  <div class="formItemArea">
+                    <div class="dataInner">
+                      <div class="field fieldInput">
+                        <label for="input-id-01" class="fieldLabel">이름</label>
+                        <div class="fieldForm">
+                          <div class="input">
+                            <input type="text" id="input-id-01" placeholder="이름을 입력해주세요." value="임태*" readonly />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="dataInner typeCertification">
+                      <div class="dataTitleArea">
+                        <strong class="dataTitle">본인인증 방법 선택</strong>
+                      </div>
+                      <!-- 본인 인증 : 기본값 -->
+                      <div class="certificationWrap">
+                        <!-- prettier-ignore -->
+                        @@loop('../component/certification_button.html',[
+                        {
+                          "buttonClass": "btnCertifyPass",
+                          "buttonBlank": true,
+                          "buttonContent": "PASS 인증",
+                        },
+                      ])
+                      </div>
+                      <!-- //본인 인증 : 기본값 -->
+                      <!-- 본인 인증 : 인증 완료 -->
+                      <div class="certificationWrap" style="display: none">
+                        <!-- prettier-ignore -->
+                        @@loop('../component/certification_button.html',[
+                        {
+                          "buttonClass": "btnCertifyPass active",
+                          "buttonBlank": false,
+                          "buttonContent": "PASS 인증 완료",
+                        },
+                      ])
+                      </div>
+                      <!-- //본인 인증 : 인증 완료 -->
+                      <!-- 본인 인증 : 서비스 점검 -->
+                      <div class="certificationWrap" style="display: none">
+                        <!-- prettier-ignore -->
+                        @@loop('../component/certification_button.html',[
+                        {
+                          "buttonClass": "btnNotService",
+                          "buttonBlank": false,
+                          "buttonContent": "PASS 인증",
+                        },
+                      ])
+                      </div>
+                      <!-- //본인 인증 : 서비스 점검 -->
+
+                      <div class="field fieldData typeCaution">
+                        <ul class="fieldArea">
+                          <li class="fieldValue">본인인증 시 제공되는 정보는 해당 인증기관에서 직접 수집하므로 인증 이외의 용도로 이용 또는 저장되지 않습니다.</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- prettier-ignore -->
+                    @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion02 active",
+                    "checkId" : "agreeCheck02",
+                    "fieldLabel" : "개인정보 수집・이용 동의 (필수)",
+                    "hiddenText" : "개인정보 수집/이용 동의 닫기",
+                    "type" : "terms",
+                    "termsSrc" : "terms_container_type_02"
+                  })
+                    <!-- //개인정보 수집/이용 동의 (필수) -->
+                  </div>
+                </fieldset>
+              </form>
+
+              <div class="buttonArea">
+                <!-- 버튼 활성화 시 클래스 btnPrimary -->
+                <button type="button" class="btn btnDim" aria-disabled="true"><span>다음</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+
+        // 2차 : 개인정보 수집/이용 동의 (필수)
+        accordionControl('.agreementAccordion02 .btnOpenAgree', '.agreementAccordion02 .fieldData', '.agreementAccordion02', '개인정보 수집/이용 동의 열기', '개인정보 수집/이용 동의 닫기');
+      });
+    </script>
+  </body>
+</html>

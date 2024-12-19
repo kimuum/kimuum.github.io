@@ -1,0 +1,196 @@
+/* home > event top banner */
+.topBannerContainer{
+  position: relative;
+  width: 100%;
+  height: 5.6rem;
+  background-color: $white;
+  .topBannerArea {
+    width: 100%;
+    height: 100%;
+  }
+  // link
+  .topBannerLink {
+    position: absolute;
+    display: block;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: calc(100% - 1rem);
+    max-width: 100rem;
+    // background-color: rgba(255,0,0,0.5);
+    transform: translate(-50%, -50%);
+  }
+  // images
+  .topBannerImages {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .moImage {
+      display: none;
+    }
+  }
+  // close 
+  .closeBanner {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5rem;
+    z-index: 1;
+    width: 4rem;
+    height: calc(100% - 1.6rem);
+    margin: 0.8rem 0;
+    background: image('common/btn_popup_close.svg') no-repeat center / 2.4rem auto;
+  }
+}
+.irText {
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: transparent;
+  text-align: center;
+}
+// swiper
+.topBannerList {
+  height: 100%;
+  .bannerbuttons {
+    position: absolute;
+    @include flex(row,space-between, center);
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    width: 73.874%; // 1230px
+    height: 100%;
+    transform: translateX(-50%);
+  }
+  [class*= bannerBtn] {
+    overflow: hidden;
+    position: relative;
+    width: 4rem;
+    height: calc(100% - 1.6rem);
+    margin: 0.8rem 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.swiper-button-disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+  }
+  .bannerBtnPrev {
+    background-image: image('common/arrow_swiper_black_left.svg');
+  }
+  .bannerBtnNext {
+    background-image: image('common/arrow_swiper_black_right.svg');
+  }
+}
+
+/* layout */
+@media screen and (min-width: 1024px) {
+  .openedTopBanner {
+    &.wrap {
+      padding-top: 20.1rem;
+      &.main {
+        padding-top: 13.7rem;
+      }
+      &[class*=homeJoinStep], &.homeSearchResult {
+        padding-top: 13.7rem;
+      }
+      // &.detail {}
+    }
+    .pageTitleContainer {
+      top: 13.7rem;
+    }
+  }
+}
+// 타블렛, 모바일
+@media screen and (max-width: 1024px) {
+  .openedTopBanner {
+    &.wrap {
+      &.main {
+        padding-top: 10.1rem;
+      }
+      &.homeLogin {
+        padding-top: 0;
+        .topBannerContainer {
+          display: none;
+        }
+      }
+    }
+  }
+  .topBannerContainer {
+    height: 3.9rem;
+  }
+}
+
+@media (#{$pc-middle}) {
+  /* home > event top banner */
+  .topBannerContainer {
+    .topBannerLink {
+      width: 70%;
+    }
+    .closeBanner {
+      right: 0.8rem;
+    }
+  }
+  .topBannerList {
+    .bannerbuttons {
+      width: 84%;
+    }
+  }
+}
+
+@media (#{$tablet}) {
+  /* home > event top banner */
+  .topBannerContainer {
+    .closeBanner {
+      height: 100%;
+      margin: 0;
+    }
+    .topBannerLink {
+      width: 75%;
+    }
+  }
+  .topBannerList {
+    .bannerbuttons {
+      width: 77%;
+    }
+    [class*=bannerBtn] {
+      width: 3.5rem;
+      height: 100%;
+      margin: 0;
+      background-size: 7px auto;
+    }
+  }
+}
+
+@media (#{$foldMax}) {
+  /* home > event top banner */
+  .topBannerContainer {
+    .topBannerImages {
+      .moImage {
+        display: block;
+      }
+      .pcImage {
+        display: none;
+      }
+    }
+    .topBannerLink {
+      width: 60%;
+    }
+  }
+  .topBannerList {
+    [class*=bannerBtn] {
+      &::before {
+        mask-size: 0.7rem auto;
+        -webkit-mask-size: 0.7rem auto;
+      }
+    }
+  }
+}

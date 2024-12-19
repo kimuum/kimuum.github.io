@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "입력 정보 안내", "titleHidden": "" })
+  <body>
+    <div class="popup popupUsimDirectInputInfo show" id="popupUsimDirectInputInfo" role="dialog" aria-labelledby="popupTitleUsimDirectInputInfo" aria-modal="true">
+      <div class="dim"></div>
+      <div class="popupContainer">
+        <div class="popupTop">
+          <strong class="popupTitle" id="popupTitle-01">입력 정보 안내</strong>
+          <button type="button" class="btnClose" onclick="togglePopup('', 'popupUsimDirectInputInfo')">
+            <span>Close</span>
+          </button>
+        </div>
+        <div class="popupMiddle">
+          <div class="popupContent">
+            로그인 정보와 주문자 정보가 다릅니다. <br />
+            이대로 진행하시겠습니까?
+          </div>
+          <div class="buttonArea">
+            <button type="button" class="btn btnSecondary"><span>취소</span></button>
+            <button type="button" class="btn btnPrimary"><span>확인</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //popup End -->
+  </body>
+</html>

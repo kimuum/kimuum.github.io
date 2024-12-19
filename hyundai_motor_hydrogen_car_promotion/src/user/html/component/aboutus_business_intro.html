@@ -1,0 +1,22 @@
+<div class="about-intro-container @@if(youtubeBtn){youtube-container}">
+  <div class="intro-left">
+    <div class="intro-image-area">
+      <div class="image-box">
+        <img width="766px" height="424px" class="lazy" data-src="../../assets/images/@@imageSrc" alt="@@alt" />
+      </div>
+    </div>
+  </div>
+  <div class="intro-right">
+    <div class="intro-text-area">
+      <span class="sub-strong-label">@@label</span>
+      <h3 class="sub-title-level-5">@@title</h3>
+      <p class="sub-text-level-2">@@text</p>
+      @@if(explanation) {
+      <p class="sub-text-desc icon-explain">@@explanation<span class="color-primary">*</span></p>
+      }
+      @@if(youtubeBtn) {
+      <button type="button" class="link-to-video" data-path="@@youtubeBtn.path" data-index="@@youtubeBtn.index"><span>View related video</span></button>
+      }
+    </div>
+  </div>
+</div>

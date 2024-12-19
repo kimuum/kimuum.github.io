@@ -1,0 +1,104 @@
+//청구요금 확인 , 실시간 사용요금 조회
+.charge-check {
+  .charge-tab-content {
+    margin-top: 2rem;
+  }
+  .charge-info-box {
+    @include flex(row, space-between, center);
+    min-height: 5.2rem;
+    border-bottom: 1px solid $bg-gray-04;
+    @include font(1.6rem, 400, $black, normal);
+    letter-spacing: -0.032rem;
+    &.detail {
+      display: block;
+      padding: 0;
+      &.active {
+        dt {
+          &::after {
+            transform: rotate(0);
+          }
+        }
+        dd {
+          display: block;
+        }
+      }
+      dt {
+        @include flex(row, space-between, center);
+        height: 5.2rem;
+        padding: 1.4rem 0;
+        &:after {
+          content: '';
+          display: inline-block;
+          width: 1.8rem;
+          height: 1.8rem;
+          background: image('icon/btn_input_arrow_up_bg_nor.png') no-repeat center / contain;
+          transform: rotate(180deg);
+        }
+      }
+      dd {
+        display: none;
+      }
+    }
+    .total-price {
+      @include font(1.6rem, 400, $black, normal);
+      em {
+        color: $primary;
+        font-size: 2.4rem;
+        font-weight: 700;
+      }
+    }
+  }
+  .charge-detail-box {
+    padding-top: 0.6rem;
+    li {
+      margin-bottom: 1.4rem;
+      .list {
+        @include flex(row, flex-start, center);
+        margin-bottom: 1.4rem;
+        @include font(1.4rem, 400, rgba($black, 0.7), normal);
+        letter-spacing: -0.07rem;
+        &.child {
+          .sum {
+            color: rgba($black, 0.7);
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      .list:not(.first-list) {
+        position: relative;
+      }
+      .first-list {
+        color: $black;
+        & ~ p {
+          padding-left: 1.4rem;
+        }
+        & + p {
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            background: image('icon/ic_sub_text.png') no-repeat center / contain;
+          }
+        }
+      }
+      .sum {
+        color: $black;
+        font-weight: 500;
+        margin-left: auto;
+      }
+      .vat {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $primary;
+      }
+    }
+  }
+  .alert-text-box {
+    margin-top: 1rem;
+  }
+}

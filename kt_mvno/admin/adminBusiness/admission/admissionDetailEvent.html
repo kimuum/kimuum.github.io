@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "이벤트 상세" , "headProjectName": "| 승인 관리 | 마이알뜰폰 사업자" })
+
+  <body>
+    <div class="skip">
+      <a href="#contentWrapper ">본문 바로가기</a>
+      <a href="#lnbContainer">주메뉴 바로 가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유 클래스 : admissionDetailEvent -->
+    <div class="wrap admissionDetailEvent">
+      <!-- prettier-ignore -->
+      @@include('headerBiz.html')
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer">
+        <!-- prettier-ignore -->
+        @@include('lnbBiz.html')
+        <!-- //END lnbWrapper -->
+
+        <!-- 본문 시작 -->
+        <div class="contentWrapper" id="contentWrapper">
+          <div class="pageTitleContainer">
+            <div class="pageTitleContent">
+              <div class="titleAreaLeft">
+                <h1 class="title">
+                  <a href="javascript:void(0);" class="titleArrow" title="이전으로"></a>
+                  <span>이벤트 상세</span>
+                </h1>
+              </div>
+              <div class="titleAreaRight">
+                <div class="breadcrumbContainer">
+                  <a href="javascript:void(0);" class="breadcrumb iconBgHome" title="홈으로"></a>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>승인관리</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 승인</span></a>
+                  </div>
+                  <div class="breadcrumb">
+                    <a href="javascript:void(0);" class="breadcrumbTitle"><span>이벤트 상세</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //END pageTitleContainer -->
+
+          <div class="contentArea">
+            <!-- 상세 -->
+            <div class="detailContainer">
+              <div class="detailTop">
+                <div class="buttonArea">
+                  <button type="button" class="btn btnLineGray"><span>반려</span></button>
+                  <button type="button" class="btn"><span>1차 승인</span></button>
+                </div>
+              </div>
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">사업자 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        사업자 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">사업자 상호</th>
+                          <td colspan="3">(주)케이티엠모바일</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">브랜드명</th>
+                          <td>KT엠모바일</td>
+                          <th scope="row">승인요청자(사번)</th>
+                          <td>임*일(12345678)</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">승인 요청 정보</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        승인 요청 정보
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">변경 전</th>
+                          <td>
+                            <div class="chargeDetail">
+                              <div class="title">이벤트 기간 : 2022-02-01 ~ 2022-02-28</div>
+                              <div class="viewDetail">
+                                <a href="#" class="linkUnderline">상세보기</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">변경 후</th>
+                          <td>
+                            <div class="chargeDetail">
+                              <div class="title">2022-02-01 ~ 2022-03-01</div>
+                              <div class="viewDetail">
+                                <a href="#" class="linkUnderline">상세보기</a>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+              <div class="contents">
+                <div class="contentTop">
+                  <div class="topLeft">
+                    <h2 class="topTitle">관리자 승인</h2>
+                  </div>
+                </div>
+                <div class="contentMiddle">
+                  <div class="tableContainer">
+                    <table>
+                      <caption>
+                        관리자 승인
+                      </caption>
+                      <colgroup>
+                        <col style="width: 148px" />
+                        <col />
+                      </colgroup>
+                      <tbody>
+                        <tr>
+                          <th scope="row">승인 요청 상태</th>
+                          <td>승인 대기</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">승인 요청일</th>
+                          <td>2022-01-02 11:48</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">승인 처리일</th>
+                          <td>-</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">처리자</th>
+                          <td>-</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <!-- // Contents -->
+            </div>
+            <!-- //END detailContainer -->
+          </div>
+          <!-- //END contentArea -->
+        </div>
+        <!-- //END contentWrapper -->
+      </main>
+      <!-- //END contentContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {});
+    </script>
+  </body>
+</html>

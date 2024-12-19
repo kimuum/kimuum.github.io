@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("adminHead.html",{
+    "title" : "LGE 스마트코티지 | Admin"
+  })
+
+  <body>
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include("lnb.html", {
+        "title" : "Header",
+        "userinfo" : {
+          "username" : "김경진",
+          "userid"   : "SCZZang"
+        },
+        "list" : [
+          {
+            "text"     : "홈",
+            "className": "home",
+            "property" : "",
+          },
+          {
+            "text"     : "신청 내역 조회",
+            "className": "search",
+            "property" : "",
+          },
+          {
+            "text"     : "고객 관리",
+            "className": "customer",
+            "property" : "",
+          },
+          {
+            "text"     : "홈페이지 관리",
+            "className": "homepage",
+            "property" : "active",
+          },
+        ],
+      })
+      <main id="main" class="main-container">
+        <div class="main-area">
+          <section class="section-container">
+            <div class="section-area">
+              <div class="section-middle">
+                <div class="admin-tab-box">
+                  <ul class="admin-tabs">
+                    <!-- .active : 활성화 시 사용 -->
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">상품 정보 관리</span>
+                        <span class="num">+999,999</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab active">
+                      <button type="button" class="btn-tab">
+                        <span class="title">FAQ 관리</span>
+                        <span class="num">3</span>
+                      </button>
+                    </li>
+                    <li class="admin-tab">
+                      <button type="button" class="btn-tab">
+                        <span class="title">토목 건설 업체 정보 관리</span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="admin-field-container">
+                  <div class="admin-field-area">
+                    <div class="admin-field-left">
+                      <!-- prettier-ignore -->
+                      @@include("adminDropdown.html", {
+                        "className" : "",
+                        "property" : "",
+                        "text" : "전체기간",
+                        "list" : [ 
+                          {
+                            "className" : "active",
+                            "list" : "전체기간",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1주",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "2주",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "3달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "6달",
+                          },
+                          {
+                            "className" : "",
+                            "list" : "1년",
+                          },
+                        ]
+                      })
+                      <div class="admin-sum-box">
+                        <span>총</span>
+                        <span>349건</span>
+                      </div>
+                    </div>
+                    <div class="admin-field-right">
+                      <div class="button-box">
+                        <button type="button" class="btn-refresh">
+                          <span>검색초기화</span>
+                        </button>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("adminSearchInput.html", {
+                        "className" : "",
+                        "id" : "search-01",
+                        "label" : "검색",
+                        "placeholder" : "질문, 답변 대상 검색",
+                        "value" : "",
+                        "property" : "",
+                      })
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="section-middle">
+                <!-- prettier-ignore -->
+                @@include("adminTable.html", 
+                {
+                  "title" : "FAQ 관리",
+                  "thead" : [
+                    {
+                      "text" : "No.", 
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "7%",
+                    },
+                    {
+                      "text" : "분류",
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "10%",
+                    },
+                    {
+                      "text" : "질문",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "답변",
+                      "isSort" : false,
+                      "align" : "left",
+                      "widthSize" : "auto",
+                    },
+                    {
+                      "text" : "답변여부",
+                      "isSort" : false,
+                      "align" : "center",
+                      "widthSize" : "7%",
+                    },
+                    {
+                      "text" : "생성/수정일",
+                      "isSort" : true,
+                      "align" : "left",
+                      "widthSize" : "15%",
+                    },
+                  ],
+                  
+                  "tbody" : [
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "1",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "가격",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "너무 비싸다고 뭐라 하지 마세요",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "Y",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 13:00",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                    [
+                      {
+                        "type" : "text",
+                        "text" : "2",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "가격",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오",
+                        "align": "left",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "Y",
+                        "align": "center",
+                        "property": null,
+                      },
+                      {
+                        "type" : "text",
+                        "text" : "2024.12.31 13:00",
+                        "align": "left",
+                        "property": null,
+                      },
+                    ],
+                  ],
+                }
+              )
+                <!-- prettier-ignore -->
+                @@include("adminPagination.html", {
+                  "newButton" : true,
+                })
+              </div>
+            </div>
+          </section>
+          <section class="section-container">
+            <div class="section-area">
+              <div class="section-top">
+                <div class="section-title-box">
+                  <h2 class="section-title">너무 비싸다고 뭐라 하지 마세요의 상세정보</h2>
+                </div>
+              </div>
+              <div class="section-middle">
+                <div class="admin-detail-box">
+                  <div class="admin-detail-top">
+                    <fieldset class="fieldset-box">
+                      <div class="field-container">
+                        <div class="field-area">
+                          <div class="field-box">
+                            <div class="field-label-box">
+                              <span class="field-label">분류</span>
+                            </div>
+                            <!-- prettier-ignore -->
+                            @@include("adminDropdown.html", {
+                              "className" : "",
+                              "property" : "",
+                              "text" : "가격",
+                              "list" : [ 
+                                {
+                                  "className" : "active",
+                                  "list" : "가격",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "상품",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "진행과정",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "기타",
+                                },
+                              ]
+                            })
+                          </div>
+                        </div>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("adminInput.html", {
+                        "className" : "",
+                        "labelHide" : "",
+                        "id" : "",
+                        "label" : "질문",
+                        "type" : "text",
+                        "placeholder" : "질문",
+                        "value" : "",
+                        "property" : "",
+                        "pwEyeHide" : "",
+                        "desc" : "", 
+                      })
+                      <!-- prettier-ignore -->
+                      @@include("adminTextarea.html", {
+                        "className" : "",
+                        "id" : "",
+                        "labelHide" : false,
+                        "label" : "답변",
+                        "placeholder" : "답변",
+                        "property" : "",
+                      })
+                      <!-- prettier-ignore -->
+                      @@include("adminFileInput.html", {
+                        "className" : "",
+                        "id" : "file-01",
+                        "labelHide" : false,
+                        "label" : "첨부파일",
+                        "placeholder" : "",
+                        "property" : "",
+                      })
+                      <div class="field-container">
+                        <div class="field-area">
+                          <div class="field-box">
+                            <div class="field-label-box"><label class="field-label"></label></div>
+                            <div class="field-file-upload-box">
+                              <div class="field-file-left">
+                                <a
+                                  href="https://smtc2.runesys.com/api/v1/comm/img?fileNm=98a13246-291e-4edc-a34a-43913599cb69.png&amp;oriName=%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7+2024-07-10+%EC%98%A4%EC%A0%84+10.54.03.png"
+                                  download="대체 텍스트가 필수인가요?????????????"
+                                  >https://smtc2.runesys.com/api/v1/comm/img?fileNm=98a13246-291e-4edc-a34a-43913599cb69.png&amp;oriName=%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7+2024-07-10+%EC%98%A4%EC%A0%84+10.54.03.png</a
+                                >
+                              </div>
+                              <div class="field-file-right">
+                                <button type="button" class="btn-file-remove"><span>삭제</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field-container">
+                        <div class="field-area">
+                          <div class="field-box">
+                            <div class="field-label-box"><label class="field-label"></label></div>
+                            <div class="field-file-upload-box">
+                              <div class="field-file-left">
+                                <a
+                                  href="https://smtc2.runesys.com/api/v1/comm/img?fileNm=98a13246-291e-4edc-a34a-43913599cb69.png&amp;oriName=%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7+2024-07-10+%EC%98%A4%EC%A0%84+10.54.03.png"
+                                  download="대체 텍스트가 필수인가요?????????????"
+                                  >https://smtc2.runesys.com/api/v1/comm/img?fileNm=98a13246-291e-4edc-a34a-43913599cb69.png&amp;oriName=%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7+2024-07-10+%EC%98%A4%EC%A0%84+10.54.03.png</a
+                                >
+                              </div>
+                              <div class="field-file-right">
+                                <button type="button" class="btn-file-remove"><span>삭제</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- prettier-ignore -->
+                      @@include("adminTextarea.html", {
+                        "className" : "size-s",
+                        "id" : "",
+                        "labelHide" : false,
+                        "label" : "대체 텍스트",
+                        "placeholder" : "대체 텍스트",
+                        "property" : "",
+                      })
+                      <div class="field-container">
+                        <div class="field-area">
+                          <div class="field-box">
+                            <div class="field-label-box">
+                              <span class="field-label">사용여부</span>
+                            </div>
+                            <!-- prettier-ignore -->
+                            @@include("adminDropdown.html", {
+                              "className" : "",
+                              "property" : "",
+                              "text" : "Y",
+                              "list" : [ 
+                                {
+                                  "className" : "active",
+                                  "list" : "Y",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "N",
+                                },
+                              ]
+                            })
+                          </div>
+                        </div>
+                      </div>
+                      <div class="field-container">
+                        <div class="field-area">
+                          <div class="field-box">
+                            <div class="field-label-box">
+                              <span class="field-label">홈화면 노출</span>
+                            </div>
+                            <!-- prettier-ignore -->
+                            @@include("adminDropdown.html", {
+                              "className" : "",
+                              "property" : "",
+                              "text" : "Y",
+                              "list" : [ 
+                                {
+                                  "className" : "active",
+                                  "list" : "Y",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "N",
+                                },
+                              ]
+                            })
+                            <!-- prettier-ignore -->
+                            @@include("adminDropdown.html", {
+                              "className" : "",
+                              "property" : "",
+                              "text" : "선택",
+                              "list" : [ 
+                                {
+                                  "className" : "",
+                                  "list" : "1",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "2",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "3",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "4",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "5",
+                                },
+                                {
+                                  "className" : "",
+                                  "list" : "6",
+                                },
+                              ]
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div class="admin-detail-bottom">
+                    <div class="button-box">
+                      <!-- prettier-ignore -->
+                      @@include("button.html", {
+                        "className" : "btn-save",
+                        "btnColor" : "btn-primary",
+                        "btnSize" : "small",
+                        "property" : "",
+                        "btnText" : "정보 저장",
+                        "iconClass" : "",
+                        "iconLeft" : "",
+                      })
+                      <!-- prettier-ignore -->
+                      @@include("button.html", {
+                        "className" : "btn-delete",
+                        "btnColor" : "btn-secondary",
+                        "btnSize" : "small",
+                        "property" : "disabled",
+                        "btnText" : "삭제",
+                        "iconClass" : "",
+                        "iconLeft" : "",
+                      })
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

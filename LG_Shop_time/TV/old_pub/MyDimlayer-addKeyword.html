@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="">
+  <head>
+    <title>Mypage pop | LG E SHOPPING | TV APP</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+
+    <meta name="Resource-type" content="Document" />
+
+    <link rel="stylesheet" href="assets/css/cmn.css" /><!-- 기존 공통 css(유지) -->
+    <link rel="stylesheet" href="assets/css/style.css" /><!-- 공통 css 추가(신규) -->
+    <link rel="stylesheet" href="assets/css/customLnb.css" /><!-- 기존 화면 lnb 맞춤(신규) -->
+    <link rel="stylesheet" href="assets/css/myLayout.css" /><!-- 기존 css(유지) -->
+    <link rel="stylesheet" href="assets/css/popDim.css" /><!-- 기존 css(유지) -->
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script><!-- 기존 css(유지) -->
+  </head>
+
+  <body>
+    <!-- 신규 div 규칙 적용 시작 -->
+    <div class="wrapper">
+      <div class="main">
+    <!-- //신규 div 규칙 적용 끝 -->
+
+        <!-- 기존 header 영역 삭제 -->
+        <!-- 신규 lnb 추가 시작 -->
+        <!-- 
+          [lnb 클래스 목록]
+          lnb 활성화 : .lnb.active
+          lnb-list 선택 된 상태 : .lnb-list.selected
+          lnb-list 포커스(2depth 있을 때) : .lnb-list.focused.has-arrow
+          lnb-list 포커스(2depth 없을 때) : .lnb-list.focused
+          sub-list 선택 된 상태 : .sub-list.selected
+          sub-list 포커스 : .sub-list.focused
+          partners-list 선택 된 상태 : .partners-list.selected
+          partners-list 포커스 : .partners-list.focused
+        -->
+        <nav class="lnb">
+          <div class="lnb-logo">
+            <a href="#" title="LG Shop Time" class="logo"></a>
+          </div>
+          <ul class="lnb-list-box">
+            <li class="lnb-list selected">
+              <a href="javascript:;" class="menu-link-category">
+                <span>Categories</span>
+              </a>
+              <div class="sub-depth-area" style="display: none;">
+                <ul class="sub-depth-list-box" style="transform: translateY(0px);"><!-- 메뉴 스크롤 이동 시 translateY값으로 조절 -->
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Kitchen & Food</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Home</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Garden and Ou...</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Electronics</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Fashion</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Beauty</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Jewelry</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Accessories</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Health & Fitness</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Crafts & Sewing</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Entertainment</a>
+                    </div>
+                  </li>
+                  <li class="sub-list ">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">Clearance</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-my">
+                <span>My Page</span>
+              </a>
+              <div class="sub-depth-area" style="display: none;">
+                <ul class="sub-depth-list-box" style="transform: translateY(0px);"><!-- 메뉴 스크롤 이동 시 translateY값으로 조절 -->
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">MY INFO</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">MY ORDERS</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">FAVORITES</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">RECENTLY VIEWED</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">REMINDERS</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">SUPPORT</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">TERMS OF SERVICE</a>
+                    </div>
+                  </li>
+                  <li class="sub-list">
+                    <div class="sub-inner">
+                      <a href="javascript:;" class="sub-menu">SETTINGS</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-search">
+                <span>Search</span>
+              </a>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-home">
+                <span>Home</span>
+              </a>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-partner">
+                <span>Featured Brands</span>
+              </a>
+              <div class="sub-partners-area" style="display: none;">
+                <ul class="sub-partners-list-box" style="transform: translateY(0px);"><!-- 메뉴 스크롤 이동 시 translateY값으로 조절 -->
+                  <li class="partners-list">
+                    <div class="badge-new"><span>new</span></div>
+                    <img src="./images/ic_tab_partners_amazonlive.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <div class="badge-new"><span>new</span></div>
+                    <img src="./images/ic_tab_partners_hsn.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <div class="badge-new"><span>new</span></div>
+                    <img src="./images/ic_tab_partners_shoplc.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_netflix.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_qvc.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_otto.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_aliexpress.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_costsco.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_bsetbuy.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_talkshoplive.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_ozon.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_disney.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_hbo.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_yandex.png" alt="">
+                  </li>
+                  <li class="partners-list">
+                    <img src="./images/ic_tab_partners_fanatics.png" alt="">
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-sale">
+                <span>On sale</span>
+              </a>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-deal">
+                <span>Trending Now</span>
+              </a>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-hotpick">
+                <span>Hot picks</span>
+              </a>
+            </li>
+            <li class="lnb-list">
+              <a href="javascript:;" class="menu-link-cart">
+                <span class="count">3</span>
+                <span>Cart</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- //신규 lnb 추가 끝 -->
+
+
+
+    <div class="dimLyr-cont" style="display: block">
+      <div class="dimBg" style="display: block"></div>
+      <div id="addKeyword" style="display: block" class="pop-layer style-max">
+        <div class="pop-container">
+          <div class="pop-header">Add Keyword</div>
+          <div class="pop-conts">
+            <!--content //-->
+
+            <div class="cont-body">
+              <div class="cont-scroll">
+                <!-- content button -->
+                <div class="area-btnCont">
+                  <!-- 참고: 컨텐츠 노출 최대 12개 -->
+                  <!-- 참고: 컨텐츠 노출 최하  6개 -->
+                  <button class="btn-cont single">
+                    <span>1.ABCDEFGHIJKLMNOPQRST</span>
+                  </button>
+                  <!-- 예제1. 최대 20자 -->
+                  <button class="btn-cont single">
+                    <span>2.ABCDEFGHIJKLMNOPQRSTUVWXYZ</span>
+                  </button>
+                  <!-- 예제2. 최대 20자 넘치면 말줄임표 (사용여부확인필요) -->
+                  <button class="btn-cont single pin">
+                    <span
+                      >3.View all AlertsView all AlertsView all</span
+                    ></button
+                  ><!-- 예제3. 띄어쓰기 이전까지만 문자열 구분 -->
+                  <button class="btn-cont single pin focused_keyword">
+                    <span>4.View</span>
+                  </button>
+                  <button class="btn-cont single focused_keyword">
+                    <span>5.View all</span>
+                  </button>
+                  <button class="btn-cont single"><span>6.View </span></button>
+                  <button class="btn-cont single">
+                    <span>7.View all</span>
+                  </button>
+                  <button class="btn-cont single focused_keyword">
+                    <span>8.Upcoming </span>
+                  </button>
+                  <button class="btn-cont single"><span>9.View </span></button>
+                  <button class="btn-cont single">
+                    <span>10.Upcoming Alerts</span>
+                  </button>
+                  <button class="btn-cont single">
+                    <span>11.Not View Not View</span>
+                  </button>
+                  <!-- 예제4. 영역(area-btnCont)을 벗어나면 안보임  -->
+                </div>
+                <!-- // content button -->
+              </div>
+            </div>
+
+            <div class="cont-pager">
+              <button class="pagerBox arr-prev">
+                <span class="arr-l"></span>
+              </button>
+              <button class="pagerBox arr-next pin">
+                <span class="arr-r"></span>
+              </button>
+            </div>
+            <div class="areaBtn btn-2col">
+              <button class="btn-more btn-cancel b-motion">Cancel</button>
+              <button class="btn-more b-motion">OK</button>
+            </div>
+
+            <!--// content-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script>
+      $(".btn-go").click(function () {
+        var $href = $(this).attr("href");
+        layer_popup($href);
+      });
+    </script>
+
+    <!-- // 레이어팝업 끝 -->
+      </div>
+    </div>
+  </body>
+</html>

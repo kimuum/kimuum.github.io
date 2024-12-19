@@ -1,0 +1,99 @@
+<div class="filter-view-container">
+  <div class="filter-view-area">
+    <div class="filter-view-top">
+      <div class="filter-view-top-left">
+        <div class="total-count-box">
+          <span>
+            총
+            <!-- prettier-ignore -->
+            @@if(!empty) {
+            <em class="count">5</em>
+            }
+            <!-- prettier-ignore -->
+            @@if(empty) {
+            <em class="count">0</em>
+            } 건
+          </span>
+        </div>
+      </div>
+      <!-- prettier-ignore -->
+      @@if(button) {
+      <div class="filter-view-top-right">
+        <div class="button-box">
+          <!-- prettier-ignore -->
+          @@for(var i = 0; i < button.length; i++) {
+            @@include("../../components/button.html", `+(JSON.stringify(button[i]))+`)
+          }
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="filter-view-middle">
+      <!-- prettier-ignore -->
+      @@if(table) {
+        @@for(var i = 0; i < table.length; i++) {
+          @@include("../../components/table.html", `+(JSON.stringify(table[i]))+`)
+        }
+      }
+      <!-- prettier-ignore -->
+      @@if(accordion) {
+        @@for(var i = 0; i < accordion.length; i++) {
+          @@include("../../components/accordion.html", `+(JSON.stringify(accordion[i]))+`)
+        }
+      }
+
+      <!-- prettier-ignore -->
+      @@if(empty) {
+      <div class="empty-box">
+        @@if(!empty.button) {
+        <span class="icon"></span>
+        }
+        <p>@@empty.text</p>
+        @@if(empty.button) {
+        <!-- prettier-ignore -->
+        @@for(var i = 0; i < empty.button.length; i++) {
+            @@include("../../components/button.html", `+(JSON.stringify(empty.button[i]))+`)
+          }
+        }
+      </div>
+      }
+    </div>
+
+    @@if(!empty) {
+    <div class="filter-view-bottom">
+      <div class="field field-dropdown">
+        <div class="field-form">
+          <!-- prettier-ignore -->
+          @@include("../../components/dropdown.html",{
+              "title" : "",
+              "size" : "small",
+              "value" : "5개씩 보기",
+              "placeholder" : "",
+              "option" : [ 
+                {
+                  "text" : "5개씩 보기",
+                  "property" : "active",
+                },
+                {
+                  "text" : "10개씩 보기",
+                  "property" : "",
+                },
+                {
+                  "text" : "15개씩 보기",
+                  "property" : "",
+                },
+              ],
+              "disabled" : false,
+            })
+        </div>
+      </div>
+
+      <div class="pagination-box">
+        <!-- prettier-ignore -->
+        @@include("../../components/pagination.html")
+      </div>
+    </div>
+    }
+  </div>
+</div>

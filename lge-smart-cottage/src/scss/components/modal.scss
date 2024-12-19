@@ -1,0 +1,518 @@
+.modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  &.active {
+    z-index: 9999;
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.3);
+  }
+
+  &.modal-small {
+    .modal-container {
+      width: 42rem;
+      padding: 5rem 4rem;
+    }
+    .modal-middle {
+      &.scroll {
+        max-height: 40.2rem;
+      }
+    }
+  }
+
+  &.modal-medium {
+    .modal-container {
+      width: 54rem;
+    }
+  }
+
+  &.modal-large {
+    .modal-container {
+      width: 90rem;
+    }
+    .modal-middle {
+      &.scroll {
+        max-height: 44.2rem;
+      }
+    }
+  }
+
+  &.modal-payment {
+    .modal-container {
+      padding: 5rem 0;
+      .modal-top {
+        margin-bottom: 0;
+      }
+
+      .modal-title-box {
+        padding: 0 24px;
+      }
+
+      .modal-button-box {
+        padding: 0 24px;
+      }
+    }
+  }
+
+  &.modal-compare {
+    .modal-container {
+      width: 119.4rem;
+    }
+
+    .compare-list-box {
+      display: flex;
+      margin: 0;
+    }
+
+    .compare-list {
+      flex: 1;
+      padding-right: 1rem;
+
+      .compare-top {
+        padding-bottom: 2rem;
+        .img-box {
+          width: 100%;
+        }
+
+        .desc-box {
+          margin-top: 2rem;
+          .floor {
+            font-size: 1.5rem;
+            line-height: 2rem;
+          }
+
+          .title {
+            margin-top: 0.2rem;
+            font-size: 2.4rem;
+            line-height: 3.6rem;
+          }
+
+          .desc {
+            margin-top: 0.4rem;
+            font-size: 2.2rem;
+            line-height: 2.8rem;
+          }
+        }
+      }
+
+      .compare-middle {
+        padding: 2rem 0 0;
+      }
+
+      .con-list-box {
+        .sub-title {
+          font-size: 1.5rem;
+          line-height: 2rem;
+        }
+
+        .sub-desc {
+          font-size: 1.8rem;
+          line-height: 2.8rem;
+        }
+
+        .con-list {
+          + * {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-close {
+    display: block;
+    z-index: 13;
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    background: asset-image('icon/ic_pc_co_close.svg') no-repeat center / contain;
+  }
+  .modal-container {
+    z-index: 12;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 5rem 6rem;
+    border-radius: 3rem;
+    background-color: $white;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-top {
+    margin-bottom: 3.4rem;
+    & + .modal-middle {
+      padding-top: 0;
+      text-align: unset;
+    }
+    .modal-title-box {
+      .title {
+        display: inline-block;
+        font-size: 2.4rem;
+        font-weight: 500;
+        line-height: 3.6rem;
+      }
+    }
+  }
+
+  .modal-middle {
+    padding-top: 1rem;
+    text-align: center;
+    word-break: keep-all;
+    &.scroll {
+      overflow-y: auto;
+      max-height: 39.2rem;
+    }
+    &::-webkit-scrollbar {
+      width: 0.6rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 0.3rem;
+      background-color: $gray-100;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+  }
+
+  .modal-content-box {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $gray-500;
+    line-height: 2.8rem;
+
+    .field-container {
+      + .field-container {
+        margin-top: 1rem;
+      }
+    }
+
+    .text {
+      .alert {
+        color: $alert;
+      }
+    }
+
+    .text-box {
+      .sub-text {
+        margin-top: 1.6rem;
+        @include font(lm, $gray-400);
+      }
+    }
+  }
+  .modal-bottom {
+    margin-top: 4rem;
+    .modal-button-box {
+      @include flex(row, center, center);
+      gap: 1rem;
+    }
+    .btn {
+      gap: 0.6rem;
+      width: 100%;
+      padding: 1.2rem 2rem;
+      border-radius: 1.2rem;
+      font-size: 1.6rem;
+      font-weight: 500;
+      line-height: 2.4rem;
+    }
+  }
+
+  .modal-tab-box {
+    .modal-tab-btn-box {
+      @include flex(row, flex-start, center);
+      .modal-tab-btn {
+        flex: 1;
+        padding: 1rem 0 0.4rem;
+        border-bottom: 0.3rem solid rgba($black, 0.1);
+        @include font(ll, $gray-200);
+        &.active {
+          font-weight: 700;
+          color: $black;
+          border-bottom-color: $accent;
+        }
+      }
+    }
+
+    .modal-tab-content-box {
+      overflow-y: auto;
+      max-height: 26.9rem;
+
+      .content-list-box {
+        @include flex(row, space-between, center);
+        padding: 0.3rem 0;
+        .name-box {
+          width: 50%;
+          .name {
+            @include font(bs, $black);
+            word-break: break-all;
+          }
+        }
+        .data-box {
+          width: 50%;
+          @include flex(row, flex-end, center);
+          .data {
+            @include flex(row, flex-start, center);
+            @include font(bs, $gray-400);
+            text-align: right;
+            + .data {
+              &::before {
+                content: '';
+                display: block;
+                width: 1px;
+                height: 1.6rem;
+                margin: 0 0.8rem;
+                background-color: $gray-100;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .modal-tab-desc-box {
+    margin-top: 2rem;
+    .desc {
+      @include flex(row, flex-start, flex-start);
+      @include font(lm, $gray-500);
+      &::before {
+        content: '';
+        display: block;
+        min-width: 2rem;
+        height: 2rem;
+        margin-right: 0.6rem;
+        background: asset-image('icon/ic_pc_co_alert.svg') no-repeat center / 2rem;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .modal {
+    width: 100%;
+    max-width: unset;
+    &.active {
+      margin: auto 0 0;
+    }
+    &.modal-small,
+    &.modal-medium,
+    &.modal-large {
+      .modal-container {
+        width: 100%;
+        padding: 2.4rem 2rem 2rem;
+      }
+    }
+
+    &.modal-payment {
+      bottom: 0;
+
+      .modal-middle {
+        overflow-y: auto;
+        max-height: 40vh;
+      }
+    }
+
+    &.modal-compare {
+      .modal-container {
+        width: 100%;
+      }
+
+      .modal-top {
+        padding-top: 1.2rem;
+      }
+
+      .compare-list {
+        flex: 0 0 15.6rem;
+        min-width: 1px;
+        padding-right: 0.6rem;
+        .compare-top {
+          padding-bottom: 1.6rem;
+          .desc-box {
+            margin-top: 1rem;
+            .floor {
+              font-size: 1.3rem;
+              font-weight: 700;
+              line-height: 2rem;
+            }
+
+            .title {
+              margin-top: 0;
+              font-size: 2rem;
+              line-height: 2.6rem;
+            }
+
+            .desc {
+              margin-top: 0.8rem;
+              font-size: 1.6rem;
+              line-height: 2.2rem;
+            }
+          }
+        }
+
+        .compare-middle {
+          padding-top: 1.6rem;
+        }
+
+        .con-list-box {
+          .sub-title {
+            font-size: 1.3rem;
+            line-height: 2rem;
+          }
+
+          .sub-desc {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
+
+          .con-list {
+            + * {
+              margin-top: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-close {
+      top: 2.6rem;
+      right: 2rem;
+      width: 2rem;
+      height: 2rem;
+      background: asset-image('icon/ic_mo_co_close.svg') no-repeat center / contain;
+    }
+
+    .modal-container {
+      top: auto;
+      bottom: 0;
+      left: auto;
+      border-radius: 3rem 3rem 0 0;
+      transform: none;
+    }
+
+    .modal-top {
+      margin-bottom: 2rem;
+      .modal-title-box {
+        .title {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+        }
+      }
+    }
+
+    .modal-middle {
+      padding-top: 3.2rem;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: initial;
+        background-color: initial;
+      }
+      &::-webkit-scrollbar-track {
+        background-color: initial;
+      }
+    }
+
+    .modal-content-box {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+
+      .text-box {
+        .sub-text {
+          margin-top: 1.4rem;
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+      }
+    }
+
+    .modal-bottom {
+      margin-top: 2.8rem;
+      .btn {
+        padding: 1.6rem 1rem;
+      }
+    }
+
+    .modal-tab-box {
+      .modal-tab-btn-box {
+        .modal-tab-btn {
+          padding: 0.6rem 0 0.4rem;
+          border-bottom-width: 0.2rem;
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+        }
+      }
+
+      .modal-tab-content-box {
+        max-height: 15.6rem;
+        padding: 1rem;
+        .content-list-box {
+          padding: 0;
+          + .content-list-box {
+            margin-top: 0.8rem;
+          }
+
+          .name-box {
+            .name {
+              font-size: 1.4rem;
+              line-height: 2rem;
+            }
+          }
+
+          .data-box {
+            .data {
+              font-size: 1.4rem;
+              line-height: 2rem;
+
+              + .data {
+                &::before {
+                  height: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .modal-tab-desc-box {
+      margin-top: 1rem;
+      padding: 1.6rem 1.2rem;
+      border-radius: 1.6rem;
+      background-color: $tan-100;
+      .desc {
+        font-size: 1.3rem;
+        line-height: 2rem;
+        &::before {
+          width: 1.6rem;
+          min-width: 1.6rem;
+          height: 1.6rem;
+          background-size: 1.6rem;
+          margin-right: 0.4rem;
+        }
+      }
+    }
+  }
+}

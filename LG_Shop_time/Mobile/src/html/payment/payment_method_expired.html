@@ -1,0 +1,51 @@
+@@include("head.html",{
+	"title" : "SELECT A PAYMENT METHOD" 
+})
+<!-- v1.80 화면 삭제 -->
+<body>
+  <div class="wrapper">
+    @@include('header.html',{
+      "btnPrev": true,
+      "menuBox" : false,
+      "title" : "SELECT A PAYMENT METHOD",
+      "iconShare" : true
+    })
+
+    <!-- Main -->
+    <main class="main">
+      <div class="payment-container">
+        <div class="drag-area">
+          <div class="drag-item-box payment-area">
+            <div class="radio">
+              <input type="radio" id="radio-01" name="radio">
+              <label for="radio-01" class="radio-icon"></label>
+            </div>
+            <div class="payment-box bg-card">
+              <div class="payment-notice">Expired</div>
+              <div class="payment-name">Mastercard</div>
+              <div class="payment-number">****-****-****-9911</div>
+            </div>
+          </div>
+          <div class="drag-icon-box">
+            <button type="button" class="btn-delete icon-trash" title="Delete this payment method"></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Main -->
+
+    <!-- fixed bottom -->
+    <div class="fix-bottom-container">
+      <div class="button-box">
+        <button type="button" class="btn" disabled><span>USE THIS PAYMENT</span></button>
+      </div>
+    </div>
+    <!-- //fixed bottom -->
+  </div>
+
+
+  <script>
+    
+  </script>
+</body>
+</html>

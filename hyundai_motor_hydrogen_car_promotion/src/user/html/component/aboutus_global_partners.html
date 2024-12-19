@@ -1,0 +1,35 @@
+<section class="global-partners-container">
+  <div class="partner-area">
+    <div class="partner-top">
+      <div class="title-area">
+        <h2 class="title">Our Global <br />Partners & Clients</h2>
+      </div>
+    </div>
+
+    <div class="partner-middle">
+      <div class="partner-list-box">
+        @@for(var i = 0; i < partners.length; i++) {
+        <div class="partner-box">
+          <div class="box-inner">
+            <div class="image-box">
+              <img width="170px" height="80px" class="lazy" data-src="../../assets/images/aboutus/`+partners[i].logo+`" alt="`+partners[i].name+`" />
+            </div>
+            <div class="name-box">
+              <span>`+partners[i].name+`</span>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="partner-bottom">
+      <div class="more-button-box use-mo">
+        <button type="button" class="btn btn-more">More</button>
+      </div>
+      <div class="desc-box">
+        <p>All logos and brand names are the property of the respective companies.</p>
+      </div>
+    </div>
+  </div>
+</section>

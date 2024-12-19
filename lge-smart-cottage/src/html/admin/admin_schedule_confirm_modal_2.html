@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include("adminHead.html",{
+    "title" : "LGE 스마트코티지 | Admin"
+  })
+
+  <body>
+    <div class="wrapper">
+      <main id="main" class="main-container">
+        <div class="main-area">
+          <!-- prettier-ignore -->
+          @@include("button.html", {
+            "className" : "btn-modal",
+            "btnColor" : "btn-primary",
+            "btnSize" : "large",
+            "property" : "data-modal='modal-03'",
+            "btnText" : "Open",
+            "iconClass" : "",
+            "iconLeft" : "",
+          })
+        </div>
+      </main>
+    </div>
+
+    <dialog id="modal-03" class="modal modal-large">
+      <button type="button" class="btn-close"></button>
+      <div class="modal-container">
+        <div class="modal-area">
+          <div class="modal-middle">
+            <div class="modal-content-box">
+              <div class="schedule-container">
+                <div class="schedule-area">
+                  <div class="schedule-left">
+                    <!-- prettier-ignore -->
+                    @@include("datepicker.html", {
+                      "topBtn" : true
+                    })
+                  </div>
+                  <div class="schedule-right">
+                    <div class="schedule-list-box">
+                      <div class="schedule-list-top">
+                        <div class="date-box">6월 12일 수요일</div>
+                        <div class="count-box">
+                          <span>총&nbsp;</span>
+                          <span class="count">2건</span>
+                        </div>
+                      </div>
+                      <div class="schedule-list-bottom">
+                        <ul class="schedule-lists">
+                          <li class="schedule-list">
+                            <!-- 현장실사 일정 없는 경우 -->
+                            <div class="schedule-list-null">
+                              <span class="text">해당일은 현장실사 일정이 없습니다.</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-bottom">
+            <div class="modal-button-box">
+              <!-- prettier-ignore -->
+              @@include("button.html", {
+                "className" : "",
+                "btnColor" : "btn-primary",
+                "btnSize" : "",
+                "property" : "",
+                "btnText" : "일정 확정",
+                "iconClass" : "",
+                "iconLeft" : "",
+              })
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>
+  </body>
+</html>

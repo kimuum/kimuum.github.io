@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "마이알뜰폰 소개 | 서비스", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <div class="wrap serviceIntroduce">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-1', 'thirdMenu': '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <h2>마이알뜰폰 소개</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>마이알뜰폰 소개</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_service.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea">
+          <section class="introContainer">
+            <div class="contentInner">
+              <div class="introTitleWrap">
+                <h3 class="introTitle">KT 알뜰폰에 대한 모든 것,<strong class="bold">마이알뜰폰</strong></h3>
+                <p class="titleDesc">
+                  마이알뜰폰에서 기본적인 고객 지원부터,<br />
+                  바로유심배송받고, 데이터쉐어링 신청과 셀프개통(Usim, eSim)도 간편하게!
+                </p>
+                <!-- [운영] 20221209 안내 문구 수정 -->
+              </div>
+              <div class="introVisualWrap">
+                <div class="imgWrap"><img src="../../assets/images/customer/img_customer_intro.svg" alt="" /></div>
+                <div class="speechBallonLeft">
+                  <strong>KT 알뜰폰을 사용 중이라면?</strong>
+                  <p>
+                    사용량 확인부터 명세서 관리까지 한번에!<br />
+                    콜센터에 전화하는 불편없이 마이알뜰폰으로 간편하게
+                  </p>
+                </div>
+                <div class="speechBallonRight">
+                  <strong>KT 알뜰폰이 처음이라면?</strong>
+                  <p>
+                    KT망 알뜰폰 요금제를 모두 모아 한번에!<br />
+                    원하는 요금제 비교부터 가입까지 간편하게.
+                  </p>
+                </div>
+              </div>
+              <div class="character06"></div>
+            </div>
+          </section>
+          <!-- // Intro Container -->
+
+          <!-- [운영] 20221209 마이알뜰폰 소개 수정  -->
+          <section class="introduceContainer">
+            <div class="contentInner">
+              <div class="titleArea">
+                <h3 class="titleBox"><span class="bold">마이알뜰폰</span><span>주요서비스 소개</span></h3>
+              </div>
+
+              <div class="contentArea">
+                <div class="contentWrap">
+                  <!-- [운영] 20221213 수정 -->
+                  <div class="contentBox">
+                    <div class="iconBox">
+                      <img src="../../assets/images/service/introduce_icon_01.svg" alt="" />
+                    </div>
+                    <div class="descBox">
+                      <strong class="label">내가 가입한 알뜰폰 정보가 궁금하다면?</strong>
+                      <p class="text">
+                        회선 등록하고,
+                        <a href="https://ktmyr.com/fe/mypage/cont/mypageContView.do" class="underline">가입정보</a>, <a href="https://ktmyr.com/fe/mypage/used/mypageUsedView.do" class="underline">사용량 조회</a>, <a href="https://ktmyr.com/fe/mypage/mypage/pay/payment.do" class="underline">요금 조회</a> 메뉴에서<br />
+                        바로 체크할 수 있어요.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="contentBox">
+                    <div class="iconBox">
+                      <img src="../../assets/images/service/introduce_icon_02.svg" alt="" />
+                    </div>
+                    <div class="descBox">
+                      <strong class="label">더 좋은 요금제를 찾고 싶다면?</strong>
+                      <p class="text">
+                        <a href="https://ktmyr.com/fe/mypage/ppl/pplList.do" class="underline">요금제</a>
+                        메뉴에서 원하는 조건의 요금제를 검색하고,<br />
+                        요금제의 제공량과 가격 등을 쉽게 비교해볼 수 있어요.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="contentBox">
+                    <div class="iconBox">
+                      <img src="../../assets/images/service/introduce_icon_03.svg" alt="" />
+                    </div>
+                    <div class="descBox">
+                      <strong class="label">신규 개통을 하고 싶다면?</strong>
+                      <p class="text">
+                        비대면으로 마이알뜰폰 홈페이지에서<br />
+                        <a href="https://ktmyr.com/fe/service/usim/dlvr/usimDlvrMain.do" class="underline">바로배송유심</a> 주문하고 <a href="https://ktmyr.com/fe/service/usim/usimSelfMain.do" class="underline">셀프개통</a> 까지 할 수 있어요.<br />
+                        <!-- [운영] 20221214 링크 추가 -->
+                      </p>
+                      <!-- [운영] 20221214 오픈안내 삭제 -->
+                    </div>
+                  </div>
+
+                  <div class="contentBox">
+                    <div class="iconBox">
+                      <img src="../../assets/images/service/introduce_icon_04.svg" alt="" />
+                    </div>
+                    <div class="descBox">
+                      <strong class="label">늦은 밤 휴대폰을 잃어버렸다면?</strong>
+                      <p class="text">
+                        고객 센터에 전화하지 않고도, 마이알뜰폰 홈페이지에서<br />
+                        <a href="https://ktmyr.com/fe/mypage/mypage/sos/loseDclaList.do" class="underline">분실신고</a> 또는 <a href="https://ktmyr.com/fe/mypage/mypage/sos/tstopList.do" class="underline">일시정지</a> 신청을 진행할 수 있어요.
+                      </p>
+                    </div>
+                  </div>
+                  <!-- //[운영] 20221213 수정 -->
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- // Introduce Container -->
+
+          <!-- 영상가이드 -->
+          <div class="videoContainer">
+            <div class="contentInner">
+              <!-- [운영] 20221212 영상 타이틀 수정 -->
+              <ul class="videoList" aria-label="이용가이드 영상">
+                <li class="videoWrap">
+                  <div class="videoTitle">
+                    <strong>바로배송유심 주문 가이드</strong>
+                  </div>
+                  <div class="videoArea">
+                    <div class="videoBox">
+                      <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/czp32-G63Y8" title="바로배송유심 주문 가이드 YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </li>
+                <!-- //바로배송유심 주문 가이드 -->
+
+                <li class="videoWrap">
+                  <div class="videoTitle">
+                    <strong>셀프개통(USIM) 가이드</strong>
+                  </div>
+                  <div class="videoArea">
+                    <div class="videoBox">
+                      <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/TSxev-zsUBk" title="셀프개통(USIM) 가이드 YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </li>
+                <!-- //셀프개통(USIM) 가이드 -->
+
+                <li class="videoWrap">
+                  <div class="videoTitle">
+                    <strong>셀프개통(eSIM) 가이드</strong>
+                  </div>
+                  <div class="videoArea">
+                    <div class="videoBox">
+                      <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/Xx9zVuX92fo" title="셀프개통(eSIM) 가이드 YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </li>
+                <!-- //셀프개통(eSIM) 가이드 -->
+
+                <li class="videoWrap">
+                  <div class="videoTitle">
+                    <strong>데이터쉐어링 결합 신청 가이드</strong>
+                  </div>
+                  <div class="videoArea">
+                    <div class="videoBox">
+                      <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/ySAS-v-Sm14" title="데이터쉐어링 결합 신청 가이드 YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                  </div>
+                </li>
+                <!-- //데이터쉐어링 결합 신청 가이드 -->
+
+                <!-- 자막 추가 해야 하는 경우 사용
+              <li class="videoWrap">
+                <div class="videoTitle">
+                  <strong></strong>
+                </div>
+                <div class="videoArea">
+                  <div class="videoBox">
+                    <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/uU4LAaVDQ50?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                </div>
+                
+                <div class="videoSubiContainer">
+                  <div class="videosubMiddle">
+                    <div class="videosubArea">
+                      <div class="videosubTitle">
+                        <button type="button" class="videosubBtn" aria-expanded="false"><span>자막 숨기기</span></button>
+                      </div>
+                      <div class="videosubContent">
+                        자막 내용
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li> -->
+              </ul>
+              <!-- //[운영] 20221212 영상 타이틀 수정 -->
+            </div>
+          </div>
+          <!-- // Video Container -->
+
+          <div class="introduceContainer">
+            <div class="contentInner">
+              <div class="bannerArea">
+                <div class="headingBox">
+                  <span>스마트폰으로 QR 찍고</span>
+                  <span class="bold">마이알뜰폰 홈페이지 방문하기</span>
+                </div>
+                <a href="https://ktmyr.com/">ktmyr.com</a>
+                <div class="qrBox">
+                  <img src="../../assets/images/service/qrcode.png" alt="마이알뜰폰 홈페이지방문 QR코드, ktmyr.com 링크로 이용 가능" />
+                </div>
+              </div>
+              <!-- // Banner Area -->
+
+              <div class="linkArea">
+                <a href="https://apps.apple.com/kr/app/kt-%EB%A7%88%EC%9D%B4%EC%95%8C%EB%9C%B0%ED%8F%B0/id1639287515" class="link" title="새 창 열림" target="_blank">앱스토어 다운로드</a>
+                <a href="https://play.google.com/store/apps/details?id=com.kt.ktmyr" class="link" title="새 창 열림" target="_blank">플레이스토어 다운로드</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 마이알뜰폰 홍보 -->
+          <div class="videoContainer">
+            <div class="videoWrap">
+              <div class="videoArea">
+                <div class="videoBox">
+                  <!-- 20220629 - 양성훈 : 기존 <video> 태그 삭제 후 아래 youtube iframe 넣기 -->
+                  <iframe class="youtube" width="100%" height="auto" src="https://www.youtube.com/embed/W7TpX_t-zvk?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+              </div>
+              <!--
+              <div class="videoSubiContainer">
+                <div class="videosubMiddle">
+                  <div class="videosubArea">
+                    <div class="videosubTitle">
+                      <button type="button" class="videosubBtn" aria-expanded="false"><span>자막 숨기기</span></button>
+                    </div>
+                    <div class="videosubContent" tabindex="-1">
+                      안녕하세요.
+                      <br><br>
+                      KT 마이알뜰폰입니다
+                      <br><br>
+                      이번 영상은 KT 마이알뜰폰의 첫 번째 이용가이드 영상입니다.
+                      <br>
+                      그럼 지금부터 출발!!
+                      <br><br>
+                      .
+                      .
+                      .
+                      .
+                      .
+                      안녕하세요.
+                      <br><br>
+                      KT 마이알뜰폰입니다
+                      <br><br>
+                      이번 영상은 KT 마이알뜰폰의 첫 번째 이용가이드 영상입니다.
+                      <br>
+                      그럼 지금부터 출발!!
+                      <br><br>
+                      .
+                      .
+                      .
+                      .
+                      .
+                      안녕하세요.
+                      <br><br>
+                      KT 마이알뜰폰입니다
+                      <br><br>
+                      이번 영상은 KT 마이알뜰폰의 첫 번째 이용가이드 영상입니다.
+                      <br>
+                      그럼 지금부터 출발!!
+                      <br><br>
+                      .
+                      .
+                      .
+                      .
+                      .
+                      안녕하세요.
+                      <br><br>
+                      KT 마이알뜰폰입니다
+                      <br><br>
+                      이번 영상은 KT 마이알뜰폰의 첫 번째 이용가이드 영상입니다.
+                      <br>
+                      그럼 지금부터 출발!!
+                      <br><br>
+                      .
+                      .
+                      .
+                      .
+                      .
+                    </div>
+                  </div>
+                </div>
+              </div>
+              -->
+            </div>
+          </div>
+          <!-- // Video Container -->
+          <!-- //[운영] 20221209 마이알뜰폰 소개 수정  -->
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script>
+      $(document).ready(function () {
+        commonEvent();
+      });
+    </script>
+  </body>
+</html>

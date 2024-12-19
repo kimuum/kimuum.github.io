@@ -1,0 +1,28 @@
+@@include('head.html', {
+'title': 'full_player_media'
+})
+
+<body>
+  <div class="wrapper">
+    <!-- 영상 : landscape media -->
+    @@include('common_player.html', {
+      'hide': null,
+      'type': null,
+      'rate': false,
+      'src': './images/thumbnail/img_home_banner_h_01.png',
+      'indicator': false,
+      'rightPopup': false,
+      'rightPopupClass': false,
+      'rightPopupData': false,
+      'rightPopupSecondTab': 'SHOW NOW',
+      'rightPopupSecondTabSelect': false,
+      'chat': false,
+      'chatNodata': false,
+      'chatMessage': false,
+      'disclamer' : true
+    })
+  </div>
+  @@include('scale_js.html')
+</body>
+
+</html>

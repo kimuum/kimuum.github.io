@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', { "headTitle": "알뜰폰+KT 유/무선결합(본인) 신청 | 결합서비스 | 상품", "titleHidden": "" })
+  <body>
+    <!-- prettier-ignore -->
+    @@include('google_tag_manager.html')
+
+    <div class="skip">
+      <a href="#contentContainer">본문 바로가기</a>
+      <a href="#gnbContainer" class="pcType">주메뉴 바로 가기</a>
+      <a href="#footerMenu">푸터 바로가기</a>
+    </div>
+    <!-- //skip -->
+
+    <!-- 페이지 고유클래스 : combinedApply -->
+    <div class="wrap combinedApply">
+      <!-- prettier-ignore -->
+      @@include('header.html', {
+        'mythrifty' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'product' : { 'firstMenu' : 'active', 'aria-selected' : 'true', secondMenu: 'active-5', 'thirdMenu': 'active-2' },
+        'usim' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'event' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'support' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' },
+        'service' : { 'firstMenu' : '', 'aria-selected' : 'false', 'secondMenu' : '', 'thirdMenu' : '' }
+      })
+      <!-- //END headerContainer -->
+
+      <main class="contentContainer" id="contentContainer">
+        <div class="pageTitleContainer">
+          <div class="pageTitleContent">
+            <div class="titleAreaLeft">
+              <div class="title">
+                <button type="button" class="titleArrow" title="이전 페이지로 이동"></button>
+                <h2>알뜰폰+KT 유/무선결합(본인) 신청</h2>
+              </div>
+            </div>
+            <div class="titleAreaRight">
+              <div class="breadcrumbContainer">
+                <span class="breadcrumb iconBgHome"><span class="ir">홈</span></span>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>상품</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="대메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_depth_1.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>결합서비스</span></span>
+                  <div class="breadcrumbDrop">
+                    <button type="button" class="breadcrumbBtn" aria-expanded="false" title="중메뉴 목록"></button>
+                    <!-- prettier-ignore -->
+                    @@include('../component/breadcrumb_drop_product.html')
+                  </div>
+                  <!-- //breadcrumbDrop -->
+                </div>
+                <div class="breadcrumb">
+                  <span class="breadcrumbTitle"><span>알뜰폰+KT 유/무선결합(본인) 신청</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END pageTitleContainer -->
+
+        <div class="contentArea wiredApplyArea">
+          <div class="contentInner">
+            <div class="formContainer">
+              <div class="formItemArea">
+                <!-- 조회 전 -->
+                <div class="dataInner phoneNoLine">
+                  <div class="dataTitleArea">
+                    <div class="dataTitle">내 정보</div>
+                    <button type="button" class="linkUnderline colorPrimary">결합 내역 조회</button>
+                  </div>
+
+                  <!-- prettier-ignore -->
+                  @@include('../component/phone_line_dropdown_area.html', {
+                    "addClass": "",
+                    "image": true,
+                    "hasDisabled": false,
+                    "setting": false,
+                    "product": "[KT엠모바일] 모두다 맘껏 11GB+  /  32,980원",
+                  })
+
+                  <div class="buttonArea">
+                    <button type="button" class="btn btnPrimary"><span>조회</span></button>
+                  </div>
+                  <!-- 조회 전 문구 -->
+                  <div class="lineCheckResultArea">
+                    <div class="checkResultTop">
+                      <div class="resultComment">
+                        <span class="resultLabel">알뜰폰 +KT 유/무선결합</span>
+                        <p class="resultTitle">대상 요금제 및 제공 혜택을 조회해주세요.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //조회 전 문구 -->
+
+                  <!-- 조회 후 대상 요금제 문구 -->
+                  <div class="lineCheckResultArea">
+                    <div class="checkResultTop">
+                      <div class="resultComment">
+                        <p class="resultTitle">결합이 가능합니다.</p>
+                        <p class="resultText"><span class="colorPrimary">해당 요금제는 5GB 데이터가 제공됩니다.</span></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">결합 혜택 및 대상 요금제 안내는 <button type="button" class="linkUnderline colorPrimary">자세히보기</button>를 통해 확인해주세요.</li>
+                    </ul>
+                  </div>
+                  <!-- //조회 후 대상 요금제 문구 -->
+                </div>
+                <!-- //조회 전 -->
+
+                <!-- [운영] KMVNO-3792 20231016 수정 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">결합 대상 선택</strong>
+                  </div>
+                  <div class="checkboxLineFlex">
+                    <div class="checkboxLine">
+                      <input type="radio" id="joinType01" name="joinType" />
+                      <label for="joinType01" class="checkboxLabel">
+                        <span>KT모바일 결합</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                    <div class="checkboxLine">
+                      <input type="radio" id="joinType02" name="joinType" checked />
+                      <label for="joinType02" class="checkboxLabel">
+                        <span>KT인터넷 결합</span>
+                        <span class="checkIcon"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- //결합 대상 선택 -->
+                <!-- //[운영] KMVNO-3792 20231016 수정 -->
+
+                <div class="dataInner typeCertification">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">정보제공동의</strong>
+                  </div>
+
+                  <!-- [운영] KMVNO-3792 20231016 추가 -->
+                  <div class="field fieldCheckbox">
+                    <div class="fieldForm">
+                      <div class="checkbox">
+                        <!-- PASS 인증 완료 후 checkbox 비활성화 -->
+                        <input type="checkbox" id="agreeCheck01" disabled />
+                        <span class="checkboxLabel" for="agreeCheck01">
+                          <span class="checkIcon"></span>
+                          <label for="agreeCheck01">KT 고객센터 인증</label>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- //[운영] KMVNO-3792 20231016 추가 -->
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="colorRed"><strong class="bold">* 결합을 위해서는 정보제공동의가 필요합니다.</strong></li>
+                      <li class="fieldValue">KT 상품을 가입한 고객이 자신의 정보가 마이알뜰폰 사업자에게 제공되도록 정보제공동의를 하는 절차입니다.</li>
+                    </ul>
+                  </div>
+                  <!-- 본인 인증 : 기본값 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnCertifyPass",
+                        "buttonBlank": true,
+                        "buttonContent": "PASS 인증",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 기본값 -->
+                  <!-- 본인 인증 : 인증 완료 -->
+                  <div class="certificationWrap">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnCertifyPass active",
+                        "buttonBlank": false,
+                        "buttonContent": "PASS 인증 완료",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 인증 완료 -->
+                  <!-- 본인 인증 : 서비스 점검 -->
+                  <div class="certificationWrap" style="display: none">
+                    <!-- prettier-ignore -->
+                    @@loop('../component/certification_button.html',[
+                      {
+                        "buttonClass": "btnNotService",
+                        "buttonBlank": false,
+                        "buttonContent": "PASS 인증",
+                      },
+                    ])
+                  </div>
+                  <!-- //본인 인증 : 서비스 점검 -->
+
+                  <div class="typeCaution">
+                    <ul class="fieldArea marginBtmReset">
+                      <li class="fieldValue">KT 모바일 상품 가입한 정보로 PASS인증을 진행해주세요.</li>
+                      <li class="fieldValue">KT 인터넷만 사용하는 가입자는 KT 고객센터 100번으로 전화하여 상담원에게 <br />‘알뜰폰과 결합을 위해 MVNO정보제공동의’를 요청하여 진행해주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- //정보제공동의 -->
+
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">결합 대상 회선 정보</strong>
+                  </div>
+
+                  <!-- 조회 후 추가 영역 -->
+                  <!-- KT인터넷 결합 입력 -->
+                  <div class="ktAndInternetContainer">
+                    <div class="field fieldInput">
+                      <label for="inputName2" class="fieldLabel">이름</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="inputName2" placeholder="이름을 입력해주세요." />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //이름 -->
+
+                    <div class="field fieldInput">
+                      <label for="inputBD2" class="fieldLabel">생년월일</label>
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="inputBD2" placeholder="생년월일을 입력해주세요.(예 19990626)" />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //생년월일 -->
+
+                    <div class="field fieldRadio">
+                      <div class="fieldLabel">성별</div>
+                      <div class="fieldForm">
+                        <div class="fieldWhiteBox space">
+                          <div class="radio">
+                            <input type="radio" id="gender2-1" name="gender2" checked="" />
+                            <label for="gender2-1" class="radioLabel"><span>남</span></label>
+                          </div>
+                          <div class="radio">
+                            <input type="radio" id="gender2-2" name="gender2" />
+                            <label for="gender2-2" class="radioLabel"><span>여</span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- //성별 -->
+
+                    <div class="field fieldInput blockField">
+                      <label for="inputNumber2" class="fieldLabel">인터넷 서비스 ID</label>
+
+                      <!-- 조회 전 상태 -->
+                      <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="inputNumber2" placeholder="인터넷 서비스 ID를 입력해주세요." />
+                        </div>
+                        <div class="buttonArea">
+                          <button type="button" class="btn"><span>조회</span></button>
+                        </div>
+                      </div>
+                      <!-- 조회 후 상태 : disabled -->
+                      <!-- <div class="fieldForm">
+                        <div class="input">
+                          <input type="text" id="inputNumber2" placeholder="인터넷 서비스 ID를 입력해주세요." disabled>
+                        </div>
+                        <div class="buttonArea">
+                          <button type="button" class="btn" disabled><span>조회</span></button>
+                        </div>
+                      </div> -->
+                    </div>
+                    <!-- //인터넷 서비스 ID -->
+
+                    <!-- [운영] KMVNO-3792 20231006 변경 -->
+                    <div class="field fieldInput">
+                      <label for="inputPeriod2" class="fieldLabel">결합기간</label>
+                      <div class="fieldForm">
+                        <div class="dropdownArea">
+                          <div class="dropdownTitle">
+                            <div class="titleLabel">
+                              <span>3년</span>
+                            </div>
+                            <button type="button" class="dropdownBtn" aria-expanded="false"><span>결합기간을 선택해주세요.</span></button>
+                          </div>
+                          <ul class="dropdownList" aria-label="결합기간">
+                            <li><button type="button">1년</button></li>
+                            <li><button type="button">2년</button></li>
+                            <li><button type="button" title="선택됨">3년</button></li>
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div class="beforeStar">
+                        인터넷 서비스 ID란 KT 유선 서비스에 가입된 고객에게 부여되며 마이케이티APP 및 <br />
+                        KT 고객센터에서 문의 후 입력해 주시기 바랍니다.
+                      </div>
+                    </div>
+                    <!-- //결합기간 -->
+                    <!-- //[운영] KMVNO-3792 20231006 변경 -->
+                  </div>
+                  <!-- //KT인터넷 결합 입력 -->
+                  <!-- //조회 후 추가 영역 -->
+                </div>
+                <!-- //결합 대상 회선 정보 -->
+
+                <!-- 약관 -->
+                <div class="dataInner">
+                  <div class="dataTitleArea">
+                    <strong class="dataTitle">결합 서비스 이용 동의</strong>
+                  </div>
+                  <div class="field fieldCheckbox fieldAllCheck">
+                    <div class="fieldForm">
+                      <div class="checkbox">
+                        <input type="checkbox" id="allCheckBox" />
+                        <label for="allCheckBox" class="checkboxLabel"><span class="checkIcon"></span><span>전체 동의</span></label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dataLabelArea">
+                    <strong>통신사 약관 및 서비스 이용 동의</strong>
+                  </div>
+                  <!-- prettier-ignore -->
+                  @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion01",
+                    "checkId" : "agreeCheck01",
+                    "fieldLabel" : "KT M Mobile 서비스 이용약관(필수)",
+                    "hiddenText" : "KT M Mobile 서비스 이용약관 열기",
+                    "type" : "empty",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion02",
+                    "checkId" : "agreeCheck02",
+                    "fieldLabel" : "개인정보 수집・이용 동의(필수)",
+                    "hiddenText" : "개인정보 수집・이용 동의 열기",
+                    "type" : "empty",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion03",
+                    "checkId" : "agreeCheck03",
+                    "fieldLabel" : "개인정보 제 3자 정보제공 동의(필수)",
+                    "hiddenText" : "개인정보 제 3자 정보제공 동의 열기",
+                    "type" : "empty",
+                  })
+                  <!-- prettier-ignore -->
+                  @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion04",
+                    "checkId" : "agreeCheck04",
+                    "fieldLabel" : "결합을 위한 필수 확인 사항 동의(필수)",
+                    "hiddenText" : "결합을 위한 필수 확인 사항 동의 열기",
+                    "type" : "empty",
+                  })
+                  <div class="dataLabelArea">
+                    <strong>KT 약관 및 서비스 이용 동의</strong>
+                  </div>
+                  <!-- prettier-ignore -->
+                  @@include("../component/agreement_accordion.html", {
+                    "typeClass" : "agreementAccordion05",
+                    "checkId" : "agreeCheck05",
+                    "fieldLabel" : "KT이용약관 확인 동의(필수)",
+                    "hiddenText" : "KT이용약관 확인 동의 열기",
+                    "type" : "empty",
+                  })
+                </div>
+                <!-- //약관 -->
+
+                <div class="buttonArea">
+                  <button type="button" class="btn btnPrimary" disabled><span>결합 신청</span></button>
+                </div>
+                <div class="explainContainer">
+                  <p class="beforeStar">결합신청 버튼을 누른 후 결합완료까지 시간이 다소 걸릴 수 있습니다.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- //END contentArea -->
+      </main>
+      <!-- //END contentContainer -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+      <!-- //END footerContainer -->
+    </div>
+    <!-- //END wrap -->
+
+    <!-- Start Script -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        // KT M Mobile 서비스 이용약관
+        accordionControl('.agreementAccordion01 .btnOpenAgree', '.agreementAccordion01 .fieldData', '.agreementAccordion01', 'KT M Mobile 서비스 이용약관 열기', 'KT M Mobile 서비스 이용약관 닫기');
+        // 개인정보 수집・이용 동의
+        accordionControl('.agreementAccordion02 .btnOpenAgree', '.agreementAccordion02 .fieldData', '.agreementAccordion02', '개인정보 수집・이용 동의 열기', '개인정보 수집・이용 동의 닫기');
+        // 개인정보 제 3자 정보제공 동의(필수)
+        accordionControl('.agreementAccordion03 .btnOpenAgree', '.agreementAccordion03 .fieldData', '.agreementAccordion03', '개인정보 제 3자 정보제공 동의(필수) 열기', '개인정보 제 3자 정보제공 동의(필수) 닫기');
+        // 결합을 위한 필수 확인 사항 동의
+        accordionControl('.agreementAccordion04 .btnOpenAgree', '.agreementAccordion04 .fieldData', '.agreementAccordion04', '결합을 위한 필수 확인 사항 동의 열기', '결합을 위한 필수 확인 사항 동의 닫기');
+        // KT이용약관 확인 동의
+        accordionControl('.agreementAccordion05 .btnOpenAgree', '.agreementAccordion05 .fieldData', '.agreementAccordion05', 'KT이용약관 확인 동의 열기', 'KT이용약관 확인 동의 닫기');
+      });
+    </script>
+  </body>
+</html>

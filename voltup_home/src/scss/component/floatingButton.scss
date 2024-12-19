@@ -1,0 +1,120 @@
+.floating-button-box {
+  @include flex(column, flex-start, center);
+  position: fixed;
+  z-index: 97;
+  bottom: 8rem;
+  right: 12rem;
+  > button,
+  > div {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 9.6rem;
+    height: 9.6rem;
+    border-radius: 50%;
+    @include font(1.6rem, 700, $white, 1.35);
+    box-shadow: 0.4rem 0.4rem 0.8rem 0 rgba(0, 0, 0, 0.08);
+    & + button {
+      margin-top: 2rem;
+    }
+  }
+  .support-link {
+    display: none;
+    &.show {
+      display: block;
+    }
+    .support-link-box {
+      @include flex(column, center, center);
+      width: 100%;
+      height: 100%;
+    }
+    a {
+      @include flex(column, center, center);
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background-color: $white;
+      @include font(1.6rem, 700, $black, 2.3rem);
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $black;
+        opacity: 0;
+        transition: 0.2s;
+      }
+      @media (hover: hover) {
+        &:hover {
+          &::after {
+            opacity: 0.2;
+          }
+        }
+      }
+      .strong {
+        margin-bottom: 0.2rem;
+        @include font(2rem, 700, $point-pink, 2.9rem);
+      }
+    }
+  }
+  .btn-inquiry {
+    @include flex(column, center, center);
+    background-color: $point-pink;
+    .icon-inquiry {
+      width: 3.2rem;
+      height: 3.2rem;
+      background: image('ic_inquiry.svg') no-repeat center/cover;
+    }
+  }
+  .btn-top {
+    background: image('floating_top.svg') no-repeat center/4rem, rgba(#e8e8e8, 0.88);
+  }
+}
+
+// 모바일
+@media #{$tablet_1024} {
+  .floating-button-box {
+    bottom: 2rem;
+    right: 2rem;
+    > button,
+    > div {
+      width: 4.4rem;
+      height: 4.4rem;
+      font-size: 0.8rem;
+      & + button {
+        margin-top: 1rem;
+      }
+    }
+    .support-link {
+      a {
+        @include font(0.9rem, 700, $black, 1.3rem);
+        .strong {
+          font-size: 1rem;
+          line-height: 1.4rem;
+        }
+      }
+    }
+    .btn-inquiry {
+      .icon-inquiry {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-bottom: 0.1rem;
+      }
+    }
+    .btn-top {
+      background: image('floating_top.svg') no-repeat center/1.6rem, rgba(#e8e8e8, 0.88);
+    }
+  }
+}
+
+// 태블릿
+@media #{$pc_1440} {
+  .floating-button-box {
+    bottom: 4rem;
+    right: 6.25%;
+  }
+}

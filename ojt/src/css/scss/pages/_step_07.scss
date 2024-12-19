@@ -1,0 +1,43 @@
+/* STEP07 */ 
+.wrap_step_07 {
+  // Table
+  .content_table {
+    display: block;
+    table-layout: initial;
+    .content_inner {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      border-spacing: 10px 5px;
+    }
+  }
+  // Flex
+  .content_flex {
+    display: block;
+    .content_inner {
+      @include flexbox;
+      @include flex-direction(row);
+      @include justify-content(flex-start);
+      column-gap: 10px;
+      & + .content_inner {
+        margin-top: 10px;
+      }
+      .content_box {
+        flex: 1;
+      }
+    }
+  }
+  // Grid
+  .content_grid {
+    display: block;
+    .content_inner {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(10px, 1fr));
+      gap: 10px;
+      & + .content_inner {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+

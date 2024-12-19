@@ -1,0 +1,113 @@
+.how-title-container {
+  height: 64rem;
+  background-color: $tan-200;
+  padding-bottom: 9.6rem;
+
+  .how-title-area {
+    display: flex;
+    align-items: flex-end;
+    width: 141.4rem;
+    height: 100%;
+    margin: auto;
+
+    .how-title-box {
+      .title {
+        @include font(h1);
+      }
+      .desc {
+        margin-top: 2rem;
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: $gray-800;
+        line-height: 3.6rem;
+      }
+    }
+  }
+}
+
+.how-step-container {
+  width: 141.4rem;
+  margin: 18rem auto 4rem;
+
+  .how-step-top {
+    .how-step-list-box {
+      & > * + * {
+        margin-top: 10rem;
+      }
+      // li-component : howStepList
+    }
+  }
+
+  .how-step-bottom {
+    margin: 14rem 0 0;
+    .button-box {
+      @include flex(column, center, center);
+      gap: 2.8rem;
+      .btn-start {
+        width: 76rem;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .how-title-container {
+    height: 40rem;
+    padding: 0 2rem 6rem;
+
+    .how-title-area {
+      width: 100%;
+      .how-title-box {
+        .title {
+          font-size: 2.6rem;
+          line-height: 3.4rem;
+          letter-spacing: -0.104rem;
+        }
+        .desc {
+          margin-top: 1rem;
+          font-size: 1.8rem;
+          color: $gray-800;
+          line-height: 2.4rem;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .how-step-container {
+    width: 100%;
+    margin: 6rem auto 0;
+    padding: 0 2rem;
+
+    .how-step-top {
+      .how-step-list-box {
+        & > * + * {
+          margin-top: 6rem;
+        }
+      }
+    }
+
+    .how-step-bottom {
+      margin: 6rem 0 0;
+      .button-box {
+        gap: 1.2rem;
+        .btn-start {
+          max-width: 32rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile_large} {
+  .how-step-container {
+    .how-step-bottom {
+      .button-box {
+        .btn-start {
+          max-width: unset;
+        }
+      }
+    }
+  }
+}
