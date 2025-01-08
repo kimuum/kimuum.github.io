@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- prettier-ignore -->
+  @@include('head.html', {
+    "type" : "index",
+    "title" : "Portfolio"
+  })
+
+  <body class="main-page">
+    <div class="wrapper">
+      <!-- prettier-ignore -->
+      @@include('header.html')
+
+      <!-- main -->
+      <main class="main">
+        <!-- content-container -->
+        <div class="content-container">
+          <div class="content-area">
+            <!-- HERO -->
+            <section class="hero-container" id="hero" aria-label="UNI WEB PUBLISHER WEB PORTFOLIO" tabindex="0">
+              <div class="hero-area">
+                <div class="hero-top">
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <span class="hero-front" aria-hidden="true">UNI</span>
+                        <span class="hero-back" aria-hidden="true">UNI</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <span class="hero-front" aria-hidden="true">WEB PUBLISHER</span>
+                        <span class="hero-back" aria-hidden="true">WEB PUBLISHER</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="hero-box">
+                    <div class="hero-inner">
+                      <div class="hero-word">
+                        <div class="hero-front" aria-hidden="true">
+                          <span>WEB</span>
+                          <span>PORTFOLIO</span>
+                        </div>
+                        <div class="hero-back" aria-hidden="true">
+                          <span>WEB</span>
+                          <span>PORTFOLIO</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hero-bottom">
+                  <div class="hero-sub-word">
+                    <span>
+                      정교한 코드를 바탕으로 다양한 디바이스와 브라우저에 일관된<br />
+                      사용자 경험을 제공 할 수 있도록 웹페이지를 그려냅니다!
+                    </span>
+                    <span>
+                      다양한 직군과의 협업을 중요하게 생각해요.<br />
+                      원활한 소통을 통해 함께 멋지고 기억에 남는 결과물을 만들고 싶어요.
+                    </span>
+                  </div>
+                  <div class="button-box">
+                    <a href="https://unisite.notion.site/UNI-3884d52b69d741dcb900ec362011bc6f?pvs=4" target="_blank" class="btn btn-line hover-bg">
+                      <span>자기소개 더보기</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //HERO -->
+
+            <!-- WORK -->
+            <section class="work-container" id="work">
+              <div class="work-area">
+                <div class="work-area-left">
+                  <div class="work-label-box">
+                    <span class="work-label">WORKS</span>
+                  </div>
+                </div>
+                <div class="work-area-right">
+                  <ul class="work-list-area">
+                    <!-- prettier-ignore -->
+                    @@loop("workListBox.html", [
+                      {
+                        "title" : "아메바 \n웹사이트 개편",
+                        "thumb" : "img_thumb_amoeba.png",
+                        "button" : [
+                          { 
+                            "link" : "./html/works/work_amoeba.html",
+                            "buttonTitle" : "자세히 보기"
+                          },
+                          {
+                            "link" : "https://www.amoeba.co.kr/html/mobility_lab.html",
+                            "buttonTitle" : "사이트 이동"
+                          }
+                        ]
+                      },
+                      {
+                        "title" : "LGU+ Voltup \n사이트 개편",
+                        "thumb" : "img_thumb_voltup.png",
+                        "button" : [
+                          { 
+                            "link" : "./html/works/work_lg_voltup.html",
+                            "buttonTitle" : "자세히 보기"
+                          },
+                          {
+                            "link" : "https://voltup.co.kr",
+                            "buttonTitle" : "사이트 이동"
+                          }
+                        ]
+                      },
+                      {
+                        "title" : "LGU+ 인사이트 \n개발 구축",
+                        "thumb" : "img_thumb_insight.png",
+                        "button" : [
+                          { 
+                            "link" : "./html/works/work_lg_insight.html",
+                            "buttonTitle" : "자세히 보기"
+                          },
+                        ]
+                      },
+                      {
+                        "title" : "LG전자 ShopTime \nApp/TV 고도화",
+                        "thumb" : "img_thumb_shoptime.png",
+                        "button" : [
+                          { 
+                            "link" : "./html/works/work_lg_shoptime.html",
+                            "buttonTitle" : "자세히 보기"
+                          }
+                        ]
+                      },
+                      {
+                        "title" : "KT 마이알뜰폰 \n웹접근성 구축",
+                        "thumb" : "img_thumb_ktmvno.png",
+                        "button" : [
+                          { 
+                            "link" : "./html/works/work_kt_mvno.html",
+                            "buttonTitle" : "자세히 보기"
+                          },
+                          {
+                            "link" : "https://ktmyr.com/fe/mypage/main.do",
+                            "buttonTitle" : "사이트 이동"
+                          }
+                        ]
+                      },
+                    ])
+                  </ul>
+                  <div class="button-box">
+                    <a href="https://www.notion.so/unisite/3d50f01b1df64311b82004ac64d04779?pvs=4" target="_blank" class="btn btn-line hover-bg">
+                      <span>더 많은 프로젝트 보러가기</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- //WORK -->
+
+            <!-- VISUAL -->
+            <section class="visual-container">
+              <div class="visual-area">
+                <div class="visual-word">Building bridges between</div>
+                <div class="visual-word">design and user experience,</div>
+                <div class="visual-word">one element at a time.</div>
+              </div>
+            </section>
+            <!-- //VISUAL -->
+
+            <!-- CONTACT -->
+            <section class="contact-container" id="contact">
+              <div class="contact-area">
+                <div class="contact-title"><span>함께 일할 사람을 찾고 계신가요?</span></div>
+                <div class="button-box">
+                  <a href="mailto:dowonppp@naver.com" class="btn btn-line hover-bg"><span>Email</span></a>
+                  <div class="btn btn-line hover-bg"><span>+82 10 2324 1182</span></div>
+                </div>
+              </div>
+            </section>
+            <!-- //CONTACT -->
+          </div>
+        </div>
+        <!-- //content-container -->
+      </main>
+      <!-- // main -->
+
+      <!-- prettier-ignore -->
+      @@include('footer.html')
+    </div>
+  </body>
+</html>

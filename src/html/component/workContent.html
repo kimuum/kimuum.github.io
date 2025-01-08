@@ -1,0 +1,67 @@
+<body class="sub-page">
+  <div class="wrapper">
+    <!-- prettier-ignore -->
+    @@include('headerWork.html')
+
+    <!-- main -->
+    <main class="main">
+      <!-- work-content-container -->
+      <section class="work-content-container">
+        <div class="work-content-area">
+          <div class="work-content-media-box">
+            <div class="work-media-area">
+              <!-- prettier-ignore -->
+              @@for(var i = 0; i < infoMedia.length; i++) {
+                @@include("workInfoMedia.html",  `+(JSON.stringify(infoMedia[i]))+`)
+              }
+            </div>
+          </div>
+          <div class="work-content-info-box">
+            <div class="work-info-top">
+              <div class="info-title-box">
+                <h1 class="info-title">@@title</h1>
+              </div>
+              <div class="info-content-area">
+                <div class="info-desc-box">
+                  <!-- prettier-ignore -->
+                  @@for(var i = 0; i < infoDesc.length; i++) {
+                    @@include("workInfoDesc.html",  `+(JSON.stringify(infoDesc[i]))+`)
+                  }
+                </div>
+                <ul class="info-list-box">
+                  <!-- prettier-ignore -->
+                  @@for(var i = 0; i < infoList.length; i++) {
+                    @@include("workInfoList.html",  `+(JSON.stringify(infoList[i]))+`)
+                  }
+                </ul>
+              </div>
+            </div>
+            @@if(workBottom) {
+            <div class="work-info-bottom">
+              <div class="button-box">
+                @@if(visitLink) {
+                <a href="@@visitLink" target="_blank" class="btn" aria-label="사이트 방문하기">
+                  <div class="hover-trans">
+                    <span aria-hidden="true">VISIT</span>
+                    <span aria-hidden="true">VISIT</span>
+                  </div>
+                </a>
+                } @@if(nextLink) {
+                <a href="./@@nextLink.html" class="btn" aria-label="다음 프로젝트">
+                  <div class="hover-trans">
+                    <span aria-hidden="true">NEXT</span>
+                    <span aria-hidden="true">NEXT</span>
+                  </div>
+                </a>
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+      </section>
+      <!-- //work-content-container -->
+    </main>
+    <!-- // main -->
+  </div>
+</body>

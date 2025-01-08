@@ -1,0 +1,235 @@
+.work-header-container {
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+}
+.work-header-area {
+  @include flex(row, space-between, center);
+  padding: 0 5rem;
+  .header-left {
+    .header-title {
+      color: $primary;
+    }
+  }
+  .header-right {
+    overflow: hidden;
+    .btn {
+      @include font(2rem, 600, $primary);
+    }
+  }
+}
+
+.work-content-container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  .work-content-area {
+    @include flex(row, flex-start, flex-start);
+    gap: 10rem;
+    height: 100%;
+    > div {
+      flex: 1;
+    }
+  }
+}
+.work-content-media-box {
+  .work-media-area {
+    overflow-y: auto;
+    @include flex(column, flex-start, flex-start);
+    gap: 3rem;
+    height: 100%;
+  }
+  .work-media-box {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.work-content-info-box {
+  @include flex(column, space-between, flex-start);
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  height: 100vh;
+  padding: 3rem 0;
+}
+.work-info-top {
+  .info-title-box {
+    margin-bottom: 8rem;
+    .info-title {
+      @include font(clamp(22px, 2.8vw, 300px), 700, $primary);
+      letter-spacing: -0.05rem;
+      white-space: pre-line;
+    }
+  }
+}
+.info-content-area {
+  @include flex(row, flex-start, flex-start);
+  gap: 3rem;
+  word-break: keep-all;
+  .info-desc-box {
+    .desc-text {
+      @include font(clamp(12px, 1.15vw, 300px), 600, $primary, 1.65);
+      white-space: pre-line;
+      & + .desc-text {
+        margin-top: 3rem;
+      }
+    }
+  }
+  .info-list-box {
+    min-width: 12rem;
+    .list-text {
+      @include font(clamp(10px, 1vw, 300px), 800, $primary, 1.65);
+      letter-spacing: 0.01rem;
+      list-style: disc;
+      & + .list-text {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+.work-info-bottom {
+  width: 100%;
+  .button-box {
+    overflow: hidden;
+    justify-content: space-between;
+    .btn {
+      justify-content: flex-start;
+      min-width: auto;
+      width: auto;
+      height: auto;
+      padding: 0;
+      @include font(2rem, 600, $primary);
+    }
+  }
+}
+
+@media #{$effective_device} {
+  .work-header-area {
+    .header-right {
+      .btn {
+        &:hover {
+          .hover-trans {
+            animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+          }
+        }
+      }
+    }
+  }
+  .work-info-bottom {
+    .button-box {
+      .btn {
+        &:hover {
+          .hover-trans {
+            animation: btnAnimation 0.55s cubic-bezier(0.16, 0.03, 0.08, 1.55);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet_1024} {
+  .work-content-container {
+    .work-content-area {
+      gap: 5rem;
+    }
+  }
+
+  .work-info-top {
+    .info-title-box {
+      margin-bottom: 5rem;
+    }
+  }
+}
+
+@media #{$mobile_720} {
+  .work-header-container {
+    position: absolute;
+    top: 2rem;
+  }
+  .work-header-area {
+    padding: 0 2rem;
+    .header-left {
+      .header-title {
+        font-size: 1.6rem;
+      }
+    }
+    .header-right {
+      .btn {
+        font-size: 1.6rem;
+      }
+    }
+  }
+  .work-content-container {
+    .work-content-area {
+      flex-direction: column;
+      gap: initial;
+    }
+  }
+  .work-content-media-box {
+    order: 2;
+    overflow-x: auto;
+    flex: none !important;
+    width: 100%;
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .work-media-area {
+      overflow: hidden;
+      flex-direction: row;
+      gap: 2rem;
+      width: 300vw;
+    }
+  }
+  .work-content-info-box {
+    gap: 1.5rem;
+    position: static;
+    padding: 0 0 2rem;
+  }
+
+  .info-content-area {
+    .info-desc-box {
+      .desc-text {
+        white-space: initial;
+        line-height: 1.25;
+        & + .desc-text {
+          margin-top: 1rem;
+        }
+      }
+    }
+    .info-list-box {
+      .list-text {
+        line-height: 1.25;
+        & + .list-text {
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+  .work-info-bottom {
+    .button-box {
+      .btn {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+@media #{$mobile_320} {
+  .work-info-top {
+    .info-title-box {
+      margin-bottom: 2rem;
+    }
+  }
+  .info-content-area {
+    gap: 1rem;
+  }
+}
