@@ -1,0 +1,246 @@
+<%- include('./include/head.ejs',{
+  title: "기준-0008-HK_판매코드 구성 관리",
+  listTitle: "판매기준정보관리 > 판매코드관리 > 판매코드 구성 관리 : 02-기준정보_판매코드"
+}) %>
+
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+<%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보관리", href: "#none" },
+                { text: "판매기준정보관리", href: "#none" },
+                { text: "판매코드관리", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="field_inline">
+              <div class="field_group">
+                <strong class="title_small">차종</strong>
+                <%- include('./include/btn_group_attached.ejs', {
+                  btnItems : [
+                    {classList: 'btn_outline btn_small', text : '승/소상', active : true},
+                    {classList: 'btn_outline btn_small', text : '트럭'},
+                    {classList: 'btn_outline btn_small', text : '버스'},
+                  ]
+                }) -%>
+              </div>
+            </div>
+            <div class="field_vertical">
+              <div class="field_group">
+                <strong class="title_small">판매코드(NCS) 공통 고정 영역 (14자리)</strong>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">차량<span> (4)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">연식<span> (2)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">버전<span> (1)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">엔진<span> (2)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">구동<span> (1)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">미션<span> (1)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">트림<span> (2)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">인승<span> (1)</span></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="select-01" class="title_small">대표차명</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_large',
+                    inputBox : 'input_small',
+                    inputVal : 'GN7그랜저GN7',
+                    id : 'select-01',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="select-02" class="title_small">모델명</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_large',
+                    inputBox : 'input_small',
+                    inputVal : '디 올 뉴 그랜저',
+                    id : 'select-02',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="select-03" class="title_small">컨피규레이션 트리</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inlineStyle : 'width: 320px',
+                    inputBox : 'input_small',
+                    inputVal : '디올 뉴 그랜저_v1.0',
+                    id : 'select-03',
+                    badgeText : '사용중',
+                    badgeClass : 'badge_small badge_use'
+                  }) %>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <%-include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '특화코드관리'},
+              { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '판매코드 한글명 관리', ariaSelected: true},
+            ]
+          }) %>
+          <!-- Tab Content: 특화코드관리 -->
+          <div role="tabpanel" id="tabpanel_1-1" class="tab_content" aria-labelledby="tab_1-1" tabindex="0">
+            <div class="panel">
+              <div class="panel_header">
+                <div class="panel_title">
+                  <strong class="title_small">판매코드(NCS) 특화 영역 관리 (2자리)</strong>
+
+                </div>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">용도<span> (1)</span></span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">장애구분<span> (1)</span></span></button>
+                <button type="button" class="btn btn_outline btn_with_ic btn_xsmall"><span class="ic ic_plus_bold_16px"></span><span class="btn_inner_text body_small">추가</span></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content: 판매코드 한글명 관리 -->
+          <div role="tabpanel" id="tabpanel_1-2" class="tab_content is_active" aria-labelledby="tab_1-2" tabindex="-1">
+            <div class="panel_group">
+              <div class="panel panel_top">
+                <div class="btn_group btn_group_right">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">저장</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">세부모델명 예시 조회</span></button>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="panel panel_configure_manage">
+                <div class="configure_manage_inner">
+                  <div class="configure_manage_top">
+                    <strong class="title_small">세부모델명</strong>
+                    <ul class="model_list">
+                      <li class="model_item model_item_current">
+                        <span class="model_label">디올 뉴 그랜저</span>
+                      </li>
+                      <li class="model_item">
+                        <span class="model_label">가솔린</span>
+                        <button type="button" class="btn btn_only_ic btn_small" aria-label="삭제"><span class="ic ic_help_bold_16px"></span></button>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="configure_manage_bottom">
+                    <strong class="title_small">세부 모델명 설정</strong>
+                    <ul class="model_setting_list">
+                      <li class="model_setting_item">
+                        <span class="model_label">디올 뉴 그랜저</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="configure_manage_inner">
+                  <div class="configure_manage_top">
+                    <strong class="title_small">내부용 세부모델명</strong>
+                  </div>
+                  <div class="configure_manage_bottom">
+                    <strong class="title_small">내부용 세부모델명 설정</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%- include('./include/script.ejs') %>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    viewItems : [
+      {id : '', text:'특화코드관리 탭'},
+      {id : '', text:'판매코드 한글명 관리 탭'}
+    ],
+    popupItems : [
+      {id: '', text:'차명 조회'},
+      {id: '', text:'NSC 공통'},
+      {id: '', text:'NSC 특화'},
+      {id: '', text:'NSC 특화 수정'},
+      {id: '', text:'차량 속성 마스터 속성 분류 검색'},
+      {id: '', text:'NSC 특화 추가'},
+      {id: '', text:'세부모델명 예시 조회'},
+      {id: '', text:'세부모델명 예시 조회'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>
