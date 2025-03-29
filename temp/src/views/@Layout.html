@@ -1,0 +1,1104 @@
+<%- include('./include/head.ejs', {
+  title: "Layout : HMG Sales System",
+  listTitle: "Layout"
+}) %>
+
+<body class="project_sales_system" data-pagestatus="">
+<%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <!-- Set Unique Class : wrap_class -->
+    <main id="content" class="content">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_home" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_home" class="tab_panel is_active">
+          <!-- 조건 검색 필터에서만 사용 -->
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="" class="title_small">조직</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">소속구분</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">인사조직코드</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">회계코드</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">상위조직</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">조직노출/숨김관리</label>
+                  <label for="" class="title_xsmall">국내판매시스템</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '노출',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_xsmall">연계사이트(영업현장,기아닷컴)</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '숨김',
+                  }) %>
+                </div>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="field_inline">
+                <label for="" class="title_medium">조회조건</label>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_1" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_1" class="label_radio"><span class="label_text body_small">조직명/코드</span></label>
+                    </span>
+                  </div>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '조직명 또는 조직코드 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_2" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_2" class="label_radio"><span class="label_text body_small">인사조직코드</span></label>
+                    </span>
+                  </div>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea : 'input_area_small',
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '4자리',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_3" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_3" class="label_radio"><span class="label_text body_small">회계코드</span></label>
+                    </span>
+                  </div>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '승용',
+                    id : 'uio_radio1_3'
+                  }) %>
+                </div>
+              </div>
+              <div class="field_horiz">
+                <div class="field_vertical">
+                  <label for="" class="title_small">주소</label>
+                  <div class="field_inline">
+                    <div class="field_group">
+                      <%- include('./include/input_area.ejs', {
+                        inputArea : 'input_area_small',
+                        inputBox : 'input_suffix input_small',
+                        ariaLabel : '우편번호',
+                        placeholder : '우편번호',
+                      }) %>
+                      <%- include('./include/input_area.ejs', {
+                        inputBox : 'input_suffix input_small',
+                        ariaLabel : '도로명, 건물명, 지번 주소',
+                        placeholder : '도로명, 건물명, 지번 주소',
+                      }) %>
+
+                      <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">주소검색</span></button>
+                    </div>
+                    <%- include('./include/input_area.ejs', {
+                      inlineStyle : 'width: 100%',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '상세 주소',
+                      placeholder : '상세 주소',
+                    }) %>
+                  </div>
+                </div>
+                <!-- [D] 현대 -->
+                <div class="field_vertical">
+                  <label for="" class="title_small">GPS좌표</label>
+                  <div class="field">
+                    <div class="field_inline">
+                      <label for="" class="title_xsmall">위도</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_suffix input_small',
+                        ariaLabel : '위도',
+                        placeholder : '127.000000',
+                      }) %>
+                      <label for="" class="title_xsmall">경도</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_suffix input_small',
+                        ariaLabel : '경도',
+                        placeholder : '37.000000',
+                      }) %>
+                      <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">등록</span></button>
+                    </div>
+                    <!-- svg 아이콘 업데이트 필요 -->
+                    <p class="field_desc label_medium"><span class="ic ic_refresh_regular_12px"></span>업데이트 정보 : 일시 YYYY-MM-DD / 사번 0000000</p>
+                  </div>
+                </div>
+                <!-- // [D] 현대 -->
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="input_select_wrap">
+                <span class="input_select_box input_select_medium">
+                  <input type="checkbox" id="uio_checkbox1_1" class="input_checkbox">
+                  <label for="uio_checkbox1_1" class="label_checkbox"><span class="label_text body_small">조회조건저장</span></label>
+                  <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                    <button type="button" class="btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="tooltip">
+                      <span class="ic ic_information_regular_16px"></span>
+                    </button>
+                    <span class="tooltip tooltip_top_center shadow_8dp js-tooltip" tabindex="0" role="tooltip" id="summary-bar-tooltip" style="display: none;">
+                      <span class="tooltip_text label_medium">Tooltip</span>
+                    </span>
+                  </div>
+                </span>
+              </div>
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_outline btn_with_ic btn_large"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_large"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+              <div class="toggle_btn">
+                <button type="button" class="btn btn_text btn_with_ic btn_medium"><span class="btn_inner_text body_small">접기</span><span class="ic ic_arrow_up_bold_16px"></span></button>
+              </div>
+            </div>
+          </div>
+          <!-- // 조건 검색 필터에서만 사용 -->
+
+          <div class="control_section">
+            <span class="body_small">※ 예상 납기는 S/OFF예정일이며, 특장 작업은 별도</span>
+            <span class="body_small">예상납기 작업 기준일 : 2024-05-01</span>
+          </div>
+
+          <div class="control_section">
+            <div class="btn_group btn_group_left">
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">이벤트재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">유사재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">출고예시 및 배정조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">주문서</span></button>
+            </div>
+            <div class="btn_group">
+              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">배정요청</span></button>
+            </div>
+          </div>
+
+          <div class="control_section">
+            <div class="btn_group btn_group_left">
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">주문서</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">통합재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">유사재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">재고및생산계획</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">확정요청이력조회</span></button>
+            </div>
+            <div class="btn_group">
+              <p class="row">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청취소</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정 자동설정</span></button>
+              </p>
+              <p class="row">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일연기</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일 당김</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고희망월 변경</span></button>
+              </p>
+            </div>
+          </div>
+
+          <%- include('./include/search_section.ejs', {
+            labelID: 'search_field',
+            labelText: '계약번호',
+            inputPlaceholder: '계약번호',
+            inputValue: '24A01146452',
+            searchButtonItems: [
+              { text: '조회' }
+            ]
+          }) %>
+
+          <div class="panel">
+            <div class="top_wrap">
+              <a href="#none" class="btn btn_only_ic btn_xxsmall" aria-label="뒤로가기"><span class="ic ic_arrow_back_bold_24px"></span></a>
+              <span class="body_small">문서번호 : DCD_U_2022000111_001</span>
+            </div>
+          </div>
+
+          <!-- 상단 타이틀 (아코디언, 조건 검색 필터, 테이블 외 사용) -->
+          <div class="panel">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="title_large">즐겨찾기 화면별 결재문서 현황</span>
+                <span class="title_desc body_small">화면별 ‘수신'문서의 결재상태 개수가 표시됩니다. 버튼을 클릭하면, 지정한 화면으로 이동합니다.</span>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">즐겨찾기 편집</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="field_horiz">
+              <label for="" class="field_title title_medium">차량선택</label>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="" class="title_small">출고지원센터</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">출고/배송센터</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="" class="title_small">계약번호</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : '계약번호 입력',
+                  }) %>
+                </div>
+
+                <div class="field_group">
+                  <label for="period" class="title_small">날짜</label>
+                  <%- include('./include/date_picker.ejs', {
+                    ariaLabelledby: 'period',
+                    startValue: '2025-02-01',
+                  }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="table_util">
+              <div class="option_group">
+                <span class="title_small">총 <strong class="num">9999</strong>개</span>
+              </div>
+              <div class="btn_group">
+                <!-- [D] 비활성화 disabled 속성 추가 -->
+                <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                  <span class="ic ic_download_bold_16px"></span>
+                  <span class="btn_inner_text body_small">엑셀다운로드</span>
+                </button>
+              </div>
+            </div>
+            <div class="table_inner">
+              <table class="table table_small" style="min-width: 848px">
+                <caption><span>테이블</span></caption>
+                <thead>
+                  <tr>
+                    <th style="width:56px">
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-1" class="input_checkbox">
+                          <label for="uio_checkbox1-1" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-2" class="input_checkbox">
+                          <label for="uio_checkbox1-2" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_ellipsis">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Tex</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak text_ellipsis">Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small text_ellipsis">LinkLinkLinkLinkLinkLinkLinkLink</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-3" class="input_checkbox">
+                          <label for="uio_checkbox1-3" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">LinkLinkLinkLinkLinkLinkLinkLink</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-4" class="input_checkbox">
+                          <label for="uio_checkbox1-4" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-5" class="input_checkbox">
+                          <label for="uio_checkbox1-5" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-6" class="input_checkbox">
+                          <label for="uio_checkbox1-6" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-7" class="input_checkbox">
+                          <label for="uio_checkbox1-7" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-8" class="input_checkbox">
+                          <label for="uio_checkbox1-8" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-9" class="input_checkbox">
+                          <label for="uio_checkbox1-9" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-10" class="input_checkbox">
+                          <label for="uio_checkbox1-10" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-11" class="input_checkbox">
+                          <label for="uio_checkbox1-11" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 좌/우 배치 일 경우 사용 -->
+          <div class="content_section">
+            <div class="panel">
+              <div class="table_util">
+                <div class="option_group">
+                  <span class="title_small">총 <strong class="num">9999</strong>개</span>
+                </div>
+                <div class="btn_group">
+                  <!-- [D] 비활성화 disabled 속성 추가 -->
+                  <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                    <span class="ic ic_download_bold_16px"></span>
+                    <span class="btn_inner_text body_small">엑셀다운로드</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+            <div class="panel panel_setting menu_setting">
+              <strong class="title_large">메뉴 상세정보</strong>
+              <%-include('./include/tabs_section.ejs', {
+                tabsSize: 'tabs_large',
+                tabItems: [
+                  { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '화면정보', ariaSelected: true },
+                  { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '기능버튼' },
+                ],
+              })%>
+              <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+              <!-- Tab Content: 화면정보 -->
+              <div role="tabpanel" id="tabpanel_1-1" class="tab_content is_active" aria-labelledby="tab_1-1" tabindex="0">
+                <div class="form_group">
+                  <label for="screen_name" class="title_small">화면이름</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    id : 'screen_name',
+                    placeholder : ' ',
+                  }) %>
+                </div>
+                <div class="form_group">
+                  <div class="form_flex">
+                    <strong class="title_small">메뉴 ID</strong>
+                    <span class="form_plaintext">01001 계출관리</span>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <div class="form_flex">
+                    <strong class="title_small">화면 ID</strong>
+                    <span class="form_plaintext">C1101001</span>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <div class="form_flex">
+                    <strong class="title_small">화면그룹</strong>
+                    <span class="form_plaintext">C1</span>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <strong class="title_small">사용여부</strong>
+                  <div class="form_inline">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="screen_use" class="input_radio" name="screen_usage" checked>
+                        <label for="screen_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                      </span>
+                    </div>
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="screen_disuse" class="input_radio" name="screen_usage">
+                        <label for="screen_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form_group">
+                  <label for="sort_number" class="title_small">정렬수번</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    id : 'sort_number',
+                    placeholder : ' ',
+                  }) %>
+                </div>
+                <div class="form_group">
+                  <strong class="title_small">DRM 적용여부</strong>
+                  <div class="form_inline">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="checkbox" id="check_excel" class="input_checkbox">
+                        <label for="check_excel" class="label_checkbox"><span class="label_text body_small">엑셀</span></label>
+                      </span>
+                    </div>
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="checkbox" id="check_screen" class="input_checkbox">
+                        <label for="check_screen" class="label_checkbox"><span class="label_text body_small">화면</span></label>
+                      </span>
+                    </div>
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="checkbox" id="check_print" class="input_checkbox">
+                        <label for="check_print" class="label_checkbox"><span class="label_text body_small">출력</span></label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tab Content: 기능버튼 -->
+              <div role="tabpanel" id="tabpanel_1-2" class="tab_content" aria-labelledby="tab_1-2" tabindex="-1">
+                <div class="accordion accordion_small">
+                  <div class="accordion_item">
+                    <button type="button" class="btn_accordion" aria-controls="accordion_content_1-1" aria-expanded="false">
+                      <span class="accordion_title body_small">기능버튼1</span>
+                    </button>
+                    <div role="region" id="accordion_content_1-1" class="accordion_content">
+                      <div class="form_group">
+                        <label for="button_name" class="title_small">버튼이름</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputBox : 'input_suffix input_small input_disabled',
+                          id : 'button_name',
+                          placeholder : '조회',
+                          disabled : true
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <label for="authority-01" class="title_small">권한</label>
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inputBox : 'input_small',
+                          inputVal : '저장',
+                          id : 'authority-01'
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <strong class="title_small">사용여부</strong>
+                        <div class="form_inline">
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                              <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                            </span>
+                          </div>
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                              <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion_divider">
+                    <span class="divider"></span>
+                  </div>
+                  <div class="accordion_item accordion_open">
+                    <button type="button" class="btn_accordion" aria-controls="accordion_content_1-2" aria-expanded="true">
+                      <span class="accordion_title body_small">기능버튼2</span>
+                    </button>
+                    <div role="region" id="accordion_content_1-2" class="accordion_content" style="display: block;">
+                      <div class="form_group">
+                        <label for="button_name" class="title_small">버튼이름</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputBox : 'input_suffix input_small input_disabled',
+                          id : 'button_name',
+                          placeholder : '조회',
+                          disabled : true
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <label for="authority-02" class="title_small">권한</label>
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inputBox : 'input_small',
+                          inputVal : '저장',
+                          id : 'authority-02'
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <strong class="title_small">사용여부</strong>
+                        <div class="form_inline">
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                              <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                            </span>
+                          </div>
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                              <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion_divider">
+                    <span class="divider"></span>
+                  </div>
+                  <div class="accordion_item">
+                    <button type="button" class="btn_accordion" aria-controls="accordion_content_1-3" aria-expanded="false">
+                      <span class="accordion_title body_small">기능버튼3</span>
+                    </button>
+                    <div role="region" id="accordion_content_1-3" class="accordion_content">
+                      <div class="form_group">
+                        <label for="button_name" class="title_small">버튼이름</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputBox : 'input_suffix input_small input_disabled',
+                          id : 'button_name',
+                          placeholder : '조회',
+                          disabled : true
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <label for="authority-03" class="title_small">권한</label>
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inputBox : 'input_small',
+                          inputVal : '저장',
+                          id : 'authority-03'
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <strong class="title_small">사용여부</strong>
+                        <div class="form_inline">
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                              <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                            </span>
+                          </div>
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                              <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion_divider">
+                    <span class="divider"></span>
+                  </div>
+                  <div class="accordion_item">
+                    <button type="button" class="btn_accordion" aria-controls="accordion_content_1-4" aria-expanded="false">
+                      <span class="accordion_title body_small">기능버튼4</span>
+                    </button>
+                    <div role="region" id="accordion_content_1-4" class="accordion_content">
+                      <div class="form_group">
+                        <label for="button_name" class="title_small">버튼이름</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputBox : 'input_suffix input_small input_disabled',
+                          id : 'button_name',
+                          placeholder : '조회',
+                          disabled : true
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <label for="authority-04" class="title_small">권한</label>
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inputBox : 'input_small',
+                          inputVal : '저장',
+                          id : 'authority-04'
+                        }) %>
+                      </div>
+                      <div class="form_group">
+                        <strong class="title_small">사용여부</strong>
+                        <div class="form_inline">
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                              <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                            </span>
+                          </div>
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                              <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion_divider">
+                    <span class="divider"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_large"><span class="btn_inner_text title_small">닫기</span></button>
+                <button type="button" class="btn btn_fill btn_primary btn_large"><span class="btn_inner_text title_small">저장하기</span></button>
+              </div>
+            </div>
+          </div>
+          <!-- // 좌/우 배치 일 경우 사용 -->
+        <div id="tab_01" tabindex="-1" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel"></div>
+        <div id="tab_02" tabindex="-1" role="tabpanel" aria-labelledby="tab_anchor_02" class="tab_panel"></div>
+        <div id="tab_03" tabindex="-1" role="tabpanel" aria-labelledby="tab_anchor_03" class="tab_panel"></div>
+        <div id="tab_04" tabindex="-1" role="tabpanel" aria-labelledby="tab_anchor_04" class="tab_panel"></div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+
+  <!-- [D] 더보기 메뉴 -->
+  <div id="tree_more_wrap" class="tree_more_wrap">
+    <ul  class="tree_more_menu" role="menu">
+      <li role="menuitem">
+        <button type="button" class="tree_more_option">
+          <span class="btn_inner_text body_medium">삭제</span>
+        </button>
+      </li>
+      <li role="menuitem">
+        <button type="button" class="tree_more_option">
+          <span class="btn_inner_text body_medium">이동</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!-- // [D] 더보기 메뉴 -->
+
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script>
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

@@ -1,0 +1,84 @@
+<%
+const optionWrap = locals.optionWrap || '';
+const inputArea = locals.inputArea || '';
+const inlineStyle = locals.inlineStyle || '';
+const inputBox = locals.inputBox || '';
+const ariaControls = locals.ariaControls || '';
+const tabindex = locals.tabindex || '';
+const id = locals.id || '';
+const inputVal = locals.inputVal || '';
+const ariaDescribedby = locals.ariaDescribedby || '';
+const inputDesc = locals.inputDesc !== undefined ? (locals.inputDesc === false ? '' : (locals.inputDesc || 'Help text')) : undefined;
+const badgeText = locals.badgeText || '';
+const badgeClass = locals.badgeClass || '';
+%>
+
+<%# option_wrap 클래스 목록 :
+  option_xxsmall : 매우 작은 옵션 영역
+  option_small : 작은 옵션 영역
+  option_error : 오류 상태의 옵션 영역
+  option_readonly : 읽기 전용 옵션 영역
+  option_disabled : 비활성화된 옵션 영역
+%>
+<%# input_area 클래스 목록(영역 '너비' 자체 고정값) :
+  input_area_small : 80
+  input_area_medium : 160
+  input_area_large : 240
+%>
+<%# input_box 클래스 목록:
+  input_xxsmall: 매우 작은 입력 박스
+  input_small: 작은 입력 박스
+  input_medium: 중간 크기의 입력 박스
+  input_large: 큰 입력 박스
+  input_suffix: 접미사가 있는 입력 박스
+  input_focused: 포커스된 상태의 입력 박스
+  input_error: 오류 상태의 입력 박스
+  input_readonly: 읽기 전용 입력 박스
+  input_disabled: 비활성화된 입력 박스
+  input_box_radius: 둥근 모서리 입력 박스
+%>
+<%# input_text 클래스 목록(폰트사이즈/굵기/행간) :
+  body_small : 14/400/22
+  label_medium : 12/400/18
+%>
+<%# ---------------------------------- %>
+<%# include 사용 예시:
+  include('./include/option_wrap.ejs', {
+    optionWrap: '옵션 영역 스타일 (예: option_xxsmall, option_small, option_error ..)',
+    inputArea: '너비 고정 (예: input_area_small, input_area_medium, input_area_large)',
+    inlineStyle: '인라인 스타일 적용 (예: width:100px; height:40px;)',
+    inputBox : '입력 박스 스타일 (예: input_xxsmall, input_small, input_focused, input_error ..)',
+    ariaControls: '연결할 ID (없으면 속성 출력 안됨)',
+    tabindex: '탭 이동 순서 (없으면 기본 0)',
+    inputVal: '표시할 입력값 (예: "전체", "옵션 1")',
+    id: 'input과 label 연결 ID',
+    ariaDescribedby: '설명 텍스트와 연결 (예: input_desc ID)',
+    inputDesc: '설명 텍스트 (있을 때만 <p> 태그 생성, 없으면 기본값 "Help text" 출력)',
+    badgeText :	배지 내용 (없으면 출력 안 됨),
+    badgeClass:	배지 스타일 (추가 클래스 지정 가능)"
+  })
+%>
+
+<div class="option_wrap<%- optionWrap ? ' ' + optionWrap.trim() : '' %>">
+  <div class="input_area<%- inputArea ? ' ' + inputArea.trim() : '' %>" <%- inlineStyle ? `style="${inlineStyle}"` : '' %>>
+    <div class="input_box<%- inputBox ? ' ' + inputBox.trim() : '' %>" role="combobox"
+      <%- ariaControls ? `aria-controls="${ariaControls}"` : '' %>
+      <%- tabindex ? `tabindex="0"` : '' %>>
+      <span class="input_text <%- (inputBox.includes('input_xxsmall') || inputBox.includes('input_xsmall')) ? 'label_medium' : 'body_small' %>"><%- inputVal %></span>
+      <input type="text"
+      <%- id ? `id="${id}"` : '' %>
+      aria-hidden="true" class="blind"
+      value="<%- inputVal %>"
+      <%- ariaDescribedby ? `aria-describedby="uio-select-desc${ariaDescribedby}"` : '' %>>
+      <% if (badgeText) { %>
+      <span class="badge<%- badgeClass ? ' ' + badgeClass.trim() : '' %>">
+        <span class="badge_text label_medium"><%- badgeText %></span>
+      </span>
+      <% } %>
+      <span class="ic ic_arrow_down_bold_16px"></span>
+    </div>
+    <% if (inputDesc !== undefined) { %>
+    <p class="input_desc" <%- ariaDescribedby ? `id="uio-select-desc${ariaDescribedby}"` : '' %>><%- inputDesc || 'Help text' %></p>
+    <% } %>
+  </div>
+</div>

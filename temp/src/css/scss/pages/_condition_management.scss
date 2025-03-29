@@ -1,0 +1,94 @@
+.condition {
+  &_management {
+    display: flex;
+    margin: -24px;
+  }
+
+  &_sidebar {
+    min-width: 260px;
+    padding: 24px;
+    border-right: 1px solid var(--outline);
+    box-sizing: border-box;
+
+    .filter_box {
+      + .filter_box {
+        margin-top: 20px;
+      }
+
+      .title_small {
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .divider {
+        margin: 8px 0;
+      }
+
+      .form_group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+
+        + .form_group {
+          margin-top: 8px;
+        }
+      }
+    }
+
+    .btn_group {
+      width: 100%;
+      margin-top: 20px;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  &_content {
+    position: relative;
+    flex: 1;
+
+    .tabs_section {
+      margin: 12px 0 24px;
+    }
+
+    .tab_content {
+      padding: 0 24px 24px;
+    }
+
+    .selection_area {
+      padding: 24px;
+    }
+
+    .add_box {
+      position: relative;
+      padding: 20px 0;
+      text-align: center;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        height: 1px;
+        background-color: var(--outline);
+        transform: translateY(-50%);
+        content: "";
+      }
+
+      .btn {
+        border-radius: 18px;
+        &::after {
+          border-radius: 18px;
+        }
+      }
+    }
+
+    .btn_group {
+      margin-top: 24px;
+      text-align: center;
+    }
+  }
+}

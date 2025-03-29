@@ -1,0 +1,51 @@
+<% const tabItems = locals.tabItems || []; %>
+<% const helpText = locals.helpText || ""; %>
+<% const pageNavigate = locals.pageNavigate || false; %>
+
+<%# include 사용 예시:
+  include('./include/tabs_section.ejs', {
+    tabsSize: ' 탭 버튼 크기 (tabs_xlarge, tabs_large, tabs_medium)',
+    tabItems: [
+      { id: '탭 버튼 id', ariaControls:'연결된 탭 패널의 id', text: '탭 버튼명', ariaSelected: true (선택된 탭 버튼) },
+    ],
+    helpText: "텍스트", // help text 추가
+    pageNavigate: true // 페이지 이동 셀렉트 박스 추가
+  }) %>
+%>
+
+<div class="tabs_section">
+  <div role="tablist" class="tabs_line <%= tabsSize %>">
+    <!-- [D] 탭 버튼/패널 필수 연결 속성:
+      - 탭버튼 aria-controls ↔ 패널 id
+      - 탭버튼 id ↔ 패널 aria-labelledby
+    -->
+
+    <!-- [D] 탭 버튼 활성화: btn_tab_active 클래스 & aria-selected="true" -->
+    <% tabItems.forEach((item, index) => { %>
+      <button
+        type="button"
+        role="tab"
+        id="<%- item.id %>"
+        class="btn_tab<%- item.ariaSelected ? ' btn_tab_active' : '' %>"
+        aria-controls="<%- item.ariaControls %>"
+        <%- item.ariaSelected ? `aria-selected="true"` : '' %>
+      >
+        <span class="tab_text <%- tabsSize === 'tabs_xlarge' ? 'title_large' : 'title_small' %>"><%- item.text %></span>
+      </button>
+    <% }) %>
+  </div>
+  <% if(helpText) { %>
+    <p class="help_text label_medium"><%- helpText %></p>
+  <% } %>
+  <% if(pageNavigate) {%>
+    <div class="option_wrap option_small">
+      <div class="input_area input_area_large">
+        <div class="input_box input_small" role="combobox" aria-controls="uio-select-outline1-1">
+          <span class="input_text body_small">화면 이동 선택</span>
+          <input type="text" aria-hidden="true" class="blind" placeholder="" value="화면 이동 선택">
+          <span class="ic ic_arrow_down_bold_16px"></span>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>

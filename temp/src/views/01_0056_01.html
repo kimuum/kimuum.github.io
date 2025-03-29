@@ -1,0 +1,337 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0056-A-HK / 나의 결재함",
+  "listTitle": "결제선 관리 > 나의 결재함_홈 : 01-기준정보"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content my_approval">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "결재선 관리", href: "#none" },
+                { text: "나의 결재함", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="control_section">
+            <h2 class="title_xlarge">나의 결재함</h2>
+            <div class="profile_box">
+              <p class="body_small"><span class="blind">소속</span>동부지역B2B사업팀</p>
+              <p class="body_small"><span class="blind">성명</span>김현대</p>
+              <p class="body_small"><span class="blind">직위</span>책임매니저</p>
+            </div>
+          </div>
+          <div class="accordion accordion_panel">
+            <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+            <div class="accordion_item accordion_open">
+              <div class="accordion_panel_header">
+                <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                <div id="accordion_panel_01" class="accordion_title">
+                  <span class="title_large">대결 현황 · 계획</span>
+                  <span class="title_desc body_small"><span class="ic ic_information_filled_16px"></span>내일부터 시작되는 대결이 있습니다.</span>
+                </div>
+                <div class="accordion_control">
+                  <!-- [D] 활성화: 텍스트 "접기", 비활성화: "펴기" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                  <button type="button" class="btn_accordion" aria-controls="accordion_panel_content_01" aria-labelledby="accordion_panel_01"><span class="body_small">접기</span><span class="ic ic_arrow_down_bold_16px"></span></button>
+                </div>
+              </div>
+              <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+              <div id="accordion_panel_content_01" class="accordion_content" role="region" style="display: block">
+                <div class="accordion_panel_content">
+                  <div class="card card_action">
+                    <div class="card_content">
+                      <div class="card_top_area">
+                        <strong class="card_title title_large">나의 대결자 (2)</strong>
+                        <a href="#none" class="btn btn_outline btn_xxsmall"><span class="label_medium">설정</span></a>
+                      </div>
+                      <ul class="list_wrap list_small no_background">
+                        <li class="list_item">
+                          <span class="badge badge_low badge_medium">
+                            <span class="badge_text label_medium">예정</span>
+                          </span>
+                          <p class="list_desc">
+                            <span class="body_small"><span class="blind">일자</span>25.00.00~25.00.00</span>
+                            <span class="body_small">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="card card_action">
+                    <div class="card_content">
+                      <div class="card_top_area">
+                        <strong class="card_title title_large">내가 대결하는 원 결재자 (3)</strong>
+                        <button type="button" class="btn btn_outline btn_xxsmall" aria-haspopup="dialog"><span class="label_medium">상세</span></button>
+                      </div>
+                      <ul class="list_wrap list_small no_background">
+                        <li class="list_item">
+                          <span class="badge badge_info badge_medium">
+                            <span class="badge_text label_medium">진행중</span>
+                          </span>
+                          <p class="list_desc">
+                            <span class="body_small"><span class="blind">일자</span>25.00.00~25.00.00</span>
+                            <span class="body_small">김현대 책임매니저, 판매조건결재 외 3개 화면</span>
+                          </p>
+                        </li>
+                        <li class="list_item">
+                          <span class="badge badge_info badge_medium">
+                            <span class="badge_text label_medium">진행중</span>
+                          </span>
+                          <p class="list_desc">
+                            <span class="body_small"><span class="blind">일자</span>25.00.00~25.00.00</span>
+                            <span class="body_small">김현대 책임매니저, 판매조건결재 외 3개 화면</span>
+                          </p>
+                        </li>
+                        <li class="list_item scroll_item">
+                          <span class="badge badge_info badge_medium">
+                            <span class="badge_text label_medium">진행중</span>
+                          </span>
+                          <p class="list_desc">
+                            <span class="body_small"><span class="blind">일자</span>25.00.00~25.00.00</span>
+                            <span class="body_small">김현대 책임매니저, 판매조건결재 외 3개 화면</span>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel panel_state">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="title_large">결재 현황</span>
+                <span class="title_desc body_small">결제 진행, 결재 완료, 결재 반려는 ‘발신'문서의 개수만 표시됩니다. 버튼을 클릭하면, 해당 결재문서함으로 이동합니다. </span>
+              </div>
+            </div>
+            <ul class="list_wrap list_clickable">
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <div class="list_title_box">
+                    <span class="ic ic_clipboard_light_20px"></span>
+                    <span class="list_text body_xlarge">결재할 문서</span>
+                  </div>
+                  <span class="text_amount body_xlarge"><strong class="headline_xsmall">99</strong>건</span>
+                </a>
+              </li>
+              <li class="list_divider">
+                <span class="divider divider_vertical"></span>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <div class="list_title_box">
+                    <span class="ic ic_clipboard_light_20px"></span>
+                    <span class="list_text body_xlarge">결재 진행</span>
+                  </div>
+                  <span class="text_amount body_xlarge"><strong class="headline_xsmall">0</strong>건</span>
+                </a>
+              </li>
+              <li class="list_divider">
+                <span class="divider divider_vertical"></span>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <div class="list_title_box">
+                    <span class="ic ic_clipboard_light_20px"></span>
+                    <span class="list_text body_xlarge">결재 완료</span>
+                  </div>
+                  <span class="text_amount body_xlarge"><strong class="headline_xsmall">1</strong>건</span>
+                </a>
+              </li>
+              <li class="list_divider">
+                <span class="divider divider_vertical"></span>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <div class="list_title_box">
+                    <span class="ic ic_clipboard_light_20px"></span>
+                    <span class="list_text body_xlarge">결재 반려</span>
+                  </div>
+                  <span class="text_amount body_xlarge"><strong class="headline_xsmall">2</strong>건</span>
+                </a>
+              </li>
+              <li class="list_divider">
+                <span class="divider divider_vertical"></span>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <div class="list_title_box">
+                    <span class="ic ic_clipboard_light_20px"></span>
+                    <span class="list_text body_xlarge">작성 중 문서</span>
+                  </div>
+                  <span class="text_amount body_xlarge"><strong class="headline_xsmall">3</strong>건</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- 추가 케이스 및 스크립트 적용 확인 필요 -->
+          <div class="panel panel_bookmark">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="title_large">즐겨찾기 화면별 결재문서 현황</span>
+                <span class="title_desc body_small">화면별 ‘수신'문서의 결재상태 개수가 표시됩니다. 버튼을 클릭하면, 지정한 화면으로 이동합니다.</span>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">즐겨찾기 편집</span></button>
+              </div>
+            </div>
+            <ul class="list_wrap">
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">판매조건결재</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <!-- [D] 대기, 반려: 'approval_spotlight' 클래스 추가 -->
+                    <span class="text_state body_small">대기<strong class="title_small  approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">실적변경 의뢰</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">통합의뢰</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">실적이관 의뢰</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">결재 화면</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link">
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">결재 화면</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">99</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small approval_spotlight">9</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">9</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small approval_spotlight">9</strong></span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

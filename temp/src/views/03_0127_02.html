@@ -1,0 +1,821 @@
+<%-include('./include/head.ejs',{
+  "title": "계출-0127-A-HK_판매코드 마스터 관리",
+  "listTitle": "판매코드 마스터 관리 > (팝업) 쏘나타DN8하위레벨추가 : 03-계약출고"
+})%>
+<body class="project_sales_system" data-pagestatus="">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+    </main>
+    <!-- // Contents -->
+  </div>
+  <!-- Layer -->
+  <!-- [D] 팝업 활성화 클래스 : dialog_active -->
+  <div class="dialog_wrap dialog_active" id="dialog_management">
+    <div class="backdrop_high"></div>
+    <div class="dialog dialog_scrollable dialog_xlarge shadow_24dp">
+      <div class="dialog_head">
+        <strong class="dialog_title title_large">쏘나타DN8하위레벨추가</strong>
+        <button type="button" class="btn_dialog_close" aria-label="닫기">
+          <span class="ic ic_close_bold_24px"></span>
+        </button>
+      </div>
+      <div class="dialog_content">
+        <div class="condition_management">
+          <div class="condition_sidebar">
+            <div class="filter_box">
+              <strong class="title_small">차량선택</strong>
+              <div class="form_group">
+                <label for="select_vehicle_1-1">차종</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small option_disabled',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small input_disabled',
+                  inputVal : '전체',
+                  id : 'select_vehicle_1-1'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_1-2">대표차명</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small option_disabled',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small input_disabled',
+                  inputVal : 'GN7 그랜저GN7',
+                  id : 'select_vehicle_1-2'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_1-3">차명</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_vehicle_1-3'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_1-4">버전</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_vehicle_1-4'
+                }) %>
+              </div>
+            </div>
+            <div class="filter_box">
+              <strong class="title_small">상세사양선택</strong>
+              <div class="form_group">
+                <label for="select_option_1-1">엔진</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-1'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_1-2">구동</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-2'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_1-3">미션</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-3'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_1-4">트림</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-4'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_1-5">인승</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-5'
+                }) %>
+              </div>
+              <div class="divider"></div>
+              <div class="form_group">
+                <label for="select_option_1-6">옵션</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-6'
+                }) %>
+              </div>
+              <div class="divider"></div>
+              <div class="form_group">
+                <label for="select_option_1-7">외장컬러</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-7'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_1-8">내장컬러</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_1-8'
+                }) %>
+              </div>
+            </div>
+            <div class="btn_group btn_group_center">
+              <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+            </div>
+          </div>
+          <div class="condition_content">
+            <%-include('./include/tabs_section.ejs', {
+              tabsSize: 'tabs_large',
+              tabItems: [
+                { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '사양', ariaSelected: true },
+                { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '판매코드' },
+              ],
+              helpText: "이 탭에서는 제품 사양을 확인할 수 있습니다."
+            })%>
+            <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+            <!-- Tab Content: 사양 -->
+            <div role="tabpanel" id="tabpanel_1-1" class="tab_content is_active" aria-labelledby="tab_1-1" tabindex="0">
+              <div class="table_wrap">
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_large"><span class="btn_inner_text title_small">적용</span></button>
+              </div>
+            </div>
+
+            <!-- Tab Content: 판매코드 -->
+            <div role="tabpanel" id="tabpanel_1-2" class="tab_content" aria-labelledby="tab_1-2" tabindex="-1">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <div class="btn_group">
+										<button type="button" class="btn btn_outline btn_with_ic btn_small">
+                      <span class="ic ic_download_bold_16px"></span>
+                      <span class="btn_inner_text body_small">엑셀다운로드</span>
+                    </button>
+									</div>
+                </div>
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dialog_wrap" id="dialog_edit">
+    <div class="backdrop_high"></div>
+    <div class="dialog dialog_scrollable dialog_xlarge shadow_24dp">
+      <div class="dialog_head">
+        <strong class="dialog_title title_large">판매코드 조건 관리</strong>
+        <button type="button" class="btn_dialog_close" aria-label="닫기">
+          <span class="ic ic_close_bold_24px"></span>
+        </button>
+      </div>
+      <div class="dialog_content">
+        <div class="condition_management">
+          <div class="condition_sidebar">
+            <div class="filter_box">
+              <strong class="title_small">차량선택</strong>
+              <div class="form_group">
+                <label for="select_vehicle_2-1">차종</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_vehicle_2-1'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_2-2">대표차명</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : 'GN7 그랜저GN7',
+                  id : 'select_vehicle_2-2'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_2-3">차명</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_vehicle_2-3'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_vehicle_2-4">버전</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_vehicle_2-4'
+                }) %>
+              </div>
+            </div>
+            <div class="filter_box">
+              <strong class="title_small">상세사양선택</strong>
+              <div class="form_group">
+                <label for="select_option_2-1">엔진</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-1'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_2-2">구동</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-2'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_2-3">미션</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-3'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_2-4">트림</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-4'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_2-5">인승</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-5'
+                }) %>
+              </div>
+              <div class="divider"></div>
+              <div class="form_group">
+                <label for="select_option_2-6">옵션</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-6'
+                }) %>
+              </div>
+              <div class="divider"></div>
+              <div class="form_group">
+                <label for="select_option_2-7">외장컬러</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-7'
+                }) %>
+              </div>
+              <div class="form_group">
+                <label for="select_option_2-8">내장컬러</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inlineStyle : 'width: 148px',
+                  inputBox : 'input_small',
+                  inputVal : '전체',
+                  id : 'select_option_2-8'
+                }) %>
+              </div>
+            </div>
+            <div class="btn_box">
+              <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+            </div>
+          </div>
+          <div class="condition_content">
+            <div class="selection_area">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <div class="option_group">
+										<span class="title_small">조회결과</span>
+									</div>
+                </div>
+                <!-- 테이블 영역 확인용, 추후 Ag grid 로 갈음 -->
+                <div class="table_inner">
+                  <table class="table table_small">
+                    <caption><span>테이블</span></caption>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- // 테이블 영역 확인용, 추후 Ag grid 로 갈음 -->
+              </div>
+              <div class="add_box">
+                <button type="button" class="btn btn_outline btn_with_ic btn_xsmall"><span class="ic ic_arrow_down_bold_16px"></span><span class="btn_inner_text label_medium">담기</span></button>
+              </div>
+              <div class="table_wrap">
+                <div class="table_util">
+                  <div class="option_group">
+										<span class="title_small">적용대상</span>
+									</div>
+                </div>
+                <!-- 테이블 영역 확인용, 추후 Ag grid 로 갈음 -->
+                <div class="table_inner">
+                  <table class="table table_small">
+                    <caption><span>테이블</span></caption>
+                    <thead>
+                      <tr>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                        <th>
+                          <div class="cell_text"><span class="title_small">Header</span></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_weak">Text</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- // 테이블 영역 확인용, 추후 Ag grid 로 갈음 -->
+              </div>
+              <div class="btn_box">
+                <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">적용</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Layer -->
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    popupItems : [
+      {id : 'dialog_management', text : '판매코드 조건 관리 - 사양/판매코드'},
+      {id : 'dialog_edit', text : '판매코드 조건 관리 - 담기'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+      // 5. [팝업] 판매코드 조건 관리 - 사양
+      $('button[data-dialog-target="dialog_management"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_management").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      });
+      $(".btn_dialog_close").click(function () {
+        $("#dialog_management").removeClass("dialog_active");
+        $("body").removeClass("scroll_lock");
+      });
+
+      // 6. [팝업] 판매코드 조건 관리 - 담기
+      $('button[data-dialog-target="dialog_edit"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_edit").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      });
+      $(".btn_dialog_close").click(function () {
+        $("#dialog_edit").removeClass("dialog_active");
+        $("body").removeClass("scroll_lock");
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+  </body>
+  </html>

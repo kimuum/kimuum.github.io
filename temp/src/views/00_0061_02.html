@@ -1,0 +1,335 @@
+<%-include('./include/head.ejs',{
+  "title": "시스템_0061_A_HK_공지사항관리 / 공지사항작성",
+  "listTitle": "공지사항 > 공지사항관리 > 작성 : 00-공통/시스템"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.07">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content notice">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "공지사항 관리", id: "CON0000BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="top_wrap">
+              <a href="#none" class="btn btn_only_ic btn_xxsmall" aria-label="뒤로가기"><span class="ic ic_arrow_back_bold_24px"></span></a>
+              <span class="body_small">문서번호 : DCD_U_2022000111_001</span>
+            </div>
+          </div>
+          <div class="control_section">
+            <h3 class="title_xlarge">신규 공지사항 등록</h3>
+            <div class="btn_group">
+              <button type="submit" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">임시저장</span></button>
+              <!-- [D] 활성화: 연관된 팝업으로 초점 이동 -->
+              <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">등록하기</span></button>
+            </div>
+          </div>
+          <div class="accordion accordion_panel">
+            <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+            <div class="accordion_item accordion_open">
+              <div class="accordion_panel_header">
+                <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                <div id="accordion_panel_01" class="accordion_title">
+                  <span class="title_large">기본정보</span>
+                </div>
+                <div class="accordion_control">
+                <!-- [D] 활성화: aria-expended="true", 비활성화: "false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                  <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_01" aria-labelledby="accordion_panel_01"><span class="ic ic_arrow_down_bold_24px"></span></button>
+                </div>
+              </div>
+              <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+              <div id="accordion_panel_content_01" class="accordion_content" role="region" style="display: block">
+                <div class="accordion_panel_content">
+                  <div class="table_flex">
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>카테고리</strong>
+                      </div>
+                      <div class="td">
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inlineStyle : 'width:150px',
+                          inputBox : 'input_small',
+                          ariaControls : 'uio-select-table-cell2',
+                          tabindex : true,
+                          inputVal : '전체',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="th"><strong class="title_small">차종</strong></div>
+                      <div class="td">
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inlineStyle : 'width:150px',
+                          inputBox : 'input_small',
+                          tabindex : true,
+                          inputVal : '전체',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="th"><strong class="title_small">대표차명</strong></div>
+                      <div class="td">
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inlineStyle : 'width:150px',
+                          inputBox : 'input_small',
+                          tabindex : true,
+                          inputVal : '전체',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="th"><strong class="title_small">모델명</strong></div>
+                      <div class="td">
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inlineStyle : 'width:150px',
+                          inputBox : 'input_small',
+                          tabindex : true,
+                          inputVal : '전체',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>제목</strong>
+                      </div>
+                      <div class="td">
+                        <div class="input_wrap">
+                          <%- include('./include/input_area.ejs', {
+                            inputArea : 'input_area_large',
+                            inputBox : 'input_suffix input_small',
+                            ariaLabel : '',
+                            placeholder : '공지사항 제목을 입력해주세요',
+                            required : true
+                          }) %>
+                          <div class="input_select_wrap">
+                            <span class="input_select_box input_select_medium">
+                              <input type="checkbox" id="uio_checkbox1" class="input_checkbox">
+                              <label for="uio_checkbox1" class="label_checkbox"><span class="label_text body_small">리스트 상단 고정</span></label>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>게시시작일시</strong>
+                      </div>
+                      <div class="td">
+                        <%- include('./include/date_picker.ejs', {
+                          datepickerType: 'datetime',
+                          inlineStyle: 'width: 240px',
+                          placeholder: 'YYYY-MM-DD 00:00 AM',
+                          startValue: '2025-02-01 11:50 AM',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>게시상태</strong>
+                      </div>
+                      <div class="td">
+                        <%- include('./include/option_wrap.ejs', {
+                          optionWrap : 'option_small',
+                          inlineStyle : 'width:150px',
+                          inputBox : 'input_small',
+                          inputVal : '게시상태 선택',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>권한범위</strong>
+                      </div>
+                      <div class="td">
+                        <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">범위설정</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion accordion_panel">
+            <div class="accordion_item accordion_open">
+              <div class="accordion_panel_header">
+                <div id="accordion_panel_02" class="accordion_title">
+                  <span class="title_large">공지내용</span>
+                </div>
+                <div class="accordion_control">
+                  <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_02" aria-labelledby="accordion_panel_02"><span class="ic ic_arrow_down_bold_24px"></span></button>
+                </div>
+              </div>
+              <div id="accordion_panel_content_02" class="accordion_content" role="region" style="display: block">
+                <div class="accordion_panel_content">
+                  <div class="table_flex">
+                    <div class="col">
+                      <div class="th">
+                        <strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>공지내용</strong>
+                      </div>
+                      <div class="td">
+                        <!-- editor -->
+                        <div class="editor_wrap"></div>
+                        <!-- // editor -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion accordion_panel">
+            <div class="accordion_item accordion_open">
+              <div class="accordion_panel_header">
+                <div id="accordion_panel_03" class="accordion_title">
+                  <span class="title_large">파일첨부</span>
+                </div>
+                <div class="accordion_control">
+                  <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_03" aria-labelledby="accordion_panel_03"><span class="ic ic_arrow_down_bold_24px"></span></button>
+                </div>
+              </div>
+              <div id="accordion_panel_content_03" class="accordion_content" role="region" style="display: block">
+                <div class="accordion_panel_content">
+                  <div class="table_flex">
+                    <div class="col">
+                      <div class="th">
+                        <strong class="title_small">파일등록</strong>
+                      </div>
+                      <div class="td">
+                        <div class="input_wrap">
+                          <div class="input_area">
+                            <div class="input_box input_suffix input_small">
+                              <input type="file" id="file_upload" class="btn btn_outline btn_small" name="" />
+                              <label for="file_upload" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">업로드</span></label>
+                            </div>
+                          </div>
+                          <span class="label_medium_underline">첨부파일 [2]</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="accordion accordion_panel">
+            <div class="accordion_item accordion_open">
+              <div class="accordion_panel_header">
+                <div id="accordion_04" class="accordion_title">
+                  <span class="title_large">홈 공지 설정</span>
+                </div>
+                <div class="accordion_control">
+                  <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="content_04" aria-labelledby="accordion_04"><span class="ic ic_arrow_down_bold_24px"></span></button>
+                </div>
+              </div>
+              <div id="content_04" class="accordion_content" role="region" style="display: block">
+                <div class="accordion_panel_content">
+                  <div class="table_flex">
+                    <div class="col">
+                      <div class="th">
+                        <strong class="title_small">팝업공지</strong>
+                        <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                          <button type="button" class="btn btn_only_ic btn_info btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="팝업공지 안내"  >
+                            <!-- 아이콘 추가 필요 -->
+                            <span class="ic ic_information_regular_16px"></span>
+                          </button>
+                          <div class="tooltip tooltip_top_center shadow_8dp" style="display: none;">
+                            <p class="tooltip_text label_medium">가나다라마바사아자차카타파하</p>
+                            <button type="button" class="btn-close-tooltip js-btn-close-tooltip" aria-label="Close toast"><span class="ic ic_information_regular_16px"></span></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="td">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox2" class="input_checkbox">
+                          <label for="uio_checkbox2" class="label_checkbox"><span class="label_text body_small">팝업공지 여부</span></label>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="th"><strong class="title_small">설정기간</strong></div>
+                      <div class="td">
+                        <%- include('./include/date_picker.ejs', {
+                          inlineStyle: 'width: 288px',
+                          range: true,
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="th"><strong class="title_small">팝업순서</strong></div>
+                      <div class="td">
+                        <%- include('./include/input_area.ejs', {
+                          inputArea : 'input_area_small',
+                          inputBox : 'input_suffix input_small',
+                          ariaLabel : '',
+                          placeholder : ' ',
+                        }) %>
+                      </div>
+                    </div>
+                    <div class="col colspan_4">
+                      <div class="th">
+                        <strong class="title_small">긴급공지</strong>
+                        <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                          <button type="button" class="btn btn_only_ic btn_info btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="긴급공지 안내"  >
+                            <span class="ic ic_information_regular_16px"></span>
+                          </button>
+                          <div class="tooltip tooltip_top_center shadow_8dp" style="display: none;">
+                            <p class="tooltip_text label_medium">가나다라마바사아자차카타파하</p>
+                            <button type="button" class="btn-close-tooltip js-btn-close-tooltip" aria-label="Close toast"><span class="ic ic_information_regular_16px"></span></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="td">
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="checkbox" id="uio_checkbox3" class="input_checkbox">
+                            <label for="uio_checkbox3" class="label_checkbox"><span class="label_text body_small">긴급공지 여부</span></label>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+
+  </div>
+  <%-include('./include/script.ejs')%>
+</body>
+</html>

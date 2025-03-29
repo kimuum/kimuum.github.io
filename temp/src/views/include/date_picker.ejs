@@ -1,0 +1,725 @@
+<%
+const datepicker = locals.datepicker || 'datepicker_small';
+const datepickerType = locals.datepickerType || 'date';
+const ariaLabelledby = locals.ariaLabelledby || '';
+const inlineStyle = locals.inlineStyle || '';
+const range = locals.range || false;
+const startValue = locals.startValue || '';
+const endValue = locals.endValue || null;
+const id = locals.id || '';
+const placeholder = locals.placeholder || 'YYYY-MM-DD';
+%>
+
+<%# datepicker 클래스 목록:
+  datepicker_xsmall: 조금 작은 datepicker 스타일 정의
+  datepicker_small: 작은 datepicker 스타일 정의
+  datepicker_month: Month 레이어 스타일 정의
+%>
+<%# ---------------------------------- %>
+<%# include 사용 예시:
+  include('./include/date_picker.ejs', {
+    datepicker: 'datepicker 스타일, 미입력식 기본값 "datepicker_small"',
+    datepickerType: 'datepicker 타입, 미입력시 기본값 "date"',
+    ariaLabelledby: 'label for 값과 연결',
+    inlineStyle: '인라인 스타일 적용 (예: width:100px; height:40px;)',
+    range: '날짜 범위 설정, 미입력시 기본값 "false"',
+    startValue: '시작일',
+    endValue: '종료일',
+    id: 'label for 값과 연결',
+    placeholder: '미입력식 기본값 "YYYY-MM-DD"',
+  })
+%>
+
+<div class="datepicker <%- datepicker %>" role="group"
+<%- ariaLabelledby ? `aria-labelledby="${ariaLabelledby}"` : '' %>
+<%- inlineStyle ? `style="${inlineStyle}"` : '' %>>
+  <div class="datepicker_inner" style="position:relative">
+    <div class="react-datepicker-wrapper">
+      <div class="react-datepicker__input-container">
+        <!-- [D] input 커스텀 영역 -->
+        <div class="input_area input_datepicker_area">
+          <div class="input_box <%- (datepicker.includes('datepicker_xsmall') || datepicker.includes('datepicker_small')) ? 'input_xsmall' : 'input_small' %>">
+            <input
+              type="text"
+              <%- id ? `id="${id}"` : '' %>
+              class="input_text <%- datepicker.includes('datepicker_xsmall') ? 'label_medium' : 'body_small' %>"
+              placeholder="<%- placeholder %>"
+              <%- startValue ? `value="${startValue}"` : '' %>
+              aria-label="date picker"
+            >
+            <% if (startValue !== '') { %>
+              <button type="button" class="btn_clear_input" aria-label="삭제">
+                <span class="ic ic_close_circle_filled_16px"></span>
+              </button>
+            <% } %>
+            <span class="ic <%- datepickerType == 'datetime' ? 'ic_schedule_time_bold_16px' : 'ic_calendar_bold_16px' %>"></span>
+          </div>
+        </div>
+        <!-- // [D] input 커스텀 영역 -->
+      </div>
+    </div>
+    <% if (datepickerType === 'datetime') { %>
+      <div class="react-datepicker__tab-loop" style="display: none;">
+        <div class="react-datepicker__tab-loop__start" tabindex="0"></div>
+        <div class="react-datepicker-popper" data-placement="bottom" style="position:absolute;<%- (datepicker.includes('datepicker_small')) ? 'top:32px' : 'top:28px' %>;left:0;z-index:10">
+          <div>
+            <div class="react-datepicker">
+              <div class="react-datepicker__triangle"></div>
+              <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+              <div class="react-datepicker__month-container">
+                <div class="react-datepicker__header react-datepicker__header--custom">
+                  <!-- [D] header 커스텀 영역 -->
+                  <div class="datepicker_header_content">
+                    <button type="button" class="btn_datepicker_previous" aria-label="Previous Month">
+                      <span class="ic ic_arrow_back_bold_20px"></span>
+                    </button>
+                    <div class="datepicker_current_month">
+                      <strong class="datepicker_current_month_title title_xlarge">2025년 5월</strong>
+                      <!-- [D] 버튼 클릭 시 btn_datepicker_switch_open 클래스 추가 -->
+                      <button type="button" class="btn_datepicker_switch" aria-label="달력 열기"><span class="ic_arrow_down_filled_16px"></span></button>
+                    </div>
+                    <button type="button" class="btn_datepicker_next" aria-label="Next Month">
+                      <span class="ic ic_arrow_forward_bold_20px"></span>
+                    </button>
+                  </div>
+                  <!-- //[D] header 커스텀 영역 -->
+                  <div class="react-datepicker__day-names">
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Su</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Mo</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Tu</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">We</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Th</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Fr</div>
+                    </div>
+                    <div class="react-datepicker__day-name">
+                      <div class="datepicker_week_text">Sa</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="react-datepicker__month" aria-label="month  2024-05" role="listbox">
+                  <div class="react-datepicker__week">
+                    <div class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Sunday, April 28th, 2024" role="option">
+                      <div class="datepicker_day_text">28</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month" aria-label="Choose Monday, April 29th, 2024" role="option">
+                      <div class="datepicker_day_text">29</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month" aria-label="Choose Tuesday, April 30th, 2024" role="option">
+                      <div class="datepicker_day_text">30</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--001  react-datepicker__day--today" aria-label="Choose Wednesday, May 1st, 2024" role="option" aria-current="date">
+                      <div class="datepicker_day_text">1</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--selected" aria-label="Choose Thursday, May 2nd, 2024" role="option" aria-selected="true">
+                      <div class="datepicker_day_text">2</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--003" aria-label="Choose Friday, May 3rd, 2024" role="option">
+                      <div class="datepicker_day_text">3</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend" aria-label="Choose Saturday, May 4th, 2024" role="option">
+                      <div class="datepicker_day_text">4</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__week">
+                    <div class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend" aria-label="Choose Sunday, May 5th, 2024" role="option">
+                      <div class="datepicker_day_text">5</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--006" aria-label="Choose Monday, May 6th, 2024" role="option">
+                      <div class="datepicker_day_text">6</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--007" aria-label="Choose Tuesday, May 7th, 2024" role="option">
+                      <div class="datepicker_day_text">7</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--008" aria-label="Choose Wednesday, May 8th, 2024" role="option">
+                      <div class="datepicker_day_text">8</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--009" aria-label="Choose Thursday, May 9th, 2024" role="option">
+                      <div class="datepicker_day_text">9</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--010" aria-label="Choose Friday, May 10th, 2024" role="option">
+                      <div class="datepicker_day_text">10</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend" aria-label="Choose Saturday, May 11th, 2024" role="option">
+                      <div class="datepicker_day_text">11</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__week">
+                    <div class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend" aria-label="Choose Sunday, May 12th, 2024" role="option">
+                      <div class="datepicker_day_text">12</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--013" aria-label="Choose Monday, May 13th, 2024" role="option">
+                      <div class="datepicker_day_text">13</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--014" aria-label="Choose Tuesday, May 14th, 2024" role="option">
+                      <div class="datepicker_day_text">14</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--015" aria-label="Choose Wednesday, May 15th, 2024" role="option">
+                      <div class="datepicker_day_text">15</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--016" aria-label="Choose Thursday, May 16th, 2024" role="option">
+                      <div class="datepicker_day_text">16</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--017" aria-label="Choose Friday, May 17th, 2024" role="option">
+                      <div class="datepicker_day_text">17</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend" aria-label="Choose Saturday, May 18th, 2024" role="option">
+                      <div class="datepicker_day_text">18</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__week">
+                    <div class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend" aria-label="Choose Sunday, May 19th, 2024" role="option">
+                      <div class="datepicker_day_text">19</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--020" aria-label="Choose Monday, May 20th, 2024" role="option">
+                      <div class="datepicker_day_text">20</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--021" aria-label="Choose Tuesday, May 21st, 2024" role="option">
+                      <div class="datepicker_day_text">21</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--022" aria-label="Choose Wednesday, May 22nd, 2024" role="option">
+                      <div class="datepicker_day_text">22</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--023" aria-label="Choose Thursday, May 23rd, 2024" role="option">
+                      <div class="datepicker_day_text">23</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--024" aria-label="Choose Friday, May 24th, 2024" role="option">
+                      <div class="datepicker_day_text">24</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--weekend" aria-label="Choose Saturday, May 25th, 2024" role="option">
+                      <div class="datepicker_day_text">25</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__week">
+                    <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend" aria-label="Choose Sunday, May 26th, 2024" role="option">
+                      <div class="datepicker_day_text">26</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--027" aria-label="Choose Monday, May 27th, 2024" role="option">
+                      <div class="datepicker_day_text">27</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--028" aria-label="Choose Tuesday, May 28th, 2024" role="option">
+                      <div class="datepicker_day_text">28</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--029" aria-label="Choose Wednesday, May 29th, 2024" role="option">
+                      <div class="datepicker_day_text">29</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--030" aria-label="Choose Thursday, May 30th, 2024" role="option">
+                      <div class="datepicker_day_text">30</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--031" aria-label="Choose Friday, May 31st, 2024" role="option">
+                      <div class="datepicker_day_text">31</div>
+                    </div>
+                    <div class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Saturday, June 1st, 2024" role="option">
+                      <div class="datepicker_day_text">1</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="react-datepicker__children-container">
+                <!-- [D] time 커스텀 영역 -->
+                <div class="timepicker_area timepicker_area_medium">
+                  <strong class="timepicker_title title_medium">Enter Time</strong>
+                  <div class="timepicker_box">
+                    <div class="timepicker_select">
+                      <div class="timepicker_select_inner">
+                        <button type="button" class="btn_timepicker_up" aria-label="up">
+                          <span class="ic ic_arrow_up_filled_16px"></span>
+                        </button>
+                        <div class="input_box input_timepicker_box">
+                          <input type="text" class="input_text body_small" placeholder="00" aria-label="hour">
+                        </div>
+                        <button type="button" class="btn_timepicker_down" aria-label="down">
+                          <span class="ic ic_arrow_down_filled_16px"></span>
+                        </button>
+                      </div>
+                      <span class="timepicker_range_mark">:</span>
+                      <div class="timepicker_select_inner">
+                        <button type="button" class="btn_timepicker_up" aria-label="up">
+                          <span class="ic ic_arrow_up_filled_16px"></span>
+                        </button>
+                        <div class="input_box input_timepicker_box">
+                          <input type="text" class="input_text body_small" placeholder="00" aria-label="minute">
+                        </div>
+                        <button type="button" class="btn_timepicker_down" aria-label="down">
+                          <span class="ic ic_arrow_down_filled_16px"></span>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="timepicker_toggle">
+                      <div class="tabs tabs_large tabs_timepicker">
+                        <button type="button" class="btn_tab btn_tab_active"><span class="tab_text title_small">AM</span></button>
+                        <button type="button" class="btn_tab"><span class="tab_text body_small">PM</span></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- // [D] time 커스텀 영역 -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="react-datepicker__tab-loop__end" tabindex="0"></div>
+      </div>
+    <% } else if (datepickerType === 'month') { %>
+      <div class="react-datepicker__tab-loop" style="display: none">
+        <div class="react-datepicker__tab-loop__start" tabindex="0"></div>
+        <div class="react-datepicker-popper" data-placement="bottom" style="position:absolute;<%- (datepicker.includes('datepicker_small')) ? 'top:32px' : 'top:28px' %>;left:0;z-index:10">
+          <div>
+            <div class="react-datepicker">
+              <div class="react-datepicker__triangle"></div>
+              <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+              <div class="react-datepicker__month-container">
+                <div class="react-datepicker__header react-datepicker__header--custom">
+                  <!-- [D] header 커스텀 영역 -->
+                  <div class="datepicker_header_content">
+                    <button type="button" class="btn_datepicker_previous" aria-label="Previous Month">
+                      <span class="ic ic_arrow_back_bold_20px"></span>
+                    </button>
+                    <div class="datepicker_current_month">
+                      <strong class="datepicker_current_month_title title_xlarge">2025년</strong>
+                      <!-- [D] 버튼 클릭 시 btn_datepicker_switch_open 클래스 추가 -->
+                      <button type="button" class="btn_datepicker_switch" aria-label="달력 열기"><span class="ic_arrow_down_filled_16px"></span></button>
+                    </div>
+                    <button type="button" class="btn_datepicker_next" aria-label="Next Month">
+                      <span class="ic ic_arrow_forward_bold_20px"></span>
+                    </button>
+                  </div>
+                  <!-- //[D] header 커스텀 영역 -->
+                </div>
+                <div class="react-datepicker__month react-datepicker__monthPicker" aria-label="month  2024-05" role="listbox">
+                  <div class="react-datepicker__month-wrapper">
+                    <div class="react-datepicker__month-text react-datepicker__month-0" role="option" aria-label="Choose January 2024">
+                      <div class="datepicker_month_text body_small">Jan</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-1" role="option" aria-label="Choose February 2024">
+                      <div class="datepicker_month_text body_small">Feb</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-2" role="option" aria-label="Choose March 2024">
+                      <div class="datepicker_month_text body_small">Mar</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-3" role="option" aria-label="Choose April 2024">
+                      <div class="datepicker_month_text body_small">Apr</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__month-wrapper">
+                    <div class="react-datepicker__month-text react-datepicker__month-4 react-datepicker__month-text--selected react-datepicker__month-text--keyboard-selected react-datepicker__month-text--today" role="option" aria-label="Choose May 2024" aria-current="date" aria-selected="true">
+                      <div class="datepicker_month_text body_small">May</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-5" role="option" aria-label="Choose June 2024">
+                      <div class="datepicker_month_text body_small">Jun</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-6" role="option" aria-label="Choose July 2024">
+                      <div class="datepicker_month_text body_small">Jul</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-7" role="option" aria-label="Choose August 2024">
+                      <div class="datepicker_month_text body_small">Aug</div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__month-wrapper">
+                    <div class="react-datepicker__month-text react-datepicker__month-8" role="option" aria-label="Choose September 2024">
+                      <div class="datepicker_month_text body_small">Sep</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-9" role="option" aria-label="Choose October 2024">
+                      <div class="datepicker_month_text body_small">Oct</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-10" role="option" aria-label="Choose November 2024">
+                      <div class="datepicker_month_text body_small">Nov</div>
+                    </div>
+                    <div class="react-datepicker__month-text react-datepicker__month-11" role="option" aria-label="Choose December 2024">
+                      <div class="datepicker_month_text body_small">Dec</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="react-datepicker__tab-loop__end" tabindex="0"></div>
+      </div>
+    <% } else { %>
+      <% if (range) { %>
+        <%# 날짜 범위 설정: true %>
+        <div class="react-datepicker__tab-loop" style="display: none">
+          <div class="react-datepicker__tab-loop__start" tabindex="0"></div>
+          <div class="react-datepicker-popper" data-placement="bottom" style="position:absolute;<%- (datepicker.includes('datepicker_small')) ? 'top:32px' : 'top:28px' %>;left:0;z-index:10">
+            <div>
+              <div class="react-datepicker">
+                <div class="react-datepicker__triangle"></div>
+                <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+                <div class="react-datepicker__month-container">
+                  <div class="react-datepicker__header react-datepicker__header--custom">
+                    <!-- [D] header 커스텀 영역 -->
+                    <div class="datepicker_header_content">
+                      <button type="button" class="btn_datepicker_previous" aria-label="Previous Month">
+                        <span class="ic ic_arrow_back_bold_20px"></span>
+                      </button>
+                      <div class="datepicker_current_month">
+                        <strong class="datepicker_current_month_title title_xlarge">2025년 5월</strong>
+                        <!-- [D] 버튼 클릭 시 btn_datepicker_switch_open 클래스 추가 -->
+                        <button type="button" class="btn_datepicker_switch" aria-label="달력 열기"><span class="ic_arrow_down_filled_16px"></span></button>
+                      </div>
+                      <button type="button" class="btn_datepicker_next" aria-label="Next Month">
+                        <span class="ic ic_arrow_forward_bold_20px"></span>
+                      </button>
+                    </div>
+                    <!-- //[D] header 커스텀 영역 -->
+                    <div class="react-datepicker__day-names">
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Su</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Mo</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Tu</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">We</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Th</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Fr</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Sa</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__month" aria-label="month  2024-05" role="listbox">
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Sunday, April 28th, 2024" role="option">
+                        <div class="datepicker_day_text">28</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month" aria-label="Choose Monday, April 29th, 2024" role="option">
+                        <div class="datepicker_day_text">29</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month" aria-label="Choose Tuesday, April 30th, 2024" role="option">
+                        <div class="datepicker_day_text">30</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--001  react-datepicker__day--today" aria-label="Choose Wednesday, May 1st, 2024" role="option" aria-current="date">
+                        <div class="datepicker_day_text">1</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--002" aria-label="Choose Thursday, May 2nd, 2024" role="option">
+                        <div class="datepicker_day_text">2</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--003" aria-label="Choose Friday, May 3rd, 2024" role="option">
+                        <div class="datepicker_day_text">3</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend" aria-label="Choose Saturday, May 4th, 2024" role="option">
+                        <div class="datepicker_day_text">4</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend" aria-label="Choose Sunday, May 5th, 2024" role="option">
+                        <div class="datepicker_day_text">5</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--006" aria-label="Choose Monday, May 6th, 2024" role="option">
+                        <div class="datepicker_day_text">6</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--007 react-datepicker__day--disabled react-datepicker__day--excluded" aria-label="Choose Tuesday, May 7th, 2024" role="option" aria-disabled="true">
+                        <div class="datepicker_day_text">7</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--008" aria-label="Choose Wednesday, May 8th, 2024" role="option">
+                        <div class="datepicker_day_text">8</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--009" aria-label="Choose Thursday, May 9th, 2024" role="option">
+                        <div class="datepicker_day_text">9</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--010" aria-label="Choose Friday, May 10th, 2024" role="option">
+                        <div class="datepicker_day_text">10</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend" aria-label="Choose Saturday, May 11th, 2024" role="option">
+                        <div class="datepicker_day_text">11</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend" aria-label="Choose Sunday, May 12th, 2024" role="option">
+                        <div class="datepicker_day_text">12</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--013" aria-label="Choose Monday, May 13th, 2024" role="option">
+                        <div class="datepicker_day_text">13</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--014" aria-label="Choose Tuesday, May 14th, 2024" role="option">
+                        <div class="datepicker_day_text">14</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--015" aria-label="Choose Wednesday, May 15th, 2024" role="option">
+                        <div class="datepicker_day_text">15</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--016" aria-label="Choose Thursday, May 16th, 2024" role="option">
+                        <div class="datepicker_day_text">16</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--017" aria-label="Choose Friday, May 17th, 2024" role="option">
+                        <div class="datepicker_day_text">17</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend" aria-label="Choose Saturday, May 18th, 2024" role="option">
+                        <div class="datepicker_day_text">18</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend" aria-label="Choose Sunday, May 19th, 2024" role="option">
+                        <div class="datepicker_day_text">19</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--020 react-datepicker__day--selected react-datepicker__day--range-start react-datepicker__day--in-range" aria-label="Choose Monday, May 20th, 2024" role="option">
+                        <div class="datepicker_day_text">20</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--021 react-datepicker__day--in-range" aria-label="Choose Tuesday, May 21st, 2024" role="option">
+                        <div class="datepicker_day_text">21</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--022 react-datepicker__day--in-range" aria-label="Choose Wednesday, May 22nd, 2024" role="option">
+                        <div class="datepicker_day_text">22</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--023 react-datepicker__day--in-range" aria-label="Choose Thursday, May 23rd, 2024" role="option">
+                        <div class="datepicker_day_text">23</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--024 react-datepicker__day--in-range" aria-label="Choose Friday, May 24th, 2024" role="option">
+                        <div class="datepicker_day_text">24</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--in-range react-datepicker__day--weekend" aria-label="Choose Saturday, May 25th, 2024" role="option">
+                        <div class="datepicker_day_text">25</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--in-range react-datepicker__day--weekend" aria-label="Choose Sunday, May 26th, 2024" role="option">
+                        <div class="datepicker_day_text">26</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--027 react-datepicker__day--in-range" aria-label="Choose Monday, May 27th, 2024" role="option">
+                        <div class="datepicker_day_text">27</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--keyboard-selected react-datepicker__day--range-end react-datepicker__day--in-range" aria-label="Choose Tuesday, May 28th, 2024" role="option">
+                        <div class="datepicker_day_text">28</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--029" aria-label="Choose Wednesday, May 29th, 2024" role="option">
+                        <div class="datepicker_day_text">29</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--030" aria-label="Choose Thursday, May 30th, 2024" role="option">
+                        <div class="datepicker_day_text">30</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--031" aria-label="Choose Friday, May 31st, 2024" role="option">
+                        <div class="datepicker_day_text">31</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Saturday, June 1st, 2024" role="option">
+                        <div class="datepicker_day_text">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="react-datepicker__tab-loop__end" tabindex="0"></div>
+        </div>
+      <% } else { %>
+        <%# 날짜 범위 설정: false %>
+        <div class="react-datepicker__tab-loop" style="display: none">
+          <div class="react-datepicker__tab-loop__start" tabindex="0"></div>
+          <div class="react-datepicker-popper" data-placement="bottom" style="position:absolute;<%- (datepicker.includes('datepicker_small')) ? 'top:32px' : 'top:28px' %>;left:0;z-index:10">
+            <div>
+              <div class="react-datepicker">
+                <div class="react-datepicker__triangle"></div>
+                <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+                <div class="react-datepicker__month-container">
+                  <div class="react-datepicker__header react-datepicker__header--custom">
+                    <!-- [D] header 커스텀 영역 -->
+                    <div class="datepicker_header_content">
+                      <button type="button" class="btn_datepicker_previous" aria-label="Previous Month">
+                        <span class="ic ic_arrow_back_bold_20px"></span>
+                      </button>
+                      <div class="datepicker_current_month">
+                        <strong class="datepicker_current_month_title title_xlarge">2025년 5월</strong>
+                        <!-- [D] 버튼 클릭 시 btn_datepicker_switch_open 클래스 추가 -->
+                        <button type="button" class="btn_datepicker_switch" aria-label="달력 열기"><span class="ic_arrow_down_filled_16px"></span></button>
+                      </div>
+                      <button type="button" class="btn_datepicker_next" aria-label="Next Month">
+                        <span class="ic ic_arrow_forward_bold_20px"></span>
+                      </button>
+                    </div>
+                    <!-- //[D] header 커스텀 영역 -->
+                    <div class="react-datepicker__day-names">
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Su</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Mo</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Tu</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">We</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Th</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Fr</div>
+                      </div>
+                      <div class="react-datepicker__day-name">
+                        <div class="datepicker_week_text">Sa</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="react-datepicker__month" aria-label="month  2024-05" role="listbox">
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Sunday, April 28th, 2024" role="option">
+                        <div class="datepicker_day_text">28</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month" aria-label="Choose Monday, April 29th, 2024" role="option">
+                        <div class="datepicker_day_text">29</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month" aria-label="Choose Tuesday, April 30th, 2024" role="option">
+                        <div class="datepicker_day_text">30</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--001  react-datepicker__day--today" aria-label="Choose Wednesday, May 1st, 2024" role="option" aria-current="date">
+                        <div class="datepicker_day_text">1</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--selected" aria-label="Choose Thursday, May 2nd, 2024" role="option" aria-selected="true">
+                        <div class="datepicker_day_text">2</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--003" aria-label="Choose Friday, May 3rd, 2024" role="option">
+                        <div class="datepicker_day_text">3</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend" aria-label="Choose Saturday, May 4th, 2024" role="option">
+                        <div class="datepicker_day_text">4</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend" aria-label="Choose Sunday, May 5th, 2024" role="option">
+                        <div class="datepicker_day_text">5</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--006" aria-label="Choose Monday, May 6th, 2024" role="option">
+                        <div class="datepicker_day_text">6</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--007" aria-label="Choose Tuesday, May 7th, 2024" role="option">
+                        <div class="datepicker_day_text">7</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--008" aria-label="Choose Wednesday, May 8th, 2024" role="option">
+                        <div class="datepicker_day_text">8</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--009" aria-label="Choose Thursday, May 9th, 2024" role="option">
+                        <div class="datepicker_day_text">9</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--010" aria-label="Choose Friday, May 10th, 2024" role="option">
+                        <div class="datepicker_day_text">10</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend" aria-label="Choose Saturday, May 11th, 2024" role="option">
+                        <div class="datepicker_day_text">11</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend" aria-label="Choose Sunday, May 12th, 2024" role="option">
+                        <div class="datepicker_day_text">12</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--013" aria-label="Choose Monday, May 13th, 2024" role="option">
+                        <div class="datepicker_day_text">13</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--014" aria-label="Choose Tuesday, May 14th, 2024" role="option">
+                        <div class="datepicker_day_text">14</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--015" aria-label="Choose Wednesday, May 15th, 2024" role="option">
+                        <div class="datepicker_day_text">15</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--016" aria-label="Choose Thursday, May 16th, 2024" role="option">
+                        <div class="datepicker_day_text">16</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--017" aria-label="Choose Friday, May 17th, 2024" role="option">
+                        <div class="datepicker_day_text">17</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend" aria-label="Choose Saturday, May 18th, 2024" role="option">
+                        <div class="datepicker_day_text">18</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend" aria-label="Choose Sunday, May 19th, 2024" role="option">
+                        <div class="datepicker_day_text">19</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--020" aria-label="Choose Monday, May 20th, 2024" role="option">
+                        <div class="datepicker_day_text">20</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--021" aria-label="Choose Tuesday, May 21st, 2024" role="option">
+                        <div class="datepicker_day_text">21</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--022" aria-label="Choose Wednesday, May 22nd, 2024" role="option">
+                        <div class="datepicker_day_text">22</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--023" aria-label="Choose Thursday, May 23rd, 2024" role="option">
+                        <div class="datepicker_day_text">23</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--024" aria-label="Choose Friday, May 24th, 2024" role="option">
+                        <div class="datepicker_day_text">24</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--weekend" aria-label="Choose Saturday, May 25th, 2024" role="option">
+                        <div class="datepicker_day_text">25</div>
+                      </div>
+                    </div>
+                    <div class="react-datepicker__week">
+                      <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend" aria-label="Choose Sunday, May 26th, 2024" role="option">
+                        <div class="datepicker_day_text">26</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--027" aria-label="Choose Monday, May 27th, 2024" role="option">
+                        <div class="datepicker_day_text">27</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--028" aria-label="Choose Tuesday, May 28th, 2024" role="option">
+                        <div class="datepicker_day_text">28</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--029" aria-label="Choose Wednesday, May 29th, 2024" role="option">
+                        <div class="datepicker_day_text">29</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--030" aria-label="Choose Thursday, May 30th, 2024" role="option">
+                        <div class="datepicker_day_text">30</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--031" aria-label="Choose Friday, May 31st, 2024" role="option">
+                        <div class="datepicker_day_text">31</div>
+                      </div>
+                      <div class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Saturday, June 1st, 2024" role="option">
+                        <div class="datepicker_day_text">1</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="react-datepicker__tab-loop__end" tabindex="0"></div>
+        </div>
+      <% } %>
+    <% } %>
+    <% if (range) { %>
+      <span class="datepicker_range_mark">-</span>
+      <div class="react-datepicker-wrapper">
+        <div class="react-datepicker__input-container">
+          <!-- [D] input 커스텀 영역 -->
+          <div class="input_area input_datepicker_area">
+            <div class="input_box <%- (datepicker.includes('datepicker_xsmall') || datepicker.includes('datepicker_small')) ? 'input_xsmall' : 'input_small' %>">
+              <input
+                type="text"
+                class="input_text <%- datepicker.includes('datepicker_xsmall') ? 'label_medium' : 'body_small' %>"
+                placeholder="<%- placeholder %>"
+                <%- endValue ? `value="${endValue}"` : '' %>
+                aria-label="date picker"
+              >
+              <% if (startValue !== '') { %>
+                <button type="button" class="btn_clear_input" aria-label="삭제">
+                  <span class="ic ic_close_circle_filled_16px"></span>
+                </button>
+              <% } %>
+              <span class="ic <%- datepickerType == 'datetime' ? 'ic_schedule_time_bold_16px' : 'ic_calendar_bold_16px' %>"></span>
+            </div>
+          </div>
+          <!-- // [D] input 커스텀 영역 -->
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>

@@ -1,0 +1,104 @@
+.field {
+  @include flexbox;
+  flex-direction: column;
+  gap: 8px;
+
+  &_title {
+    min-width: 120px;
+    @include flex(0 0 auto);
+  }
+
+  &_desc {
+    color: var(--on_surface_container_highest);
+  }
+
+  &_group {
+    @include inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    label {
+      @include flex(0 0 auto);
+
+      .tooltip-area {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+
+    .input_area {
+      flex: auto;
+    }
+  }
+
+  &_inline {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    align-items: baseline;
+    gap: 16px 24px;
+    width: 100%;
+
+    .field_horiz {
+      @include flexbox;
+      @include flex-wrap(wrap);
+    }
+
+    &_group {
+      gap: 0 8px;
+    }
+  }
+
+  &_horiz {
+    @include flexbox;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 24px;
+
+    label {
+      @include flex(0 0 auto);
+    }
+
+    .field_inline {
+      gap: 8px;
+    }
+
+    .field_vertical {
+      width: auto;
+    }
+  }
+
+  &_vertical {
+    @include flexbox;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+
+    .field {
+      + .field {
+        padding-top: 16px;
+      }
+    }
+  }
+}
+
+.input_box {
+  &_radius {
+    border-radius: 50vh;
+    &::after {
+      border-radius: 50vh;
+    }
+  }
+}
+
+.input_area .ic {
+}
+
+label + .tooltip-area {
+  margin-left: 4px;
+}
+
+.datepicker {
+  &_small {
+    width: 153px;
+  }
+}

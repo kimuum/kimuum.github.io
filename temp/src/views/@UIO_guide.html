@@ -1,0 +1,1099 @@
+<%- include('./include/head.ejs', { "title": 'UIO Guide : HMG Sales System',"listTitle": 'Components - UIO' }) %>
+<body class="theme_hyundai" data-pagestatus="">
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">UIO</span></h1>
+        <div class="uio_section">
+          <ul class="uio_list">
+            <li class="uio_list_item">
+              <p class="uio_list_desc"><a href="http://tm.pages.hivelab.co.kr/hmg-design-system-uio/@index.html" target="_blank">공통디자인시스템의 UIO</a>를 베이스로 합니다.</p>
+            </li>
+            <li class="uio_list_item">
+              <p class="uio_list_desc">브랜드별 body 태그에 분기 클래스를 추가하면 각 브랜드의 스타일이 적용됩니다. (Hyundai / Kia)</p>
+              <ul class="uio_sub_list">
+                <li class="uio_sub_desc">Hyundai (default) : 클래스 없음</li>
+                <li class="uio_sub_desc">Kia : .theme_kia</li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="submit_button">Submit Button</h3>
+            <div class="btn_group">
+              <button type="button" class="btn btn_outline btn_with_ic btn_large"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+              <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+            </div>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="filter_button">Filter Button</h3>
+            <div class="btn_group">
+              <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">액션버튼</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">이벤트재고조회</span></button>
+              <button type="button" class="btn btn_fill btn_primary btn_small"><span class="btn_inner_text body_small">다운로드</span></button>
+              <button type="button" class="btn btn_fill btn_primary btn_small"><span class="btn_inner_text title_small">강조버튼</span></button>
+              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">계약번호조회</span></button>
+              <button type="button" class="btn btn_outline btn_only_ic btn_small" aria-label="설정"><span class="ic ic_modification_bold_16px"></span></button>
+              <button type="button" class="btn btn_outline btn_only_ic btn_small" aria-label="설정"><span class="ic ic_excel_bold_16px"></span></button><!-- 아이콘 추가 필요-->
+              <button type="button" class="btn btn_outline btn_only_ic btn_small" aria-label="설정"><span class="ic ic_upload_bold_16px"></span></button>
+              <button type="button" class="btn btn_outline btn_only_ic btn_small" aria-label="설정"><span class="ic ic_delete_bold_16px"></span></button>
+              <button type="button" class="btn btn_outline btn_with_ic btn_small" aria-label="엑셀다운로드"><span class="ic ic_download_regular_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span></button>
+            </div>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Table_button">Table Button</h3>
+            <button type="button" class="btn btn_outline btn_primary btn_xsmall"><span class="btn_inner_text label_medium">면세확정 요청</span></button>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="control_button">Control Button</h3>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="badge">Badge</h3>
+            <table class="uio_table uio_table_input">
+              <colgroup>
+                <col style="width:10%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>Small</th>
+                  <td>
+                    <div class="badge_wrap">
+                      <span class="badge badge_small badge_normal">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_small badge_low">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_small badge_info">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_small badge_error">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_small badge_use">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Medium</th>
+                  <td>
+                    <div class="badge_wrap">
+                      <span class="badge badge_medium badge_normal">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_medium badge_low">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_medium badge_info">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_medium badge_error">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                      <span class="badge badge_medium badge_use">
+                        <span class="badge_text label_medium">Badge</span>
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="stepper">Stepper</h3>
+            <table class="uio_table uio_table_input">
+              <colgroup>
+                <col style="width:10%;">
+              </colgroup>
+              <tbody>
+                <tr>
+                  <th>Default</th>
+                  <td>
+                    <%-include('./include/stepper.ejs',{
+                      stepperSize: 'stepper_large',
+                      activeStep: 1,
+                      stepperItems: [
+                      {title: '탁송정보', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '출고준비', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '카마 장착중', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '카마 장착완료', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송사 인수', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '출문 예정일', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '출고출문일시', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송출발', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송완료(1차)', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송완료(2차)', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송출발(2차)', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송도착예정', helpText: '2024.12.01 <br> 08:20:20'},
+                      {title: '탁송도착완료', helpText: '2024.12.01 <br> 08:20:20'},
+                      ]
+                    })%>
+                  </td>
+                </tr>
+                <tr>
+                  <th>Link &#38; helpText(false)</th>
+                  <td>
+                    <%- include('./include/stepper.ejs',{
+                      stepperSize: 'stepper_large',
+                      activeStep: 0,
+                      stepperItems: [
+                        {isLink: true, title: '판매가격'},
+                        {isLink: true, title: '선택 품목 가격'},
+                        {isLink: true, title: '외장컬러 가격'},
+                      ]
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="input_textfield">Text Field</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Default/Hover</th>
+                  <th>Focus</th>
+                  <th>Focus(Value)</th>
+                  <th>Error</th>
+                  <th>Read only</th>
+                  <th>Disable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Small<br><span class="label_medium">Help text: true</span></strong></td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '01',
+                      placeholder : 'Enabled/Hovered',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_focused input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '02',
+                      placeholder : 'Pressed/Focused',
+                      clear : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_focused input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '03',
+                      value : 'Typing',
+                      clear : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_error input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '04',
+                      value : 'Invalid',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_readonly input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '05',
+                      value : 'Read only',
+                      readonly : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_disabled input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '06',
+                      placeholder : 'Disabled',
+                      disabled : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Small<br><span class="label_medium">Help text: false</span></strong></td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : 'Enabled/Hovered',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_focused input_small',
+                      ariaLabel : '',
+                      placeholder : 'Pressed/Focused',
+                      clear : true,
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_focused input_small',
+                      ariaLabel : '',
+                      value : 'Typing',
+                      clear : true,
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_error input_small',
+                      ariaLabel : '',
+                      value : 'Invalid',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_readonly input_small',
+                      ariaLabel : '',
+                      value : 'Read only',
+                      readonly : true,
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_disabled input_small',
+                      ariaLabel : '',
+                      placeholder : 'Disabled',
+                      disabled : true,
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="search_textfield">Search</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Default/Hover</th>
+                  <th>Focus</th>
+                  <th>Focus(Value)</th>
+                  <th>Error</th>
+                  <th>Read only</th>
+                  <th>Disable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Data<br><span class="label_medium">Help text: true</span></strong></td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '07',
+                      search : true,
+                      placeholder : 'Enabled/Hovered',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_focused input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '08',
+                      search : true,
+                      placeholder : 'Pressed/Focused',
+                      clear: true,
+                      inputDesc : ''
+                    }) %>
+
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_focused input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '09',
+                      search : true,
+                      value : 'Typing',
+                      clear: true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_error input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '010',
+                      search : true,
+                      value : 'Invalid',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_readonly input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '011',
+                      search : true,
+                      value : 'Read only',
+                      readonly : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_disabled input_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '012',
+                      search : true,
+                      placeholder : 'Disabled',
+                      disabled : true,
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Round</strong></td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_medium input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      placeholder : '화면검색',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_focused input_small input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      placeholder : 'Pressed/Focused',
+                      clear : true
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_focused input_small input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      value : 'Typing',
+                      clear : true
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_error input_small input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      value : 'Invalid',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_readonly input_small input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      value : 'Read only',
+                      readonly : true
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_disabled input_small input_box_radius',
+                      ariaLabel : '',
+                      search : true,
+                      placeholder : 'Disabled',
+                      disabled : true
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Autocomplete_field">Autocomplete</h3>
+            <table class="uio_table">
+              <thead>
+                <tr>
+                  <th>Default</th>
+                  <th>Round</th>
+                  <th>field</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div style="position: relative;">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area" role="combobox">
+                          <div class="input_box input_focused input_small">
+                            <span class="ic ic_search_bold_16px"></span>
+                            <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="Placeholder" value="Auto">
+                            <button type="button" class="btn_clear_input" aria-label="삭제">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                            <button type="button" class="btn_autocomplete_toggle" aria-label="닫기">
+                              <span class="ic ic_arrow_down_bold_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div style="position: relative;">
+                      <div class="autocomplete_wrap autocomplete_medium"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area input_area_large" role="combobox">
+                          <div class="input_box input_focused input_medium input_box_radius">
+                            <span class="ic ic_search_bold_16px"></span>
+                            <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="화면검색">
+                            <button type="button" class="btn_clear_input" aria-label="삭제">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                            <button type="button" class="btn_autocomplete_toggle" aria-label="닫기">
+                              <span class="ic ic_arrow_down_bold_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-010</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;출고관리&gt;고객확인서 <strong>P-01-0</strong>2-015</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-031</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div style="position: relative;">
+                      <div class="autocomplete_wrap autocomplete_medium"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area input_area_large" role="combobox">
+                          <div class="input_box input_focused input_medium">
+                            <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="조직명 또는 조직코드 입력">
+                            <button type="button" class="btn_clear_input" aria-label="삭제">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small"><strong>B0012</strong> 동부</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small"><strong>B0013</strong> 동북부</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small"><strong>B0015</strong> 동북부</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small"><strong>B0080</strong> 동북부</span></li>
+                          <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small"><strong>B0081</strong> 동북부</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="datepicker_field">Date picker / Date&#38;Time picker</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th style="width:10%">Type</th>
+                  <th style="width:30%">Date picker</th>
+                  <th style="width:30%">Month picker</th>
+                  <th style="width:30%">Date&#38;Time picker</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>XSmall</strong><br><span class="label_medium">날짜 범위 설정: false</span></td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      datepicker: 'datepicker_xsmall',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      datepicker: 'datepicker_xsmall datepicker_month',
+                      datepickerType: 'month',
+                      placeholder: 'YYYY-MM',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      datepicker: 'datepicker_xsmall',
+                      datepickerType: 'datetime',
+                      placeholder: 'YYYY-MM-DD 00:00 AM',
+                    }) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Small</strong><br><span class="label_medium">날짜 범위 설정: false</span></strong></td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      startValue: '2025-02-01',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      datepicker: 'datepicker_small datepicker_month',
+                      datepickerType: 'month',
+                      startValue: '2025-02-01',
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      datepickerType: 'datetime',
+                      inlineStyle: 'width: 240px',
+                      placeholder: 'YYYY-MM-DD 00:00 AM',
+                      startValue: '2025-02-01 11:50 AM',
+                    }) %>
+                  </td>
+                <tr>
+                  <td><strong>Small<br><span class="label_medium">날짜 범위 설정: true</span></strong></td>
+                  <td>
+                    <%- include('./include/date_picker.ejs', {
+                      inlineStyle: 'width: 328px',
+                      range: true,
+                    }) %>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Select_textfield">Select</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th style="width:10%">Type</th>
+                  <th style="width:15%">Default/Hover</th>
+                  <th style="width:15%">Pressed/Focused</th>
+                  <th style="width:15%">Pressed/Focused<br>(Menu: False)</th>
+                  <th style="width:15%">Invalid</th>
+                  <th style="width:15%">Read only</th>
+                  <th style="width:15%">Disabled</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>XXSmall<br><span class="label_medium">Help text: true</span></strong></td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_xxsmall',
+                      inputBox : 'input_xxsmall',
+                      ariaControls : 'uio-select-outline1-1',
+                      inputVal : 'Enabled',
+                      ariaDescribedby : '1-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td style="height:160px">
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_xxsmall',
+                      inputBox : 'input_focused input_xxsmall',
+                      ariaControls : 'uio-select-outline1-2',
+                      inputVal : 'Pressed/Focused',
+                      ariaDescribedby : '1-2',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_xxsmall',
+                      inputBox : 'input_focused input_xxsmall',
+                      ariaControls : 'uio-select-outline1-3',
+                      inputVal : 'Pressed/Focused',
+                      ariaDescribedby : '1-3',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_error option_xxsmall',
+                      inputBox : 'input_error input_xxsmall',
+                      ariaControls : 'uio-select-outline1-4',
+                      inputVal : 'Invalid',
+                      ariaDescribedby : '1-4',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_readonly option_xxsmall',
+                      inputBox : 'input_readonly input_xxsmall',
+                      ariaControls : 'uio-select-outline1-5',
+                      inputVal : 'Read only',
+                      ariaDescribedby : '1-5',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_disabled option_xxsmall',
+                      inputBox : 'input_disabled input_xxsmall',
+                      ariaControls : 'uio-select-outline1-6',
+                      inputVal : 'Disabled',
+                      ariaDescribedby : '1-6',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Small<br><span class="label_medium">Help text: true</span></strong></td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-outline3-1',
+                      inputVal : 'Enabled',
+                      ariaDescribedby : '3-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td style="height:210px">
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_focused input_small',
+                      ariaControls : 'uio-select-outline3-2',
+                      inputVal : 'Pressed/Focused',
+                      ariaDescribedby : '3-2',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_focused input_small',
+                      ariaControls : 'uio-select-outline3-3',
+                      inputVal : 'Pressed/Focused',
+                      ariaDescribedby : '3-3',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_error option_small',
+                      inputBox : 'input_error input_small',
+                      ariaControls : 'uio-select-outline3-4',
+                      inputVal : 'Invalid',
+                      ariaDescribedby : '3-4',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_readonly option_small',
+                      inputBox : 'input_readonly input_small',
+                      ariaControls : 'uio-select-outline3-5',
+                      inputVal : 'Read only',
+                      ariaDescribedby : '3-5',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_disabled option_small',
+                      inputBox : 'input_disabled input_small',
+                      ariaControls : 'uio-select-outline3-6',
+                      inputVal : 'Disabled',
+                      ariaDescribedby : '3-6',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="inputs_size">Inputs Size (width)</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th style="width:80px">Type</th>
+                  <th style="width:100px">Small</th>
+                  <th style="width:160px">Medium</th>
+                  <th style="width:240px">Large</th>
+                  <th style="width:320px">XLarge</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Text Field</strong></td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_small',
+                      ariaLabel : '',
+                      ariaDescribedby : '013',
+                      inputBox : 'input_suffix input_small',
+                      placeholder : '이름',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_medium',
+                      ariaLabel : '',
+                      ariaDescribedby : '014',
+                      inputBox : 'input_suffix input_small',
+                      placeholder : 'Enabled/Hovered',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_large',
+                      ariaLabel : '',
+                      ariaDescribedby : '015',
+                      inputBox : 'input_suffix input_small',
+                      placeholder : 'Enabled/Hovered',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_xlarge',
+                      ariaLabel : '',
+                      ariaDescribedby : '015',
+                      inputBox : 'input_suffix input_small',
+                      placeholder : 'Enabled/Hovered',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Select</strong></td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_small',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-outline3-1',
+                      tabindex : true,
+                      inputVal : '전체',
+                      ariaDescribedby : '3-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-outline3-1',
+                      tabindex : true,
+                      inputVal : 'Enabled',
+                      ariaDescribedby : '3-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_large',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-outline3-1',
+                      tabindex : true,
+                      inputVal : 'Enabled',
+                      ariaDescribedby : '3-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_xlarge',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-outline3-1',
+                      tabindex : true,
+                      inputVal : 'Enabled',
+                      ariaDescribedby : '3-1',
+                      inputDesc : ''
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="checkbox_field">Checkbox</h3>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_medium">
+                <input type="checkbox" class="input_checkbox">
+              </span>
+              <span class="input_select_box input_select_medium">
+                <input type="checkbox" class="input_checkbox" checked>
+              </span>
+            </div>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_small">
+                <input type="checkbox" id="uio_checkbox1_1" class="input_checkbox">
+                <label for="uio_checkbox1_1" class="label_checkbox"><span class="label_text body_small">SRG1</span></label>
+                <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                  <button type="button" class="btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="tooltip">
+                    <span class="ic ic_information_bold_16px"></span>
+                  </button>
+                  <div class="tooltip tooltip-alert js-tooltip" tabindex="0" role="tooltip" id="summary-bar-tooltip" style="display: none;">
+                    <p class="tooltip-text">구독 할인이 종료 된 이후 월 또는 연 단위 이용 금액입니다.</p>
+                    <button type="button" class="btn-close-tooltip js-btn-close-tooltip" aria-label="Close toast">
+                      <span class="ic ic_information_bold_16px"></span>
+                    </button>
+                  </div>
+                </div>
+              </span>
+            </div>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_medium">
+                <input type="checkbox" id="uio_checkbox1_2" class="input_checkbox">
+                <label for="uio_checkbox1_2" class="label_checkbox"><span class="label_text body_small">조회조건저장</span></label>
+              </span>
+            </div>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Radio_field">Radio</h3>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_medium">
+                <input type="radio" id="uio_radio1_1" class="input_radio" name="uio_radio1">
+                <label for="uio_radio1_1" class="label_radio"><span class="label_text body_small">판매코드 기준</span></label>
+              </span>
+            </div>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_medium">
+                <input type="radio" id="uio_radio1_2" class="input_radio" name="uio_radio1" checked="">
+                <label for="uio_radio1_2" class="label_radio"><span class="label_text body_small">컨피규레이션 기준</span></label>
+              </span>
+            </div>
+            <div class="input_select_wrap">
+              <span class="input_select_box input_select_medium">
+                <input type="radio" id="uio_radio1_3" class="input_radio" name="uio_radio1">
+                <label for="uio_radio1_3" class="label_radio"><span class="label_text body_small">가격표 기준</span></label>
+              </span>
+            </div>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Radio_field_inline">Radio (Inline Group)</h3>
+            <div class="field">
+              <div class="field_inline">
+                <div class="input_select_wrap">
+                  <span class="input_select_box input_select_medium">
+                    <input type="radio" id="uio_radio2_1" class="input_radio" name="uio_radio2">
+                    <label for="uio_radio2_1" class="label_radio"><span class="label_text body_small">판매코드 기준</span></label>
+                  </span>
+                </div>
+                <div class="input_select_wrap">
+                  <span class="input_select_box input_select_medium">
+                    <input type="radio" id="uio_radio2_2" class="input_radio" name="uio_radio2" checked="">
+                    <label for="uio_radio2_2" class="label_radio"><span class="label_text body_small">컨피규레이션 기준</span></label>
+                  </span>
+                </div>
+                <div class="input_select_wrap">
+                  <span class="input_select_box input_select_medium">
+                    <input type="radio" id="uio_radio2_3" class="input_radio" name="uio_radio2">
+                    <label for="uio_radio2_3" class="label_radio"><span class="label_text body_small">가격표 기준</span></label>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="breadcrumb">Breadcrumb</h3>
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "Home", href: "#none" },
+                { text: "Breadcrumb", href: "#none" },
+                { text: "Breadcrumb", href: "#none" },
+                { text: "Current page", id: "CON0000BH" }
+              ]
+            }) %>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="path_group">Path group</h3>
+            <p class="uio_list_desc" style="margin-bottom:10px">특정 영역 폴더 경로 표시</p>
+            <%- include('./include/path_group.ejs', {
+              pathItems : [
+                {text: '승/소상'},
+                {text: '모델'},
+                {text: 'NSC공통'},
+              ]
+            }) -%>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Pagination">Pagination</h3>
+            <%- include('./include/pagination.ejs') %>
+          </div>
+        </div>
+        <div class="uio_box">
+          <h3 class="uio_subtit" id="search_section">Search Section</h3>
+          <%- include('./include/search_section.ejs', {
+            labelID: 'search_field',
+            labelText: '계약번호',
+            inputPlaceholder: '계약번호',
+            inputValue: '23 A 123-5678',
+            searchButtonItems: [
+              { text: '계약번호조회' },
+              { text: '계약상세검색' },
+            ],
+            controlBtnGroup: {
+              prevBtnText: '출고상태',
+              nextBtnText: '최종상태'
+            },
+          }) %>
+        </div>
+
+        <div class="uio_box">
+          <h3 class="uio_subtit" id="tabs_section">Tabs Section</h3>
+          <%-include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '계약출고진행', ariaSelected: true },
+              { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '판매조건결재' },
+              { id: 'tab_1-3', ariaControls:'tabpanel_1-3', text: '계약이력정보' },
+            ],
+            pageNavigate: true
+          }) %>
+        </div>
+
+        <div class="uio_box">
+          <h3 class="uio_subtit" id="TextListItem">Text List Item</h3>
+          <ul class="list_wrap list_notify">
+            <li class="list_item">
+              <p class="body_small">- 권한그룹으로 부여된 메뉴별 기능은 '<span class="ic ic_select_checkbox_checked_24px"></span>‘ 형태의 비활성 체크박스로 조회됩니다.</p>
+            </li>
+            <li class="list_item">
+              <p class="body_small">- 사용자에게 메뉴권한을 개별부여 하는 것은 권한그룹이 없거나, 권한그룹을 새로 만들기 어려운 경우에 국한하여 사용합니다.</p>
+            </li>
+          </ul>
+          <ul class="list_wrap list_dot">
+            <li class="list_item">
+              <p class="list_primary body_small">모든 항목은 필수입력이며, 각 항목 특장업체 확인 필수</p>
+            </li>
+            <li class="list_item">
+              <p class="list_desc body_small">
+                <span class="align_indent">특장자동차 ④차종 : </span>
+                <span class="align_indent">⑩총중량이 15,000kg 이상이면 초대형화물 or 초대형 버스 <br>⑩총중량이 15,000kg 미만이면 대형화물 or 대형 버스</span>
+              </p>
+            </li>
+            <li class="list_item">
+              <p class="list_desc body_small">기타 문의사항 : 차종담당자 및 상용법규인증팀</p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%-include('./include/script.ejs')%>
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    moveItems : [
+      {id : 'submit_button', text : 'Submit Button'},
+      {id : 'filter_button', text : 'Filter Button'},
+      {id : 'Table_button', text : 'Table Button'},
+      {id : 'control_button', text : 'Control Button'},
+      {id : 'badge', text : 'Badge'},
+      {id : 'stepper', text : 'Stepper'},
+      {id : 'input_textfield', text : 'Text Field'},
+      {id : 'search_textfield', text : 'Search'},
+      {id : 'Autocomplete_field', text : 'Autocomplete'},
+      {id : 'datepicker_field', text : 'Date picker / Date&#38;Time picker'},
+      {id : 'Select_textfield', text : 'Select'},
+      {id : 'inputs_size', text : 'Inputs Size (width)'},
+      {id : 'checkbox_field', text : 'Checkbox'},
+      {id : 'breadcrumb', text : 'Breadcrumb'},
+      {id : 'path_group', text : 'Path group'},
+      {id : 'pagination', text : 'Pagination'},
+      {id : 'search_section', text : 'Search Section'},
+      {id : 'tabs_section', text : 'Tabs Section'},
+      {id : 'TextListItem', text : 'Text List Item'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 케이스뷰 메뉴 이동 처리
+      function handleCaseview() {
+        $('.btn-caseview').on('click', function () {
+          const dataId = $(this).data('id');
+          if (dataId) {
+            const sectionTop = $(`#${dataId}`).offset().top;
+            $('html, body').stop().animate({
+              scrollTop: sectionTop - 50
+            }, 500);
+          }
+        });
+      }
+      handleCaseview();
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

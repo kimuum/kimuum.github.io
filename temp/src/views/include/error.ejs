@@ -1,0 +1,32 @@
+<% const cautionIcon = locals.cautionIcon ? locals.cautionIcon : false %>
+<% const errorTitle = locals.errorTitle ? locals.errorTitle : '' %>
+<% const errorDesc = locals.errorDesc ? locals.errorDesc : '' %>
+<% const oneButton = locals.oneButton ? locals.oneButton : false %>
+<% const btnType = locals.btnType ? locals.btnType : '' %>
+<% const btnText = locals.btnText ? locals.btnText : '' %>
+<% const btnTextOutline = locals.btnTextOutline ? locals.btnTextOutline : '' %>
+<% const btnTextPrimary = locals.btnTextPrimary ? locals.btnTextPrimary : '' %>
+
+<div class="error_wrap">
+  <div class="empty_error empty_error_medium">
+    <% if (cautionIcon) { %>
+    <span class="ic ic_caution_bold_48px"></span>
+    <% } %>
+    <strong class="empty_error_title headline_small"><%- errorTitle -%></strong>
+    <span class="empty_error_desc body_small"><%- errorDesc -%></span>
+    <div class="btn_group">
+      <% if (oneButton) { %>
+        <button type="button" class="btn <%- btnType ? btnType + ' ' : '' -%> btn_large">
+          <span class="btn_inner_text title_small"><%- btnText -%></span>
+        </button>
+      <% } else { %>
+        <button type="button" class="btn btn_outline btn_large">
+          <span class="btn_inner_text title_small"><%- btnTextOutline -%></span>
+        </button>
+        <button type="button" class="btn btn_fill btn_primary btn_large">
+          <span class="btn_inner_text title_small"><%- btnTextPrimary -%></span>
+        </button>
+      <% } %>
+    </div>
+  </div>
+</div>

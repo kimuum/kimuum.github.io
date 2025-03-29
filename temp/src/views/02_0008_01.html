@@ -3,7 +3,7 @@
   listTitle: "판매기준정보관리 > 판매코드관리 > 판매코드 구성 관리 : 02-기준정보_판매코드"
 }) %>
 
-<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+<body class="project_sales_system" data-pagestatus="new : 2025.03.31">
 <%-include('./include/skipnavigation.ejs')%>
   <div class="wrap">
     <!-- Header -->
@@ -19,7 +19,7 @@
       <div class="content_head"></div>
       <div class="content_body">
         <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
-        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+        <div id="tab_01" tabindex="0" role= "tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
           <div class="control_section">
             <%- include('./include/breadcrumb.ejs', {
               breadcrumbItems: [
@@ -147,34 +147,122 @@
               </div>
               <div class="divider"></div>
               <div class="panel panel_configure_manage">
-                <div class="configure_manage_inner">
+                <div class="configure_manage_wrap">
                   <div class="configure_manage_top">
                     <strong class="title_small">세부모델명</strong>
-                    <ul class="model_list">
-                      <li class="model_item model_item_current">
-                        <span class="model_label">디올 뉴 그랜저</span>
-                      </li>
-                      <li class="model_item">
-                        <span class="model_label">가솔린</span>
-                        <button type="button" class="btn btn_only_ic btn_small" aria-label="삭제"><span class="ic ic_help_bold_16px"></span></button>
-                      </li>
-                    </ul>
+                    <div class="model_chips">
+                      <%- include('./include/chip_list.ejs', {
+                        chips: [
+                          {
+                            isMain: true,
+                            text: '디 올 뉴 그랜저',
+                          },
+                          {text: '가솔린 2.5'},
+                          {text: '익스클루시브'},
+                          {text: '일반용'},
+                          {
+                            text: '19인치 알로이 휠&타이어',
+                            isOther : true
+                          },
+                        ]
+                      }) %>
+                      <div class="model_desc">
+                        <p class="body_small color_red">※ 컨피규레이션 트리가 아직 생성되지 않았으므로, 세부모델명의 예시는 실제와 다를 수있습니다.</p>
+                      </div>
+                    </div>
                   </div>
                   <div class="configure_manage_bottom">
                     <strong class="title_small">세부 모델명 설정</strong>
-                    <ul class="model_setting_list">
-                      <li class="model_setting_item">
-                        <span class="model_label">디올 뉴 그랜저</span>
-                      </li>
-                    </ul>
+                    <div class="additional_attributes">
+                      <%- include('./include/attribute_card_list.ejs', {
+                        offsetIndex: 0,
+                        attributes: [
+                          {
+                            title: '모델명',
+                            isMain: true,
+                            visible: true,
+                          },
+                          {title: '차명'},
+                          {title: '연식'},
+                          {title: '버전'},
+                          {
+                            title: '엔진',
+                            isMain: false,
+                            visible: true,
+                          },
+                          {title: '구동'},
+                          {title: '미션'},
+                          {
+                            title: '트림',
+                            visible: true,
+                          },
+                          {title: '연승'},
+                          {
+                            title: '용도',
+                            visible: true,
+                          },
+                          {title: '장애구분'},
+                          {
+                            title: '휠&타이어',
+                            isOther : true,
+                            visible: true,
+                          },
+                        ]
+                      }) %>
+                    </div>
                   </div>
                 </div>
-                <div class="configure_manage_inner">
+                <div class="configure_manage_wrap">
                   <div class="configure_manage_top">
                     <strong class="title_small">내부용 세부모델명</strong>
+                    <div class="model_chips">
+                      <%- include('./include/chip_list.ejs', {
+                        chips: [
+                          {
+                            isMain: true,
+                            text: '그랜저GN7 24MY',
+                          },
+                          {text: '가솔린 2.5'},
+                          {text: '익스클루시브'},
+                          {text: '일반용'}
+                        ]
+                      }) %>
+                    </div>
                   </div>
                   <div class="configure_manage_bottom">
                     <strong class="title_small">내부용 세부모델명 설정</strong>
+                    <div class="additional_attributes">
+                      <%- include('./include/attribute_card_list.ejs', {
+                        offsetIndex: 12,
+                        attributes: [
+                          {
+                            title: '모델명',
+                            isMain: true,
+                            visible: true,
+                          },
+                          {title: '차명'},
+                          {title: '연식'},
+                          {title: '버전'},
+                          {
+                            title: '엔진',
+                            isMain: false,
+                            visible: true,
+                          },
+                          {title: '구동'},
+                          {title: '미션'},
+                          {
+                            title: '트림',
+                            visible: true,
+                          },
+                          {title: '연승'},
+                          {
+                            title: '용도',
+                            visible: true,
+                          },
+                          {title: '장애구분'},
+                        ]
+                      }) %>
+                    </div>
                   </div>
                 </div>
               </div>

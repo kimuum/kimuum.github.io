@@ -1,0 +1,389 @@
+// 조직정보관리
+.panel_agency {
+  gap: 24px;
+
+  .ic_refresh_regular_12px {
+    @include inline-svg-icon("ic_refresh_regular_12px", none, none, map-get($hyundai-colors, on_surface_mid));
+  }
+}
+
+// 나의 결재함
+.profile_box {
+  @include inline-flex;
+  @include align-items(center);
+
+  .body_small {
+    position: relative;
+
+    + .body_small {
+      margin-left: 18px;
+
+      &::before {
+        display: inline-block;
+        left: -9px;
+        @include set-center-y;
+        width: 1px;
+        height: 14px;
+        background-color: var(--outline_low);
+        content: '';
+      }
+    }
+  }
+}
+
+.my_approval {
+  .accordion_panel {
+    &_header {
+      .title_desc {
+        margin-left: 12px;
+        color: var(--blue);
+
+        .ic_information_filled_16px {
+          margin-right: 4px;
+          @include inline-svg-icon("ic_information_filled_16px", map-get($hmg-colors, primary), none, map-get($hmg-colors, primary));
+        }
+      }
+    }
+
+    &_content {
+      @include flex-direction(row);
+      padding-top: 24px;
+
+      .card {
+        flex: 1;
+
+        &_content {
+          padding: 24px;
+
+          .card_top_area {
+            @include flexbox;
+            @include justify-content(space-between);
+
+            .btn_xxsmall {
+              min-width: auto;
+            }
+          }
+
+          .card_title {
+            display: inline-block;
+
+          }
+
+          .list_wrap {
+            overflow-y: auto;
+            max-height: 144px;
+            margin: 16px -24px 0 0;
+            padding-right: 14px;
+          }
+
+          .list_item {
+            @include flexbox;
+            @include align-items(flex-start);
+            padding: 12px;
+            background-color: #f7f8fa;
+
+            + .list_item {
+              margin-top: 8px;
+            }
+
+            .badge {
+              min-width: 52px;
+            }
+
+            .list_desc {
+              min-width: 0;
+              margin: 0 0 0 36px;
+
+              .body_small {
+                display: block;
+                @include ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .panel {
+    // 결재 현황
+    &_state {
+      .list_wrap {
+        @include flexbox;
+        width: 100%;
+        margin-top: 24px;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid var(--outline_lowest);
+        background-color: var(--surface_container);
+        box-sizing: border-box;
+      }
+
+      .list_item {
+        flex: 1;
+
+        .list_link {
+          padding: 24px 0;
+          text-align: center;
+
+          &:focus {
+            outline-offset: -2px;
+          }
+          .list_title_box {
+            @include justify-content(center);
+          }
+
+          .text_amount {
+            display: block;
+            margin-top: 8px;
+            color: var(--on_surface_container);
+
+            .headline_xsmall {
+              color: var(--blue);
+            }
+          }
+        }
+      }
+
+      .list_divider {
+        padding: 24px 0;
+
+        .divider {
+          margin: 0;
+        }
+      }
+    }
+
+    // 즐겨찾기 화면별 결재문서 현황
+    &_bookmark {
+      .list_wrap {
+        @include flexbox;
+        @include flex-wrap(wrap);
+        gap: 12px;
+        width: 100%;
+        margin-top: 24px;
+      }
+
+      .list_item {
+        @include flex(1 1 30%);
+
+        .list_link {
+          padding: 20px;
+          border-radius: 8px;
+          background-color: #f5f6f7;
+
+          .list_title_box {
+            @include justify-content(space-between);
+
+            .text_amount {
+              color: var(--on_surface_container_ultimate);
+            }
+          }
+
+          .list_desc_box {
+            @include flexbox;
+            margin-top: 16px;
+            padding: 8px 0;
+            border-radius: 6px;
+            border: 1px solid var(--outline);
+            background-color: var(--surface_lowest);
+            text-align: center;
+
+            .text_state {
+              flex: 1;
+              color: var(--on_surface_container);
+
+              & + .text_state {
+                position: relative;
+
+                &:before {
+                  position: absolute;
+                  @include set-center-y;
+                  left: 0;
+                  width: 1px;
+                  height: 12px;
+                  background-color: var(--outline_lowest);
+                  content: '';
+                }
+              }
+
+              .title_small {
+                margin-left: 2px;
+
+                &.approval_spotlight {
+                  color: var(--red_ultimate);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.panel_dataset {
+  .search_filter {
+    @include flexbox;
+    @include flex-direction(column);
+    width: 100%;
+    margin-bottom: 32px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: #f7f8fa;
+
+    > div[class^="field_"] + div[class^="field_"] {
+      margin-top: 12px;
+    }
+
+    .field_inline {
+      .option_wrap {
+        width: 100%;
+      }
+    }
+
+    .field_group {
+      flex: 1;
+
+      .title_small {
+        min-width: 50px;
+        white-space: nowrap;
+      }
+    }
+
+    .divider {
+      margin: 16px 0;
+    }
+
+    .panel_bottom {
+      padding: 0;
+    }
+  }
+}
+
+// 사용자/통합권한 관리
+.user_manage {
+  .table_util {
+    .option_group {
+      .ic_refresh_bold_12px {
+        margin-left: 8px;
+        @include inline-svg-icon("ic_refresh_bold_12px", none, none, #1f2023);
+      }
+    }
+  }
+
+  .panel {
+    &_result {
+      .tabs_section {
+        margin-top: 20px;
+      }
+
+      .table {
+        &_util {
+          .option_group {
+            .btn_group {
+              margin-left: unset;
+            }
+          }
+        }
+
+        &_area {
+          .table_inner {
+            + .table_util {
+              margin-top: 24px;
+            }
+          }
+
+          .title_medium {
+            position: relative;
+            padding-left: 10px;
+
+            &::before {
+              @include set-center-y;
+              left: 0;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background-color: var(--on_surface);
+              content: "";
+            }
+          }
+        }
+
+        &_inner {
+          .table_flex {
+            + .table_medium {
+              margin-top: 16px;
+            }
+          }
+
+          .input_area {
+            &.border_none {
+              .input_box {
+                &::after {
+                  content: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &_header {
+      margin-bottom: 32px;
+
+      &:has(+ .tabs_section) {
+        margin-bottom: 0;
+      }
+    }
+
+    .ic_select_checkbox_checked_24px {
+      @include inline-svg-icon("ic_select_checkbox_checked_24px", map-get($hyundai-colors, surface_container_high), none, map-get($hyundai-colors, on_primary));
+    }
+  }
+}
+
+// W/DAY 관리
+.panel_workday {
+  @include flex-direction(column);
+
+  .option_group {
+    @include flexbox;
+    @include align-items(center);
+    gap: 16px;
+    margin-top: 16px;
+    padding: 0;
+  }
+
+  .calendar {
+    &_wrap {
+      width: 100%;
+    }
+
+    &_util {
+      @include flexbox;
+      @include justify-content(space-between);
+      width: 100%;
+      padding-bottom: 20px;
+
+      .option_group {
+        gap: 8px;
+        margin-top: 0;
+
+        .label_medium {
+          @include flexbox;
+        }
+
+        .badge_dot {
+          margin-right: 4px;
+        }
+
+        .num {
+          color: var(--primary);
+        }
+
+      }
+    }
+  }
+}

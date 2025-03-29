@@ -1,0 +1,90 @@
+<% var type = locals.type ? locals.type : '' %>
+
+<header class="header">
+  <div class="nav">
+    <h1>
+      <a href="#none" class="nav_title">
+        <div class="nav_logo">
+          <img src="../img/logo_hyundai.svg" alt="Hyundai">
+        </div>
+        <strong class="nav_text">국내판매시스템</strong>
+      </a>
+    </h1>
+    <div class="nav_inner_right">
+      <div class="nav_input_search">
+        <!-- [D] HDS - autocomplete -->
+        <div style="position: relative;">
+          <div class="autocomplete_wrap autocomplete_medium"><!-- open: class="autocomplete_open" -->
+            <div class="input_area input_area_large" role="combobox">
+              <div class="input_box input_medium input_box_radius">
+                <span class="ic ic_search_bold_16px"></span>
+                <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="화면검색">
+                <button type="button" class="btn_clear_input" aria-label="삭제" style="display: none;">
+                  <span class="ic ic_close_circle_filled_16px"></span>
+                </button>
+                <button type="button" class="btn_autocomplete_toggle" aria-label="닫기">
+                  <span class="ic ic_arrow_down_bold_16px"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="autocomplete_box shadow_4dp" style="width:408px">
+            <ul class="autocomplete_list" role="listbox">
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-010</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;출고관리&gt;고객확인서 <strong>P-01-0</strong>2-015</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-031</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- // [D] HDS - autocomplete -->
+      </div>
+      <div class="nav_authority_info">
+        <ul class="user_info_list">
+          <li class="user_info_item">홍길동</li>
+          <li class="user_info_item">국내사업본부</li>
+          <li class="user_info_item">C1 본사팀장</li>
+          <li class="user_info_item">
+            <div class="option_wrap option_filter option_medium">
+              <div class="input_area">
+                <div class="input_box input_medium" role="combobox" aria-controls="uio-select-filter4-1">
+                  <span class="input_text body_small">동부 · 성동지점</span>
+                  <input type="text" aria-hidden="true" class="blind" placeholder="" value="Enabled">
+                  <span class="ic ic_arrow_down_bold_16px"></span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="nav_action">
+        <ul class="nav_btn_list">
+          <li class="nav_btn_item">
+            <!-- 추후 추가 메뉴 추가됨에 따라 접근성 수정 예정 -->
+            <button type="button" class="btn btn_filter btn_only_ic btn_medium" aria-label="더보기">
+              <span class="ic ic_setting_bold_24px"></span>
+            </button>
+            <div class="nav_action_more" style="display: none;">더보기 메뉴 영역</div>
+            <!-- // 추후 추가 메뉴 추가됨에 따라 접근성 수정 예정 -->
+          </li>
+          <li class="nav_btn_item">
+            <!-- 추후 추가 메뉴 추가됨에 따라 접근성 수정 예정 -->
+            <button type="button" class="btn_nav_avatar">
+              <div class="avatar_circle avatar_xsmall">
+                <div class="avatar_box">
+                  <div class="thumb">
+                    <img class="img" src="../img/temp/@img_avatar.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </button>
+            <div class="nav_action_account" style="display: none;">내 계정 정보 메뉴 영역</div>
+            <!-- // 추후 추가 메뉴 추가됨에 따라 접근성 수정 예정 -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

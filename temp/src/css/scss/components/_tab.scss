@@ -1,0 +1,62 @@
+.tab_list {
+  flex: 1;
+  display: flex;
+  .tab_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+    height: 44px;
+    padding: 0 12px 0 16px;
+    border-right: 1px solid var(--surface);
+    background-color: $white;
+    cursor: pointer;
+    &.tab_item_active {
+      background-color: #F7F8FA;
+      .tab_text {
+        color: var(--primary);
+      }
+    }
+    .btn_tab {
+      height: 100%;
+    }
+    .ic {
+      &_home_bold_16px {
+        margin-right: 4px;
+      }
+    }
+    .tab_text {
+      color: var(--on_surface_high);
+      letter-spacing: -0.2px;
+    }
+    .btn_tab_close {
+      margin-left: auto;
+    }
+  }
+}
+
+.btn_arrow_box {
+  flex-shrink: 0;
+  > [class^='btn_'] {
+    & + [class^='btn_'] {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 1px;
+        height: 12px;
+        margin: 0 5px;
+        background-color: var(--outline_lowest);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.tab_panel {
+  display: none;
+  min-width: 1158px; // 임시 추후 1280가이드 확인 후 수정예정
+  padding: 32px 40px 37px;
+  &.is_active {
+    display: block;
+  }
+}

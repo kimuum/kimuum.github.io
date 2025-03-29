@@ -1,0 +1,804 @@
+<%-include('./include/head.ejs',{"title": "Panel", "listTitle": "Components - Panel"})%>
+<body data-pagestatus="">
+  <div class="uio_wrap">
+    <main class="uio_container">
+
+      <style>
+        #uioSectionCustom .uio_sub_list+.uio_box, .panel+.uio_subtit{margin-top:20px}
+        #uioSectionCustom .control_section{margin-bottom:0}
+        #uioSectionCustom .table_util .option_group{gap:8px}
+      </style>
+
+      <div class="inner">
+        <h1><span class="uio_headline">Panel</span></h1>
+
+        <section id="uioSectionCustom" class="uio_section">
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="submit_button">영역 분할</h3>
+            <ul class="uio_sub_list">
+              <li class="uio_sub_desc">좌우 영역 분할하는 Wrap 입니다. <b>(class="content_section")</b></li>
+              <li class="uio_sub_desc">해당 사이즈에 대한 Class 선언 외에 독립적인 내부 스타일에 의한 중복 Class 허용</li>
+            </ul>
+
+            <h4 style="margin: 20px 0 -10px">1. 결과화면 + 메뉴 상세정보/가격정보/목차</h4>
+            <div class="content_section">
+              <div class="panel panel_dataset" style="background-color: var(--on_primary_lowest);">
+                Panel Size : 420px <br>
+                <b>class="panel panel_dataset"</b>
+              </div>
+              <div class="panel" style="background-color: var(--on_primary_low);">
+                Panel Size : flexible (Flex:1) <br>
+                <b>class="panel"</b>
+              </div>
+            </div>
+
+            <h4 style="margin:20px 0 -10px">2. 폴더/속성 트리 + 결과화면</h4>
+            <div class="content_section">
+              <div class="panel panel_attribute" style="background-color: var(--on_primary_lowest);">
+                Panel Size : 360px <br>
+                <b>class="panel panel_attribute"</b>
+              </div>
+              <div class="panel" style="background-color: var(--on_primary_low);">
+                Panel Size : flexible (Flex:1) <br>
+                <b>class="panel"</b>
+              </div>
+            </div>
+
+            <h4 style="margin:20px 0 -10px">3. 검색 및 테이블 + 결과화면</h4>
+            <div class="content_section">
+              <div class="panel" style="background-color: var(--on_primary_low);">
+                Panel Size : flexible (Flex:1) <br>
+                <b>class="panel"</b>
+              </div>
+              <div class="panel panel_setting" style="background-color: var(--on_primary_lowest);">
+                Panel Size : 260px <br>
+                <b>class="panel panel_setting"</b>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">Breadcrumb &amp; Button group</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc"><em class="badge badge_small label_medium">control_section</em> 클래스는 자식 요소들이 좌우로 배치되는 레이아웃에서 부모 컨테이너로 사용 가능</li>
+          </ul>
+          <div class="uio_box">
+            <div class="control_section">
+              <ul class="breadcrumb">
+                <li class="breadcrumb_item ">
+                  <a href="#none" class="link link_medium">
+                    <span class="link_text headline_xsmall">기준정보</span>
+                  </a>
+                </li>
+                <li class="breadcrumb_item ">
+                  <a href="#none" class="link link_medium">
+                    <span class="link_text headline_xsmall">기타마스터 관리</span>
+                  </a>
+                </li>
+                <li class="breadcrumb_item ">
+                  <a href="#none" class="link link_medium">
+                    <span class="link_text headline_xsmall">계정 관리</span>
+                  </a>
+                </li>
+                <li class="breadcrumb_item breadcrumb_item_current">
+                  <h2 class="breadcrumb_text headline_xsmall">사용자 관리 (사용자별 프로필 관리)</h2>
+                  <span class="body_medium"><span class="blind">ID</span>CON0069BH</span>
+                  <button type="button" class="btn_copy" aria-label="복사">
+                    <span class="ic ic_copy_bold_16px"></span>
+                  </button>
+                </li>
+              </ul>
+              <div class="btn_group">
+                <div role="group" class="zoom_control">
+                  <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                  <span role="status" class="body_small" aria-live="polite">100%</span>
+                  <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+                </div>
+                <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+                <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+                <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">뒤로가기/문서ID</h2>
+          <div class="uio_box">
+            <div class="panel">
+              <div class="top_wrap">
+                <a href="#none" class="btn btn_only_ic btn_xxsmall" aria-label="뒤로가기"><span class="ic ic_arrow_backbold_24px"></span></a>
+                <span class="body_small">문서번호 : DCD_U_2022000111_001</span>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">Title</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc">패널 내 <strong>아코디언, 검색 필터, 테이블 외</strong> 타이틀 영역이 존재할 경우</li>
+          </ul>
+          <div class="uio_box">
+            <div class="panel">
+              <div class="panel_header">
+                <div class="panel_title">
+                  <span class="title_large">즐겨찾기 화면별 결재문서 현황</span>
+                  <span class="title_desc body_small">화면별 ‘수신'문서의 결재상태 개수가 표시됩니다. 버튼을 클릭하면, 지정한 화면으로 이동합니다.</span>
+                </div>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">즐겨찾기 편집</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">공지사항 List</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc"><strong>기본형</strong>은 특정 상위 부모 <em class="badge badge_small badge_info label_medium">panel</em> 없이도 독립적 스타일이 적용됨</li>
+          </ul>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="submit_button">default</h3>
+            <ul class="list_wrap list_notify">
+              <li class="list_item">
+                <p class="body_small">- 권한그룹은 ‘보직, 조직, 인원별 권한부여의 합집합'으로 적용되며, 개인이 보유한 권한그룹도 합집합으로 적용됩니다.</p>
+              </li>
+              <li class="list_item">
+                <p class="list_desc body_small">- 예시1. 보직 (팀장), 조직(A팀), 인원 (B팀 박현대, 김현대) 등록 시 : 팀장 전원 &amp; A팀 전원 &amp; 박현대, 김현대에게 권한이 부여됨</p>
+              </li>
+            </ul>
+
+            <h3 class="uio_subtit" id="submit_button">panel header</h3>
+            <div class="panel">
+              <div class="panel_header">
+                <div class="panel_title">
+                  <strong class="title_xlarge">판촉전략팀</strong>
+                </div>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">권한그룹 설정</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">저장</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">취소</span></button>
+                </div>
+                <ul class="list_wrap list_notify">
+                  <li class="list_item">
+                    <p class="body_small">- 권한그룹은 ‘보직, 조직, 인원별 권한부여의 합집합'으로 적용되며, 개인이 보유한 권한그룹도 합집합으로 적용됩니다.</p>
+                  </li>
+                  <li class="list_item">
+                    <p class="list_desc body_small">- 예시1. 보직 (팀장), 조직(A팀), 인원 (B팀 박현대, 김현대) 등록 시 : 팀장 전원 &amp; A팀 전원 &amp; 박현대, 김현대에게 권한이 부여됨</p>
+                  </li>
+                  <li class="list_item">
+                    <p class="list_desc body_small">- 예시2. 박현대 개인에게 권한그룹 A (메뉴1, 메뉴2, 메뉴3), 권한그룹 B (메뉴1, 메뉴4) 부여시 : 메뉴1, 메뉴2, 메뉴3, 메뉴4 부여됨</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="uio_subtit" id="submit_button">table</h3>
+            <div class="panel">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <ul class="list_wrap list_notify">
+                    <li class="list_item">
+                      <p class="body_small">- 권한그룹으로 부여된 메뉴별 기능은 '<span class="ic ic_select_checkbox_checked_24px"></span>‘ 형태의 비활성 체크박스로 조회됩니다.</p>
+                    </li>
+                    <li class="list_item">
+                      <p class="body_small">- 사용자에게 메뉴권한을 개별부여 하는 것은 권한그룹이 없거나, 권한그룹을 새로 만들기 어려운 경우에 국한하여 사용합니다.</p>
+                    </li>
+                  </ul>
+                  <div class="option_group">
+                    <label for="">메뉴검색</label>
+                    <div style="position:relative">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area input_area_large" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="메뉴명 또는 메뉴ID" class="input_text body_small" placeholder="메뉴명 또는 메뉴ID를 입력하세요">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">계약번호별 매출관리</span><strong> 00000</strong></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">매출변경 의뢰 및 결재</span><strong> 00000</strong></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">매출변경 진행 현황</span><strong> 00000</strong></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">조회</span></button>
+                  </div>
+                  <div class="btn_group">
+                    <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">권한 복사하기</span></button>
+                    <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">Search Filter</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc">영역 하단에 조회 버튼이 있을 경우, <em class="badge badge_small badge_info label_medium">panel_group</em>이 <em class="badge badge_small badge_info label_medium">panel</em>의 상위 부모로 존재</li>
+            <li class="uio_sub_desc">조회 버튼 영역에 <em class="badge badge_small badge_low label_medium">panel_bottom</em> 클래스 추가</li>
+            <li class="uio_sub_desc">내부 컨텐츠는 <a href="@search_filters.html" target="_blank" style="color:var(--blue)">@search_filters.html</a> 참고</li>
+          </ul>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="submit_button">default</h3>
+            <div class="panel">
+              <div class="field_horiz">
+                <label for="" class="field_title title_medium">차량선택</label>
+                <div class="field_inline">
+                  <div class="field_group">
+                    <label for="" class="title_small">출고지원센터</label>
+                    <div class="option_wrap option_small">
+                      <div class="input_area">
+                        <div class="input_box input_small" role="combobox" tabindex="0">
+                          <span class="input_text body_small">전체</span>
+                          <input type="text" aria-hidden="true" class="blind" value="전체">
+                          <span class="ic ic_arrow_down_bold_16px"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="" class="title_small">출고/배송센터</label>
+                    <div class="option_wrap option_small">
+                      <div class="input_area">
+                        <div class="input_box input_small" role="combobox" tabindex="0">
+                          <span class="input_text body_small">전체</span>
+                          <input type="text" aria-hidden="true" class="blind" value="전체">
+                          <span class="ic ic_arrow_down_bold_16px"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="" class="title_small">계약번호</label>
+                    <div class="input_area">
+                      <div class="input_box input_suffix input_small">
+                        <input type="text" class="input_text body_small" aria-label="Text Field" placeholder="계약번호 입력">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="period" class="title_small">날짜</label>
+                    <div class="datepicker datepicker_small" role="group" aria-labelledby="period">
+                      <div class="datepicker_inner" style="position:relative">
+                        <div class="react-datepicker-wrapper">
+                          <div class="react-datepicker__input-container">
+                            <!-- [D] input 커스텀 영역 -->
+                            <div class="input_area input_datepicker_area">
+                              <div class="input_box input_small">
+                                <input type="text" class="input_text body_small" placeholder="YYYY-MM-DD" aria-label="date picker">
+                                <button type="button" class="btn_clear_input" aria-label="삭제">
+                                  <span class="ic ic_close_circle_filled_16px"></span>
+                                </button>
+                                <span class="ic ic_calendar_bold_16px"></span>
+                              </div>
+                            </div>
+                            <!-- // [D] input 커스텀 영역 -->
+                          </div>
+                        </div>
+                        <div class="react-datepicker__tab-loop" style="display: none">
+                          <div class="react-datepicker__tab-loop__start" tabindex="0"></div>
+                          <div class="react-datepicker-popper" data-placement="bottom" style="position: absolute;top:32px;left:0;z-index:10">
+                            <div>
+                              <div class="react-datepicker">
+                                <div class="react-datepicker__triangle"></div>
+                                <span role="alert" aria-live="polite" class="react-datepicker__aria-live"></span>
+                                <div class="react-datepicker__month-container">
+                                  <div class="react-datepicker__header react-datepicker__header--custom">
+                                    <!-- [D] header 커스텀 영역 -->
+                                    <div class="datepicker_header_content">
+                                      <button type="button" class="btn_datepicker_previous" aria-label="Previous Month">
+                                        <span class="ic ic_arrow_back_bold_20px"></span>
+                                      </button>
+                                      <div class="datepicker_current_month">
+                                        <strong class="datepicker_current_month_title title_xlarge">2024.05</strong>
+                                        <!-- [D] 버튼 클릭 시 btn_datepicker_switch_open 클래스 추가 -->
+                                        <button type="button" class="btn_datepicker_switch" aria-label="달력 열기"><span class="ic_arrow_down_filled_16px"></span></button>
+                                      </div>
+                                      <button type="button" class="btn_datepicker_next" aria-label="Next Month">
+                                        <span class="ic ic_arrow_forward_bold_20px"></span>
+                                      </button>
+                                    </div>
+                                    <!-- //[D] header 커스텀 영역 -->
+                                    <div class="react-datepicker__day-names">
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Su</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Mo</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Tu</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">We</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Th</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Fr</div>
+                                      </div>
+                                      <div class="react-datepicker__day-name">
+                                        <div class="datepicker_week_text">Sa</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="react-datepicker__month" aria-label="month  2024-05" role="listbox">
+                                    <div class="react-datepicker__week">
+                                      <div class="react-datepicker__day react-datepicker__day--028 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Sunday, April 28th, 2024" role="option">
+                                        <div class="datepicker_day_text">28</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--029 react-datepicker__day--outside-month" aria-label="Choose Monday, April 29th, 2024" role="option">
+                                        <div class="datepicker_day_text">29</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--030 react-datepicker__day--outside-month" aria-label="Choose Tuesday, April 30th, 2024" role="option">
+                                        <div class="datepicker_day_text">30</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--001  react-datepicker__day--today" aria-label="Choose Wednesday, May 1st, 2024" role="option" aria-current="date">
+                                        <div class="datepicker_day_text">1</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--002 react-datepicker__day--selected" aria-label="Choose Thursday, May 2nd, 2024" role="option" aria-selected="true">
+                                        <div class="datepicker_day_text">2</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--003" aria-label="Choose Friday, May 3rd, 2024" role="option">
+                                        <div class="datepicker_day_text">3</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--004 react-datepicker__day--weekend" aria-label="Choose Saturday, May 4th, 2024" role="option">
+                                        <div class="datepicker_day_text">4</div>
+                                      </div>
+                                    </div>
+                                    <div class="react-datepicker__week">
+                                      <div class="react-datepicker__day react-datepicker__day--005 react-datepicker__day--weekend" aria-label="Choose Sunday, May 5th, 2024" role="option">
+                                        <div class="datepicker_day_text">5</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--006" aria-label="Choose Monday, May 6th, 2024" role="option">
+                                        <div class="datepicker_day_text">6</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--007" aria-label="Choose Tuesday, May 7th, 2024" role="option">
+                                        <div class="datepicker_day_text">7</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--008" aria-label="Choose Wednesday, May 8th, 2024" role="option">
+                                        <div class="datepicker_day_text">8</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--009" aria-label="Choose Thursday, May 9th, 2024" role="option">
+                                        <div class="datepicker_day_text">9</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--010" aria-label="Choose Friday, May 10th, 2024" role="option">
+                                        <div class="datepicker_day_text">10</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--011 react-datepicker__day--weekend" aria-label="Choose Saturday, May 11th, 2024" role="option">
+                                        <div class="datepicker_day_text">11</div>
+                                      </div>
+                                    </div>
+                                    <div class="react-datepicker__week">
+                                      <div class="react-datepicker__day react-datepicker__day--012 react-datepicker__day--weekend" aria-label="Choose Sunday, May 12th, 2024" role="option">
+                                        <div class="datepicker_day_text">12</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--013" aria-label="Choose Monday, May 13th, 2024" role="option">
+                                        <div class="datepicker_day_text">13</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--014" aria-label="Choose Tuesday, May 14th, 2024" role="option">
+                                        <div class="datepicker_day_text">14</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--015" aria-label="Choose Wednesday, May 15th, 2024" role="option">
+                                        <div class="datepicker_day_text">15</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--016" aria-label="Choose Thursday, May 16th, 2024" role="option">
+                                        <div class="datepicker_day_text">16</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--017" aria-label="Choose Friday, May 17th, 2024" role="option">
+                                        <div class="datepicker_day_text">17</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--018 react-datepicker__day--weekend" aria-label="Choose Saturday, May 18th, 2024" role="option">
+                                        <div class="datepicker_day_text">18</div>
+                                      </div>
+                                    </div>
+                                    <div class="react-datepicker__week">
+                                      <div class="react-datepicker__day react-datepicker__day--019 react-datepicker__day--weekend" aria-label="Choose Sunday, May 19th, 2024" role="option">
+                                        <div class="datepicker_day_text">19</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--020" aria-label="Choose Monday, May 20th, 2024" role="option">
+                                        <div class="datepicker_day_text">20</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--021" aria-label="Choose Tuesday, May 21st, 2024" role="option">
+                                        <div class="datepicker_day_text">21</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--022" aria-label="Choose Wednesday, May 22nd, 2024" role="option">
+                                        <div class="datepicker_day_text">22</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--023" aria-label="Choose Thursday, May 23rd, 2024" role="option">
+                                        <div class="datepicker_day_text">23</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--024" aria-label="Choose Friday, May 24th, 2024" role="option">
+                                        <div class="datepicker_day_text">24</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--025 react-datepicker__day--weekend" aria-label="Choose Saturday, May 25th, 2024" role="option">
+                                        <div class="datepicker_day_text">25</div>
+                                      </div>
+                                    </div>
+                                    <div class="react-datepicker__week">
+                                      <div class="react-datepicker__day react-datepicker__day--026 react-datepicker__day--weekend" aria-label="Choose Sunday, May 26th, 2024" role="option">
+                                        <div class="datepicker_day_text">26</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--027" aria-label="Choose Monday, May 27th, 2024" role="option">
+                                        <div class="datepicker_day_text">27</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--028" aria-label="Choose Tuesday, May 28th, 2024" role="option">
+                                        <div class="datepicker_day_text">28</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--029" aria-label="Choose Wednesday, May 29th, 2024" role="option">
+                                        <div class="datepicker_day_text">29</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--030" aria-label="Choose Thursday, May 30th, 2024" role="option">
+                                        <div class="datepicker_day_text">30</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--031" aria-label="Choose Friday, May 31st, 2024" role="option">
+                                        <div class="datepicker_day_text">31</div>
+                                      </div>
+                                      <div class="react-datepicker__day react-datepicker__day--001 react-datepicker__day--weekend react-datepicker__day--outside-month" aria-label="Choose Saturday, June 1st, 2024" role="option">
+                                        <div class="datepicker_day_text">1</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="react-datepicker__tab-loop__end" tabindex="0"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="uio_subtit" id="submit_button">search button</h3>
+            <div class="panel_group">
+              <div class="panel">
+                <div class="field_inline">
+                  <div class="field_group">
+                    <label for="" class="title_small">조직</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_small">소속구분</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      inputText : 'body_small',
+                      inputVal : '전체',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_small">인사조직코드</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_small">회계코드</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_small">상위조직</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_small">조직노출/숨김관리</label>
+                    <label for="" class="title_xsmall">국내판매시스템</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      inputText : 'body_small',
+                      inputVal : '노출',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <label for="" class="title_xsmall">연계사이트(영업현장,기아닷컴)</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      inputText : 'body_small',
+                      inputVal : '숨김',
+                    }) %>
+                  </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="field_inline">
+                  <label for="" class="title_medium">조회조건</label>
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="uio_radio1_1" class="input_radio" name="uio_radio1">
+                        <label for="uio_radio1_1" class="label_radio"><span class="label_text body_small">조직명/코드</span></label>
+                      </span>
+                    </div>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '조직명 또는 조직코드 입력',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="uio_radio1_2" class="input_radio" name="uio_radio1">
+                        <label for="uio_radio1_2" class="label_radio"><span class="label_text body_small">인사조직코드</span></label>
+                      </span>
+                    </div>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_small',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '4자리',
+                    }) %>
+                  </div>
+
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="uio_radio1_3" class="input_radio" name="uio_radio1">
+                        <label for="uio_radio1_3" class="label_radio"><span class="label_text body_small">회계코드</span></label>
+                      </span>
+                    </div>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_small',
+                      inputText : 'body_small',
+                      inputVal : '승용',
+                      id : 'uio_radio1_3'
+                    }) %>
+                  </div>
+                </div>
+                <div class="field_horiz">
+                  <div class="field_vertical">
+                    <label for="" class="title_small">주소</label>
+                    <div class="field_inline">
+                      <div class="field_group">
+                        <%- include('./include/input_area.ejs', {
+                          inputArea : 'input_area_small',
+                          inputBox : 'input_suffix input_small',
+                          ariaLabel : '우편번호',
+                          placeholder : '우편번호',
+                        }) %>
+                        <%- include('./include/input_area.ejs', {
+                          inputBox : 'input_suffix input_small',
+                          ariaLabel : '도로명, 건물명, 지번 주소',
+                          placeholder : '도로명, 건물명, 지번 주소',
+                        }) %>
+
+                        <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">주소검색</span></button>
+                      </div>
+                      <%- include('./include/input_area.ejs', {
+                        inlineStyle : 'width: 100%',
+                        inputBox : 'input_suffix input_small',
+                        ariaLabel : '상세 주소',
+                        placeholder : '상세 주소',
+                      }) %>
+                    </div>
+                  </div>
+                  <div class="field_vertical">
+                    <label for="" class="title_small">GPS좌표</label>
+                    <div class="field">
+                      <div class="field_inline">
+                        <label for="" class="title_xsmall">위도</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputArea : 'input_area_medium',
+                          inputBox : 'input_suffix input_small',
+                          ariaLabel : '위도',
+                          placeholder : '127.000000',
+                        }) %>
+                        <label for="" class="title_xsmall">경도</label>
+                        <%- include('./include/input_area.ejs', {
+                          inputArea : 'input_area_medium',
+                          inputBox : 'input_suffix input_small',
+                          ariaLabel : '경도',
+                          placeholder : '37.000000',
+                        }) %>
+                        <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">등록</span></button>
+                      </div>
+                      <p class="field_desc label_medium"><span class="ic ic_refresh_regular_12px"></span>업데이트 정보 : 일시 YYYY-MM-DD / 사번 0000000</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="panel panel_bottom">
+                <div class="input_select_wrap">
+                  <span class="input_select_box input_select_medium">
+                    <input type="checkbox" id="uio_checkbox1_1" class="input_checkbox">
+                    <label for="uio_checkbox1_1" class="label_checkbox"><span class="label_text body_small">조회조건저장</span></label>
+                    <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                      <button type="button" class="btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="tooltip">
+                        <span class="ic ic_information_regular_16px"></span>
+                      </button>
+                      <span class="tooltip tooltip_top_center shadow_8dp js-tooltip" tabindex="0" role="tooltip" id="summary-bar-tooltip" style="display: none;">
+                        <span class="tooltip_text label_medium">Tooltip</span>
+                      </span>
+                    </div>
+                  </span>
+                </div>
+                <div class="btn_group btn_group_center">
+                  <button type="button" class="btn btn_outline btn_with_ic btn_large"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                  <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_large"><span class="btn_inner_text title_small">조회</span></button>
+                </div>
+                <div class="toggle_btn">
+                  <button type="button" class="btn btn_text btn_with_ic btn_medium"><span class="btn_inner_text body_small">접기</span><span class="ic ic_arrow_up_bold_16px"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">Panel top</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc">영역 상단 + 구분선이 있을 경우, <em class="badge badge_small badge_info label_medium">panel_group</em>이 <em class="badge badge_small badge_info label_medium">panel</em>의 상위 부모로 존재</li>
+            <li class="uio_sub_desc">첫번째 panel 영역에 <em class="badge badge_small badge_low label_medium">panel_top</em> 클래스 추가</li>
+          </ul>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="">default</h3>
+            <div class="panel_group">
+              <div class="panel panel_top">
+                <div class="btn_group btn_group_right">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">상신</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">임시저장</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">수정</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">결제문서조회</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">가격불러오기</span></button>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="panel">
+                <!-- [D] 가격 기본정보 표 -->
+                <div class="table_wrap">
+                  <div class="table_util">
+                    <strong class="title_large">가격 기본정보</strong>
+                  </div>
+                  <div class="table_inner">
+                    <table class="table table_small">
+                      <caption><span>가격 기본정보 표 : 차량, 대표차명, 모델명, 상태</span></caption>
+                      <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">차량</span></div>
+                          </th>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">대표차명</span></div>
+                          </th>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">모델명</span></div>
+                          </th>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">상태</span></div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">승용</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">DNB 쏘나타DNB</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">쏘나타 디 엣지</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">수정중</p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <!-- [D] 결재정보 표 -->
+                <div class="table_wrap">
+                  <div class="table_util">
+                    <strong class="title_large">결재정보</strong>
+                  </div>
+                  <div class="table_inner">
+                    <table class="table table_small">
+                      <caption><span>결재정보 표 : 결재상태, 생산일, 승인/반려일</span></caption>
+                      <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">결재상태</span></div>
+                          </th>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">생산일</span></div>
+                          </th>
+                          <th scope="col">
+                            <div class="cell_text"><span class="title_small">승인/반려일</span></div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">-</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <p class="body_small text_ellipsis">-</p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script>
+
+</body>
+</html>

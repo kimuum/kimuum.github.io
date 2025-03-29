@@ -1,0 +1,73 @@
+.project_sales_system {
+  .tree {
+    .tree_box {
+      .tree_box_inner {
+        padding-right: 6px;
+        @media (hover: hover) {
+          &:hover {
+            background-color: var(--primary_container, .5);
+            .tree_text {
+              font-weight: 700;
+              color: var(--primary);
+            }
+            .input_checkbox_favorite {
+              overflow: initial;
+              position: static;
+              width: 20px;
+              height: 20px;
+              margin: 0;
+              clip: initial;
+            }
+          }
+        }
+      }
+      &.tree_selected {
+        .tree_box_inner {
+          background-color: var(--primary_container, .5);
+        }
+      }
+    }
+    .tree_text {
+      color: var(--on_surface);
+    }
+  }
+  .input_checkbox_favorite {
+    @include blind;
+  }
+}
+.tree_more_btn_box {
+  .tree_more_btn {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+.tree_more_wrap {
+  position: absolute;
+  display: none;
+  &.is_show {
+    display: block;
+  }
+}
+.tree_more_menu {
+  width: 80px;
+  height: 88px;
+  padding: 11px 8px;
+  background-color: $white;
+  border-radius: 8px;
+  box-shadow: 0px 24px 22px 0px #2222220D;
+  box-shadow: 0px 0px 2px 0px #2222221A;
+  .tree_more_option {
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    transition: .2s;
+    &:hover {
+      background-color: var(--primary_lowest);
+      .body_medium {
+        font-weight: 700;
+        color: var(--primary);
+      }
+    }
+  }
+}

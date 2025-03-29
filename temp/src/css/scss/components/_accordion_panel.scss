@@ -1,0 +1,130 @@
+.accordion_panel {
+  border-radius: 10px;
+
+  + .accordion_panel {
+    margin-top: 20px;
+  }
+
+  + .panel {
+    margin-top: 20px;
+  }
+
+  > .accordion_item {
+    padding: 24px;
+    &:hover {
+      .btn_accordion {
+        background-color: transparent;
+      }
+    }
+
+    &.accordion_open {
+      .accordion_panel_header {
+        .btn_accordion {
+          .ic {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .accordion_control {
+      display: flex;
+      align-items: center;
+
+      .input_select_wrap {
+        flex: 0 0 auto;
+        margin-right: 12px;
+      }
+
+      .btn {
+        margin-right: 16px;
+      }
+
+      .btn_accordion {
+        width: auto;
+        border-radius: 4px;
+        &:hover {
+          background-color: var(--surface_container_lowest);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 16px;
+
+    .form {
+      &_box {
+        .form_container {
+          border-bottom: none;
+        }
+      }
+
+      &_container {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 8px 16px;
+        border-top: 1px solid var(--outline);
+        border-bottom: 1px solid var(--outline);
+
+        .input_wrap {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+
+          & + .input_wrap {
+            &::before {
+              display: inline-block;
+              width: 1px;
+              height: 12px;
+              margin: 0 8px 0 16px;
+              background-color: var(--outline_low);
+              vertical-align: middle;
+              content: "";
+            }
+          }
+
+          .input_select_wrap {
+            & + .input_select_wrap {
+              margin-left: 16px;
+            }
+          }
+        }
+
+        .text_wrap {
+          font-size: 0;
+
+          .body_small {
+            &:not(:only-child) {
+              &:not(:first-child) {
+                &::before {
+                  display: inline-block;
+                  width: 1px;
+                  height: 12px;
+                  margin: 0 8px;
+                  background-color: var(--outline_low);
+                  vertical-align: middle;
+                  content: "";
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

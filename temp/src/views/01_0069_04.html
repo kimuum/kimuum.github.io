@@ -1,0 +1,223 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0069-A-HK, 기준-0069-B-HK, 기준-0069-C-HK, 기준-0069-D-HK / 사용자 관리",
+  "listTitle": "계정 관리 > 사용자 관리_보직코드 관리 : 01-기준정보"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content user_manage">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "권한 관리", href: "#none" },
+                { text: "사용자 관리", id: "A0000000" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <%- include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab2_1', ariaControls:'tabpanel2_1', text: '사용자 관리', ariaSelected: false },
+              { id: 'tab2_2', ariaControls:'tabpanel2_2', text: '사용자별 프로필 관리', ariaSelected: false },
+              { id: 'tab2_3', ariaControls:'tabpanel2_3', text: '소속코드 예외 관리', ariaSelected: false },
+              { id: 'tab2_4', ariaControls:'tabpanel2_4', text: '보직코드 관리', ariaSelected: true },
+            ],
+          }) %>
+          <!-- [D] 탭패널 id와 연관된 버튼의 aria-controls값 참조 / aria-labelledby와 연관된 탭버튼의 id값 참조 -->
+          <div id="tabpanel2_4" role="tabpanel" aria-labelledby="tab2_4" tabindex="0">
+            <div class="panel_group">
+              <div class="panel">
+                <div class="field_vertical">
+                  <label class="field_title title_medium">국내판매시스템 정보</label>
+                  <div class="field_inline">
+                    <div class="field_group">
+                      <label for="">사용여부</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_small',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                    <div class="field_group">
+                      <label for="">소속구분</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                    <div class="field_group">
+                      <label for="">보직</label>
+                      <!-- 옵션 내 검색 기능 추가 예정 -->
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                  </div>
+                </div>
+                <div class="field_vertical">
+                  <label class="field_title title_medium">인사 정보</label>
+                  <div class="field_inline">
+                    <div class="field_group">
+                      <label for="">공식 보직</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_small',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                    <div class="field_group">
+                      <label for="">인사보직</label>
+                      <!-- 옵션 내 검색 기능 추가 예정 -->
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                    <div class="field_group">
+                      <label for="" class="title_small">말단조직명</label>
+                      <div class="input_area input_area_medium">
+                        <div class="input_box input_suffix input_small">
+                          <input type="text" aria-label="말단조직명" class="input_text body_small" placeholder="말단조직명 입력">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field_group">
+                      <label for="">직무코드</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_medium',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputText : 'body_small',
+                        inputVal : '전체',
+                      }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="panel panel_bottom">
+                <div class="btn_group btn_group_center">
+                  <button type="button" class="btn btn_outline btn_with_ic btn_large"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                  <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <span class="body_small">※ 인사 정보는 매일 오전6시에 일배치 되며, 변동사항은 ‘변경확인' 컬럼에 표시됩니다.</span>
+                </div>
+                <div class="table_util">
+                  <div class="option_group">
+                    <span class="title_small">총 <span class="num">9999</span>개</span>
+                    <span class="label_medium">조회일시 YYYY-MM-DD HH:MM:SS<span class="ic ic_refresh_bold_12px"></span></span>
+                    <div class="input_box input_small">
+                      <span class="ic ic_search_bold_16px"></span>
+                      <input type="text" aria-label="" class="input_text body_small" placeholder="검색어를 입력해주세요">
+                    </div>
+                  </div>
+                  <div class="btn_group">
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">추가</span></button>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">삭제</span></button>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small" aria-haspopup="dialog">저장</span></button>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small" aria-haspopup="dialog">취소</span></button>
+                    <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span></button>
+                  </div>
+                </div>
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

@@ -1,0 +1,3064 @@
+<%-include('./include/head.ejs',{
+  "title": "계출-0001-A-HK_주문서_생성",
+  "listTitle": "계약출고 > 계약출고 > 주문서 생성 : 04-계약출고_주문서"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.28">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "계약출고", href: "#none" },
+                { text: "계약출고", href: "#none" },
+                { text: "주문서", href: "#none" },
+                { text: "계약생성", href: "#none", id: "CON0001BH" },
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <%- include('./include/search_section.ejs', {
+            labelID: 'search_field',
+            labelText: '계약번호',
+            inputPlaceholder: '계약번호',
+            inputValue: '23 A 123-5678',
+            searchButtonItems: [
+              { text: "계약번호조회" },
+              { text: "계약상세검색" },
+            ],
+          }) %>
+          <div class="control_section">
+            <div class="top_wrap">
+              <span class="title_xlarge">신규 주문서 생성</span>
+            </div>
+            <div class="btn_group">
+              <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                <span class="ic ic_refresh_bold_16px"></span>
+                <span class="btn_inner_text body_small">초기화</span>
+              </button>
+              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">계약진행</span></button>
+            </div>
+          </div>
+          <div class="content_section">
+            <!-- 좌측: 주문서 데이터 테이블 영역 -->
+            <div class="data_area">
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                    <div id="accordion_panel_01" class="accordion_title">
+                      <span class="title_large">계약기본 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_01" aria-labelledby="accordion_panel_01"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+                  <div id="accordion_panel_content_01" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>계약 유형</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                inputVal: '일반'
+                              }) %>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                inputVal: '종이계약'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">계약서 번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: '종이계약서번호 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>계약 담당자</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                inputVal: '사번 · 이름'
+                              }) %>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                inputVal: '지점/대리점'
+                              }) %>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                inputVal: '사번 · 이름'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_02" class="accordion_title">
+                      <span class="title_large">계약자 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_02" aria-labelledby="accordion_panel_02"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_02" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>고객 구분</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio3_1" class="input_radio" name="customer_group_01" checked>
+                                  <label for="uio_radio3_1" class="label_radio"><span class="label_text body_small">개인</span></label>
+                                </span>
+                              </div>
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio3_1" class="input_radio" name="customer_group_01">
+                                  <label for="uio_radio3_1" class="label_radio"><span class="label_text body_small">개인사업자</span></label>
+                                </span>
+                              </div>
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio3_3" class="input_radio" name="customer_group_01">
+                                  <label for="uio_radio3_3" class="label_radio"><span class="label_text body_small">법인사업자</span></label>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '고객 유형'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>공동명의자 명수</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '최대 99',
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">적용</span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>구입형태</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '구입형태'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>면/과세 유형</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '과세유형'
+                              }) %>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '면세유형'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion accordion_dataset">
+                        <div class="accordion_item accordion_open">
+                          <div class="accordion_dataset_header">
+                            <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                            <div id="accordion_dataset_3-1" class="accordion_title">
+                              <span class="title_small">직원할인</span>
+                              <span class="title_desc"> &#8251; 당사직원 외 할인 적용 대상 구매 시, 가족간 구매이력 체크 필요하여, 주계약자의 배우자 고객관리번호 필수입력</span>
+                            </div>
+                            <div class="accordion_control">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_small">
+                                  <input type="checkbox" id="uio_checkbox3-1" class="input_checkbox">
+                                  <label for="uio_checkbox3-1" class="label_checkbox"><span class="label_text label_medium">직원할인 적용여부</span></label>
+                                </span>
+                              </div>
+                              <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                              <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_3-1" aria-labelledby="accordion_dataset_3-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                            </div>
+                          </div>
+                          <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                          <div id="accordion_dataset_content_3-1" class="accordion_content" role="region" style="display: block">
+                            <div class="accordion_dataset_content">
+                              <ul class="data_list double_list">
+                                <li class="data_item">
+                                  <div class="data_title"><strong class="body_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>직원사번</strong></div>
+                                  <div class="data_desc">
+                                    <div class="input_wrap">
+                                      <div class="input_wrap">
+                                        <%- include('./include/input_area.ejs', {
+                                          inlineStyle: 'width: 100px',
+                                          inputBox: 'input_suffix input_xsmall',
+                                          placeholder: '직원사번/코드',
+                                        }) %>
+                                        <button type="button" class="btn btn_fill btn_primary_higher btn_xsmall"><span class="btn_inner_text label_medium">입력</span></button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="data_item">
+                                  <div class="data_title"><strong class="body_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>업체코드/명</strong></div>
+                                  <div class="data_desc">
+                                    <div class="input_wrap">
+                                      <%- include('./include/option_wrap.ejs', {
+                                        optionWrap: 'option_xsmall',
+                                        inlineStyle: 'width: 100px',
+                                        inputBox: 'input_xsmall',
+                                        ariaControls: 'uio-select-outline1-1',
+                                        inputVal: 'A030A'
+                                      }) %>
+                                      <span class="body_small">현대케피코</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="data_item">
+                                  <div class="data_title"><strong class="body_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>손실유형코드명</strong></div>
+                                  <div class="data_desc">
+                                    <div class="input_wrap">
+                                      <%- include('./include/option_wrap.ejs', {
+                                        optionWrap: 'option_xsmall',
+                                        inlineStyle: 'width: 100px',
+                                        inputBox: 'input_xsmall',
+                                        ariaControls: 'uio-select-outline1-1',
+                                        inputVal: '손실유형'
+                                      }) %>
+                                      <span class="body_small">계열사 직원</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="data_item">
+                                  <div class="data_title"><strong class="body_small">판매수당 사번/성명</strong></div>
+                                  <div class="data_desc">
+                                    <div class="input_wrap">
+                                      <%- include('./include/option_wrap.ejs', {
+                                        optionWrap: 'option_xsmall',
+                                        inlineStyle: 'width: 100px',
+                                        inputBox: 'input_xsmall',
+                                        ariaControls: 'uio-select-outline1-1',
+                                        inputVal: '9469008ce'
+                                      }) %>
+                                      <span class="body_small">김현대</span>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="data_item">
+                                  <div class="data_title"><strong class="body_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>당사직원외 배우자</strong></div>
+                                  <div class="data_desc">
+                                    <div class="input_wrap">
+                                      <div class="input_wrap">
+                                        <%- include('./include/input_area.ejs', {
+                                          inputArea: 'input_area_medium',
+                                          inputBox: 'input_suffix input_xsmall',
+                                          placeholder: '고객관리번호 입력',
+                                        }) %>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                              <div class="divider"></div>
+                              <div class="table_wrap">
+                                <div class="table_util">
+                                  <div class="option_group">
+                                    <span class="title_medium">구매이력</span>
+                                  </div>
+                                  <div class="btn_group">
+                                    <!-- [D] 비활성화 disabled 속성 추가 -->
+                                    <button type="button" class="btn btn_outline btn_xxsmall">
+                                      <span class="btn_inner_text label_medium">상세보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div class="table table_medium">
+                                  <table class="table table_small">
+                                    <caption><span>구매이력 테이블</span></caption>
+                                    <colgroup>
+                                      <col style="width: 98px">
+                                      <col style="width: 74px">
+                                      <col style="width: 138px">
+                                      <col style="width: 120px">
+                                      <col style="width: 61px">
+                                      <col style="width: 98px">
+                                      <col style="width: 116px">
+                                    </colgroup>
+                                    <thead>
+                                      <tr>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">계약자 구분</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">고객명</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">고객관리번호</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">계약번호</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">차명</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">최종출고일</span></div>
+                                        </th>
+                                        <th>
+                                          <div class="cell_text"><span class="title_small">구매형태</span></div>
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small">직원</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">홍길동</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">A201404140001097</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">A3723JJ000203</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">G80</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">2023.12.20</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">공동구매(고객명)</p>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small">배우자</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">홍길동</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">A201404140001097</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">A3723JJ000203</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">CN7</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">2023.12.23</p>
+                                          </div>
+                                        </td>
+                                        <td>
+                                          <div class="cell_text">
+                                            <p class="body_small text_ellipsis">단독구매</p>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_03" class="accordion_title">
+                      <span class="title_large">주계약자</span>
+                    </div>
+                    <div class="accordion_control">
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_small">
+                          <input type="checkbox" id="uio_checkbox1-1" class="input_checkbox">
+                          <label for="uio_checkbox1-1" class="label_checkbox"><span class="label_text label_medium">주계약자 여부</span></label>
+                        </span>
+                      </div>
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_03" aria-labelledby="accordion_panel_03"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_03" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>계약자와의 관계</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '본인',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>성명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '이름',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>주민번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '000000',
+                              }) %>
+                              <span class="body_small">-</span>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '*******',
+                              }) %>
+                              <!-- [D] 전체보기 비활성화 아이콘: ic_eye_light_filled_20px / 전체보기 활성화 아이콘: ic_view_hidden_filled_20px -->
+                              <button type="button" class="btn btn_filter btn_only_ic btn_xxsmall" aria-label="주민번호 전체보기 토글" aria-expanded="false" aria-controls="personal_info"><span class="ic ic_eye_light_filled_20px"></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>휴대전화</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '010',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">전화번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '001',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">이메일</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: 'e-mail 입력',
+                              }) %>
+                              <span class="body_small">@</span>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '도메인 선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>주소</strong></div>
+                          <div class="td">
+                            <div class="input_row">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '주소구분'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '우편번호',
+                                readonly: true,
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">주소찾기</span></button>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '주소',
+                                readonly: true,
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small',
+                                placeholder: '상세주소',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>상호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: '상호명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>대표자명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: '대표자명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>법인번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_small',
+                                placeholder: '123456',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_small',
+                                placeholder: '1234567',
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">정보불러오기</span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>사업자번호</strong></div>
+                          <div class="td">
+                            <div class="input_row">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '123',
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '45',
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '67890',
+                                }) %>
+                                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">휴폐업정보확인</span></button>
+                                <div class="date_confirm">
+                                  <span class="label_medium">확인일시 : YYYY-MM-DD (정상)</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>업태</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '업태 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>종목</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '종목 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion accordion_dataset">
+                        <div class="accordion_item">
+                          <div class="accordion_dataset_header">
+                            <div id="accordion_dataset_3-1" class="accordion_title">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="checkbox" id="all_terms_3-1" class="input_checkbox" checked>
+                                  <label for="all_terms_3-1" class="label_checkbox"><span class="label_text body_small">전체 동의하기</span></label>
+                                </span>
+                              </div>
+                              <span class="title_desc">&#8251; 현대자동차 개인정보 활용에 전체 동의합니다.</span>
+                            </div>
+                            <div class="accordion_control">
+                              <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_3-1" aria-labelledby="accordion_dataset_3-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                            </div>
+                          </div>
+                          <div id="accordion_dataset_content_3-1" class="accordion_content" role="region">
+                            <div class="accordion_dataset_content">
+                              <div class="accordion accordion_terms">
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-1" class="input_checkbox" checked>
+                                          <label for="terms_3-1-1" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 -->
+                                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_terms_content_4-1-1">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+                                  <div id="accordion_terms_content_4-1-1" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-2" class="input_checkbox" checked>
+                                          <label for="terms_3-1-2" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-2">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-2" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-3" class="input_checkbox" checked>
+                                          <label for="terms_3-1-3" class="label_checkbox"><span class="label_text body_small">[필수] 자동차 교환/환불 중재제도 설명에 대한 이해 및 수락여부</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-3">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-3" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-4" class="input_checkbox" checked>
+                                          <label for="terms_3-1-4" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-4">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-4" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-5" class="input_checkbox" checked>
+                                          <label for="terms_3-1-5" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-5">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-5" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-6" class="input_checkbox" checked>
+                                          <label for="terms_3-1-6" class="label_checkbox"><span class="label_text body_small">[선택] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-6">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-6" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-7" class="input_checkbox" checked>
+                                          <label for="terms_3-1-7" class="label_checkbox"><span class="label_text body_small">[선택] 하이패스 개통 신청대행 및 선택적 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-7">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-7" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_3-1-8" class="input_checkbox" checked>
+                                          <label for="terms_3-1-8" class="label_checkbox"><span class="label_text body_small">[선택] 마켓팅/홍보 목적 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-8">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-8" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_wrap">
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_3-1-9" class="input_checkbox" checked>
+                                            <label for="terms_3-1-9" class="label_checkbox"><span class="label_text body_small">[선택] 정보 수신 채널 동의</span></label>
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div class="input_wrap">
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_3-1-10" class="input_checkbox" checked>
+                                            <label for="terms_3-1-10" class="label_checkbox"><span class="label_text body_small">문자</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_3-1-11" class="input_checkbox" checked>
+                                            <label for="terms_3-1-11" class="label_checkbox"><span class="label_text body_small">이메일</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_3-1-12" class="input_checkbox" checked>
+                                            <label for="terms_3-1-12" class="label_checkbox"><span class="label_text body_small">우편</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_3-1-13" class="input_checkbox" checked>
+                                            <label for="terms_3-1-13" class="label_checkbox"><span class="label_text body_small">전화</span></label>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_4-1-9">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_4-1-9" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn_outline btn_with_ic btn_medium"><span class="ic ic_plus_bold_16px"></span><span class="btn_inner_text title_small">공동명의자1 입력</span></button>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_04" class="accordion_title">
+                      <span class="title_large">대리인 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_04" aria-labelledby="accordion_panel_04"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_04" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>성명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '이름',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>대리인 구분</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '대리인 선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>휴대전화</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '010'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">이메일</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: 'e-mail입력',
+                              }) %>
+                              <span class="body_small">@</span>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '도메인 선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion accordion_dataset">
+                        <div class="accordion_item">
+                          <div class="accordion_dataset_header">
+                            <div id="accordion_dataset_4-1" class="accordion_title">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="checkbox" id="all_terms_4-1" class="input_checkbox" checked>
+                                  <label for="all_terms_4-1" class="label_checkbox"><span class="label_text body_small">전체 동의하기</span></label>
+                                </span>
+                              </div>
+                              <span class="title_desc">&#8251; 주 계약자 대리인 개인정보 활용에 전체 동의합니다.</span>
+                            </div>
+                            <div class="accordion_control">
+                              <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_4-1" aria-labelledby="accordion_dataset_4-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                            </div>
+                          </div>
+                          <div id="accordion_dataset_content_4-1" class="accordion_content" role="region">
+                            <div class="accordion_dataset_content">
+                              <div class="accordion accordion_terms">
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_4-1-1" class="input_checkbox" checked>
+                                          <label for="terms_4-1-1" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_5-1-1">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_5-1-1" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_4-1-2" class="input_checkbox" checked>
+                                          <label for="terms_4-1-2" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_terms_content_5-1-2">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_5-1-2" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_05" class="accordion_title">
+                      <span class="title_large">실차주 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_05" aria-labelledby="accordion_panel_05"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_05" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>고객구분</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio6_1" class="input_radio" name="customer_group_02" checked>
+                                  <label for="uio_radio6_1" class="label_radio"><span class="label_text body_small">개인</span></label>
+                                </span>
+                              </div>
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio6_2" class="input_radio" name="customer_group_02">
+                                  <label for="uio_radio6_2" class="label_radio"><span class="label_text body_small">개인사업자</span></label>
+                                </span>
+                              </div>
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio6_3" class="input_radio" name="customer_group_02">
+                                  <label for="uio_radio6_3" class="label_radio"><span class="label_text body_small">법인사업자</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>성명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '이름',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>생년월일</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: 'YYMMDD',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>휴대전화</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '010'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">전화번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '001',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">이메일</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: 'e-mail입력',
+                              }) %>
+                              <span class="body_small">@</span>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '도메인 선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>상호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '상호명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>대표자명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '대표자명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>법인번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '123456',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '1234567',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '1234567',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>사업자번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '123',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '45',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '67890',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>업태</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '업태 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>종목</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '종목 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>주소</strong></div>
+                          <div class="td">
+                            <div class="input_row">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '주소구분'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '우편번호',
+                                readonly: true,
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">주소찾기</span></button>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '주소',
+                                readonly: true,
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small',
+                                placeholder: '상세주소',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">렌터카 구분</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '렌터카 구분'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">이용기간</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '이용기간'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">대차만기연월</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/date_picker.ejs', {
+                                inlineStyle: 'width: 153px',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion accordion_dataset">
+                        <div class="accordion_item">
+                          <div class="accordion_dataset_header">
+                            <div id="accordion_dataset_5-1" class="accordion_title">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="checkbox" id="all_terms_5-1" class="input_checkbox" checked>
+                                  <label for="all_terms_5-1" class="label_checkbox"><span class="label_text body_small">전체 동의하기</span></label>
+                                </span>
+                              </div>
+                              <span class="title_desc">&#8251; 실차주 개인정보 활용에 전체 동의합니다.</span>
+                            </div>
+                            <div class="accordion_control">
+                              <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_5-1" aria-labelledby="accordion_dataset_5-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                            </div>
+                          </div>
+                          <div id="accordion_dataset_content_5-1" class="accordion_content" role="region">
+                            <div class="accordion_dataset_content">
+                              <div class="accordion accordion_terms">
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_5-1-1" class="input_checkbox" checked>
+                                          <label for="terms_5-1-1" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_terms_content_6-1-1">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_6-1-1" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_5-1-2" class="input_checkbox" checked>
+                                          <label for="terms_5-1-2" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_terms_content_6-1-2">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_6-1-2" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" class="btn btn_outline btn_with_ic btn_medium"><span class="ic ic_minus_bold_16px"></span><span class="btn_inner_text title_small">공동명의자1 삭제</span></button>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_06" class="accordion_title">
+                      <span class="title_large">공동명의자 1</span>
+                    </div>
+                    <div class="accordion_control">
+                      <div class="input_select_wrap">
+												<span class="input_select_box input_select_small">
+													<input type="checkbox" id="uio_checkbox1-1" class="input_checkbox">
+													<label for="uio_checkbox1-1" class="label_checkbox"><span class="label_text label_medium">주계약자 여부</span></label>
+												</span>
+											</div>
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_06" aria-labelledby="accordion_panel_06"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_06" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>계약자와의 관계</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '계약자와의 관계',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>성명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '이름',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>주민번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '000000',
+                              }) %>
+                              <span class="body_small">-</span>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '*******',
+                              }) %>
+                              <!-- [D] 전체보기 비활성화 아이콘: ic_eye_light_filled_20px / 전체보기 활성화 아이콘: ic_view_hidden_filled_20px -->
+                              <button type="button" class="btn btn_filter btn_only_ic btn_xxsmall" aria-label="주민번호 전체보기 토글" aria-expanded="false" aria-controls="personal_info"><span class="ic ic_eye_light_filled_20px"></span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>휴대전화</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '010',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">전화번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '001',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '0000',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">이메일</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: 'e-mail 입력',
+                              }) %>
+                              <span class="body_small">@</span>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '도메인 선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>주소</strong></div>
+                          <div class="td">
+                            <div class="input_row">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '주소구분'
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_small',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '우편번호',
+                                readonly: true,
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">주소찾기</span></button>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '주소',
+                                readonly: true,
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inlineStyle: 'width: 250px',
+                                inputBox: 'input_small',
+                                placeholder: '상세주소',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>상호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: '상호명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>대표자명</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                placeholder: '대표자명 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>법인번호</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputBox: 'input_small',
+                                placeholder: '123456',
+                              }) %>
+                              <%- include('./include/input_area.ejs', {
+                                inputBox: 'input_small',
+                                placeholder: '1234567',
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">정보불러오기</span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>사업자번호</strong></div>
+                          <div class="td">
+                            <div class="input_row">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '123',
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '45',
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '67890',
+                                }) %>
+                                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">휴폐업정보확인</span></button>
+                                <div class="date_confirm">
+                                  <span class="label_medium">확인일시 : YYYY-MM-DD (정상)</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>업태</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '업태 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>종목</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '종목 입력',
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion accordion_dataset">
+                        <div class="accordion_item">
+                          <div class="accordion_dataset_header">
+                            <div id="accordion_dataset_6-1" class="accordion_title">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="checkbox" id="all_terms_6-1" class="input_checkbox">
+                                  <label for="all_terms_6-1" class="label_checkbox"><span class="label_text body_small">전체 동의하기</span></label>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="accordion_control">
+                              <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_7-1" aria-labelledby="accordion_dataset_6-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                            </div>
+                          </div>
+                          <div id="accordion_dataset_content_7-1" class="accordion_content" role="region">
+                            <div class="accordion_dataset_content">
+                              <div class="accordion accordion_terms">
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-1" class="input_checkbox">
+                                          <label for="terms_6-1-1" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_terms_content_7-1-1">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-1" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-2" class="input_checkbox">
+                                          <label for="terms_6-1-2" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-2">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-2" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-3" class="input_checkbox">
+                                          <label for="terms_6-1-3" class="label_checkbox"><span class="label_text body_small">[필수] 자동차 교환/환불 중재제도 설명에 대한 이해 및 수락여부</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-3">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-3" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-4" class="input_checkbox">
+                                          <label for="terms_6-1-4" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-4">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-4" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-5" class="input_checkbox">
+                                          <label for="terms_6-1-5" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-5">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-5" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-6" class="input_checkbox">
+                                          <label for="terms_6-1-6" class="label_checkbox"><span class="label_text body_small">[선택] 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-6">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-6" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-7" class="input_checkbox">
+                                          <label for="terms_6-1-7" class="label_checkbox"><span class="label_text body_small">[선택] 하이패스 개통 신청대행 및 선택적 개인정보 제3자 제공 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-7">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-7" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="terms_6-1-8" class="input_checkbox">
+                                          <label for="terms_6-1-8" class="label_checkbox"><span class="label_text body_small">[선택] 마켓팅/홍보 목적 개인정보 수집/이용 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-8">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-8" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="accordion_item">
+                                  <div class="accordion_terms_header">
+                                    <div class="accordion_title">
+                                      <div class="input_wrap">
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_6-1-9" class="input_checkbox">
+                                            <label for="terms_6-1-9" class="label_checkbox"><span class="label_text body_small">[선택] 정보 수신 채널 동의</span></label>
+                                          </span>
+                                        </div>
+                                      </div>
+                                      <div class="input_wrap">
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_6-1-10" class="input_checkbox">
+                                            <label for="terms_6-1-10" class="label_checkbox"><span class="label_text body_small">문자</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_6-1-11" class="input_checkbox">
+                                            <label for="terms_6-1-11" class="label_checkbox"><span class="label_text body_small">이메일</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_6-1-12" class="input_checkbox">
+                                            <label for="terms_6-1-12" class="label_checkbox"><span class="label_text body_small">우편</span></label>
+                                          </span>
+                                        </div>
+                                        <div class="input_select_wrap">
+                                          <span class="input_select_box input_select_medium">
+                                            <input type="checkbox" id="terms_6-1-13" class="input_checkbox">
+                                            <label for="terms_6-1-13" class="label_checkbox"><span class="label_text body_small">전화</span></label>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="accordion_control">
+                                      <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_7-1-9">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                        <span class="label_medium">내용 전체 보기</span>
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div id="accordion_terms_content_7-1-9" class="accordion_content" role="region">
+                                    <div class="accordion_terms_content">
+                                      <!-- terms -->
+                                      <div class="terms_wrap"></div>
+                                      <!-- // terms -->
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <button type="button" class="btn btn_outline btn_with_ic btn_medium"><span class="ic ic_plus_bold_16px"></span><span class="btn_inner_text title_small">계약자3 입력</span></button>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_12" class="accordion_title">
+                      <span class="title_large">차량정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_12" aria-labelledby="accordion_panel_12"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_12" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="form_box">
+                        <div class="form_container">
+                          <div class="input_wrap">
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="radio" id="radio_vehicle" class="input_radio" name="vehicle_info" checked>
+                                <label for="radio_vehicle" class="label_radio"><span class="label_text body_small">차량 선택</span></label>
+                              </span>
+                            </div>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="radio" id="radio_code" class="input_radio" name="vehicle_info">
+                                <label for="radio_code" class="label_radio"><span class="label_text body_small">판매코드</span></label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 차량정보: 차량 선택 시 노출 -->
+                        <div class="form_container">
+                          <div class="text_wrap">
+                            <span class="body_small">CN724MG3AAD10104</span>
+                            <span class="body_small">디 올 뉴 그랜저 LPG 3.5 런칭 프리미엄 (파노라마 선루프, 플래티넘, 현대스마트센스I), 세레니티 화이트 펄, 블랙모노톤</span>
+                          </div>
+                        </div>
+                        <div class="table_flex">
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>차종</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '승용'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>대표차명</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '그랜저 GN7'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_4">
+                            <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>모델명</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '디 올 뉴 그랜저'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- 차량정보: 판매코드 선택 시 노출 -->
+                        <div class="table_flex" style="display: none">
+                          <div class="col colspan_4">
+                            <div class="th"><strong class="title_small">판매코드</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_medium',
+                                  inputBox: 'input_small',
+                                  placeholder: '001'
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_small',
+                                  placeholder: '특화'
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_small',
+                                  placeholder: '옵션'
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_small',
+                                  placeholder: '외장컬러'
+                                }) %>
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_small',
+                                  inputBox: 'input_small',
+                                  placeholder: '내장컬러'
+                                }) %>
+                                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">판매코드 적용</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <strong class="title_medium">상세사양 정보</strong>
+                      <div class="form_box">
+                        <div class="form_container">
+                          <div class="input_wrap">
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="radio" id="radio_spec_code" class="input_radio" name="spec_detail" checked>
+                                <label for="radio_spec_code" class="label_radio"><span class="label_text body_small">판매코드 기준</span></label>
+                              </span>
+                            </div>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="radio" id="radio_spec_config" class="input_radio" name="spec_detail">
+                                <label for="radio_spec_config" class="label_radio"><span class="label_text body_small">컨피규레이션 기준</span></label>
+                              </span>
+                            </div>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="radio" id="radio_spec_price" class="input_radio" name="spec_detail">
+                                <label for="radio_spec_price" class="label_radio"><span class="label_text body_small">가격표 기준</span></label>
+                              </span>
+                            </div>
+                          </div>
+                          <!-- 상세사양: 가격표 기준 선택 시 -->
+                          <div class="input_wrap" style="display: none">
+                            <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">상세사양 선택</span></button>
+                          </div>
+                        </div>
+                        <!-- 상세사양: 판매코드 기준  -->
+                        <div class="table_flex">
+                          <div class="col colspan_4">
+                            <div class="th"><strong class="title_small">차량 선택 정보</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '차종 대표차명 모델명',
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">엔진</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">구동</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">미션</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">트림</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">인승</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">특화1</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">특화2</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">특화3</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th">
+                              <strong class="title_small">선택사양</strong>
+                              <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                                <button type="button" class="btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="tooltip">
+                                  <span class="ic ic_information_bold_16px"></span>
+                                </button>
+                                <span class="tooltip tooltip_top_center shadow_8dp js-tooltip" tabindex="0" role="tooltip" id="summary-bar-tooltip" style="display: none;">
+                                  <span class="tooltip_text label_medium">Tooltip</span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">외장 컬러</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">내장 컬러</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">파츠</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_4">
+                            <div class="th"><strong class="title_small">대량계약생성</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_medium',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '추가 대수 입력',
+                                }) %>
+                                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">적용</span></button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- 상세사양: 컨피규레이션 기준 -->
+                        <div class="table_flex" style="display: none">
+                          <div class="col colspan_4">
+                            <div class="th"><strong class="title_small">차량 선택 정보</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/input_area.ejs', {
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_suffix input_small',
+                                  placeholder: '차종 대표차명 모델명',
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">기본모델</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">엔진</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">구동</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">스포츠패키지</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">외장컬러</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">휠 &gt; 타이어</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">내장디자인</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">내장컬러</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">내장가니쉬</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th">
+                              <strong class="title_small">선택사양</strong>
+                              <div class="tooltip-area tooltip-area-right js-tooltip-area has-close-button js-tooltip-area">
+                                <button type="button" class="btn-tooltip js-tooltip-btn btn-ic" aria-describedby="summary-bar-tooltip" aria-label="tooltip">
+                                  <span class="ic ic_information_bold_16px"></span>
+                                </button>
+                                <span class="tooltip tooltip_top_center shadow_8dp js-tooltip" tabindex="0" role="tooltip" id="summary-bar-tooltip" style="display: none;">
+                                  <span class="tooltip_text label_medium">Tooltip</span>
+                                </span>
+                              </div>
+                            </div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col colspan_2">
+                            <div class="th"><strong class="title_small">파츠</strong></div>
+                            <div class="td">
+                              <div class="input_wrap">
+                                <%- include('./include/option_wrap.ejs', {
+                                  optionWrap: 'option_small',
+                                  inputArea: 'input_area_large',
+                                  inputBox: 'input_small',
+                                  ariaControls: 'uio-select-outline1-1',
+                                  inputVal: '선택'
+                                }) %>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_12" class="accordion_title">
+                      <span class="title_large">탁송 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_12" aria-labelledby="accordion_panel_12"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_12" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>출고센터</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '출고센터'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>인수유형</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '인수유형7'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">배송지역</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '시/도 구분'
+                              }) %>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '지역'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_10" class="accordion_title">
+                      <span class="title_large">계약금 결제</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_10" aria-labelledby="accordion_panel_10"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_10" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small"><span class="ic ic_essential_6px"><span class="blind">필수 입력</span></span>판매유형</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '판매유형'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">계약금</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_suffix input_small',
+                                placeholder: '계약금'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">지불형태</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio10_1" class="input_radio" name="payment_method" checked>
+                                  <label for="uio_radio10_1" class="label_radio"><span class="label_text body_small">현금</span></label>
+                                </span>
+                              </div>
+                              <div class="input_select_wrap">
+                                <span class="input_select_box input_select_medium">
+                                  <input type="radio" id="uio_radio10_2" class="input_radio" name="payment_method">
+                                  <label for="uio_radio10_2" class="label_radio"><span class="label_text body_small">카드</span></label>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_11" class="accordion_title">
+                      <span class="title_large">서비스가입 정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_11" aria-labelledby="accordion_panel_11"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_11" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">세이브오토 신청</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">이용금액</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion accordion_panel">
+                <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                <div class="accordion_item accordion_open">
+                  <div class="accordion_panel_header">
+                    <div id="accordion_panel_12" class="accordion_title">
+                      <span class="title_large">기타정보</span>
+                    </div>
+                    <div class="accordion_control">
+                      <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_12" aria-labelledby="accordion_panel_12"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                    </div>
+                  </div>
+                  <div id="accordion_panel_content_12" class="accordion_content" role="region" style="display: block">
+                    <div class="accordion_panel_content">
+                      <div class="table_flex">
+                        <div class="col colspan_4">
+                          <div class="th"><strong class="title_small">정비업체</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/input_area.ejs', {
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small input_readonly',
+                                placeholder: '',
+                                value: '업체명 노출',
+                                readonly: true,
+                              }) %>
+                              <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">정비업체 선택</span></button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">계약자 자필구분</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th"><strong class="title_small">안내문 발송</strong></div>
+                          <div class="td">
+                            <div class="input_wrap">
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap: 'option_small',
+                                inputArea: 'input_area_medium',
+                                inputBox: 'input_small',
+                                ariaControls: 'uio-select-outline1-1',
+                                inputVal: '선택'
+                              }) %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 우측: 계약 관련 정보 영역  -->
+            <div class="info_area">
+              <div class="menu_box">
+                <%- include('./include/tree.ejs', {
+                  treeClass: 'tree_small tree_line',
+                  treeItems: [
+                    {
+                      stateClass: 'tree_selected',
+                      treeText: 'body_small',
+                      title: '계약 기본 정보',
+                    },
+                    {
+                      stateClass: 'tree_expanded',
+                      stateValue: true,
+                      treeText: 'body_small',
+                      title: '계약자 정보',
+                      children: [
+                        {title: '계약자1', treeText: 'body_small', treeMenuBtn: false},
+                        {title: '대리인', treeText: 'body_small', treeMenuBtn: false},
+                        {title: '실차주', treeText: 'body_small', treeMenuBtn: false},
+                        {title: '계약자2', treeText: 'body_small', treeMenuBtn: false},
+                        {title: '계약자3', treeText: 'body_small', treeMenuBtn: false},
+                        {title: '계약자4', treeText: 'body_small', treeMenuBtn: false},
+                      ]
+                    },
+                    {
+                      treeText: 'body_small',
+                      title: '차량 정보',
+                    },
+                    {
+                      treeText: 'body_small',
+                      title: '탁송 정보',
+                    },
+                    {
+                      treeText: 'body_small',
+                      title: '계약금 결제',
+                    },
+                    {
+                      treeText: 'body_small',
+                      title: '서비스가입 정보',
+                    },
+                    {
+                      treeText: 'body_small',
+                      title: '차량 정보',
+                    },
+                  ]
+                }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+
+  <%-include('./include/script.ejs')%>
+  <!-- [D] 마크업 확인용, 개발 제외 영역 -->
+  <%- include('./include/caseview.ejs', {
+    viewItems : [
+      {id: 'caseScreen1', text:'차량정보 - 차량 선택'},
+      {id: 'caseScreen2', text:'차량정보 - 판매코드'},
+      {id: 'caseScreen3', text:'차량정보(상세사양 정보) - 판매코드 기준'},
+      {id: 'caseScreen4', text:'차량정보(상세사양 정보) - 컨피규레이션 기준'},
+      {id: 'caseScreen5', text:'차량정보(상세사양 정보) - 가격표 기준'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+      // [화면] 차량정보 - 차량 선택 체크
+      $("#caseScreen1").click(function () {
+        $("#radio_vehicle").prop('checked', true);
+
+        $("#accordion_panel_content_12 .form_box").eq(0).each(function() {
+          var $container = $(this).find(".form_container");
+          $container.show();
+
+          var $table = $(this).find(".table_flex");
+          $table.eq(0).show();
+          $table.eq(1).hide();
+        });
+      });
+
+      // [화면] 차량정보 - 판매코드 체크
+      $("#caseScreen2").click(function () {
+        $("#radio_code").prop('checked', true);
+
+        $("#accordion_panel_content_12 .form_box").eq(0).each(function() {
+          var $container = $(this).find(".form_container");
+          $container.eq(0).show();
+          $container.eq(1).hide();
+
+          var $table = $(this).find(".table_flex");
+          $table.eq(0).hide();
+          $table.eq(1).show();
+        });
+      });
+
+      // [화면] 차량정보(상세사양 정보) - 판매코드 기준 체크
+      $("#caseScreen3").click(function () {
+        $("#radio_spec_code").prop('checked', true);
+
+        $("#accordion_panel_content_12 .form_box").eq(1).each(function() {
+          var $container = $(this).find(".form_container");
+          var $table = $(this).find(".table_flex");
+          $table.eq(0).show();
+          $table.eq(1).hide();
+
+          var $selectBtn = $container.find(".input_wrap");
+          $selectBtn.eq(1).hide();
+        });
+      });
+
+      // [화면] 차량정보(상세사양 정보) - 컨피규레이션 기준 체크
+      $("#caseScreen4").click(function () {
+        $("#radio_spec_config").prop('checked', true);
+
+        $("#accordion_panel_content_12 .form_box").eq(1).each(function() {
+          var $container = $(this).find(".form_container");
+          var $table = $(this).find(".table_flex");
+          $table.eq(0).hide();
+          $table.eq(1).show();
+
+          var $selectBtn = $container.find(".input_wrap");
+          $selectBtn.eq(1).hide();
+        });
+      });
+
+      // [화면] 차량정보(상세사양 정보) - 가격표 기준 체크
+      $("#caseScreen5").click(function () {
+        $("#radio_spec_price").prop('checked', true);
+
+        $("#accordion_panel_content_12 .form_box").eq(1).each(function() {
+          var $container = $(this).find(".form_container");
+          var $table = $(this).find(".table_flex");
+          $table.hide();
+
+          var $selectBtn = $container.find(".input_wrap");
+          $selectBtn.eq(1).show();
+
+          console.log($selectBtn.eq(1));
+        });
+      });
+    })
+  </script>
+  <!-- [D] // 마크업 확인용, 개발 제외 영역 -->
+
+</body>
+</html>

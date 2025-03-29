@@ -1,0 +1,148 @@
+<%-include('./include/head.ejs',{
+  "title": "시스템_0005_A_HK_공지사항 / 공지사항 상세",
+  "listTitle": "공지사항 > 공지사항 리스트 > 상세 : 00-공통/시스템"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content notice">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "공지사항", id: "CON0000BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="top_wrap">
+              <a href="#none" class="btn btn_only_ic btn_xxsmall" aria-label="뒤로가기"><span class="ic ic_arrow_back_bold_24px"></span></a>
+              <span class="body_small">문서번호 : DCD_U_2022000111_001</span>
+            </div>
+          </div>
+          <div class="panel panel_detail">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="ic ic_push_pin_filled_24px"><span class="blind">고정글</span></span>
+                <strong class="headline_large">title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title title</strong>
+              </div>
+            </div>
+            <div class="author_area">
+              <div class="avatar_circle avatar_small">
+                <div class="avatar_box">
+                  <div class="thumb">
+                    <img class="img" src="../img/temp/@img_avatar.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="author_box">
+                <div class="author_inner">
+                  <span class="body_small">클라우드플랫폼개발연구팀</span>
+                  <span class="body_small">장에스더 책임매니저</span>
+                </div>
+                <span class="date_text body_small"><span class="blind">일시</span>2023-09-15 13:30 게시</span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="notice_content_area">
+              <p><strong class="title_small">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</strong></p>
+              <p class="body_small">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</p>
+              <span class="img_wrap">
+                <img src="../img/temp/@img_thumb.png" alt="">
+              </span>
+            </div>
+            <div class="uploaded_area">
+              <strong class="title_small">첨부 파일<span class="num">6</span></strong>
+              <div class="card card_action">
+                <ul class="list_wrap list_small">
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_png_16px"></span>
+                        <span class="list_text body_small">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하.jpg</span>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_excel_16px"></span>
+                        <span class="list_text body_small">smart_mobility.xlsx</span>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_png_16px"></span>
+                        <span class="list_text body_small">smart_mobility.jpg</span>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_png_16px"></span>
+                        <span class="list_text body_small">smart_mobility.jpg</span>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_png_16px"></span>
+                        <span class="list_text body_small">smart_mobility.jpg</span>
+                      </div>
+                    </button>
+                  </li>
+                  <li class="list_item">
+                    <button type="button" class="btn btn_download btn_text">
+                      <span class="blind">다운로드</span>
+                      <div class="list_title_box">
+                        <span class="ic ic_png_16px"></span>
+                        <span class="list_text body_small">smart_mobility.jpg</span>
+                      </div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+
+  </div>
+<%-include('./include/script.ejs')%>
+</body>
+</html>

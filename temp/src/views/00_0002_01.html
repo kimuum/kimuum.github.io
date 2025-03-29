@@ -1,0 +1,736 @@
+<%-include('./include/head.ejs',{
+  "title": "시스템-0002-A-HK_시스템 / 접속자 리스트",
+  "listTitle": "시스템관리 > 접속자 리스트 : 00-공통/시스템"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "계출관리", href: "#none" },
+                { text: "계약출고", href: "#none" },
+                { text: "결재진행조회", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="associated" class="title_small">소속</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'associated'
+                  }) %>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '',
+                    placeholder : ' ',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="department" class="title_small">구분</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'department'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="employee_number" class="title_small">사번</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_suffix input_small',
+                    id : 'employee_number',
+                    placeholder : ' ',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="ip_adderss" class="title_small">IP Address</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_suffix input_small',
+                    id : 'ip_address',
+                    placeholder : ' ',
+                  }) %>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <div class="option_group">
+                  <span class="title_small">총 <strong class="num">9999</strong>개</span>
+                </div>
+                <div class="btn_group">
+                  <!-- [D] 비활성화 disabled 속성 추가 -->
+                  <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                    <span class="ic ic_download_bold_16px"></span>
+                    <span class="btn_inner_text body_small">엑셀다운로드</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <table class="table table_small">
+                  <caption><span>테이블</span></caption>
+                  <thead>
+                    <tr>
+                      <th style="width:52px">
+                        <div class="cell_text"><span class="title_small">No</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">사번</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">성명</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">프로필</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">소속구분</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">소속 코드</span></div>
+                      </th>
+                      <th>
+                        <div class="cell_text"><span class="title_small">조직 코드</span></div>
+                      </th>
+                      <th style="width:169px">
+                        <div class="cell_text"><span class="title_small">조직명</span></div>
+                      </th>
+                      <th style="width:120px">
+                        <div class="cell_text"><span class="title_small">IP Address</span></div>
+                      </th>
+                      <th style="width:169px">
+                        <div class="cell_text"><span class="title_small">접속시간</span></div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">1</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">2</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우_검증</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">3</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">4</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">5</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">6</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">7</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">8</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">9</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">10</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small">9999</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">ZS07692</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">박성우박성우박성우박성우박성우박성우박성우박성우박성우박성우</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">프로필명프로필명프로필명프로필명프로필명프로필명</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">01 본사</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">TDAX</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">데이터인텔리전스팀데이터인텔리전스팀데이터인텔리전스팀데이터인텔리전스팀</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">10.32.241.47</p>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="cell_text">
+                          <p class="body_small text_ellipsis">2024-01-04 09:02:38</p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+  </body>
+  </html>

@@ -1,0 +1,199 @@
+/* 공지사항 */
+.notice {
+  // 상세
+  .panel_detail {
+    .panel_header {
+      .panel_title {
+        @include flexbox;
+
+        .ic_push_pin_filled_24px {
+          @include flex-shrink(0);
+          margin: 12px 8px 0 0;
+          @include inline-svg-icon("ic_push_pin_filled_24px", map-get($hyundai-colors, on_surface_ultimate), none, map-get($hyundai-colors, on_surface_ultimate));
+        }
+
+        .headline_large {
+          @include ellipsis(2);
+        }
+      }
+    }
+
+    .author_area {
+      @include flexbox;
+      @include align-items(center);
+      margin-top: 24px;
+
+      .avatar_circle {
+        margin-right: 16px;
+      }
+
+      .author_box {
+        @include flexbox;
+        @include flex-direction(column);
+        row-gap: 2px;
+
+        .author_inner {
+          @include flexbox;
+
+          .body_small {
+            position: relative;
+
+            + .body_small {
+              padding-left: 12px;
+
+              &:before {
+                @include set-center-y;
+                left: 6px;
+                width: 2px;
+                height: 2px;
+                background-color: var(--on_surface);
+                content: "";
+              }
+            }
+          }
+        }
+
+        .date_text {
+          color: var(--on_surface_mid);
+        }
+      }
+    }
+
+    .divider {
+      margin: 24px 0;
+    }
+
+    .notice_content_area {
+      p:not(:first-of-type) {
+        margin-top: 16px;
+      }
+
+      .title_small,
+      .body_small {
+        color: var(--on_surface);
+      }
+
+      .img_wrap {
+        display: block;
+        overflow: hidden;
+        margin-top: 24px;
+        border-radius: 4px;
+
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+
+    .uploaded_area{
+      width: 100%;
+      margin-top: 31px;
+
+      .title_small {
+        color: var(--on_surface_ultimate);
+
+        .num {
+          margin-left: 4px;
+          color: var(--blue);
+        }
+      }
+
+      .card {
+        margin-top: 7px;
+        border-radius: 4px;
+
+        .list_wrap {
+          overflow: auto;
+          max-height: 200px;
+          padding: 4px 0;
+          box-sizing: border-box;
+
+          .list_item {
+            padding: 0;
+
+            &:hover {
+              background-color: var(--surface_container_low);
+            }
+
+            .btn_download {
+              @include justify-content(flex-start);
+              width: 100%;
+              padding: 7px 16px;
+              outline-offset: -2px;
+            }
+
+            .list_title_box {
+              min-width: 0;
+              .ic {
+                flex-shrink: 0;
+              }
+
+              .list_text {
+                text-align: left;
+                @include ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 작성
+  .accordion_content {
+    .input_box:not(.input_underline):has(input[type="file"]) [class*="btn_"] { // 공통 초기화
+      min-width: auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    .table_flex {
+      .th {
+        min-width: 140px;
+      }
+      .input_wrap {
+        .input_area,
+        .input_select_wrap {
+          display: inline-block;
+        }
+
+        .input_box {
+          &:has(input[type="file"]) {
+            min-width: auto;
+            padding: 0;
+
+            &::after {
+              content: none;
+            }
+          }
+
+          input[type="file"] {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            font-size: 0;
+
+            &:after {
+              content: none;
+            }
+
+            &:focus,
+            &:focus-visible {
+              & ~ label::after {
+                border: 2px solid var(--outline_ultimate);
+              }
+            }
+
+            & ~ label.btn_outline {
+              padding: 5px 12px;
+            }
+          }
+        }
+
+        .label_medium_underline {
+          color: var(--blue);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<% const tabItems = locals.tabItems ? locals.tabItems : '' %>
+<% const tabAnchor = locals.tabAnchor ? locals.tabAnchor : '' %>
+<% const ariaControls = locals.ariaControls ? locals.ariaControls : '' %>
+<% const text = locals.text ? locals.text : '' %>
+
+<ul class="tab_list" role="tablist">
+  <!-- [D] 탭 버튼/패널 필수 연결 속성:
+    - 탭버튼 aria-controls ↔ 패널 id
+    - 탭버튼 id ↔ 패널 aria-labelledby
+  -->
+
+  <!-- [D] 활성화 상태: tab_item_active 클래스 & btn_tab에 aria-selected="true" -->
+  <li class="tab_item tab_item_active" role="presentation">
+    <button type="button" id="tab_anchor_home" aria-controls="tab_home" role="tab" aria-selected="true" class="btn_tab">
+      <span class="ic ic_home_bold_16px"></span>
+      <span class="tab_text title_small">메인화면</span>
+    </button>
+  </li>
+  <%_ tabItems.map((item) => { _%>
+  <li class="tab_item" role="presentation">
+    <button type="button" id="<%- item.tabAnchor -%>" aria-controls="<%- item.ariaControls -%>" role="tab" aria-selected="false" class="btn_tab">
+      <span class="tab_text title_small"><%- item.text -%></span>
+    </button>
+    <button type="button" class="btn_tab_close" aria-label="탭닫기">
+      <span class="ic ic_close_regular_16px" aria-hidden="true"></span>
+    </button>
+  </li>
+  <%_ }) _%>
+</ul>

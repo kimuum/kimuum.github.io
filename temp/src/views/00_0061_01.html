@@ -1,0 +1,531 @@
+<%-include('./include/head.ejs',{
+  "title": "시스템_0061_A_HK_공지사항관리 / 공지사항 리스트",
+  "listTitle": "공지사항 > 공지사항관리 : 00-공통/시스템"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.07">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "공지사항 관리", id: "CON0000BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="post_state" class="title_small">게시상태</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'post_state'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="notice_category" class="title_small">카테고리</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'notice_category'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="model" class="title_small">차종</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'model'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="model_name" class="title_small">모델명</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'model_name'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="period" class="title_small">기간</label>
+                  <%- include('./include/date_picker.ejs', {
+                    ariaLabelledby: 'period',
+                    inlineStyle: 'width: 328px',
+                    range: true,
+                    startValue: '2025-02-01',
+                    endValue: '2025-02-28',
+                    id: 'period',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="notice_search" class="title_small">검색</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    inputVal : '제목',
+                    id : 'notice_search'
+                  }) %>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_small',
+                    search : true,
+                    ariaLabel : '',
+                    placeholder : '화면명, 화면 ID를 검색해보세요',
+                  }) %>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_large"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <div class="option_group">
+                  <span class="title_small"><strong class="num">20</strong>개 중 1-10</span>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputBox : 'input_small',
+                    ariaControls : 'uio-select-outline3-1',
+                    inputVal : '10개씩',
+                  }) %>
+                </div>
+                <div class="btn_group">
+                  <!-- [D] 비활성화 disabled 속성 추가 -->
+                  <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">삭제</span></button>
+                  <a href="#none" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">작성하기</span></a>
+                </div>
+              </div>
+              <div class="table_inner">
+                <div class="table_notice">
+                  <!-- [D] 최소 높이 초과하여 리스트 스크롤 시 '.is_scroll'클래스 추가 -->
+                  <div class="scroll_area">
+                    <table class="table table_small" style="min-width:848px">
+                      <caption><span>공지 목록</span></caption>
+                      <colgroup>
+                        <col style="width:56px;">
+                        <col style="width:auto;">
+                        <col style="width:120px;">
+                        <col style="width:88px;">
+                        <col style="width:144px;">
+                        <col style="width:176.5px;">
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-1" class="input_checkbox">
+                                <label for="uio_checkbox13-1" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </th>
+                          <th scope="col"><div class="cell_text"><span class="title_small">제목</span></div></th>
+                          <th scope="col"><div class="cell_text"><span class="title_small">게시상태</span></div></th>
+                          <th scope="col"><div class="cell_text"><span class="title_small">카테고리</span></div></th>
+                          <th scope="col"><div class="cell_text"><span class="title_small">시작일시</span></div></th>
+                          <th scope="col"><div class="cell_text"><span class="title_small">작성자</span></div></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell1',
+                              tabindex : true,
+                              inputVal : '예약',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">계약출고</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell2',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">물류</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell3',
+                              tabindex : true,
+                              inputVal : '진행중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">판매촉진</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell4',
+                              tabindex : true,
+                              inputVal : '종료',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">상품</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell5',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">지역공지</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell6',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">시스템</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell7',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">세무</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell8',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">업무개선</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell9',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">업무개선</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="uio_checkbox13-2" class="input_checkbox">
+                                <label for="uio_checkbox13-2" class="label_checkbox"></label>
+                              </span>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="cell_text">
+                              <div class="list_wrap list_clickable list_small">
+                                <div class="list_item">
+                                  <a href="#none" class="list_link">
+                                    <div class="list_title_box">
+                                      <span class="list_text body_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                    </div>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <%- include('./include/option_wrap.ejs', {
+                              optionWrap : 'option_xxsmall',
+                              inputBox : 'input_xxsmall',
+                              ariaControls : 'uio-select-table-cell10',
+                              tabindex : true,
+                              inputVal : '등록중',
+                            }) %>
+                          </td>
+                          <td><div class="cell_text"><p class="body_small">업무개선</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">2025-01-20</p></div></td>
+                          <td><div class="cell_text"><p class="body_small">김현대 책임매니저</p></div></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <%- include('./include/pagination.ejs') %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+
+  </div>
+  <%-include('./include/script.ejs')%>
+</body>
+</html>

@@ -1,0 +1,34 @@
+.tabs_section {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+
+  .tabs_line {
+    display: flex;
+    overflow-x: auto;
+
+    .btn_tab {
+      @include flex-shrink(0);
+    }
+  }
+
+  .help_text {
+    position: absolute;
+    top: 17px;
+    right: 24px;
+    color: var(--surface_container_highest);
+  }
+
+  .option_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.tab_content {
+  display: none;
+  &.is_active {
+    display: block;
+  }
+}

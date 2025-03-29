@@ -1,0 +1,149 @@
+.btn {
+  box-sizing: border-box;
+
+  // Filled button
+  &_fill {
+    &:not(:disabled) {
+      &.btn_primary {
+        &_higher {
+          background-color: var(--primary_higher);
+
+          &:active {
+            background-color: var(--primary_highest);
+            &::before {
+              background: transparent;
+            }
+          }
+        }
+
+        &:active {
+          background-color: var(--on_primary_ultimate);
+          &::before {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  // Radius 50%
+  &_radius {
+    border-radius: 50vh;
+    background-color: var(--surface_container);
+
+    &:after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 1px solid var(--outline_low);
+      border-radius: 50vh;
+      transition-property: border;
+      transition-duration: 0.2s;
+      content: "";
+    }
+
+    &:hover {
+      background-color: var(--surface_container_lowest);
+    }
+
+    &:active {
+      background-color: var(--surface_container_low);
+    }
+
+    &:focus:after {
+      border: 2px solid var(--outline_ultimate);
+    }
+  }
+
+  // Size
+  &_only_ic {
+    &.btn_xxxsmall {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &_with_ic {
+    // 엑셀다운로드 비활성화
+    &:disabled {
+      .ic_download_bold_16px {
+        @include inline-svg-icon("ic_download_bold_16px", none, none, map-get($hmg-colors, on_surface_container_highest));
+      }
+    }
+  }
+
+  // Control help
+  .ic_help_bold_16px {
+    @include inline-svg-icon("ic_help_bold_16px", none, map-get($hyundai-colors, on_surface_container), map-get($hyundai-colors, on_surface_container));
+  }
+
+  &:not(.btn_only_ic) {
+    &:not(.btn_loading) {
+      .ic {
+        &:last-child {
+          margin: 0 0 0 4px;
+        }
+      }
+    }
+  }
+
+  &_active {
+    color: var(--blue);
+    &::after {
+      border: 1px solid var(--blue);
+    }
+    & + .btn {
+      &::after {
+        border-left: 1px solid var(--blue);
+      }
+    }
+  }
+}
+
+// Zoom control
+.zoom_control {
+  @include inline-flex;
+  @include align-items(center);
+  position: relative;
+  border-radius: 20px;
+  background-color: var(--surface_container);
+  transition-duration: 0.2s;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid var(--outline_low);
+    border-radius: 20px;
+    transition-property: border;
+    transition-duration: 0.2s;
+    content: "";
+  }
+
+  &:hover {
+    background-color: var(--surface_container_lowest);
+  }
+
+  &:has(.btn:active) {
+    background-color: var(--surface_container_low);
+  }
+
+  &:has(.btn:focus, .btn:focus-visible):after {
+    border: 2px solid var(--outline_ultimate);
+  }
+
+  .btn {
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    &:focus-visible {
+      outline: -webkit-focus-ring-color auto 1px;
+    }
+  }
+}

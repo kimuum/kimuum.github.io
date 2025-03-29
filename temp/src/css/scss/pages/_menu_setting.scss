@@ -1,0 +1,72 @@
+.menu_setting {
+  flex-wrap: nowrap;
+  height: 660px;
+
+  .btn_tab {
+    width: 50%;
+  }
+
+  .tab_content {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0 -24px;
+    padding: 0 24px;
+
+    .accordion {
+      .btn_accordion {
+        padding: 9px 34px 9px 2px;
+
+        &::after {
+          right: 0;
+        }
+      }
+      &_content {
+        padding: 16px 0 20px;
+      }
+    }
+
+    .form {
+      &_group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        &:first-child {
+          margin-top: 4px;
+        }
+
+        & + .form_group {
+          margin-top: 20px;
+        }
+
+        .title_small {
+          display: block;
+          flex: 1 0 auto;
+        }
+      }
+
+      &_row {
+        display: flex;
+        gap: 0 24px;
+      }
+
+      &_plaintext {
+        @include ellipsis;
+        text-align: right;
+      }
+    }
+  }
+
+  .btn_group {
+    flex: 0;
+    justify-content: center;
+    margin-top: 24px;
+
+    &:not(.btn_group_attached) .btn_medium:not(:first-child) {
+      margin-left: 10px;
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

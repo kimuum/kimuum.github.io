@@ -1,0 +1,75 @@
+<%
+const inputArea = locals.inputArea || '';
+const inlineStyle = locals.inlineStyle || '';
+const inputBox = locals.inputBox || '';
+const search = locals.search || false;
+const id = locals.id || '';
+const ariaLabel = locals.ariaLabel !== undefined ? (locals.ariaLabel || 'Text Field') : undefined;
+const ariaDescribedby = locals.ariaDescribedby || '';
+const placeholder = locals.placeholder || 'Placeholder';
+const value = locals.value || '';1
+const readonly = locals.readonly || false;
+const disabled = locals.disabled || false;
+const clear = locals.clear || false;
+const inputDesc = locals.inputDesc !== undefined ? (locals.inputDesc === false ? '' : (locals.inputDesc || 'Help text')) : undefined;
+%>
+
+<%# input_area 클래스 목록(영역 '너비' 자체 고정값) :
+  input_area_small : 80
+  input_area_medium : 160
+  input_area_large : 240
+%>
+<%# input_box 클래스 목록:
+  input_xxsmall: 매우 작은 입력 박스
+  input_small: 작은 입력 박스
+  input_medium: 중간 크기의 입력 박스
+  input_large: 큰 입력 박스
+  input_suffix: 접미사가 있는 입력 박스
+  input_focused: 포커스된 상태의 입력 박스
+  input_error: 오류 상태의 입력 박스
+  input_readonly: 읽기 전용 입력 박스
+  input_disabled: 비활성화된 입력 박스
+  input_box_radius: 둥근 모서리 입력 박스
+%>
+<%# ---------------------------------- %>
+<%# include 사용 예시:
+  include('./include/input_area.ejs', {
+    inputArea: '너비 고정 (예: input_area_small, input_area_medium, input_area_large)',
+    inputBox: '입력 박스 스타일 (예: input_xxsmall, input_small, input_focused, input_error..)',
+    inlineStyle: '인라인 스타일 적용 (예: width:100px; height:40px;)',
+    search: true  // 검색 아이콘 추가
+    id: 'input과 label 연결 ID',
+    ariaLabel: 'label 미사용 시 접근성 보완 (없으면 제외, 빈 값이면 "Text Field" 기본값, 특정 값 입력 가능)',
+    ariaDescribedby: '설명 텍스트와 연결 (예: input_desc ID)',
+    placeholder: '미입력 시 기본값 "Placeholder"',
+    value: '입력 값 (없으면 빈 값)',
+    readonly: true  // 읽기 전용 필드
+    disabled: true  // 비활성화 필드
+    clear: true  // 입력 내용 삭제 버튼 포함
+    inputDesc: '설명 텍스트 (있을 때만 <p> 태그 생성, 없으면 기본값 "Help text" 출력)',
+  })
+%>
+
+<div class="input_area<%- inputArea ? ' ' + inputArea.trim() : '' %>" <%- inlineStyle ? `style="${inlineStyle}"` : '' %>>
+  <div class="input_box<%- inputBox ? ' ' + inputBox.trim() : '' %>">
+    <% if (search) { %>
+    <span class="ic ic_search_bold_16px"></span>
+    <% } %>
+    <input type="text" class="input_text <%- (inputBox.includes('input_xxsmall') || inputBox.includes('input_xsmall')) ? 'label_medium' : 'body_small' %>"
+    <%- id ? `id="${id}"` : '' %>
+    <%- ariaLabel !== undefined ? `aria-label="${ariaLabel || 'Text Field'}"` : '' %>
+    <%- ariaDescribedby ? `aria-describedby="uio-text-desc${ariaDescribedby}"` : '' %>
+    <%- placeholder ? `placeholder="${placeholder}"` : 'Placeholder' %>
+    <%- value ? `value="${value}"` : '' %>
+    <%- readonly ? `readonly` : '' %>
+    <%- disabled ? `disabled` : '' %>>
+    <% if (clear) { %>
+    <button type="button" class="btn_clear_input" aria-label="삭제">
+      <span class="ic ic_close_circle_filled_16px"></span>
+    </button>
+    <% } %>
+  </div>
+  <% if (inputDesc !== undefined) { %>
+  <p class="input_desc" <%- ariaDescribedby ? `id="uio-text-desc${ariaDescribedby}"` : '' %>><%- inputDesc || 'Help text' %></p>
+  <% } %>
+</div>

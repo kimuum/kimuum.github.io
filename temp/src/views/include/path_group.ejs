@@ -1,0 +1,15 @@
+<% const pathItems = locals.pathItems || []; %>
+
+<div class="path_group">
+  <span class="ic ic_folder_bold_16px" aria-hidden="true"></span>
+  <ul class="path_list">
+    <% pathItems.forEach((item) => { %>
+      <li class="path_item">
+        <a href="#none" class="path_link">
+          <span class="body_small_underline"><%- item.text -%></span>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+

@@ -1,0 +1,87 @@
+/* 국내판매시스템 아이콘 */
+.project_sales_system {
+  .header {
+    .ic_setting_bold_24px {
+      @include inline-svg-icon('ic_setting_bold_24px', none, none, map-get($hyundai-colors, on_surface));
+    }
+  }
+  .lnb {
+    .ic_menu_bold_32px {
+      @include inline-svg-icon("ic_menu_bold_32px", none, none, map-get($hyundai-colors, surface_lowest));
+    }
+    .ic_sales_network_informaion_regular_24px {
+      @include inline-svg-size(24px, 24px, "ic_sales_network_informaion_regular_24px", none, none, map-get($hyundai-colors, surface_ultimate));
+    }
+    .ic_settings_regular_24px {
+      @include inline-svg-size(24px, 24px, "ic_settings_regular_24px", map-get($hyundai-colors, surface_ultimate), none, map-get($hyundai-colors, surface_ultimate));
+    }
+  }
+  .menu_item {
+    .ic {
+      width: 36px;
+      height: 36px;
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px;
+      border-radius: 10px;
+    }
+  }
+  $menuIcons: (
+    'favorite': (icon: 'ic_star_light_filled_24px', selIcon: 'ic_star_light_filled_24px'),
+    'contract': (icon: 'ic_statement_regular_24px', selIcon: 'ic_statement_regular_24px'),
+    'logistics': (icon: 'ic_car_regular_24px', selIcon: 'ic_car_regular_24px'),
+    'sale_info': (icon: 'ic_reservation_regular_24px', selIcon: 'ic_reservation_regular_24px'),
+    'sale_support': (icon: 'ic_modification_regular_24px', selIcon: 'ic_modification_regular_24px'),
+    'sale_finance': (icon: 'ic_krw_regular_24px', selIcon: 'ic_krw_regular_24px'),
+    'baseline': (icon: 'ic_newspaper_regular_24px', selIcon: 'ic_newspaper_regular_24px'),
+    'system': (icon: 'ic_menu_report_regular_24px', selIcon: 'ic_menu_report_regular_24px'),
+    'online_mall': (icon: 'ic_vehicle_purchase_regular_24px', selIcon: 'ic_vehicle_purchase_regular_24px'),
+    'home': (icon: 'ic_megaphone_regular_24px', selIcon: 'ic_megaphone_regular_24px')
+  );
+  @each $key, $value in $menuIcons {
+    .menu_item {
+      &.is_selected {
+        .ic {
+          &_#{$key} {
+            @include inline-svg($icon: map-get($value, 'selIcon'));
+          }
+        }
+      }
+      .ic {
+        &_#{$key} {
+          @include inline-svg($icon: map-get($value, 'icon'));
+        }
+      }
+    }
+  }
+  .tree {
+    .input_checkbox_favorite {
+      &::before {
+        content: "";
+        display: inline-block;
+        @include inline-svg("ic_star_bold_16px", 20px, 20px);
+        background-size: auto;
+        background-position: center;
+      }
+      &:checked {
+        &::before {
+          @include inline-svg("ic_star_filled_16px");
+        }
+      }
+    }
+  }
+  .tree_more_btn {
+    .ic_more_vertical_regular_16px {
+      @include inline-svg("ic_more_vertical_regular_16px");
+    }
+  }
+
+  .ic_eye_light_filled_20px {
+    @include inline-svg("ic_eye_light_filled_20px", 20px, 20px);
+  }
+
+  .ic_view_hidden_filled_20px {
+    @include inline-svg("ic_view_hidden_filled_20px", 20px, 20px);
+  }
+}

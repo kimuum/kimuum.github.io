@@ -1,0 +1,257 @@
+<%- include('./include/head.ejs',{
+  title: "기준-0032-HK_판매가격관리",
+  listTitle: "판매기준정보관리 > 판매코드관리 > 판매가격관리 : 02-기준정보_판매코드"
+}) %>
+
+<body class="project_sales_system" data-pagestatus="new : 2025.03.31">
+<%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보관리", href: "#none" },
+                { text: "판매기준정보관리", href: "#none" },
+                { text: "판매코드관리", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <strong class="title_small">가격구분</strong>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_1" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_1" class="label_radio"><span class="label_text body_small">일반가</span></label>
+                    </span>
+                  </div>
+                </div>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_2" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_2" class="label_radio"><span class="label_text body_small">임시가</span></label>
+                    </span>
+                  </div>
+                </div>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="uio_radio1_3" class="input_radio" name="uio_radio1">
+                      <label for="uio_radio1_3" class="label_radio"><span class="label_text body_small">조달임시가</span></label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="select_vehicle_1-1" class="title_small">차종</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inlineStyle : 'width: 200px',
+                    inputBox : 'input_small',
+                    inputVal : '승용',
+                    id : 'select_vehicle_1-1'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="select_vehicle_1-2" class="title_small">대표차명</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inlineStyle : 'width: 200px',
+                    inputBox : 'input_small',
+                    inputVal : '승용',
+                    id : 'select_vehicle_1-2'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="select_vehicle_1-3" class="title_small">모델명</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inlineStyle : 'width: 200px',
+                    inputBox : 'input_small',
+                    inputVal : '승용',
+                    id : 'select_vehicle_1-3',
+                  }) %>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="select-tree" class="title_small">컨피규레이션 트리</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inlineStyle : 'width: 320px',
+                    inputBox : 'input_small',
+                    inputVal : '더 뉴 쏘렌토_v1.0',
+                    id : 'select-tree',
+                    badgeText : '생성완료',
+                    badgeClass : 'badge_small badge_low'
+                  }) %>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="uio_checkbox1_1" class="input_checkbox">
+                      <label for="uio_checkbox1_1" class="label_checkbox"><span class="label_text body_small">판매가격이력조회</span></label>
+                    </span>
+                  </div>
+                </div>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="uio_checkbox1_2" class="input_checkbox">
+                      <label for="uio_checkbox1_2" class="label_checkbox"><span class="label_text body_small">NCS및세부모델명조회</span></label>
+                    </span>
+                  </div>
+                </div>
+                <div class="field_group">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="uio_checkbox1_3" class="input_checkbox">
+                      <label for="uio_checkbox1_3" class="label_checkbox"><span class="label_text body_small">예외적용일</span></label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_large"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="control_section">
+            <div class="control_inner">
+              <a href="#none" class="btn btn_outline btn_small">판매가격 입력/수정</a>
+              <!-- [D] 안내메세지 출력
+              수정중 : 수정중인 가격정보가 있습니다.
+              결재중 : 결재중인 가격정보가 있습니다.
+              결재완료(승인) 및 미적용 : 결재 완료된 가격정보가 있습니다.
+              -->
+              <span class="body_small color_red">결재중인 가격정보가 있습니다.</span>
+            </div>
+          </div>
+          <%-include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '판매가격', ariaSelected: true },
+              { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '선택 품목 가격' },
+              { id: 'tab_1-3', ariaControls:'tabpanel_1-3', text: '외장컬러 가격' },
+            ]
+          }) %>
+          <!-- Tab Content: 판매가격 -->
+          <div role="tabpanel" id="tabpanel_1-1" class="tab_content is_active" aria-labelledby="tab_1-1" tabindex="0">
+            <div class="panel">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <div class="option_group">
+                    <span class="title_small">총 <strong class="num">9999</strong>개</span>
+                    <div class="date_time_box">
+                      <p class="label_medium">조회일시 YYYY-MM-DD HH:MM:SS</p>
+                      <button type="button" class="btn_reload" aria-label="새로고침">
+                        <span class="ic ic_refresh_bold_12px"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="btn_group">
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      inputVal : '가격상태',
+                    }) %>
+                    <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                      <span class="ic ic_download_bold_16px"></span>
+                      <span class="btn_inner_text body_small">엑셀다운로드</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Content: 선택 품목 가격 -->
+          <div role="tabpanel" id="tabpanel_1-2" class="tab_content" aria-labelledby="tab_1-2" tabindex="-1"></div>
+
+          <!-- Tab Content: 외장컬러 가격 -->
+          <div role="tabpanel" id="tabpanel_1-3" class="tab_content" aria-labelledby="tab_1-3" tabindex="-1"></div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%- include('./include/script.ejs') %>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

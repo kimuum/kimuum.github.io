@@ -1,0 +1,319 @@
+.data_area {
+  flex: 1;
+  max-width: calc(100% - 280px);
+
+  .table_flex {
+    .col {
+      $col-width: calc(100% / 4);
+
+      @for $colspan from 1 through 3 {
+        &span_#{$colspan} {
+          min-width: 50%;
+        }
+      }
+    }
+
+    .col_detail {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      &.is_active {
+        .col {
+          display: flex;
+        }
+
+        .btn_toggle {
+          .ic {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .col {
+        display: none;
+      }
+
+      .btn_toggle_area {
+        width: 100%;
+        border-top: 1px solid var(--outline_lowest);
+        background-color: var(--surface_container_lowest);
+        .btn_toggle {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .accordion_panel + .btn {
+    margin: 20px 0;
+  }
+}
+
+.info_area {
+  width: 260px;
+
+  .panel_contract {
+    .badge_wrap {
+      margin-bottom: 16px;
+    }
+
+    .form_group {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+
+      + .form_group {
+        margin-top: 12px;
+      }
+
+      .form_title {
+        flex: 0 0 auto;
+        display: block;
+        width: 97px;
+        color: var(--surface_container_highest);
+      }
+
+      .form_plaintext {
+        display: block;
+        @include ellipsis;
+        text-align: right;
+      }
+    }
+  }
+
+  .payment {
+    &_box {
+      margin-top: 20px;
+      padding: 24px;
+      border-radius: 10px;
+      border: 1px solid var(--outline_ultimate);
+      background-color: var(--surface_container);
+      box-shadow: 0px 8px 6px 0px rgba(34, 34, 34, 0.05),
+        0px 0px 2px 0px rgba(34, 34, 34, 0.1);
+    }
+
+    &_title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .btn_tree_payment {
+        &[aria-expanded='true'] {
+          .ic {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    &_content {
+      margin-top: 16px;
+
+      .tree {
+        &:not(:first-child) {
+          margin-top: 12px;
+          padding-top: 12px;
+          border-top: 1px solid var(--outline_highest);
+        }
+
+        &:has(.tree_expanded) {
+          &:not(:first-child) {
+            margin-top: 20px;
+            padding-top: 20px;
+          }
+
+          & + .total_amount {
+            display: flex;
+          }
+        }
+
+        &_line {
+          > .tree_list {
+            // depth02
+            .tree_item {
+              &::after {
+                border: none;
+                border-radius: 0;
+              }
+
+              .tree_box {
+                &::after {
+                  border: none;
+                }
+              }
+
+              .tree_box_inner {
+                padding: 0;
+              }
+
+              // depth03
+              .tree_item {
+                .tree_box_inner {
+                  padding-top: 6px;
+                }
+
+                // depth04
+                .tree_item {
+                  &::after {
+                    left: 13px;
+                    border-left: 3px solid var(--outline_lowest);
+                  }
+
+                  .tree_box {
+                    &::after {
+                      border-left: 3px solid var(--outline_lowest);
+                      border-radius: 0;
+                      left: 13px;
+                    }
+                  }
+
+                  .tree_box_inner {
+                    padding-top: 4px;
+                    cursor: default;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &_box {
+          &.tree_selected {
+            .tree_box_inner {
+              background-color: transparent;
+            }
+
+            .tree_menu_btn {
+              .ic_arrow_forward_bold_16px {
+                background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath stroke='%233B3E45' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.2' d='m6.5 4 4 4-4 4'/%3E%3C/svg%3E");
+              }
+            }
+          }
+
+          &.tree_expanded {
+            .tree_menu_btn {
+              .ic_arrow_forward_bold_16px {
+                transform: rotate(-90deg);
+              }
+            }
+          }
+
+          .tree_menu_btn {
+            .ic_arrow_forward_bold_16px {
+              transform: rotate(90deg);
+            }
+          }
+
+          .tree_box_inner {
+            &:hover {
+              background-color: transparent;
+
+              .tree_text {
+                color: inherit;
+              }
+            }
+          }
+        }
+
+        &_text {
+          display: flex;
+          margin-left: 0;
+
+          .label_medium {
+            color: var(--on_surface_high);
+          }
+
+          .num {
+            flex: 1;
+            margin-left: 8px;
+            text-align: right;
+
+            &.emphasis {
+              color: var(--blue);
+            }
+          }
+        }
+      }
+
+      .total_amount {
+        display: none;
+        justify-content: space-between;
+        margin-top: 16px;
+        padding-top: 20px;
+        border-top: 1px solid var(--outline_lowest);
+
+        .num {
+          max-width: 100%;
+          margin-left: 8px;
+          flex: 1;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+// 주문서 상단 고정 영역 테스트
+.is_fixed {
+  &.data_area {
+    .accordion_panel {
+      &:first-child {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+    }
+  }
+
+  &.info_area {
+    .panel_contract {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+  }
+}
+
+// 주문서 테이블 반응형 레이아웃 테스트
+@media screen and (min-width: 1600px) {
+  .order_section {
+  }
+  .lnb {
+    // LNB 펼침
+    &.is_active {
+      + .content {
+        .table_flex {
+          .col {
+            $col-width: calc(100% / 4);
+
+            @for $colspan from 1 through 3 {
+              &span_#{$colspan} {
+                min-width: 50%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // LNB 접힘
+    + .content {
+      .table_flex {
+        .col {
+          flex: 1 0 25%; // 4컬럼 배열
+
+          $col-width: calc(100% / 4);
+
+          @for $colspan from 1 through 3 {
+            &span_#{$colspan} {
+              min-width: $col-width * $colspan;
+            }
+          }
+        }
+      }
+    }
+  }
+}

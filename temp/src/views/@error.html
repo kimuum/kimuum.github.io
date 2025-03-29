@@ -1,0 +1,132 @@
+<%-include('./include/head.ejs',{"title": "Error", "listTitle": "Components -  Error"})%>
+<body data-pagestatus="">
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">Error</span></h1>
+        <section class="uio_section">
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="error_system">공통 시스템 에러</h3>
+            <%- include('./include/error.ejs', {
+              cautionIcon : false,
+              errorTitle : '이용에 불편을 드려 죄송합니다.',
+              errorDesc : '서비스가 일시적으로 중단 되었습니다. <br>잠시 후 다시한번 시도해주세요.',
+              oneButton : false,
+              btnTextOutline : '뒤로가기',
+              btnTextPrimary : '홈으로 이동'
+            }) %>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="error_session">공통 세션 에러</h3>
+            <%- include('./include/error.ejs', {
+              cautionIcon : true,
+              errorTitle : '비정상적인 오류가 발생하여 <br>로그아웃합니다.',
+              errorDesc : '서비스를 이용하시려면 다시 로그인 해주시기 바랍니다.',
+              oneButton : true,
+              btnType : 'btn_fill btn_primary',
+              btnText : '로그인'
+            }) %>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="error_screen_access">화면접근 오류</h3>
+            <%- include('./include/error.ejs', {
+              cautionIcon : false,
+              errorTitle : '페이지를 찾을 수 없습니다.',
+              errorDesc : '주소가 변경 혹은 삭제되어 현재 사용랄 수 없는 페이지 입니다. <br>입력한 주소가 정확한지 다시 한번 확인해주세요.',
+              oneButton : true,
+              btnType : 'btn_outline',
+              btnText : '홈으로 이동'
+            }) %>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="error_access_authority">접근 권한 없는 오류</h3>
+            <%- include('./include/error.ejs', {
+              cautionIcon : false,
+              errorTitle : '페이지 권한이 없습니다.',
+              errorDesc : '해당 부서 담당자에게 <br>권한 부여를 문의해주시기 바랍니다.',
+              oneButton : true,
+              btnType : 'btn_outline',
+              btnText : '홈으로 이동'
+            }) %>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="error_date_load">로딩 과정 일시적 오류</h3>
+            <%- include('./include/error.ejs', {
+              cautionIcon : false,
+              errorTitle : '일시적인 오류로 데이터를 불러오지 못했습니다.',
+              errorDesc : '일시적인 오류로 데이터를 불러오지 못했습니다. <br>잠시 후 다시 시도해 주세요. <br>문제가 계속되면 관리자에게 문의해 주세요.',
+              oneButton : true,
+              btnType : 'btn_outline',
+              btnText : '재시도'
+            }) %>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <%-include('./include/script.ejs')%>
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    moveItems : [
+      {id : 'error_system', text : '공통 시스템 에러'},
+      {id : 'error_session', text : '공통 세션 에러'},
+      {id : 'error_screen_access', text : '화면접근 오류'},
+      {id : 'error_access_authority', text : '접근 권한 없는 오류'},
+      {id : 'error_date_load', text : '로딩 과정 일시적 오류'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 케이스뷰 메뉴 이동 처리
+      function handleCaseview() {
+        $('.btn-caseview').on('click', function () {
+          const dataId = $(this).data('id');
+          if (dataId) {
+            const sectionTop = $(`#${dataId}`).offset().top;
+            $('html, body').stop().animate({
+              scrollTop: sectionTop - 50
+            }, 500);
+          }
+        });
+      }
+      handleCaseview();
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

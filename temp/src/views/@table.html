@@ -1,0 +1,993 @@
+<%-include('./include/head.ejs',{"title": "Table", "listTitle": "Components - Table"})%>
+<body data-pagestatus="">
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">Table</span></h1>
+        <section class="uio_section">
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="table_grid">Grid</h3>
+            <p class="uio_list_desc" style="margin-bottom:10px">Data 형태 : Ag-grid</p>
+            <div class="table_inner">
+              <!-- AG Grid -->
+              <div id="grid_container"></div>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="table_table">List</h3>
+            <p class="uio_list_desc" style="margin-bottom:10px">목록 형태 : &lt;table&gt;</p>
+            <div class="table_inner">
+              <table class="table table_small">
+                <caption><span>테이블</span></caption>
+                <thead>
+                  <tr>
+                    <th style="width:56px">
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-1" class="input_checkbox">
+                          <label for="uio_checkbox1-1" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </th>
+                    <th>
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                    <th style="width:160px">
+                      <div class="cell_text"><span class="title_small">Header</span></div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-2" class="input_checkbox">
+                          <label for="uio_checkbox1-2" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_ellipsis">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Tex</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak text_ellipsis">Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small text_ellipsis">LinkLinkLinkLinkLinkLinkLinkLink</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-3" class="input_checkbox">
+                          <label for="uio_checkbox1-3" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text Text Text Text Text Text Text Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">LinkLinkLinkLinkLinkLinkLinkLink</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-4" class="input_checkbox">
+                          <label for="uio_checkbox1-4" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-5" class="input_checkbox">
+                          <label for="uio_checkbox1-5" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-6" class="input_checkbox">
+                          <label for="uio_checkbox1-6" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-7" class="input_checkbox">
+                          <label for="uio_checkbox1-7" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-8" class="input_checkbox">
+                          <label for="uio_checkbox1-8" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-9" class="input_checkbox">
+                          <label for="uio_checkbox1-9" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-10" class="input_checkbox">
+                          <label for="uio_checkbox1-10" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="input_select_wrap">
+                        <span class="input_select_box input_select_medium">
+                          <input type="checkbox" id="uio_checkbox1-11" class="input_checkbox">
+                          <label for="uio_checkbox1-11" class="label_checkbox"></label>
+                        </span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">Text</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small text_weak">Text</p>
+                      </div>
+                    </td>
+                    <td><a href="#none" class="link link_medium"><span class="link_text body_small">Link</span></a></td>
+                    <td>
+                      <div class="badge_wrap">
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                        <span class="badge badge_normal badge_small">
+                          <span class="badge_text label_medium">Badge</span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="table_board">Board</h3>
+            <p class="uio_list_desc" style="margin-bottom:10px">목록 상단 고정 형태 : &lt;table&gt;</p>
+            <div class="table_inner">
+              <div class="table_notice">
+                <!-- 상단 고정 영역 -->
+                <!-- [D] 게시글 제목에 badge icon 있을 경우 'table_badge'클래스 추가 -->
+                <table class="table table_badge table_small" style="min-width:848px">
+                  <caption><span>공지 목록</span></caption>
+                  <colgroup>
+                    <col style="width:120px;">
+                    <col style="width:auto;">
+                    <col style="width:120px;">
+                    <col style="width:120px;">
+                    <col style="width:128px;">
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th scope="col"><div><span class="title_small">카테고리</span></div></th>
+                      <th scope="col"><div><span class="title_small">제목</span></div></th>
+                      <th scope="col"><div><span class="title_small">작성자</span></div></th>
+                      <th scope="col"><div><span class="title_small">작성부서</span></div></th>
+                      <th scope="col"><div><span class="title_small">등록일</span></div></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><div class><p class="body_small">계약출고</p></div></td>
+                      <td>
+                        <div>
+                          <div class="list_wrap list_clickable list_small">
+                            <div class="list_item">
+                              <a href="#none" class="list_text">
+                                <div class="list_title_box">
+                                  <span class="ic ic_push_pin_filled_16px"><span class="blind">고정글</span></span>
+                                  <span class="badge badge_error badge_dot badge_xsmall"><span class="blind">읽지 않음</span></span>
+                                  <span class="list_text title_small text_ellipsis">가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20 13:00</p></div></td>
+                    </tr>
+                    <tr>
+                      <td><div class="cell_text"><p class="body_small">계약출고</p></div></td>
+                      <td>
+                        <div>
+                          <div class="list_wrap list_clickable list_small">
+                            <div class="list_item">
+                              <a href="#none" class="list_text">
+                                <div class="list_title_box">
+                                  <span class="ic ic_push_pin_filled_16px"><span class="blind">고정글</span></span>
+                                  <span class="list_text title_small text_ellipsis">가나다라마바사아자차카타파하</span>
+                                </div>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                      <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- // 상단 고정 영역 -->
+                <!-- [D] 최소 높이 초과하여 리스트 스크롤 시 '.is_scroll'클래스 추가 -->
+                <div class="scroll_area is_scroll">
+                  <table class="table table_badge table_small" style="min-width:848px">
+                    <colgroup>
+                      <col style="width:120px;">
+                      <col style="width:auto;">
+                      <col style="width:120px;">
+                      <col style="width:120px;">
+                      <col style="width:128px;">
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">계약출고</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="badge badge_error badge_dot badge_xsmall"><span class="blind">읽지 않음</span></span>
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20 13:00</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">물류</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매촉진</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">상품</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">지역공지</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">시스템</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">세무</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">업무개선</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매금융</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매금융</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매금융</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매금융</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cell_text"><p class="body_small">판매금융</p></div></td>
+                        <td>
+                          <div>
+                            <div class="list_wrap list_clickable list_small">
+                              <div class="list_item">
+                                <a href="#none" class="list_text">
+                                  <div class="list_title_box">
+                                    <span class="list_text body_small text_ellipsis">text</span>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">김현대</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">클라우드플랫폼개발연구실</p></div></td>
+                        <td><div class="cell_text"><p class="body_small text_ellipsis">2025-01-20</p></div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="table_div">Form</h3>
+            <p class="uio_list_desc" style="margin-bottom:10px">폼 형태 (반응형) : &lt;div="table_flex"&gt;</p>
+            <div class="table_wrap">
+              <div class="table_util">
+                <span class="title_large">테이블 타이틀</span>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_medium"><span class="btn_inner_text body_small">버튼1</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_medium" disabled><span class="btn_inner_text body_small">버튼2</span></button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <div class="table_flex">
+                  <div class="col colspan_2">
+                    <div class="th"><strong class="title_small">Header1</strong></div>
+                    <div class="td"><span class="body_small">Cell1</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header2</strong></div>
+                    <div class="td"><span class="body_small">Cell2</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header3</strong></div>
+                    <div class="td"><span class="body_small">Cell3</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header4</strong></div>
+                    <div class="td"><span class="body_small">Cell4</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header5</strong></div>
+                    <div class="td"><span class="body_small">Cell5</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header6</strong></div>
+                    <div class="td"><span class="body_small">Cell6</span></div>
+                  </div>
+                  <div class="col table_row_readonly">
+                    <div class="th"><strong class="title_small">Header7</strong></div>
+                    <div class="td"><span class="body_small">Cell7</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="table_wrap">
+              <div class="table_util">
+                <span class="title_large">테이블 타이틀2</span>
+              </div>
+              <div class="table_inner">
+                <div class="table_flex">
+                  <div class="col colspan_2">
+                    <div class="th"><strong class="title_small">Header1</strong></div>
+                    <div class="td"><span class="body_small">Cell1</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header2</strong></div>
+                    <div class="td"><span class="body_small">Cell2</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header3</strong></div>
+                    <div class="td"><span class="body_small">Cell3</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header4</strong></div>
+                    <div class="td"><span class="body_small">Cell4</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header5</strong></div>
+                    <div class="td"><span class="body_small">Cell5</span></div>
+                  </div>
+                  <div class="col">
+                    <div class="th"><strong class="title_small">Header6</strong></div>
+                    <div class="td"><span class="body_small">Cell6</span></div>
+                  </div>
+                  <div class="col table_row_readonly">
+                    <div class="th"><strong class="title_small">Header7</strong></div>
+                    <div class="td"><span class="body_small">Cell7</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <p class="uio_list_desc" style="margin-bottom:10px">head 포함 폼 형태 : &lt;table&gt;</p>
+            <div class="table_inner">
+              <table class="table table_medium">
+                <caption><span class="blind">선택한 프로필의 기본 정보에 대한 내용</span></caption>
+                <thead>
+                  <tr>
+                    <th scope="col" style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">구분</span>
+                      </div>
+                    </th>
+                    <th scope="col">
+                      <div class="cell_text">
+                        <span class="title_small">인사정보</span>
+                      </div>
+                    </th>
+                    <th scope="col">
+                      <div class="cell_text">
+                        <span class="title_small">국내판매시스템 정보</span>
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">소속구분</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="data_empty">
+                        <span class="blind">내용 없음</span>
+                      </div>
+                    </td>
+                    <td>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_large',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputVal : '소속구분',
+                      }) %>
+                    </td>
+                  </tr>
+                  <tr class="table_row_readonly">
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">본부명</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">읽기전용 필드 : &lt;tr class="table_row_readonly"&gt;</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data_empty">
+                        Data 없음 : &lt;div class="data_empty"&gt;
+                        <span class="blind">내용 없음</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">조직정보</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">조직코드와 조직명</p>
+                      </div>
+                    </td>
+                    <td>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_large',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputVal : '소속코드, 소속명',
+                      }) %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">조직정보</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">보직코드와 보직명</p>
+                      </div>
+                    </td>
+                    <td>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputArea : 'input_area_large',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputVal : '보직코드, 보직명',
+                      }) %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">최근 인사발령 구분</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">인사발령명</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data_empty">
+                        <span class="blind">내용 없음</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th style="width:154px">
+                      <div class="cell_text">
+                        <span class="title_small">최근 인사발령일</span>
+                      </div>
+                    </th>
+                    <td>
+                      <div class="cell_text">
+                        <p class="body_small">YYYY-MM-DD</p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="data_empty">
+                        <span class="blind">내용 없음</span>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script>
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    moveItems : [
+      {id : 'table_grid', text : 'AG Grid'},
+      {id : 'table_table', text : 'List'},
+      {id : 'table_board', text : 'Board'},
+      {id : 'table_div', text : 'Form'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 케이스뷰 메뉴 이동 처리
+      function handleCaseview() {
+        $('.btn-caseview').on('click', function () {
+          const dataId = $(this).data('id');
+          if (dataId) {
+            const sectionTop = $(`#${dataId}`).offset().top;
+            $('html, body').stop().animate({
+              scrollTop: sectionTop - 50
+            }, 500);
+          }
+        });
+      }
+      handleCaseview();
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<% const inputPlaceholder = locals.inputPlaceholder || 'Placeholder'; %>
+<% const inputValue = locals.inputValue || ''; %>
+<% const searchButtonItems = locals.searchButtonItems || []; %>
+<% const controlBtnGroup = locals.controlBtnGroup || null; %>
+
+<%# include 사용 예시:
+  include('./include/search_section.ejs',{
+    labelID: 'label 태그의 for 속성과 검색 입력 박스의 id 값 연결',
+    labelText: '검색 입력 박스의 라벨명',
+    inputPlaceholder: '미입력 시 기본값 "Placeholder"',
+    inputValue: '검색 입력 박스의 입력 값',
+    searchButtonItems: [
+      { text: "검색 입력 박스 오른쪽의 버튼명" },
+    ],
+    controlBtnGroup: {
+      prevBtnText: '검색 영역 오른쪽 버튼 그룹의 이전 버튼명',
+      nextBtnText: '검색 영역 오른쪽 버튼 그룹의 다음 버튼명',
+    },
+  })
+%>
+
+<div class="search_section">
+  <div class="search_box">
+    <label for="<%= labelID %>" class="input_label title_small"><%= labelText %></label>
+    <%-include('./input_area.ejs', {
+      inputArea: 'input_area_large',
+      inputBox : 'input_small input_suffix',
+      id: labelID,
+      placeholder: inputPlaceholder,
+      value: inputValue,
+    })%>
+    <% if (searchButtonItems) { %>
+      <div class="btn_group">
+        <% searchButtonItems.forEach ((item, index) => { %>
+          <button type="button" class="btn btn_fill btn_primary btn_small"><span class="btn_inner_text body_small"><%= item.text %></span></button>
+        <% }) %>
+      </div>
+    <% } %>
+  </div>
+  <% if (controlBtnGroup) { %>
+    <div class="btn_group btn_group_attached">
+      <button type="button" class="btn btn_outline btn_with_ic btn_small">
+        <span class="ic ic_arrow_back_bold_16px"></span>
+        <span class="btn_inner_text body_small"><%= controlBtnGroup.prevBtnText %></span>
+      </button>
+      <button type="button" class="btn btn_outline btn_with_ic btn_small">
+        <span class="btn_inner_text body_small"><%= controlBtnGroup.nextBtnText %></span>
+        <span class="ic ic_arrow_forward_bold_16px"></span>
+      </button>
+    </div>
+  <% } %>
+</div>

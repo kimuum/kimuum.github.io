@@ -1,0 +1,44 @@
+<% const stepperItems = locals.stepperItems || []; %>
+
+<%# include 사용 예시:
+  include('./include/stepper.ejs',{
+    activeStep: 현재 진행중인 단계의 index 숫자 (index는 0부터 셈),
+    stepperItems: [
+      {
+        isLink: true, // 선택: true일 경우 <a> 태그, false일 경우 <strong> 태그 사용
+        title: '단계명', // 필수: 각 스텝의 제목
+        helpText: '설명',// 선택: 설명 없을 경우 미출력
+      },
+    ]
+  })
+%>
+
+<div class="stepper stepper_large">
+  <ol class="stepper_list">
+    <% stepperItems.forEach((item, index) => { %>
+      <li class="stepper_item<%= index < activeStep ? ' stepper_item_completed' : '' %><%= index === activeStep ? ' stepper_item_active' : '' %>">
+        <span class="stepper_number">
+          <% if (index < activeStep) { %>
+            <span class="blind"><%= index + 1 %></span>
+            <span class="ic ic_check_bold_16px"></span>
+          <% } else if (index === activeStep) { %>
+            <span class="stepper_number_text title_small" aria-hidden="true"><%= index + 1 %></span>
+            <span class="blind">전체 <%= stepperItems.length %>단계 중 <%= index + 1 %>단계 진행중</span>
+          <% } else { %>
+            <span class="stepper_number_text title_small"><%= index + 1 %></span>
+          <% } %>
+        </span>
+        <div class="stepper_content">
+          <% if (item.isLink) { %>
+            <a href="#none" class="stepper_title label_large"><%= item.title %></a>
+          <% } else { %>
+            <strong class="stepper_title label_large"><%= item.title %></strong>
+          <% } %>
+          <% if (item.helpText) { %>
+            <span class="stepper_help_text label_medium"><%- item.helpText %></span>
+          <% } %>
+        </div>
+      </li>
+    <% }); %>
+  </ol>
+</div>

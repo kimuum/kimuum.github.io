@@ -1,0 +1,402 @@
+<%-include('./include/head.ejs',{
+  "title": "시스템-0007-A-HK_시스템 / 메뉴변경설정저장",
+  "listTitle": "Site Map > 메뉴변경설정저장(기능버튼 수정) : 00-공통/시스템"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.02.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "계출관리", href: "#none" },
+                { text: "계약출고", href: "#none" },
+                { text: "결재진행조회", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="select_search" class="title_small">검색</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea: 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '화면명',
+                    id : 'select_search'
+                  }) %>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea: 'input_area_large',
+                    inputBox : 'input_small',
+                    search : true,
+                    ariaLabel : '',
+                    placeholder : '화면명, 화면 ID를 검색해보세요',
+                    value: 'C1101001',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="period" class="title_small">변경일자</label>
+                  <%- include('./include/date_picker.ejs', {
+                    range: true,
+                    ariaLabelledby: 'period',
+                    inlineStyle: 'width: 328px',
+                    startValue: '2025-02-01',
+                    endValue: '2025-02-28',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="select_usage" class="title_small">사용여부</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea: 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '미사용',
+                    id : 'select_usage'
+                  }) %>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="content_section">
+            <div class="panel">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <div class="option_group">
+                    <span class="title_small">총 <strong class="num">9999</strong>개</span>
+                  </div>
+                  <div class="btn_group">
+                    <!-- [D] 비활성화 disabled 속성 추가 -->
+                    <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                      <span class="ic ic_download_bold_16px"></span>
+                      <span class="btn_inner_text body_small">엑셀다운로드</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel_setting menu_setting">
+            <strong class="title_large">메뉴 상세정보</strong>
+            <%-include('./include/tabs_section.ejs', {
+              tabsSize: 'tabs_large',
+              tabItems: [
+                { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '화면정보' },
+                { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '기능버튼', ariaSelected: true },
+              ],
+            })%>
+            <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+            <!-- Tab Content: 화면정보 -->
+            <div role="tabpanel" id="tabpanel_1-1" class="tab_content" aria-labelledby="tab_1-1" tabindex="-1">
+              <div class="form_group">
+                <label for="screen_name" class="title_small">화면이름</label>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  id : 'screen_name',
+                  placeholder : ' ',
+                }) %>
+              </div>
+              <div class="form_group">
+                <div class="form_row">
+                  <strong class="title_small">메뉴 ID</strong>
+                  <span class="form_plaintext">01001 계출관리</span>
+                </div>
+              </div>
+              <div class="form_group">
+                <div class="form_row">
+                  <strong class="title_small">화면 ID</strong>
+                  <span class="form_plaintext">C1101001</span>
+                </div>
+              </div>
+              <div class="form_group">
+                <div class="form_row">
+                  <strong class="title_small">화면그룹</strong>
+                  <span class="form_plaintext">C1</span>
+                </div>
+              </div>
+              <div class="form_group">
+                <strong class="title_small">사용여부</strong>
+                <div class="form_row">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="screen_use" class="input_radio" name="screen_usage" checked>
+                      <label for="screen_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                    </span>
+                  </div>
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="radio" id="screen_disuse" class="input_radio" name="screen_usage">
+                      <label for="screen_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="form_group">
+                <label for="sort_number" class="title_small">정렬수번</label>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  id : 'sort_number',
+                  placeholder : ' ',
+                }) %>
+              </div>
+              <div class="form_group">
+                <strong class="title_small">DRM 적용여부</strong>
+                <div class="form_row">
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="check_excel" class="input_checkbox">
+                      <label for="check_excel" class="label_checkbox"><span class="label_text body_small">엑셀</span></label>
+                    </span>
+                  </div>
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="check_screen" class="input_checkbox">
+                      <label for="check_screen" class="label_checkbox"><span class="label_text body_small">화면</span></label>
+                    </span>
+                  </div>
+                  <div class="input_select_wrap">
+                    <span class="input_select_box input_select_medium">
+                      <input type="checkbox" id="check_print" class="input_checkbox">
+                      <label for="check_print" class="label_checkbox"><span class="label_text body_small">출력</span></label>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tab Content: 기능버튼 -->
+            <div role="tabpanel" id="tabpanel_1-2" class="tab_content is_active" aria-labelledby="tab_1-2" tabindex="0">
+              <div class="accordion accordion_small">
+                <div class="accordion_item">
+                  <button type="button" class="btn_accordion" aria-controls="accordion_content_1-1" aria-expanded="false">
+                    <span class="accordion_title body_small">기능버튼1</span>
+                  </button>
+                  <div role="region" id="accordion_content_1-1" class="accordion_content">
+                    <div class="form_group">
+                      <label for="button_name" class="title_small">버튼이름</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputBox : 'input_suffix input_small input_disabled',
+                        id : 'button_name',
+                        placeholder : '조회',
+                        disabled : true
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <label for="authority-01" class="title_small">권한</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputBox : 'input_small',
+                        inputVal : '저장',
+                        id : 'authority-01'
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <strong class="title_small">사용여부</strong>
+                      <div class="form_row">
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                            <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                          </span>
+                        </div>
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                            <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_divider">
+                  <span class="divider"></span>
+                </div>
+                <div class="accordion_item accordion_open">
+                  <button type="button" class="btn_accordion" aria-controls="accordion_content_1-2" aria-expanded="true">
+                    <span class="accordion_title body_small">기능버튼2</span>
+                  </button>
+                  <div role="region" id="accordion_content_1-2" class="accordion_content" style="display: block;">
+                    <div class="form_group">
+                      <label for="button_name" class="title_small">버튼이름</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputBox : 'input_suffix input_small input_disabled',
+                        id : 'button_name',
+                        placeholder : '조회',
+                        disabled : true
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <label for="authority-02" class="title_small">권한</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputBox : 'input_small',
+                        inputVal : '저장',
+                        id : 'authority-02'
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <strong class="title_small">사용여부</strong>
+                      <div class="form_row">
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                            <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                          </span>
+                        </div>
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                            <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_divider">
+                  <span class="divider"></span>
+                </div>
+                <div class="accordion_item">
+                  <button type="button" class="btn_accordion" aria-controls="accordion_content_1-3" aria-expanded="false">
+                    <span class="accordion_title body_small">기능버튼3</span>
+                  </button>
+                  <div role="region" id="accordion_content_1-3" class="accordion_content">
+                    <div class="form_group">
+                      <label for="button_name" class="title_small">버튼이름</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputBox : 'input_suffix input_small input_disabled',
+                        id : 'button_name',
+                        placeholder : '조회',
+                        disabled : true
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <label for="authority-03" class="title_small">권한</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputBox : 'input_small',
+                        inputVal : '저장',
+                        id : 'authority-03'
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <strong class="title_small">사용여부</strong>
+                      <div class="form_row">
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                            <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                          </span>
+                        </div>
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                            <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_divider">
+                  <span class="divider"></span>
+                </div>
+                <div class="accordion_item">
+                  <button type="button" class="btn_accordion" aria-controls="accordion_content_1-4" aria-expanded="false">
+                    <span class="accordion_title body_small">기능버튼4</span>
+                  </button>
+                  <div role="region" id="accordion_content_1-4" class="accordion_content">
+                    <div class="form_group">
+                      <label for="button_name" class="title_small">버튼이름</label>
+                      <%- include('./include/input_area.ejs', {
+                        inputBox : 'input_suffix input_small input_disabled',
+                        id : 'button_name',
+                        placeholder : '조회',
+                        disabled : true
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <label for="authority-04" class="title_small">권한</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inputBox : 'input_small',
+                        inputVal : '저장',
+                        id : 'authority-04'
+                      }) %>
+                    </div>
+                    <div class="form_group">
+                      <strong class="title_small">사용여부</strong>
+                      <div class="form_row">
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_use" class="input_radio" name="button_usage" checked>
+                            <label for="button_use" class="label_radio"><span class="label_text body_small">사용</span></label>
+                          </span>
+                        </div>
+                        <div class="input_select_wrap">
+                          <span class="input_select_box input_select_medium">
+                            <input type="radio" id="button_disuse" class="input_radio" name="button_usage">
+                            <label for="button_disuse" class="label_radio"><span class="label_text body_small">미사용</span></label>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_divider">
+                  <span class="divider"></span>
+                </div>
+              </div>
+            </div>
+            <div class="btn_group">
+              <button type="button" class="btn btn_outline btn_large"><span class="btn_inner_text title_small">닫기</span></button>
+              <button type="button" class="btn btn_fill btn_primary btn_large"><span class="btn_inner_text title_small">저장하기</span></button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script>
+  </body>
+  </html>

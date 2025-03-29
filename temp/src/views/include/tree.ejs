@@ -1,0 +1,72 @@
+<%
+const treeItems = locals.treeItems || [];
+const treeClass = locals.treeClass || 'tree_medium';
+const treeMenuBtn = locals.treeMenuBtn || true;
+%>
+
+<% let index = 1; %>
+<div class="tree <%- treeClass %>">
+  <ul class="tree_list" role="tree">
+    <% treeItems.forEach((depth02) => { %>
+      <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth02.stateValue %>">
+        <!-- [D] 트리 확장 : tree_expanded 클래스 추가 & aria-expanded="true" -->
+        <!-- [D] 트리 선택 : tree_box에 tree_selected 클래스 추가 -->
+        <div class="tree_box <%- depth02.stateClass || '' %>">
+          <div class="tree_box_inner">
+            <% if (depth02.treeMenuBtn !== false && treeMenuBtn) { %>
+              <button type="button" class="tree_menu_btn">
+                <span class="ic ic_arrow_forward_bold_16px"></span>
+              </button>
+            <% } %>
+            <span class="tree_text text_ellipsis <%- depth02.treeText || 'title_medium' %>"><%- depth02.title || '' %></span>
+          </div>
+        </div>
+        <% if (depth02.children) { %>
+        <ul class="tree_list" role="group">
+          <% depth02.children.forEach((depth03) => { %>
+            <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth03.stateValue %>">
+              <div class="tree_box <%- depth03.stateClass || '' %>">
+                <div class="tree_box_inner">
+                  <% if (depth03.treeMenuBtn !== false && treeMenuBtn) { %>
+                    <button type="button" class="tree_menu_btn">
+                      <span class="ic ic_arrow_forward_bold_16px"></span>
+                    </button>
+                  <% } %>
+                  <span class="tree_text text_ellipsis <%- depth03.treeText || 'body_medium' %>"><%- depth03.title || '' %></span>
+                  <% if (depth03.favoriteBtn) { %>
+                    <div class="input_select_box input_select_small">
+                      <input type="checkbox" id="chk_fav0<%= index++ %>" class="input_checkbox_favorite" aria-label="즐겨찾기 추가">
+                    </div>
+                  <% } %>
+                  <% if (depth03.showMore) { %>
+                    <div class="tree_more_btn_box">
+                      <!-- [D] 더보기 메뉴 활성화 : is_show & aria-expanded="true" -->
+                      <button type="button" class="tree_more_btn" aria-haspopup="menu" aria-expanded="false" aria-label="더보기" aria-controls="tree_more_wrap">
+                        <span class="ic ic_more_vertical_regular_16px"></span>
+                      </button>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+              <% if (depth03.children) { %>
+              <ul class="tree_list" role="group">
+                <!-- [D] 임시 : 추후 디자인 가이드 확정시 인라인 스타일 수정 예정 입니다. -->
+                <% depth03.children.forEach((depth04) => { %>
+                  <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth04.stateValue %>">
+                    <div class="tree_box" style="padding-left: 24px">
+                      <div class="tree_box_inner">
+                        <span class="tree_text body_medium text_ellipsis"><%- depth04.title || '' %></span>
+                      </div>
+                    </div>
+                  </li>
+                <% }) %>
+              </ul>
+              <% } %>
+            </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</div>

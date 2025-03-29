@@ -1,0 +1,76 @@
+.accordion_terms {
+  padding: 0 0 0 24px;
+
+  > .accordion_item {
+    &:not(:last-child) {
+      padding-bottom: 16px;
+    }
+
+    &.accordion_open {
+      .accordion_terms_header {
+        border-radius: 8px 8px 0 0;
+
+        .btn_accordion {
+          .ic {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+
+    + .accordion_divider {
+      padding-bottom: 16px;
+    }
+  }
+
+  &_header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .accordion_title {
+      display: flex;
+      align-items: center;
+
+      .input_wrap {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        + .input_wrap {
+          position: relative;
+          margin-left: 32px;
+          &::before {
+            position: absolute;
+            top: 50%;
+            left: -16px;
+            width: 1px;
+            height: 12px;
+            background-color: var(--outline_low);
+            transform: translateY(-50%);
+            content: "";
+          }
+        }
+      }
+    }
+
+    .accordion_control {
+      .btn_accordion {
+        width: auto;
+        border-radius: 4px;
+        &:hover {
+          background-color: var(--surface_container_lowest);
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_content {
+    padding: 6px 16px 8px 32px;
+  }
+}

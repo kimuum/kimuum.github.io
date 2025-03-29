@@ -1,0 +1,50 @@
+<%
+const offsetIndex = typeof locals.offsetIndex === 'number' ? locals.offsetIndex : 0;
+const attributes = locals.attributes || '';
+%>
+
+<ul class="attribute_card_list">
+  <!-- [D] attribute_card 추가 클래스
+                          대표 모델 : .attribute_card_main
+                          추가 속성 클래스 : .attribute_card_other
+                        -->
+  <!-- [D] 드래그 중인 요소 접근성 필수 속성 : aria-grabbed="true" -->
+  <% attributes.forEach(function(attr, i) {
+    const index = offsetIndex + i;
+  %>
+    <li class="attribute_card<% if (attr.isMain) { %> attribute_card_main<% } else if (attr.isOther) { %> attribute_card_other<% } %>" draggable="true" aria-grabbed="false">
+      <div class="attribute_card_title">
+        <span class="attribute_title"><%= attr.title %></span>
+        <!-- [D] 비노출 상태 : aria-pressed="false" & ic_view_hidden_filled_20px -->
+        <button type="button" class="btn btn_filter btn_only_ic btn_xxsmall" aria-pressed="<%= attr.visible ? 'true' : 'false' %>" aria-label="<%= attr.visible ? '노출' : '비노출' %>">
+          <span class="ic <%= attr.visible ? 'ic_eye_light_filled_20px' : 'ic_view_hidden_filled_20px' %>" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="input_select_box">
+        <% if (attr.isMain) { %>
+          <input type="radio" id="model_name" name="radio_name_model" value="모델명" class="input_display_option" checked>
+          <label for="model_name" class="btn_display_option"><span class="label_medium">모델명</span></label>
+          <input type="radio" id="model_in_name" name="radio_name_model" value="내부모델명" class="input_display_option">
+          <label for="model_in_name" class="btn_display_option"><span class="label_medium">내부모델명</span></label>
+        <% } else { %>
+          <input type="radio" id="<%= 'display_long_' + index %>" name="radio_name_display_<%= index %>" value="long" class="input_display_option">
+          <label for="<%= 'display_long_' + index %>" class="btn_display_option"><span class="label_medium">Long</span></label>
+          <input type="radio" id="<%= 'display_short_' + index %>" name="radio_name_display_<%= index %>" value="short" class="input_display_option" checked>
+          <label for="<%= 'display_short_' + index %>" class="btn_display_option"><span class="label_medium">Short</span></label>
+        <% } %>
+      </div>
+      <% if (!attr.isMain) { %>
+      <button type="button" class="btn btn_outline btn_small" style="display: none;">
+        <span class="btn_inner_text body_small">삭제</span>
+      </button>
+      <% } %>
+    </li>
+  <% }); %>
+
+  <!-- [D] 속성 추가 버튼 : .attribute_add -->
+  <li class="attribute_card attribute_add">
+    <button type="button" class="btn_attr_add" aria-label="속성 추가">
+      <span class="ic ic_plus_bold_20px" aria-hidden="true"></span>
+    </button>
+  </li>
+</ul>

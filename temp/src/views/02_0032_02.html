@@ -1,0 +1,239 @@
+<%- include('./include/head.ejs',{
+  title: "기준-0032-HK_판매가격 입력/수정",
+  listTitle: "판매기준정보관리 > 판매코드관리 > 판매가격관리 > 판매가격 입력/수정 : 02-기준정보_판매코드"
+}) %>
+
+<body class="project_sales_system" data-pagestatus="new : 2025.03.31">
+<%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <!-- Set Unique Class : wrap_datacode -->
+    <main id="content" class="content wrap_datacode">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <h2 class="title_xlarge">판매가격 입력/수정</h2>
+            <div class="btn_group">
+              <a href="#none" class="btn btn_outline btn_small">판매가격 관리 돌아가기</a>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel panel_top">
+              <div class="btn_group btn_group_right">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">상신</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">임시저장</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">수정</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small" disabled><span class="btn_inner_text body_small">결제문서조회</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">가격불러오기</span></button>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel">
+              <!-- [D] 가격 기본정보 표 -->
+              <div class="table_wrap">
+                <div class="table_util">
+                  <strong class="title_large">가격 기본정보</strong>
+                </div>
+                <div class="table_inner">
+                  <table class="table table_small">
+                    <caption><span>가격 기본정보 표 : 차량, 대표차명, 모델명, 상태</span></caption>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">차량</span></div>
+                        </th>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">대표차명</span></div>
+                        </th>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">모델명</span></div>
+                        </th>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">상태</span></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">승용</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">DNB 쏘나타DNB</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">쏘나타 디 엣지</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">수정중</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- [D] 결재정보 표 -->
+              <div class="table_wrap">
+                <div class="table_util">
+                  <strong class="title_large">결재정보</strong>
+                </div>
+                <div class="table_inner">
+                  <table class="table table_small">
+                    <caption><span>결재정보 표 : 결재상태, 생산일, 승인/반려일</span></caption>
+                    <colgroup>
+                      <col>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">결재상태</span></div>
+                        </th>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">생산일</span></div>
+                        </th>
+                        <th scope="col">
+                          <div class="cell_text"><span class="title_small">승인/반려일</span></div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">-</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">-</p>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="cell_text">
+                            <p class="body_small text_ellipsis">-</p>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <%- include('./include/stepper.ejs',{
+              stepperSize: 'stepper_large',
+              activeStep: 0,
+              stepperItems: [
+                {isLink: true, title: '판매가격'},
+                {isLink: true, title: '선택 품목 가격'},
+                {isLink: true, title: '외장컬러 가격'},
+              ]
+            }) %>
+            <div class="table_wrap">
+              <div class="table_util">
+                <div class="option_group">
+                  <a href="#none" class="btn btn_outline btn_small">선택품목 가격 입력</a>
+                </div>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" >
+                    <span class="btn_inner_text body_small">예외적용일 추가</span>
+                  </button>
+                  <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                    <span class="ic ic_download_bold_16px"></span>
+                    <span class="btn_inner_text body_small">엑셀다운로드</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn_group btn_group_center">
+            <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_large"><span class="btn_inner_text title_small">선택품목 가격 입력</span></button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%- include('./include/script.ejs') %>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    popupItems : [
+      {id: '', text:'판매가격 일괄 입력'},
+      {id: '', text:'가격 입력 일부 실패'},
+      {id: '', text:'판매가격 불러오기'},
+      {id: '', text:'판매가격 상신'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

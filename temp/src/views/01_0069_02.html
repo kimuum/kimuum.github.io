@@ -1,0 +1,525 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0069-A-HK, 기준-0069-B-HK, 기준-0069-C-HK, 기준-0069-D-HK / 사용자 관리",
+  "listTitle": "계정 관리 > 사용자 관리_사용자별 프로필 관리(조회) : 01-기준정보"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content user_manage">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "권한 관리", href: "#none" },
+                { text: "사용자 관리", id: "A0000000" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <%- include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab2_1', ariaControls:'tabpanel2_1', text: '사용자 관리', ariaSelected: false },
+              { id: 'tab2_2', ariaControls:'tabpanel2_2', text: '사용자별 프로필 관리', ariaSelected: true },
+              { id: 'tab2_3', ariaControls:'tabpanel2_3', text: '소속코드 예외 관리', ariaSelected: false },
+              { id: 'tab2_4', ariaControls:'tabpanel2_4', text: '보직코드 관리', ariaSelected: false },
+            ],
+          }) %>
+          <!-- [D] 탭패널 id와 연관된 버튼의 aria-controls값 참조 / aria-labelledby와 연관된 탭버튼의 id값 참조 -->
+          <div id="tabpanel2_2" role="tabpanel" aria-labelledby="tab2_2" tabindex="0">
+            <div class="content_section">
+              <div class="panel panel_dataset">
+                <div class="search_filter">
+                  <div class="field_group">
+                    <label for="" class="title_small">ID/성명</label>
+                    <div style="position:relative;width:100%">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="ID 또는 성명" class="input_text body_small" placeholder="ID 또는 성명을 입력하세요">
+                            <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="" class="title_small">소속</label>
+                    <div style="position:relative;width:100%">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="소속명 또는 소속코드" class="input_text body_small" placeholder="소속명 또는 소속코드 입력">
+                            <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">소속명</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>00000</strong> 소속코드</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="" class="title_small">직위</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_large',
+                      inputBox : 'input_small',
+                      tabindex : true,
+                      inputVal : '전체',
+                    }) %>
+                  </div>
+                  <div class="field_inline">
+                    <div class="field_group">
+                      <label for="" class="title_small">보직</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inlineStyle: 'width:100%;',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputVal : '선택',
+                      }) %>
+                    </div>
+                    <div class="field_group">
+                      <label for="" class="title_small">멀티 프로필</label>
+                      <%- include('./include/option_wrap.ejs', {
+                        optionWrap : 'option_small',
+                        inlineStyle: 'width:100%;',
+                        inputBox : 'input_small',
+                        tabindex : true,
+                        inputVal : '선택',
+                      }) %>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="panel_bottom">
+                    <div class="btn_group btn_group_center">
+                      <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                      <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_small"><span class="btn_inner_text title_small">조회</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="body_small notify_text">※ ‘소속' 및 ‘보직'은 국내판매시스템 등록값으로 조회 되므로, 인사 DB와 상이할 수 있습니다.</span>
+                <div class="table_wrap">
+                  <div class="table_util">
+                    <div class="btn_group">
+                      <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="table_inner">
+                    <!-- AG Grid -->
+                    <div id="grid_container"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel_result">
+                <div class="panel_header">
+                  <div class="panel_title">
+                    <span class="title_xlarge">김현대</span>
+                  </div>
+                  <div class="btn_group">
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small" >프로필 생성</span></button>
+                  </div>
+                </div>
+                <%-include('./include/tabs_section.ejs', {
+                  tabsSize: 'tabs_large',
+                  tabItems: [
+                    { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '프로필 P1', ariaSelected: true },
+                    { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '프로필 P2' },
+                    { id: 'tab_1-3', ariaControls:'tabpanel_1-3', text: '프로필 P3' },
+                    { id: 'tab_1-4', ariaControls:'tabpanel_1-4', text: '프로필 P4' },
+                    { id: 'tab_1-5', ariaControls:'tabpanel_1-5', text: '프로필 P5' },
+                    { id: 'tab_1-6', ariaControls:'tabpanel_1-6', text: '프로필 P6' },
+                    { id: 'tab_1-7', ariaControls:'tabpanel_1-7', text: '프로필 P7' },
+                    { id: 'tab_1-8', ariaControls:'tabpanel_1-8', text: '프로필 P8' },
+                    { id: 'tab_1-9', ariaControls:'tabpanel_1-9', text: '프로필 P9' },
+                    { id: 'tab_1-10', ariaControls:'tabpanel_1-10', text: '프로필 P10' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-11', text: '프로필 P11' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-12', text: '프로필 P12' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-13', text: '프로필 P13' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-14', text: '프로필 P14' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-15', text: '프로필 P15' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-16', text: '프로필 P16' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-17', text: '프로필 P17' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-18', text: '프로필 P18' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-19', text: '프로필 P19' },
+                    { id: 'tab_1-11', ariaControls:'tabpanel_1-20', text: '프로필 P20' },
+                  ],
+                }) %>
+                <div id="tabpanel3_1" role="tabpanel" aria-labelledby="tab3_1" tabindex="0">
+                  <div class="table_wrap">
+                    <div class="table_util">
+                      <strong class="title_large">기본 정보</strong>
+                      <div class="btn_group">
+                        <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">저장</span></button>
+                        <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">취소</span></button>
+                        <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">프로필 삭제</span></button>
+                      </div>
+                    </div>
+                    <div class="table_inner">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">사번</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">0000000</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">성명</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">김현대</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">직위</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">책임매니저</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">프로필</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">P1</p>
+                          </div>
+                        </div>
+                      </div>
+                      <table class="table table_medium">
+                        <caption><span class="blind">선택한 프로필의 기본 정보에 대한 내용</span></caption>
+                        <thead>
+                          <tr>
+                            <th scope="col" style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">구분</span>
+                              </div>
+                            </th>
+                            <th scope="col">
+                              <div class="cell_text">
+                                <span class="title_small">인사정보</span>
+                              </div>
+                            </th>
+                            <th scope="col">
+                              <div class="cell_text">
+                                <span class="title_small">국내판매시스템 정보</span>
+                              </div>
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">소속구분</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="data_empty">
+                                <span class="blind">내용 없음</span>
+                              </div>
+                            </td>
+                            <td>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap : 'option_small',
+                                inputArea : 'input_area_large',
+                                inputBox : 'input_small',
+                                tabindex : true,
+                                inputVal : '소속구분',
+                              }) %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">본부명</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="cell_text">
+                                <p class="body_small">조직코드와 조직명</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="data_empty">
+                                <span class="blind">내용 없음</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">조직정보</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="cell_text">
+                                <p class="body_small">조직코드와 조직명</p>
+                              </div>
+                            </td>
+                            <td>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap : 'option_small',
+                                inputArea : 'input_area_large',
+                                inputBox : 'input_small',
+                                tabindex : true,
+                                inputVal : '소속코드, 소속명',
+                              }) %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">보직정보</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="cell_text">
+                                <p class="body_small">보직코드와 보직명</p>
+                              </div>
+                            </td>
+                            <td>
+                              <%- include('./include/option_wrap.ejs', {
+                                optionWrap : 'option_small',
+                                inputArea : 'input_area_large',
+                                inputBox : 'input_small',
+                                tabindex : true,
+                                inputVal : '보직코드, 보직명',
+                              }) %>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">최근 인사발령 구분</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="cell_text">
+                                <p class="body_small">인사발령명</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="data_empty">
+                                <span class="blind">내용 없음</span>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th style="width:154px">
+                              <div class="cell_text">
+                                <span class="title_small">최근 인사발령일</span>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="cell_text">
+                                <p class="body_small">YYYY-MM-DD</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="data_empty">
+                                <span class="blind">내용 없음</span>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="table_wrap">
+                    <div class="table_util">
+                      <strong class="title_large">등록 ∙ 변경이력</strong>
+                    </div>
+                    <div class="table_inner">
+                      <div class="table_flex">
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">등록 사유</strong>
+                          </div>
+                          <div class="td">
+                            <%- include('./include/input_area.ejs', {
+                              inputArea: 'border_none',
+                              inlineStyle: 'width: 100%',
+                              ariaLabel : '등록 사유',
+                              placeholder: '30자 이내로 입력해 주세요',
+                              value: '등록 사유',
+                              clear: true
+                            }) %>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">메모</strong>
+                          </div>
+                          <div class="td">
+                            <%- include('./include/input_area.ejs', {
+                              inputArea: 'border_none',
+                              inlineStyle: 'width: 100%',
+                              ariaLabel : '메모',
+                              placeholder: '30자 이내로 입력해 주세요',
+                              value: '일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+                              clear: true
+                            }) %>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">등록일</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">YYYY-MM-DD</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">등록자</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">사번</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">변경일</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">YYYY-MM-DD</p>
+                          </div>
+                        </div>
+                        <div class="col colspan_2">
+                          <div class="th">
+                            <strong class="title_small">변경자</strong>
+                          </div>
+                          <div class="td">
+                            <p class="body_small">사번</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="table_wrap">
+                    <div class="table_area">
+                      <div class="table_util">
+                        <div class="option_group">
+                          <strong class="title_large">보유 권한</strong>
+                          <button type="button" class="btn btn_outline btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">권한 보유한 메뉴 전체조회</span></button>
+                        </div>
+                      </div>
+                      <div class="table_util">
+                        <strong class="title_medium">권한 그룹 (2)</strong>
+                        <div class="btn_group">
+                          <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">권한그룹 불러오기</span></button>
+                          <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">추가</span></button>
+                          <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">삭제</span></button>
+                        </div>
+                      </div>
+                      <div class="table_inner">
+                        <!-- AG Grid -->
+                        <div id="grid_container"></div>
+                      </div>
+                      <!-- [D] 기아 -->
+                      <div class="table_util">
+                        <strong class="title_medium">메뉴별 개별권한 (1)</strong>
+                        <div class="btn_group">
+                          <a href="#none" class="btn btn_outline btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">사용자별 메뉴권한 개별부여</span></a>
+                        </div>
+                      </div>
+                      <div class="table_inner">
+                        <!-- AG Grid -->
+                        <div id="grid_container"></div>
+                      </div>
+                      <!-- // [D] 기아 -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<% const breadcrumbItems = locals.breadcrumbItems || []; %>
+
+<ul class="breadcrumb">
+  <% breadcrumbItems.forEach((item, index) => { %>
+    <li class="breadcrumb_item <%= index === breadcrumbItems.length - 1 ? 'breadcrumb_item_current' : '' %>">
+      <% if (index !== breadcrumbItems.length - 1) { %>
+        <a href="<%= item.href %>" class="link link_medium">
+          <span class="link_text headline_xsmall"><%= item.text %></span>
+        </a>
+      <% } else { %>
+        <h2 class="breadcrumb_text headline_xsmall"><%= item.text %></h2>
+        <% if (item.id) { %>
+          <span class="body_medium"><span class="blind">ID</span><%= item.id %></span>
+          <button type="button" class="btn_copy" aria-label="복사">
+            <span class="ic ic_copy_bold_16px"></span>
+          </button>
+        <% } %>
+      <% } %>
+    </li>
+  <% }); %>
+</ul>

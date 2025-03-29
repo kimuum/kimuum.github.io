@@ -1,0 +1,165 @@
+<%-include('./include/head.ejs',{"title": "LNB", "listTitle": 'Components - LNB'})%>
+<body class="project_sales_system" data-pagestatus="  " style="overflow: initial;">
+
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">LNB</span></h1>
+        <section class="uio_section">
+          <div class="uio_box" style="overflow: hidden; position: relative; transform: translateZ(0); height: 1080px;">
+            <%-include('./include/lnb.ejs')%>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- [D] 팝업 활성화 클래스 : dialog_active -->
+  <!-- [D] 즐겨찾기 그룹지정 -->
+  <div class="dialog_wrap" id="dialog_favorite">
+    <div class="dialog dialog_small shadow_24dp">
+      <div class="dialog_content">
+        <strong class="dialog_title title_small">즐겨찾기 그룹지정</strong>
+        <p class="dialog_desc">
+          그룹을 선택 한 후 확인 버튼을 눌러 주세요.
+        </p>
+        <div class="dialog_form_box">
+          <%- include('./include/option_wrap.ejs', {
+            optionWrap : 'option_medium',
+            inputBox : 'input_medium',
+            ariaControls : 'uio-select-dialog1',
+            tabindex : true,
+            inputVal : '즐겨찾기 그룹지정',
+          }) %>
+        </div>
+      </div>
+      <div class="dialog_footer">
+        <button type="button" class="btn btn_outline btn_medium"><span class="btn_inner_text title_small">취소</span></button>
+        <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">확인</span></button>
+      </div>
+    </div>
+  </div>
+  <!-- // [D] 즐겨찾기 그룹지정 -->
+
+  <!-- [D] 즐겨찾기 삭제 -->
+  <div class="dialog_wrap" id="dialog_delete">
+    <div class="dialog dialog_small shadow_24dp">
+      <div class="dialog_content">
+        <strong class="dialog_title title_small">즐겨찾기 삭제</strong>
+        <p class="dialog_desc">
+          화면을 즐겨찾기 목록에서 뻅니다. <br>
+          즐겨찾기 항목은 언제든 다시 추가 할 수 있습니다.
+        </p>
+      </div>
+      <div class="dialog_footer">
+        <button type="button" class="btn btn_outline btn_medium"><span class="btn_inner_text title_small">취소</span></button>
+        <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">확인</span></button>
+      </div>
+    </div>
+  </div>
+  <!-- // [D] 즐겨찾기 삭제 -->
+
+  <!-- [D] 더보기 메뉴 -->
+  <div id="tree_more_wrap" class="tree_more_wrap">
+    <ul  class="tree_more_menu" role="menu">
+      <li role="menuitem">
+        <button type="button" class="tree_more_option">
+          <span class="btn_inner_text body_medium">삭제</span>
+        </button>
+      </li>
+      <li role="menuitem">
+        <button type="button" class="tree_more_option">
+          <span class="btn_inner_text body_medium">이동</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <!-- // [D] 더보기 메뉴 -->
+
+  <%-include('./include/script.ejs')%>
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    popupItems : [
+      {id : 'dialog_favorite', text : '즐겨찾기 그룹지정'},
+      {id : 'dialog_delete', text : '즐겨찾기 삭제'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo theme_hmg';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // 추천화면 없는 케이스
+      $("#caseBtn3").click(function () {});
+
+      // [팝업] 즐겨찾기 그룹지정
+      $('button[data-dialog-target="dialog_favorite"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_favorite").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      })
+      $(".btn_outline").click(function () {
+        $("#dialog_favorite").removeClass("dialog_active");
+        $("body").removeClass("scroll_lock")
+      })
+
+      // [팝업] 즐겨찾기 삭제
+      $('button[data-dialog-target="dialog_delete"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_delete").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      })
+      $(".btn_outline").click(function () {
+        $("#dialog_delete").removeClass("dialog_active");
+        $("body").removeClass("scroll_lock")
+      })
+
+      // [팝업] 즐겨찾기 신규 그룹 생성
+      $('button[data-dialog-target="dialog_favorite_new"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_favorite").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      })
+
+      // [팝업] 그룹 명칭 변경
+      $('button[data-dialog-target="dialog_change"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_change").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      })
+
+      // [팝업] 토스트 샘플
+      $('button[data-dialog-target="dialog_toast"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_toast").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      })
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

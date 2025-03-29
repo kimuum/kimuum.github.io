@@ -1,0 +1,157 @@
+<%-include('./include/head.ejs',{"title": "Control Section", "listTitle": "Components - Control Section"})%>
+<body data-pagestatus="">
+  <style>
+    .uio_sub_list {
+      margin-bottom: 30px;
+    }
+    .control_section {
+      padding: 20px;
+      background-color: var(--on_primary_lowest);
+      border-radius: 10px;
+    }
+  </style>
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">Control Section</span></h1>
+        <section class="uio_section">
+          <h3 class="uio_subtit" id="">영역 분할</h3>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc">컨텐츠 내 상단 작은 단위의 요소들
+              <em class="badge badge_small label_medium">버튼</em>,
+              <em class="badge badge_small label_medium">폼</em>,
+              <em class="badge badge_small label_medium">타이틀</em>,
+              <em class="badge badge_small label_medium">설명글</em>,
+              <em class="badge badge_small label_medium">리스트</em>
+              영역 분할하는 Wrap 입니다. <b>(class="control_section")</b>
+            </li>
+            <li class="uio_sub_desc">
+              <em class="badge badge_small label_medium">panel</em>,
+              <em class="badge badge_small label_medium">panel_group</em> 의 영역 밖에서 사용 중입니다.
+            </li>
+            <li class="uio_sub_desc">기본 <b>우측 정렬</b></li>
+            <li class="uio_sub_desc">내부 요소 2개일 경우 <b>좌/우 정렬</b></li>
+            <li class="uio_sub_desc"><em class="badge badge_small label_medium">control_section</em> 의 내부에서는 <em class="badge badge_small label_medium">btn_group</em> 추가 클래스 사용하지 않아도 됩니다.</li>
+          </ul>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="">기본 정렬</h3>
+            <div class="control_section">
+              <%- include('./include/input_area.ejs', {
+                inputArea : 'input_area_large',
+                inputBox : 'input_small',
+                search : true,
+                placeholder : '속성을 입력해 주세요',
+              }) %>
+            </div>
+
+            <div class="control_section">
+              <div class="control_inner">
+                <a href="#none" class="btn btn_outline btn_small">판매가격 입력/수정</a>
+                <!-- [D] 안내메세지 출력
+                수정중 : 수정중인 가격정보가 있습니다.
+                결재중 : 결재중인 가격정보가 있습니다.
+                결재완료(승인) 및 미적용 : 결재 완료된 가격정보가 있습니다.
+                -->
+                <span class="notify_text body_small color_red">결재중인 가격정보가 있습니다.</span>
+              </div>
+            </div>
+
+            <div class="control_section">
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">배정요청</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">특정배정요청</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">배정요청취소</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">배정취소</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">입금확정</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">입금확정취소</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">출고요청</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">출소요청취소</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">해약</span></button>
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">계약이관</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">계약수정</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">신규생성</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="">좌/우 정렬</h3>
+            <ul class="uio_sub_list">
+              <li class="uio_sub_desc">
+                현재 내부 두개 이상일 경우
+                <em class="badge badge_small label_medium">btn_group</em>,
+                <em class="badge badge_small label_medium">top_wrap</em>,
+                <em class="badge badge_small label_medium">profile_box</em>,
+                <em class="badge badge_small label_medium">타이틀</em>,
+                <em class="badge badge_small label_medium">작은 설명글</em> 사용 중
+              </li>
+            </ul>
+
+            <div class="control_section">
+              <h3 class="title_xlarge">신규 공지사항 등록</h3>
+              <div class="btn_group">
+                <button type="submit" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">임시저장</span></button>
+                <!-- [D] 활성화: 연관된 팝업으로 초점 이동 -->
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">등록하기</span></button>
+              </div>
+            </div>
+
+            <div class="control_section">
+              <div class="top_wrap">
+                <a href="#none" class="btn btn_only_ic btn_xxsmall" aria-label="뒤로가기"><span class="ic ic_arrow_back_bold_24px"></span></a>
+                <span class="title_xlarge">주문서 정보 수정</span>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">취소</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">결재요청</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">결재요청 불러오기</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">저장</span></button>
+              </div>
+            </div>
+
+            <div class="control_section">
+              <div class="btn_group">
+                <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">주문서</span></button>
+                <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">통합재고조회</span></button>
+                <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">유사재고조회</span></button>
+                <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">재고및생산계획</span></button>
+                <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">확정요청이력조회</span></button>
+              </div>
+              <div class="btn_group">
+                <div class="row">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청취소</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정 자동설정</span></button>
+                </div>
+                <div class="row">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일연기</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일 당김</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고희망월 변경</span></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="control_section">
+              <span class="body_small">※ 예상 납기는 S/OFF예정일이며, 특장 작업은 별도</span>
+              <span class="body_small">예상납기 작업 기준일 : 2024-05-01</span>
+            </div>
+
+            <div class="control_section">
+              <h2 class="title_xlarge">나의 결재함</h2>
+              <div class="profile_box">
+                <p class="body_small"><span class="blind">소속</span>동부지역B2B사업팀</p>
+                <p class="body_small"><span class="blind">성명</span>김현대</p>
+                <p class="body_small"><span class="blind">직위</span>책임매니저</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script>
+</body>
+</html>`

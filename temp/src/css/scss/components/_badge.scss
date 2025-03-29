@@ -1,0 +1,25 @@
+.badge_wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  .badge {
+    + *:not(.badge) {
+      margin-left: 2px;
+    }
+  }
+}
+
+.badge_use {
+  background-color: var(--green_ultimate);
+}
+
+// dot badge
+.badge_medium {
+  &.badge_dot {
+    @include align-self(center);
+    width: 12px;
+    height: 12px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,229 @@
+/* 02.기준정보_판매코드 */
+/* 판매가격 입력/수정 */
+.wrap_datacode {
+  .stepper {
+    margin-bottom: 24px;
+    padding: 23px;
+    border: 1px solid var(--surface);
+    border-radius: 8px;
+    .stepper_item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &:first-child {
+        align-items: flex-start;
+
+        &::after {
+          left: 24px;
+        }
+        .stepper_number {
+          margin: 0 10px;
+        }
+      }
+
+      &:nth-child(2) {
+        align-items: flex-start;
+        &::after {
+          left: auto;
+          right: -24px;
+        }
+        .stepper_number {
+          margin: 0 20px;
+        }
+      }
+
+      &:last-child {
+        flex: none;
+        width: auto;
+      }
+    }
+  }
+}
+
+/* 판매코드 구성 관리 */
+.configure_manage_wrap {
+  width: 100%;
+
+  & + .configure_manage_wrap {
+    padding-top: 24px;
+    border-top: 1px solid var(--surface);
+  }
+
+  > [class^="configure_manage_"] {
+    display: flex;
+    gap: 16px;
+    > .title_small {
+      flex: 0 0 auto;
+    }
+  }
+  .configure_manage_top {
+    align-items: baseline;
+  }
+  .configure_manage_bottom {
+    flex-direction: column;
+    margin-top: 24px;
+  }
+}
+
+.model_chips {
+  overflow: hidden;
+  width: 100%;
+  .chip_list {
+    overflow-x: auto;
+    gap: 4px;
+    // padding: 0 5px 5px 0;
+  }
+  .chip_item {
+    .chip {
+      background-color: var(--surface_container_lowest);
+    }
+
+    &_main {
+      .chip {
+        background-color: var(--blue_lowest);
+
+        &::after {
+          display: none;
+        }
+        .chip_text {
+          color: var(--blue);
+          font-weight: 700;
+        }
+      }
+    }
+
+    &_other {
+      .chip {
+        background-color: $white;
+      }
+    }
+  }
+  .model_desc {
+    margin-top: 12px;
+  }
+}
+
+.attribute_card_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.attribute_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 114px;
+  height: 72px;
+  padding: 8px 12px;
+  border: 1px solid var(--outline_low);
+  background-color: var(--surface_container_lowest);
+  border-radius: 4px;
+
+  &.attribute_card_main {
+    padding: 8px;
+    border: none;
+    background-color: var(--blue_lowest);
+    .attribute_card_title {
+      .attribute_title {
+        color: var(--blue);
+        font-weight: 700;
+      }
+    }
+    .input_select_box {
+      .btn_display_option {
+        flex: 0 0 auto;
+      }
+    }
+    .ic_eye_light_filled_20px {
+      @include inline-svg-size(20px, 20px, "ic_eye_light_filled_20px", map-get($hmg-colors, primary), none, none);
+    }
+  }
+
+  &.attribute_card_other {
+    background-color: $white;
+  }
+
+  &.attribute_add {
+    justify-content: center;
+    padding: 0;
+    background-color: $white;
+    .btn_attr_add {
+      flex: 1;
+    }
+  }
+  .attribute_card_title {
+    display: flex;
+    align-items: center;
+    .attribute_title {
+      flex: 1;
+      margin-right: 4px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+  }
+  .input_select_box {
+    .input_display_option {
+      display: none;
+
+      &:checked {
+        & + .btn_display_option {
+          color: var(--blue);
+
+          &::before {
+            border-color: var(--blue);
+          }
+
+          & ~ .btn_display_option {
+            &::before {
+              border-left-color: var(--blue);
+            }
+          }
+        }
+      }
+    }
+    .btn_display_option {
+      flex: 1;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 2px 4px;
+      background-color: $white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border: 1px solid var(--outline_lowest);
+        transition: all 0.2s;
+      }
+
+      &:first-of-type {
+        &::before {
+          border-radius: 4px 0 0 4px;
+        }
+      }
+
+      &:last-of-type {
+        margin-left: -1px;
+        &::before {
+          border-radius: 0 4px 4px 0;
+        }
+      }
+    }
+  }
+}
+
+
+

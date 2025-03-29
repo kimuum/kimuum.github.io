@@ -1,0 +1,46 @@
+.breadcrumb {
+
+  &_item {
+    box-sizing: border-box;
+
+    &:not(:first-child):before {
+      width: 20px;
+      height: 20px;
+      margin: 0 2px;
+    }
+
+    &_current {
+      .breadcrumb_text {
+        color: var(--on_surface);
+      }
+
+      .body_medium {
+        position: relative;
+        margin-left:25px;
+
+        &:before {
+          display: inline-block;
+          left: -12px;
+          @include set-center-y;
+          width: 1px;
+          height: 14px;
+          background-color: var(--outline_low);
+          content: "";
+        }
+      }
+
+      .btn_copy {
+        @include inline-flex;
+        padding: 4px;
+
+        .ic {
+          margin: 0;
+
+          &.ic_copy_bold_16px {
+            @include inline-svg-icon("ic_copy_bold_16px", none, none, map-get($hyundai-colors, surface_ultimate));
+          }
+        }
+      }
+    }
+  }
+}

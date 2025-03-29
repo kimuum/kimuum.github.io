@@ -1,0 +1,231 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0074-A-HK, 기준-0074-B-HK, 기준-0074-C-K, 기준-0074-D-K / 통합권한 관리",
+  "listTitle": "권한 관리 > 통합권한 관리_사용자별 메뉴권한 개별부여 : 01-기준정보"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content user_manage">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "권한 관리", href: "#none" },
+                { text: "통합권한 관리", id: "A0000000" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <%- include('./include/tabs_section.ejs', {
+            tabsSize: 'tabs_xlarge',
+            tabItems: [
+              { id: 'tab2_1', ariaControls:'tabpanel2_1', text: '권한그룹 설정', ariaSelected: false },
+              { id: 'tab2_2', ariaControls:'tabpanel2_2', text: '권한그룹 부여', ariaSelected: false },
+              { id: 'tab2_3', ariaControls:'tabpanel2_3', text: '사용자별 메뉴권한 개별부여', ariaSelected: true },
+              { id: 'tab2_4', ariaControls:'tabpanel2_4', text: '메뉴별 접근권한 설정', ariaSelected: false },
+            ],
+          }) %>
+          <!-- [D] 탭패널 id와 연관된 버튼의 aria-controls값 참조 / aria-labelledby와 연관된 탭버튼의 id값 참조 -->
+          <div id="tabpanel2_3" role="tabpanel" aria-labelledby="tab2_3" tabindex="0">
+            <div class="content_section">
+              <div class="panel panel_dataset">
+                <div class="search_filter">
+                  <div class="field_group">
+                    <label for="" class="title_small">ID/성명</label>
+                    <div style="position:relative;width:100%">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="ID 또는 성명" class="input_text body_small" placeholder="ID 또는 성명을 입력하세요">
+                            <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">000000 김현대</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <label for="" class="title_small">소속</label>
+                    <div style="position:relative;width:100%">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="소속명 또는 소속코드" class="input_text body_small" placeholder="소속명 또는 소속코드 입력">
+                            <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">소속명</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>00000</strong> 소속코드</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="panel_bottom">
+                    <div class="btn_group btn_group_center">
+                      <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                      <button type="button" class="btn btn_fill btn_primary btn_small"><span class="btn_inner_text title_small">조회</span></button>
+                    </div>
+                  </div>
+                </div>
+                <span class="body_small notify_text">※ ‘소속' 및 ‘보직'은 국내판매시스템 등록값으로 조회 되므로, 인사 DB와 상이할 수 있습니다.</span>
+                <div class="table_wrap">
+                  <div class="table_util">
+                    <div class="btn_group">
+                      <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="table_inner">
+                    <!-- AG Grid -->
+                    <div id="grid_container"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel_result">
+                <div class="panel_header">
+                  <div class="panel_title">
+                    <span class="title_xlarge">박현대 책임매니저(0000000,P1)</span>
+                  </div>
+                  <div class="btn_group">
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">사용자 관리</span></button>
+                  </div>
+                </div>
+                <div class="table_wrap">
+                  <div class="table_inner">
+                    <div id="grid_container"></div>
+                  </div>
+                </div>
+                <div class="table_wrap">
+                  <div class="table_area">
+                    <div class="table_util">
+                      <strong class="title_large">메뉴권한 개별부여</strong>
+                      <div class="btn_group">
+                        <button type="button" class="btn btn_outline btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">메뉴 관리</span></button>
+                        <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">저장</span></button>
+                        <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">취소</span></button>
+                      </div>
+                    </div>
+                    <div class="table_util">
+                      <ul class="list_wrap list_notify">
+                        <li class="list_item">
+                          <p class="body_small">- 권한그룹으로 부여된 메뉴별 기능은 '<span class="ic ic_select_checkbox_checked_24px"></span>‘ 형태의 비활성 체크박스로 조회됩니다.</p>
+                        </li>
+                        <li class="list_item">
+                          <p class="body_small">- 사용자에게 메뉴권한을 개별부여 하는 것은 권한그룹이 없거나, 권한그룹을 새로 만들기 어려운 경우에 국한하여 사용합니다.</p>
+                        </li>
+                      </ul>
+                      <div class="option_group">
+                        <label for="">메뉴검색</label>
+                        <div style="position:relative">
+                          <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                            <div class="input_area input_area_large" role="combobox">
+                              <div class="input_box input_small">
+                                <input type="text" aria-label="메뉴명 또는 메뉴ID" class="input_text body_small" placeholder="메뉴명 또는 메뉴ID를 입력하세요">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="autocomplete_box shadow_4dp">
+                            <ul class="autocomplete_list" role="listbox">
+                              <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">계약번호별 매출관리</span><strong> 00000</strong></li>
+                              <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">매출변경 의뢰 및 결재</span><strong> 00000</strong></li>
+                              <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">매출변경 진행 현황</span><strong> 00000</strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">조회</span></button>
+                      </div>
+                      <div class="btn_group">
+                        <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">권한 복사하기</span></button>
+                        <button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span></button>
+                      </div>
+                    </div>
+                    <div class="table_inner">
+                      <div id="grid_container"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+.path_group {
+  display: inline-flex;
+  align-items: center;
+  .path_list {
+    display: flex;
+    margin-left: 6px;
+  }
+  .path_item {
+    display: flex;
+    align-items: center;
+    & + .path_item {
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 2px;
+        @include inline-svg("ic_arrow_forward_bold_16px");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto;
+      }
+    }
+    &:first-child {
+      .path_link {
+        span {
+          text-decoration: none;
+        }
+      }
+    }
+    &:last-child {
+      .path_link {
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .ic {
+    @include inline-svg('ic_folder_bold_16px');
+  }
+}

@@ -1,0 +1,207 @@
+<%- include('./include/head.ejs',{
+  title: "기준-0004-HK_차량속성마스터관리",
+  listTitle: "판매기준정보관리 > 판매코드관리 > 차량 속성 마스터 관리 : 02-기준정보_판매코드"
+}) %>
+
+<body class="project_sales_system" data-pagestatus="new : 2025.03.31">
+<%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보관리", href: "#none" },
+                { text: "판매기준정보관리", href: "#none" },
+                { text: "판매코드관리", id: "CON0001BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="control_section">
+            <%- include('./include/input_area.ejs', {
+              inputArea : 'input_area_large',
+              inputBox : 'input_small',
+              search : true,
+              placeholder : '속성을 입력해 주세요',
+            }) %>
+          </div>
+          <div class="content_section">
+            <div class="panel panel_attribute">
+              <div class="panel_header">
+                <div class="panel_title">
+                  <span class="title_large">폴더명/속성분류명</span>
+                </div>
+                <div style="position: relative;">
+                  <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                    <div class="input_area" role="combobox">
+                      <div class="input_box input_focused input_small">
+                        <span class="ic ic_search_bold_16px"></span>
+                        <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="Placeholder" value="Auto">
+                        <button type="button" class="btn_clear_input" aria-label="삭제">
+                          <span class="ic ic_close_circle_filled_16px"></span>
+                        </button>
+                        <button type="button" class="btn_autocomplete_toggle" aria-label="닫기">
+                          <span class="ic ic_arrow_down_bold_16px"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="autocomplete_box shadow_4dp">
+                    <ul class="autocomplete_list" role="listbox">
+                      <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                      <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                      <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                      <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                      <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">Autocomplete</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <%-include('./include/tabs_section.ejs', {
+                tabsSize: 'tabs_medium',
+                tabItems: [
+                  { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '공통', ariaSelected: true },
+                  { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '승/소상' },
+                  { id: 'tab_1-3', ariaControls:'tabpanel_1-3', text: '트럭' },
+                  { id: 'tab_1-4', ariaControls:'tabpanel_1-4', text: '버스' },
+                ]
+              }) %>
+              <!-- Tab Content: 공통 -->
+              <div role="tabpanel" id="tabpanel_1-1" class="tab_content is_active" aria-labelledby="tab_1-1" tabindex="0">
+                <!-- 차량속성 폴더 트리 -->
+              </div>
+
+              <!-- Tab Content: 승/소상 -->
+              <div role="tabpanel" id="tabpanel_1-2" class="tab_content" aria-labelledby="tab_1-2" tabindex="-1"></div>
+
+              <!-- Tab Content: 트럭 -->
+              <div role="tabpanel" id="tabpanel_1-3" class="tab_content" aria-labelledby="tab_1-3" tabindex="-1"></div>
+
+              <!-- Tab Content: 버스 -->
+              <div role="tabpanel" id="tabpanel_1-4" class="tab_content" aria-labelledby="tab_1-4" tabindex="-1"></div>
+
+              <div class="btn_group"></div>
+            </div>
+            <div class="panel">
+              <div class="table_wrap">
+                <div class="table_util">
+                  <%- include('./include/path_group.ejs', {
+                    pathItems : [
+                      {text: '승/소상'},
+                      {text: '모델'},
+                      {text: 'NSC공통'},
+                    ]
+                  }) -%>
+                  <div class="btn_group">
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">속성추가</span></button>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">속성추가관리</span></button>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">속성분류추가</span></button>
+                  </div>
+                </div>
+                <div class="table_util">
+                  <div class="option_group">
+                    <span class="title_small">총 <strong class="num">9999</strong>건</span>
+                    <div class="date_time_box">
+                      <p class="label_medium">조회일시 YYYY-MM-DD HH:MM:SS</p>
+                      <button type="button" class="btn_reload" aria-label="새로고침">
+                        <span class="ic ic_refresh_bold_12px"></span>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="btn_group">
+                    <!-- [D] 비활성화 disabled 속성 추가 -->
+                    <button type="button" class="btn btn_outline btn_small" >
+                      <span class="btn_inner_text body_small">삭제</span>
+                    </button>
+                    <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                      <span class="ic ic_download_bold_16px"></span>
+                      <span class="btn_inner_text body_small">엑셀다운로드</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="table_inner">
+                  <!-- AG Grid -->
+                  <div id="grid_container"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%- include('./include/script.ejs') %>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    popupItems : [
+      {id: '', text:'속성분류 추가'},
+      {id: '', text:'속성분류 위치 변경'},
+      {id: '', text:'속성분류 정보'},
+      {id: '', text:'속성 추가'},
+      {id: '', text:'속성 순서 관리'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

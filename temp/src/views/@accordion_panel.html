@@ -1,0 +1,519 @@
+<%-include('./include/head.ejs',{"title": "Accordion Panel", "listTitle": "Components - Accordion Panel"})%>
+<body data-pagestatus="">
+  <div class="uio_wrap">
+    <main class="uio_container">
+      <div class="inner">
+        <h1><span class="uio_headline">Accordion Panel</span></h1>
+        <section class="uio_section">
+          <div class="uio_desc">
+            <h3 class="uio_desc_title headline_small">Structure</h3>
+            <ul class="uio_sub_list">
+              <li class="uio_sub_desc">Mui <em class="badge badge_small badge_info body_small">accordion</em> 컴포넌트의 구조를 변형하여 사용</li class="uio_sub_desc">
+              <li class="uio_sub_desc">각 뎁스에 따라 고유의 클래스명 추가</li class="uio_sub_desc">
+						</ul>
+            <h3 class="uio_desc_title headline_small">클래스명</h3>
+            <ul class="uio_sub_list">
+							<li class="uio_sub_desc">1뎁스: 아코디언 <em class="badge badge_small label_medium">accordion_panel</em>, 아코디언 헤더 <em class="badge badge_small label_medium">accordion_panel_header</em>, 아코디언 콘텐츠 <em class="badge badge_small label_medium">accordion_panel_content</em></li>
+              <li class="uio_sub_desc">2뎁스: 아코디언 <em class="badge badge_small label_medium">accordion_dataset</em>, 아코디언 헤더 <em class="badge badge_small label_medium">accordion_dataset_header</em>, 아코디언 콘텐츠 <em class="badge badge_small label_medium">accordion_dataset_content</em></li>
+              <li class="uio_sub_desc">3뎁스: 아코디언 <em class="badge badge_small label_medium">accordion_terms</em>, 아코디언 헤더 <em class="badge badge_small label_medium">accordion_terms_header</em>, 아코디언 콘텐츠 <em class="badge badge_small label_medium">accordion_terms_content</em></li>
+						</ul>
+            <p style="margin-top: 20px"><b>사용 예시</b></p>
+            <pre><code>&lt;div class="accordion accordion_panel"&gt;
+  &lt;div class="accordion_item"&gt;
+    &lt;!-- [D] 구조 변형: 아코디언 헤더 구조 추가, 아코디언 타이틀을 담는 ".accordion_title"과 아코디언 조작 요소를 담는 ".accordion_control"로 구성 (뎁스 별 클래스명은 상단 참조)  --&gt;
+    &lt;div class="accordion_panel_header"&gt;
+      &lt;div id="accordion_panel_01" class="accordion_title"&gt;
+        &lt;span class="title_large"&gt;계약자 정보&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div class="accordion_control"&gt;
+        &lt;button type="button" class="btn btn_filter btn_only_ic btn_xxsmall" aria-label="링크 복사"&gt;&lt;/button&gt;
+        &lt;button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_panel_content_01" aria-labelledby="accordion_panel_01"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;!-- //[D] 구조 변형 --&gt;
+    &lt;div id="accordion_panel_content_01" class="accordion_content" role="region"&gt;
+      &lt;!-- [D] accordion_content 하위에 아코디언 패널 콘텐츠 추가 (뎁스 별 클래스명은 상단 참조) --&gt;
+      &lt;div class="accordion_panel_content"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+          <div class="uio_box">
+            <div class="accordion accordion_panel">
+              <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+              <div class="accordion_item accordion_open">
+                <div class="accordion_panel_header">
+                  <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                  <div id="accordion_panel_01" class="accordion_title">
+                    <span class="title_large">계약자 정보</span>
+                  </div>
+                  <div class="accordion_control">
+                    <button type="button" class="btn btn_filter btn_only_ic btn_xxsmall" aria-label="링크 복사"><span class="ic ic_link_bold_20px"></span></button>
+                    <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                    <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_panel_content_01" aria-labelledby="accordion_panel_01"><span class="ic ic_arrow_down_regular_24px"></span></button>
+                  </div>
+                </div>
+                <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+                <div id="accordion_panel_content_01" class="accordion_content" role="region" style="display: block">
+                  <div class="accordion_panel_content">
+                    <div class="table_flex">
+                      <div class="col colspan_2">
+                        <div class="th"><strong class="title_small">고객 구분</strong></div>
+                        <div class="td">
+                          <div class="text_wrap">
+                            <span class="body_small">개인</span>
+                            <span class="body_small">일반개인</span>
+                            <span class="body_small">정부기관</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col colspan_2">
+                        <div class="th"><strong class="title_small">공동명의자 명수</strong></div>
+                        <div class="td">
+                          <div class="input_wrap">
+                            <div class="input_area input_area_medium">
+                              <div class="input_box input_suffix input_small">
+                                <input type="text" aria-label="공동명의자 명수" class="input_text body_small" placeholder="" value="3">
+                              </div>
+                            </div>
+                            <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">적용</span></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col colspan_2">
+                        <div class="th"><strong class="title_small">구입형태</strong></div>
+                        <div class="td">
+                          <span class="body_small">증차</span>
+                        </div>
+                      </div>
+                      <div class="col colspan_2">
+                        <div class="th"><strong class="title_small">면세확정여부</strong></div>
+                        <div class="td">
+                          <div class="text_wrap">
+                            <span class="body_small">면세</span>
+                            <span class="body_small">영업용</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col colspan_2">
+                        <div class="th"><strong class="title_small">면세확정여부</strong></div>
+                        <div class="td">
+                          <div class="input_wrap">
+                            <span class="body_small">Y</span>
+                            <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text label_medium">면세확정 요청</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion accordion_dataset">
+                      <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                      <div class="accordion_item accordion_open">
+                        <div class="accordion_dataset_header">
+                          <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                          <div id="accordion_dataset_1-1" class="accordion_title">
+                            <span class="title_small">차량가격 정보</span>
+                          </div>
+                          <div class="accordion_control">
+                            <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                            <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_1-1" aria-labelledby="accordion_dataset_1-1"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                          </div>
+                        </div>
+                        <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+                        <div id="accordion_dataset_content_1-1" class="accordion_content" role="region" style="display: block">
+                          <div class="accordion_dataset_content">
+                            <ul class="data_list single_list">
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">판매코드</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">CN12345MG123542355324</span></div>
+                                <div class="data_num"><span class="title_small">58,310,000</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">생산번호</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">CN12345MG123542355324</span></div>
+                                <div class="data_num"><span class="title_small">58,310,000</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">기본품목</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">아반떼 CN7 하이브리드 DCT Inspiration</span></div>
+                                <div class="data_num"><span class="title_small">58,310,000</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">선택품목</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">무옵션</span></div>
+                                <div class="data_num"><span class="title_small">58,310,000</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">파츠</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">대용량 브레이크 패키지</span></div>
+                                <div class="data_num"><span class="title_small">58,310,000</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">색상/외장</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">그레이펄</span></div>
+                                <div class="data_num"><span class="title_small">-</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">색상/내장</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">블랙모노톤</span></div>
+                                <div class="data_num"><span class="title_small">-</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title">블랙모노톤</div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">AAB</span></div>
+                                <div class="data_num"><span class="title_small">-</span></div>
+                              </li>
+                            </ul>
+                            <div class="divider"></div>
+                            <ul class="data_list double_list">
+                              <li class="data_item">
+                                <div class="data_title">
+                                  <div class="body_small">상용 OT도면코드</div>
+                                </div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">AAB</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">생산번호</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">HE2 2034845</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">생산일</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">2024-01-01</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">가격유형</span></div>
+                                <div class="data_desc">
+                                  <div class="option_wrap option_xsmall">
+                                    <div class="input_area input_area_medium">
+                                      <div class="input_box input_xsmall" role="combobox" aria-controls="uio-select-outline1-1" tabindex="0">
+                                        <span class="input_text label_medium">일반가</span>
+                                        <input type="text" aria-hidden="true" class="blind" placeholder="" value="일반가">
+                                        <span class="ic ic_arrow_down_bold_16px"></span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">차대번호</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">LKJHG3284179823479554</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">요청구분</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">일반</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">주문구분</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">양산</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">재고여부</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">Y</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">차량상태</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">판촉차</span></div>
+                              </li>
+                              <li class="data_item">
+                                <div class="data_title"><span class="body_small">세금계산서(탁송료) 분리구분</span></div>
+                                <div class="data_desc text_ellipsis"><span class="body_small">분리</span></div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion accordion_dataset">
+                      <div class="accordion_item accordion_open">
+                        <div class="accordion_dataset_header">
+                          <div id="accordion_dataset_1-2" class="accordion_title">
+                            <div class="input_select_wrap">
+                              <span class="input_select_box input_select_medium">
+                                <input type="checkbox" id="all_terms_1-2" class="input_checkbox">
+                                <label for="all_terms_1-2" class="label_checkbox"><span class="label_text body_small">전체 동의하기</span></label>
+                              </span>
+                            </div>
+                            <span class="title_desc">※ 현대자동차 개인정보 활용에 전체 동의합니다.</span>
+                          </div>
+                          <div class="accordion_control">
+                            <button type="button" class="btn_accordion" aria-expanded="true" aria-controls="accordion_dataset_content_1-2" aria-labelledby="accordion_dataset_1-2"><span class="ic ic_arrow_down_regular_20px"></span></button>
+                          </div>
+                        </div>
+                        <div id="accordion_dataset_content_1-2" class="accordion_content" role="region" style="display: block">
+                          <div class="accordion_dataset_content">
+                            <div class="accordion accordion_terms">
+                              <!-- [D] 아코디언 활성화 클래스: accordion_open -->
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-1" class="input_checkbox">
+                                        <label for="term_1-2-1" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 수집/이용 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 -->
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_1-2-1">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+                                <div id="accordion_terms_content_1-2-1" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-2" class="input_checkbox">
+                                        <label for="term_1-2-2" class="label_checkbox"><span class="label_text body_small">[필수] 개인정보 제3자 제공 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_02">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_02" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-3" class="input_checkbox">
+                                        <label for="term_1-2-3" class="label_checkbox"><span class="label_text body_small">[필수] 자동차 교환/환불 중재제도 설명에 대한 이해 및 수락여부</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_03">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_03" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-4" class="input_checkbox">
+                                        <label for="term_1-2-4" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 수집/이용 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_04">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_04" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-5" class="input_checkbox">
+                                        <label for="term_1-2-5" class="label_checkbox"><span class="label_text body_small">[필수] 민감정보 제3자 제공 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_05">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_05" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-6" class="input_checkbox">
+                                        <label for="term_1-2-6" class="label_checkbox"><span class="label_text body_small">[선택] 개인정보 제3자 제공 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_06">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_06" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-7" class="input_checkbox">
+                                        <label for="term_1-2-7" class="label_checkbox"><span class="label_text body_small">[선택] 하이패스 개통 신청대행 및 선택적 개인정보 제3자 제공 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_07">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_07" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_select_wrap">
+                                      <span class="input_select_box input_select_medium">
+                                        <input type="checkbox" id="term_1-2-8" class="input_checkbox">
+                                        <label for="term_1-2-8" class="label_checkbox"><span class="label_text body_small">[선택] 마켓팅/홍보 목적 개인정보 수집/이용 동의</span></label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_08">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_08" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="accordion_item">
+                                <div class="accordion_terms_header">
+                                  <div class="accordion_title">
+                                    <div class="input_wrap">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="term_1-2-9" class="input_checkbox">
+                                          <label for="term_1-2-9" class="label_checkbox"><span class="label_text body_small">[선택] 정보 수신 채널 동의</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                    <div class="input_wrap">
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="term_1-2-10" class="input_checkbox">
+                                          <label for="term_1-2-10" class="label_checkbox"><span class="label_text body_small">문자</span></label>
+                                        </span>
+                                      </div>
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="term_1-2-11" class="input_checkbox">
+                                          <label for="term_1-2-11" class="label_checkbox"><span class="label_text body_small">이메일</span></label>
+                                        </span>
+                                      </div>
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="term_1-2-12" class="input_checkbox">
+                                          <label for="term_1-2-12" class="label_checkbox"><span class="label_text body_small">우편</span></label>
+                                        </span>
+                                      </div>
+                                      <div class="input_select_wrap">
+                                        <span class="input_select_box input_select_medium">
+                                          <input type="checkbox" id="term_1-2-13" class="input_checkbox">
+                                          <label for="term_1-2-13" class="label_checkbox"><span class="label_text body_small">전화</span></label>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="accordion_control">
+                                    <button type="button" class="btn_accordion" aria-expanded="false" aria-controls="accordion_terms_content_09">
+                                      <span class="ic ic_arrow_down_bold_16px"></span>
+                                      <span class="label_medium">내용 전체 보기</span>
+                                    </button>
+                                  </div>
+                                </div>
+                                <div id="accordion_terms_content_09" class="accordion_content" role="region">
+                                  <div class="accordion_terms_content">
+                                    <!-- terms -->
+                                    <div class="terms_wrap"></div>
+                                    <!-- // terms -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <%- include('./include/option_menu_popup.ejs') %>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

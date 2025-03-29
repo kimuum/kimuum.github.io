@@ -1,0 +1,51 @@
+<%
+const moveItems = locals.moveItems || '';
+const viewItems = locals.viewItems || '';
+const popupItems = locals.popupItems || '';
+%>
+
+<style>
+  .case_view_box{position:fixed;bottom:40px;right:40px;z-index:100;max-width:300px;padding:8px 10px;box-sizing:border-box;background:#383838}
+  .case_view{text-align:left}
+  .case_txt{display:block;margin-top:10px;color:#3478fe}
+  .btn-caseview{display:block;padding:4px 0;font-size:13px;line-height:14px;color:#e1e1e6}
+  .btn-caseview.is_active{color:#9d9d9d}
+  .case_view p{display:block;margin-top:10px;font-size:13px;line-height:14px;color:#72af54}
+  .case_view_box .btn_open{display:block;font-size:13px;line-height:17px;color:#e4df30}
+</style>
+<div class="case_view_box">
+  <button type="button" class="btn_open">CaseView Toggle</button>
+  <div class="case_view">
+    <span class="case_txt">[테마] case</span>
+    <button type="button" id="caseBtn1" class="btn-caseview">Hyundai - PC/MO Brand Font</button>
+    <button type="button" id="caseBtn2" class="btn-caseview">Kia - PC/MO Brand Font</button>
+    <button type="button" id="caseBtn3" class="btn-caseview">BO</button>
+
+    <% if (viewItems.length) { %>
+      <!-- [화면] case -->
+      <span class="case_txt">[화면] case</span>
+      <% viewItems.forEach((item) => { %>
+      <button type="button" id="<%- item.id -%>" class="btn-caseview"><%- item.text -%></button>
+      <% }) %>
+      <!-- // [화면] case -->
+    <% } %>
+
+    <% if (moveItems.length) { %>
+      <!-- [영역이동] case -->
+      <span class="case_txt">[영역이동] case</span>
+      <% moveItems.forEach((item) => { %>
+      <button type="button" class="btn-caseview" data-id="<%- item.id -%>"><%- item.text -%></button>
+      <% }) %>
+      <!-- // [영역이동] case -->
+    <% } %>
+
+    <% if (popupItems.length) { %>
+      <!-- [팝업] case -->
+      <span class="case_txt">[팝업] case</span>
+      <% popupItems.forEach((item) => { %>
+        <button type="button" class="btn-caseview" data-dialog-target="<%- item.id -%>"><%- item.text -%></button>
+      <% }) %>
+      <!-- // [팝업] case -->
+    <% } %>
+  </div>
+</div>

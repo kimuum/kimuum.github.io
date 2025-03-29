@@ -1,0 +1,26 @@
+<% const chips = locals.chips || ''; %>
+
+<ul class="chip_list">
+  <!-- [D] attribute_card 추가 클래스
+                          대표 모델명 : .chip_item_main
+                          추가 속성 클래스 : .chip_item_other
+                        -->
+  <% chips.forEach(function(chip) { %>
+    <% if (chip.isMain) { %>
+      <li class="chip_item chip_item_main">
+        <span class="chip chip_outline chip_medium">
+          <span class="chip_text body_small"><%= chip.text %></span>
+        </span>
+      </li>
+    <% } else { %>
+      <li class="chip_item<% if (chip.isOther) { %> chip_item_other <% } %>">
+        <span class="chip chip_clickable chip_outline chip_deletable chip_medium">
+          <span class="chip_text body_small"><%= chip.text %></span>
+          <button type="button" class="btn_chip_delete" aria-label="삭제">
+            <span class="ic ic_close_bold_16px"></span>
+          </button>
+        </span>
+      </li>
+    <% } %>
+  <% }); %>
+</ul>

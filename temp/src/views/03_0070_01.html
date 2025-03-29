@@ -1,0 +1,372 @@
+<%-include('./include/head.ejs',{
+  "title": "계출-0070-A-HK_출고예시 및 배정조회",
+  "listTitle": "출고예시 및 배정조회 : 03-계약출고"
+})%>
+<body class="project_sales_system">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head"></div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "계약출고", href: "#none" },
+                { text: "계약출고", href: "#none" },
+                { text: "출고예시 및 배정조회", id: "CON0069BH" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_vertical">
+                <label class="field_title title_medium">차량선택</label>
+                <div class="field_inline">
+                  <div class="field_group">
+                    <label for="select_vehicle_1-1">차종</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_small',
+                      inputVal : '승용',
+                      id : 'select_vehicle_1-1'
+                    }) %>
+                  </div>
+                  <div class="field_group">
+                    <label for="select_vehicle_1-2">대표차명</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_small',
+                      inputVal : 'GN 그랜저 GN7',
+                      id : 'select_vehicle_1-2'
+                    }) %>
+                  </div>
+                  <div class="field_group">
+                    <label for="select_vehicle_1-3">모델명</label>
+                    <%- include('./include/option_wrap.ejs', {
+                      optionWrap : 'option_small',
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_small',
+                      inputVal : '디 올 뉴 그렌저',
+                      id : 'select_vehicle_1-3'
+                    }) %>
+                  </div>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="center1-1" class="title_small">소속</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-1'
+                  }) %>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체'
+                  }) %>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-2" class="title_small">키마스터</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-2'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">계출상태</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '배정요청',
+                    id : 'center1-3'
+                  }) %>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">출고예시</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-4'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">고객구분</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-5'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">출고센터</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-6'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">특정구분</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-7'
+                  }) %>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">전동화구분</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-8'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="center1-3" class="title_small">판매채널</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_medium',
+                    inputBox : 'input_small',
+                    inputVal : '전체',
+                    id : 'center1-9'
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="period" class="title_small">배정요청일</label>
+                  <%- include('./include/date_picker.ejs', {
+                    ariaLabelledby: 'period',
+                    inlineStyle: 'width: 328px',
+                    range: true,
+                    startValue: '2025-03-01',
+                    endValue: '2025-03-31',
+                  }) %>
+                </div>
+              </div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="period" class="title_small">출고예시일</label>
+                  <%- include('./include/date_picker.ejs', {
+                    ariaLabelledby: 'period',
+                    inlineStyle: 'width: 328px',
+                    range: true,
+                    startValue: '2025-03-01',
+                    endValue: '2025-03-31',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="period" class="title_small">출고희망일</label>
+                  <%- include('./include/date_picker.ejs', {
+                    ariaLabelledby: 'period',
+                    inlineStyle: 'width: 328px',
+                    range: true,
+                    startValue: '2025-03-01',
+                    endValue: '2025-03-31',
+                  }) %>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="field_horiz">
+                <label for="" class="title_small">판매코드</label>
+                <div class="field">
+                  <div class="field_group">
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '판매코드 공통 입력',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '특화입력',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '옵션입력',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '외장컬러',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '',
+                      placeholder : '내장컬러',
+                    }) %>
+                  </div>
+                  <p class="field_desc label_medium">※ 판매코드를 직접 입력한 경우 차량선택과 무관하게, 그 외 조건 및 판매코드를 기준으로 조회됩니다.</p>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_large"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="control_section">
+            <div class="btn_group btn_group_left">
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">주문서</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">통합재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">유사재고조회</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">재고및생산계획</span></button>
+              <button type="button" class="btn btn_outline btn_primary btn_small"><span class="btn_inner_text body_small">확정요청이력조회</span></button>
+            </div>
+            <div class="btn_group">
+              <p class="row">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정요청취소</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정 자동설정</span></button>
+              </p>
+              <p class="row">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고확정</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일연기</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고예정일 당김</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">출고희망월 변경</span></button>
+              </p>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <div class="option_group">
+                  <span class="title_small">총 <strong class="num">9999</strong>개</span>
+                  <div class="date_time_box">
+                    <p class="label_medium">조회일시 YYYY-MM-DD HH:MM:SS</p>
+                    <button type="button" class="btn_reload" aria-label="새로고침">
+                      <span class="ic ic_refresh_bold_12px"></span>
+                    </button>
+                  </div>
+                  <%- include('./include/input_area.ejs', {
+                    inputArea : 'input_area_large',
+                    search: true,
+                    ariaLabel : '검색창',
+                    ariaDescribedby : '015',
+                    inputBox : 'input_small',
+                    placeholder : '검색어를 입력해주세요',
+                  }) %>
+                </div>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_outline btn_small">
+                    <span class="btn_inner_text body_small">저장</span>
+                  </button>
+                  <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                    <span class="ic ic_download_bold_16px"></span>
+                    <span class="btn_inner_text body_small">엑셀다운로드</span>
+                  </button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // 1. Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // 2. Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // 3. Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+  </body>
+  </html>

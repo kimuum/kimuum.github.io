@@ -1,0 +1,580 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0040-A-H, 기준-0040-A-K / 조직정보관리",
+  "listTitle": "지점/대리점 정보 관리 > 조직정보관리 : 01-기준정보"
+})%>
+<body class="project_sales_system" data-pagestatus="new : 2025.03.27">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보관리", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "지점/대리점 정보 관리", href: "#none" },
+                { text: "조직정보 관리", id: "B0901001" }
+              ]
+            }) %>
+            <div class="btn_group">
+              <div role="group" class="zoom_control">
+                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+                <span role="status" class="body_small" aria-live="polite">100%</span>
+                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+              </div>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_horiz">
+                <label for="" class="field_title title_small">조회조건</label>
+                <div class="field_inline">
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="" class="input_radio" name="" checked="">
+                        <label for="" class="label_radio"><span class="label_text body_small">조직명/코드</span></label>
+                      </span>
+                    </div>
+                    <div style="position: relative;">
+                      <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                        <div class="input_area input_area_large" role="combobox">
+                          <div class="input_box input_small">
+                            <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="조직명 또는 조직코드 입력">
+                            <button type="button" class="btn_clear_input" aria-label="삭제" style="display: none;">
+                              <span class="ic ic_close_circle_filled_16px"></span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="autocomplete_box shadow_4dp">
+                        <ul class="autocomplete_list" role="listbox">
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">조직명</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>B0000</strong> 조직코드</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>B0000</strong> 조직코드</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>B0000</strong> 조직코드</span></li>
+                          <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small"><strong>B0000</strong> 조직코드</span></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="" class="input_radio" name="" checked="">
+                        <label for="" class="label_radio"><span class="label_text body_small">인사조직코드</span></label>
+                      </span>
+                    </div>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_small',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '인사 조직 코드',
+                      placeholder : '4자리',
+                    }) %>
+                  </div>
+                  <div class="field_group">
+                    <div class="input_select_wrap">
+                      <span class="input_select_box input_select_medium">
+                        <input type="radio" id="" class="input_radio" name="" checked="">
+                        <label for="" class="label_radio"><span class="label_text body_small">회계코드</span></label>
+                      </span>
+                    </div>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '회계 코드',
+                      placeholder : '예) 0000-1',
+                    }) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="input_select_wrap">
+                <span class="input_select_box input_select_medium">
+                  <input type="checkbox" id="" class="input_checkbox">
+                  <label for="" class="label_checkbox"><span class="label_text body_small">조회조건저장</span></label>
+                </span>
+              </div>
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_outline btn_with_ic btn_large"><span class="ic ic_refresh_bold_20px"></span><span class="btn_inner_text title_small">초기화</span></button>
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="control_section">
+            <div class="control_inner">
+              <a href="#none" class="btn btn_outline btn_small">대리점 정보 관리</a>
+              <!-- [D] 8-2 | 폐쇄된 조직 (디자인 누락 확인 필요) -->
+              <span class="notify_text body_small">※ 2025-00-00부로 폐쇄된 조직입니다. 폐쇄일 기준으로 데이터를 조회합니다.</span>
+            </div>
+            <div class="btn_group">
+              <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">조직신설</span></button>
+              <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">조직변경</span></button>
+              <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">조직폐쇄</span></button>
+              <button type="button" class="btn btn_outline btn_small" aria-haspopup="dialog" disabled><span class="btn_inner_text body_small">수정</span></button>
+            </div>
+          </div>
+
+          <div class="panel panel_agency">
+            <div class="field_inline">
+              <div class="field_group">
+                <label for="" class="title_small">조직</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '조직 코드',
+                  placeholder : '5자리',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_large',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '조직명',
+                  placeholder : '조직명 입력',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">소속구분</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_medium',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '선택',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">인사조직코드</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '인사조직 코드',
+                  placeholder : '4자리',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">회계코드</label>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '회계코드',
+                  placeholder : '4자리-1',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">상위조직</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '상위조직 코드',
+                  placeholder : '5자리',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_medium',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '조직명',
+                  placeholder : '조직명',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">조직장</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '사번',
+                  placeholder : '사번',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '이름',
+                  placeholder : '이름',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '직급',
+                  placeholder : '직급',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '업무',
+                  placeholder : '업무',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '전화번호',
+                  placeholder : '전화번호',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">채널구분</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '선택',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">판매전담</label>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '선택',
+                }) %>
+              </div>
+              <!-- [D] 현대 -->
+              <div class="field_group">
+                <label for="" class="title_small">평가군</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '평가군 코드',
+                  placeholder : ' ',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">판촉군</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '판촉군 코드',
+                  placeholder : ' ',
+                }) %>
+              </div>
+              <!-- // [D] 현대 -->
+              <!-- [D] 기아 -->
+              <div class="field_group" style="display:none">
+                <label for="" class="title_small">평가군</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '평가군 코드',
+                  placeholder : '평가군 코드',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '평가군 명칭',
+                  placeholder : '평가군 명칭',
+                }) %>
+              </div>
+              <div class="field_group" style="display:none">
+                <label for="" class="title_small">권역군</label>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '권역군 코드',
+                  placeholder : '권역군 코드',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '권역군 명칭',
+                  placeholder : '권역군 명칭',
+                }) %>
+              </div>
+              <!-- // [D] 기아 -->
+              <div class="field_group">
+                <label for="" class="title_small">개점일</label>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '개점일',
+                  placeholder : 'YYYY-MM-DD',
+                }) %>
+
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">폐쇄일</label>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '폐쇄일',
+                  placeholder : 'YYYY-MM-DD',
+                }) %>
+              </div>
+            </div>
+            <div class="field_vertical">
+              <label for="" class="field_title title_medium">조직노출/숨김관리</label>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="" class="title_xsmall">국내판매시스템</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_large',
+                    inputBox : 'input_small',
+                    tabindex : true,
+                    inputVal : '노출',
+                  }) %>
+                </div>
+                <!-- [D] 기아 -->
+                <div class="field_group" style="display:none">
+                  <label for="" class="title_xsmall">연계사이트(영업현장,기아닷컴)</label>
+                  <%- include('./include/option_wrap.ejs', {
+                    optionWrap : 'option_small',
+                    inputArea : 'input_area_large',
+                    inputBox : 'input_small',
+                    tabindex : true,
+                    inputVal : '숨김',
+                  }) %>
+                </div>
+                <!-- // [D] 기아 -->
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="field_horiz">
+              <div class="field_vertical">
+                <label for="" class="title_small">주소</label>
+                <div class="field_inline">
+                  <div class="field_group">
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_small',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '우편번호',
+                      placeholder : '우편번호',
+                    }) %>
+                    <%- include('./include/input_area.ejs', {
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '도로명, 건물명, 지번 주소',
+                      placeholder : '도로명, 건물명, 지번 주소',
+                    }) %>
+
+                    <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">주소검색</span></button>
+                  </div>
+                  <%- include('./include/input_area.ejs', {
+                    inlineStyle : 'width: 100%',
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '상세 주소',
+                    placeholder : '상세 주소',
+                  }) %>
+                </div>
+              </div>
+              <!-- [D] 현대 -->
+              <div class="field_vertical">
+                <label for="" class="title_small">GPS좌표</label>
+                <div class="field">
+                  <div class="field_inline">
+                    <label for="" class="title_xsmall">위도</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '위도',
+                      placeholder : '127.000000',
+                    }) %>
+                    <label for="" class="title_xsmall">경도</label>
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_medium',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '경도',
+                      placeholder : '37.000000',
+                    }) %>
+                    <button type="button" class="btn btn_fill btn_primary btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">등록</span></button>
+                  </div>
+                  <!-- svg 아이콘 업데이트 필요 -->
+                  <p class="field_desc label_medium"><span class="ic ic_refresh_regular_12px"></span>업데이트 정보 : 일시 YYYY-MM-DD / 사번 0000000</p>
+                </div>
+              </div>
+              <!-- // [D] 현대 -->
+            </div>
+            <div class="field_inline">
+              <div class="field_group">
+                <label for="" class="title_small">전화번호</label>
+                <!-- 확인 필요 | 기획서: 전화번호 앞자리 옵션 선택 != 디자인: 텍스트 input -->
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '02',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '전화번호 중간 4자리',
+                  placeholder : '1234',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '전화번호 뒷 4자리',
+                  placeholder : '5678',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">팩스번호</label>
+                <!-- 확인 필요 | 기획서: 팩스번호 앞자리 옵션 선택 != 디자인: 텍스트 input -->
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '02',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '팩스번호 중간 4자리',
+                  placeholder : '1234',
+                }) %>
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '팩스번호 뒷 4자리',
+                  placeholder : '5678',
+                }) %>
+              </div>
+              <div class="field_group">
+                <label for="" class="title_small">대표배달지역</label>
+                <!-- 확인 필요 | 기획서: 팝업 노출 != 디자인: 옵션 선택 -->
+                <%- include('./include/input_area.ejs', {
+                  inputArea : 'input_area_small',
+                  inputBox : 'input_suffix input_small',
+                  ariaLabel : '대표배달지역 코드',
+                  placeholder : ' ',
+                }) %>
+                <%- include('./include/option_wrap.ejs', {
+                  optionWrap : 'option_small',
+                  inputArea : 'input_area_medium',
+                  inputBox : 'input_small',
+                  tabindex : true,
+                  inputVal : '선택',
+                }) %>
+              </div>
+            </div>
+            <div class="field_vertical">
+              <label class="field_title title_medium">사무실</label>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="">평수(전용)</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '평수',
+                    placeholder : '예) 00평',
+                  }) %>
+                </div>
+                <div class="field_group">
+                  <label for="">층수</label>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    ariaLabel : '층수',
+                    placeholder : '예) 1층',
+                  }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <strong class="title_large">관리 전시장 정보</strong>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">전시장 추가</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">전시장 삭제</span></button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <strong class="title_large">조직 변경이력</strong>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">변경이력 수정</span></button>
+                  <button type="button" class="btn btn_fill btn_primary_higher btn_small" aria-haspopup="dialog"><span class="btn_inner_text body_small">변경이력 삭제</span></button>
+                </div>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+          <!-- [D] 현대 -->
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <strong class="title_large">조직 포상이력</strong>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+          <!-- // [D] 현대 -->
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+                <strong class="title_large">관할구역(법정동)</strong>
+              </div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+
+</body>
+</html>

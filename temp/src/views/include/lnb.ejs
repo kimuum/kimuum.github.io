@@ -1,0 +1,194 @@
+<!-- [D] 서브메뉴 활성화 상태 : is_active 클래스 & 각 컨트롤 버튼에 aria-expanded="true" & 서브메뉴 aria-hidden="false" -->
+<aside id="lnb" class="lnb">
+  <nav>
+    <div class="lnb_menu_main">
+      <div class="main_inner_top">
+        <button type="button" class="btn_lnb_main_control" aria-label="메뉴 펼치기" aria-expanded="false" aria-controls="lnb_menu_sub">
+          <span class="ic ic_menu_bold_32px"></span>
+        </button>
+        <ul class="menu_list" role="menu" aria-label="주메뉴">
+          <!-- [D] 활성화 상태 : is_selected 클래스 & aria-selected="true" -->
+          <li class="menu_item is_selected">
+            <button type="button" class="btn_menu" role="menuitem" aria-selected="true">
+              <span class="ic ic_favorite"></span>
+              <span class="menu_text">즐겨찾기</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_contract"></span>
+              <span class="menu_text">계출관리</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_logistics"></span>
+              <span class="menu_text">물류운영</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_sale_info"></span>
+              <span class="menu_text">판매정보</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_sale_support"></span>
+              <span class="menu_text">판매지원</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_sale_finance"></span>
+              <span class="menu_text">판매금융</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_baseline"></span>
+              <span class="menu_text">기준정보</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_system"></span>
+              <span class="menu_text">시스템<br>관리</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_online_mall"></span>
+              <span class="menu_text">온라인몰</span>
+            </button>
+          </li>
+          <li class="menu_item">
+            <button type="button" class="btn_menu" role="menuitem">
+              <span class="ic ic_home"></span>
+              <span class="menu_text">메인화면</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="main_inner_bottom">
+        <a href="#none" class="bottom_link" aria-label="조직도">
+          <span class="ic ic_sales_network_informaion_regular_24px"></span>
+        </a>
+        <a href="#none" class="bottom_link" aria-label="설정">
+          <span class="ic ic_settings_regular_24px"></span>
+        </a>
+      </div>
+    </div>
+    <div id="lnb_menu_sub" class="lnb_menu_sub" aria-hidden="true">
+      <div class="sub_inner_top">
+        <!-- [D] HDS - autocomplete -->
+        <div style="position: relative;">
+          <div class="autocomplete_wrap autocomplete_medium"><!-- open: class="autocomplete_open" -->
+            <div class="input_area input_area_large" role="combobox">
+              <div class="input_box input_medium input_box_radius">
+                <span class="ic ic_search_bold_16px"></span>
+                <input type="text" aria-label="autocomplete" class="input_text body_small" placeholder="화면검색">
+                <button type="button" class="btn_clear_input" aria-label="삭제" style="display: none;">
+                  <span class="ic ic_close_circle_filled_16px"></span>
+                </button>
+                <button type="button" class="btn_autocomplete_toggle" aria-label="닫기">
+                  <span class="ic ic_arrow_down_bold_16px"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="autocomplete_box shadow_4dp">
+            <ul class="autocomplete_list" role="listbox">
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-010</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;출고관리&gt;고객확인서 <strong>P-01-0</strong>2-015</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-031</span></li>
+              <li class="autocomplete_item" role="option"><span class="autocomplete_text body_small">계약출하관리&gt;계출관리&gt;매매주문서 <strong>P-01-0</strong>2-009</span></li>
+            </ul>
+          </div>
+        </div>
+        <!-- // [D] HDS - autocomplete -->
+        <button type="button" class="btn_all_menu">
+          <span class="body_small">전체메뉴 접기</span>
+          <span class="ic ic_ascending_bold_24px"></span>
+        </button>
+      </div>
+      <div class="sub_inner_middle">
+        <div class="lnb_content">
+          <%- include('./tree.ejs', {
+            treeItems : [
+              {
+                stateClass : 'tree_expanded tree_selected',
+                stateValue : true,
+                title : '즐겨찾기 메뉴 모음집',
+                children : [
+                  {
+                    title : 'depth03 depth03',
+                    favoriteBtn: true,
+                    showMore : true
+                  },
+                  {
+                    title : 'depth03 depth03 depth03 depth03 depth03',
+                    favoriteBtn: true,
+                    showMore : true
+                  },
+                  {
+                    title : 'depth03',
+                    favoriteBtn: true,
+                    showMore : true
+                  },
+                  {
+                    title : 'depth03',
+                    favoriteBtn: true,
+                    showMore : true,
+                  },
+                ],
+              },
+              {
+                stateClass : 'tree_expanded',
+                stateValue : true,
+                title : 'depth02 depth02',
+                children : [
+                  {
+                    title : 'depth03 depth03',
+                    stateClass : 'tree_expanded',
+                    stateValue : true,
+                    children : [
+                      {title : 'depth04 depth04', inlineStyle: 'padding-left: 24px'},
+                      {title : 'depth04 depth04 depth04 ', inlineStyle: 'padding-left: 24px'},
+                      {title : 'depth04 depth04 depth04 depth04', inlineStyle: 'padding-left: 24px'},
+                    ],
+                  },
+                  {title : 'depth03 depth03 depth03 depth03 depth03'},
+                  {title : 'depth03'},
+                  {title : 'depth03',},
+                ],
+              },
+              {
+                stateClass : 'tree_expanded',
+                stateValue : true,
+                title : 'depth02 depth02',
+                children : [
+                  {title : 'depth03 depth03', favoriteBtn: true,},
+                  {title : 'depth03 depth03', favoriteBtn: true},
+                  {title : 'depth03 depth03 depth03 depth03 depth03', favoriteBtn: true},
+                ],
+              },
+            ],
+          }) %>
+        </div>
+      </div>
+      <div class="sub_inner_bottom">
+        <p class="version">버전 1.001.0.0</p>
+        <a href="#none" class="terms">개인정보처리방침 - 약관</a>
+      </div>
+
+    </div>
+    <div class="lnb_control_btn_box">
+      <button type="button" class="btn_lnb_sub_control" aria-label="메뉴 접기" aria-expanded="false" aria-controls="lnb_menu_sub">
+        <span class="ic ic_arrow_forward_regular_20px"></span>
+      </button>
+    </div>
+  </nav>
+</aside>

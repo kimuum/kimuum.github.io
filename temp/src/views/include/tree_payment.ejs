@@ -1,0 +1,68 @@
+<%
+const treeItems = locals.treeItems || [];
+const treeMenuBtn = locals.treeMenuBtn || true;
+%>
+
+<% let index = 1; %>
+<div class="tree tree_line tree_small tree_payment">
+  <ul class="tree_list" role="tree">
+    <% treeItems.forEach((depth02) => { %>
+      <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth02.stateValue %>">
+        <!-- [D] 트리 확장 : tree_expanded 클래스 추가 & aria-expanded="true" -->
+        <div class="tree_box <%- depth02.stateClass || '' %>">
+          <div class="tree_box_inner">
+            <div class="tree_text">
+              <span class="title_small"><%- depth02.title || '' %></span>
+              <button type="button" class="tree_menu_btn">
+                <span class="ic ic_arrow_forward_bold_16px"></span>
+              </button>
+              <span class="title_small text_ellipsis num"><%- depth02.num || '' %></span>
+            </div>
+          </div>
+        </div>
+        <% if (depth02.children) { %>
+        <ul class="tree_list" role="group">
+          <% depth02.children.forEach((depth03) => { %>
+            <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth03.stateValue %>">
+              <div class="tree_box <%- depth03.stateClass || '' %>" style="padding-left: 12px">
+                <div class="tree_box_inner">
+                  <div class="tree_text">
+                    <span class="title_small"><%- depth03.title || '' %></span>
+                    <% if (depth03.treeMenuBtn !== false && treeMenuBtn) { %>
+                      <button type="button" class="tree_menu_btn">
+                        <span class="ic ic_arrow_forward_bold_16px"></span>
+                      </button>
+                    <% } %>
+
+                    <% if (depth03.emphasis) { %>
+                      <!-- [D] 색상 강조 필요할 경우 emphasis 클래스 추가 -->
+                    <% } %>
+                    <span class="title_small text_ellipsis num <%- depth03.emphasis ? 'emphasis' : null %>"><%- depth03.num || '' %></span>
+                  </div>
+                </div>
+              </div>
+              <% if (depth03.children) { %>
+              <ul class="tree_list" role="group">
+                <!-- [D] 임시 : 추후 디자인 가이드 확정시 인라인 스타일 수정 예정 입니다. -->
+                <% depth03.children.forEach((depth04) => { %>
+                  <li class="tree_item" role="treeitem" aria-expanded="<%- !!depth04.stateValue %>">
+                    <div class="tree_box" style="padding-left: 26px">
+                      <div class="tree_box_inner">
+                        <div class="tree_text">
+                          <span class="label_medium"><%- depth04.title || '' %></span>
+                          <span class="label_medium text_ellipsis num"><%- depth04.num || '' %></span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                <% }) %>
+              </ul>
+              <% } %>
+            </li>
+          <% }) %>
+        </ul>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+</div>

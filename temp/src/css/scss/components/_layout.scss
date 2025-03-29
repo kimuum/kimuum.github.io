@@ -159,6 +159,20 @@
   flex-wrap: wrap;
   margin-bottom: 20px;
 
+  + .control_section {
+    padding-top: 24px;
+  }
+
+  + .panel {
+    + .control_section {
+      margin-top: 24px;
+    }
+  }
+
+  + .tabs_section {
+    margin-top: 32px;
+  }
+
   // 자식이 2개 이상이면 좌/우 배치
   &:has(> :nth-child(2)) {
     justify-content: space-between;
@@ -170,15 +184,13 @@
     }
   }
 
-  & + .panel {
-    & + .control_section {
-      margin-top: 24px;
-    }
-  }
-
   .control_inner {
+    @include flexbox;
+    @include align-items(center);
+    gap: 8px;
+
     .notify_text {
-      margin-left: 12px;
+      margin-left: 4px;
     }
   }
 }
@@ -282,11 +294,8 @@
   &_large {
     width: 240px;
   }
-}
-
-.dialog {
   &_xlarge {
-    width: 980px;
+    width: 320px;
   }
 }
 
