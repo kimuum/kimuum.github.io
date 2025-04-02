@@ -1,0 +1,25 @@
+<% const btnCopy = locals.btnCopy || false; %>
+<% const btnInfo = locals.btnInfo || false; %>
+
+<%# include 사용 예시:
+  include('./include/utility_toolbar.ejs', {
+    btnCopy: true // 링크 복사 버튼,
+    btnInfo: true // 안내(도움말) 버튼
+  }) %>
+%>
+
+<div class="btn_group">
+  <div role="group" class="scale_control">
+    <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
+    <span role="status" class="body_small" aria-live="polite">100%</span>
+    <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
+  </div>
+  <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
+  <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
+  <% if(btnCopy) { %>
+  <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="링크 복사"><span class="ic ic_link_bold_16px"></span></button>
+  <% } %>
+  <% if(btnInfo) { %>
+  <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
+  <% } %>
+</div>

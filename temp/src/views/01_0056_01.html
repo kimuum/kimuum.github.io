@@ -1,5 +1,5 @@
 <%-include('./include/head.ejs',{
-  "title": "기준-0056-A-HK / 나의 결재함",
+  "title": "기준-0056-A-HK, 기준-0056-B-HK, 기준-0056-C-HK, 기준-0056-D-HK, 기준-0056-E-HK, 기준-0056-F-HK / 나의 결재함",
   "listTitle": "결제선 관리 > 나의 결재함_홈 : 01-기준정보"
 })%>
 <body class="project_sales_system" data-pagestatus="new : 2025.03.27">
@@ -64,16 +64,9 @@
                 { text: "나의 결재함", id: "CON0001BH" }
               ]
             }) %>
-            <div class="btn_group">
-              <div role="group" class="zoom_control">
-                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
-                <span role="status" class="body_small" aria-live="polite">100%</span>
-                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
-              </div>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
-              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
-            </div>
+            <%- include('./include/utility_toolbar.ejs', {
+              btnInfo: true
+            }) %>
           </div>
           <div class="control_section">
             <h2 class="title_xlarge">나의 결재함</h2>
@@ -227,7 +220,8 @@
               </li>
             </ul>
           </div>
-          <!-- 추가 케이스 및 스크립트 적용 확인 필요 -->
+          <!-- 라이브러리 적용 확인 필요 -->
+          <!-- 즐겨찾기 화면별 결재문서 현황(조회) -->
           <div class="panel panel_bookmark">
             <div class="panel_header">
               <div class="panel_title">
@@ -326,6 +320,89 @@
               </li>
             </ul>
           </div>
+          <!-- 즐겨찾기 화면별 결재 문서 현황(미등록) -->
+          <div class="panel panel_bookmark" style="display:none">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="title_large">즐겨찾기 화면별 결재문서 현황</span>
+                <span class="title_desc body_small">화면별 ‘수신'문서의 결재상태 개수가 표시됩니다. 버튼을 클릭하면, 지정한 화면으로 이동합니다.</span>
+              </div>
+            </div>
+            <ul class="list_wrap">
+              <li class="list_item">
+                <span class="list_desc_box">
+                  <span class="body_small">즐겨찾기 화면이 없습니다.<br>추가 버튼을 클릭하여, 자주 사용하는 화면을 등록해 보세요.</span>
+                </span>
+                <button type="button" class="btn btn_outline btn_add_bookmark btn_small"><span class="btn_inner_text body_small" aria-haspopup="dialog">화면 추가</span></button>
+              </li>
+            </ul>
+          </div>
+          <!-- 즐겨찾기 화면별 결재 문서 현황(편집) -->
+          <div class="panel panel_bookmark" style="display:none">
+            <div class="panel_header">
+              <div class="panel_title">
+                <span class="title_large">즐겨찾기 화면별 결재문서 현황</span>
+                <span class="title_desc body_small">즐겨찾기 편집기능 안내문구에 대한 디자인 가이드가 필요합니다.</span>
+              </div>
+              <div class="btn_group">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">취소</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">저장</span></button>
+              </div>
+            </div>
+            <ul class="list_wrap">
+              <li class="list_item">
+                <a href="#none" class="list_link" disabled>
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">판매조건결재</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">-</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small">-</strong></span>
+                  </span>
+                </a>
+                <button type="button" class="btn btn_only_ic btn_delete" aria-label="삭제" style="display:none"><span class="ic ic_close_circle_filled_24px"></span></button>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link" disabled>
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">실적변경 의뢰</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">-</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small">-</strong></span>
+                  </span>
+                </a>
+                <button type="button" class="btn btn_only_ic btn_delete" aria-label="삭제" style="display:none"><span class="ic ic_close_circle_filled_24px"></span></button>
+              </li>
+              <li class="list_item">
+                <a href="#none" class="list_link" disabled>
+                  <span class="list_title_box">
+                    <strong class="list_text title_medium">통합의뢰</strong>
+                    <span class="text_amount body_medium"><strong class="title_medium">-</strong>건</span>
+                  </span>
+                  <span class="list_desc_box">
+                    <span class="text_state body_small">대기<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">진행중<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">완료<strong class="title_small">-</strong></span>
+                    <span class="text_state body_small">반려<strong class="title_small">-</strong></span>
+                  </span>
+                </a>
+                <button type="button" class="btn btn_only_ic btn_delete" aria-label="삭제" style="display:none"><span class="ic ic_close_circle_filled_24px"></span></button>
+              </li>
+              <li class="list_item">
+                <span class="list_desc_box">
+                  <span class="body_small">추가 버튼을 클릭하여, 화면을 등록하세요.</span>
+                </span>
+                <button type="button" class="btn btn_outline btn_add_bookmark btn_small"><span class="btn_inner_text body_small" aria-haspopup="dialog">화면 추가</span></button>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </main>
@@ -333,5 +410,73 @@
   </div>
   <%-include('./include/script.ejs')%>
 
+  <!-- [D] 마크업 검수용 | 개발 제외 -->
+  <%- include('./include/caseview.ejs', {
+    moveItems : [
+      {id : 'bookmark', text : '즐겨찾기 화면별 결재 문서 현황 - 조회'},
+      {id : 'bookmark', text : '즐겨찾기 화면별 결재 문서 현황 - 미등록'},
+      {id : 'bookmark', text : '즐겨찾기 화면별 결재 문서 현황 - 편집'},
+    ]
+  }) %>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+      // 즐겨찾기 화면별 결재문서 현황
+      $('button[data-id="bookmark"]').on('click', function() {
+        let idx = $('button[data-id="bookmark"]').index(this);
+        let panelBookmark = $('.panel_bookmark').eq(idx);
+
+        panelBookmark.show().siblings('.panel_bookmark').hide();
+
+        panelBookmark.find('.list_link[disabled]').each(function() {
+          $(this)
+            .off('focus blur')
+            .on('focus', function() {
+              $(this).siblings('.btn_delete').show();
+            })
+            .on('blur', function() {
+              $(this).siblings('.btn_delete').hide();
+            });
+        });
+
+        let firstLink = panelBookmark.find('.list_link[disabled]').eq(0);
+        if (firstLink.length) {
+          firstLink.focus();
+        }
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용 | 개발 제외 -->
 </body>
 </html>

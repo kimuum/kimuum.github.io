@@ -6,7 +6,7 @@ const search = locals.search || false;
 const id = locals.id || '';
 const ariaLabel = locals.ariaLabel !== undefined ? (locals.ariaLabel || 'Text Field') : undefined;
 const ariaDescribedby = locals.ariaDescribedby || '';
-const placeholder = locals.placeholder || 'Placeholder';
+const placeholder = locals.placeholder !== undefined ? (locals.placeholder === false ? '' : (locals.placeholder || 'Placeholder')) : undefined;
 const value = locals.value || '';1
 const readonly = locals.readonly || false;
 const disabled = locals.disabled || false;
@@ -41,7 +41,7 @@ const inputDesc = locals.inputDesc !== undefined ? (locals.inputDesc === false ?
     id: 'input과 label 연결 ID',
     ariaLabel: 'label 미사용 시 접근성 보완 (없으면 제외, 빈 값이면 "Text Field" 기본값, 특정 값 입력 가능)',
     ariaDescribedby: '설명 텍스트와 연결 (예: input_desc ID)',
-    placeholder: '미입력 시 기본값 "Placeholder"',
+    placeholder: '속성 선언 없을 시 미노출, ''공백으로 입력 시 기본값 "Placeholder"',
     value: '입력 값 (없으면 빈 값)',
     readonly: true  // 읽기 전용 필드
     disabled: true  // 비활성화 필드
@@ -59,7 +59,7 @@ const inputDesc = locals.inputDesc !== undefined ? (locals.inputDesc === false ?
     <%- id ? `id="${id}"` : '' %>
     <%- ariaLabel !== undefined ? `aria-label="${ariaLabel || 'Text Field'}"` : '' %>
     <%- ariaDescribedby ? `aria-describedby="uio-text-desc${ariaDescribedby}"` : '' %>
-    <%- placeholder ? `placeholder="${placeholder}"` : 'Placeholder' %>
+    <%- (placeholder !== undefined ? `placeholder="${placeholder}"` : '') %>
     <%- value ? `value="${value}"` : '' %>
     <%- readonly ? `readonly` : '' %>
     <%- disabled ? `disabled` : '' %>>

@@ -87,16 +87,10 @@
                   </button>
                 </li>
               </ul>
-              <div class="btn_group">
-                <div role="group" class="zoom_control">
-                  <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
-                  <span role="status" class="body_small" aria-live="polite">100%</span>
-                  <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
-                </div>
-                <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
-                <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
-                <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
-              </div>
+              <%- include('./include/utility_toolbar.ejs', {
+                btnCopy: true,
+                btnInfo: true
+              }) %>
             </div>
           </div>
 
@@ -123,6 +117,91 @@
                 </div>
                 <div class="btn_group">
                   <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">즐겨찾기 편집</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h2 class="uio_tit">메타 데이터</h2>
+          <ul class="uio_sub_list">
+            <li class="uio_sub_desc">정보성 텍스트 영역으로 <em class="badge badge_small badge_info label_medium">info_meta_group</em> class명을 갖고 있고, <em class="badge badge_small badge_low label_medium">row</em> <em class="badge badge_small badge_low label_medium">col</em> <em class="badge badge_small badge_low label_medium">Space between</em> 형태를 중복 선언할 수 있다.</li>
+          </ul>
+          <div class="uio_box">
+            <div class="panel">
+              <div class="info_meta_group">
+                <div class="info_meta">
+                  <span class="title title_small">차량정보</span>
+                  <span class="body_small">디 올 뉴 그랜저 런칭 자가용 익스클루시브 가솔린2.5 2WD</span>
+                </div>
+                <div class="info_meta">
+                  <span class="title title_small">선택사양</span>
+                  <span class="body_small">현대스마트센스, 헤드업 디스플레이, 파노라마 선루프</span>
+                </div>
+                <div class="info_meta">
+                  <span class="title title_small">색상</span>
+                  <span class="body_small">트랜스블루펄 / 블랙모노톤</span>
+                </div>
+                <div class="info_meta">
+                  <span class="title title_small">판매코드</span>
+                  <span class="body_small">GN7C31G2AAC101051001/FFF/GGG</span>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="info_meta_group">
+                <div class="info_meta">
+                  <span class="title title_small">계약번호</span>
+                  <div class="field_group">
+                    <%- include('./include/input_area.ejs', {
+                      inputArea : 'input_area_large',
+                      inputBox : 'input_suffix input_small',
+                      ariaLabel : '계약번호',
+                      placeholder : '계약번호 입력',
+                    }) %>
+                    <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">계약번호검색</span></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="info_meta_group col">
+                <div class="info_meta">
+                  <span class="title_small">소속</span>
+                  <div class="inline_list">
+                    <span class="item body_small">동부지역본부</span>
+                    <span class="item body_small">양재지점</span>
+                    <span class="item body_small">카마스터</span>
+                    <span class="item body_small">김현대</span>
+                  </div>
+                </div>
+                <div class="info_meta">
+                  <div class="title_small">계약번호</div>
+                  <div class="body_small">23A00000000</div>
+                </div>
+                <div class="info_meta">
+                  <div class="title_small">계약자</div>
+                  <div class="body_small">홍길동</div>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="info_meta_group space">
+                <div class="info_meta">
+                  <span class="title title_small">결재상태</span>
+                  <div class="inline_list">
+                    <span class="item body_small">동부지역본부</span>
+                    <span class="item body_small">양재지점</span>
+                    <span class="item body_small">카마스터</span>
+                    <span class="item body_small">김현대</span>
+                  </div>
+                </div>
+                <div class="info_meta">
+                  <div class="title title_small">결재상태</div>
+                  <div class="body_small">진행 중</div>
+                </div>
+                <div class="info_meta">
+                  <div class="title title_small">전결권자</div>
+                  <div class="body_small">계출운영팀장</div>
                 </div>
               </div>
             </div>

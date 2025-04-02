@@ -87,8 +87,9 @@
     .panel {
       gap: 24px 0;
       margin-bottom: 0;
-      border-radius: 10px 10px 0 0;
-
+      &:not(:last-of-type) {
+        border-radius: 10px 10px 0 0;
+      }
       &_bottom {
         border-radius: 0 0 10px 10px;
       }
@@ -228,18 +229,18 @@
   &_notify {
     width: 100%;
     padding:0 0 24px;
-  }
 
-  &_item {
-    padding-left: 6px;
-    background-color: transparent;
+    .list_item {
+      padding-left: 6px;
+      background-color: transparent;
 
-    & + .list_item {
-      margin-top: 6px;
-    }
+      & + .list_item {
+        margin-top: 6px;
+      }
 
-    .ic_select_checkbox_checked_24px {
-      @include inline-svg-size(24px, 24px, "ic_select_checkbox_checked_24px", map-get($hyundai-colors, primary), none, map-get($hyundai-colors, on_primary));
+      .ic_select_checkbox_checked_24px {
+        @include inline-svg-size(24px, 24px, "ic_select_checkbox_checked_24px", map-get($hyundai-colors, primary), none, map-get($hyundai-colors, on_primary));
+      }
     }
   }
 
@@ -283,19 +284,72 @@
   }
 }
 
-// Inputs Size (width)
-.input_area {
-  &_small {
-    width: 80px;
+.info_meta_group {
+  width: 100%;
+  align-items: center;
+
+  .info_meta {
+    display: flex;
+    gap: 24px;
+    & + .info_meta {
+      margin-top: 12px;
+    }
+    .title {
+      min-width: 120px;
+    }
   }
-  &_medium {
-    width: 160px;
+
+  &.col {
+    display: flex;
+    gap: 48px;
+    .info_meta {
+      display: block;
+      position: relative;
+      flex: auto;
+      &:not(:only-child) {
+        &:not(:first-child) {
+          &::before {
+            position:absolute;
+            left: -24px;
+            top: 5px;
+            bottom: 5px;
+            display: inline-block;
+            width: 1px;
+            background-color: var(--outline_lowest);
+            vertical-align: middle;
+            content: "";
+          }
+        }
+      }
+      & + .info_meta {
+        margin-top: 0;
+      }
+    }
   }
-  &_large {
-    width: 240px;
+
+  &.space {
+    .info_meta {
+      justify-content: space-between;
+    }
   }
-  &_xlarge {
-    width: 320px;
+}
+
+.inline_list {
+  .item {
+    vertical-align: middle;
+    &:not(:only-child) {
+      &:not(:first-child) {
+        &::before {
+          display: inline-block;
+          width: 1px;
+          height: 12px;
+          margin: 0 8px;
+          background-color: var(--outline_low);
+          vertical-align: middle;
+          content: "";
+        }
+      }
+    }
   }
 }
 

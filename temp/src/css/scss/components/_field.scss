@@ -46,6 +46,9 @@
     &_group {
       gap: 0 8px;
     }
+    & + .field_vertical {
+      margin-top: 24px;
+    }
   }
 
   &_horiz {
@@ -78,6 +81,36 @@
         padding-top: 16px;
       }
     }
+    &:has(.btn_group) {
+      gap: 16px;
+    }
+  }
+}
+
+label + .tooltip-area {
+  margin-left: 4px;
+}
+
+// Datepicker
+.datepicker {
+  &_small {
+    width: 153px;
+  }
+}
+
+// Inputs Size (width)
+.input_area {
+  &_small {
+    width: 80px;
+  }
+  &_medium {
+    width: 160px;
+  }
+  &_large {
+    width: 240px;
+  }
+  &_xlarge {
+    width: 320px;
   }
 }
 
@@ -90,15 +123,48 @@
   }
 }
 
-.input_area .ic {
-}
-
-label + .tooltip-area {
-  margin-left: 4px;
-}
-
-.datepicker {
-  &_small {
-    width: 153px;
+// Select
+.option_wrap {
+  .input_text {
+    @include ellipsis;
   }
+}
+
+.option_medium {
+  .input_select_box {
+    .input_checkbox {
+      padding: 4px 0 4px 12px;
+    }
+    .label_checkbox {
+      padding: 4px 12px 6px 4px;
+    }
+  }
+}
+
+.option_group {
+  &_header {
+    padding: 12px;
+    border-bottom: 1px solid var(--outline_ultimate);
+
+    .field_group {
+      > label {
+        margin-right: 8px;
+      }
+    }
+  }
+  &_footer {
+    padding: 8px 12px 12px 12px;
+    border-top: 1px solid var(--outline_ultimate);
+  }
+  .option_list {
+    max-height: unset;
+  }
+  .divider {
+    border-style: dashed;
+  }
+}
+
+.filter_option_box {
+  min-width: 160px;
+  width: auto !important;
 }

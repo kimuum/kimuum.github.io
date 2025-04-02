@@ -28,16 +28,9 @@
                 { text: "판매코드관리", id: "CON0001BH" }
               ]
             }) %>
-            <div class="btn_group">
-              <div role="group" class="zoom_control">
-                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
-                <span role="status" class="body_small" aria-live="polite">100%</span>
-                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
-              </div>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
-              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
-            </div>
+            <%- include('./include/utility_toolbar.ejs', {
+              btnInfo: true
+            }) %>
           </div>
           <div class="panel">
             <div class="field_inline">
@@ -51,11 +44,22 @@
                   ]
                 }) -%>
               </div>
+
+              <!-- [D] 차종 선택 - 기아 -->
+              <div class="field_group" style="display: none;">
+                <strong class="title_small">차종</strong>
+                <%- include('./include/btn_group_attached.ejs', {
+                  btnItems : [
+                    {classList: 'btn_outline btn_small', text : '승용', active : true},
+                    {classList: 'btn_outline btn_small', text : '소상'},
+                    {classList: 'btn_outline btn_small', text : '버스'},
+                    {classList: 'btn_outline btn_small', text : '군수'},
+                  ]
+                }) -%>
+              </div>
             </div>
             <div class="field_vertical">
-              <div class="field_group">
-                <strong class="title_small">판매코드(NCS) 공통 고정 영역 (14자리)</strong>
-              </div>
+              <strong class="title_small">판매코드(NCS) 공통 고정 영역 (14자리)</strong>
               <div class="btn_group">
                 <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">차량<span> (4)</span></span></button>
                 <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">연식<span> (2)</span></span></button>
@@ -122,16 +126,13 @@
           <!-- Tab Content: 특화코드관리 -->
           <div role="tabpanel" id="tabpanel_1-1" class="tab_content" aria-labelledby="tab_1-1" tabindex="0">
             <div class="panel">
-              <div class="panel_header">
-                <div class="panel_title">
-                  <strong class="title_small">판매코드(NCS) 특화 영역 관리 (2자리)</strong>
-
+              <div class="field_vertical">
+                <strong class="title_small">판매코드(NCS) 특화 영역 관리 (2자리)</strong>
+                <div class="btn_group">
+                  <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">용도<span> (1)</span></span></button>
+                  <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">장애구분<span> (1)</span></span></button>
+                  <button type="button" class="btn btn_outline btn_with_ic btn_xsmall"><span class="ic ic_plus_bold_16px"></span><span class="btn_inner_text body_small">추가</span></button>
                 </div>
-              </div>
-              <div class="btn_group">
-                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">용도<span> (1)</span></span></button>
-                <button type="button" class="btn btn_outline btn_small"><span class="btn_inner_text body_small">장애구분<span> (1)</span></span></button>
-                <button type="button" class="btn btn_outline btn_with_ic btn_xsmall"><span class="ic ic_plus_bold_16px"></span><span class="btn_inner_text body_small">추가</span></button>
               </div>
             </div>
           </div>
@@ -151,23 +152,21 @@
                   <div class="configure_manage_top">
                     <strong class="title_small">세부모델명</strong>
                     <div class="model_chips">
-                      <%- include('./include/chip_list.ejs', {
+                      <!-- [D] attribute_card 추가 클래스
+                        대표 모델명 : .chip_item_main
+                        추가 속성 클래스 : .chip_item_other
+                      -->
+                      <%- include('./include/chip_list copy.ejs', {
                         chips: [
                           {
-                            isMain: true,
-                            text: '디 올 뉴 그랜저',
-                          },
-                          {text: '가솔린 2.5'},
-                          {text: '익스클루시브'},
-                          {text: '일반용'},
-                          {
-                            text: '19인치 알로이 휠&타이어',
-                            isOther : true
-                          },
+                            chipClassList : 'chip chip_fill chip_small',
+                            chipTextClassList : 'body_small',
+                            text : '일반용'
+                          }
                         ]
                       }) %>
                       <div class="model_desc">
-                        <p class="body_small color_red">※ 컨피규레이션 트리가 아직 생성되지 않았으므로, 세부모델명의 예시는 실제와 다를 수있습니다.</p>
+                        <p class="">※ 컨피규레이션 트리가 아직 생성되지 않았으므로, 세부모델명의 예시는 실제와 다를 수있습니다.</p>
                       </div>
                     </div>
                   </div>
@@ -196,8 +195,7 @@
                             title: '트림',
                             visible: true,
                           },
-                          {title: '연승'},
-                          {
+                          {title: '연승'},{
                             title: '용도',
                             visible: true,
                           },
@@ -281,8 +279,7 @@
   <!-- [D] 마크업 검수용, 개발제외 -->
   <%- include('./include/caseview.ejs', {
     viewItems : [
-      {id : '', text:'특화코드관리 탭'},
-      {id : '', text:'판매코드 한글명 관리 탭'}
+      {id: 'caseBtn4', text:'차종 선택 - 기아'},
     ],
     popupItems : [
       {id: '', text:'차명 조회'},
@@ -326,6 +323,15 @@
       // Theme bo
       $("#caseBtn3").click(function () {
         $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+      // 차종 선택 - 기아
+      $("#caseBtn4").click(function () {
+        if ($(".panel").eq(0).find(".field_group").eq(0).is(":visible")) {
+          $(".panel").eq(0).find(".field_group").eq(0).hide().siblings(".field_group").show();
+        } else {
+          $(".panel").eq(0).find(".field_group").eq(0).show().siblings(".field_group").hide();
+        }
       });
     })
   </script>

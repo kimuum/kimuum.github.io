@@ -47,6 +47,10 @@
     }
   }
 
+  .align_center {
+    text-align: center;
+  }
+
   &_bottom {
     &.btn_group_center {
       padding: 32px 0;
@@ -291,6 +295,10 @@
         vertical-align: bottom;
       }
     }
+
+    .ic_eye_light_filled_20px {
+      @include inline-svg-size(20px, 20px, "ic_eye_light_filled_20px", map-get($hmg-colors, surface_highest), none, none);
+    }
   }
 }
 
@@ -310,6 +318,7 @@
   @include flex-wrap(wrap);
   @include justify-content(space-between);
   @include align-items(center);
+  gap: 16px;
   width: 100%;
   padding-bottom: 16px;
 
@@ -320,6 +329,10 @@
     gap: 8px;
     overflow: unset; // 공통 초기화
     padding: 0;
+
+    & +.option_group {
+      justify-content: flex-end;
+    }
 
     .title_small .num {
       color: var(--primary);

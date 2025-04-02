@@ -1,0 +1,209 @@
+<%-include('./include/head.ejs',{
+  title: "기준-0010-A-HK_신판매코드생성",
+  listTitle: "판매기준정보관리 > 판매코드관리 > 신판매코드생성 (팝업) : 02-기준정보_판매코드"
+})%>
+<body class="project_sales_system" data-pagestatus="">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs')%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs')%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+    </main>
+    <!-- // Contents -->
+  </div>
+  <!-- Layer -->
+  <!-- [D] 팝업 활성화 클래스 : dialog_active -->
+  <div class="dialog_wrap dialog_active" id="dialog_datacode_generate">
+    <div class="backdrop_high"></div>
+    <div class="dialog dialog_scrollable dialog_xlarge shadow_24dp">
+      <div class="dialog_head">
+        <strong class="dialog_title title_large">신판매코드 생성</strong>
+        <button type="button" class="btn_dialog_close" aria-label="닫기">
+          <span class="ic ic_close_bold_24px"></span>
+        </button>
+      </div>
+      <div class="dialog_content">
+        <%-include('./include/tabs_section.ejs', {
+          tabsSize: 'tabs_large',
+          tabItems: [
+            { id: 'tab_1-1', ariaControls:'tabpanel_1-1', text: '생성 예상 판매코드', ariaSelected: true },
+            { id: 'tab_1-2', ariaControls:'tabpanel_1-2', text: '오류', icon: 'ic_error_filled_20px', num: '4'},
+            { id: 'tab_1-3', ariaControls:'tabpanel_1-3', text: '경고', icon: 'ic_caution_filled_20px', num: '3' },
+          ],
+        })%>
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <!-- Tab Content: 생성 예상 판매코드 -->
+        <div role="tabpanel" id="tabpanel_1-1" class="tab_content" aria-labelledby="tab_1-1" tabindex="0">
+          <div class="table_wrap">
+            <div class="table_util">
+              <div class="btn_group">
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">세부모델별 조회</span></button>
+                <button type="button" class="btn btn_fill btn_primary_higher btn_small"><span class="btn_inner_text body_small">트림별 조회</span></button>
+                <button type="button" class="btn btn_outline btn_with_ic btn_small">
+                  <span class="ic ic_download_bold_16px"></span>
+                  <span class="btn_inner_text body_small">전체 엑셀 다운로드</span>
+                </button>
+              </div>
+            </div>
+            <div class="table_util">
+              <div class="option_group">
+                <span class="title_small">NSC 공통/특화 조합 개수</span>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_readonly input_small',
+                  ariaLabel : '',
+                  value : '19',
+                  readonly : true,
+                }) %>
+              </div>
+              <div class="option_group">
+                <span class="title_small">예상 판매코드 개수</span>
+                <%- include('./include/input_area.ejs', {
+                  inputBox : 'input_suffix input_readonly input_small',
+                  ariaLabel : '',
+                  value : '100,704',
+                  readonly : true,
+                }) %>
+              </div>
+              <span class="body_small color_red">※ 트리 작성 관련 오류로 인해 경로 탐색이 중단된 경우 예상 판매코드 개수는 실제 트리 구성과 상이할 수 있습니다.</span>
+            </div>
+            <div class="table_inner">
+              <!-- AG Grid -->
+              <div id="grid_container"></div>
+            </div>
+          </div>
+          <div class="btn_group btn_group_center">
+            <button type="button" class="btn btn_outline btn_large"><span class="btn_inner_text title_small">취소</span></button>
+            <button type="button" class="btn btn_fill btn_primary btn_large" disabled><span class="btn_inner_text title_small">판매코드생성</span></button>
+          </div>
+        </div>
+
+        <!-- Tab Content: 오류 -->
+        <div role="tabpanel" id="tabpanel_1-2" class="tab_content is_active" aria-labelledby="tab_1-2" tabindex="-1">
+          <div class="info_meta_group">
+            <div class="info_meta">
+              <span class="title_small">오류 종류 개수</span>
+              <span class="ic ic_infomation_regular_20px"></span>
+              <%- include('./include/input_area.ejs', {
+                inputBox : 'input_suffix input_readonly input_small',
+                ariaLabel : '',
+                value : '4',
+                readonly : true,
+              }) %>
+            </div>
+          </div>
+
+          <!-- [D] 정적 오류 메시지 + 엑셀 다운로드 버튼 -->
+          <div class="validation_panel validation_panel_error">
+            <div class="validation_panel_header">
+              <div class="validation_panel_title">
+                <strong class="title_small">판매코드가 여러 개인 속성 조합이 있습니다</strong>
+              </div>
+              <div class="validation_panel_control">
+                <button type="button" class="btn btn_outline btn_with_ic btn_xxsmall">
+                  <span class="ic ic_download_bold_16px"></span>
+                  <span class="btn_inner_text body_small">엑셀다운로드</span>
+                </button>
+              </div>
+              <div class="validation_panel_desc">
+                <p class="body_small">속성 조합은 하나의 판매코드(NSC)로 표현됩니다</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- [D] 아코디언형 경고 메시지 + 토글 버튼 -->
+          <!-- [D] 아코디언 활성화 클래스: is_accordion -->
+          <div class="validation_panel validation_panel_warning is_accordion">
+            <div class="validation_panel_header">
+              <!-- [D] id와 연관된 활성화 버튼 aria-labelledby값 연결 -->
+              <div id="message_title_02" class="validation_panel_title">
+                <span class="ic ic_error_filled_20px" aria-hidden="true"></span>
+                <strong class="title_small">링크가 추가되지 않은 문구확인</strong>
+              </div>
+              <div class="validation_panel_control">
+                <!-- [D] 활성화: aria-expended="true", 비활성화: aria-expended="false" / aria-controls와 연관된 콘텐츠의 id값 연결 / aria-labelledby와 연관된 상위 타이틀의 id값 연결 -->
+                <button type="button" class="btn btn_accordion" aria-expanded="false" aria-controls="message_content_02" aria-labelledby="message_title_02">
+                  <span class="ic ic_arrow_down_regular_20px" aria-hidden="true"></span>
+                </button>
+              </div>
+              <div class="validation_panel_desc">
+                <p class="body_small">속성 조합은 하나의 판매코드(NSC)로 표현됩니다</p>
+              </div>
+            </div>
+            <!-- [D] id와 연관된 상위 button의 aria-controls값 연결 -->
+            <div id="message_content_02" class="validation_panel_content" role="region">
+              <p>상세 메세지 영역</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Content: 경고 -->
+        <div role="tabpanel" id="tabpanel_1-3" class="tab_content" aria-labelledby="tab_1-3" tabindex="-1">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // Layer -->
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs', {
+    popupItems : [
+      {id : 'dialog_datacode_generate', text : '신판매코드 생성'},
+    ]
+  }) %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+      //
+      $('button[data-dialog-target="dialog_datacode_generate"]').click(function () {
+        $(".dialog_wrap").removeClass("dialog_active");
+        $("#dialog_datacode_generate").addClass("dialog_active");
+        $("body").addClass("scroll_lock")
+      });
+      $(".btn_dialog_close").click(function () {
+        $("#dialog_datacode_generate").removeClass("dialog_active");
+        $("body").removeClass("scroll_lock");
+      });
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+  </body>
+  </html>

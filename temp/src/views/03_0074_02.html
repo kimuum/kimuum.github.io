@@ -1,0 +1,321 @@
+<%-include('./include/head.ejs',{
+  "title": "계출-0074-A-HK_배정요청 순서조정",
+  "listTitle": "배정요청 순서조정 > (팝업) 요청코드 별 조정횟수 : 03-계약출고"
+})%>
+<body class="project_sales_system" data-pagestatus="">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <!-- [D] 팝업 활성화 클래스 : dialog_active -->
+  <div class="dialog_wrap dialog_active" id="dialog_">
+    <div class="backdrop_high"></div>
+
+      <div class="dialog dialog_large shadow_24dp">
+        <div class="dialog_head">
+          <strong class="dialog_title title_large">요청코드 별 조정횟수</strong>
+          <button type="button" class="btn_dialog_close" aria-label="닫기">
+            <span class="ic ic_close_bold_24px"></span>
+          </button>
+        </div>
+
+        <div class="dialog_content">
+
+          <table class="table table_small">
+            <caption><span>요청코드 별 조정횟수 테이블</span></caption>
+            <colgroup>
+              <col style="width:43px" />
+              <col style="width:125px" />
+              <col style="width:106px" />
+              <col style="width:106px" />
+              <col style="width:106px" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th colspan="2">
+                  <div class="cell_text"><span class="title_small">요청코드</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">A 일반양산</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">T BTO주문</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">B 주문차량</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">N 주문차량</span></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>F</td>
+                <td>정책배정</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>C</td>
+                <td>점검차요청</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>S</td>
+                <td>전시차요청</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>납기확정</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '1',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '1',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>D</td>
+                <td>본사요청</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>Y</td>
+                <td>지역본부요청</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '1',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '1',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+              <tr>
+                <td>A</td>
+                <td>일반</td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '9999',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '9999',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+                <td>
+                  <%- include('./include/input_area.ejs', {
+                    inputBox : 'input_suffix input_small',
+                    value : '0',
+                  }) %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <div class="dialog_footer">
+          <div class="btn_group btn_group_center">
+            <button type="button" class="btn btn_fill btn_primary btn_large"><span class="btn_inner_text title_small">저장</span></button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // 1. Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // 2. Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // 3. Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+  </body>
+  </html>

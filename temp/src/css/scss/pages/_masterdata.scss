@@ -157,20 +157,49 @@
     // 즐겨찾기 화면별 결재문서 현황
     &_bookmark {
       .list_wrap {
-        @include flexbox;
-        @include flex-wrap(wrap);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 12px;
         width: 100%;
         margin-top: 24px;
       }
 
       .list_item {
-        @include flex(1 1 30%);
+        @include flexbox;
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        gap: 16px;
+        min-height: 116px;
+        padding: 20px 22px;
+        border-radius: 8px;
+        background-color: #f5f6f7;
+        text-align: center;
+
+        &:only-of-type {
+          grid-column: span 3;
+          gap: 24px;
+          min-height: 162px;
+        }
+
+        &:has(.list_link) {
+          padding: 0;
+        }
 
         .list_link {
-          padding: 20px;
-          border-radius: 8px;
-          background-color: #f5f6f7;
+          width: 100%;
+          padding: 20px 22px;
+          box-sizing: border-box;
+
+          &[disabled] { //확인필요
+            &:active,
+            &:hover,
+            &:focus,
+            &:focus-visible {
+              border-radius: 4px;
+              outline: 2px solid var(--surface_container_highest);
+            }
+          }
 
           .list_title_box {
             @include justify-content(space-between);
@@ -183,7 +212,7 @@
           .list_desc_box {
             @include flexbox;
             margin-top: 16px;
-            padding: 8px 0;
+            padding: 7px 0;
             border-radius: 6px;
             border: 1px solid var(--outline);
             background-color: var(--surface_lowest);
@@ -217,46 +246,23 @@
             }
           }
         }
-      }
-    }
-  }
-}
 
-.panel_dataset {
-  .search_filter {
-    @include flexbox;
-    @include flex-direction(column);
-    width: 100%;
-    margin-bottom: 32px;
-    padding: 16px;
-    border-radius: 8px;
-    background-color: #f7f8fa;
+        .btn_delete {
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: -12px -8px 0 0;
 
-    > div[class^="field_"] + div[class^="field_"] {
-      margin-top: 12px;
-    }
-
-    .field_inline {
-      .option_wrap {
-        width: 100%;
+          .ic_close_circle_filled_24px {
+            @include inline-svg-icon("ic_close_circle_filled_24px", map-get($hyundai-colors, surface_container_highest), map-get($hyundai-colors, primary_container_lowest), none);
+          }
+        }
       }
     }
 
-    .field_group {
-      flex: 1;
+    // 대결 설정
+    &_dataset {
 
-      .title_small {
-        min-width: 50px;
-        white-space: nowrap;
-      }
-    }
-
-    .divider {
-      margin: 16px 0;
-    }
-
-    .panel_bottom {
-      padding: 0;
     }
   }
 }
@@ -273,6 +279,45 @@
   }
 
   .panel {
+    &_dataset {
+      .search_filter {
+        @include flexbox;
+        @include flex-direction(column);
+        width: 100%;
+        margin-bottom: 32px;
+        padding: 16px;
+        border-radius: 8px;
+        background-color: #f7f8fa;
+
+        > div[class^="field_"] + div[class^="field_"] {
+          margin-top: 12px;
+        }
+
+        .field_inline {
+          .option_wrap {
+            width: 100%;
+          }
+        }
+
+        .field_group {
+          flex: 1;
+
+          .title_small {
+            min-width: 50px;
+            white-space: nowrap;
+          }
+        }
+
+        .divider {
+          margin: 16px 0;
+        }
+
+        .panel_bottom {
+          padding: 0;
+        }
+      }
+    }
+
     &_result {
       .tabs_section {
         margin-top: 20px;

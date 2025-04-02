@@ -46,16 +46,21 @@
           </div>
           <div class="uio_box">
             <h3 class="uio_subtit" id="control_button">Control Button</h3>
-            <div class="btn_group">
-              <div role="group" class="zoom_control">
-                <button type="button" class="btn btn_only_ic" aria-label="축소"><span class="ic ic_minus_bold_16px"></span></button>
-                <span role="status" class="body_small" aria-live="polite">100%</span>
-                <button type="button" class="btn btn_only_ic" aria-label="확대"><span class="ic ic_plus_bold_16px"></span></button>
-              </div>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-pressed="false" aria-label="전체 화면보기로 전환"><span class="ic ic_fullscreen_bold_16px"></span></button>
-              <a href="#none" target="_blank" class="btn btn_radius btn_only_ic btn_small" aria-label="새 창에서 열기"><span class="ic ic_open_in_new_bold_16px"></span></a>
-              <button type="button" class="btn btn_radius btn_only_ic btn_small" aria-label="도움말"><span class="ic ic_help_bold_16px"></span></button>
-            </div>
+            <%- include('./include/utility_toolbar.ejs', {
+              btnCopy: true,
+              btnInfo: true
+            }) %>
+          </div>
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="attached_button">Button Group Attached</h3>
+            <%- include('./include/btn_group_attached.ejs', {
+              btnItems : [
+                {classList: 'btn_outline btn_small', text : 'Enabled', active : true},
+                {classList: 'btn_outline btn_small', text : 'Enabled'},
+                {classList: 'btn_outline btn_small', text : 'Enabled'},
+                {classList: 'btn_outline btn_small', text : 'Enabled'},
+              ]
+            }) -%>
           </div>
           <div class="uio_box">
             <h3 class="uio_subtit" id="badge">Badge</h3>
@@ -740,6 +745,59 @@
               </tbody>
             </table>
           </div>
+
+          <div class="uio_box">
+            <h3 class="uio_subtit" id="Select_Option">Select (Multi Option)</h3>
+            <table class="uio_table uio_table_input">
+              <thead>
+                <tr>
+                  <th style="width:10%"></th>
+                  <th style="width:30%">Checkbox</th>
+                  <th style="width:30%">AND / OR</th>
+                  <th style="width:30%">Search</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Case</strong></td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      inputArea : 'input_area_medium',
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-filter1-1',
+                      inputVal : '전체',
+                      ariaDescribedby : '1-1',
+                      optionCase: 'multiOption' // 목업 CaseView : 기본
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      inputArea : 'input_area_medium',
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-filter1-2',
+                      inputVal : '뒷자석컴포트패키지뒷자석컴포트패키지',
+                      ariaDescribedby : '1-2',
+                      optionCase: 'multiOption and-or' // 목업 CaseView : AND / OR
+                    }) %>
+                  </td>
+                  <td>
+                    <%- include('./include/option_wrap.ejs', {
+                      inputArea : 'input_area_medium',
+                      optionWrap : 'option_small',
+                      inputBox : 'input_small',
+                      ariaControls : 'uio-select-filter1-3',
+                      inputVal : '뒷자석컴포트패키지',
+                      ariaDescribedby : '1-3',
+                      optionCase: 'multiOption search' // 목업 CaseView : Search
+                    }) %>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
           <div class="uio_box">
             <h3 class="uio_subtit" id="inputs_size">Inputs Size (width)</h3>
             <table class="uio_table uio_table_input">
@@ -1031,6 +1089,7 @@
       {id : 'filter_button', text : 'Filter Button'},
       {id : 'Table_button', text : 'Table Button'},
       {id : 'control_button', text : 'Control Button'},
+      {id : 'attached_button', text : 'Button Group Attached'},
       {id : 'badge', text : 'Badge'},
       {id : 'stepper', text : 'Stepper'},
       {id : 'input_textfield', text : 'Text Field'},
@@ -1093,6 +1152,7 @@
         $("body").removeClass(themeClasses).addClass('theme_bo');
       });
     })
+
   </script>
   <!-- // [D] 마크업 검수용, 개발제외 -->
 </body>

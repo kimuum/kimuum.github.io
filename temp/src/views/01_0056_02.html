@@ -1,0 +1,232 @@
+<%-include('./include/head.ejs',{
+  "title": "기준-0056-A-HK, 기준-0056-B-HK, 기준-0056-C-HK, 기준-0056-D-HK, 기준-0056-E-HK, 기준-0056-F-HK / 나의 결재함",
+  "listTitle": "결제선 관리 > 나의 결재함_결재할 문서 : 01-기준정보"
+})%>
+<body class="project_sales_system">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+      <div class="content_head">
+        <%- include('./include/tab.ejs', {
+          tabItems : [
+            {
+              tabAnchor : 'tab_anchor_01',
+              ariaControls : 'tab_01',
+              text : 'Tab 01'
+            },
+            {
+              tabAnchor : 'tab_anchor_02',
+              ariaControls : 'tab_02',
+              text : 'Tab 02'
+            },
+            {
+              tabAnchor : 'tab_anchor_03',
+              ariaControls : 'tab_03',
+              text : 'Tab 03'
+            },
+            {
+              tabAnchor : 'tab_anchor_04',
+              ariaControls : 'tab_04',
+              text : 'Tab 04'
+            },
+          ]
+        }) %>
+        <div class="btn_arrow_box">
+          <button type="button" class="btn_prev" aria-label="다음">
+            <span class="ic ic_arrow_back_bold_20px"></span>
+          </button>
+          <button type="button" class="btn_next" aria-label="이전">
+            <span class="ic ic_arrow_forward_bold_20px"></span>
+          </button>
+        </div>
+      </div>
+      <div class="content_body">
+        <!-- [D] 탭패널 활성화 : is_active 클래스 & tabindex="0" 설정 -->
+        <div id="tab_01" tabindex="0" role="tabpanel" aria-labelledby="tab_anchor_01" class="tab_panel is_active">
+          <div class="control_section">
+            <%- include('./include/breadcrumb.ejs', {
+              breadcrumbItems: [
+                { text: "기준정보", href: "#none" },
+                { text: "기타마스터 관리", href: "#none" },
+                { text: "결재선 관리", href: "#none" },
+                { text: "나의 결재함", id: "CON0001BH" }
+              ]
+            }) %>
+            <%- include('./include/utility_toolbar.ejs', {
+              btnInfo: true
+            }) %>
+          </div>
+          <div class="control_section">
+            <h2 class="title_xlarge">결재할 문서</h2>
+            <div class="profile_box">
+              <p class="body_small"><span class="blind">소속</span>동부지역B2B사업팀</p>
+              <p class="body_small"><span class="blind">성명</span>김현대</p>
+              <p class="body_small"><span class="blind">직위</span>책임매니저</p>
+            </div>
+          </div>
+          <div class="panel_group">
+            <div class="panel">
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="" class="title_small">결재정보</label>
+                  <div style="position: relative;">
+                    <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                      <div class="input_area" role="combobox" style="width: 400px;">
+                        <div class="input_box input_small">
+                          <input type="text" aria-label="결재정보 검색" class="input_text body_small" placeholder="결재업무화면, 결재업무명, 기안자, 결재문서번호 검색">
+                          <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                            <span class="ic ic_close_circle_filled_16px"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="autocomplete_box shadow_4dp">
+                      <ul class="autocomplete_list" role="listbox">
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">전체 : YYYY-MM-DD</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">결재업무화면 : YYYY-MM-DD</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">결재업무명 : YYYY-MM-DD</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">기안부서 : YYYY-MM-DD</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">기안자 : YYYY-MM-DD</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">결재문서번호 : YYYY-MM-DD</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="input_select_wrap">
+                  <span class="input_select_box input_select_medium">
+                    <input type="checkbox" id="" class="input_checkbox">
+                    <label for="" class="label_checkbox"><span class="label_text body_small">내 조직에서 상신한 문서만 조회</span></label>
+                  </span>
+                </div>
+              </div>
+              <div class="divider"></div>
+              <div class="field_inline">
+                <div class="field_group">
+                  <label for="" class="title_small">계약정보</label>
+                  <div style="position: relative;">
+                    <div class="autocomplete_wrap autocomplete_small"><!-- open: class="autocomplete_open" -->
+                      <div class="input_area" role="combobox" style="width: 280px;">
+                        <div class="input_box input_small">
+                          <input type="text" aria-label="계약정보 검색" class="input_text body_small" placeholder="계약정보, 계출상태, 계약자 검색">
+                          <button type="button" class="btn_clear_input" aria-label="삭제" style="display:none">
+                            <span class="ic ic_close_circle_filled_16px"></span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="autocomplete_box shadow_4dp">
+                      <ul class="autocomplete_list" role="listbox">
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">전체 : 배정</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">계약번호 : 배정</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">계출상태 : 배정</span></li>
+                        <li class="autocomplete_item" role="option" tabindex="0"><span class="autocomplete_text body_small">계약자 : 배정</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="field_group">
+                  <label for="period" class="title_small">수신기간</label>
+                  <%- include('./include/date_picker.ejs', {
+                    inlineStyle: 'width: 328px',
+                    range: true,
+                  }) %>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="panel panel_bottom">
+              <div class="btn_group btn_group_center">
+                <button type="button" class="btn btn_fill btn_primary btn_with_ic btn_medium"><span class="btn_inner_text title_small">조회</span></button>
+              </div>
+              <div class="toggle_btn">
+                <button type="button" class="btn btn_text btn_with_ic btn_medium"><span class="btn_inner_text body_small">상세 검색</span><span class="ic ic_arrow_up_bold_16px"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="table_wrap">
+              <div class="table_util">
+								<div class="option_group">
+									<span class="title_small">총 <strong class="num">9999</strong>건</span>
+									<div class="date_time_box">
+										<p class="label_medium">조회일시 YYYY-MM-DD HH:MM:SS</p>
+										<button type="button" class="btn_reload" aria-label="새로고침"><span class="ic ic_refresh_bold_12px"></span></button>
+									</div>
+									<div class="input_area input_area_large">
+										<div class="input_box input_small">
+											<span class="ic ic_search_bold_16px"></span>
+											<input type="text" class="input_text body_small" aria-label="검색창" aria-describedby="" placeholder="검색어를 입력해주세요">
+										</div>
+									</div>
+								</div>
+								<div class="btn_group">
+									<button type="button" class="btn btn_outline btn_with_ic btn_small"><span class="ic ic_download_bold_16px"></span><span class="btn_inner_text body_small">엑셀다운로드</span>
+									</button>
+								</div>
+							</div>
+              <div class="table_inner">
+                <!-- AG Grid -->
+                <div id="grid_container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- // Contents -->
+  </div>
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // 1. Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // 2. Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // 3. Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+</body>
+</html>

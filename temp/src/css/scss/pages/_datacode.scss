@@ -77,6 +77,12 @@
   .chip_item {
     .chip {
       background-color: var(--surface_container_lowest);
+
+      &:hover {
+        &::after {
+          border-color: var(--outline_lowest);
+        }
+      }
     }
 
     &_main {
@@ -205,7 +211,7 @@
         right: 0;
         bottom: 0;
         z-index: 1;
-        border: 1px solid var(--outline_lowest);
+        border: 1px solid var(--outline_low);
         transition: all 0.2s;
       }
 
@@ -223,7 +229,77 @@
       }
     }
   }
+  .btn_outline {
+    display: block;
+    position: absolute;
+    right: -58px;
+    bottom: -23px;
+    z-index: 1;
+  }
 }
 
+/* 신판매코드 생성 */
+.validation_panel {
+  border-radius: 4px;
+  & + .validation_panel {
+    margin-top: 20px;
+  }
+  &_error {
+    background-color: var(--red_container);
+    .validation_panel_header {
+      .validation_panel_title {
+        &::before {
+          @include inline-svg-size(20px, 20px, "ic_error_filled_20px", map-get($point-colors, red), none, map-get($point-colors, red));
+        }
+      }
+    }
+  }
 
+  &_warning {
+    background-color: var(--orange_container);
+    .validation_panel_header {
+      .validation_panel_title {
+        color: var(--on_red_ultimate);
+        &::before {
+          @include inline-svg-size(20px, 20px, "ic_caution_filled_20px", map-get($point-colors, orange_highest), none, map-get($point-colors, orange_highest));
+        }
+      }
+    }
+  }
+}
 
+.validation_panel_header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2px;
+  padding: 14px 14px 14px 40px;
+  .validation_panel_title {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 6px;
+    color: var(--on_red_ultimate);
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -26px;
+      z-index: 1;
+      transform: translateY(-50%);
+    }
+  }
+  .validation_panel_desc {
+    flex: 1 0 100%;
+    color: var(--on_surface_high);
+  }
+  .validation_panel_control {
+    .btn {
+      padding: 1px 5px;
+    }
+  }
+}
+
+.validation_panel_content {
+  display: none;
+}

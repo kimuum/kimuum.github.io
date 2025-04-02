@@ -1,0 +1,23 @@
+<%
+const chips = locals.chips || '';
+const chipClassList = locals.chipClassList || '';
+const chipTextClassList = locals.chipTextClassList || '';
+%>
+
+<ul class="chip_list">
+  <% chips.forEach((chip) => { %>
+  <li class="chip_item">
+    <span class="chip<%- chipClassList ? ' ' + chipClassList.trim() : '' %>">
+      <span class="chip_text<%- chipTextClassList ? ' ' + chipTextClassList.trim() : '' %>"><%= chip.text %></span>
+      <% if (chip.isDelete) { %>
+        <button type="button" class="btn_chip">
+          <span class="chip_text body_small"><%= chip.text %></span>
+        </button>
+        <button type="button" class="btn_chip_delete" aria-label="삭제">
+          <span class="ic ic_close_bold_16px"></span>
+        </button>
+      <% } %>
+    </span>
+  </li>
+  <% }); %>
+</ul>

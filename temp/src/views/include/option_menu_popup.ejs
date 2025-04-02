@@ -1,7 +1,9 @@
 <!-- [D] Menu component -->
 <div class="option_menu_popup option_medium" style="display: none;">
   <div class="backdrop"></div>
-  <div class="option_box shadow_4dp">
+
+  <!-- 1. 단일 옵션 목록 -->
+  <div class="option_box shadow_4dp" data-optionCase="singleOption">
     <ul class="option_list" role="listbox">
       <li class="option_item" role="option"><span class="option_text body_small">Enabled</span></li>
       <li class="option_item option_item_selected" role="option"><span class="option_text body_small">Selected</span></li>
@@ -9,6 +11,118 @@
       <li class="option_item" role="option"><span class="option_text body_small">Enabled</span></li>
       <li class="option_item" role="option"><span class="option_text body_small">Enabled</span></li>
     </ul>
+  </div>
+
+  <!-- 2. 멀티 옵션 목록 -->
+  <div class="option_box shadow_4dp filter_option_box" data-optionCase="MultiOption">
+
+    <!-- AND/OR 조회 방식 (optionType이 'and-or'일 때만 표시) -->
+    <div class="option_group_header" data-optionType="and-or">
+      <div class="field_inline">
+        <div class="field_group">
+          <label for="uio_radio_andor" class="title_small">조회방식</label>
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="radio" id="uio_radio_andor1_1" class="input_radio" name="uio_radio_andor1" checked>
+              <label for="uio_radio_andor1_1" class="label_radio"><span class="label_text body_small">AND</span></label>
+            </span>
+          </div>
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="radio" id="uio_radio_andor1_2" class="input_radio" name="uio_radio_andor1">
+              <label for="uio_radio_andor1_2" class="label_radio"><span class="label_text body_small">OR</span></label>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 검색 입력 UI (optionType이 'search'일 때만 표시) -->
+    <div class="option_group_header" data-optionType="search">
+      <%- include('../include/input_area.ejs', {
+        inputBox : 'input_small',
+        ariaLabel : '',
+        ariaDescribedby : '01',
+        search : true,
+        clear: false,
+        value: 'C1101001'
+      }) %>
+    </div>
+
+    <div class="option_group">
+      <!-- 공통 - 옵션 목록 -->
+      <ul class="option_list" role="listbox">
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox2_1" class="input_checkbox">
+              <label for="uio_checkbox2_1" class="label_checkbox"><span class="label_text body_small">전체</span></label>
+            </span>
+          </div>
+        </li>
+        <li class="option_item option_item_multiselect option_item_selected" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox2_2" class="input_checkbox" checked>
+              <label for="uio_checkbox2_2" class="label_checkbox"><span class="label_text body_small">CN7 아반떼CN7</span></label>
+            </span>
+          </div>
+        </li>
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox2_3" class="input_checkbox">
+              <label for="uio_checkbox2_3" class="label_checkbox"><span class="label_text body_small">DNB 쏘나타DNB</span></label>
+            </span>
+          </div>
+        </li>
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox2_4" class="input_checkbox">
+              <label for="uio_checkbox2_4" class="label_checkbox"><span class="label_text body_small">AX1 캐스퍼</span></label>
+            </span>
+          </div>
+        </li>
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox2_5" class="input_checkbox">
+              <label for="uio_checkbox2_5" class="label_checkbox"><span class="label_text body_small">DNB 쏘나타DNB</span></label>
+            </span>
+          </div>
+        </li>
+      </ul>
+      <!-- 추가 - 옵션 목록 (optionType이 'and-or'일 때만 표시) -->
+      <span class="divider" data-optionType="and-or"></span>
+      <ul class="option_list" role="listbox" data-optionType="and-or">
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox3_1" class="input_checkbox">
+              <label for="uio_checkbox3_1" class="label_checkbox"><span class="label_text body_small">무옵션</span></label>
+            </span>
+          </div>
+        </li>
+        <li class="option_item option_item_multiselect" role="option">
+          <div class="input_select_wrap">
+            <span class="input_select_box input_select_medium">
+              <input type="checkbox" id="uio_checkbox3_3" class="input_checkbox">
+              <label for="uio_checkbox3_3" class="label_checkbox"><span class="label_text body_small">무옵션</span></label>
+            </span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 확인 버튼 (optionType이 'search'일 때만 표시) -->
+    <div class="option_group_footer" data-optionType="search">
+      <div class="btn_group btn_group_center">
+        <button type="button" class="btn btn_outline btn_medium"><span class="btn_inner_text title_small">취소</span></button>
+        <button type="button" class="btn btn_fill btn_primary btn_medium"><span class="btn_inner_text title_small">적용</span></button>
+      </div>
+    </div>
+
   </div>
 </div>
 <!-- // [D] Menu component -->

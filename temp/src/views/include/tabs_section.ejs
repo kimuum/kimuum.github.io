@@ -6,7 +6,7 @@
   include('./include/tabs_section.ejs', {
     tabsSize: ' 탭 버튼 크기 (tabs_xlarge, tabs_large, tabs_medium)',
     tabItems: [
-      { id: '탭 버튼 id', ariaControls:'연결된 탭 패널의 id', text: '탭 버튼명', ariaSelected: true (선택된 탭 버튼) },
+      { id: '탭 버튼 id', ariaControls:'연결된 탭 패널의 id', text: '탭 버튼명', ariaSelected: true (선택된 탭 버튼), icon: '아이콘 클래스', num: '숫자' },
     ],
     helpText: "텍스트", // help text 추가
     pageNavigate: true // 페이지 이동 셀렉트 박스 추가
@@ -30,7 +30,10 @@
         aria-controls="<%- item.ariaControls %>"
         <%- item.ariaSelected ? `aria-selected="true"` : '' %>
       >
-        <span class="tab_text <%- tabsSize === 'tabs_xlarge' ? 'title_large' : 'title_small' %>"><%- item.text %></span>
+        <% if (item.icon) { %>
+          <span class="ic <%- item.icon %>" aria-hidden="true"></span>
+        <% } %>
+        <span class="tab_text <%- tabsSize === 'tabs_xlarge' ? 'title_large' : 'title_small' %>"><%- item.text %><% if (typeof item.num !== 'undefined'){ %> <span>(<%- item.num %>)</span><% }%></span>
       </button>
     <% }) %>
   </div>

@@ -10,7 +10,7 @@ const attributes = locals.attributes || '';
                         -->
   <!-- [D] 드래그 중인 요소 접근성 필수 속성 : aria-grabbed="true" -->
   <% attributes.forEach(function(attr, i) {
-    const index = offsetIndex + i;
+    const index = offsetIndex + i + 1;
   %>
     <li class="attribute_card<% if (attr.isMain) { %> attribute_card_main<% } else if (attr.isOther) { %> attribute_card_other<% } %>" draggable="true" aria-grabbed="false">
       <div class="attribute_card_title">
@@ -22,10 +22,10 @@ const attributes = locals.attributes || '';
       </div>
       <div class="input_select_box">
         <% if (attr.isMain) { %>
-          <input type="radio" id="model_name" name="radio_name_model" value="모델명" class="input_display_option" checked>
-          <label for="model_name" class="btn_display_option"><span class="label_medium">모델명</span></label>
-          <input type="radio" id="model_in_name" name="radio_name_model" value="내부모델명" class="input_display_option">
-          <label for="model_in_name" class="btn_display_option"><span class="label_medium">내부모델명</span></label>
+          <input type="radio" id="<%= 'model_name_' + index %>" name="radio_name_model_<%= index %>" value="모델명" class="input_display_option" checked>
+          <label for="<%= 'model_name_' + index %>" class="btn_display_option"><span class="label_medium">모델명</span></label>
+          <input type="radio" id="<%= 'model_in_name_' + index %>" name="radio_name_model_<%= index %>" value="내부모델명" class="input_display_option">
+          <label for="<%= 'model_in_name_' + index %>" class="btn_display_option"><span class="label_medium">내부모델명</span></label>
         <% } else { %>
           <input type="radio" id="<%= 'display_long_' + index %>" name="radio_name_display_<%= index %>" value="long" class="input_display_option">
           <label for="<%= 'display_long_' + index %>" class="btn_display_option"><span class="label_medium">Long</span></label>

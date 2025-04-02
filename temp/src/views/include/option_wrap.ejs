@@ -1,5 +1,6 @@
 <%
 const optionWrap = locals.optionWrap || '';
+const optionCase = locals.optionCase || 'singleOption';
 const inputArea = locals.inputArea || '';
 const inlineStyle = locals.inlineStyle || '';
 const inputBox = locals.inputBox || '';
@@ -58,8 +59,7 @@ const badgeClass = locals.badgeClass || '';
     badgeClass:	배지 스타일 (추가 클래스 지정 가능)"
   })
 %>
-
-<div class="option_wrap<%- optionWrap ? ' ' + optionWrap.trim() : '' %>">
+<div class="option_wrap<%- optionWrap ? ' ' + optionWrap.trim() : '' %>" data-option="<%- optionCase ? optionCase : '' %>">
   <div class="input_area<%- inputArea ? ' ' + inputArea.trim() : '' %>" <%- inlineStyle ? `style="${inlineStyle}"` : '' %>>
     <div class="input_box<%- inputBox ? ' ' + inputBox.trim() : '' %>" role="combobox"
       <%- ariaControls ? `aria-controls="${ariaControls}"` : '' %>

@@ -1,0 +1,199 @@
+<%-include('./include/head.ejs',{
+  "title": "계출-0074-A-HK_배정요청 순서조정",
+  "listTitle": "배정요청 순서조정 > (팝업) 변경이력 조회 : 03-계약출고"
+})%>
+<body class="project_sales_system" data-pagestatus="">
+  <%-include('./include/skipnavigation.ejs')%>
+  <div class="wrap">
+    <!-- Header -->
+    <%-include('./include/header.ejs',{
+      type:'01'
+    })%>
+    <!-- //Header -->
+
+    <!-- LNB -->
+    <%-include('./include/lnb.ejs',{
+    })%>
+    <!-- // LNB -->
+
+    <!-- Contents -->
+    <main id="content" class="content">
+    </main>
+    <!-- // Contents -->
+  </div>
+
+  <!-- [D] 팝업 활성화 클래스 : dialog_active -->
+  <div class="dialog_wrap dialog_active" id="dialog_">
+    <div class="backdrop_high"></div>
+
+      <div class="dialog dialog_xlarge shadow_24dp">
+        <div class="dialog_head">
+          <strong class="dialog_title title_large">변경이력 조회</strong>
+          <button type="button" class="btn_dialog_close" aria-label="닫기">
+            <span class="ic ic_close_bold_24px"></span>
+          </button>
+        </div>
+
+        <div class="dialog_content">
+
+          <div class="panel_group">
+            <div class="panel">
+              <div class="info_meta_group col">
+                <div class="info_meta">
+                  <span class="title_small">소속</span>
+                  <div class="inline_list">
+                    <span class="item body_small">동부지역본부</span>
+                    <span class="item body_small">양재지점</span>
+                    <span class="item body_small">카마스터</span>
+                    <span class="item body_small">김현대</span>
+                  </div>
+                </div>
+                <div class="info_meta">
+                  <div class="title_small">계약번호</div>
+                  <div class="body_small">23A00000000</div>
+                </div>
+                <div class="info_meta">
+                  <div class="title_small">계약자</div>
+                  <div class="body_small">홍길동</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <table class="table table_small">
+            <caption><span>변경이력 조회 테이블</span></caption>
+            <colgroup>
+              <col style="width:6%" />
+              <col style="width:12.44%" />
+              <col style="width:12.44%" />
+              <col style="width:12.44%" />
+              <col style="width:12.44%" />
+              <col style="width:12.44%" />
+              <col style="width:11.8%" />
+              <col style="width:11.8%" />
+              <col style="width:11.8%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th rowspan="2">
+                  <div class="cell_text"><span class="title_small">NO</span></div>
+                </th>
+                <th colspan="5" class="align_center">
+                  <div class="cell_text"><span class="title_small">순서조정 요청정보</span></div>
+                </th>
+                <th colspan="3" class="align_center">
+                  <div class="cell_text">< span class="title_small">담당자</></div>
+                </th>
+              </tr>
+              <tr>
+                <th>
+                  <div class="cell_text"><span class="title_small">결재상태</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">배정요청순위<br>(조정 전)</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">배정요청순위<br>(조정 후)</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">출고희망월<br>(조정 전)</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">출고희망월<br>(조정 후)</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">상신일</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">처리일</span></div>
+                </th>
+                <th>
+                  <div class="cell_text"><span class="title_small">처리자</span></div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>승인</td>
+                <td>5/15</td>
+                <td>8/15</td>
+                <td></td>
+                <td></td>
+                <td>2023-07-01</td>
+                <td>2023-07-01</td>
+                <td>김현대</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>반려</td>
+                <td>7/20</td>
+                <td>19/20</td>
+                <td></td>
+                <td></td>
+                <td>2023-07-01</td>
+                <td>2023-07-01</td>
+                <td>박기아</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>진행중</td>
+                <td></td>
+                <td></td>
+                <td>2023-08</td>
+                <td>2023-09</td>
+                <td>2023-07-01</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%-include('./include/script.ejs')%>
+  <script src="../js/react.bundle.js"></script> <!-- React 번들 -->
+
+  <!-- [D] 마크업 검수용, 개발제외 -->
+  <%- include('./include/caseview.ejs') %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 케이스뷰 목록 오픈
+      $('.btn_open').click(function () {
+        $('.case_view').toggle();
+      });
+
+      // 케이스뷰 버튼 활성화 상태 변경
+      $(".btn-caseview").click(function () {
+        $(".btn-caseview").removeClass("is_active");
+        $(this).addClass("is_active");
+      });
+
+      // 브랜드 모드 뷰 설정 (HYUNDAI/KIA/BO/HMG)
+      const themeClasses = 'theme_hyundai theme_kia theme_bo';
+
+      // 1. Theme hyundai - Brand Font
+      $("#caseBtn1").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_hyundai');
+        $('.nav_logo img').attr("src","../img/logo_hyundai.svg").prop("alt", "Hyundai");
+      });
+
+      // 2. Theme kia - Brand Font
+      $("#caseBtn2").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_kia');
+        $('.nav_logo img').attr("src","../img/logo_kia.svg").prop("alt", "Kia");
+      });
+
+      // 3. Theme bo
+      $("#caseBtn3").click(function () {
+        $("body").removeClass(themeClasses).addClass('theme_bo');
+      });
+
+    })
+  </script>
+  <!-- // [D] 마크업 검수용, 개발제외 -->
+  </body>
+  </html>

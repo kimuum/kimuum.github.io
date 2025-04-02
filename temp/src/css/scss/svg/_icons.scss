@@ -84,4 +84,27 @@
   .ic_view_hidden_filled_20px {
     @include inline-svg("ic_view_hidden_filled_20px", 20px, 20px);
   }
+
+  .ic_infomation_regular_20px {
+    @include inline-svg("ic_infomation_regular_20px", 20px, 20px);
+  }
+
+  .tabs_section {
+    .btn_tab {
+      .ic_error_filled_20px {
+        @include inline-svg("ic_error_filled_20px", 20px, 20px);
+      }
+      .ic_caution_filled_20px {
+        @include inline-svg("ic_caution_filled_20px", 20px, 20px);
+      }
+      &_active {
+        .ic_error_filled_20px {
+          @include inline-svg-size(20px, 20px, "ic_error_filled_20px", map-get($point-colors, red), none, map-get($point-colors, red));
+        }
+        .ic_caution_filled_20px {
+          @include inline-svg-size(20px, 20px, "ic_caution_filled_20px", map-get($point-colors, orange_highest), none, map-get($point-colors, orange_highest));
+        }
+      }
+    }
+  }
 }
